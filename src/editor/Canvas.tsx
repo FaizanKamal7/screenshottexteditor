@@ -7,6 +7,7 @@ export function Canvas() {
 	const regions = useEditorStore((s) => s.regions);
 	const selectedRegionId = useEditorStore((s) => s.selectedRegionId);
 	const selectRegion = useEditorStore((s) => s.selectRegion);
+	const debugMode = useEditorStore((s) => s.debugMode);
 
 	if (!imageUrl) return null;
 
@@ -27,7 +28,16 @@ export function Canvas() {
 								isSelected ? 'border-link bg-link/10' : 'border-transparent hover:border-hairline hover:bg-hairline-soft/60'
 							}`}
 							style={{ left: x, top: y, width: w, height: h }}
-						/>
+						>
+							{debugMode &&
+								region.chars.map((charBox, index) => (
+									<span
+										key={index}
+										className="absolute top-0 h-full border-l border-warning/70"
+										style={{ left: charBox.x - x, width: charBox.w }}
+									/>
+								))}
+						</button>
 					);
 				})}
 			</div>
