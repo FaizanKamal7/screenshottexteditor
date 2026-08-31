@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+	--color-ink: #171717;
+	--color-on-primary: #ffffff;
+	--color-body: #4d4d4d;
+	--color-mute: #8f8f8f;
+	--color-faint: #a1a1a1;
+	--color-hairline: #ebebeb;
+	--color-hairline-soft: #f2f2f2;
+	--color-canvas: #fafafa;
+	--color-canvas-elevated: #ffffff;
+	--color-link: #0070f3;
+	--color-warning: #f5a623;
+	--color-error: #ee0000;
+}
