@@ -1,9 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useEditorStore, type RgbColor } from './store';
 import { backgroundCss, fontFamilyCss, hexToRgb, rgbToHex } from './styleHelpers';
 
 const WEIGHT_OPTIONS = [400, 500, 600, 700];
 const ZOOM = 3;
+
+// How long to wait after the user stops adjusting a value before firing the
+// actual /render round trip. The Skia render itself is cheap; the round trip
+// re-uploads/downloads the whole image, so firing on every keystroke would
+// mean a multi-MB request per keystroke — this debounce is what makes
+// "no Apply button" feel live without doing that.
+const AUTO_APPLY_DEBOUNCE_MS = 450;
 
 export function FontOverridePanel() {
 	const regionId = useEditorStore((s) => s.overridePanelRegionId);
@@ -20,43 +27,70 @@ export function FontOverridePanel() {
 	const [size, setSize] = useState(16);
 	const [letterSpacing, setLetterSpacing] = useState(0);
 	const [color, setColor] = useState<RgbColor>([0, 0, 0]);
+	const [alignment, setAlignment] = useState<'left' | 'center' | 'right'>('left');
+
+	// Set synchronously by the sync-from-region effect below, and read+cleared
+	// by the auto-apply effect in the same commit — not timing-dependent —
+	// so switching regions never schedules a stray render call using the
+	// outgoing region's stale local state against the newly selected region.
+	const skipNextAutoApplyRef = useRef(false);
 
 	useEffect(() => {
 		if (!region) return;
+		skipNextAutoApplyRef.current = true;
 		setFamily(region.fontFamily ?? 'Inter');
 		setWeight(region.fontWeight ?? 400);
 		setSize(region.fontSize ?? 16);
 		setLetterSpacing(region.letterSpacing);
 		setColor(region.textColor ?? [0, 0, 0]);
+		setAlignment(region.alignment);
 	}, [regionId]);
+
+	useEffect(() => {
+		if (skipNextAutoApplyRef.current) {
+			skipNextAutoApplyRef.current = false;
+			return;
+		}
+		if (!region) return;
+
+		const isDirty =
+			family !== (region.fontFamily ?? 'Inter') ||
+			weight !== (region.fontWeight ?? 400) ||
+			size !== (region.fontSize ?? 16) ||
+			letterSpacing !== region.letterSpacing ||
+			color.join(',') !== (region.textColor ?? [0, 0, 0]).join(',') ||
+			alignment !== region.alignment;
+		if (!isDirty) return;
+
+		const timeout = setTimeout(() => {
+			applyOverride(region.id, { fontFamily: family, fontWeight: weight, fontSize: size, letterSpacing, textColor: color, alignment });
+		}, AUTO_APPLY_DEBOUNCE_MS);
+		return () => clearTimeout(timeout);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [family, weight, size, letterSpacing, color, alignment]);
 
 	if (!region || !imageUrl) return null;
 
 	const [bx, by, bw, bh] = region.bbox;
-	const isDirty =
-		family !== (region.fontFamily ?? 'Inter') ||
-		weight !== (region.fontWeight ?? 400) ||
-		size !== (region.fontSize ?? 16) ||
-		letterSpacing !== region.letterSpacing ||
-		color.join(',') !== (region.textColor ?? [0, 0, 0]).join(',');
 
 	return (
-		<div className="flex h-full w-full flex-col gap-3 overflow-y-auto p-3">
+		<div className="flex flex-col gap-3 bg-hairline-soft/50 px-3.5 py-3.5">
 			<div className="flex items-center justify-between">
-				<p className="text-sm text-ink">Font match</p>
-				<button type="button" onClick={closeOverridePanel} className="text-faint text-xs hover:text-ink">
-					Close
+				<p className="text-[13px] font-semibold tracking-tight text-ink">Style</p>
+				<button
+					type="button"
+					onClick={closeOverridePanel}
+					className="rounded-full px-2 py-0.5 text-[11px] text-faint transition-colors hover:bg-canvas-elevated hover:text-ink"
+				>
+					Collapse
 				</button>
 			</div>
 
-			<p className="truncate text-xs text-body" title={region.text}>
-				"{region.text}"
-			</p>
 			<p className="text-faint text-xs">confidence: {region.confidence != null ? region.confidence.toFixed(2) : 'n/a'}</p>
 
-			<div className="flex gap-2">
+			<div className="flex gap-2 overflow-x-auto">
 				<div
-					className="border border-hairline"
+					className="shrink-0 rounded-md border border-hairline"
 					style={{
 						width: bw * ZOOM,
 						height: bh * ZOOM,
@@ -67,7 +101,7 @@ export function FontOverridePanel() {
 					title="original"
 				/>
 				<div
-					className="flex items-center overflow-hidden border border-hairline px-1"
+					className="flex shrink-0 items-center overflow-hidden rounded-md border border-hairline bg-canvas-elevated px-1"
 					style={{ width: bw * ZOOM, height: bh * ZOOM, background: backgroundCss(region.background) }}
 					title="rendered preview (approximate — browser font rendering, not the actual Skia output)"
 				>
@@ -97,10 +131,10 @@ export function FontOverridePanel() {
 								setFamily(candidate.family);
 								setWeight(candidate.weight);
 							}}
-							className={`flex items-center justify-between rounded-sm border px-2 py-1 text-xs ${
+							className={`flex items-center justify-between rounded-md border px-2 py-1 text-xs ${
 								family === candidate.family && weight === candidate.weight
 									? 'border-link bg-link/10 text-ink'
-									: 'border-hairline text-body hover:bg-hairline-soft/60'
+									: 'border-hairline bg-canvas-elevated text-body hover:bg-hairline-soft/60'
 							}`}
 						>
 							<span>
@@ -112,6 +146,29 @@ export function FontOverridePanel() {
 				</div>
 			)}
 
+			<div className="flex flex-col gap-1 text-xs text-faint">
+				Alignment
+				<p className="text-[10px] font-normal normal-case text-faint">
+					When replacement text needs more room, the box grows toward this side.
+				</p>
+				<div className="flex gap-1">
+					{(['left', 'center', 'right'] as const).map((option) => (
+						<button
+							key={option}
+							type="button"
+							onClick={() => setAlignment(option)}
+							className={`flex-1 rounded-md border px-2 py-1.5 text-[11px] capitalize transition-colors ${
+								alignment === option
+									? 'border-link bg-link/10 text-link'
+									: 'border-hairline bg-canvas-elevated text-body hover:bg-hairline-soft/60'
+							}`}
+						>
+							{option}
+						</button>
+					))}
+				</div>
+			</div>
+
 			<label className="flex flex-col gap-1 text-xs text-faint">
 				Size (px)
 				<input
@@ -120,7 +177,7 @@ export function FontOverridePanel() {
 					min={4}
 					step={0.5}
 					onChange={(e) => setSize(Number(e.target.value))}
-					className="rounded-sm border border-hairline bg-canvas px-2 py-1 text-ink"
+					className="rounded-md border border-hairline bg-canvas-elevated px-2 py-1.5 text-ink focus:border-link focus:outline-none"
 				/>
 			</label>
 
@@ -129,7 +186,7 @@ export function FontOverridePanel() {
 				<select
 					value={weight}
 					onChange={(e) => setWeight(Number(e.target.value))}
-					className="rounded-sm border border-hairline bg-canvas px-2 py-1 text-ink"
+					className="rounded-md border border-hairline bg-canvas-elevated px-2 py-1.5 text-ink focus:border-link focus:outline-none"
 				>
 					{WEIGHT_OPTIONS.map((w) => (
 						<option key={w} value={w}>
@@ -146,7 +203,7 @@ export function FontOverridePanel() {
 					value={letterSpacing}
 					step={0.1}
 					onChange={(e) => setLetterSpacing(Number(e.target.value))}
-					className="rounded-sm border border-hairline bg-canvas px-2 py-1 text-ink"
+					className="rounded-md border border-hairline bg-canvas-elevated px-2 py-1.5 text-ink focus:border-link focus:outline-none"
 				/>
 			</label>
 
@@ -156,18 +213,13 @@ export function FontOverridePanel() {
 					type="color"
 					value={rgbToHex(color)}
 					onChange={(e) => setColor(hexToRgb(e.target.value))}
-					className="h-8 w-full rounded-sm border border-hairline bg-canvas"
+					className="h-8 w-full rounded-md border border-hairline bg-canvas-elevated"
 				/>
 			</label>
 
-			<button
-				type="button"
-				disabled={!isDirty || isRendering}
-				onClick={() => applyOverride(region.id, { fontFamily: family, fontWeight: weight, fontSize: size, letterSpacing, textColor: color })}
-				className="rounded-sm border border-link bg-link/10 px-2 py-1.5 text-xs text-link disabled:cursor-not-allowed disabled:opacity-40"
-			>
-				{isRendering ? 'Applying…' : 'Apply'}
-			</button>
+			<p className="text-center text-[11px] text-faint">
+				{isRendering ? 'Applying…' : 'Changes apply automatically'}
+			</p>
 		</div>
 	);
 }

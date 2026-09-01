@@ -45,18 +45,25 @@ def fill_array(background: BackgroundFill | None, height: int, width: int) -> np
     return _gradient_fill(background, height, width)
 
 
+# Any pixel the separation mask considers even lightly "text" gets fully
+# erased rather than proportionally blended. A pure linear alpha blend looks
+# principled but is wrong for erasure specifically: it leaves the old glyph's
+# anti-aliased halo — every edge pixel at, say, 40% mask coverage — visibly
+# ghosted at 40% strength, which reads as a shadow of the deleted/replaced
+# text. The new text drawn on top afterwards supplies its own anti-aliasing,
+# so the erase step doesn't need to preserve soft edges; it needs to be
+# clean. Only near-zero-alpha pixels (true background, not text) stay a
+# proportional (effectively no-op) blend.
+ERASE_ALPHA_FLOOR = 0.05
+
+
 def erase(
     image_bgr: np.ndarray,
     crop_bbox: tuple[int, int, int, int],
     alpha: np.ndarray,
     background: BackgroundFill | None,
 ) -> np.ndarray:
-    """Returns a copy of `image_bgr` with the glyphs inside `crop_bbox` erased.
-
-    Blends toward the fitted background using `alpha` as the blend weight, so
-    anti-aliased glyph edges fade out the same way they faded in — no hard
-    cutout edge.
-    """
+    """Returns a copy of `image_bgr` with the glyphs inside `crop_bbox` erased."""
     x0, y0, x1, y1 = crop_bbox
     out = image_bgr.copy()
     crop = out[y0:y1, x0:x1].astype(np.float32)
@@ -64,7 +71,8 @@ def erase(
         return out
 
     fill = fill_array(background, crop.shape[0], crop.shape[1])
-    weight = alpha[..., None]
+    hardened_alpha = np.where(alpha > ERASE_ALPHA_FLOOR, 1.0, alpha).astype(np.float32)
+    weight = hardened_alpha[..., None]
     blended = crop * (1.0 - weight) + fill * weight
     out[y0:y1, x0:x1] = np.clip(blended, 0, 255).astype(np.uint8)
     return out

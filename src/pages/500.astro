@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Button from '../components/Button.astro';
+
+const retryHref = Astro.url.pathname === '/500' ? '/' : Astro.url.pathname;
+---
+
+<Layout
+	title="500 — Something went wrong | ScreenshotTextEditor"
+	description="Our pipeline hit an unexpected error while handling that request. Try again in a moment."
+>
+	<Nav />
+
+	<main>
+		<section class="relative overflow-hidden border-b border-hairline py-24 md:py-32">
+			<div aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+				<span class="select-none font-mono text-[220px] font-bold leading-none tracking-tighter text-hairline md:text-[320px]">
+					500
+				</span>
+			</div>
+
+			<Container class="relative max-w-2xl text-center">
+				<Eyebrow>500 error</Eyebrow>
+				<h1 class="mt-4 text-[36px] font-semibold leading-[1.1] tracking-tight text-ink md:text-[44px] md:tracking-[-0.025em]">
+					Something broke on our end.
+				</h1>
+				<p class="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-body">
+					Our pipeline hit an unexpected error while handling that request. It's on us — try again in a moment, or
+					reach out if it keeps happening.
+				</p>
+				<div class="mt-8 flex items-center justify-center gap-3">
+					<Button href={retryHref} variant="primary">Try again</Button>
+					<Button href="/contact" variant="secondary">Contact support</Button>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

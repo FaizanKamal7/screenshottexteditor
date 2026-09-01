@@ -1,0 +1,71 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+
+const channels = [
+	{
+		title: 'Support',
+		body: 'Bugs, low-confidence matches, or anything not working the way it should.',
+		email: 'support@screenshottexteditor.com',
+	},
+	{
+		title: 'Privacy',
+		body: 'Questions about what we collect, how long we keep it, or a deletion request.',
+		email: 'privacy@screenshottexteditor.com',
+	},
+	{
+		title: 'Legal',
+		body: 'Terms of service, acceptable use, or content credential questions.',
+		email: 'legal@screenshottexteditor.com',
+	},
+];
+---
+
+<Layout
+	title="Contact — ScreenshotTextEditor"
+	description="Get in touch with ScreenshotTextEditor for support, privacy questions, or anything about the screenshot text editing pipeline."
+>
+	<Nav />
+
+	<main>
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-2xl">
+				<Eyebrow>Contact</Eyebrow>
+				<h1 class="mt-3 text-[32px] font-semibold tracking-tight text-ink">Get in touch</h1>
+				<p class="mt-3 text-[15px] leading-relaxed text-body">
+					Pick the address that fits — we read everything and reply from a real person, not a ticket bot.
+				</p>
+			</Container>
+		</section>
+
+		<section class="py-16">
+			<Container class="max-w-4xl">
+				<div class="grid gap-4 md:grid-cols-3">
+					{
+						channels.map((channel) => (
+							<FeatureCard title={channel.title}>
+								<p>{channel.body}</p>
+								<a href={`mailto:${channel.email}`} class="mt-3 inline-block text-[13px] font-medium text-link hover:underline">
+									{channel.email}
+								</a>
+							</FeatureCard>
+						))
+					}
+				</div>
+
+				<p class="mt-10 text-[14px] leading-relaxed text-mute">
+					Reporting a specific edit that didn't come out right? Include the original screenshot and, if you still have
+					it, the exported result — it's the fastest way for us to reproduce and fix it.
+				</p>
+			</Container>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

@@ -24,6 +24,27 @@
 	--font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 }
 
+:root.dark {
+	--color-ink: #f2f2f2;
+	--color-on-primary: #171717;
+	--color-body: #d4d4d4;
+	--color-mute: #a3a3a3;
+	--color-faint: #7a7a7a;
+	--color-hairline: #2a2a2a;
+	--color-hairline-soft: #232323;
+	--color-canvas: #0d0d0d;
+	--color-canvas-elevated: #171717;
+	--color-link: #4a9eff;
+	--color-link-deep: #7cb8ff;
+	--color-link-soft: #17304d;
+	--color-warning: #f5a623;
+	--color-warning-soft: #3d2f10;
+	--color-error: #ff5c5c;
+	--color-error-deep: #ff8a8a;
+	--color-violet: #a771e0;
+	--color-cyan: #50e3c2;
+}
+
 body {
 	font-family: var(--font-sans);
 }

@@ -4,39 +4,53 @@ import '../styles/global.css';
 interface Props {
 	title?: string;
 	description?: string;
+	keywords?: string;
 	ogImage?: string;
 }
 
 const {
-	title = 'ScreenshotTextEditor — edit text in a screenshot without anyone noticing',
-	description = 'Replace text in screenshots and get a result that is pixel-indistinguishable from the original — same font, size, weight, color, and anti-aliasing. Built for App Store localization, dashboard updates, and typo fixes.',
-	ogImage,
+	title = 'Screenshot Text Editor — Free Online AI Image Text Editor',
+	description = 'Edit text in any screenshot or image online with our free AI screenshot text editor. Matches font, size, weight, and color — no watermark, no signup required.',
+	keywords = 'screenshot text editor, screenshot text editor online, screenshot text editor ai, screenshot text editor ai free, screenshot text editor free, screenshot editor, screenshot editor online, screenshot editor ai, ai screenshot editor, image text editor, image text editor online, ai image text editor, free online image text editor, online text editor',
+	ogImage = '/og-image.png',
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://screenshottexteditor.com');
+const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://screenshottexteditor.com');
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="color-scheme" content="light dark" />
+		<script is:inline>
+			(function () {
+				document.documentElement.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
+			})();
+		</script>
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 		<link rel="canonical" href={canonicalUrl} />
 
 		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="ScreenshotTextEditor" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalUrl} />
-		{ogImage && <meta property="og:image" content={ogImage} />}
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,6 +58,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://screensh
 			href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-B6DT4DMC2Q"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-B6DT4DMC2Q');
+		</script>
 	</head>
 	<body class="h-full w-full m-0 bg-canvas text-ink">
 		<slot />

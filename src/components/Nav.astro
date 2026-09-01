@@ -1,6 +1,7 @@
 ---
 import Button from './Button.astro';
 import Container from './Container.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 const links = [
 	{ href: '/#use-cases', label: 'Use cases' },
@@ -10,7 +11,8 @@ const links = [
 
 <header class="relative border-b border-hairline bg-canvas">
 	<Container class="flex h-16 items-center justify-between">
-		<a href="/" class="text-[15px] font-semibold tracking-tight text-ink">
+		<a href="/" class="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-ink">
+			<img src="/icon.png" alt="ScreenshotTextEditor logo" width="24" height="24" class="h-6 w-6" />
 			ScreenshotTextEditor
 		</a>
 
@@ -28,27 +30,31 @@ const links = [
 		</nav>
 
 		<div class="hidden items-center gap-2 md:flex">
+			<ThemeToggle />
 			<Button href="/app" variant="primary">Open the editor</Button>
 		</div>
 
-		<details class="md:hidden">
-			<summary class="list-none rounded-md border border-hairline px-2.5 py-1.5 text-[13px] text-body [&::-webkit-details-marker]:hidden">
-				Menu
-			</summary>
-			<div class="absolute inset-x-0 top-16 z-20 border-b border-hairline bg-canvas-elevated px-6 py-4 shadow-sm">
-				<nav class="flex flex-col gap-1">
-					{
-						links.map((link) => (
-							<a href={link.href} class="rounded-md px-2 py-2 text-[15px] text-body hover:bg-hairline-soft hover:text-ink">
-								{link.label}
-							</a>
-						))
-					}
-					<a href="/app" class="mt-2 rounded-full bg-ink px-3.5 py-2 text-center text-[15px] font-medium text-on-primary">
-						Open the editor
-					</a>
-				</nav>
-			</div>
-		</details>
+		<div class="flex items-center gap-1 md:hidden">
+			<ThemeToggle />
+			<details class="md:hidden">
+				<summary class="list-none rounded-md border border-hairline px-2.5 py-1.5 text-[13px] text-body [&::-webkit-details-marker]:hidden">
+					Menu
+				</summary>
+				<div class="absolute inset-x-0 top-16 z-20 border-b border-hairline bg-canvas-elevated px-6 py-4 shadow-sm">
+					<nav class="flex flex-col gap-1">
+						{
+							links.map((link) => (
+								<a href={link.href} class="rounded-md px-2 py-2 text-[15px] text-body hover:bg-hairline-soft hover:text-ink">
+									{link.label}
+								</a>
+							))
+						}
+						<a href="/app" class="mt-2 rounded-full bg-ink px-3.5 py-2 text-center text-[15px] font-medium text-on-primary">
+							Open the editor
+						</a>
+					</nav>
+				</div>
+			</details>
+		</div>
 	</Container>
 </header>

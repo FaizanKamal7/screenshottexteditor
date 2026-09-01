@@ -7,6 +7,7 @@ from collections import defaultdict
 
 import numpy as np
 from fastapi import FastAPI, Form, Header, HTTPException, UploadFile, status
+from fastapi.responses import StreamingResponse
 from PIL import Image
 from pydantic import ValidationError
 
@@ -32,23 +33,26 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-@app.post("/analyze", response_model=AnalyzeResponse)
-async def analyze(
-    file: UploadFile,
-    x_pipeline_secret: str | None = Header(default=None, alias="X-Pipeline-Secret"),
-) -> AnalyzeResponse:
-    require_shared_secret(x_pipeline_secret)
+def _run_analysis(contents: bytes):
+    """Generator driving /analyze's NDJSON stream.
 
-    contents = await file.read()
+    Yields a `{"type": "progress", ...}` line after each detected line is
+    processed (the only per-item work the client can't otherwise observe),
+    then a final `{"type": "result", ...}` line carrying the same shape
+    `AnalyzeResponse` used to return in one shot. Kept as a plain generator
+    (not async) since every step here is CPU-bound, not I/O-bound.
+    """
     image = Image.open(io.BytesIO(contents)).convert("RGB")
     width, height = image.size
     image_bgr = np.array(image)[:, :, ::-1].copy()
 
     detect_result = detect(image_bgr)
+    total = len(detect_result.lines)
+    yield json.dumps({"type": "progress", "current": 0, "total": total}) + "\n"
 
     regions: list[Region] = []
     masks: list[np.ndarray] = []
-    for line in detect_result.lines:
+    for index, line in enumerate(detect_result.lines):
         separation = separate(image_bgr, line.bbox)
         masks.append(separation.alpha)
 
@@ -86,6 +90,7 @@ async def analyze(
                 font_candidates=match.top_candidates,
             )
         )
+        yield json.dumps({"type": "progress", "current": index + 1, "total": total}) + "\n"
 
     blocks: dict[str, list[int]] = defaultdict(list)
     for index, region in enumerate(regions):
@@ -100,7 +105,19 @@ async def analyze(
 
     scale_factor = estimate_scale_factor(masks)
 
-    return AnalyzeResponse(image_width=width, image_height=height, scale_factor=scale_factor, regions=regions)
+    response = AnalyzeResponse(image_width=width, image_height=height, scale_factor=scale_factor, regions=regions)
+    yield json.dumps({"type": "result", **response.model_dump()}) + "\n"
+
+
+@app.post("/analyze")
+async def analyze(
+    file: UploadFile,
+    x_pipeline_secret: str | None = Header(default=None, alias="X-Pipeline-Secret"),
+) -> StreamingResponse:
+    require_shared_secret(x_pipeline_secret)
+
+    contents = await file.read()
+    return StreamingResponse(_run_analysis(contents), media_type="application/x-ndjson")
 
 
 @app.post("/render", response_model=RenderResponse)
@@ -144,6 +161,8 @@ async def render(
             edit.text_color,
             edit.alignment,
             local_x_offset,
+            edit.offset_x,
+            edit.offset_y,
         )
         image_bgr = compose_result.image_bgr
         results.append(

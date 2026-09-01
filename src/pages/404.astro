@@ -1,0 +1,44 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+	title="404 — Page not found | ScreenshotTextEditor"
+	description="The page you're looking for doesn't exist, moved, or the link is broken."
+>
+	<Nav />
+
+	<main>
+		<section class="relative overflow-hidden border-b border-hairline py-24 md:py-32">
+			<div aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+				<span class="select-none font-mono text-[220px] font-bold leading-none tracking-tighter text-hairline md:text-[320px]">
+					404
+				</span>
+			</div>
+
+			<Container class="relative max-w-2xl text-center">
+				<Eyebrow>404 error</Eyebrow>
+				<h1 class="mt-4 text-[36px] font-semibold leading-[1.1] tracking-tight text-ink md:text-[44px] md:tracking-[-0.025em]">
+					This page didn't make it through the pipeline.
+				</h1>
+				<p class="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-body">
+					The page you're looking for doesn't exist, moved, or the link is broken. Head back home or jump straight
+					into the editor.
+				</p>
+				<div class="mt-8 flex items-center justify-center gap-3">
+					<Button href="/" variant="primary">Back to home</Button>
+					<Button href="/app" variant="secondary">Open the editor</Button>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

@@ -86,6 +86,11 @@ class RenderEdit(BaseModel):
     text_color: tuple[int, int, int]
     background: BackgroundFill | None = None
     alignment: Literal["left", "center", "right"] = "left"
+    # Manual "slight nudge" from the detected position (drag or Alt+Arrow in
+    # the editor), applied on top of the expand-to-fit box — see
+    # stages/render_stage.py's compose_region.
+    offset_x: float = 0.0
+    offset_y: float = 0.0
 
 
 class RenderRegionResult(BaseModel):

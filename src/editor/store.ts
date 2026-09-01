@@ -55,7 +55,19 @@ export interface Region {
 	lineHeight: number | null;
 	uiElement: UiElement | null;
 	fontCandidates: FontCandidateScore[];
+	// Manual "slight nudge" from the detected position — a drag or Alt+Arrow
+	// in the editor (see Canvas.tsx) — on top of wherever stage 3 detected
+	// the text and the expand-to-fit box puts it. Always present (defaults to
+	// 0), never comes back from /analyze.
+	offsetX: number;
+	offsetY: number;
 }
+
+// Nudge drags/key-taps are clamped to this range (px) in both axes — "slight
+// repositioning," not free placement; see the /app conversation about why
+// free-drag isn't offered (the pipeline can only guarantee a clean result
+// where it actually measured the background).
+export const MAX_NUDGE_PX = 48;
 
 // A region's replacement text plus the style stage 3 matched for it — the
 // full payload /render needs to redo erase+re-render from the pristine
@@ -75,6 +87,8 @@ export interface PendingEdit {
 	textColor: RgbColor;
 	background: BackgroundFill | null;
 	alignment: 'left' | 'center' | 'right';
+	offsetX: number;
+	offsetY: number;
 }
 
 interface RenderApiResult {
@@ -106,6 +120,7 @@ export interface StyleOverride {
 	fontSize: number;
 	letterSpacing: number;
 	textColor: RgbColor;
+	alignment: 'left' | 'center' | 'right';
 }
 
 interface EditorState {
@@ -119,7 +134,16 @@ interface EditorState {
 	editingRegionId: string | null;
 	overridePanelRegionId: string | null;
 	edits: Record<string, PendingEdit>;
-	status: 'idle' | 'analyzing' | 'error';
+	// 'uploading' has a real, observable percentage (uploadProgress, driven by
+	// XHR upload progress events in Dropzone). 'analyzing' covers the
+	// server-side OCR/separation/font-matching work, which has no progress
+	// signal — the UI shows staged status text there instead of a percentage.
+	status: 'idle' | 'uploading' | 'analyzing' | 'error';
+	uploadProgress: number;
+	// Real per-region progress during 'analyzing', driven by NDJSON progress
+	// lines from /api/analyze (see Dropzone.handleFile) — null until the
+	// first progress message arrives.
+	analyzeProgress: { current: number; total: number } | null;
 	errorMessage: string | null;
 	isRendering: boolean;
 	renderError: string | null;
@@ -127,10 +151,20 @@ interface EditorState {
 	setImage: (url: string, file: File, width: number, height: number) => void;
 	setRegions: (regions: Region[]) => void;
 	setScaleFactor: (scaleFactor: 1 | 2 | 3) => void;
+	setUploadProgress: (percent: number) => void;
+	setAnalyzeProgress: (current: number, total: number) => void;
 	selectRegion: (id: string | null) => void;
 	startEditing: (id: string) => void;
+	// Selects, starts inline text editing, and expands the region's row in
+	// the sidebar all at once — the single entry point for "work on this
+	// region" from both the canvas and the sidebar (see LayersPanel).
+	startEditingWithStyle: (id: string) => void;
 	cancelEditing: () => void;
 	commitEdit: (id: string, newText: string) => Promise<void>;
+	// Adds (dx, dy) to the region's current offset (so repeated nudges
+	// compose), clamps to MAX_NUDGE_PX, and re-renders once — called on drag
+	// release or an Alt+Arrow key tap, never mid-drag (see Canvas.tsx).
+	nudgeRegion: (id: string, dx: number, dy: number) => Promise<void>;
 	openOverridePanel: (id: string) => void;
 	closeOverridePanel: () => void;
 	applyOverride: (id: string, overrides: StyleOverride) => Promise<void>;
@@ -140,6 +174,12 @@ interface EditorState {
 }
 
 export const useEditorStore = create<EditorState>((set, get) => {
+	// Superseding an in-flight /render call (a newer edit/override landing
+	// before the previous one's response) aborts the older request instead of
+	// letting both race — the debounced auto-apply in FontOverridePanel can
+	// fire several of these close together as the user drags a slider.
+	let renderAbortController: AbortController | null = null;
+
 	function pendingEditFor(region: Region, text: string, overrides?: StyleOverride): PendingEdit {
 		return {
 			regionId: region.id,
@@ -153,7 +193,9 @@ export const useEditorStore = create<EditorState>((set, get) => {
 			xOffset: region.xOffset ?? region.bbox[0],
 			textColor: overrides?.textColor ?? region.textColor ?? [0, 0, 0],
 			background: region.background,
-			alignment: region.alignment,
+			alignment: overrides?.alignment ?? region.alignment,
+			offsetX: region.offsetX,
+			offsetY: region.offsetY,
 		};
 	}
 
@@ -163,6 +205,10 @@ export const useEditorStore = create<EditorState>((set, get) => {
 	async function postRender(nextEdits: Record<string, PendingEdit>) {
 		const state = get();
 		if (!state.imageFile) return;
+
+		renderAbortController?.abort();
+		const controller = new AbortController();
+		renderAbortController = controller;
 
 		set({ isRendering: true, renderError: null, edits: nextEdits });
 
@@ -185,11 +231,13 @@ export const useEditorStore = create<EditorState>((set, get) => {
 						text_color: edit.textColor,
 						background: backgroundToWire(edit.background),
 						alignment: edit.alignment,
+						offset_x: edit.offsetX,
+						offset_y: edit.offsetY,
 					})),
 				),
 			);
 
-			const response = await fetch('/api/render', { method: 'POST', body: formData });
+			const response = await fetch('/api/render', { method: 'POST', body: formData, signal: controller.signal });
 			if (!response.ok) {
 				throw new Error(`render failed with status ${response.status}`);
 			}
@@ -197,6 +245,9 @@ export const useEditorStore = create<EditorState>((set, get) => {
 
 			set({ imageUrl: `data:image/png;base64,${data.image_png_base64}`, isRendering: false });
 		} catch (err) {
+			// A newer postRender call already aborted this one and owns
+			// isRendering/renderError now — touching state here would clobber it.
+			if (err instanceof DOMException && err.name === 'AbortError') return;
 			set({ isRendering: false, renderError: err instanceof Error ? err.message : 'render failed' });
 		}
 	}
@@ -213,6 +264,8 @@ export const useEditorStore = create<EditorState>((set, get) => {
 		overridePanelRegionId: null,
 		edits: {},
 		status: 'idle',
+		uploadProgress: 0,
+		analyzeProgress: null,
 		errorMessage: null,
 		isRendering: false,
 		renderError: null,
@@ -228,11 +281,17 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				editingRegionId: null,
 				overridePanelRegionId: null,
 				edits: {},
+				uploadProgress: 0,
+				analyzeProgress: null,
 			}),
 		setRegions: (regions) => set({ regions }),
 		setScaleFactor: (scaleFactor) => set({ scaleFactor }),
+		setUploadProgress: (percent) => set({ uploadProgress: percent }),
+		setAnalyzeProgress: (current, total) => set({ analyzeProgress: { current, total } }),
 		selectRegion: (id) => set({ selectedRegionId: id }),
 		startEditing: (id) => set({ selectedRegionId: id, editingRegionId: id, overridePanelRegionId: null, renderError: null }),
+		startEditingWithStyle: (id) =>
+			set({ selectedRegionId: id, editingRegionId: id, overridePanelRegionId: id, renderError: null }),
 		cancelEditing: () => set({ editingRegionId: null }),
 		commitEdit: async (id, newText) => {
 			const state = get();
@@ -248,6 +307,16 @@ export const useEditorStore = create<EditorState>((set, get) => {
 
 			set({ editingRegionId: null, regions: state.regions.map((r) => (r.id === id ? { ...r, text: newText } : r)) });
 			await postRender({ ...state.edits, [id]: pendingEditFor(region, newText) });
+		},
+		nudgeRegion: async (id, dx, dy) => {
+			const state = get();
+			const region = state.regions.find((r) => r.id === id);
+			if (!region || !state.imageFile) return;
+
+			const clamp = (v: number) => Math.max(-MAX_NUDGE_PX, Math.min(MAX_NUDGE_PX, v));
+			const merged: Region = { ...region, offsetX: clamp(region.offsetX + dx), offsetY: clamp(region.offsetY + dy) };
+			set({ regions: state.regions.map((r) => (r.id === id ? merged : r)) });
+			await postRender({ ...state.edits, [id]: pendingEditFor(merged, merged.text) });
 		},
 		openOverridePanel: (id) => set({ overridePanelRegionId: id, editingRegionId: null, selectedRegionId: id }),
 		closeOverridePanel: () => set({ overridePanelRegionId: null }),
@@ -275,6 +344,8 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				overridePanelRegionId: null,
 				edits: {},
 				status: 'idle',
+				uploadProgress: 0,
+				analyzeProgress: null,
 				errorMessage: null,
 				isRendering: false,
 				renderError: null,

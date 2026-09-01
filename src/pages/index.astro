@@ -14,6 +14,57 @@ import { EditorIsland } from '../editor/EditorIsland';
 
 const useCases = await getCollection('useCases');
 
+const faqs = [
+	{
+		question: 'How to use an image text editor online?',
+		answer:
+			'Open the ScreenshotTextEditor editor and drop in your screenshot or image — no signup needed. Our AI screenshot editor scans the image, detects every text run, and lets you click any line to rewrite it. Type your replacement, and the tool automatically matches the original font, size, weight, color, and anti-aliasing before rebuilding the image around your new text. Export it as a PNG or JPG in seconds, all from your browser.',
+	},
+	{
+		question: 'How to remove text from image using AI editor?',
+		answer:
+			'Select the text run you want to remove and either delete its contents or use the erase option. The AI image text editor fills the area behind the old text with a matching background — reconstructing color, texture, and gradients — so there is no visible patch, blur, or watermark left behind. This works for UI labels, captions, timestamps, or any text layer detected in the image.',
+	},
+	{
+		question: 'How does an online image text editor work?',
+		answer:
+			'Our online image text editor runs a detection → match → rebuild pipeline. First, OCR locates every text run at the line and character level and measures the image scale factor. Next, it renders your text in a shortlist of likely fonts and scores each one against the real pixels until it finds the closest font, size, weight, and spacing. Finally, it erases the original text with a matching fill and renders your replacement at the same baseline, so the result survives close inspection.',
+	},
+	{
+		question: 'How to edit text on a screenshot?',
+		answer:
+			'Upload your screenshot to the screenshot text editor, click the text you want to change, and type the new copy. The tool keeps every other pixel — icons, buttons, backgrounds, and layout — exactly as it was, only rebuilding the text region itself. It works entirely online, with no design software or manual font-matching required.',
+	},
+	{
+		question: 'How to edit text on a screenshot iPhone?',
+		answer:
+			'Take your screenshot on iPhone as usual, then upload it to ScreenshotTextEditor from Safari or Chrome on your phone or by AirDropping it to a computer first. Because the screenshot text editor runs entirely online in the browser, there is no app to install — open the editor on any device, select the text, replace it, and download the edited screenshot directly to your iPhone or camera roll.',
+	},
+	{
+		question: 'Is editing text in screenshot free?',
+		answer:
+			'Yes. You can try the screenshot text editor online free, without a watermark, with no account required — uploads are processed and then automatically deleted within an hour. Higher-volume workflows like bulk App Store localization are available on paid plans, but single-image editing is free to use.',
+	},
+	{
+		question: 'Is it possible to change text of any image or just screenshot?',
+		answer:
+			'You can edit text in any image, not only screenshots. The same detection, font-matching, and rebuild pipeline works on UI mockups, marketing graphics, dashboard exports, PNGs, and photos that contain text — anywhere the tool can detect a text run, it can replace it while preserving the original look.',
+	},
+];
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: faq.answer,
+		},
+	})),
+};
+
 const steps = [
 	{
 		title: '1. Detect',
@@ -30,7 +81,10 @@ const steps = [
 ];
 ---
 
-<Layout>
+<Layout
+	title="Screenshot Text Editor — Free Online AI Image Text Editor"
+	description="Edit text in any screenshot or image online with our free AI screenshot text editor. Matches font, size, weight, and color — no watermark, no signup required."
+>
 	<Nav />
 
 	<main>
@@ -132,19 +186,6 @@ const steps = [
 			</Container>
 		</section>
 
-		<section id="demo" class="border-b border-hairline bg-hairline-soft/50 py-20">
-			<Container class="max-w-4xl">
-				<Eyebrow>Try it live</Eyebrow>
-				<h2 class="mt-2 text-[26px] font-semibold tracking-tight text-ink">Drop in a screenshot.</h2>
-				<p class="mt-2 text-[14px] text-mute">
-					This is the real editor, running against the live pipeline — not a mockup.
-				</p>
-				<div class="mt-6">
-					<EditorIsland client:only="react" embedded />
-				</div>
-			</Container>
-		</section>
-
 		<section class="border-b border-hairline py-20">
 			<Container class="max-w-3xl">
 				<Eyebrow>Privacy</Eyebrow>
@@ -154,8 +195,9 @@ const steps = [
 					— one hour by default — and we never train on user images. Every export also carries embedded content
 					credentials marking it as edited, so an edited screenshot never quietly passes as an original.
 				</p>
-				<div class="mt-5">
+				<div class="mt-5 flex flex-wrap items-center gap-3">
 					<Button href="/privacy" variant="ghost">Read the privacy policy →</Button>
+					<Button href="/terms" variant="ghost">Read the terms of service →</Button>
 				</div>
 			</Container>
 		</section>
@@ -181,6 +223,91 @@ const steps = [
 			</Container>
 		</section>
 
+		<section class="border-b border-hairline py-20">
+			<Container class="max-w-3xl">
+				<Eyebrow>About the tool</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">What is a screenshot text editor?</h2>
+				<div class="mt-4 space-y-4 text-[15px] leading-relaxed text-body">
+					<p>
+						ScreenshotTextEditor is a <strong class="text-ink">screenshot text editor</strong> built to solve one very
+						specific problem: changing the words in a screenshot without changing anything else about it. Most people
+						who search for a <strong class="text-ink">screenshot editor online</strong> run into the same wall —
+						generic photo editors can crop, blur, or annotate a screenshot, but the moment you try to swap out a line of
+						text, the font is wrong, the spacing shifts, or the background behind the old text turns into a smudge. This
+						tool was built around a different idea: detect the exact font, size, weight, and color of every text run in
+						the image, then rebuild it so precisely that the edit is invisible at 400% zoom.
+					</p>
+					<p>
+						As a <strong class="text-ink">screenshot text editor online</strong>, it runs entirely in the browser —
+						there's nothing to install, no plugin, and no design software required. Upload a screenshot or any image
+						with text, click the line you want to change, type your replacement, and download the result. Because it's a{' '}
+						<strong class="text-ink">free screenshot editor</strong> for single images, you can try the full pipeline —
+						detection, font-matching, and rebuild — without creating an account. It's a{' '}
+						<strong class="text-ink">screenshot text editor online free without watermark</strong>, so what you export
+						is exactly what you see, with no branding stamped over your work.
+					</p>
+					<h3 class="text-[18px] font-semibold text-ink">AI screenshot editor, not a generic filter</h3>
+					<p>
+						Calling this an <strong class="text-ink">AI screenshot editor</strong> undersells what's actually happening
+						under the hood. Instead of asking a generative image model to hallucinate plausible-looking text — a
+						shortcut that tends to fall apart on small, crisp UI fonts — this{' '}
+						<strong class="text-ink">screenshot text editor AI</strong> pipeline runs six discrete, testable stages.
+						First, OCR detects every text run at the character level and measures the image's scale factor directly
+						from the glyphs. Then the tool renders your source text in a shortlist of platform-likely fonts and scores
+						each candidate against the real pixel mask until it finds the closest match for font family, size, weight,
+						and letter spacing. Only then does it erase the old text with a matching fill and render your replacement
+						at the same baseline and anti-aliasing settings. Every match carries a visible confidence score, so if the{' '}
+						<strong class="text-ink">screenshot text editor AI free</strong> pipeline can't reproduce your original text
+						closely enough to trust, it tells you — instead of quietly shipping an edit that looks off.
+					</p>
+					<h3 class="text-[18px] font-semibold text-ink">More than a screenshot editor — a full image text editor online</h3>
+					<p>
+						While it started as a screenshot text editor, the same pipeline works as a general-purpose{' '}
+						<strong class="text-ink">image text editor online</strong>. Any PNG, JPG, or exported UI mockup with text can
+						be processed the same way — as an <strong class="text-ink">AI image text editor</strong> for marketing
+						graphics, dashboard exports with stale numbers, or App Store screenshots that need to be localized into
+						another language. Because it's a <strong class="text-ink">free online image text editor</strong>, teams
+						that would otherwise rebuild every screenshot by hand in Figma for each locale can instead upload once, hand
+						over a CSV of translations, and download every language variant rendered in the original font and layout.
+					</p>
+					<h3 class="text-[18px] font-semibold text-ink">Why teams choose this online text editor for screenshots</h3>
+					<p>
+						Whether you need a quick typo fix, a redacted customer name before a demo, or a batch of localized App Store
+						screenshots, this <strong class="text-ink">screenshot editor online</strong> is built to make the edit
+						disappear rather than stand out. It's free to try, doesn't require a design background, deletes your
+						uploads automatically, and never trains on the images you upload — so the only thing that changes in your
+						screenshot is the text you meant to change. Read more about
+						<a href="/about" class="text-link hover:underline">why we built it this way</a>.
+					</p>
+				</div>
+			</Container>
+		</section>
+
+		<section id="faq" class="border-b border-hairline py-20">
+			<Container class="max-w-3xl">
+				<Eyebrow>FAQ</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">Frequently asked questions.</h2>
+				<div class="mt-6 space-y-3">
+					{
+						faqs.map((faq) => (
+							<details class="group rounded-xl border border-hairline bg-canvas-elevated p-5 open:pb-5">
+								<summary class="cursor-pointer list-none text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+									<span class="flex items-center justify-between gap-4">
+										{faq.question}
+										<span class="shrink-0 text-faint transition-transform group-open:rotate-45">+</span>
+									</span>
+								</summary>
+								<p class="mt-3 text-[14px] leading-relaxed text-body">{faq.answer}</p>
+							</details>
+						))
+					}
+				</div>
+				<p class="mt-6 text-[14px] text-mute">
+					Still have questions? <a href="/contact" class="text-link hover:underline">Contact us</a> — we read every message.
+				</p>
+			</Container>
+		</section>
+
 		<section class="py-24">
 			<Container class="max-w-3xl text-center">
 				<h2 class="text-[32px] font-semibold tracking-tight text-ink">Try it on your own screenshot.</h2>
@@ -191,6 +318,8 @@ const steps = [
 			</Container>
 		</section>
 	</main>
+
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
 
 	<Footer />
 </Layout>

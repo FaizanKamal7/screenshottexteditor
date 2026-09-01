@@ -47,3 +47,24 @@ def test_erase_leaves_background_pixels_unchanged_where_alpha_is_zero():
     result = erase(image, crop_bbox, alpha, background)
 
     assert np.array_equal(result, image)
+
+
+def test_erase_leaves_no_ghost_at_partially_anti_aliased_edges():
+    """A pure linear alpha blend leaves the old glyph's anti-aliased halo
+    visibly ghosted (e.g. a 40%-alpha edge pixel stays 40% of the way toward
+    the old color) — regression coverage for that: white text on black
+    should erase to solid black everywhere the mask saw any real text
+    presence, edges included, not just the fully-opaque interior.
+    """
+    image = np.zeros((10, 10, 3), dtype=np.uint8)  # black background
+    image[:, :] = (255, 255, 255)  # old white text fills the whole crop
+    alpha = np.array(
+        [[0.1, 0.3, 0.5, 0.7, 0.9, 0.9, 0.7, 0.5, 0.3, 0.1] for _ in range(10)],
+        dtype=np.float32,
+    )
+    crop_bbox = (0, 0, 10, 10)
+    background = BackgroundFill(kind="flat", color=(0, 0, 0))
+
+    result = erase(image, crop_bbox, alpha, background)
+
+    assert np.allclose(result, 0, atol=1)

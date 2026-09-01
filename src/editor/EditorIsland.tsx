@@ -1,6 +1,5 @@
 import { Canvas } from './Canvas';
 import { Dropzone } from './Dropzone';
-import { FontOverridePanel } from './FontOverridePanel';
 import { Header } from './Header';
 import { LayersPanel } from './LayersPanel';
 import { useEditorStore } from './store';
@@ -16,25 +15,24 @@ interface EditorIslandProps {
 
 export function EditorIsland({ embedded = false }: EditorIslandProps) {
 	const imageUrl = useEditorStore((s) => s.imageUrl);
-	const overridePanelRegionId = useEditorStore((s) => s.overridePanelRegionId);
 
 	return (
 		<div
 			className={
 				embedded
-					? 'relative flex h-[640px] w-full flex-col overflow-hidden rounded-lg border border-hairline bg-canvas shadow-sm'
-					: 'relative flex h-screen w-screen flex-col bg-canvas'
+					? 'relative flex h-[560px] w-full flex-col overflow-hidden rounded-lg border border-hairline bg-canvas shadow-sm sm:h-[640px]'
+					: 'relative flex h-dvh w-full flex-col bg-canvas'
 			}
 		>
 			{!embedded && <Header />}
 
 			{imageUrl ? (
-				<div className="relative flex flex-1 overflow-hidden">
-					<div className="min-w-0 flex-1">
+				<div className="relative flex min-h-0 flex-1 flex-col overflow-hidden md:flex-row">
+					<div className="min-h-0 min-w-0 flex-[3] md:flex-1">
 						<Canvas embedded={embedded} />
 					</div>
-					<aside className="w-72 shrink-0 border-l border-hairline bg-canvas-elevated">
-						{overridePanelRegionId ? <FontOverridePanel /> : <LayersPanel />}
+					<aside className="min-h-0 flex-[2] overflow-y-auto border-t border-hairline bg-canvas-elevated md:w-72 md:flex-none md:border-l md:border-t-0">
+						<LayersPanel />
 					</aside>
 				</div>
 			) : (

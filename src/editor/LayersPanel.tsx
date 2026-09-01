@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { readingOrder } from './Canvas';
+import { FontOverridePanel } from './FontOverridePanel';
 import { useEditorStore } from './store';
 import { confidenceLevel } from './styleHelpers';
 
@@ -17,16 +18,28 @@ export function LayersPanel() {
 	const scaleFactor = useEditorStore((s) => s.scaleFactor);
 	const debugMode = useEditorStore((s) => s.debugMode);
 	const toggleDebugMode = useEditorStore((s) => s.toggleDebugMode);
-	const startEditing = useEditorStore((s) => s.startEditing);
+	const startEditingWithStyle = useEditorStore((s) => s.startEditingWithStyle);
+	const overridePanelRegionId = useEditorStore((s) => s.overridePanelRegionId);
+	const closeOverridePanel = useEditorStore((s) => s.closeOverridePanel);
 	const [query, setQuery] = useState('');
+	const listRef = useRef<HTMLDivElement>(null);
 
-	const isAnalyzing = status === 'analyzing';
+	const isAnalyzing = status === 'uploading' || status === 'analyzing';
 	const ordered = useMemo(() => readingOrder(regions), [regions]);
 	const filtered = useMemo(() => {
 		const q = query.trim().toLowerCase();
 		if (!q) return ordered;
 		return ordered.filter((region) => region.text.toLowerCase().includes(q));
 	}, [ordered, query]);
+
+	// Whatever region gets expanded — from a canvas click as much as a
+	// sidebar click — scrolls into view here, so a region near the bottom of
+	// a long list (or the one just clicked on canvas) is never left off-screen.
+	useEffect(() => {
+		if (!overridePanelRegionId) return;
+		const row = listRef.current?.querySelector<HTMLElement>(`[data-region-id="${overridePanelRegionId}"]`);
+		row?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+	}, [overridePanelRegionId]);
 
 	if (!imageUrl) return null;
 
@@ -46,7 +59,7 @@ export function LayersPanel() {
 				/>
 			</div>
 
-			<div className="flex-1 overflow-y-auto p-2">
+			<div ref={listRef} className="flex-1 overflow-y-auto p-2">
 				{isAnalyzing ? (
 					<div className="flex flex-col gap-2 p-1">
 						{[0, 1, 2, 3].map((i) => (
@@ -65,27 +78,49 @@ export function LayersPanel() {
 						{filtered.map((region) => {
 							const confidence = confidenceLevel(region.confidence);
 							const isSelected = region.id === selectedRegionId;
+							const isExpanded = region.id === overridePanelRegionId;
 							return (
-								<li key={region.id}>
+								<li
+									key={region.id}
+									data-region-id={region.id}
+									className={`relative overflow-hidden rounded-lg transition-shadow ${
+										isExpanded
+											? 'border border-link/25 bg-canvas-elevated shadow-[0_1px_6px_rgba(0,0,0,0.08)]'
+											: 'border border-transparent'
+									}`}
+								>
+									{isExpanded && <span className="absolute inset-y-0 left-0 w-[3px] bg-link" aria-hidden="true" />}
 									<button
 										type="button"
-										onClick={() => startEditing(region.id)}
-										className={`w-full rounded-md border p-2.5 text-left transition-colors ${
-											isSelected ? 'border-link bg-link/5' : 'border-transparent hover:border-hairline hover:bg-hairline-soft/60'
+										onClick={() => (isExpanded ? closeOverridePanel() : startEditingWithStyle(region.id))}
+										className={`flex w-full items-start gap-2 rounded-lg p-2.5 text-left transition-colors ${
+											isExpanded ? 'pl-3.5' : isSelected ? 'bg-hairline-soft/60' : 'hover:bg-hairline-soft/60'
 										}`}
 									>
-										<div className="flex items-start justify-between gap-2">
-											<p className="truncate text-[13px] text-ink">{region.text || '(empty)'}</p>
-											<span
-												title={`match confidence: ${region.confidence?.toFixed(2) ?? 'n/a'}`}
-												className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[confidence]}`}
-											/>
+										<svg
+											viewBox="0 0 16 16"
+											className={`mt-0.5 h-3 w-3 shrink-0 transition-transform ${isExpanded ? 'rotate-90 text-link' : 'text-faint'}`}
+											fill="none"
+										>
+											<path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+										</svg>
+										<div className="min-w-0 flex-1">
+											<div className="flex items-start justify-between gap-2">
+												<p className={`truncate text-[13px] ${isExpanded ? 'font-medium text-ink' : 'text-ink'}`}>
+													{region.text || '(empty)'}
+												</p>
+												<span
+													title={`match confidence: ${region.confidence?.toFixed(2) ?? 'n/a'}`}
+													className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[confidence]}`}
+												/>
+											</div>
+											<p className="mt-0.5 truncate text-[11px] text-faint">
+												{region.fontFamily ?? 'no match'}
+												{region.fontSize != null ? ` · ${region.fontSize.toFixed(0)}px` : ''}
+											</p>
 										</div>
-										<p className="mt-0.5 truncate text-[11px] text-faint">
-											{region.fontFamily ?? 'no match'}
-											{region.fontSize != null ? ` · ${region.fontSize.toFixed(0)}px` : ''}
-										</p>
 									</button>
+									{isExpanded && <FontOverridePanel />}
 								</li>
 							);
 						})}

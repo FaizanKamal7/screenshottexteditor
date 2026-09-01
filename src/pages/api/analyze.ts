@@ -21,10 +21,11 @@ export const POST: APIRoute = async ({ request }) => {
 		body: formData,
 	});
 
-	const body = await upstream.text();
-
-	return new Response(body, {
+	// Streamed through rather than buffered (no `await upstream.text()`): the
+	// pipeline service now sends NDJSON progress lines as each detected text
+	// region finishes, and buffering here would throw that progress away.
+	return new Response(upstream.body, {
 		status: upstream.status,
-		headers: { 'Content-Type': 'application/json' },
+		headers: { 'Content-Type': 'application/x-ndjson' },
 	});
 };

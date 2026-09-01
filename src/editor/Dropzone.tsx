@@ -117,6 +117,8 @@ function toRegion(region: AnalyzeRegion): Region {
 		lineHeight: region.line_height,
 		uiElement: toUiElement(region.ui_element),
 		fontCandidates: region.font_candidates.map(toFontCandidateScore),
+		offsetX: 0,
+		offsetY: 0,
 	};
 }
 
@@ -124,6 +126,8 @@ export function Dropzone() {
 	const setImage = useEditorStore((s) => s.setImage);
 	const setRegions = useEditorStore((s) => s.setRegions);
 	const setScaleFactor = useEditorStore((s) => s.setScaleFactor);
+	const setUploadProgress = useEditorStore((s) => s.setUploadProgress);
+	const setAnalyzeProgress = useEditorStore((s) => s.setAnalyzeProgress);
 	const setStatus = useEditorStore((s) => s.setStatus);
 	const status = useEditorStore((s) => s.status);
 	const errorMessage = useEditorStore((s) => s.errorMessage);
@@ -141,24 +145,82 @@ export function Dropzone() {
 			});
 
 			setImage(url, file, dimensions.width, dimensions.height);
-			setStatus('analyzing');
+			setStatus('uploading');
 
-			try {
-				const formData = new FormData();
-				formData.set('file', file);
-				const response = await fetch('/api/analyze', { method: 'POST', body: formData });
-				if (!response.ok) {
-					throw new Error(`analyze failed with status ${response.status}`);
+			const formData = new FormData();
+			formData.set('file', file);
+
+			// XMLHttpRequest, not fetch, because fetch has no upload-progress
+			// event — this is what drives the real (not simulated) progress bar
+			// while the file is in transit. The response side is also read
+			// incrementally (xhr.onprogress, not just onload): /api/analyze now
+			// streams newline-delimited JSON, one progress line per detected
+			// text region as the pipeline actually finishes it, plus a final
+			// result line — so "N of M" in the UI is real, not simulated.
+			const xhr = new XMLHttpRequest();
+			xhr.open('POST', '/api/analyze');
+
+			let bytesRead = 0;
+			let buffer = '';
+			let finalResult: AnalyzeResponse | null = null;
+			let streamError: string | null = null;
+
+			const handleLine = (line: string) => {
+				const trimmed = line.trim();
+				if (!trimmed) return;
+				try {
+					const message = JSON.parse(trimmed) as { type: string } & Partial<AnalyzeResponse> & {
+						current?: number;
+						total?: number;
+					};
+					if (message.type === 'progress' && typeof message.current === 'number' && typeof message.total === 'number') {
+						setAnalyzeProgress(message.current, message.total);
+					} else if (message.type === 'result') {
+						finalResult = message as unknown as AnalyzeResponse;
+					}
+				} catch {
+					streamError = 'could not parse analyze response';
 				}
-				const data = (await response.json()) as AnalyzeResponse;
-				setRegions(data.regions.map(toRegion));
-				setScaleFactor(data.scale_factor);
-				setStatus('idle');
-			} catch (err) {
-				setStatus('error', err instanceof Error ? err.message : 'analyze failed');
-			}
+			};
+
+			xhr.upload.onprogress = (event) => {
+				if (event.lengthComputable) {
+					setUploadProgress(Math.round((event.loaded / event.total) * 100));
+				}
+			};
+			xhr.upload.onload = () => {
+				setStatus('analyzing');
+			};
+
+			xhr.onprogress = () => {
+				const text = xhr.responseText;
+				buffer += text.slice(bytesRead);
+				bytesRead = text.length;
+				const lines = buffer.split('\n');
+				buffer = lines.pop() ?? '';
+				for (const line of lines) handleLine(line);
+			};
+
+			xhr.onload = () => {
+				if (buffer) {
+					handleLine(buffer);
+					buffer = '';
+				}
+				if (xhr.status >= 200 && xhr.status < 300 && finalResult && !streamError) {
+					setRegions(finalResult.regions.map(toRegion));
+					setScaleFactor(finalResult.scale_factor);
+					setStatus('idle');
+				} else {
+					setStatus('error', streamError ?? `analyze failed with status ${xhr.status}`);
+				}
+			};
+			xhr.onerror = () => {
+				setStatus('error', 'analyze request failed');
+			};
+
+			xhr.send(formData);
 		},
-		[setImage, setRegions, setScaleFactor, setStatus],
+		[setImage, setRegions, setScaleFactor, setUploadProgress, setAnalyzeProgress, setStatus],
 	);
 
 	const onDrop = useCallback(
@@ -186,7 +248,7 @@ export function Dropzone() {
 		>
 			<p className="text-body">Drop a screenshot here, or click to choose a file</p>
 			<p className="text-faint text-xs">PNG or JPEG</p>
-			{status === 'analyzing' && <p className="text-link text-xs">Analyzing…</p>}
+			{(status === 'uploading' || status === 'analyzing') && <p className="text-link text-xs">Uploading…</p>}
 			{status === 'error' && <p className="text-error text-xs">{errorMessage}</p>}
 			<input
 				ref={inputRef}

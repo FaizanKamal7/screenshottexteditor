@@ -1,0 +1,112 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Button from '../components/Button.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+
+const values = [
+	{
+		title: 'Deterministic over generative',
+		body: 'We built six discrete, testable stages instead of asking a generative model to hallucinate plausible text. Small, crisp UI fonts don’t survive a guess.',
+	},
+	{
+		title: 'Show the confidence, not just the result',
+		body: 'Every font match carries a visible confidence score. If we can’t reproduce your text closely enough to trust, we say so instead of shipping a bad edit.',
+	},
+	{
+		title: 'Your screenshots aren’t the product',
+		body: 'Uploads are deleted automatically and we never train on user images. Every export carries embedded content credentials marking it as edited.',
+	},
+];
+---
+
+<Layout
+	title="About — ScreenshotTextEditor"
+	description="Why we built ScreenshotTextEditor: a deterministic detect-match-rebuild pipeline for editing text in screenshots, instead of a generative guess."
+>
+	<Nav />
+
+	<main>
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-2xl">
+				<Eyebrow>About</Eyebrow>
+				<h1 class="mt-3 text-[32px] font-semibold tracking-tight text-ink">About ScreenshotTextEditor</h1>
+				<p class="mt-3 text-[15px] leading-relaxed text-body">
+					We build tools for the specific, annoying problem of changing the words in a screenshot without changing
+					anything else about it.
+				</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-2xl prose-content text-[15px] leading-relaxed text-body">
+				<p>
+					ScreenshotTextEditor started from a narrow frustration: fixing a typo, redacting a customer name, or
+					localizing an App Store screenshot always meant re-opening a design file that no longer existed, or
+					settling for a generative "AI" edit that got the font wrong and blurred the background behind it. Generic
+					photo editors handle crops and blurs well; they fall apart the moment a single line of small, crisp UI text
+					needs to change and everything around it needs to stay pixel-identical.
+				</p>
+				<p>
+					So we built the opposite of a generative shortcut: a deterministic pipeline that detects every text run in
+					an image, measures its actual font, size, weight, and color, and rebuilds only that region — verified
+					against the original before it ships.
+				</p>
+
+				<h2>What we're building toward</h2>
+				<p>
+					Today that's a free, no-signup single-image editor and a batch localization workflow for App Store and Play
+					Store screenshots. Both run on the same detect &rarr; match &rarr; rebuild pipeline described on the
+					<a href="/">homepage</a>.
+				</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-4xl">
+				<Eyebrow>What we care about</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">Principles behind the pipeline.</h2>
+				<div class="mt-8 grid gap-4 md:grid-cols-3">
+					{values.map((value) => <FeatureCard title={value.title}>{value.body}</FeatureCard>)}
+				</div>
+			</Container>
+		</section>
+
+		<section class="py-20">
+			<Container class="max-w-3xl text-center">
+				<h2 class="text-[26px] font-semibold tracking-tight text-ink">Questions, feedback, or a bug to report?</h2>
+				<p class="mt-3 text-[15px] text-body">We read everything that comes in through the contact page.</p>
+				<div class="mt-7 flex items-center justify-center gap-3">
+					<Button href="/contact" variant="primary">Contact us</Button>
+					<Button href="/app" variant="secondary">Open the editor</Button>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.prose-content :global(h2) {
+		margin-top: 2rem;
+		font-size: 18px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--color-ink);
+	}
+	.prose-content :global(p) {
+		margin-top: 0.75rem;
+	}
+	.prose-content :global(a) {
+		color: var(--color-link);
+	}
+	.prose-content :global(a:hover) {
+		text-decoration: underline;
+	}
+</style>

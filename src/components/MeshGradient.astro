@@ -1,16 +1,20 @@
 ---
-// The hero's only decorative flourish — a soft multi-stop bloom built from
-// DESIGN.md's develop/preview/ship gradient stops. Nowhere else on the site
-// uses color at this intensity; everything else stays ink-on-canvas.
+// The hero's only decorative flourish — a bigger, more saturated multi-stop
+// bloom built from DESIGN.md's develop/preview/ship gradient stops, sized to
+// the hero itself so it reads as a full mesh rather than a floating blob,
+// with a soft fade at the bottom into the section border. Nowhere else on
+// the site uses color at this intensity; everything else stays ink-on-canvas.
 ---
 
 <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
 	<div
-		class="absolute -top-40 left-1/2 h-[560px] w-[900px] -translate-x-1/2 opacity-[0.16] blur-3xl"
-		style="background: radial-gradient(closest-side at 20% 30%, #007cf0, transparent),
-			radial-gradient(closest-side at 75% 20%, #7928ca, transparent),
-			radial-gradient(closest-side at 55% 70%, #50e3c2, transparent),
-			radial-gradient(closest-side at 90% 80%, #ff4d4d, transparent);"
+		class="absolute inset-0 opacity-[0.5] blur-[70px]"
+		style="background: radial-gradient(38% 55% at 12% 15%, #007cf0, transparent),
+			radial-gradient(34% 48% at 85% 8%, #7928ca, transparent),
+			radial-gradient(42% 58% at 55% 58%, #50e3c2, transparent),
+			radial-gradient(36% 50% at 92% 70%, #ff4d4d, transparent),
+			radial-gradient(32% 46% at 4% 75%, #007cf0, transparent);"
 	>
 	</div>
+	<div class="absolute inset-x-0 bottom-0 h-32" style="background: linear-gradient(to bottom, transparent, var(--color-canvas));"></div>
 </div>
