@@ -1,15 +1,20 @@
+import base64
 import io
+import json
 import os
 import uuid
 from collections import defaultdict
 
 import numpy as np
-from fastapi import FastAPI, Header, HTTPException, UploadFile, status
+from fastapi import FastAPI, Form, Header, HTTPException, UploadFile, status
 from PIL import Image
+from pydantic import ValidationError
 
-from models import AnalyzeResponse, Region
+from fonts.registry import find_font_path
+from models import AnalyzeResponse, Region, RenderEdit, RenderRegionResult, RenderResponse
 from stages.detect import detect, estimate_scale_factor
 from stages.match import detect_ui_element, estimate_color, estimate_layout, match_font
+from stages.render_stage import compose_region
 from stages.separate import separate
 
 app = FastAPI(title="screenshottexteditor pipeline")
@@ -61,13 +66,20 @@ async def analyze(
                 bbox=line.bbox,
                 block_id=line.block_id,
                 chars=separation.char_boxes,
-                confidence=match.score,
+                # The render-match score alone can be confidently wrong when
+                # OCR misread the text itself (e.g. a spurious trailing
+                # period) — a font can still render that wrong text as a
+                # decent shape match. Taking the min with OCR's own
+                # recognition confidence surfaces that case as low-confidence
+                # instead of silently passing it through.
+                confidence=min(line.confidence, match.score),
                 alpha_mask_png=separation.alpha_mask_png,
                 font_family=match.family,
                 font_weight=match.weight,
                 font_size=match.size,
                 letter_spacing=match.letter_spacing,
                 baseline_y=separation.crop_bbox[1] + match.baseline_y,
+                x_offset=separation.crop_bbox[0] + match.x_offset,
                 text_color=color.text_color,
                 background=color.background,
                 ui_element=ui_element,
@@ -89,3 +101,58 @@ async def analyze(
     scale_factor = estimate_scale_factor(masks)
 
     return AnalyzeResponse(image_width=width, image_height=height, scale_factor=scale_factor, regions=regions)
+
+
+@app.post("/render", response_model=RenderResponse)
+async def render(
+    file: UploadFile,
+    edits: str = Form(...),
+    x_pipeline_secret: str | None = Header(default=None, alias="X-Pipeline-Secret"),
+) -> RenderResponse:
+    require_shared_secret(x_pipeline_secret)
+
+    try:
+        edit_list = [RenderEdit(**item) for item in json.loads(edits)]
+    except (json.JSONDecodeError, TypeError, ValidationError) as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"invalid edits payload: {exc}") from exc
+
+    contents = await file.read()
+    image = Image.open(io.BytesIO(contents)).convert("RGB")
+    image_bgr = np.array(image)[:, :, ::-1].copy()
+
+    results: list[RenderRegionResult] = []
+    for edit in edit_list:
+        try:
+            font_path = find_font_path(edit.font_family, edit.font_weight)
+        except ValueError as exc:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
+
+        separation = separate(image_bgr, edit.bbox)
+        local_baseline = edit.baseline_y - separation.crop_bbox[1]
+        local_x_offset = edit.x_offset - separation.crop_bbox[0]
+
+        compose_result = compose_region(
+            image_bgr,
+            separation.crop_bbox,
+            separation.alpha,
+            edit.background,
+            edit.text,
+            font_path,
+            edit.font_size,
+            edit.letter_spacing,
+            local_baseline,
+            edit.text_color,
+            edit.alignment,
+            local_x_offset,
+        )
+        image_bgr = compose_result.image_bgr
+        results.append(
+            RenderRegionResult(region_id=edit.region_id, font_size=compose_result.font_size, overflowed=compose_result.overflowed)
+        )
+
+    out_image = Image.fromarray(image_bgr[:, :, ::-1])
+    buffer = io.BytesIO()
+    out_image.save(buffer, format="PNG")
+    image_png_base64 = base64.b64encode(buffer.getvalue()).decode("ascii")
+
+    return RenderResponse(image_png_base64=image_png_base64, results=results)

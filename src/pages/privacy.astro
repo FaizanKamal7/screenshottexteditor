@@ -1,0 +1,102 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+
+const lastUpdated = 'September 1, 2026';
+---
+
+<Layout title="Privacy Policy — ScreenshotTextEditor" description="What we collect when you use ScreenshotTextEditor, how long we keep it, and why we never train on your screenshots.">
+	<Nav />
+
+	<main>
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-2xl">
+				<Eyebrow>Privacy</Eyebrow>
+				<h1 class="mt-3 text-[32px] font-semibold tracking-tight text-ink">Privacy policy</h1>
+				<p class="mt-2 text-[13px] text-mute">Last updated {lastUpdated}</p>
+			</Container>
+		</section>
+
+		<section class="py-16">
+			<Container class="max-w-2xl prose-content text-[15px] leading-relaxed text-body">
+				<p>
+					Screenshots regularly contain things you didn't mean to publish: account names, real customer data, internal
+					numbers. This page describes exactly what we do with the images you upload — plainly, not as a wall of legal
+					boilerplate.
+				</p>
+
+				<h2>What we collect</h2>
+				<p>
+					When you upload a screenshot, we process it in memory and on temporary storage to detect text, match fonts,
+					and render your edits. We collect the image itself, the text regions we detect in it, and the replacement
+					text you type. We don't require an account to use the single-image editor.
+				</p>
+
+				<h2>How long we keep it</h2>
+				<p>
+					Uploaded screenshots and any intermediate analysis are deleted automatically <strong>one hour</strong> after
+					upload by default. Batch localization jobs (CSV uploads and their rendered ZIP output) follow the same default
+					unless you're on a paid plan with a longer export window you've explicitly configured.
+				</p>
+
+				<h2>What we don't do</h2>
+				<ul>
+					<li>We do not use uploaded screenshots to train any model, ours or anyone else's.</li>
+					<li>We do not sell or share uploaded images with third parties.</li>
+					<li>We do not offer a way to strip the embedded content credentials from an export, at any tier — see our <a href="/terms">terms</a>.</li>
+				</ul>
+
+				<h2>Analytics</h2>
+				<p>
+					We collect minimal, aggregated usage analytics (page views, feature usage) to understand how the product is
+					used. This is separate from — and never derived from — the contents of the images you process.
+				</p>
+
+				<h2>Rate limiting</h2>
+				<p>
+					Anonymous use of the editor is rate-limited to keep the service available and to reduce automated abuse of the
+					free tier.
+				</p>
+
+				<h2>Contact</h2>
+				<p>
+					Questions about this policy can be sent to <a href="mailto:privacy@screenshottexteditor.com">privacy@screenshottexteditor.com</a>.
+				</p>
+			</Container>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.prose-content :global(h2) {
+		margin-top: 2rem;
+		font-size: 18px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--color-ink);
+	}
+	.prose-content :global(p) {
+		margin-top: 0.75rem;
+	}
+	.prose-content :global(ul) {
+		margin-top: 0.75rem;
+		list-style: disc;
+		padding-left: 1.25rem;
+	}
+	.prose-content :global(li) {
+		margin-top: 0.4rem;
+	}
+	.prose-content :global(a) {
+		color: var(--color-link);
+	}
+	.prose-content :global(a:hover) {
+		text-decoration: underline;
+	}
+</style>

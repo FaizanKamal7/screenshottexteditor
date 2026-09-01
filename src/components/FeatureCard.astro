@@ -1,0 +1,20 @@
+---
+interface Props {
+	title: string;
+	class?: string;
+}
+
+const { title, class: className = '' } = Astro.props;
+---
+
+<div
+	class:list={[
+		'rounded-xl border border-hairline bg-canvas-elevated p-6',
+		className,
+	]}
+>
+	<h3 class="text-[17px] font-semibold leading-tight text-ink">{title}</h3>
+	<div class="mt-2 text-[14px] leading-relaxed text-body">
+		<slot />
+	</div>
+</div>

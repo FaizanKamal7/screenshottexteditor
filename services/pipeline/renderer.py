@@ -57,3 +57,16 @@ def render_text(
     array = image.toarray(colorType=skia.kRGBA_8888_ColorType)  # HxWx4, uint8
     alpha = array[:, :, 3].astype(np.float32) / 255.0
     return alpha
+
+
+def measure_text_width(text: str, font_path: str, size_px: float, letter_spacing_px: float) -> float:
+    """Advance width of `text` at `size_px`, matching render_text's glyph positioning."""
+    if not text:
+        return 0.0
+    typeface = _load_typeface(font_path)
+    font = skia.Font(typeface, size_px)
+    glyphs = font.textToGlyphs(text)
+    if len(glyphs) == 0:
+        return 0.0
+    widths = font.getWidths(glyphs)
+    return float(sum(widths) + letter_spacing_px * (len(widths) - 1))

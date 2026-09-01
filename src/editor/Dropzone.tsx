@@ -55,6 +55,7 @@ interface AnalyzeRegion {
 	font_size: number | null;
 	letter_spacing: number;
 	baseline_y: number | null;
+	x_offset: number | null;
 	text_color: RgbColor | null;
 	background: AnalyzeBackgroundFill | null;
 	alignment: 'left' | 'center' | 'right';
@@ -109,6 +110,7 @@ function toRegion(region: AnalyzeRegion): Region {
 		fontSize: region.font_size,
 		letterSpacing: region.letter_spacing,
 		baselineY: region.baseline_y,
+		xOffset: region.x_offset,
 		textColor: region.text_color,
 		background: toBackgroundFill(region.background),
 		alignment: region.alignment,
@@ -138,7 +140,7 @@ export function Dropzone() {
 				img.src = url;
 			});
 
-			setImage(url, dimensions.width, dimensions.height);
+			setImage(url, file, dimensions.width, dimensions.height);
 			setStatus('analyzing');
 
 			try {

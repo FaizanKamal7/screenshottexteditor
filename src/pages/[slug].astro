@@ -1,0 +1,146 @@
+---
+export const prerender = true;
+
+import { getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Button from '../components/Button.astro';
+import { EditorIsland } from '../editor/EditorIsland';
+
+export async function getStaticPaths() {
+	const useCases = await getCollection('useCases');
+	return useCases.map((useCase) => ({
+		params: { slug: useCase.id },
+		props: { useCase },
+	}));
+}
+
+const { useCase } = Astro.props;
+const { Content } = await render(useCase);
+
+const allUseCases = await getCollection('useCases');
+const related = useCase.data.related
+	.map((slug) => allUseCases.find((entry) => entry.id === slug))
+	.filter((entry): entry is (typeof allUseCases)[number] => entry != null);
+---
+
+<Layout title={`${useCase.data.title} — ScreenshotTextEditor`} description={useCase.data.metaDescription}>
+	<Nav />
+
+	<main>
+		<section class="border-b border-hairline py-20">
+			<Container class="max-w-3xl text-center">
+				<Eyebrow>{useCase.data.eyebrow}</Eyebrow>
+				<h1 class="mt-4 text-[40px] font-semibold leading-[1.1] tracking-tight text-ink md:text-[48px] md:leading-[1.05] md:tracking-[-0.02em]">
+					{useCase.data.heroHeadline}
+				</h1>
+				<p class="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-body">
+					{useCase.data.heroSubhead}
+				</p>
+				<div class="mt-8 flex items-center justify-center gap-3">
+					<Button href="/app" variant="primary">Open the editor</Button>
+					<Button href="/pricing" variant="secondary">See pricing</Button>
+				</div>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-3xl">
+				<h2 class="text-[13px] font-medium uppercase tracking-wide text-faint">Why this is annoying today</h2>
+				<ul class="mt-5 space-y-4">
+					{
+						useCase.data.painPoints.map((point) => (
+							<li class="flex gap-3 text-[15px] leading-relaxed text-body">
+								<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-error" />
+								{point}
+							</li>
+						))
+					}
+				</ul>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline bg-hairline-soft/50 py-16">
+			<Container class="max-w-4xl">
+				<Eyebrow>Try it live</Eyebrow>
+				<h2 class="mt-2 text-[24px] font-semibold tracking-tight text-ink">
+					Drop in a screenshot and edit the text yourself.
+				</h2>
+				<p class="mt-2 text-[14px] text-mute">
+					This is the real editor, running against the live pipeline — not a mockup.
+				</p>
+				<div class="mt-6">
+					<EditorIsland client:only="react" embedded />
+				</div>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-3xl prose-content text-[15px] leading-relaxed text-body">
+				<Content />
+			</Container>
+		</section>
+
+		{
+			related.length > 0 && (
+				<section class="border-b border-hairline py-16">
+					<Container class="max-w-4xl">
+						<h2 class="text-[13px] font-medium uppercase tracking-wide text-faint">Related</h2>
+						<div class="mt-5 grid gap-4 md:grid-cols-3">
+							{related.map((entry) => (
+								<a
+									href={`/${entry.id}`}
+									class="rounded-xl border border-hairline bg-canvas-elevated p-5 transition-colors hover:border-ink/20"
+								>
+									<p class="text-[14px] font-medium text-ink">{entry.data.title}</p>
+									<p class="mt-1 text-[13px] text-mute">{entry.data.eyebrow}</p>
+								</a>
+							))}
+						</div>
+					</Container>
+				</section>
+			)
+		}
+
+		<section class="py-16">
+			<Container class="max-w-3xl text-center">
+				<h2 class="text-[26px] font-semibold tracking-tight text-ink">Ready to try it on your own screenshot?</h2>
+				<div class="mt-6">
+					<Button href="/app" variant="primary">Open the editor</Button>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.prose-content :global(h2) {
+		margin-top: 1.5rem;
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--color-ink);
+	}
+	.prose-content :global(p) {
+		margin-top: 0.75rem;
+	}
+	.prose-content :global(ol) {
+		margin-top: 0.75rem;
+		list-style: decimal;
+		padding-left: 1.25rem;
+	}
+	.prose-content :global(li) {
+		margin-top: 0.5rem;
+	}
+	.prose-content :global(a) {
+		color: var(--color-link);
+	}
+	.prose-content :global(a:hover) {
+		text-decoration: underline;
+	}
+</style>

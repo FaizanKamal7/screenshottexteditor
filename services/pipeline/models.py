@@ -50,6 +50,7 @@ class Region(BaseModel):
     font_size: float | None = None
     letter_spacing: float = 0.0
     baseline_y: float | None = None
+    x_offset: float | None = None
     text_color: tuple[int, int, int] | None = None
     background: BackgroundFill | None = None
     alignment: Literal["left", "center", "right"] = "left"
@@ -63,3 +64,36 @@ class AnalyzeResponse(BaseModel):
     image_height: int
     scale_factor: Literal[1, 2, 3]
     regions: list[Region]
+
+
+class RenderEdit(BaseModel):
+    """A single region's replacement text plus the style stage 3 already matched for it.
+
+    The browser holds document state (per the brief) and sends the full style
+    back on every /render call rather than the backend caching it, so /render
+    stays stateless and re-renders always start from the pristine upload.
+    """
+
+    region_id: str
+    bbox: tuple[float, float, float, float]
+    text: str
+    font_family: str
+    font_weight: int
+    font_size: float
+    letter_spacing: float
+    baseline_y: float
+    x_offset: float = 0.0
+    text_color: tuple[int, int, int]
+    background: BackgroundFill | None = None
+    alignment: Literal["left", "center", "right"] = "left"
+
+
+class RenderRegionResult(BaseModel):
+    region_id: str
+    font_size: float
+    overflowed: bool
+
+
+class RenderResponse(BaseModel):
+    image_png_base64: str
+    results: list[RenderRegionResult]

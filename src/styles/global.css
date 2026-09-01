@@ -11,6 +11,19 @@
 	--color-canvas: #fafafa;
 	--color-canvas-elevated: #ffffff;
 	--color-link: #0070f3;
+	--color-link-deep: #0761d1;
+	--color-link-soft: #d3e5ff;
 	--color-warning: #f5a623;
+	--color-warning-soft: #ffefcf;
 	--color-error: #ee0000;
+	--color-error-deep: #c50000;
+	--color-violet: #7928ca;
+	--color-cyan: #50e3c2;
+
+	--font-sans: 'Geist', 'Inter', Arial, sans-serif;
+	--font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+body {
+	font-family: var(--font-sans);
 }

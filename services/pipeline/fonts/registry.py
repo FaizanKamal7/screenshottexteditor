@@ -33,3 +33,17 @@ FONT_REGISTRY: list[FontCandidate] = [
     FontCandidate("Noto Sans", 400, "wide_coverage", "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf"),
     FontCandidate("Noto Sans", 700, "wide_coverage", "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf"),
 ]
+
+
+def find_font_path(family: str, weight: int) -> str:
+    """Exact (family, weight) match if registered, else the closest weight in that family."""
+    exact = next((c for c in FONT_REGISTRY if c.family == family and c.weight == weight), None)
+    if exact is not None:
+        return exact.file_path
+
+    same_family = [c for c in FONT_REGISTRY if c.family == family]
+    if not same_family:
+        raise ValueError(f"no registered font family named {family!r}")
+
+    closest = min(same_family, key=lambda c: abs(c.weight - weight))
+    return closest.file_path

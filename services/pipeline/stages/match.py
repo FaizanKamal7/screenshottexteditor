@@ -17,6 +17,31 @@ SIZE_SEARCH_MAX_RATIO = 1.35
 
 LETTER_SPACING_SEARCH_PX = 2.0
 
+# Real ink rarely starts exactly at the crop's left edge (CROP_PADDING_PX plus
+# normal glyph left-bearing), but every candidate used to be scored rendered
+# flush at x=0 regardless — a constant few-px horizontal miss that hurts IoU
+# for every candidate roughly equally, on text whose stroke widths are often
+# themselves only 1-3px. X_OFFSET_SEARCH_PX is a starting guess at how far
+# that miss can reasonably be, not a measured bound — see docs/pipeline-tuning.md.
+X_OFFSET_SEARCH_PX = 8.0
+X_OFFSET_GRID_STEPS = 7
+
+# The coarse->refine search below is coordinate descent (size, then
+# letter-spacing, then x-offset, one more size pass), which can converge to a
+# worse local optimum for some candidates than others — enough to let a
+# wrong font/weight "win" even when the right one would score better if its
+# own search had converged properly (confirmed: a regular-weight source
+# matched as bold, scoring 0.45 against a true reachable ~0.68). Running each
+# candidate's search from a second starting point (different initial
+# baseline guess and a half-step-shifted size grid) and keeping whichever
+# converges higher roughly doubles stage-3 render cost per region but
+# meaningfully reduces how often a candidate gets stuck. (baseline_ratio,
+# size_grid_phase) pairs — see _search_candidate.
+RESTART_CONFIGS: list[tuple[float, float]] = [
+    (0.8, 0.0),
+    (0.72, 0.5),
+]
+
 FLAT_BACKGROUND_VARIANCE_THRESHOLD = 15.0  # kept in sync with stages/separate.py
 
 UI_ELEMENT_PADDING_PX = 10
@@ -33,6 +58,7 @@ class MatchResult:
     size: float
     letter_spacing: float
     baseline_y: float
+    x_offset: float
     score: float
     top_candidates: list[FontCandidateScore]
 
@@ -72,66 +98,144 @@ def score_alpha(rendered: np.ndarray, target: np.ndarray) -> float:
     return IOU_WEIGHT * iou_score + SSIM_WEIGHT * ssim_score
 
 
-def match_font(text: str, target_alpha: np.ndarray, crop_shape: tuple[int, int], region_h: float) -> MatchResult:
-    """Coarse grid -> golden-section refine -> baseline fit, per the brief's stage-3 recipe.
+def _search_candidate(
+    text: str,
+    font_path: str,
+    canvas_size: tuple[int, int],
+    region_h: float,
+    target_alpha: np.ndarray,
+    default_baseline_ratio: float,
+    size_grid_phase: float,
+) -> tuple[float, float, float, float, float]:
+    """One full coarse-grid -> golden-section-refine search for one font file, from one starting point.
 
     Baseline is fit once per phase (not on every golden-section evaluation):
     refitting it inside every objective call would multiply the render count
     by the baseline search width and also make the objective noisier than
     golden-section's unimodality assumption tolerates.
+
+    Returns (size, letter_spacing, baseline_y, x_offset, score).
+    """
+    default_baseline = canvas_size[1] * default_baseline_ratio
+    grid_step = (region_h * (SIZE_SEARCH_MAX_RATIO - SIZE_SEARCH_MIN_RATIO)) / (SIZE_GRID_STEPS - 1)
+    phase_shift = grid_step * size_grid_phase
+    size_candidates = np.linspace(
+        region_h * SIZE_SEARCH_MIN_RATIO + phase_shift,
+        region_h * SIZE_SEARCH_MAX_RATIO + phase_shift,
+        SIZE_GRID_STEPS,
+    )
+
+    # 1. Coarse grid over size at a fixed default baseline, no per-size baseline fit yet.
+    best_coarse_size = float(size_candidates[0])
+    best_coarse_score = -1.0
+    for size in size_candidates:
+        rendered = render_text(text, font_path, size, 0.0, (0.0, default_baseline), canvas_size)
+        candidate_score = score_alpha(rendered, target_alpha)
+        if candidate_score > best_coarse_score:
+            best_coarse_score = candidate_score
+            best_coarse_size = float(size)
+
+    # 2. Fit baseline once at the coarse-best size (x still 0 here).
+    baseline = _fit_baseline(text, font_path, best_coarse_size, 0.0, 0.0, canvas_size, target_alpha)
+
+    # 2b. Fit x-offset once at the coarse-best size/baseline. Without
+    # this, every candidate below gets scored rendered flush at the
+    # crop's left edge regardless of where the real ink actually starts
+    # (CROP_PADDING_PX plus normal glyph left-bearing) — a near-constant
+    # few-px miss that suppresses IoU for every candidate about equally,
+    # which is what let a wrong family "win" by a small arbitrary margin.
+    x_offset = _coarse_x_offset(text, font_path, best_coarse_size, 0.0, baseline, canvas_size, target_alpha)
+
+    # 3. Refine size via golden-section, baseline and x-offset held fixed.
+    refined_size, _ = _refine_scalar(
+        lambda size: -score_alpha(
+            render_text(text, font_path, size, 0.0, (x_offset, baseline), canvas_size), target_alpha
+        ),
+        max(best_coarse_size * 0.7, 4.0),
+        best_coarse_size * 1.3,
+        xatol=0.5,
+    )
+
+    # 4. Refine letter-spacing via golden-section, size/baseline/x-offset held fixed.
+    refined_letter_spacing, _ = _refine_scalar(
+        lambda spacing: -score_alpha(
+            render_text(text, font_path, refined_size, spacing, (x_offset, baseline), canvas_size),
+            target_alpha,
+        ),
+        -LETTER_SPACING_SEARCH_PX,
+        LETTER_SPACING_SEARCH_PX,
+        xatol=0.1,
+    )
+
+    # 5. Final baseline fit at the refined size/letter-spacing.
+    final_baseline = _fit_baseline(
+        text, font_path, refined_size, refined_letter_spacing, x_offset, canvas_size, target_alpha
+    )
+
+    # 6. Refine x-offset via golden-section against score_alpha itself,
+    # bracketed around the coarse grid estimate from step 2b.
+    refined_x_offset, _ = _refine_scalar(
+        lambda x: -score_alpha(
+            render_text(text, font_path, refined_size, refined_letter_spacing, (x, final_baseline), canvas_size),
+            target_alpha,
+        ),
+        x_offset - X_OFFSET_SEARCH_PX / 2,
+        x_offset + X_OFFSET_SEARCH_PX / 2,
+        xatol=0.25,
+    )
+
+    # 7. One more size refine, narrowly bracketed around what step 3
+    # already found, but now using the properly-fit x-offset instead of
+    # step 2b's coarse one. Step 3 ran before x-offset was trustworthy,
+    # so it could settle on a slightly-off size; this second pass (same
+    # "fit once per phase" idea already used for baseline, extended one
+    # round further) corrects for that instead of carrying the bias
+    # through to the final score.
+    refined_size, _ = _refine_scalar(
+        lambda size: -score_alpha(
+            render_text(text, font_path, size, refined_letter_spacing, (refined_x_offset, final_baseline), canvas_size),
+            target_alpha,
+        ),
+        max(refined_size * 0.85, 4.0),
+        refined_size * 1.15,
+        xatol=0.5,
+    )
+    final_baseline = _fit_baseline(
+        text, font_path, refined_size, refined_letter_spacing, refined_x_offset, canvas_size, target_alpha
+    )
+    final_rendered = render_text(
+        text, font_path, refined_size, refined_letter_spacing, (refined_x_offset, final_baseline), canvas_size
+    )
+    final_score = score_alpha(final_rendered, target_alpha)
+
+    return refined_size, refined_letter_spacing, final_baseline, refined_x_offset, final_score
+
+
+def match_font(text: str, target_alpha: np.ndarray, crop_shape: tuple[int, int], region_h: float) -> MatchResult:
+    """Coarse grid -> golden-section refine -> baseline fit, per the brief's stage-3 recipe.
+
+    Each candidate is searched from every starting point in RESTART_CONFIGS,
+    keeping whichever converges to the higher score — coordinate descent
+    (which _search_candidate does internally) can get stuck in a worse local
+    optimum for some candidates than others, which is enough on its own to
+    let a wrong font/weight look like the best match.
     """
     canvas_size = (crop_shape[1], crop_shape[0])  # (width, height)
-    default_baseline = canvas_size[1] * 0.8  # reasonable guess for coarse ranking only
-    size_candidates = np.linspace(
-        region_h * SIZE_SEARCH_MIN_RATIO, region_h * SIZE_SEARCH_MAX_RATIO, SIZE_GRID_STEPS
-    )
 
     best: MatchResult | None = None
     all_scores: list[FontCandidateScore] = []
 
     for candidate in FONT_REGISTRY:
-        # 1. Coarse grid over size at a fixed default baseline, no per-size baseline fit yet.
-        best_coarse_size = float(size_candidates[0])
-        best_coarse_score = -1.0
-        for size in size_candidates:
-            rendered = render_text(text, candidate.file_path, size, 0.0, (0.0, default_baseline), canvas_size)
-            candidate_score = score_alpha(rendered, target_alpha)
-            if candidate_score > best_coarse_score:
-                best_coarse_score = candidate_score
-                best_coarse_size = float(size)
+        best_for_candidate: tuple[float, float, float, float, float] | None = None
+        for baseline_ratio, size_grid_phase in RESTART_CONFIGS:
+            attempt = _search_candidate(
+                text, candidate.file_path, canvas_size, region_h, target_alpha, baseline_ratio, size_grid_phase
+            )
+            if best_for_candidate is None or attempt[-1] > best_for_candidate[-1]:
+                best_for_candidate = attempt
 
-        # 2. Fit baseline once at the coarse-best size.
-        baseline = _fit_baseline(text, candidate.file_path, best_coarse_size, 0.0, canvas_size, target_alpha)
-
-        # 3. Refine size via golden-section, baseline held fixed.
-        refined_size, _ = _refine_scalar(
-            lambda size: -score_alpha(
-                render_text(text, candidate.file_path, size, 0.0, (0.0, baseline), canvas_size), target_alpha
-            ),
-            max(best_coarse_size * 0.7, 4.0),
-            best_coarse_size * 1.3,
-            xatol=0.5,
-        )
-
-        # 4. Refine letter-spacing via golden-section, size and baseline held fixed.
-        refined_letter_spacing, refined_neg_score = _refine_scalar(
-            lambda spacing: -score_alpha(
-                render_text(text, candidate.file_path, refined_size, spacing, (0.0, baseline), canvas_size),
-                target_alpha,
-            ),
-            -LETTER_SPACING_SEARCH_PX,
-            LETTER_SPACING_SEARCH_PX,
-            xatol=0.1,
-        )
-
-        # 5. Final baseline fit at the refined size/letter-spacing.
-        final_baseline = _fit_baseline(
-            text, candidate.file_path, refined_size, refined_letter_spacing, canvas_size, target_alpha
-        )
-        final_rendered = render_text(
-            text, candidate.file_path, refined_size, refined_letter_spacing, (0.0, final_baseline), canvas_size
-        )
-        final_score = score_alpha(final_rendered, target_alpha)
+        assert best_for_candidate is not None
+        size, letter_spacing, baseline_y, x_offset, final_score = best_for_candidate
 
         all_scores.append(FontCandidateScore(family=candidate.family, weight=candidate.weight, score=final_score))
 
@@ -139,9 +243,10 @@ def match_font(text: str, target_alpha: np.ndarray, crop_shape: tuple[int, int],
             best = MatchResult(
                 family=candidate.family,
                 weight=candidate.weight,
-                size=refined_size,
-                letter_spacing=refined_letter_spacing,
-                baseline_y=final_baseline,
+                size=size,
+                letter_spacing=letter_spacing,
+                baseline_y=baseline_y,
+                x_offset=x_offset,
                 score=final_score,
                 top_candidates=[],
             )
@@ -166,7 +271,7 @@ BASELINE_SEARCH_STEPS = 6
 
 
 def _fit_baseline(
-    text: str, font_path: str, size: float, letter_spacing: float, canvas_size: tuple[int, int], target_alpha: np.ndarray
+    text: str, font_path: str, size: float, letter_spacing: float, x_offset: float, canvas_size: tuple[int, int], target_alpha: np.ndarray
 ) -> float:
     height = canvas_size[1]
     low = max(height * 0.5, 1.0)
@@ -174,7 +279,7 @@ def _fit_baseline(
     best_baseline = height * 0.8
     best_corr = -1.0
     for baseline_y in np.linspace(low, high, BASELINE_SEARCH_STEPS):
-        rendered = render_text(text, font_path, size, letter_spacing, (0.0, float(baseline_y)), canvas_size)
+        rendered = render_text(text, font_path, size, letter_spacing, (x_offset, float(baseline_y)), canvas_size)
         if rendered.sum() == 0:
             continue
         row_corr = float(np.corrcoef(rendered.sum(axis=1), target_alpha.sum(axis=1))[0, 1])
@@ -184,6 +289,30 @@ def _fit_baseline(
             best_corr = row_corr
             best_baseline = float(baseline_y)
     return best_baseline
+
+
+def _coarse_x_offset(
+    text: str, font_path: str, size: float, letter_spacing: float, baseline_y: float, canvas_size: tuple[int, int], target_alpha: np.ndarray
+) -> float:
+    """Coarse grid over x-offset against score_alpha itself (mirrors the size search).
+
+    A column-profile correlation proxy (analogous to _fit_baseline's row
+    correlation) was tried first and rejected: unlike a word's vertical
+    density profile, which is fairly universal across latin fonts at a given
+    size, the horizontal column profile IS the word's silhouette, which
+    varies a lot between candidates and doesn't reliably peak at the same
+    x as the true IoU/SSIM optimum. Scoring the real objective directly,
+    same as the size grid, is more expensive but not noisy this way.
+    """
+    best_x_offset = 0.0
+    best_score = -1.0
+    for x_offset in np.linspace(-X_OFFSET_SEARCH_PX, X_OFFSET_SEARCH_PX, X_OFFSET_GRID_STEPS):
+        rendered = render_text(text, font_path, size, letter_spacing, (float(x_offset), baseline_y), canvas_size)
+        candidate_score = score_alpha(rendered, target_alpha)
+        if candidate_score > best_score:
+            best_score = candidate_score
+            best_x_offset = float(x_offset)
+    return best_x_offset
 
 
 def estimate_color(image_bgr: np.ndarray, alpha: np.ndarray, crop_bbox: tuple[int, int, int, int], bg_variance: float) -> ColorResult:
