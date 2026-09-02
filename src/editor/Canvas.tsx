@@ -6,6 +6,11 @@ export function readingOrder(regions: Region[]): Region[] {
 	return [...regions].sort((a, b) => a.bbox[1] - b.bbox[1] || a.bbox[0] - b.bbox[0]);
 }
 
+// Extra room (px) added on top of the measured text width, to cover the
+// input's own border (border-box sizing eats into content width) and a
+// little slack for the caret.
+const EDIT_WIDTH_BUFFER_PX = 8;
+
 // Breathing room, in CSS px, kept around the scaled image inside the pane.
 const FIT_PADDING = 48;
 
@@ -84,6 +89,21 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	const [draftText, setDraftText] = useState('');
 	const inputRef = useRef<HTMLInputElement>(null);
 	const paneRef = useRef<HTMLDivElement>(null);
+
+	// Measures draftText with a hidden DOM span carrying the exact same font
+	// styles as the editing input, rather than canvas measureText — canvas
+	// text shaping can quietly diverge from actual layout for a variable web
+	// font at a given weight, under-measuring just enough that the last
+	// character clips (seen at font-weight 400 but not 700). A same-CSS DOM
+	// element can't diverge from the input's own layout since it's the same
+	// engine measuring the same styles.
+	const measureSpanRef = useRef<HTMLSpanElement>(null);
+	const [measuredTextWidth, setMeasuredTextWidth] = useState(0);
+	useLayoutEffect(() => {
+		const span = measureSpanRef.current;
+		if (!span) return;
+		setMeasuredTextWidth(span.getBoundingClientRect().width);
+	});
 	const [fitScale, setFitScale] = useState(1);
 	const [zoom, setZoom] = useState(1);
 	const zoomRef = useRef(1);
@@ -311,6 +331,26 @@ export function Canvas({ embedded = false }: CanvasProps) {
 			onDoubleClick={() => setZoom(1)}
 			className="relative flex h-full w-full overflow-auto bg-canvas p-3 md:p-6"
 		>
+			{editingRegion && (
+				<span
+					ref={measureSpanRef}
+					aria-hidden="true"
+					style={{
+						position: 'fixed',
+						top: -9999,
+						left: -9999,
+						visibility: 'hidden',
+						whiteSpace: 'pre',
+						pointerEvents: 'none',
+						fontFamily: fontFamilyCss(editingRegion.fontFamily),
+						fontSize: editingRegion.fontSize ?? 16,
+						fontWeight: editingRegion.fontWeight ?? 400,
+						letterSpacing: editingRegion.letterSpacing,
+					}}
+				>
+					{draftText || ' '}
+				</span>
+			)}
 			{/* margin: auto (not the pane's own flex-centering) centers this while
 			    it fits, and — critically — collapses to 0 once it overflows the
 			    pane at higher zoom, so every edge stays reachable by scrolling.
@@ -340,6 +380,12 @@ export function Canvas({ embedded = false }: CanvasProps) {
 							const isDraggingThis = dragPreview?.regionId === region.id;
 							const previewDx = isDraggingThis ? dragPreview.dx : 0;
 							const previewDy = isDraggingThis ? dragPreview.dy : 0;
+							const editFontFamily = fontFamilyCss(region.fontFamily);
+							const editFontSize = region.fontSize ?? 16;
+							const editFontWeight = region.fontWeight ?? 400;
+							// Never shrink below the OCR box (w) — only grow to keep the
+							// live text from clipping as it's typed.
+							const editWidth = Math.max(w, measuredTextWidth + EDIT_WIDTH_BUFFER_PX);
 
 							return (
 								<div key={region.id} className="absolute" style={{ left: x + region.offsetX, top: y + region.offsetY }}>
@@ -376,12 +422,12 @@ export function Canvas({ embedded = false }: CanvasProps) {
 										style={{
 											left: 0,
 											top: 0,
-											width: w,
+											width: editWidth,
 											height: h,
 											transform: isDraggingThis ? `translate(${previewDx}px, ${previewDy}px)` : undefined,
-											fontFamily: fontFamilyCss(region.fontFamily),
-											fontSize: region.fontSize ?? undefined,
-											fontWeight: region.fontWeight ?? undefined,
+											fontFamily: editFontFamily,
+											fontSize: editFontSize,
+											fontWeight: editFontWeight,
 											letterSpacing: region.letterSpacing,
 											color: region.textColor ? `rgb(${region.textColor.join(',')})` : undefined,
 											textAlign: region.alignment,
