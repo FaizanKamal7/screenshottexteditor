@@ -87,6 +87,30 @@ body {
 	}
 }
 
+/* Canvas.tsx's "Detecting text…" loader step has no real progress data
+   (a single opaque OCR call) — this sweeps a highlight left to right on
+   loop so there's still a visible line moving, same intent as the
+   percentage-filled bar the "Analyzing text N of M" step gets once real
+   counts exist. */
+@keyframes loader-indeterminate {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(250%);
+	}
+}
+
+.loader-indeterminate-bar {
+	animation: loader-indeterminate 1.1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.loader-indeterminate-bar {
+		animation: none;
+	}
+}
+
 /* Hides the scrollbar on the demo's sidebar list (still scrollable — this
    is only the fallback for when an expanded Style panel needs more room
    than fits) without disabling scrolling itself. */

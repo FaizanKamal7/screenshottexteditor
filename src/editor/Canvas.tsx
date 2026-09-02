@@ -9,6 +9,20 @@ export function readingOrder(regions: Region[]): Region[] {
 // Breathing room, in CSS px, kept around the scaled image inside the pane.
 const FIT_PADDING = 48;
 
+// What's actually happening per line during the "Analyzing text N of M"
+// step (services/pipeline/main.py's _process_line: separate -> match_font
+// -> estimate_color -> detect_ui_element). Lines run in parallel across
+// worker processes, so no single one of these is "the" current step at any
+// given moment — cycling through them still tells the truth about what
+// the backend is doing as a whole, just not synced to one specific line.
+const MATCHING_STEP_CAPTIONS = [
+	'Separating text from background',
+	'Matching fonts and sizes',
+	'Detecting colors and styles',
+	'Checking buttons and layout',
+];
+const MATCHING_STEP_INTERVAL_MS = 1400;
+
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 1.5;
 // How tall (px, on screen) a region should read as once focused for editing.
@@ -42,6 +56,7 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	const isAnalyzing = status === 'analyzing';
 	const isBusy = isUploading || isAnalyzing;
 	const isDetecting = isAnalyzing && (!analyzeProgress || analyzeProgress.total === 0);
+	const isMatching = isAnalyzing && !isDetecting;
 
 	const [detectElapsedSeconds, setDetectElapsedSeconds] = useState(0);
 	useEffect(() => {
@@ -52,6 +67,19 @@ export function Canvas({ embedded = false }: CanvasProps) {
 		const interval = setInterval(() => setDetectElapsedSeconds((s) => s + 1), 1000);
 		return () => clearInterval(interval);
 	}, [isDetecting]);
+
+	const [matchingCaptionIndex, setMatchingCaptionIndex] = useState(0);
+	useEffect(() => {
+		if (!isMatching) {
+			setMatchingCaptionIndex(0);
+			return;
+		}
+		const interval = setInterval(
+			() => setMatchingCaptionIndex((i) => (i + 1) % MATCHING_STEP_CAPTIONS.length),
+			MATCHING_STEP_INTERVAL_MS,
+		);
+		return () => clearInterval(interval);
+	}, [isMatching]);
 
 	const [draftText, setDraftText] = useState('');
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -443,24 +471,26 @@ export function Canvas({ embedded = false }: CanvasProps) {
 							</>
 						) : analyzeProgress && analyzeProgress.total > 0 ? (
 							<>
-								<div className="h-1.5 w-full overflow-hidden rounded-full bg-hairline">
+								<div className="h-2 w-full overflow-hidden rounded-full bg-hairline">
 									<div
-										className="h-full rounded-full bg-link transition-[width] duration-150 ease-out"
+										className="h-full rounded-full bg-link transition-[width] duration-300 ease-out"
 										style={{ width: `${Math.round((analyzeProgress.current / analyzeProgress.total) * 100)}%` }}
 									/>
 								</div>
 								<p className="whitespace-nowrap text-[13px] text-body">
 									Analyzing text {analyzeProgress.current} of {analyzeProgress.total}…
 								</p>
-								<p className="whitespace-nowrap text-[11px] text-faint">Matching fonts and colors</p>
+								<p className="whitespace-nowrap text-[11px] text-faint">{MATCHING_STEP_CAPTIONS[matchingCaptionIndex]}</p>
 							</>
 						) : (
 							<>
-								<Spinner />
+								<div className="h-2 w-full overflow-hidden rounded-full bg-hairline">
+									<div className="loader-indeterminate-bar h-full w-2/5 rounded-full bg-link" />
+								</div>
 								<p className="whitespace-nowrap text-[13px] text-body">
 									Detecting text{detectElapsedSeconds > 0 ? `… ${detectElapsedSeconds}s` : '…'}
 								</p>
-								<p className="whitespace-nowrap text-[11px] text-faint">Scanning for text</p>
+								<p className="whitespace-nowrap text-[11px] text-faint">Reading text in image</p>
 							</>
 						)}
 					</div>
@@ -482,14 +512,5 @@ export function Canvas({ embedded = false }: CanvasProps) {
 				</div>
 			)}
 		</div>
-	);
-}
-
-function Spinner() {
-	return (
-		<svg className="h-6 w-6 animate-spin text-link" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-			<circle className="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
-			<path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-		</svg>
 	);
 }
