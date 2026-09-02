@@ -16,6 +16,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# PaddleOCR otherwise fetches its det/rec/cls model files from its CDN the
+# first time get_ocr_engine() runs — a ~70s stall inside whatever request
+# happens to be unlucky enough to trigger it, with no way for that request
+# to report progress on a plain network download. Baking the models into
+# the image at build time means every container starts warm, with no
+# runtime dependency on the CDN or on the paddleocr-models volume surviving.
+RUN python -c "from paddleocr import PaddleOCR; PaddleOCR(use_angle_cls=False, lang='en', show_log=False)"
+
 COPY . .
 
 EXPOSE 8000

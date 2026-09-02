@@ -41,6 +41,17 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	const isUploading = status === 'uploading';
 	const isAnalyzing = status === 'analyzing';
 	const isBusy = isUploading || isAnalyzing;
+	const isDetecting = isAnalyzing && (!analyzeProgress || analyzeProgress.total === 0);
+
+	const [detectElapsedSeconds, setDetectElapsedSeconds] = useState(0);
+	useEffect(() => {
+		if (!isDetecting) {
+			setDetectElapsedSeconds(0);
+			return;
+		}
+		const interval = setInterval(() => setDetectElapsedSeconds((s) => s + 1), 1000);
+		return () => clearInterval(interval);
+	}, [isDetecting]);
 
 	const [draftText, setDraftText] = useState('');
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -430,19 +441,26 @@ export function Canvas({ embedded = false }: CanvasProps) {
 								</div>
 								<p className="whitespace-nowrap text-[13px] text-body">Uploading screenshot… {uploadProgress}%</p>
 							</>
+						) : analyzeProgress && analyzeProgress.total > 0 ? (
+							<>
+								<div className="h-1.5 w-full overflow-hidden rounded-full bg-hairline">
+									<div
+										className="h-full rounded-full bg-link transition-[width] duration-150 ease-out"
+										style={{ width: `${Math.round((analyzeProgress.current / analyzeProgress.total) * 100)}%` }}
+									/>
+								</div>
+								<p className="whitespace-nowrap text-[13px] text-body">
+									Analyzing text {analyzeProgress.current} of {analyzeProgress.total}…
+								</p>
+								<p className="whitespace-nowrap text-[11px] text-faint">Matching fonts and colors</p>
+							</>
 						) : (
 							<>
 								<Spinner />
 								<p className="whitespace-nowrap text-[13px] text-body">
-									{analyzeProgress && analyzeProgress.total > 0
-										? `Analyzing text ${analyzeProgress.current} of ${analyzeProgress.total}…`
-										: 'Detecting text regions…'}
+									Detecting text{detectElapsedSeconds > 0 ? `… ${detectElapsedSeconds}s` : '…'}
 								</p>
-								<p className="whitespace-nowrap text-[11px] text-faint">
-									{analyzeProgress && analyzeProgress.total > 0
-										? 'Separating each line from its background, matching fonts, and estimating colors'
-										: 'Scanning the screenshot for lines of text'}
-								</p>
+								<p className="whitespace-nowrap text-[11px] text-faint">Scanning for text</p>
 							</>
 						)}
 					</div>
