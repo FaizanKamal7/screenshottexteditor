@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../Nav.astro';
 import Footer from '../Footer.astro';
+import LocaleRedirect from '../LocaleRedirect.astro';
 import Container from '../Container.astro';
 import Eyebrow from '../Eyebrow.astro';
 import Button from '../Button.astro';
@@ -20,6 +21,7 @@ const contactHref = localizedPath(lang, 'contact');
 ---
 
 <Layout title={t.about.metaTitle} description={t.about.metaDescription} lang={lang} alternates={getAlternateLinks('about')}>
+	<LocaleRedirect lang={lang} routeKey="about" />
 	<Nav lang={lang} routeKey="about" />
 
 	<main>

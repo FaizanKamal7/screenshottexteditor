@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../Nav.astro';
 import Footer from '../Footer.astro';
+import LocaleRedirect from '../LocaleRedirect.astro';
 import Container from '../Container.astro';
 import Eyebrow from '../Eyebrow.astro';
 import Button from '../Button.astro';
@@ -24,6 +25,7 @@ const tiers = [
 ---
 
 <Layout title={t.pricing.metaTitle} description={t.pricing.metaDescription} lang={lang} alternates={getAlternateLinks('pricing')}>
+	<LocaleRedirect lang={lang} routeKey="pricing" />
 	<Nav lang={lang} routeKey="pricing" />
 
 	<main>

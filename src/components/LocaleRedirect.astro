@@ -1,0 +1,53 @@
+---
+import { languages, localizedPath, defaultLocale, type TranslatableRouteKey } from '../i18n';
+
+interface Props {
+	lang: string;
+	routeKey: TranslatableRouteKey;
+}
+
+const { lang, routeKey } = Astro.props;
+
+// Only the default-locale (unprefixed) pages need to offer a redirect —
+// a visitor already on a locale-prefixed page has already landed where they want.
+const shouldRun = lang === defaultLocale;
+
+const targets = Object.fromEntries(
+	languages.filter((l) => l.code !== defaultLocale).map((l) => [l.code, localizedPath(l.code, routeKey)])
+);
+const supported = languages.map((l) => l.code);
+---
+
+{
+	shouldRun && (
+		<script define:vars={{ targets, supported }}>
+			(function () {
+				var COOKIE = 'pref_lang';
+				function getCookie(name) {
+					var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+					return m ? decodeURIComponent(m[1]) : null;
+				}
+				if (getCookie(COOKIE)) return;
+
+				function setCookie(name, value) {
+					document.cookie = name + '=' + value + '; path=/; max-age=' + 60 * 60 * 24 * 365 + '; samesite=lax';
+				}
+
+				var browserLangs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+				var detected = 'en';
+				for (var i = 0; i < browserLangs.length; i++) {
+					var primary = String(browserLangs[i]).split('-')[0].toLowerCase();
+					if (supported.indexOf(primary) !== -1) {
+						detected = primary;
+						break;
+					}
+				}
+
+				setCookie(COOKIE, detected);
+				if (detected !== 'en' && targets[detected]) {
+					window.location.replace(targets[detected]);
+				}
+			})();
+		</script>
+	)
+}

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../Nav.astro';
 import Footer from '../Footer.astro';
+import LocaleRedirect from '../LocaleRedirect.astro';
 import Container from '../Container.astro';
 import Eyebrow from '../Eyebrow.astro';
 import FeatureCard from '../FeatureCard.astro';
@@ -22,6 +23,7 @@ const channels = [
 ---
 
 <Layout title={t.contact.metaTitle} description={t.contact.metaDescription} lang={lang} alternates={getAlternateLinks('contact')}>
+	<LocaleRedirect lang={lang} routeKey="contact" />
 	<Nav lang={lang} routeKey="contact" />
 
 	<main>
