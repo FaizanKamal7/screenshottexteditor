@@ -436,7 +436,12 @@ export function Canvas({ embedded = false }: CanvasProps) {
 								<p className="whitespace-nowrap text-[13px] text-body">
 									{analyzeProgress && analyzeProgress.total > 0
 										? `Analyzing text ${analyzeProgress.current} of ${analyzeProgress.total}…`
-										: 'Analyzing your screenshot…'}
+										: 'Detecting text regions…'}
+								</p>
+								<p className="whitespace-nowrap text-[11px] text-faint">
+									{analyzeProgress && analyzeProgress.total > 0
+										? 'Separating each line from its background, matching fonts, and estimating colors'
+										: 'Scanning the screenshot for lines of text'}
 								</p>
 							</>
 						)}
