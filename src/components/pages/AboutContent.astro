@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../Nav.astro';
+import Footer from '../Footer.astro';
+import Container from '../Container.astro';
+import Eyebrow from '../Eyebrow.astro';
+import Button from '../Button.astro';
+import FeatureCard from '../FeatureCard.astro';
+import { getTranslations, localizedPath, getAlternateLinks } from '../../i18n';
+import { spaceBefore, spaceAfter } from '../../i18n/format';
+
+interface Props {
+	lang: string;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const homeHref = localizedPath(lang, '');
+const contactHref = localizedPath(lang, 'contact');
+---
+
+<Layout title={t.about.metaTitle} description={t.about.metaDescription} lang={lang} alternates={getAlternateLinks('about')}>
+	<Nav lang={lang} routeKey="about" />
+
+	<main>
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-2xl">
+				<Eyebrow>{t.about.eyebrow}</Eyebrow>
+				<h1 class="mt-3 text-[32px] font-semibold tracking-tight text-ink">{t.about.title}</h1>
+				<p class="mt-3 text-[15px] leading-relaxed text-body">
+					{t.about.intro}
+				</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-2xl prose-content text-[15px] leading-relaxed text-body">
+				<p>{t.about.p1}</p>
+				<p>{t.about.p2}</p>
+
+				<h2>{t.about.buildingTowardTitle}</h2>
+				<p>
+					{t.about.buildingTowardPre}{spaceAfter(lang)}<a href={homeHref}>{t.about.buildingTowardLinkText}</a>{spaceBefore(t.about.buildingTowardPost, lang)}{t.about.buildingTowardPost}
+				</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-4xl">
+				<Eyebrow>{t.about.valuesEyebrow}</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.about.valuesTitle}</h2>
+				<div class="mt-8 grid gap-4 md:grid-cols-3">
+					{t.about.values.map((value) => <FeatureCard title={value.title}>{value.body}</FeatureCard>)}
+				</div>
+			</Container>
+		</section>
+
+		<section class="py-20">
+			<Container class="max-w-3xl text-center">
+				<h2 class="text-[26px] font-semibold tracking-tight text-ink">{t.about.ctaTitle}</h2>
+				<p class="mt-3 text-[15px] text-body">{t.about.ctaSubtitle}</p>
+				<div class="mt-7 flex items-center justify-center gap-3">
+					<Button href={contactHref} variant="primary">{t.about.ctaPrimary}</Button>
+					<Button href="/app" variant="secondary">{t.about.ctaSecondary}</Button>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<Footer lang={lang} />
+</Layout>
+
+<style>
+	.prose-content :global(h2) {
+		margin-top: 2rem;
+		font-size: 18px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--color-ink);
+	}
+	.prose-content :global(p) {
+		margin-top: 0.75rem;
+	}
+	.prose-content :global(a) {
+		color: var(--color-link);
+	}
+	.prose-content :global(a:hover) {
+		text-decoration: underline;
+	}
+</style>

@@ -48,3 +48,53 @@
 body {
 	font-family: var(--font-sans);
 }
+
+/* AnimatedEditorDemo (src/components/demo) — click ripple on the fake
+   cursor and a soft attention pulse on the demo's Download button. */
+@keyframes editor-demo-ripple {
+	0% {
+		transform: scale(0.4);
+		opacity: 0.45;
+	}
+	100% {
+		transform: scale(2.4);
+		opacity: 0;
+	}
+}
+
+.editor-demo-ripple {
+	animation: editor-demo-ripple 550ms ease-out;
+}
+
+@keyframes editor-demo-pulse-ring {
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.35);
+	}
+	50% {
+		box-shadow: 0 0 0 5px rgba(0, 112, 243, 0);
+	}
+}
+
+.editor-demo-pulse-ring {
+	animation: editor-demo-pulse-ring 1400ms ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.editor-demo-ripple,
+	.editor-demo-pulse-ring {
+		animation: none !important;
+	}
+}
+
+/* Hides the scrollbar on the demo's sidebar list (still scrollable — this
+   is only the fallback for when an expanded Style panel needs more room
+   than fits) without disabling scrolling itself. */
+.editor-demo-no-scrollbar {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.editor-demo-no-scrollbar::-webkit-scrollbar {
+	display: none;
+}

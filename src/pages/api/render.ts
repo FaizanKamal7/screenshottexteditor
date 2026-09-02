@@ -1,10 +1,11 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
-	const serviceUrl = import.meta.env.PIPELINE_SERVICE_URL;
-	const sharedSecret = import.meta.env.PIPELINE_SHARED_SECRET;
+	const serviceUrl = env.PIPELINE_SERVICE_URL;
+	const sharedSecret = env.PIPELINE_SHARED_SECRET;
 
 	if (!serviceUrl || !sharedSecret) {
 		return new Response(JSON.stringify({ error: 'pipeline service not configured' }), {

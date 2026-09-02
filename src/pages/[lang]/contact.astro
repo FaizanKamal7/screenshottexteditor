@@ -1,0 +1,14 @@
+---
+export const prerender = true;
+
+import ContactContent from '../../components/pages/ContactContent.astro';
+import { languages, defaultLocale } from '../../i18n';
+
+export function getStaticPaths() {
+	return languages.filter((l) => l.code !== defaultLocale).map((l) => ({ params: { lang: l.code } }));
+}
+
+const { lang } = Astro.params;
+---
+
+<ContactContent lang={lang} />

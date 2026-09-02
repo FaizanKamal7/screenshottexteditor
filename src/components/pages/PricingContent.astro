@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../Nav.astro';
+import Footer from '../Footer.astro';
+import Container from '../Container.astro';
+import Eyebrow from '../Eyebrow.astro';
+import Button from '../Button.astro';
+import { getTranslations, getAlternateLinks } from '../../i18n';
+import { spaceBefore, spaceAfter } from '../../i18n/format';
+
+interface Props {
+	lang: string;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const termsHref = '/terms';
+
+const tiers = [
+	{ ...t.pricing.freeTier, price: '$0', href: '/app', variant: 'secondary' as const, highlighted: false },
+	{ ...t.pricing.proTier, price: '$19', href: '/app', variant: 'primary' as const, highlighted: true },
+	{ ...t.pricing.teamTier, price: '$49', href: '/terms', variant: 'secondary' as const, highlighted: false },
+];
+---
+
+<Layout title={t.pricing.metaTitle} description={t.pricing.metaDescription} lang={lang} alternates={getAlternateLinks('pricing')}>
+	<Nav lang={lang} routeKey="pricing" />
+
+	<main>
+		<section class="border-b border-hairline py-20">
+			<Container class="max-w-2xl text-center">
+				<Eyebrow>{t.pricing.eyebrow}</Eyebrow>
+				<h1 class="mt-3 text-[36px] font-semibold tracking-tight text-ink md:text-[44px]">
+					{t.pricing.title}
+				</h1>
+				<p class="mt-4 text-[15px] leading-relaxed text-body">
+					{t.pricing.subtitle}
+				</p>
+			</Container>
+		</section>
+
+		<section class="py-20">
+			<Container class="max-w-5xl">
+				<div class="grid gap-6 md:grid-cols-3">
+					{
+						tiers.map((tier) => (
+							<div
+								class={`flex flex-col rounded-xl border p-7 ${
+									tier.highlighted ? 'border-ink shadow-sm' : 'border-hairline'
+								} bg-canvas-elevated`}
+							>
+								<p class="text-[15px] font-semibold text-ink">{tier.name}</p>
+								<p class="mt-3 flex items-baseline gap-1">
+									<span class="text-[34px] font-semibold tracking-tight text-ink">{tier.price}</span>
+									<span class="text-[13px] text-mute">{tier.period}</span>
+								</p>
+								<p class="mt-2 text-[13px] leading-relaxed text-mute">{tier.description}</p>
+								<ul class="mt-5 flex-1 space-y-2.5">
+									{tier.features.map((feature) => (
+										<li class="flex items-start gap-2 text-[13px] leading-relaxed text-body">
+											<span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-ink" />
+											{feature}
+										</li>
+									))}
+								</ul>
+								<div class="mt-6">
+									<Button href={tier.href} variant={tier.variant} class="w-full">
+										{tier.ctaLabel}
+									</Button>
+								</div>
+							</div>
+						))
+					}
+				</div>
+
+				<div class="mt-14 rounded-xl border border-hairline bg-canvas-elevated p-6 text-[14px] text-body">
+					<p class="font-semibold text-ink">{t.pricing.notHereYetTitle}</p>
+					<p class="mt-2 leading-relaxed">
+						{t.pricing.notHereYetPre}{spaceAfter(lang)}<a href={termsHref} class="text-link hover:underline">{t.pricing.notHereYetLinkText}</a>{spaceBefore(t.pricing.notHereYetPost, lang)}{t.pricing.notHereYetPost}
+					</p>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<Footer lang={lang} />
+</Layout>

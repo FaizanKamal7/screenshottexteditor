@@ -1,0 +1,14 @@
+---
+export const prerender = true;
+
+import AboutContent from '../../components/pages/AboutContent.astro';
+import { languages, defaultLocale } from '../../i18n';
+
+export function getStaticPaths() {
+	return languages.filter((l) => l.code !== defaultLocale).map((l) => ({ params: { lang: l.code } }));
+}
+
+const { lang } = Astro.params;
+---
+
+<AboutContent lang={lang} />

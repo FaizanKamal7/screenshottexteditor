@@ -10,7 +10,7 @@ export function readingOrder(regions: Region[]): Region[] {
 const FIT_PADDING = 48;
 
 const MIN_ZOOM = 0.5;
-const MAX_ZOOM = 4;
+const MAX_ZOOM = 1.5;
 // How tall (px, on screen) a region should read as once focused for editing.
 const FOCUS_TARGET_HEIGHT_PX = 56;
 
