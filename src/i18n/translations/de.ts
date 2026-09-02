@@ -78,7 +78,7 @@ export const de: Translations = {
 		privacyEyebrow: 'Datenschutz',
 		privacyTitle: 'Deine Screenshots sind nicht das Produkt.',
 		privacyP:
-			'Screenshots enthalten oft Kontodaten, Kundennamen oder interne Zahlen. Hochgeladene Dateien werden automatisch gelöscht — standardmäßig nach einer Stunde — und wir trainieren nie mit Nutzerbildern. Jeder Export enthält zudem eingebettete Content-Credentials, die ihn als bearbeitet kennzeichnen, damit ein bearbeiteter Screenshot nie unbemerkt als Original durchgeht.',
+			'Screenshots enthalten oft Kontodaten, Kundennamen oder interne Zahlen. Hochgeladene Dateien werden automatisch gelöscht — standardmäßig nach einer Stunde — und wir trainieren nie mit Nutzerbildern. Jeder Export enthält zudem eingebettete Content-Credentials, die ihn als bearbeitet kennzeichnen, damit ein bearbeiteter Screenshot nie unbemerkt als Original durchgeht. Diese Credentials sind unsichtbare Metadaten, kein sichtbares Wasserzeichen — auf dem Bild selbst wird nichts aufgedruckt.',
 		privacyLink1: 'Datenschutzerklärung lesen →',
 		privacyLink2: 'Nutzungsbedingungen lesen →',
 
@@ -88,18 +88,18 @@ export const de: Translations = {
 		aboutToolEyebrow: 'Über das Tool',
 		aboutToolTitle: 'Was ist ein Screenshot-Text-Editor?',
 		aboutToolP1:
-			'ScreenshotTextEditor ist ein <strong class="text-ink">Screenshot-Text-Editor</strong>, der genau ein Problem lösen soll: die Worte in einem Screenshot ändern, ohne sonst etwas daran zu verändern. Die meisten, die nach einem <strong class="text-ink">Screenshot-Editor online</strong> suchen, stoßen auf dieselbe Mauer — generische Bildbearbeiter können zuschneiden, unscharf machen oder annotieren, aber sobald man eine Textzeile austauschen will, stimmt die Schrift nicht, der Abstand verschiebt sich, oder der Hintergrund hinter dem alten Text wird zum Schmierfleck. Dieses Tool folgt einer anderen Idee: die exakte Schriftart, Größe, Gewichtung und Farbe jedes Textabschnitts im Bild erkennen und dann so präzise neu aufbauen, dass die Bearbeitung selbst bei 400 % Zoom unsichtbar ist.',
+			'ScreenshotTextEditor löst ein sehr konkretes Problem: die Worte in einem Screenshot ändern, ohne sonst etwas daran zu verändern. Generische Bildbearbeiter können gut zuschneiden, unscharf machen und Anmerkungen hinzufügen, aber sobald man eine Textzeile austauschen will, stimmt die Schrift nicht, der Abstand verschiebt sich, oder der Bereich hinter dem alten Text wird zum Schmierfleck. Dieses Tool verfolgt einen engeren Ansatz: Es erkennt die exakte Schriftart, Größe, Gewichtung und Farbe jedes Textabschnitts im Bild und baut diesen Bereich dann so präzise neu auf, dass die Bearbeitung selbst bei 400 % Zoom unsichtbar ist.',
 		aboutToolP2:
-			'Als <strong class="text-ink">Screenshot-Text-Editor online</strong> läuft er vollständig im Browser — nichts zu installieren, kein Plugin, keine Design-Software nötig. Lade einen Screenshot oder ein beliebiges Bild mit Text hoch, klicke auf die zu ändernde Zeile, tippe deinen Ersatztext und lade das Ergebnis herunter. Da es sich um einen <strong class="text-ink">kostenlosen Screenshot-Editor</strong> für Einzelbilder handelt, kannst du die gesamte Pipeline — Erkennung, Schriftabgleich und Neuaufbau — ohne Konto ausprobieren. Es ist ein <strong class="text-ink">Screenshot-Text-Editor online, kostenlos, ohne Wasserzeichen</strong>, sodass das, was du exportierst, genau das ist, was du siehst — ohne Branding über deiner Arbeit.',
-		aboutToolH3a: 'KI-Screenshot-Editor, kein generischer Filter',
+			'Es läuft vollständig im Browser — nichts zu installieren, keine Design-Software nötig. Lade einen Screenshot oder ein beliebiges Bild mit Text hoch, klicke auf die Zeile, die du ändern möchtest, tippe deinen Ersatztext ein und lade das Ergebnis herunter. Bearbeitungen einzelner Bilder kannst du kostenlos ausprobieren, ganz ohne Konto. Exporte tragen kein sichtbares Wasserzeichen und kein Branding — das Einzige, was hinzugefügt wird, ist ein unsichtbares Content-Credentials-Tag in den Metadaten der Datei, weiter unten beschrieben, das das Bild als bearbeitet kennzeichnet.',
+		aboutToolH3a: 'Warum kein generativer KI-Editor?',
 		aboutToolP3:
-			'Es als <strong class="text-ink">KI-Screenshot-Editor</strong> zu bezeichnen, wird dem, was tatsächlich passiert, kaum gerecht. Statt ein generatives Bildmodell plausibel aussehenden Text halluzinieren zu lassen — eine Abkürzung, die bei kleinen, scharfen UI-Schriften meist scheitert —, durchläuft diese <strong class="text-ink">KI-Screenshot-Text-Editor</strong>-Pipeline sechs eigenständige, testbare Stufen. Zunächst erkennt OCR jeden Textabschnitt auf Zeichenebene und misst den Skalierungsfaktor des Bildes direkt an den Glyphen. Dann rendert das Tool deinen Ausgangstext in einer kurzen Liste plattformtypischer Schriftarten und bewertet jeden Kandidaten gegen die echte Pixelmaske, bis die nächstliegende Übereinstimmung für Schriftfamilie, Größe, Gewichtung und Laufweite gefunden ist. Erst dann wird der alte Text mit einer passenden Füllung entfernt und dein Ersatz mit derselben Grundlinie und demselben Antialiasing gerendert. Jede Übereinstimmung trägt einen sichtbaren Konfidenzwert — kann die <strong class="text-ink">kostenlose KI-Screenshot-Text-Editor</strong>-Pipeline deinen Originaltext nicht zuverlässig genug reproduzieren, sagt sie es dir, statt eine unpassend wirkende Bearbeitung stillschweigend auszuliefern.',
-		aboutToolH3b: 'Mehr als ein Screenshot-Editor — ein vollwertiger Online-Bildtext-Editor',
+			'Die meisten Tools, die sich als KI-Bildeditor bezeichnen, verlassen sich auf ein generatives Modell, das plausibel aussehenden Text halluziniert — eine Abkürzung, die bei kleinen, scharfen UI-Schriften meist scheitert. Diese Pipeline funktioniert anders: OCR erkennt jeden Textabschnitt auf Zeichenebene und misst den Skalierungsfaktor des Bildes direkt an den Glyphen. Das Tool rendert deinen Ausgangstext dann in einer kurzen Liste plattformtypischer Schriftarten und bewertet jeden Kandidaten gegen die echte Pixelmaske, bis es die nächstliegende Übereinstimmung für Schriftfamilie, Größe, Gewichtung und Laufweite findet. Erst dann entfernt es den alten Text mit einer passenden Füllung und rendert den Ersatztext mit derselben Grundlinie und demselben Antialiasing. Jede Übereinstimmung trägt einen sichtbaren Konfidenzwert — kann die Pipeline deinen Text nicht zuverlässig genug reproduzieren, sagt sie es dir, statt stillschweigend eine Bearbeitung auszuliefern, die unpassend wirkt.',
+		aboutToolH3b: 'Funktioniert mit mehr als nur Screenshots',
 		aboutToolP4:
-			'Auch wenn es als Screenshot-Text-Editor begann, funktioniert dieselbe Pipeline als universeller <strong class="text-ink">Bildtext-Editor online</strong>. Jedes PNG, JPG oder exportierte UI-Mockup mit Text lässt sich genauso verarbeiten — als <strong class="text-ink">KI-Bildtext-Editor</strong> für Marketinggrafiken, Dashboard-Exporte mit veralteten Zahlen oder App-Store-Screenshots, die in eine andere Sprache lokalisiert werden müssen. Da es sich um einen <strong class="text-ink">kostenlosen Online-Bildtext-Editor</strong> handelt, können Teams, die sonst jeden Screenshot für jede Sprache manuell in Figma neu bauen müssten, stattdessen einmal hochladen, eine CSV mit Übersetzungen übergeben und jede Sprachvariante in Originalschrift und -layout herunterladen.',
-		aboutToolH3c: 'Warum Teams diesen Online-Text-Editor für Screenshots wählen',
+			'Dieselbe Pipeline funktioniert mit jedem PNG oder JPG, das Text enthält, nicht nur mit Screenshots — Marketinggrafiken, Dashboard-Exporte mit veralteten Zahlen oder App-Store- und Play-Store-Screenshots, die lokalisiert werden müssen. Teams, die sonst jeden Screenshot für jede Sprache manuell in Figma neu bauen müssten, können stattdessen einmal hochladen, eine CSV mit Übersetzungen übergeben und jede Sprachvariante in der Originalschrift und im Originallayout herunterladen. Aktuell funktioniert es am besten bei flachen Hintergründen oder einfachen Farbverläufen mit lateinischer Schrift; unruhige Fotohintergründe sowie CJK- oder RTL-Schriften werden noch nicht unterstützt.',
+		aboutToolH3c: 'Für wen es gedacht ist',
 		aboutToolP5Pre:
-			'Ob schneller Tippfehler-Fix, das Schwärzen eines Kundennamens vor einer Demo oder ein Stapel lokalisierter App-Store-Screenshots — dieser <strong class="text-ink">Screenshot-Editor online</strong> ist so gebaut, dass die Bearbeitung unsichtbar bleibt, statt aufzufallen. Er ist kostenlos testbar, erfordert keine Design-Erfahrung, löscht deine Uploads automatisch und trainiert nie mit den hochgeladenen Bildern — das Einzige, was sich in deinem Screenshot ändert, ist der Text, den du ändern wolltest. Mehr dazu, warum wir es',
+			'Ob schneller Tippfehler-Fix, das Schwärzen eines Kundennamens vor einer Demo oder ein Stapel lokalisierter App-Store-Screenshots — das Ziel ist, dass die Bearbeitung unsichtbar bleibt, statt aufzufallen. Es ist kostenlos testbar, erfordert keine Design-Erfahrung, löscht deine Uploads automatisch und trainiert nie mit den hochgeladenen Bildern. Mehr dazu, warum wir es',
 		aboutToolP5LinkText: 'genau so gebaut haben',
 
 		faqEyebrow: 'FAQ',
@@ -113,7 +113,7 @@ export const de: Translations = {
 			{
 				question: 'Wie entfernt man Text aus einem Bild mit einem KI-Editor?',
 				answer:
-					'Wähle den zu entfernenden Textabschnitt aus und lösche seinen Inhalt oder nutze die Löschfunktion. Der KI-Bildtext-Editor füllt den Bereich hinter dem alten Text mit einem passenden Hintergrund — er rekonstruiert Farbe, Textur und Verläufe — sodass kein sichtbarer Fleck, keine Unschärfe und kein Wasserzeichen zurückbleibt. Das funktioniert für UI-Labels, Untertitel, Zeitstempel oder jede im Bild erkannte Textebene.',
+					'Wähle den zu entfernenden Textabschnitt aus und lösche seinen Inhalt oder nutze die Löschfunktion. Das Tool füllt den Bereich hinter dem alten Text passend zum umgebenden Hintergrund auf — einfarbige Flächen und einfache Farbverläufe —, sodass kein sichtbarer Fleck und keine Unschärfe zurückbleiben. Das funktioniert gut für UI-Labels, Untertitel und Zeitstempel auf flachen oder einfach verlaufenden Hintergründen; unruhige Fotohintergründe und komplexe Texturen werden noch nicht unterstützt.',
 			},
 			{
 				question: 'Wie funktioniert ein Bildtext-Editor online?',
@@ -138,7 +138,7 @@ export const de: Translations = {
 			{
 				question: 'Kann man den Text in jedem Bild ändern oder nur in Screenshots?',
 				answer:
-					'Du kannst Text in jedem Bild bearbeiten, nicht nur in Screenshots. Dieselbe Erkennungs-, Schriftabgleich- und Neuaufbau-Pipeline funktioniert bei UI-Mockups, Marketinggrafiken, Dashboard-Exporten, PNGs und Fotos mit Text — überall dort, wo das Tool einen Textabschnitt erkennt, kann es ihn ersetzen und dabei das ursprüngliche Aussehen bewahren.',
+					'Du kannst Text in jedem Bild bearbeiten, nicht nur in Screenshots — dieselbe Erkennungs-, Schriftabgleich- und Neuaufbau-Pipeline funktioniert bei UI-Mockups, Marketinggrafiken und Dashboard-Exporten. Aktuell funktioniert es am besten bei flachen Hintergründen oder einfachen Farbverläufen mit lateinischer Schrift; unruhige Fotohintergründe sowie CJK- oder RTL-Schriften stehen auf der Roadmap, werden aber noch nicht unterstützt.',
 			},
 		],
 		faqFooterPre: 'Noch Fragen?',
@@ -224,7 +224,7 @@ export const de: Translations = {
 			},
 			{
 				title: 'Deine Screenshots sind nicht das Produkt',
-				body: 'Uploads werden automatisch gelöscht, und wir trainieren nie mit Nutzerbildern. Jeder Export enthält eingebettete Content-Credentials, die ihn als bearbeitet kennzeichnen.',
+				body: 'Uploads werden automatisch gelöscht, und wir trainieren nie mit Nutzerbildern. Jeder Export enthält eingebettete Content-Credentials, die ihn als bearbeitet kennzeichnen. Das sind unsichtbare Metadaten, kein Stempel auf dem Bild — Exporte tragen kein sichtbares Wasserzeichen.',
 			},
 		],
 		ctaTitle: 'Fragen, Feedback oder ein Bug zu melden?',

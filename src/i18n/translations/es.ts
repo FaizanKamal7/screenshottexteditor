@@ -78,7 +78,7 @@ export const es: Translations = {
 		privacyEyebrow: 'Privacidad',
 		privacyTitle: 'Tus capturas de pantalla no son el producto.',
 		privacyP:
-			'Las capturas de pantalla suelen contener datos de cuenta, nombres de clientes o cifras internas. Los archivos subidos se eliminan automáticamente — una hora por defecto — y nunca entrenamos con las imágenes de los usuarios. Cada exportación también incluye credenciales de contenido incrustadas que la marcan como editada, para que una captura editada nunca pase silenciosamente por original.',
+			'Las capturas de pantalla suelen contener datos de cuenta, nombres de clientes o cifras internas. Los archivos subidos se eliminan automáticamente — una hora por defecto — y nunca entrenamos con las imágenes de los usuarios. Cada exportación también incluye credenciales de contenido incrustadas que la marcan como editada, para que una captura editada nunca pase silenciosamente por original. Esas credenciales son metadatos invisibles, no una marca de agua visual — no se estampa nada en la imagen en sí.',
 		privacyLink1: 'Leer la política de privacidad →',
 		privacyLink2: 'Leer los términos del servicio →',
 
@@ -88,18 +88,18 @@ export const es: Translations = {
 		aboutToolEyebrow: 'Sobre la herramienta',
 		aboutToolTitle: '¿Qué es un editor de texto para capturas de pantalla?',
 		aboutToolP1:
-			'ScreenshotTextEditor es un <strong class="text-ink">editor de texto para capturas de pantalla</strong> construido para resolver un problema muy concreto: cambiar las palabras de una captura sin cambiar nada más de ella. La mayoría de quienes buscan un <strong class="text-ink">editor de capturas online</strong> chocan con el mismo muro — los editores de fotos genéricos pueden recortar, difuminar o anotar una captura, pero en cuanto intentas cambiar una línea de texto, la fuente queda mal, el espaciado se desajusta o el fondo detrás del texto antiguo se convierte en una mancha. Esta herramienta se construyó con una idea distinta: detectar la fuente, el tamaño, el grosor y el color exactos de cada fragmento de texto de la imagen, y luego reconstruirlo con tanta precisión que la edición sea invisible incluso al 400% de zoom.',
+			'ScreenshotTextEditor resuelve un problema muy concreto: cambiar las palabras de una captura de pantalla sin cambiar nada más de ella. Los editores de fotos genéricos manejan bien los recortes, el desenfoque y las anotaciones, pero en cuanto intentas sustituir una línea de texto, la fuente queda mal, el espaciado se desajusta o la zona detrás del texto antiguo se convierte en una mancha. Esta herramienta sigue un enfoque más específico: detecta la fuente, el tamaño, el grosor y el color exactos de cada fragmento de texto de la imagen, y luego reconstruye esa zona con tanta precisión que la edición resulta invisible incluso al 400% de zoom.',
 		aboutToolP2:
-			'Como <strong class="text-ink">editor de texto para capturas online</strong>, funciona enteramente en el navegador — no hay nada que instalar, ningún plugin ni software de diseño necesario. Sube una captura o cualquier imagen con texto, haz clic en la línea que quieres cambiar, escribe tu texto de reemplazo y descarga el resultado. Al ser un <strong class="text-ink">editor de capturas gratuito</strong> para imágenes individuales, puedes probar todo el proceso — detección, coincidencia de fuente y reconstrucción — sin crear una cuenta. Es un <strong class="text-ink">editor de texto para capturas online, gratis y sin marca de agua</strong>, así que lo que exportas es exactamente lo que ves, sin ningún logo estampado sobre tu trabajo.',
-		aboutToolH3a: 'Editor de capturas con IA, no un filtro genérico',
+			'Funciona enteramente en el navegador, así que no hay nada que instalar ni software de diseño necesario. Sube una captura o cualquier imagen con texto, haz clic en la línea que quieres cambiar, escribe tu texto de reemplazo y descarga el resultado. Las ediciones de una sola imagen son gratis de probar, sin necesidad de crear una cuenta. Las exportaciones no llevan marca de agua ni branding visibles — lo único que se añade es una etiqueta de credenciales de contenido invisible en los metadatos del archivo, descrita más abajo, que identifica la imagen como editada.',
+		aboutToolH3a: '¿Por qué no un editor de IA generativa?',
 		aboutToolP3:
-			'Llamarlo <strong class="text-ink">editor de capturas con IA</strong> se queda corto respecto a lo que ocurre realmente por dentro. En vez de pedirle a un modelo generativo de imágenes que invente un texto con aspecto plausible — un atajo que suele fallar en fuentes de interfaz pequeñas y nítidas — este proceso de <strong class="text-ink">edición de texto con IA para capturas</strong> ejecuta seis etapas independientes y verificables. Primero, el OCR detecta cada fragmento de texto a nivel de carácter y mide el factor de escala de la imagen directamente a partir de los glifos. Después la herramienta renderiza tu texto original con una lista breve de fuentes probables según la plataforma y puntúa cada candidata contra la máscara real de píxeles hasta encontrar la coincidencia más cercana en familia tipográfica, tamaño, grosor y espaciado entre letras. Solo entonces borra el texto antiguo con un relleno equivalente y renderiza tu reemplazo con la misma línea base y el mismo suavizado. Cada coincidencia lleva una puntuación de confianza visible, así que si el proceso de <strong class="text-ink">edición de texto con IA gratis para capturas</strong> no puede reproducir tu texto original con suficiente fiabilidad, te lo indica — en lugar de entregar en silencio una edición que se nota.',
-		aboutToolH3b: 'Más que un editor de capturas — un editor de texto para imágenes online completo',
+			'La mayoría de las herramientas que se llaman a sí mismas editor de imágenes con IA se apoyan en un modelo generativo para inventar un texto de aspecto plausible — un atajo que suele fallar en fuentes de interfaz pequeñas y nítidas. Este proceso funciona de forma distinta: el OCR detecta cada fragmento de texto a nivel de carácter y mide el factor de escala de la imagen directamente a partir de los glifos. Después, la herramienta renderiza tu texto original con una lista breve de fuentes probables según la plataforma y puntúa cada candidata contra la máscara real de píxeles hasta encontrar la coincidencia más cercana en familia, tamaño, grosor y espaciado entre letras. Solo entonces borra el texto antiguo con un relleno equivalente y renderiza el reemplazo con la misma línea base y el mismo suavizado. Cada coincidencia lleva una puntuación de confianza visible, así que si el proceso no puede reproducir tu texto con la fiabilidad suficiente, te lo dice en lugar de entregar en silencio una edición que se nota.',
+		aboutToolH3b: 'Funciona con algo más que capturas de pantalla',
 		aboutToolP4:
-			'Aunque empezó como un editor de texto para capturas de pantalla, el mismo proceso funciona como un <strong class="text-ink">editor de texto para imágenes online</strong> de propósito general. Cualquier PNG, JPG o mockup de interfaz exportado con texto puede procesarse igual — como un <strong class="text-ink">editor de texto con IA para imágenes</strong> en gráficos de marketing, exportaciones de paneles con cifras desactualizadas o capturas de App Store que necesitan localizarse a otro idioma. Al ser un <strong class="text-ink">editor de texto para imágenes online y gratuito</strong>, los equipos que de otro modo reconstruirían cada captura a mano en Figma para cada idioma pueden en su lugar subirla una vez, entregar un CSV de traducciones y descargar cada variante de idioma renderizada con la fuente y el diseño originales.',
-		aboutToolH3c: 'Por qué los equipos eligen este editor de texto online para capturas',
+			'El mismo proceso funciona con cualquier PNG o JPG que contenga texto, no solo capturas de pantalla — gráficos de marketing, exportaciones de paneles con cifras desactualizadas o capturas de App Store y Play Store que necesitan localizarse. Los equipos que de otro modo reconstruirían cada captura a mano en Figma para cada idioma pueden en su lugar subirla una vez, entregar un CSV de traducciones y descargar cada variante de idioma renderizada con la fuente y el diseño originales. Por ahora funciona mejor con fondos planos o de degradado simple y texto en escritura latina; los fondos de foto recargados y las escrituras CJK o RTL todavía no son compatibles.',
+		aboutToolH3c: 'Para quién es',
 		aboutToolP5Pre:
-			'Ya necesites corregir una errata rápida, ocultar el nombre de un cliente antes de una demo o generar un lote de capturas de App Store localizadas, este <strong class="text-ink">editor de capturas online</strong> está pensado para que la edición pase desapercibida en vez de notarse. Es gratis para probar, no requiere conocimientos de diseño, elimina tus archivos subidos automáticamente y nunca entrena con las imágenes que subes — así que lo único que cambia en tu captura es el texto que quisiste cambiar. Lee más sobre',
+			'Ya sea para corregir una errata rápida, ocultar el nombre de un cliente antes de una demo o generar un lote de capturas de App Store localizadas, el objetivo es que la edición pase desapercibida en vez de notarse. Es gratis de probar, no requiere conocimientos de diseño, elimina tus archivos subidos automáticamente y nunca entrena con las imágenes que subes. Lee más sobre',
 		aboutToolP5LinkText: 'por qué lo construimos así',
 
 		faqEyebrow: 'Preguntas frecuentes',
@@ -113,7 +113,7 @@ export const es: Translations = {
 			{
 				question: '¿Cómo eliminar texto de una imagen con un editor de IA?',
 				answer:
-					'Selecciona el fragmento de texto que quieres eliminar y borra su contenido o usa la opción de borrado. El editor de texto para imágenes con IA rellena la zona detrás del texto antiguo con un fondo equivalente — reconstruyendo color, textura y degradados — de modo que no queda ningún parche visible, desenfoque ni marca de agua. Funciona con etiquetas de interfaz, subtítulos, marcas de tiempo o cualquier capa de texto detectada en la imagen.',
+					'Selecciona el fragmento de texto que quieres eliminar y borra su contenido o usa la opción de borrado. La herramienta rellena la zona detrás del texto antiguo para que coincida con el fondo circundante — colores sólidos y degradados simples — de modo que no queda ningún parche visible ni desenfoque. Esto funciona bien con etiquetas de interfaz, subtítulos y marcas de tiempo sobre fondos planos o con degradados simples; los fondos de foto recargados y las texturas complejas todavía no son compatibles.',
 			},
 			{
 				question: '¿Cómo funciona un editor de texto para imágenes online?',
@@ -138,7 +138,7 @@ export const es: Translations = {
 			{
 				question: '¿Se puede cambiar el texto de cualquier imagen o solo de capturas de pantalla?',
 				answer:
-					'Puedes editar texto en cualquier imagen, no solo en capturas de pantalla. El mismo proceso de detección, coincidencia de fuente y reconstrucción funciona en mockups de interfaz, gráficos de marketing, exportaciones de paneles, PNG y fotos que contengan texto — allí donde la herramienta pueda detectar un fragmento de texto, puede reemplazarlo conservando el aspecto original.',
+					'Puedes editar texto en cualquier imagen, no solo en capturas de pantalla — el mismo proceso de detección, coincidencia de fuente y reconstrucción funciona en mockups de interfaz, gráficos de marketing y exportaciones de paneles. Por ahora funciona mejor con fondos planos o de degradado simple y texto en escritura latina; los fondos de foto recargados y las escrituras CJK o RTL están en la hoja de ruta pero aún no son compatibles.',
 			},
 		],
 		faqFooterPre: '¿Sigues teniendo dudas?',
@@ -224,7 +224,7 @@ export const es: Translations = {
 			},
 			{
 				title: 'Tus capturas de pantalla no son el producto',
-				body: 'Los archivos subidos se eliminan automáticamente y nunca entrenamos con las imágenes de los usuarios. Cada exportación incluye credenciales de contenido que la marcan como editada.',
+				body: 'Los archivos subidos se eliminan automáticamente y nunca entrenamos con las imágenes de los usuarios. Cada exportación incluye credenciales de contenido que la marcan como editada. Son metadatos invisibles, no un sello sobre la imagen — las exportaciones no llevan marca de agua visible.',
 			},
 		],
 		ctaTitle: '¿Preguntas, comentarios o un error que reportar?',

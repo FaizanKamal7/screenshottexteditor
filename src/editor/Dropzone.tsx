@@ -248,6 +248,9 @@ export function Dropzone() {
 		>
 			<p className="text-body">Drop a screenshot here, or click to choose a file</p>
 			<p className="text-faint text-xs">PNG or JPEG</p>
+			<p className="text-faint px-4 text-center text-xs">
+				Latin-script text on flat or simple-gradient backgrounds — CJK and RTL scripts aren't supported yet
+			</p>
 			{(status === 'uploading' || status === 'analyzing') && <p className="text-link text-xs">Uploading…</p>}
 			{status === 'error' && <p className="text-error text-xs">{errorMessage}</p>}
 			<input

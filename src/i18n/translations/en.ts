@@ -78,7 +78,7 @@ export const en: Translations = {
 		privacyEyebrow: 'Privacy',
 		privacyTitle: "Your screenshots aren't the product.",
 		privacyP:
-			'Screenshots often carry account data, customer names, or internal numbers. Uploads are deleted automatically — one hour by default — and we never train on user images. Every export also carries embedded content credentials marking it as edited, so an edited screenshot never quietly passes as an original.',
+			'Screenshots often carry account data, customer names, or internal numbers. Uploads are deleted automatically — one hour by default — and we never train on user images. Every export also carries embedded content credentials marking it as edited, so an edited screenshot never quietly passes as an original. Those credentials are invisible metadata, not a visual watermark — nothing is stamped on the image itself.',
 		privacyLink1: 'Read the privacy policy →',
 		privacyLink2: 'Read the terms of service →',
 
@@ -88,18 +88,18 @@ export const en: Translations = {
 		aboutToolEyebrow: 'About the tool',
 		aboutToolTitle: 'What is a screenshot text editor?',
 		aboutToolP1:
-			'ScreenshotTextEditor is a <strong class="text-ink">screenshot text editor</strong> built to solve one very specific problem: changing the words in a screenshot without changing anything else about it. Most people who search for a <strong class="text-ink">screenshot editor online</strong> run into the same wall — generic photo editors can crop, blur, or annotate a screenshot, but the moment you try to swap out a line of text, the font is wrong, the spacing shifts, or the background behind the old text turns into a smudge. This tool was built around a different idea: detect the exact font, size, weight, and color of every text run in the image, then rebuild it so precisely that the edit is invisible at 400% zoom.',
+			"Screenshot Text Editor solves one specific problem: changing the words in a screenshot without changing anything else about it. Generic photo editors handle crops, blurs, and annotations well, but the moment you try to swap out a line of text, the font is wrong, the spacing shifts, or the area behind the old text turns into a smudge. This tool takes a narrower approach — it detects the exact font, size, weight, and color of every text run in the image, then rebuilds that region precisely enough that the edit is invisible at 400% zoom.",
 		aboutToolP2:
-			"As a <strong class=\"text-ink\">screenshot text editor online</strong>, it runs entirely in the browser — there's nothing to install, no plugin, and no design software required. Upload a screenshot or any image with text, click the line you want to change, type your replacement, and download the result. Because it's a <strong class=\"text-ink\">free screenshot editor</strong> for single images, you can try the full pipeline — detection, font-matching, and rebuild — without creating an account. It's a <strong class=\"text-ink\">screenshot text editor online free without watermark</strong>, so what you export is exactly what you see, with no branding stamped over your work.",
-		aboutToolH3a: 'AI screenshot editor, not a generic filter',
+			"It runs entirely in the browser, so there's nothing to install and no design software required. Upload a screenshot or any image with text, click the line you want to change, type your replacement, and download the result. Single-image edits are free to try, with no account required. Exports carry no visible watermark or branding — the only thing added is an invisible content-credentials tag in the file's metadata, described below, that identifies the image as edited.",
+		aboutToolH3a: 'Why not a generative AI editor?',
 		aboutToolP3:
-			"Calling this an <strong class=\"text-ink\">AI screenshot editor</strong> undersells what's actually happening under the hood. Instead of asking a generative image model to hallucinate plausible-looking text — a shortcut that tends to fall apart on small, crisp UI fonts — this <strong class=\"text-ink\">screenshot text editor AI</strong> pipeline runs six discrete, testable stages. First, OCR detects every text run at the character level and measures the image's scale factor directly from the glyphs. Then the tool renders your source text in a shortlist of platform-likely fonts and scores each candidate against the real pixel mask until it finds the closest match for font family, size, weight, and letter spacing. Only then does it erase the old text with a matching fill and render your replacement at the same baseline and anti-aliasing settings. Every match carries a visible confidence score, so if the <strong class=\"text-ink\">screenshot text editor AI free</strong> pipeline can't reproduce your original text closely enough to trust, it tells you — instead of quietly shipping an edit that looks off.",
-		aboutToolH3b: 'More than a screenshot editor — a full image text editor online',
+			"Most tools that call themselves an AI image editor lean on a generative model to hallucinate plausible-looking text — a shortcut that tends to fall apart on small, crisp UI fonts. This pipeline works differently: OCR detects every text run at the character level and measures the image's scale factor directly from the glyphs. The tool then renders your source text in a shortlist of platform-likely fonts and scores each candidate against the real pixel mask until it finds the closest match for family, size, weight, and letter spacing. Only then does it erase the old text with a matching fill and render the replacement at the same baseline and anti-aliasing. Every match carries a visible confidence score, so if the pipeline can't reproduce your text closely enough to trust, it says so instead of quietly shipping an edit that looks off.",
+		aboutToolH3b: 'Works on more than screenshots',
 		aboutToolP4:
-			'While it started as a screenshot text editor, the same pipeline works as a general-purpose <strong class="text-ink">image text editor online</strong>. Any PNG, JPG, or exported UI mockup with text can be processed the same way — as an <strong class="text-ink">AI image text editor</strong> for marketing graphics, dashboard exports with stale numbers, or App Store screenshots that need to be localized into another language. Because it\'s a <strong class="text-ink">free online image text editor</strong>, teams that would otherwise rebuild every screenshot by hand in Figma for each locale can instead upload once, hand over a CSV of translations, and download every language variant rendered in the original font and layout.',
-		aboutToolH3c: 'Why teams choose this online text editor for screenshots',
+			"The same pipeline works on any PNG or JPG with text in it, not just screenshots — marketing graphics, dashboard exports with stale numbers, or App Store and Play Store screenshots that need to be localized. Teams that would otherwise rebuild every screenshot by hand in Figma for each locale can instead upload once, hand over a CSV of translations, and download every language variant rendered in the original font and layout. It currently works best on flat and simple-gradient backgrounds with Latin-script text; busy photo backgrounds and CJK or RTL scripts aren't supported yet.",
+		aboutToolH3c: "Who it's for",
 		aboutToolP5Pre:
-			'Whether you need a quick typo fix, a redacted customer name before a demo, or a batch of localized App Store screenshots, this <strong class="text-ink">screenshot editor online</strong> is built to make the edit disappear rather than stand out. It\'s free to try, doesn\'t require a design background, deletes your uploads automatically, and never trains on the images you upload — so the only thing that changes in your screenshot is the text you meant to change. Read more about',
+			"Whether it's a quick typo fix, redacting a customer name before a demo, or a batch of localized App Store screenshots, the goal is to make the edit disappear rather than stand out. It's free to try, doesn't require a design background, deletes your uploads automatically, and never trains on the images you upload. Read more about",
 		aboutToolP5LinkText: 'why we built it this way',
 
 		faqEyebrow: 'FAQ',
@@ -113,7 +113,7 @@ export const en: Translations = {
 			{
 				question: 'How to remove text from image using AI editor?',
 				answer:
-					'Select the text run you want to remove and either delete its contents or use the erase option. The AI image text editor fills the area behind the old text with a matching background — reconstructing color, texture, and gradients — so there is no visible patch, blur, or watermark left behind. This works for UI labels, captions, timestamps, or any text layer detected in the image.',
+					"Select the text run you want to remove and either delete its contents or use the erase option. The tool fills the area behind the old text to match the surrounding background — solid colors and simple gradients — so there is no visible patch or blur left behind. This works well for UI labels, captions, and timestamps on flat or simply-graded backgrounds; busy photo backgrounds and complex textures aren't supported yet.",
 			},
 			{
 				question: 'How does an online image text editor work?',
@@ -138,7 +138,7 @@ export const en: Translations = {
 			{
 				question: 'Is it possible to change text of any image or just screenshot?',
 				answer:
-					'You can edit text in any image, not only screenshots. The same detection, font-matching, and rebuild pipeline works on UI mockups, marketing graphics, dashboard exports, PNGs, and photos that contain text — anywhere the tool can detect a text run, it can replace it while preserving the original look.',
+					"You can edit text in any image, not only screenshots — the same detection, font-matching, and rebuild pipeline works on UI mockups, marketing graphics, and dashboard exports. It currently works best on flat and simple-gradient backgrounds with Latin-script text; busy photo backgrounds and CJK or RTL scripts are on the roadmap but not supported yet.",
 			},
 		],
 		faqFooterPre: 'Still have questions?',
@@ -224,7 +224,7 @@ export const en: Translations = {
 			},
 			{
 				title: 'Your screenshots aren’t the product',
-				body: 'Uploads are deleted automatically and we never train on user images. Every export carries embedded content credentials marking it as edited.',
+				body: 'Uploads are deleted automatically and we never train on user images. Every export carries embedded content credentials marking it as edited — invisible metadata, not a visible watermark.',
 			},
 		],
 		ctaTitle: 'Questions, feedback, or a bug to report?',

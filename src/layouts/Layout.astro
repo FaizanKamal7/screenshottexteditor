@@ -4,7 +4,6 @@ import '../styles/global.css';
 interface Props {
 	title?: string;
 	description?: string;
-	keywords?: string;
 	ogImage?: string;
 	lang?: string;
 	alternates?: { hreflang: string; href: string }[];
@@ -13,7 +12,6 @@ interface Props {
 const {
 	title = 'Screenshot Text Editor — Free Online AI Image Text Editor',
 	description = 'Edit text in any screenshot or image online with our free AI screenshot text editor. Matches font, size, weight, and color — no watermark, no signup required.',
-	keywords = 'screenshot text editor, screenshot text editor online, screenshot text editor ai, screenshot text editor ai free, screenshot text editor free, screenshot editor, screenshot editor online, screenshot editor ai, ai screenshot editor, image text editor, image text editor online, ai image text editor, free online image text editor, online text editor',
 	ogImage = '/og-image.png',
 	lang = 'en',
 	alternates = [],
@@ -44,7 +42,6 @@ const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://screenshottexteditor.
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
 		<link rel="canonical" href={canonicalUrl} />
 		{alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
 
