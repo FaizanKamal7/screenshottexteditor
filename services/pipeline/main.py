@@ -40,7 +40,11 @@ PIPELINE_SHARED_SECRET = os.environ.get("PIPELINE_SHARED_SECRET", "")
 # this module, which would re-run any eager top-level pool creation and
 # spawn its own pool recursively. Deferring creation into a function that
 # only the request-handling process ever calls avoids that entirely.
-_WORKER_COUNT = max(1, min(os.cpu_count() or 4, 8))
+# Capped at 16 rather than left uncapped: each worker is one Skia-rendering,
+# numpy-scoring process running flat out, so beyond ~16 concurrent workers the
+# OS scheduler and forkserver/IPC overhead start eating into throughput rather
+# than adding to it. Override via PIPELINE_MAX_WORKERS for a specific host.
+_WORKER_COUNT = max(1, min(os.cpu_count() or 4, 16))
 _executor: ProcessPoolExecutor | None = None
 
 

@@ -396,9 +396,11 @@ export function Canvas({ embedded = false }: CanvasProps) {
 										onBlur={() => {
 											// Committing/cancelling unmounts this input, which can itself
 											// fire a native blur — guard so that stray event doesn't
-											// re-cancel a Tab-focused next region or re-fire after Enter.
+											// double-commit after Enter/Tab or re-fire after Escape.
+											// Commit (not cancel) here so tapping away on mobile — where
+											// there's no Enter key to confirm — still applies the edit.
 											if (useEditorStore.getState().editingRegionId === region.id) {
-												cancelEditing();
+												commitEdit(region.id, draftText);
 											}
 										}}
 										onKeyDown={(e) => {
