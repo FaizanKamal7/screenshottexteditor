@@ -1,4 +1,10 @@
-FROM python:3.12-slim
+# Pinned to the exact digest of the last known-good build (2026-09-01) rather
+# than floating python:3.12-slim: an unpinned tag re-resolves to whatever
+# Debian ships on every rebuild, and a later point-release drift is the
+# leading suspect for a paddlepaddle C++ segfault inside zlib's
+# inflateReset2 that reproduced on two builds against today's :slim tag but
+# never happened on this digest.
+FROM python:3.12-slim@sha256:e5c9fa26ffb76e11e0f054f30dc2523a2f9693f0c36c0cf1e39b27e152d899fc
 
 WORKDIR /app
 

@@ -32,7 +32,7 @@ def _border_ring_variance(gray: np.ndarray, ring_px: int = 2) -> float:
     return float(np.var(gray[mask].astype(np.float64)))
 
 
-def _flat_background_alpha(gray: np.ndarray, bg_variance_ring_px: int = 2) -> np.ndarray:
+def _flat_background_alpha(crop_bgr: np.ndarray, gray: np.ndarray, bg_variance_ring_px: int = 2) -> np.ndarray:
     h, w = gray.shape
     ring_px = min(bg_variance_ring_px, h // 2, w // 2) or 1
     border_mask = np.zeros_like(gray, dtype=bool)
@@ -40,8 +40,11 @@ def _flat_background_alpha(gray: np.ndarray, bg_variance_ring_px: int = 2) -> np
     border_mask[-ring_px:, :] = True
     border_mask[:, :ring_px] = True
     border_mask[:, -ring_px:] = True
-    bg_luminance = float(np.median(gray[border_mask]))
+    bg_color = np.median(crop_bgr[border_mask].astype(np.float64), axis=0)
 
+    # Otsu on grayscale is only used to pick out *which* pixels are text, not
+    # to measure how "text-like" each one is — that classification step is
+    # still fine on luminance alone.
     _, otsu = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     foreground_a = otsu == 255
     foreground_b = otsu == 0
@@ -50,9 +53,23 @@ def _flat_background_alpha(gray: np.ndarray, bg_variance_ring_px: int = 2) -> np
     if not text_mask.any():
         return np.zeros_like(gray, dtype=np.float32)
 
-    text_luminance = float(np.median(gray[text_mask]))
-    denom = max(abs(text_luminance - bg_luminance), 1e-3)
-    alpha = np.abs(gray.astype(np.float32) - bg_luminance) / denom
+    text_color = np.median(crop_bgr[text_mask].astype(np.float64), axis=0)
+
+    # Project each pixel's full BGR color onto the bg->text color axis,
+    # rather than collapsing to grayscale luminance first. A saturated but
+    # light text color (e.g. yellow on a white background) can sit almost on
+    # top of the background in luminance alone while still being clearly
+    # distinct in color — collapsing to gray shrinks the denominator below
+    # and amplifies ordinary compression/anti-aliasing noise into a
+    # thicker-than-real "ink" mask. That artificially thickened mask is what
+    # let stage 3's font matcher (see RESTART_CONFIGS in stages/match.py)
+    # settle on a bolder weight than the source text actually used, for any
+    # text color that isn't near-black.
+    axis = text_color - bg_color
+    denom = max(float(np.dot(axis, axis)), 1.0)
+    diff = crop_bgr.astype(np.float64) - bg_color
+    projection = diff.reshape(-1, 3) @ axis / denom
+    alpha = projection.reshape(h, w).astype(np.float32)
     return np.clip(alpha, 0.0, 1.0)
 
 
@@ -144,7 +161,7 @@ def separate(image_bgr: np.ndarray, bbox: tuple[float, float, float, float]) -> 
     bg_variance = _border_ring_variance(gray)
 
     if bg_variance < FLAT_BACKGROUND_VARIANCE_THRESHOLD:
-        alpha = _flat_background_alpha(gray)
+        alpha = _flat_background_alpha(crop, gray)
     else:
         alpha = _kmeans_alpha(crop)
 

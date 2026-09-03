@@ -104,6 +104,23 @@ export function Canvas({ embedded = false }: CanvasProps) {
 		if (!span) return;
 		setMeasuredTextWidth(span.getBoundingClientRect().width);
 	});
+
+	// The webfont `<link>` in Layout.astro uses `display=swap`: the browser
+	// paints with a fallback font immediately and swaps in the real one once
+	// it finishes downloading, reflowing the DOM on its own with no React
+	// re-render. If that swap happens after the measurement above, the input
+	// stays sized for the fallback font's (usually narrower) last-glyph
+	// advance forever — cropping exactly one trailing character — until the
+	// next keystroke happens to re-measure. Re-render on every
+	// still-in-flight font finishing catches a family that wasn't even
+	// requested yet when editing started, not just the first one.
+	const [, forceFontRemeasure] = useState(0);
+	useEffect(() => {
+		if (typeof document === 'undefined' || !('fonts' in document)) return;
+		const remeasure = () => forceFontRemeasure((t) => t + 1);
+		document.fonts.addEventListener('loadingdone', remeasure);
+		return () => document.fonts.removeEventListener('loadingdone', remeasure);
+	}, []);
 	const [fitScale, setFitScale] = useState(1);
 	const [zoom, setZoom] = useState(1);
 	const zoomRef = useRef(1);

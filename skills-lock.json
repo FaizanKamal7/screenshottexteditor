@@ -1,6 +1,18 @@
 {
   "version": 1,
   "skills": {
+    "google-agents-cli-deploy": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-deploy/SKILL.md",
+      "computedHash": "320088db1cd4e2967c8f25e24f97b2b66efa2b705a37829873afbbfead3dba0e"
+    },
+    "paddleocr-text-recognition": {
+      "source": "aidenwu0209/paddleocr-skills",
+      "sourceType": "github",
+      "skillPath": "skills/paddleocr-text-recognition/SKILL.md",
+      "computedHash": "2b778a6f2983d132676beed3433f2ce00bc52f1213bd47d2dcaa48f00bdeb86a"
+    },
     "tailwind-4-docs": {
       "source": "Lombiq/Tailwind-Agent-Skills",
       "sourceType": "github",

@@ -6,6 +6,20 @@ pillow>=11.0
 numpy<2.0
 setuptools
 opencv-python<=4.6.0.66
+# paddleocr pins opencv-python/opencv-contrib-python<=4.6.0.66, but its own
+# transitive dep pdf2docx requires opencv-python-headless>=4.5 with no upper
+# bound — left unpinned, pip resolves it to whatever's newest today, landing
+# three OpenCV builds of mismatched vintage (and mismatched bundled zlib) in
+# one process. That's what caused zlib.error/segfaults inside unrelated
+# compiled extensions (pyclipper, paddlepaddle, scipy) depending on which
+# loaded first — reproduced identically across Cloud Build and a fully
+# separate local Docker build. Pinning to match its siblings' vintage.
+opencv-python-headless<=4.6.0.66
+# Pinned below paddleocr's default resolve (1.4.0): that version's cp312
+# manylinux wheel threw the same zlib error on import of its compiled
+# _pyclipper extension before the opencv-headless mismatch above was found —
+# kept pinned since 1.3.0.post6 is a known-stable release either way.
+pyclipper==1.3.0.post6
 paddlepaddle==2.6.2
 paddleocr==2.7.3
 skia-python==144.0.post2
