@@ -3,9 +3,11 @@ import io
 import json
 import multiprocessing
 import os
+import time
 import uuid
 from collections import defaultdict
 from concurrent.futures import ProcessPoolExecutor, as_completed
+from dataclasses import dataclass
 
 import numpy as np
 from fastapi import FastAPI, Form, Header, HTTPException, UploadFile, status
@@ -83,23 +85,48 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-def _process_line(image_bgr: np.ndarray, line: DetectedLine) -> tuple[Region, np.ndarray]:
+@dataclass
+class LineTimings:
+    """CPU seconds one worker actually spent in each stage of one line's
+    stage-2/stage-3 work — measured inside the worker process, so this is
+    real per-stage cost regardless of how many workers ran concurrently
+    (unlike wall-clock time from the parent, which only shows the phase's
+    total span). main.py's `_run_analysis` sums these across every line to
+    report where CPU time is actually going (see docs/pipeline-tuning.md).
+    """
+
+    separate_s: float
+    match_s: float
+    color_s: float
+    ui_s: float
+
+
+def _process_line(image_bgr: np.ndarray, line: DetectedLine, region_id: str) -> tuple[Region, np.ndarray, LineTimings]:
     """One detected line's full stage-2/stage-3 work: separate, match font, estimate color/UI.
 
     Runs inside a worker process (see `_executor` above) — must not touch
-    any state that isn't passed in as an argument.
+    any state that isn't passed in as an argument. `region_id` is generated
+    by the caller (not here, as it used to be) and reused for the same
+    line's "detected" stub, "region" stream message, and final `result`
+    entry, so the frontend can match them up by id as progressively richer
+    versions of the same region arrive.
     """
+    t0 = time.perf_counter()
     separation = separate(image_bgr, line.bbox)
+    t1 = time.perf_counter()
 
     region_h = line.bbox[3]
     crop_shape = separation.alpha.shape
 
     match = match_font(line.text, separation.alpha, crop_shape, region_h)
+    t2 = time.perf_counter()
     color = estimate_color(image_bgr, separation.alpha, separation.crop_bbox, separation.bg_variance)
+    t3 = time.perf_counter()
     ui_element = detect_ui_element(image_bgr, line.bbox)
+    t4 = time.perf_counter()
 
     region = Region(
-        id=str(uuid.uuid4()),
+        id=region_id,
         text=line.text,
         bbox=line.bbox,
         block_id=line.block_id,
@@ -123,17 +150,48 @@ def _process_line(image_bgr: np.ndarray, line: DetectedLine) -> tuple[Region, np
         ui_element=ui_element,
         font_candidates=match.top_candidates,
     )
-    return region, separation.alpha
+    timings = LineTimings(separate_s=t1 - t0, match_s=t2 - t1, color_s=t3 - t2, ui_s=t4 - t3)
+    return region, separation.alpha, timings
+
+
+def _log_analyze_timings(timings: dict) -> None:
+    """One-line, greppable timing report per /analyze request (see the
+    stage breakdown docstring on `_run_analysis`). Plain print rather than
+    `logging` — this is ad-hoc measurement instrumentation, not a
+    permanent log line, and print guarantees it lands in container stdout
+    without depending on whatever logging config uvicorn/the deployment
+    happens to have.
+    """
+    print(f"analyze_timings {json.dumps(timings)}", flush=True)
 
 
 def _run_analysis(contents: bytes):
     """Generator driving /analyze's NDJSON stream.
 
-    Yields a `{"type": "progress", ...}` line after each detected line is
-    processed (the only per-item work the client can't otherwise observe),
-    then a final `{"type": "result", ...}` line carrying the same shape
-    `AnalyzeResponse` used to return in one shot. Kept as a plain generator
-    (not async) since every step here is CPU-bound, not I/O-bound.
+    Three message types, in order, all additive on top of the previous
+    contract (existing consumers that only handle "progress"/"result" keep
+    working unchanged):
+
+    1. One `{"type": "detected", ...}` line, emitted right after OCR
+       detection finishes and before any per-line enrichment (separate/
+       font-match/color/UI-detect) starts — carries every detected line's
+       text/bbox/block_id/OCR-confidence as bare `Region`s (everything
+       enrichment would fill in left at its default: no font, no color, no
+       alpha mask). This is the frontend's first chance to show something
+       real: the text existed and roughly where, well before the
+       expensive part (font matching) has run even once.
+    2. One `{"type": "progress", ...}` and one `{"type": "region", ...}`
+       line per detected line, as each one's full enrichment finishes —
+       `region` carries that line's complete `Region` (same id as its
+       "detected" stub, so a client can replace-by-id) at whatever
+       alignment/line_height default it has before block-level layout
+       (below) corrects it.
+    3. One final `{"type": "result", ...}` line, same shape `AnalyzeResponse`
+       as returned in one shot — every region's alignment/line_height now
+       block-corrected, the authoritative final state.
+
+    Kept as a plain generator (not async) since every step here is
+    CPU-bound, not I/O-bound.
 
     Lines are submitted to `_executor` up front and streamed back via
     `as_completed`, so `current` counts completions rather than a fixed
@@ -142,29 +200,67 @@ def _run_analysis(contents: bytes):
     lists are still reassembled in original detection order (line order
     matters for display and for `estimate_scale_factor`'s consumers, even
     though completion order doesn't).
+
+    Stage timings are collected throughout and printed once at the end via
+    `_log_analyze_timings` — this is deliberately not part of the response
+    schema (keeps the wire contract narrowly scoped to what the frontend
+    actually consumes); it's meant to be read from container/test logs
+    while deciding where the next real optimization should go.
     """
+    request_start = time.perf_counter()
+
     image = Image.open(io.BytesIO(contents)).convert("RGB")
     width, height = image.size
     image_bgr = np.array(image)[:, :, ::-1].copy()
 
     detect_result = detect(image_bgr)
-    total = len(detect_result.lines)
+    detect_done = time.perf_counter()
+    lines = detect_result.lines
+    total = len(lines)
+
+    # Stable per-line ids, generated once here rather than inside
+    # _process_line as before: the same id has to appear on this line's
+    # "detected" stub below, its later "region" message, and the final
+    # "result" entry for a client to recognize them as the same region.
+    region_ids = [str(uuid.uuid4()) for _ in lines]
+
+    detected_regions = [
+        Region(id=region_ids[i], text=line.text, bbox=line.bbox, block_id=line.block_id, confidence=line.confidence)
+        for i, line in enumerate(lines)
+    ]
+    time_to_detected_s = time.perf_counter() - request_start
+    yield json.dumps({"type": "detected", "total": total, "regions": [r.model_dump() for r in detected_regions]}) + "\n"
     yield json.dumps({"type": "progress", "current": 0, "total": total}) + "\n"
 
     regions: list[Region | None] = [None] * total
     masks: list[np.ndarray | None] = [None] * total
 
     executor = _get_executor()
-    futures = {executor.submit(_process_line, image_bgr, line): index for index, line in enumerate(detect_result.lines)}
+    futures = {
+        executor.submit(_process_line, image_bgr, line, region_ids[i]): i for i, line in enumerate(lines)
+    }
+
+    enrich_start = time.perf_counter()
+    separate_s_total = 0.0
+    match_s_total = 0.0
+    color_s_total = 0.0
+    ui_s_total = 0.0
 
     completed = 0
     for future in as_completed(futures):
         index = futures[future]
-        region, mask = future.result()
+        region, mask, timings = future.result()
         regions[index] = region
         masks[index] = mask
+        separate_s_total += timings.separate_s
+        match_s_total += timings.match_s
+        color_s_total += timings.color_s
+        ui_s_total += timings.ui_s
         completed += 1
         yield json.dumps({"type": "progress", "current": completed, "total": total}) + "\n"
+        yield json.dumps({"type": "region", "current": completed, "total": total, "region": region.model_dump()}) + "\n"
+
+    enrich_done = time.perf_counter()
 
     blocks: dict[str, list[int]] = defaultdict(list)
     for index, region in enumerate(regions):
@@ -180,6 +276,24 @@ def _run_analysis(contents: bytes):
     scale_factor = estimate_scale_factor(masks)
 
     response = AnalyzeResponse(image_width=width, image_height=height, scale_factor=scale_factor, regions=regions)
+
+    total_request_s = time.perf_counter() - request_start
+    _log_analyze_timings(
+        {
+            "region_count": total,
+            "engine_init_s": round(detect_result.engine_init_s, 4),
+            "ocr_run_s": round(detect_result.ocr_run_s, 4),
+            "detect_wall_s": round(detect_done - request_start, 4),
+            "time_to_detected_s": round(time_to_detected_s, 4),
+            "separation_cpu_s": round(separate_s_total, 4),
+            "font_matching_cpu_s": round(match_s_total, 4),
+            "enrichment_cpu_s": round(color_s_total + ui_s_total, 4),
+            "enrich_phase_wall_s": round(enrich_done - enrich_start, 4),
+            "time_to_full_result_s": round(total_request_s, 4),
+            "total_request_s": round(total_request_s, 4),
+        }
+    )
+
     yield json.dumps({"type": "result", **response.model_dump()}) + "\n"
 
 

@@ -1,3 +1,4 @@
+import time
 import uuid
 from dataclasses import dataclass
 
@@ -26,6 +27,14 @@ class DetectedLine:
 @dataclass
 class DetectResult:
     lines: list[DetectedLine]
+    # get_ocr_engine() is an lru_cache(maxsize=1) singleton: engine_init_s is
+    # the real PaddleOCR model load/construction cost on the first call in a
+    # given process (container cold start) and ~0 on every call after: The
+    # two are split out here rather than left folded into one "detect took
+    # Xs" number specifically so a cold-start spike doesn't get misread as
+    # slow OCR on every request — see main.py's timing log.
+    engine_init_s: float = 0.0
+    ocr_run_s: float = 0.0
 
 
 def _quad_to_bbox(quad: list[tuple[float, float]]) -> tuple[float, float, float, float]:
@@ -75,15 +84,20 @@ def group_into_blocks(
 
 
 def detect(image_bgr: np.ndarray) -> DetectResult:
+    engine_init_start = time.perf_counter()
     engine = get_ocr_engine()
+    engine_init_s = time.perf_counter() - engine_init_start
+
+    ocr_run_start = time.perf_counter()
     raw_lines = engine.run(image_bgr)
+    ocr_run_s = time.perf_counter() - ocr_run_start
 
     boxed = [
         {"text": raw.text, "bbox": _quad_to_bbox(raw.quad), "confidence": raw.confidence} for raw in raw_lines
     ]
     lines = group_into_blocks(boxed)
 
-    return DetectResult(lines=lines)
+    return DetectResult(lines=lines, engine_init_s=engine_init_s, ocr_run_s=ocr_run_s)
 
 
 def estimate_scale_factor(masks: list[np.ndarray]) -> int:

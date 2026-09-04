@@ -92,3 +92,46 @@ def test_analyze_streams_ndjson_progress_then_result(monkeypatch):
     assert "regions" in result
     assert isinstance(result["regions"], list)
     assert "image_width" in result and "image_height" in result and "scale_factor" in result
+
+
+def test_analyze_streams_detected_stub_before_enrichment(monkeypatch):
+    """The "detected" message (OCR text/bbox, no styling) must arrive before
+    any per-line enrichment work is even submitted, and every region id it
+    introduces must reappear unchanged on that line's later "region" message
+    and in the final "result" — that id continuity is what lets a client
+    replace-by-id as progressively richer versions of the same line arrive.
+    """
+    monkeypatch.setattr("stages.detect.get_ocr_engine", lambda: _FakeOcrEngine())
+
+    files = {"file": ("test.png", _multi_line_png_bytes(), "image/png")}
+
+    response = client.post("/analyze", files=files, headers={"X-Pipeline-Secret": SECRET})
+
+    assert response.status_code == 200
+    messages = _parse_ndjson(response.content)
+
+    assert messages[0]["type"] == "detected"
+
+    detected_messages = [m for m in messages if m["type"] == "detected"]
+    region_messages = [m for m in messages if m["type"] == "region"]
+    result_messages = [m for m in messages if m["type"] == "result"]
+
+    assert len(detected_messages) == 1
+    assert len(result_messages) == 1
+
+    detected = detected_messages[0]
+    assert detected["total"] == 3
+    assert len(detected["regions"]) == 3
+    for stub in detected["regions"]:
+        assert stub["text"]
+        assert stub["font_family"] is None
+        assert stub["alpha_mask_png"] is None
+
+    assert len(region_messages) == 3
+    for message in region_messages:
+        assert message["region"]["font_family"] is not None
+
+    detected_ids = {r["id"] for r in detected["regions"]}
+    region_message_ids = {m["region"]["id"] for m in region_messages}
+    result_ids = {r["id"] for r in result_messages[0]["regions"]}
+    assert detected_ids == region_message_ids == result_ids

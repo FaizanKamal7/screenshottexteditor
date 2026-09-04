@@ -150,6 +150,13 @@ interface EditorState {
 	debugMode: boolean;
 	setImage: (url: string, file: File, width: number, height: number) => void;
 	setRegions: (regions: Region[]) => void;
+	// Replaces the region with the same id (added by setRegions from the
+	// /api/analyze stream's "detected" message, or by a previous
+	// upsertRegion call) or appends it if no id matches yet — used for the
+	// "region" NDJSON message, which lands progressively as each detected
+	// line's font/color/UI enrichment finishes, well after the initial
+	// text-only "detected" stub. See Dropzone.handleFile.
+	upsertRegion: (region: Region) => void;
 	setScaleFactor: (scaleFactor: 1 | 2 | 3) => void;
 	setUploadProgress: (percent: number) => void;
 	setAnalyzeProgress: (current: number, total: number) => void;
@@ -285,6 +292,14 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				analyzeProgress: null,
 			}),
 		setRegions: (regions) => set({ regions }),
+		upsertRegion: (region) =>
+			set((s) => {
+				const index = s.regions.findIndex((r) => r.id === region.id);
+				if (index === -1) return { regions: [...s.regions, region] };
+				const next = s.regions.slice();
+				next[index] = region;
+				return { regions: next };
+			}),
 		setScaleFactor: (scaleFactor) => set({ scaleFactor }),
 		setUploadProgress: (percent) => set({ uploadProgress: percent }),
 		setAnalyzeProgress: (current, total) => set({ analyzeProgress: { current, total } }),

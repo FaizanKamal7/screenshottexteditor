@@ -47,15 +47,15 @@ def render_text(
 
     blob = skia.TextBlob.MakeFromPosTextH(text.encode("utf-8"), x_positions, baseline_y, font)
 
-    surface = skia.Surface(width, height)
+    surface = skia.Surface.MakeRaster(skia.ImageInfo.MakeA8(width, height))
     with surface as canvas:
-        canvas.clear(skia.ColorTRANSPARENT)
+        canvas.clear(0)
         if blob is not None:
             canvas.drawTextBlob(blob, 0, 0, paint)
 
     image = surface.makeImageSnapshot()
-    array = image.toarray(colorType=skia.kRGBA_8888_ColorType)  # HxWx4, uint8
-    alpha = array[:, :, 3].astype(np.float32) / 255.0
+    array = image.toarray()  # HxW, uint8, alpha coverage
+    alpha = array.astype(np.float32) / 255.0
     return alpha
 
 

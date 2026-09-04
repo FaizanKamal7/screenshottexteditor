@@ -1,10 +1,4 @@
-# Pinned to the exact digest of the last known-good build (2026-09-01) rather
-# than floating python:3.12-slim: an unpinned tag re-resolves to whatever
-# Debian ships on every rebuild, and a later point-release drift is the
-# leading suspect for a paddlepaddle C++ segfault inside zlib's
-# inflateReset2 that reproduced on two builds against today's :slim tag but
-# never happened on this digest.
-FROM python:3.12-slim@sha256:e5c9fa26ffb76e11e0f054f30dc2523a2f9693f0c36c0cf1e39b27e152d899fc
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -28,7 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # to report progress on a plain network download. Baking the models into
 # the image at build time means every container starts warm, with no
 # runtime dependency on the CDN or on the paddleocr-models volume surviving.
-RUN python -c "from paddleocr import PaddleOCR; PaddleOCR(use_angle_cls=False, lang='en', show_log=False)"
+RUN python -c "from paddleocr import PaddleOCR; PaddleOCR(text_detection_model_name='PP-OCRv5_mobile_det', text_recognition_model_name='PP-OCRv5_mobile_rec', use_doc_orientation_classify=False, use_doc_unwarping=False, use_textline_orientation=False, enable_mkldnn=False)"
 
 COPY . .
 

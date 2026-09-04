@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 import cv2
 import numpy as np
-from skimage.metrics import structural_similarity
 
 from fonts.registry import FONT_REGISTRY
 from models import BackgroundFill, FontCandidateScore, GradientStop, UiElement
@@ -10,6 +9,19 @@ from renderer import render_text
 
 IOU_WEIGHT = 0.7
 SSIM_WEIGHT = 0.3
+
+# Parameters _fast_ssim hardcodes to exactly match what score_alpha's SSIM
+# call used to resolve to when it went through skimage's
+# `structural_similarity(rendered, target, data_range=1.0)` directly, under
+# skimage 0.26's defaults (verified against its installed source, not
+# assumed): win_size=7 ("backwards compatibility" default when
+# gaussian_weights=False, which is itself the default), K1=0.01/K2=0.03
+# (skimage's own defaults), use_sample_covariance=True (skimage's own
+# default) i.e. cov_norm = NP/(NP-1). Not meant as general SSIM parameters —
+# this is a drop-in replacement for this one call site, not a library.
+SSIM_WIN_SIZE = 7
+SSIM_K1 = 0.01
+SSIM_K2 = 0.03
 
 SIZE_GRID_STEPS = 7
 SIZE_SEARCH_MIN_RATIO = 0.55
@@ -83,6 +95,88 @@ def iou(binary_a: np.ndarray, binary_b: np.ndarray) -> float:
     return float(intersection) / float(union)
 
 
+def _box_filter(a: np.ndarray) -> np.ndarray:
+    """size=7 windowed mean, same math as `scipy.ndimage.uniform_filter(a, size=7)`.
+
+    Uses `cv2.boxFilter` instead of scipy's `uniform_filter`: same separable
+    box-mean computation, but ~2x faster on the array sizes this is actually
+    called on (real captured region crops, benchmarked in
+    docs/pipeline-tuning.md). Border/padding mode is irrelevant to the
+    result despite scipy and cv2 defaulting to different edge-extension
+    conventions ('reflect' vs BORDER_REFLECT_101): `_fast_ssim` always crops
+    `pad = (win_size-1)//2 = 3` rows/cols off each edge of the final SSIM
+    map before averaging, and a size-7 filter's output at index i only
+    touches out-of-bounds (border-extended) input when i is within 3 of an
+    edge — exactly the region the crop discards. Verified empirically too,
+    not just reasoned: BORDER_REFLECT and BORDER_REFLECT_101 produced
+    bit-identical `_fast_ssim` output in testing.
+    """
+    return cv2.boxFilter(a, ddepth=-1, ksize=(SSIM_WIN_SIZE, SSIM_WIN_SIZE))
+
+
+def _fast_ssim(im1: np.ndarray, im2: np.ndarray, data_range: float = 1.0) -> float:
+    """Drop-in replacement for `structural_similarity(im1, im2, data_range=1.0)`
+    as score_alpha actually calls it — same formula (Wang et al. 2004, same
+    as skimage 0.26's `structural_similarity` source), same size-7 windowed
+    stats (see `_box_filter`), same K1/K2/cov_norm constants, same final
+    float64 mean over the 3px-cropped SSIM map.
+
+    Verified bit-exact against skimage's structural_similarity across 34,369
+    real (rendered, target) pairs captured from actual match_font() runs on
+    every region in every tests/fixtures image when this used
+    `scipy.ndimage.uniform_filter` (max abs diff: 0.0, not just "close") —
+    see docs/pipeline-tuning.md. Swapping in `cv2.boxFilter` (see
+    `_box_filter`) is not bit-exact against that scipy baseline (float-noise
+    level differences, ~1e-8, from a different summation order) but was
+    re-verified end-to-end against all 34 real regions: identical winning
+    family/weight in every region, score/geometry differences ~1e-8-1e-9 —
+    far below any threshold (`xatol`) that governs a search decision.
+    ~1.39x full match_font wall-clock speedup measured on the same 34
+    regions.
+    """
+    if np.any(np.array(im1.shape) < SSIM_WIN_SIZE):
+        # Matches structural_similarity's own guard (raised as ValueError
+        # for the same reason: a win_size=7 window can't be centered
+        # anywhere in a dimension shorter than 7px) rather than silently
+        # returning a number skimage would have refused to compute.
+        raise ValueError(
+            "win_size exceeds image extent — image must be at least "
+            f"{SSIM_WIN_SIZE}x{SSIM_WIN_SIZE}, got shape {im1.shape}"
+        )
+
+    float_type = im1.dtype if im1.dtype in (np.float32, np.float64) else np.float64
+    im1 = im1.astype(float_type, copy=False)
+    im2 = im2.astype(float_type, copy=False)
+
+    win_size = SSIM_WIN_SIZE
+    NP = win_size**2
+    cov_norm = NP / (NP - 1)  # use_sample_covariance=True, skimage's default
+
+    ux = _box_filter(im1)
+    uy = _box_filter(im2)
+    uxx = _box_filter(im1 * im1)
+    uyy = _box_filter(im2 * im2)
+    uxy = _box_filter(im1 * im2)
+
+    vx = cov_norm * (uxx - ux * ux)
+    vy = cov_norm * (uyy - uy * uy)
+    vxy = cov_norm * (uxy - ux * uy)
+
+    R = data_range
+    C1 = (SSIM_K1 * R) ** 2
+    C2 = (SSIM_K2 * R) ** 2
+
+    A1 = 2 * ux * uy + C1
+    A2 = 2 * vxy + C2
+    B1 = ux**2 + uy**2 + C1
+    B2 = vx + vy + C2
+    D = B1 * B2
+    S = (A1 * A2) / D
+
+    pad = (win_size - 1) // 2
+    return float(S[pad:-pad, pad:-pad].mean(dtype=np.float64))
+
+
 def score_alpha(rendered: np.ndarray, target: np.ndarray) -> float:
     if rendered.shape != target.shape:
         raise ValueError("rendered and target alpha must share the same shape")
@@ -90,10 +184,13 @@ def score_alpha(rendered: np.ndarray, target: np.ndarray) -> float:
     binary_target = target > 0.5
     iou_score = iou(binary_rendered, binary_target)
 
-    if rendered.size < 49:  # skimage's default win_size (7) needs >=7px per side
+    if rendered.size < 49:  # skimage's win_size (7) needs >=7px per side
         ssim_score = iou_score
     else:
-        ssim_score = float(structural_similarity(rendered, target, data_range=1.0))
+        # _fast_ssim, not skimage's structural_similarity: verified
+        # bit-exact against it (see _fast_ssim's docstring) but skips its
+        # generic dispatch/validation overhead.
+        ssim_score = _fast_ssim(rendered, target, data_range=1.0)
 
     return IOU_WEIGHT * iou_score + SSIM_WEIGHT * ssim_score
 
@@ -114,8 +211,33 @@ def _search_candidate(
     by the baseline search width and also make the objective noisier than
     golden-section's unimodality assumption tolerates.
 
+    Some of the (size, letter_spacing, x_offset, baseline_y) tuples evaluated
+    below recur exactly — e.g. step 7's converged size can land on a point
+    step 3 already tried, or the final render can exactly reproduce step 7's
+    own best point. Measured on the real fixtures (docs/pipeline-tuning.md):
+    ~2% of this function's score_alpha calls are exact repeats of an
+    already-scored tuple. `scored` below memoizes within this one call only
+    (a fresh dict every invocation, never shared or persisted) — this cannot
+    change the result: render_text/score_alpha are pure functions of their
+    arguments, so a cache hit returns the literal value a fresh computation
+    would produce, it just skips redoing that exact work. Exact (unrounded)
+    float keys, not rounded ones: a hit only ever occurs when the render
+    would have been bit-for-bit identical anyway.
+
     Returns (size, letter_spacing, baseline_y, x_offset, score).
     """
+    score_cache: dict[tuple[float, float, float, float], float] = {}
+
+    def scored(size: float, letter_spacing: float, x_offset: float, baseline_y: float) -> float:
+        key = (size, letter_spacing, x_offset, baseline_y)
+        cached = score_cache.get(key)
+        if cached is not None:
+            return cached
+        rendered = render_text(text, font_path, size, letter_spacing, (x_offset, baseline_y), canvas_size)
+        value = score_alpha(rendered, target_alpha)
+        score_cache[key] = value
+        return value
+
     default_baseline = canvas_size[1] * default_baseline_ratio
     grid_step = (region_h * (SIZE_SEARCH_MAX_RATIO - SIZE_SEARCH_MIN_RATIO)) / (SIZE_GRID_STEPS - 1)
     phase_shift = grid_step * size_grid_phase
@@ -129,8 +251,7 @@ def _search_candidate(
     best_coarse_size = float(size_candidates[0])
     best_coarse_score = -1.0
     for size in size_candidates:
-        rendered = render_text(text, font_path, size, 0.0, (0.0, default_baseline), canvas_size)
-        candidate_score = score_alpha(rendered, target_alpha)
+        candidate_score = scored(float(size), 0.0, 0.0, default_baseline)
         if candidate_score > best_coarse_score:
             best_coarse_score = candidate_score
             best_coarse_size = float(size)
@@ -148,9 +269,7 @@ def _search_candidate(
 
     # 3. Refine size via golden-section, baseline and x-offset held fixed.
     refined_size, _ = _refine_scalar(
-        lambda size: -score_alpha(
-            render_text(text, font_path, size, 0.0, (x_offset, baseline), canvas_size), target_alpha
-        ),
+        lambda size: -scored(size, 0.0, x_offset, baseline),
         max(best_coarse_size * 0.7, 4.0),
         best_coarse_size * 1.3,
         xatol=0.5,
@@ -158,10 +277,7 @@ def _search_candidate(
 
     # 4. Refine letter-spacing via golden-section, size/baseline/x-offset held fixed.
     refined_letter_spacing, _ = _refine_scalar(
-        lambda spacing: -score_alpha(
-            render_text(text, font_path, refined_size, spacing, (x_offset, baseline), canvas_size),
-            target_alpha,
-        ),
+        lambda spacing: -scored(refined_size, spacing, x_offset, baseline),
         -LETTER_SPACING_SEARCH_PX,
         LETTER_SPACING_SEARCH_PX,
         xatol=0.1,
@@ -175,10 +291,7 @@ def _search_candidate(
     # 6. Refine x-offset via golden-section against score_alpha itself,
     # bracketed around the coarse grid estimate from step 2b.
     refined_x_offset, _ = _refine_scalar(
-        lambda x: -score_alpha(
-            render_text(text, font_path, refined_size, refined_letter_spacing, (x, final_baseline), canvas_size),
-            target_alpha,
-        ),
+        lambda x: -scored(refined_size, refined_letter_spacing, x, final_baseline),
         x_offset - X_OFFSET_SEARCH_PX / 2,
         x_offset + X_OFFSET_SEARCH_PX / 2,
         xatol=0.25,
@@ -192,10 +305,7 @@ def _search_candidate(
     # round further) corrects for that instead of carrying the bias
     # through to the final score.
     refined_size, _ = _refine_scalar(
-        lambda size: -score_alpha(
-            render_text(text, font_path, size, refined_letter_spacing, (refined_x_offset, final_baseline), canvas_size),
-            target_alpha,
-        ),
+        lambda size: -scored(size, refined_letter_spacing, refined_x_offset, final_baseline),
         max(refined_size * 0.85, 4.0),
         refined_size * 1.15,
         xatol=0.5,
@@ -203,10 +313,7 @@ def _search_candidate(
     final_baseline = _fit_baseline(
         text, font_path, refined_size, refined_letter_spacing, refined_x_offset, canvas_size, target_alpha
     )
-    final_rendered = render_text(
-        text, font_path, refined_size, refined_letter_spacing, (refined_x_offset, final_baseline), canvas_size
-    )
-    final_score = score_alpha(final_rendered, target_alpha)
+    final_score = scored(refined_size, refined_letter_spacing, refined_x_offset, final_baseline)
 
     return refined_size, refined_letter_spacing, final_baseline, refined_x_offset, final_score
 

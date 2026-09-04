@@ -125,6 +125,7 @@ function toRegion(region: AnalyzeRegion): Region {
 export function Dropzone() {
 	const setImage = useEditorStore((s) => s.setImage);
 	const setRegions = useEditorStore((s) => s.setRegions);
+	const upsertRegion = useEditorStore((s) => s.upsertRegion);
 	const setScaleFactor = useEditorStore((s) => s.setScaleFactor);
 	const setUploadProgress = useEditorStore((s) => s.setUploadProgress);
 	const setAnalyzeProgress = useEditorStore((s) => s.setAnalyzeProgress);
@@ -153,10 +154,13 @@ export function Dropzone() {
 			// XMLHttpRequest, not fetch, because fetch has no upload-progress
 			// event — this is what drives the real (not simulated) progress bar
 			// while the file is in transit. The response side is also read
-			// incrementally (xhr.onprogress, not just onload): /api/analyze now
-			// streams newline-delimited JSON, one progress line per detected
-			// text region as the pipeline actually finishes it, plus a final
-			// result line — so "N of M" in the UI is real, not simulated.
+			// incrementally (xhr.onprogress, not just onload): /api/analyze
+			// streams newline-delimited JSON — a "detected" line (every line's
+			// text/bbox, no styling yet) as soon as OCR finishes, one "progress"
+			// and one "region" line (that region's full styling) per detected
+			// line as its enrichment completes, and a final "result" line — so
+			// both "N of M" and the regions actually on screen update for real,
+			// not simulated.
 			const xhr = new XMLHttpRequest();
 			xhr.open('POST', '/api/analyze');
 
@@ -172,9 +176,21 @@ export function Dropzone() {
 					const message = JSON.parse(trimmed) as { type: string } & Partial<AnalyzeResponse> & {
 						current?: number;
 						total?: number;
+						region?: AnalyzeRegion;
 					};
 					if (message.type === 'progress' && typeof message.current === 'number' && typeof message.total === 'number') {
 						setAnalyzeProgress(message.current, message.total);
+					} else if (message.type === 'detected' && Array.isArray(message.regions)) {
+						// Text/position for every detected line, before any of them
+						// have a font/color yet — lets the canvas show real boxes
+						// (and Canvas.tsx switch its caption from "Detecting" to
+						// "Matching") well before enrichment finishes for any one
+						// of them.
+						setRegions(message.regions.map(toRegion));
+					} else if (message.type === 'region' && message.region) {
+						// One region's enrichment just finished — replace its
+						// "detected" stub (same id) with the fully-styled version.
+						upsertRegion(toRegion(message.region));
 					} else if (message.type === 'result') {
 						finalResult = message as unknown as AnalyzeResponse;
 					}
@@ -220,7 +236,7 @@ export function Dropzone() {
 
 			xhr.send(formData);
 		},
-		[setImage, setRegions, setScaleFactor, setUploadProgress, setAnalyzeProgress, setStatus],
+		[setImage, setRegions, upsertRegion, setScaleFactor, setUploadProgress, setAnalyzeProgress, setStatus],
 	);
 
 	const onDrop = useCallback(
