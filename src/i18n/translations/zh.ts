@@ -3,17 +3,15 @@ import type { Translations } from '../types';
 export const zh: Translations = {
 	nav: {
 		useCases: '应用场景',
-		pricing: '价格',
 		about: '关于我们',
 		contact: '联系我们',
-		openEditor: '打开编辑器',
+		openEditor: '免费开始',
 		menu: '菜单',
 	},
 	footer: {
 		tagline: '一套确定性的截图文字编辑流程 — 与原图相比,像素级不可区分。',
 		productHeading: '产品',
 		openEditor: '打开编辑器',
-		pricing: '价格',
 		useCases: '应用场景',
 		useCasesHeading: '应用场景',
 		companyHeading: '公司',
@@ -35,8 +33,9 @@ export const zh: Translations = {
 		heroTitleLine2: '其余每一个像素都保持不变。',
 		heroSubtitle:
 			'点击截图中的任意一行文字,重新输入,字体、字号、字重和颜色会自动匹配 —— 其余部分逐像素保持完全一致。',
-		ctaPrimary: '打开编辑器',
+		ctaPrimary: '免费开始',
 		ctaSecondary: '查看效果',
+		heroFreeNote: '免费使用 — 无需注册,无需信用卡,无水印。',
 
 		diffEyebrow: '有何不同',
 		diffTitle: '确定性流程,而非生成式猜测。',
@@ -90,7 +89,7 @@ export const zh: Translations = {
 		aboutToolP1:
 			'Screenshot Text Editor 专门解决一个非常具体的问题:只修改截图中的文字,不改变其他任何东西。通用的图片编辑工具可以很好地裁剪、模糊或添加注释,但一旦你想替换一行文字,字体就会出错、间距会偏移,或者旧文字背后的背景会变成一团污渍。这款工具采用了更聚焦的思路:检测图片中每一段文字的确切字体、字号、字重和颜色,然后足够精确地重建该区域,即使放大到 400% 也看不出编辑的痕迹。',
 		aboutToolP2:
-			'它完全在浏览器中运行,无需安装任何东西,也不需要设计软件。上传一张截图或任何含文字的图片,点击你想修改的那一行,输入替换文字,然后下载结果。单张图片的编辑免费试用,无需注册账户。导出的图片不带任何可见水印或品牌标记 —— 唯一添加的是嵌入在文件元数据中、下文会介绍的不可见内容凭证标签,用于标识该图片已被编辑。',
+			'它完全在浏览器中运行,无需安装任何东西,也不需要设计软件。上传一张截图或任何含文字的图片,点击你想修改的那一行,输入替换文字,然后下载结果。单张图片编辑和批量本地化都可免费试用,无需注册账户。导出的图片不带任何可见水印或品牌标记 —— 唯一添加的是嵌入在文件元数据中、下文会介绍的不可见内容凭证标签,用于标识该图片已被编辑。',
 		aboutToolH3a: '为什么不用生成式 AI 编辑器？',
 		aboutToolP3:
 			'大多数自称 AI 图片编辑器的工具依赖生成模型去「幻想」出一段看似合理的文字 —— 这种捷径在小尺寸、清晰的 UI 字体上往往会失效。这套流程的做法不同:OCR 在字符级别检测每一段文字,并直接从字形中测算图像的缩放系数。接着,工具将你的原始文字用一份平台常见字体的候选列表进行渲染,并将每个候选与真实像素蒙版比对打分,直到找到字体族、字号、字重和字间距最接近的匹配。只有到这一步,它才会用匹配的填充擦除旧文字,并以相同的基线和抗锯齿设置渲染你的替换文字。每一次匹配都带有可见的置信度评分,所以如果这套流程无法足够可靠地还原你的文字,它会告诉你 —— 而不是悄悄交付一个看起来不对劲的结果。',
@@ -133,7 +132,7 @@ export const zh: Translations = {
 			{
 				question: '编辑截图中的文字是免费的吗？',
 				answer:
-					'是的。你可以免费在线试用截图文字编辑器,无水印,无需账户 —— 上传的文件会被处理,并在一小时内自动删除。像批量 App Store 本地化这样的高流量工作流可通过付费方案使用,但单张图片的编辑始终免费。',
+					'是的。截图文字编辑器完全免费,无水印,无需账户 —— 上传的文件会被处理,并在一小时内自动删除。这不仅包括单张图片的编辑,也包括批量 App Store 本地化。',
 			},
 			{
 				question: '是否可以修改任意图片的文字,而不仅仅是截图？',
@@ -147,54 +146,7 @@ export const zh: Translations = {
 
 		finalTitle: '在你自己的截图上试试。',
 		finalSubtitle: '无需账户即可试用。一小时后自动删除。',
-		finalCta: '打开编辑器',
-	},
-	pricing: {
-		metaTitle: '价格 — ScreenshotTextEditor',
-		metaDescription:
-			'简单透明的截图文字编辑与 App Store 本地化价格方案 —— 从免费试用到支持 CSV 批量本地化的团队方案。',
-		eyebrow: '价格',
-		title: '简单的价格,没有按席位收费的意外惊喜。',
-		subtitle:
-			'每个等级都享有相同的确定性流程和置信度评分。更高等级的方案可解锁更大的处理量和批量本地化工作流。任何等级都不会移除导出图片中嵌入的内容凭证。',
-		freeTier: {
-			name: '免费版',
-			period: '',
-			description: '在承诺购买前,先用真实截图试一试。',
-			features: [
-				'每月 10 次渲染',
-				'单图编辑器',
-				'置信度评分与手动字体覆盖',
-				'支持 PNG、JPEG 输入,PNG 输出',
-				'上传文件 1 小时后删除',
-			],
-			ctaLabel: '打开编辑器',
-		},
-		proTier: {
-			name: '专业版',
-			period: '/ 月',
-			description: '适合按计划交付本地化截图的团队。',
-			features: [
-				'无限次单图编辑',
-				'CSV 批量本地化 —— 上传一次,按语言导出 ZIP',
-				'置信度评分与手动字体覆盖',
-				'优先处理',
-				'包含免费版的全部功能',
-			],
-			ctaLabel: '开始使用专业版',
-		},
-		teamTier: {
-			name: '团队版',
-			period: '/ 席位 / 月',
-			description: '面向团队的共享批量任务和优先支持。',
-			features: ['按席位包含专业版全部功能', '共享批量本地化任务', '优先支持', 'API 抢先体验'],
-			ctaLabel: '联系我们',
-		},
-		notHereYetTitle: '目前尚未提供的功能',
-		notHereYetPre:
-			'照片和复杂纹理上的文字、CJK 与 RTL 文字、渐变或描边文字、投影效果、Figma 插件以及公开 API,都已列入路线图,但尚未在 v1 中发布 —— 当前的范围请参见',
-		notHereYetLinkText: '服务条款',
-		notHereYetPost: '。',
+		finalCta: '免费开始',
 	},
 	about: {
 		metaTitle: '关于我们 — ScreenshotTextEditor',
@@ -229,7 +181,7 @@ export const zh: Translations = {
 		ctaTitle: '有问题、反馈,或想报告一个 Bug？',
 		ctaSubtitle: '我们会阅读所有通过联系页面发来的内容。',
 		ctaPrimary: '联系我们',
-		ctaSecondary: '打开编辑器',
+		ctaSecondary: '免费开始',
 	},
 	contact: {
 		metaTitle: '联系我们 — ScreenshotTextEditor',

@@ -3,17 +3,15 @@ import type { Translations } from '../types';
 export const en: Translations = {
 	nav: {
 		useCases: 'Use cases',
-		pricing: 'Pricing',
 		about: 'About',
 		contact: 'Contact',
-		openEditor: 'Open the editor',
+		openEditor: 'Start for free',
 		menu: 'Menu',
 	},
 	footer: {
 		tagline: 'A deterministic pipeline for editing text in screenshots — pixel-indistinguishable from the original.',
 		productHeading: 'Product',
 		openEditor: 'Open the editor',
-		pricing: 'Pricing',
 		useCases: 'Use cases',
 		useCasesHeading: 'Use cases',
 		companyHeading: 'Company',
@@ -35,8 +33,9 @@ export const en: Translations = {
 		heroTitleLine2: 'Keep every other pixel exactly the same.',
 		heroSubtitle:
 			'Click any line of text in a screenshot, retype it, and match its font, size, weight, and color automatically — everything else stays pixel-for-pixel the same.',
-		ctaPrimary: 'Open the editor',
+		ctaPrimary: 'Start for free',
 		ctaSecondary: 'See it work',
+		heroFreeNote: 'Free to use — no signup, no credit card, no watermark.',
 
 		diffEyebrow: 'Why this is different',
 		diffTitle: 'A deterministic pipeline, not a generated guess.',
@@ -90,7 +89,7 @@ export const en: Translations = {
 		aboutToolP1:
 			"Screenshot Text Editor solves one specific problem: changing the words in a screenshot without changing anything else about it. Generic photo editors handle crops, blurs, and annotations well, but the moment you try to swap out a line of text, the font is wrong, the spacing shifts, or the area behind the old text turns into a smudge. This tool takes a narrower approach — it detects the exact font, size, weight, and color of every text run in the image, then rebuilds that region precisely enough that the edit is invisible at 400% zoom.",
 		aboutToolP2:
-			"It runs entirely in the browser, so there's nothing to install and no design software required. Upload a screenshot or any image with text, click the line you want to change, type your replacement, and download the result. Single-image edits are free to try, with no account required. Exports carry no visible watermark or branding — the only thing added is an invisible content-credentials tag in the file's metadata, described below, that identifies the image as edited.",
+			"It runs entirely in the browser, so there's nothing to install and no design software required. Upload a screenshot or any image with text, click the line you want to change, type your replacement, and download the result. Everything is free to try, single images and batch localization alike, with no account required. Exports carry no visible watermark or branding — the only thing added is an invisible content-credentials tag in the file's metadata, described below, that identifies the image as edited.",
 		aboutToolH3a: 'Why not a generative AI editor?',
 		aboutToolP3:
 			"Most tools that call themselves an AI image editor lean on a generative model to hallucinate plausible-looking text — a shortcut that tends to fall apart on small, crisp UI fonts. This pipeline works differently: OCR detects every text run at the character level and measures the image's scale factor directly from the glyphs. The tool then renders your source text in a shortlist of platform-likely fonts and scores each candidate against the real pixel mask until it finds the closest match for family, size, weight, and letter spacing. Only then does it erase the old text with a matching fill and render the replacement at the same baseline and anti-aliasing. Every match carries a visible confidence score, so if the pipeline can't reproduce your text closely enough to trust, it says so instead of quietly shipping an edit that looks off.",
@@ -133,7 +132,7 @@ export const en: Translations = {
 			{
 				question: 'Is editing text in screenshot free?',
 				answer:
-					'Yes. You can try the screenshot text editor online free, without a watermark, with no account required — uploads are processed and then automatically deleted within an hour. Higher-volume workflows like bulk App Store localization are available on paid plans, but single-image editing is free to use.',
+					'Yes. The screenshot text editor is free to use, without a watermark, with no account required — uploads are processed and then automatically deleted within an hour. That includes bulk App Store localization, not just single-image editing.',
 			},
 			{
 				question: 'Is it possible to change text of any image or just screenshot?',
@@ -147,54 +146,7 @@ export const en: Translations = {
 
 		finalTitle: 'Try it on your own screenshot.',
 		finalSubtitle: 'No account needed to try it. Deleted automatically after an hour.',
-		finalCta: 'Open the editor',
-	},
-	pricing: {
-		metaTitle: 'Pricing — ScreenshotTextEditor',
-		metaDescription:
-			'Simple pricing for screenshot text editing and App Store localization — from a free trial to team plans with batch CSV localization.',
-		eyebrow: 'Pricing',
-		title: 'Simple pricing, no surprise seats.',
-		subtitle:
-			'Every tier gets the same deterministic pipeline and confidence scoring. Higher tiers unlock volume and the batch localization workflow. No tier ever removes the embedded content credentials on an export.',
-		freeTier: {
-			name: 'Free',
-			period: '',
-			description: 'Try it on a real screenshot before you commit to anything.',
-			features: [
-				'10 renders / month',
-				'Single-image editor',
-				'Confidence scoring & manual font override',
-				'PNG and JPEG in, PNG out',
-				'Uploads deleted after 1 hour',
-			],
-			ctaLabel: 'Open the editor',
-		},
-		proTier: {
-			name: 'Pro',
-			period: '/ month',
-			description: 'For teams shipping localized screenshots on a schedule.',
-			features: [
-				'Unlimited single-image edits',
-				'CSV batch localization — upload once, export a ZIP per language',
-				'Confidence scoring & manual font override',
-				'Priority processing',
-				'Everything in Free',
-			],
-			ctaLabel: 'Start with Pro',
-		},
-		teamTier: {
-			name: 'Team',
-			period: '/ seat / month',
-			description: 'Shared batch jobs and priority support across a team.',
-			features: ['Everything in Pro, per seat', 'Shared batch localization jobs', 'Priority support', 'Early access to the API'],
-			ctaLabel: 'Talk to us',
-		},
-		notHereYetTitle: "What's not here yet",
-		notHereYetPre:
-			'Text over photos and complex textures, CJK and RTL scripts, gradient or stroked text, drop shadows, a Figma plugin, and a public API are all on the roadmap but not shipped in v1 — see the',
-		notHereYetLinkText: 'terms',
-		notHereYetPost: 'for the current scope.',
+		finalCta: 'Start for free',
 	},
 	about: {
 		metaTitle: 'About — ScreenshotTextEditor',
@@ -230,7 +182,7 @@ export const en: Translations = {
 		ctaTitle: 'Questions, feedback, or a bug to report?',
 		ctaSubtitle: 'We read everything that comes in through the contact page.',
 		ctaPrimary: 'Contact us',
-		ctaSecondary: 'Open the editor',
+		ctaSecondary: 'Start for free',
 	},
 	contact: {
 		metaTitle: 'Contact — ScreenshotTextEditor',

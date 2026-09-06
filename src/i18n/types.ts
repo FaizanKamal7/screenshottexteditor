@@ -13,14 +13,6 @@ export interface ValueItem {
 	body: string;
 }
 
-export interface PricingTier {
-	name: string;
-	period: string;
-	description: string;
-	features: string[];
-	ctaLabel: string;
-}
-
 export interface ContactChannel {
 	title: string;
 	body: string;
@@ -29,7 +21,6 @@ export interface ContactChannel {
 export interface Translations {
 	nav: {
 		useCases: string;
-		pricing: string;
 		about: string;
 		contact: string;
 		openEditor: string;
@@ -39,7 +30,6 @@ export interface Translations {
 		tagline: string;
 		productHeading: string;
 		openEditor: string;
-		pricing: string;
 		useCases: string;
 		useCasesHeading: string;
 		companyHeading: string;
@@ -61,6 +51,7 @@ export interface Translations {
 		heroSubtitle: string;
 		ctaPrimary: string;
 		ctaSecondary: string;
+		heroFreeNote: string;
 
 		diffEyebrow: string;
 		diffTitle: string;
@@ -114,20 +105,6 @@ export interface Translations {
 		finalTitle: string;
 		finalSubtitle: string;
 		finalCta: string;
-	};
-	pricing: {
-		metaTitle: string;
-		metaDescription: string;
-		eyebrow: string;
-		title: string;
-		subtitle: string;
-		freeTier: PricingTier;
-		proTier: PricingTier;
-		teamTier: PricingTier;
-		notHereYetTitle: string;
-		notHereYetPre: string;
-		notHereYetLinkText: string;
-		notHereYetPost: string;
 	};
 	about: {
 		metaTitle: string;

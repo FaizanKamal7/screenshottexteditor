@@ -58,10 +58,14 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	const orderedRegions = useMemo(() => readingOrder(regions), [regions]);
 	const editingRegion = regions.find((r) => r.id === editingRegionId) ?? null;
 	const isUploading = status === 'uploading';
-	const isAnalyzing = status === 'analyzing';
-	const isBusy = isUploading || isAnalyzing;
-	const isDetecting = isAnalyzing && (!analyzeProgress || analyzeProgress.total === 0);
-	const isMatching = isAnalyzing && !isDetecting;
+	// 'analyzing' means OCR detection is still running — no regions exist
+	// yet, so the canvas stays fully blocked. 'enriching' means "detected"
+	// has already arrived: regions are real, visible, and editable, and only
+	// a small non-blocking indicator (not the full overlay/blur) reflects
+	// that exact font matching is still finishing in the background.
+	const isDetecting = status === 'analyzing';
+	const isEnriching = status === 'enriching';
+	const isBusy = isUploading || isDetecting;
 
 	const [detectElapsedSeconds, setDetectElapsedSeconds] = useState(0);
 	useEffect(() => {
@@ -75,7 +79,7 @@ export function Canvas({ embedded = false }: CanvasProps) {
 
 	const [matchingCaptionIndex, setMatchingCaptionIndex] = useState(0);
 	useEffect(() => {
-		if (!isMatching) {
+		if (!isEnriching) {
 			setMatchingCaptionIndex(0);
 			return;
 		}
@@ -84,7 +88,7 @@ export function Canvas({ embedded = false }: CanvasProps) {
 			MATCHING_STEP_INTERVAL_MS,
 		);
 		return () => clearInterval(interval);
-	}, [isMatching]);
+	}, [isEnriching]);
 
 	const [draftText, setDraftText] = useState('');
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -496,7 +500,19 @@ export function Canvas({ embedded = false }: CanvasProps) {
 											style={{ left: charBox.x - x, width: charBox.w }}
 										/>
 									))}
-								{confidence !== 'none' && (
+								{region.enrichmentStatus === 'pending' && (
+									<span
+										title="Matching exact font and style…"
+										className="pointer-events-none absolute -right-1 -top-1 h-2.5 w-2.5 animate-pulse rounded-full border border-canvas-elevated bg-faint"
+									/>
+								)}
+								{region.enrichmentStatus === 'failed' && (
+									<span
+										title="Couldn't determine this region's exact style — try re-uploading the screenshot"
+										className="pointer-events-none absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border border-canvas-elevated bg-error"
+									/>
+								)}
+								{region.enrichmentStatus === 'ready' && confidence !== 'none' && (
 									<span
 										title={`match confidence: ${region.confidence?.toFixed(2) ?? 'n/a'}`}
 										className={`pointer-events-none absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border border-canvas-elevated ${
@@ -522,6 +538,8 @@ export function Canvas({ embedded = false }: CanvasProps) {
 			)}
 
 			{isBusy && (
+				// Uploading or OCR detection — no regions exist yet, so this is
+				// the only phase that still fully blocks the canvas.
 				<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
 					<div className="flex w-max min-w-72 max-w-sm flex-col items-center gap-3 rounded-lg border border-hairline bg-canvas-elevated/95 px-6 py-5 shadow-md backdrop-blur-sm">
 						{isUploading ? (
@@ -533,19 +551,6 @@ export function Canvas({ embedded = false }: CanvasProps) {
 									/>
 								</div>
 								<p className="whitespace-nowrap text-[13px] text-body">Uploading screenshot… {uploadProgress}%</p>
-							</>
-						) : analyzeProgress && analyzeProgress.total > 0 ? (
-							<>
-								<div className="h-2 w-full overflow-hidden rounded-full bg-hairline">
-									<div
-										className="h-full rounded-full bg-link transition-[width] duration-300 ease-out"
-										style={{ width: `${Math.round((analyzeProgress.current / analyzeProgress.total) * 100)}%` }}
-									/>
-								</div>
-								<p className="whitespace-nowrap text-[13px] text-body">
-									Analyzing text {analyzeProgress.current} of {analyzeProgress.total}…
-								</p>
-								<p className="whitespace-nowrap text-[11px] text-faint">{MATCHING_STEP_CAPTIONS[matchingCaptionIndex]}</p>
 							</>
 						) : (
 							<>
@@ -562,11 +567,34 @@ export function Canvas({ embedded = false }: CanvasProps) {
 				</div>
 			)}
 
-			{isRendering && (
+			{isEnriching && (
+				// Regions are already visible/editable (see the isBusy image
+				// blur above, which no longer covers this phase) — this is a
+				// small, non-blocking status only, not a gate.
 				<div
-					className={`${embedded ? 'absolute' : 'fixed'} bottom-4 left-1/2 -translate-x-1/2 rounded-md border border-hairline bg-canvas-elevated px-3 py-1.5 text-xs text-link shadow-sm`}
+					className={`${embedded ? 'absolute' : 'fixed'} pointer-events-none bottom-4 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 rounded-md border border-hairline bg-canvas-elevated/95 px-3 py-2 text-xs shadow-sm backdrop-blur-sm`}
 				>
-					Rendering…
+					<p className="whitespace-nowrap text-link">
+						{analyzeProgress && analyzeProgress.total > 0
+							? `Matching exact styles ${analyzeProgress.current} of ${analyzeProgress.total}…`
+							: 'Matching exact styles…'}
+					</p>
+					<p className="whitespace-nowrap text-[11px] text-faint">{MATCHING_STEP_CAPTIONS[matchingCaptionIndex]}</p>
+				</div>
+			)}
+
+			{isRendering && (
+				// Final composited image is re-rendering after an edit — centered
+				// over the canvas (not pinned to a corner) with a spinner so it
+				// reads as "your text is being rendered right now", not a generic
+				// status message. Still non-blocking: pointer-events-none, no
+				// image blur (see isBusy above), since the edit is already
+				// visible and the canvas stays interactive.
+				<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+					<div className="flex items-center gap-2 rounded-full border border-hairline bg-canvas-elevated/95 px-4 py-2 text-xs text-link shadow-md backdrop-blur-sm">
+						<span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-link/30 border-t-link" />
+						Rendering…
+					</div>
 				</div>
 			)}
 			{renderError && (

@@ -23,9 +23,9 @@ export type LocaleCode = (typeof languages)[number]['code'];
 export const localeCodes = languages.map((l) => l.code);
 
 /** Route keys that have a translated page in every supported locale. Everything else (legal pages, use-case articles, the editor app) only exists in English. */
-export type TranslatableRouteKey = '' | 'pricing' | 'about' | 'contact';
+export type TranslatableRouteKey = '' | 'about' | 'contact';
 
-export const translatableRouteKeys: TranslatableRouteKey[] = ['', 'pricing', 'about', 'contact'];
+export const translatableRouteKeys: TranslatableRouteKey[] = ['', 'about', 'contact'];
 
 export function isValidLocale(code: string | undefined): code is LocaleCode {
 	return !!code && localeCodes.includes(code);

@@ -5,6 +5,10 @@ services:
       - "8000:8000"
     environment:
       - PIPELINE_SHARED_SECRET=${PIPELINE_SHARED_SECRET:-dev-secret}
+      # uvicorn --reload's inotify-based watcher errors out on the bind-mounted
+      # __pycache__ dir under Docker Desktop's Windows filesystem and takes the
+      # whole container down; polling avoids that watcher entirely.
+      - WATCHFILES_FORCE_POLLING=true
     volumes:
       - ./services/pipeline:/app
       - paddleocr-models:/root/.paddleocr

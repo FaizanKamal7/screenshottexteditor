@@ -3,17 +3,15 @@ import type { Translations } from '../types';
 export const de: Translations = {
 	nav: {
 		useCases: 'Anwendungsfälle',
-		pricing: 'Preise',
 		about: 'Über uns',
 		contact: 'Kontakt',
-		openEditor: 'Editor öffnen',
+		openEditor: 'Kostenlos starten',
 		menu: 'Menü',
 	},
 	footer: {
 		tagline: 'Eine deterministische Pipeline zum Bearbeiten von Text in Screenshots — pixelgenau ununterscheidbar vom Original.',
 		productHeading: 'Produkt',
 		openEditor: 'Editor öffnen',
-		pricing: 'Preise',
 		useCases: 'Anwendungsfälle',
 		useCasesHeading: 'Anwendungsfälle',
 		companyHeading: 'Unternehmen',
@@ -35,8 +33,9 @@ export const de: Translations = {
 		heroTitleLine2: 'Jeden anderen Pixel exakt gleich lassen.',
 		heroSubtitle:
 			'Klicke auf eine beliebige Textzeile in einem Screenshot, tippe sie neu ein — Schrift, Größe, Gewicht und Farbe werden automatisch angepasst, alles andere bleibt pixelgenau gleich.',
-		ctaPrimary: 'Editor öffnen',
+		ctaPrimary: 'Kostenlos starten',
 		ctaSecondary: 'So funktioniert es',
+		heroFreeNote: 'Kostenlos — keine Anmeldung, keine Kreditkarte, kein Wasserzeichen.',
 
 		diffEyebrow: 'Warum es anders ist',
 		diffTitle: 'Eine deterministische Pipeline, keine generierte Vermutung.',
@@ -90,7 +89,7 @@ export const de: Translations = {
 		aboutToolP1:
 			'ScreenshotTextEditor löst ein sehr konkretes Problem: die Worte in einem Screenshot ändern, ohne sonst etwas daran zu verändern. Generische Bildbearbeiter können gut zuschneiden, unscharf machen und Anmerkungen hinzufügen, aber sobald man eine Textzeile austauschen will, stimmt die Schrift nicht, der Abstand verschiebt sich, oder der Bereich hinter dem alten Text wird zum Schmierfleck. Dieses Tool verfolgt einen engeren Ansatz: Es erkennt die exakte Schriftart, Größe, Gewichtung und Farbe jedes Textabschnitts im Bild und baut diesen Bereich dann so präzise neu auf, dass die Bearbeitung selbst bei 400 % Zoom unsichtbar ist.',
 		aboutToolP2:
-			'Es läuft vollständig im Browser — nichts zu installieren, keine Design-Software nötig. Lade einen Screenshot oder ein beliebiges Bild mit Text hoch, klicke auf die Zeile, die du ändern möchtest, tippe deinen Ersatztext ein und lade das Ergebnis herunter. Bearbeitungen einzelner Bilder kannst du kostenlos ausprobieren, ganz ohne Konto. Exporte tragen kein sichtbares Wasserzeichen und kein Branding — das Einzige, was hinzugefügt wird, ist ein unsichtbares Content-Credentials-Tag in den Metadaten der Datei, weiter unten beschrieben, das das Bild als bearbeitet kennzeichnet.',
+			'Es läuft vollständig im Browser — nichts zu installieren, keine Design-Software nötig. Lade einen Screenshot oder ein beliebiges Bild mit Text hoch, klicke auf die Zeile, die du ändern möchtest, tippe deinen Ersatztext ein und lade das Ergebnis herunter. Alles kannst du kostenlos ausprobieren, einzelne Bilder ebenso wie Stapel-Lokalisierung, ganz ohne Konto. Exporte tragen kein sichtbares Wasserzeichen und kein Branding — das Einzige, was hinzugefügt wird, ist ein unsichtbares Content-Credentials-Tag in den Metadaten der Datei, weiter unten beschrieben, das das Bild als bearbeitet kennzeichnet.',
 		aboutToolH3a: 'Warum kein generativer KI-Editor?',
 		aboutToolP3:
 			'Die meisten Tools, die sich als KI-Bildeditor bezeichnen, verlassen sich auf ein generatives Modell, das plausibel aussehenden Text halluziniert — eine Abkürzung, die bei kleinen, scharfen UI-Schriften meist scheitert. Diese Pipeline funktioniert anders: OCR erkennt jeden Textabschnitt auf Zeichenebene und misst den Skalierungsfaktor des Bildes direkt an den Glyphen. Das Tool rendert deinen Ausgangstext dann in einer kurzen Liste plattformtypischer Schriftarten und bewertet jeden Kandidaten gegen die echte Pixelmaske, bis es die nächstliegende Übereinstimmung für Schriftfamilie, Größe, Gewichtung und Laufweite findet. Erst dann entfernt es den alten Text mit einer passenden Füllung und rendert den Ersatztext mit derselben Grundlinie und demselben Antialiasing. Jede Übereinstimmung trägt einen sichtbaren Konfidenzwert — kann die Pipeline deinen Text nicht zuverlässig genug reproduzieren, sagt sie es dir, statt stillschweigend eine Bearbeitung auszuliefern, die unpassend wirkt.',
@@ -133,7 +132,7 @@ export const de: Translations = {
 			{
 				question: 'Ist das Bearbeiten von Text in Screenshots kostenlos?',
 				answer:
-					'Ja. Du kannst den Screenshot-Text-Editor online kostenlos testen, ohne Wasserzeichen und ohne Konto — Uploads werden verarbeitet und danach automatisch innerhalb einer Stunde gelöscht. Workflows mit höherem Volumen wie Massen-Lokalisierung für den App Store sind in kostenpflichtigen Plänen verfügbar, aber die Bearbeitung eines einzelnen Bildes ist kostenlos.',
+					'Ja. Der Screenshot-Text-Editor ist kostenlos, ohne Wasserzeichen und ohne Konto — Uploads werden verarbeitet und danach automatisch innerhalb einer Stunde gelöscht. Das gilt auch für Massen-Lokalisierung für den App Store, nicht nur für die Bearbeitung eines einzelnen Bildes.',
 			},
 			{
 				question: 'Kann man den Text in jedem Bild ändern oder nur in Screenshots?',
@@ -147,54 +146,7 @@ export const de: Translations = {
 
 		finalTitle: 'Probier es an deinem eigenen Screenshot aus.',
 		finalSubtitle: 'Kein Konto nötig, um es auszuprobieren. Wird nach einer Stunde automatisch gelöscht.',
-		finalCta: 'Editor öffnen',
-	},
-	pricing: {
-		metaTitle: 'Preise — ScreenshotTextEditor',
-		metaDescription:
-			'Einfache Preise für Screenshot-Textbearbeitung und App-Store-Lokalisierung — von einer kostenlosen Testversion bis zu Team-Plänen mit CSV-Stapel-Lokalisierung.',
-		eyebrow: 'Preise',
-		title: 'Einfache Preise, keine überraschenden Sitzplätze.',
-		subtitle:
-			'Jede Stufe erhält dieselbe deterministische Pipeline und Konfidenzbewertung. Höhere Stufen schalten mehr Volumen und den Stapel-Lokalisierungs-Workflow frei. Keine Stufe entfernt jemals die eingebetteten Content-Credentials eines Exports.',
-		freeTier: {
-			name: 'Kostenlos',
-			period: '',
-			description: 'Probiere es an einem echten Screenshot aus, bevor du dich festlegst.',
-			features: [
-				'10 Renderings / Monat',
-				'Einzelbild-Editor',
-				'Konfidenzbewertung & manuelle Schriftüberschreibung',
-				'PNG und JPEG rein, PNG raus',
-				'Uploads werden nach 1 Stunde gelöscht',
-			],
-			ctaLabel: 'Editor öffnen',
-		},
-		proTier: {
-			name: 'Pro',
-			period: '/ Monat',
-			description: 'Für Teams, die lokalisierte Screenshots planmäßig ausliefern.',
-			features: [
-				'Unbegrenzte Einzelbild-Bearbeitungen',
-				'CSV-Stapel-Lokalisierung — einmal hochladen, ein ZIP pro Sprache exportieren',
-				'Konfidenzbewertung & manuelle Schriftüberschreibung',
-				'Priorisierte Verarbeitung',
-				'Alles aus Kostenlos',
-			],
-			ctaLabel: 'Mit Pro starten',
-		},
-		teamTier: {
-			name: 'Team',
-			period: '/ Sitz / Monat',
-			description: 'Geteilte Stapeljobs und priorisierter Support für das ganze Team.',
-			features: ['Alles aus Pro, pro Sitz', 'Geteilte Stapel-Lokalisierungsjobs', 'Priorisierter Support', 'Früher API-Zugang'],
-			ctaLabel: 'Sprich mit uns',
-		},
-		notHereYetTitle: 'Was noch nicht dabei ist',
-		notHereYetPre:
-			'Text über Fotos und komplexen Texturen, CJK- und RTL-Schriften, Verlaufs- oder Kontur-Text, Schlagschatten, ein Figma-Plugin und eine öffentliche API stehen auf der Roadmap, sind aber in v1 noch nicht enthalten — die aktuelle Reichweite steht in den',
-		notHereYetLinkText: 'AGB',
-		notHereYetPost: '.',
+		finalCta: 'Kostenlos starten',
 	},
 	about: {
 		metaTitle: 'Über uns — ScreenshotTextEditor',
@@ -230,7 +182,7 @@ export const de: Translations = {
 		ctaTitle: 'Fragen, Feedback oder ein Bug zu melden?',
 		ctaSubtitle: 'Wir lesen alles, was über die Kontaktseite eingeht.',
 		ctaPrimary: 'Kontaktiere uns',
-		ctaSecondary: 'Editor öffnen',
+		ctaSecondary: 'Kostenlos starten',
 	},
 	contact: {
 		metaTitle: 'Kontakt — ScreenshotTextEditor',

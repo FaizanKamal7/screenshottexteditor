@@ -3,17 +3,15 @@ import type { Translations } from '../types';
 export const pt: Translations = {
 	nav: {
 		useCases: 'Casos de uso',
-		pricing: 'Preços',
 		about: 'Sobre',
 		contact: 'Contato',
-		openEditor: 'Abrir o editor',
+		openEditor: 'Comece grátis',
 		menu: 'Menu',
 	},
 	footer: {
 		tagline: 'Um pipeline determinístico para editar texto em capturas de tela — indistinguível do original, pixel a pixel.',
 		productHeading: 'Produto',
 		openEditor: 'Abrir o editor',
-		pricing: 'Preços',
 		useCases: 'Casos de uso',
 		useCasesHeading: 'Casos de uso',
 		companyHeading: 'Empresa',
@@ -35,8 +33,9 @@ export const pt: Translations = {
 		heroTitleLine2: 'Mantenha cada outro pixel exatamente igual.',
 		heroSubtitle:
 			'Clique em qualquer linha de texto de uma captura de tela, digite novamente, e a fonte, tamanho, peso e cor se ajustam automaticamente — o resto permanece idêntico, pixel a pixel.',
-		ctaPrimary: 'Abrir o editor',
+		ctaPrimary: 'Comece grátis',
 		ctaSecondary: 'Ver como funciona',
+		heroFreeNote: 'Grátis — sem cadastro, sem cartão de crédito, sem marca d\'água.',
 
 		diffEyebrow: 'Por que é diferente',
 		diffTitle: 'Um pipeline determinístico, não um palpite gerado.',
@@ -90,7 +89,7 @@ export const pt: Translations = {
 		aboutToolP1:
 			'O Screenshot Text Editor resolve um problema bem específico: mudar as palavras de uma captura de tela sem mudar mais nada nela. Editores de fotos genéricos conseguem recortar, borrar ou anotar uma imagem, mas assim que você tenta trocar uma linha de texto, a fonte fica errada, o espaçamento muda, ou o fundo atrás do texto antigo vira uma mancha. Esta ferramenta segue um caminho mais estreito: detecta a fonte, o tamanho, o peso e a cor exatos de cada trecho de texto na imagem e depois reconstrói essa região com precisão suficiente para que a edição fique invisível mesmo com 400% de zoom.',
 		aboutToolP2:
-			'Ele roda inteiramente no navegador, então não há nada para instalar nem software de design necessário. Envie uma captura de tela ou qualquer imagem com texto, clique na linha que quer mudar, digite seu texto de substituição e baixe o resultado. Edições em uma única imagem são gratuitas para testar, sem necessidade de conta. As exportações não trazem marca d\'água nem qualquer identidade visual visível — a única coisa adicionada é uma credencial de conteúdo invisível na metadados do arquivo, descrita abaixo, que identifica a imagem como editada.',
+			'Ele roda inteiramente no navegador, então não há nada para instalar nem software de design necessário. Envie uma captura de tela ou qualquer imagem com texto, clique na linha que quer mudar, digite seu texto de substituição e baixe o resultado. Tudo é gratuito para testar, tanto imagens únicas quanto localização em lote, sem necessidade de conta. As exportações não trazem marca d\'água nem qualquer identidade visual visível — a única coisa adicionada é uma credencial de conteúdo invisível na metadados do arquivo, descrita abaixo, que identifica a imagem como editada.',
 		aboutToolH3a: 'Por que não um editor de IA generativa?',
 		aboutToolP3:
 			'A maioria das ferramentas que se autodenominam editores de imagem com IA se apoia em um modelo generativo para alucinar um texto com aparência plausível — um atalho que costuma falhar em fontes de interface pequenas e nítidas. Este pipeline funciona de outra forma: o OCR detecta cada trecho de texto no nível do caractere e mede o fator de escala da imagem diretamente a partir dos glifos. Depois a ferramenta renderiza seu texto original em uma lista curta de fontes prováveis para a plataforma e pontua cada candidata contra a máscara real de pixels até encontrar a correspondência mais próxima de família tipográfica, tamanho, peso e espaçamento entre letras. Só então ela apaga o texto antigo com um preenchimento correspondente e renderiza sua substituição com a mesma linha de base e suavização. Cada correspondência carrega uma pontuação de confiança visível, então, se o pipeline não conseguir reproduzir seu texto com confiabilidade suficiente, ele avisa — em vez de entregar silenciosamente uma edição que parece errada.',
@@ -133,7 +132,7 @@ export const pt: Translations = {
 			{
 				question: 'Editar texto em captura de tela é gratuito?',
 				answer:
-					'Sim. Você pode testar o editor de texto para capturas de tela online gratuitamente, sem marca d\'água, sem necessidade de conta — os uploads são processados e depois excluídos automaticamente em até uma hora. Fluxos de maior volume, como localização em massa para App Store, estão disponíveis em planos pagos, mas a edição de uma única imagem é gratuita.',
+					'Sim. O editor de texto para capturas de tela é gratuito, sem marca d\'água, sem necessidade de conta — os uploads são processados e depois excluídos automaticamente em até uma hora. Isso inclui a localização em massa para App Store, não só a edição de uma única imagem.',
 			},
 			{
 				question: 'É possível mudar o texto de qualquer imagem ou só de capturas de tela?',
@@ -147,54 +146,7 @@ export const pt: Translations = {
 
 		finalTitle: 'Experimente na sua própria captura de tela.',
 		finalSubtitle: 'Nenhuma conta necessária para testar. Excluída automaticamente após uma hora.',
-		finalCta: 'Abrir o editor',
-	},
-	pricing: {
-		metaTitle: 'Preços — ScreenshotTextEditor',
-		metaDescription:
-			'Preços simples para edição de texto em capturas de tela e localização de App Store — de um teste gratuito a planos de equipe com localização em lote por CSV.',
-		eyebrow: 'Preços',
-		title: 'Preços simples, sem surpresas por assento.',
-		subtitle:
-			'Todos os planos têm o mesmo pipeline determinístico e a mesma pontuação de confiança. Planos mais altos desbloqueiam mais volume e o fluxo de localização em lote. Nenhum plano remove as credenciais de conteúdo incorporadas em uma exportação.',
-		freeTier: {
-			name: 'Gratuito',
-			period: '',
-			description: 'Teste em uma captura de tela real antes de se comprometer com qualquer coisa.',
-			features: [
-				'10 renderizações / mês',
-				'Editor de imagem única',
-				'Pontuação de confiança e substituição manual de fonte',
-				'Entrada PNG e JPEG, saída PNG',
-				'Uploads excluídos após 1 hora',
-			],
-			ctaLabel: 'Abrir o editor',
-		},
-		proTier: {
-			name: 'Pro',
-			period: '/ mês',
-			description: 'Para equipes que entregam capturas localizadas com regularidade.',
-			features: [
-				'Edições de imagem única ilimitadas',
-				'Localização em lote por CSV — envie uma vez, exporte um ZIP por idioma',
-				'Pontuação de confiança e substituição manual de fonte',
-				'Processamento prioritário',
-				'Tudo do plano Gratuito',
-			],
-			ctaLabel: 'Começar com o Pro',
-		},
-		teamTier: {
-			name: 'Equipe',
-			period: '/ assento / mês',
-			description: 'Tarefas em lote compartilhadas e suporte prioritário para toda a equipe.',
-			features: ['Tudo do Pro, por assento', 'Tarefas de localização em lote compartilhadas', 'Suporte prioritário', 'Acesso antecipado à API'],
-			ctaLabel: 'Fale conosco',
-		},
-		notHereYetTitle: 'O que ainda não está disponível',
-		notHereYetPre:
-			'Texto sobre fotos e texturas complexas, escritas CJK e RTL, texto com gradiente ou contorno, sombras projetadas, um plugin do Figma e uma API pública estão no roteiro, mas ainda não foram lançados na v1 — consulte os',
-		notHereYetLinkText: 'termos',
-		notHereYetPost: 'para o escopo atual.',
+		finalCta: 'Comece grátis',
 	},
 	about: {
 		metaTitle: 'Sobre — ScreenshotTextEditor',
@@ -230,7 +182,7 @@ export const pt: Translations = {
 		ctaTitle: 'Perguntas, sugestões ou um bug para relatar?',
 		ctaSubtitle: 'Lemos tudo o que chega pela página de contato.',
 		ctaPrimary: 'Fale conosco',
-		ctaSecondary: 'Abrir o editor',
+		ctaSecondary: 'Comece grátis',
 	},
 	contact: {
 		metaTitle: 'Contato — ScreenshotTextEditor',

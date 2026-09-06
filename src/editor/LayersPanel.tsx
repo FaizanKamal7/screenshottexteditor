@@ -24,7 +24,13 @@ export function LayersPanel() {
 	const [query, setQuery] = useState('');
 	const listRef = useRef<HTMLDivElement>(null);
 
+	// Only uploading/OCR-detection (no regions exist yet) shows the skeleton
+	// placeholders. Once "detected" arrives (status 'enriching'), the real
+	// list renders immediately — each row shows its own enrichment state
+	// (see CONFIDENCE_DOT / the pending-style note below) rather than
+	// waiting for every region to finish.
 	const isAnalyzing = status === 'uploading' || status === 'analyzing';
+	const isEnriching = status === 'enriching';
 	const ordered = useMemo(() => readingOrder(regions), [regions]);
 	const filtered = useMemo(() => {
 		const q = query.trim().toLowerCase();
@@ -49,6 +55,11 @@ export function LayersPanel() {
 				<p className="text-[13px] font-medium text-ink">
 					Detected text {!isAnalyzing && <span className="text-faint">({regions.length})</span>}
 				</p>
+				{isEnriching && (
+					<p className="mt-0.5 text-[11px] text-faint">
+						Matching exact styles — {regions.filter((r) => r.enrichmentStatus === 'ready').length} of {regions.length} done
+					</p>
+				)}
 				<input
 					type="search"
 					value={query}
@@ -109,14 +120,32 @@ export function LayersPanel() {
 												<p className={`truncate text-[13px] ${isExpanded ? 'font-medium text-ink' : 'text-ink'}`}>
 													{region.text || '(empty)'}
 												</p>
-												<span
-													title={`match confidence: ${region.confidence?.toFixed(2) ?? 'n/a'}`}
-													className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[confidence]}`}
-												/>
+												{region.enrichmentStatus === 'pending' ? (
+													<span
+														title="Matching exact font and style…"
+														className="mt-1 h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-faint"
+													/>
+												) : region.enrichmentStatus === 'failed' ? (
+													<span
+														title="Couldn't determine this region's exact style"
+														className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-error"
+													/>
+												) : (
+													<span
+														title={`match confidence: ${region.confidence?.toFixed(2) ?? 'n/a'}`}
+														className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[confidence]}`}
+													/>
+												)}
 											</div>
 											<p className="mt-0.5 truncate text-[11px] text-faint">
-												{region.fontFamily ?? 'no match'}
-												{region.fontSize != null ? ` · ${region.fontSize.toFixed(0)}px` : ''}
+												{region.enrichmentStatus === 'pending'
+													? 'Matching…'
+													: region.enrichmentStatus === 'failed'
+														? 'Style unavailable'
+														: (region.fontFamily ?? 'no match')}
+												{region.enrichmentStatus === 'ready' && region.fontSize != null
+													? ` · ${region.fontSize.toFixed(0)}px`
+													: ''}
 											</p>
 										</div>
 									</button>

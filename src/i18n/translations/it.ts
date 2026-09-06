@@ -3,17 +3,15 @@ import type { Translations } from '../types';
 export const it: Translations = {
 	nav: {
 		useCases: "Casi d'uso",
-		pricing: 'Prezzi',
 		about: 'Chi siamo',
 		contact: 'Contatti',
-		openEditor: "Apri l'editor",
+		openEditor: 'Inizia gratis',
 		menu: 'Menu',
 	},
 	footer: {
 		tagline: "Una pipeline deterministica per modificare il testo negli screenshot — indistinguibile dall'originale, pixel per pixel.",
 		productHeading: 'Prodotto',
 		openEditor: "Apri l'editor",
-		pricing: 'Prezzi',
 		useCases: "Casi d'uso",
 		useCasesHeading: "Casi d'uso",
 		companyHeading: 'Azienda',
@@ -35,8 +33,9 @@ export const it: Translations = {
 		heroTitleLine2: 'Mantieni ogni altro pixel esattamente identico.',
 		heroSubtitle:
 			'Fai clic su qualsiasi riga di testo in uno screenshot, riscrivila, e font, dimensione, peso e colore si adattano automaticamente — tutto il resto resta identico, pixel per pixel.',
-		ctaPrimary: "Apri l'editor",
+		ctaPrimary: 'Inizia gratis',
 		ctaSecondary: 'Guarda come funziona',
+		heroFreeNote: 'Gratis — senza registrazione, senza carta di credito, senza watermark.',
 
 		diffEyebrow: 'Perché è diverso',
 		diffTitle: 'Una pipeline deterministica, non una supposizione generata.',
@@ -90,7 +89,7 @@ export const it: Translations = {
 		aboutToolP1:
 			"ScreenshotTextEditor risolve un problema molto specifico: cambiare le parole in uno screenshot senza cambiare nient'altro. Gli editor di foto generici gestiscono bene ritagli, sfocature e annotazioni, ma nel momento in cui provi a sostituire una riga di testo, il font è sbagliato, la spaziatura si sposta o l'area dietro il vecchio testo diventa una macchia. Questo strumento adotta un approccio più mirato: rileva il font, la dimensione, il peso e il colore esatti di ogni porzione di testo nell'immagine, per poi ricostruire quella zona con una precisione tale che la modifica risulti invisibile anche al 400% di zoom.",
 		aboutToolP2:
-			"Funziona interamente nel browser, quindi non c'è nulla da installare né software di design richiesto. Carica uno screenshot o qualsiasi immagine con testo, fai clic sulla riga che vuoi cambiare, digita il tuo testo sostitutivo e scarica il risultato. Le modifiche a una singola immagine sono gratuite da provare, senza bisogno di un account. Le esportazioni non portano alcun watermark o logo visibili — l'unica cosa aggiunta è un'etichetta di credenziali di contenuto invisibile nei metadati del file, descritta più sotto, che identifica l'immagine come modificata.",
+			"Funziona interamente nel browser, quindi non c'è nulla da installare né software di design richiesto. Carica uno screenshot o qualsiasi immagine con testo, fai clic sulla riga che vuoi cambiare, digita il tuo testo sostitutivo e scarica il risultato. Tutto è gratuito da provare, sia le immagini singole sia la localizzazione in batch, senza bisogno di un account. Le esportazioni non portano alcun watermark o logo visibili — l'unica cosa aggiunta è un'etichetta di credenziali di contenuto invisibile nei metadati del file, descritta più sotto, che identifica l'immagine come modificata.",
 		aboutToolH3a: 'Perché non un editor IA generativo?',
 		aboutToolP3:
 			"La maggior parte degli strumenti che si definiscono editor di immagini con IA si affida a un modello generativo per allucinare un testo dall'aspetto plausibile — una scorciatoia che tende a fallire su font di interfaccia piccoli e nitidi. Questa pipeline funziona in modo diverso: l'OCR rileva ogni porzione di testo a livello di carattere e misura il fattore di scala dell'immagine direttamente dai glifi. Lo strumento renderizza quindi il tuo testo di partenza in un elenco ristretto di font probabili per la piattaforma e valuta ogni candidato rispetto alla maschera di pixel reale finché non trova la corrispondenza più vicina per famiglia, dimensione, peso e spaziatura tra le lettere. Solo a quel punto cancella il vecchio testo con un riempimento corrispondente e renderizza la sostituzione con la stessa linea di base e lo stesso anti-aliasing. Ogni corrispondenza porta un punteggio di affidabilità visibile, quindi se la pipeline non riesce a riprodurre il tuo testo con sufficiente affidabilità, te lo comunica invece di consegnare silenziosamente una modifica che sembra fuori posto.",
@@ -133,7 +132,7 @@ export const it: Translations = {
 			{
 				question: 'Modificare il testo in uno screenshot è gratis?',
 				answer:
-					"Sì. Puoi provare l'editor di testo per screenshot online gratuitamente, senza watermark e senza bisogno di un account — i file caricati vengono elaborati e poi eliminati automaticamente entro un'ora. I flussi di lavoro a volume più elevato, come la localizzazione di massa per l'App Store, sono disponibili nei piani a pagamento, ma la modifica di una singola immagine è gratuita.",
+					"Sì. L'editor di testo per screenshot è gratuito, senza watermark e senza bisogno di un account — i file caricati vengono elaborati e poi eliminati automaticamente entro un'ora. Questo vale anche per la localizzazione di massa per l'App Store, non solo per la modifica di una singola immagine.",
 			},
 			{
 				question: "È possibile cambiare il testo di qualsiasi immagine o solo di uno screenshot?",
@@ -147,54 +146,7 @@ export const it: Translations = {
 
 		finalTitle: 'Provalo sul tuo screenshot.',
 		finalSubtitle: "Nessun account necessario per provarlo. Eliminato automaticamente dopo un'ora.",
-		finalCta: "Apri l'editor",
-	},
-	pricing: {
-		metaTitle: 'Prezzi — ScreenshotTextEditor',
-		metaDescription:
-			"Prezzi semplici per la modifica del testo negli screenshot e la localizzazione dell'App Store — da una prova gratuita a piani per team con localizzazione in batch via CSV.",
-		eyebrow: 'Prezzi',
-		title: 'Prezzi semplici, nessuna sorpresa per posto.',
-		subtitle:
-			"Ogni piano include la stessa pipeline deterministica e lo stesso punteggio di affidabilità. I piani superiori sbloccano più volume e il flusso di localizzazione in batch. Nessun piano rimuove mai le credenziali di contenuto incorporate in un'esportazione.",
-		freeTier: {
-			name: 'Gratuito',
-			period: '',
-			description: 'Provalo su uno screenshot reale prima di impegnarti in qualcosa.',
-			features: [
-				'10 rendering / mese',
-				'Editor per immagine singola',
-				'Punteggio di affidabilità e sostituzione manuale del font',
-				'Ingresso PNG e JPEG, uscita PNG',
-				"File caricati eliminati dopo 1 ora",
-			],
-			ctaLabel: "Apri l'editor",
-		},
-		proTier: {
-			name: 'Pro',
-			period: '/ mese',
-			description: 'Per i team che rilasciano screenshot localizzati con regolarità.',
-			features: [
-				'Modifiche illimitate di immagini singole',
-				'Localizzazione in batch via CSV — carica una volta, esporta uno ZIP per lingua',
-				'Punteggio di affidabilità e sostituzione manuale del font',
-				'Elaborazione prioritaria',
-				'Tutto ciò che è incluso in Gratuito',
-			],
-			ctaLabel: 'Inizia con Pro',
-		},
-		teamTier: {
-			name: 'Team',
-			period: '/ posto / mese',
-			description: "Lavori in batch condivisi e supporto prioritario per tutto il team.",
-			features: ['Tutto ciò che è incluso in Pro, per posto', 'Lavori di localizzazione in batch condivisi', 'Supporto prioritario', "Accesso anticipato all'API"],
-			ctaLabel: 'Parla con noi',
-		},
-		notHereYetTitle: "Cosa manca ancora",
-		notHereYetPre:
-			"Testo su foto e texture complesse, scritture CJK e RTL, testo con sfumature o contorni, ombre proiettate, un plugin per Figma e un'API pubblica sono tutti nella roadmap ma non ancora rilasciati nella v1 — consulta i",
-		notHereYetLinkText: 'termini',
-		notHereYetPost: "per l'ambito attuale.",
+		finalCta: 'Inizia gratis',
 	},
 	about: {
 		metaTitle: 'Chi siamo — ScreenshotTextEditor',
@@ -230,7 +182,7 @@ export const it: Translations = {
 		ctaTitle: 'Domande, feedback o un bug da segnalare?',
 		ctaSubtitle: 'Leggiamo tutto ciò che arriva tramite la pagina dei contatti.',
 		ctaPrimary: 'Contattaci',
-		ctaSecondary: "Apri l'editor",
+		ctaSecondary: 'Inizia gratis',
 	},
 	contact: {
 		metaTitle: 'Contatti — ScreenshotTextEditor',

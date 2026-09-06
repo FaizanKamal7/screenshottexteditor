@@ -94,6 +94,10 @@ function toFontCandidateScore(candidate: AnalyzeFontCandidateScore): FontCandida
 	return { family: candidate.family, weight: candidate.weight, score: candidate.score };
 }
 
+// Converts one wire-format region. enrichmentStatus defaults to 'ready'
+// since every caller except the "detected" handler is converting an
+// already-enriched region (a "region" or "result" message) — the
+// "detected" handler overrides it to 'pending' explicitly (see below).
 function toRegion(region: AnalyzeRegion): Region {
 	return {
 		id: region.id,
@@ -119,6 +123,8 @@ function toRegion(region: AnalyzeRegion): Region {
 		fontCandidates: region.font_candidates.map(toFontCandidateScore),
 		offsetX: 0,
 		offsetY: 0,
+		enrichmentStatus: 'ready',
+		styleOverridden: false,
 	};
 }
 
@@ -126,6 +132,7 @@ export function Dropzone() {
 	const setImage = useEditorStore((s) => s.setImage);
 	const setRegions = useEditorStore((s) => s.setRegions);
 	const upsertRegion = useEditorStore((s) => s.upsertRegion);
+	const markPendingRegionsFailed = useEditorStore((s) => s.markPendingRegionsFailed);
 	const setScaleFactor = useEditorStore((s) => s.setScaleFactor);
 	const setUploadProgress = useEditorStore((s) => s.setUploadProgress);
 	const setAnalyzeProgress = useEditorStore((s) => s.setAnalyzeProgress);
@@ -182,11 +189,17 @@ export function Dropzone() {
 						setAnalyzeProgress(message.current, message.total);
 					} else if (message.type === 'detected' && Array.isArray(message.regions)) {
 						// Text/position for every detected line, before any of them
-						// have a font/color yet — lets the canvas show real boxes
-						// (and Canvas.tsx switch its caption from "Detecting" to
-						// "Matching") well before enrichment finishes for any one
-						// of them.
-						setRegions(message.regions.map(toRegion));
+						// have a font/color yet. This is the new readiness point:
+						// status flips to 'enriching' here (not at the final
+						// "result") so the editor becomes usable — regions
+						// visible, selectable, and editable — right after OCR,
+						// while exact font matching continues in the background.
+						// Every region starts 'pending'; see commitEdit/
+						// nudgeRegion/applyOverride in store.ts for how an edit on
+						// a still-pending region waits for its own "region"
+						// message instead of using a fallback style.
+						setRegions(message.regions.map((r) => ({ ...toRegion(r), enrichmentStatus: 'pending' as const })));
+						setStatus('enriching');
 					} else if (message.type === 'region' && message.region) {
 						// One region's enrichment just finished — replace its
 						// "detected" stub (same id) with the fully-styled version.
@@ -223,20 +236,42 @@ export function Dropzone() {
 					buffer = '';
 				}
 				if (xhr.status >= 200 && xhr.status < 300 && finalResult && !streamError) {
-					setRegions(finalResult.regions.map(toRegion));
+					// Per-region upsert (merge), not a blanket setRegions replace:
+					// the user may have already edited text, nudged a position, or
+					// applied a style override on a region while its own "region"
+					// message was still in flight — a raw replace here would
+					// silently discard that. upsertRegion also resolves any
+					// commitEdit/nudgeRegion/applyOverride still waiting on a
+					// region whose "region" message never arrived for some reason
+					// (the final result is the authoritative last word on every
+					// region's enrichment either way).
+					for (const region of finalResult.regions) {
+						upsertRegion(toRegion(region));
+					}
 					setScaleFactor(finalResult.scale_factor);
 					setStatus('idle');
 				} else {
+					markPendingRegionsFailed(streamError ?? `analyze failed with status ${xhr.status}`);
 					setStatus('error', streamError ?? `analyze failed with status ${xhr.status}`);
 				}
 			};
 			xhr.onerror = () => {
+				markPendingRegionsFailed('analyze request failed');
 				setStatus('error', 'analyze request failed');
 			};
 
 			xhr.send(formData);
 		},
-		[setImage, setRegions, upsertRegion, setScaleFactor, setUploadProgress, setAnalyzeProgress, setStatus],
+		[
+			setImage,
+			setRegions,
+			upsertRegion,
+			markPendingRegionsFailed,
+			setScaleFactor,
+			setUploadProgress,
+			setAnalyzeProgress,
+			setStatus,
+		],
 	);
 
 	const onDrop = useCallback(
@@ -258,13 +293,29 @@ export function Dropzone() {
 			onDragLeave={() => setIsDragging(false)}
 			onDrop={onDrop}
 			onClick={() => inputRef.current?.click()}
-			className={`flex h-80 w-full max-w-xl cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed text-sm transition-colors ${
+			className={`flex w-full max-w-xl cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border border-dashed px-4 py-10 text-center transition-colors sm:gap-4 sm:px-8 sm:py-14 ${
 				isDragging ? 'border-link bg-hairline-soft' : 'border-hairline bg-canvas-elevated'
 			}`}
 		>
-			<p className="text-body">Drop a screenshot here, or click to choose a file</p>
-			<p className="text-faint text-xs">PNG or JPEG</p>
-			<p className="text-faint px-4 text-center text-xs">
+			<img src="/icon.png" alt="ScreenshotTextEditor logo" width="44" height="44" className="h-10 w-10 sm:h-11 sm:w-11" />
+
+			<div className="flex flex-col gap-1">
+				<p className="text-ink text-sm font-medium sm:text-base">Drop a screenshot here, or click to choose a file</p>
+				<p className="text-faint text-xs">PNG or JPEG</p>
+			</div>
+
+			<button
+				type="button"
+				onClick={(e) => {
+					e.stopPropagation();
+					inputRef.current?.click();
+				}}
+				className="rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-on-primary transition-colors hover:bg-ink/90"
+			>
+				Choose a file
+			</button>
+
+			<p className="text-faint max-w-sm px-2 text-center text-xs">
 				Latin-script text on flat or simple-gradient backgrounds — CJK and RTL scripts aren't supported yet
 			</p>
 			{(status === 'uploading' || status === 'analyzing') && <p className="text-link text-xs">Uploading…</p>}

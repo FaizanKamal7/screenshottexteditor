@@ -14,7 +14,6 @@ const staticPages = [
 
 const routeKeyPriority: Record<(typeof translatableRouteKeys)[number], string> = {
 	'': '1.0',
-	pricing: '0.8',
 	about: '0.5',
 	contact: '0.4',
 };

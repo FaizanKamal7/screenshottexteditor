@@ -3,17 +3,15 @@ import type { Translations } from '../types';
 export const fr: Translations = {
 	nav: {
 		useCases: "Cas d'usage",
-		pricing: 'Tarifs',
 		about: 'À propos',
 		contact: 'Contact',
-		openEditor: "Ouvrir l'éditeur",
+		openEditor: 'Commencer gratuitement',
 		menu: 'Menu',
 	},
 	footer: {
 		tagline: "Un pipeline déterministe pour modifier le texte dans des captures d'écran — indiscernable de l'original, pixel par pixel.",
 		productHeading: 'Produit',
 		openEditor: "Ouvrir l'éditeur",
-		pricing: 'Tarifs',
 		useCases: "Cas d'usage",
 		useCasesHeading: "Cas d'usage",
 		companyHeading: 'Entreprise',
@@ -35,8 +33,9 @@ export const fr: Translations = {
 		heroTitleLine2: 'Gardez chaque autre pixel exactement identique.',
 		heroSubtitle:
 			"Cliquez sur n'importe quelle ligne de texte d'une capture d'écran, retapez-la, et sa police, taille, graisse et couleur s'ajustent automatiquement — tout le reste reste identique, pixel pour pixel.",
-		ctaPrimary: "Ouvrir l'éditeur",
+		ctaPrimary: 'Commencer gratuitement',
 		ctaSecondary: 'Voir comment ça marche',
+		heroFreeNote: 'Gratuit — sans inscription, sans carte bancaire, sans filigrane.',
 
 		diffEyebrow: 'Pourquoi c\'est différent',
 		diffTitle: 'Un pipeline déterministe, pas une supposition générée.',
@@ -90,7 +89,7 @@ export const fr: Translations = {
 		aboutToolP1:
 			"ScreenshotTextEditor résout un problème très précis : changer les mots d'une capture d'écran sans rien changer d'autre. Les éditeurs de photos génériques gèrent bien le recadrage, le flou et les annotations, mais dès que vous essayez de remplacer une ligne de texte, la police est fausse, l'espacement se décale, ou la zone derrière l'ancien texte devient une tache. Cet outil adopte une approche plus ciblée : il détecte la police, la taille, la graisse et la couleur exactes de chaque fragment de texte de l'image, puis reconstruit cette zone avec une précision telle que la modification est invisible même à un zoom de 400 %.",
 		aboutToolP2:
-			"Il fonctionne entièrement dans le navigateur, donc rien à installer et aucun logiciel de design requis. Importez une capture d'écran ou toute image contenant du texte, cliquez sur la ligne à modifier, tapez votre remplacement et téléchargez le résultat. Les modifications d'une seule image sont gratuites à essayer, sans compte requis. Les exports ne portent aucun filigrane ni logo visibles — la seule chose ajoutée est une étiquette d'identifiants de contenu invisible dans les métadonnées du fichier, décrite plus bas, qui identifie l'image comme modifiée.",
+			"Il fonctionne entièrement dans le navigateur, donc rien à installer et aucun logiciel de design requis. Importez une capture d'écran ou toute image contenant du texte, cliquez sur la ligne à modifier, tapez votre remplacement et téléchargez le résultat. Tout est gratuit à essayer, image unique comme localisation par lot, sans compte requis. Les exports ne portent aucun filigrane ni logo visibles — la seule chose ajoutée est une étiquette d'identifiants de contenu invisible dans les métadonnées du fichier, décrite plus bas, qui identifie l'image comme modifiée.",
 		aboutToolH3a: "Pourquoi pas un éditeur IA générative ?",
 		aboutToolP3:
 			"La plupart des outils qui se présentent comme un éditeur d'image IA s'appuient sur un modèle génératif pour halluciner un texte à l'apparence plausible — un raccourci qui a tendance à échouer sur les polices d'interface petites et nettes. Ce pipeline fonctionne différemment : l'OCR détecte chaque fragment de texte au niveau du caractère et mesure le facteur d'échelle de l'image directement à partir des glyphes. L'outil rend ensuite votre texte source dans une courte liste de polices probables selon la plateforme et note chaque candidate face au masque de pixels réel jusqu'à trouver la meilleure correspondance de famille, taille, graisse et espacement des lettres. Ce n'est qu'alors qu'il efface l'ancien texte avec un remplissage assorti et rend le remplacement avec la même ligne de base et le même lissage. Chaque correspondance porte un score de confiance visible, donc si le pipeline ne parvient pas à reproduire votre texte avec une fiabilité suffisante, il vous le dit plutôt que de livrer discrètement une modification qui sonne faux.",
@@ -133,7 +132,7 @@ export const fr: Translations = {
 			{
 				question: "Modifier le texte d'une capture d'écran est-il gratuit ?",
 				answer:
-					"Oui. Vous pouvez essayer l'éditeur de texte pour captures d'écran en ligne gratuitement, sans filigrane, sans compte requis — les fichiers importés sont traités puis automatiquement supprimés en une heure. Les flux à plus fort volume, comme la localisation en masse pour App Store, sont disponibles sur les forfaits payants, mais la modification d'une seule image reste gratuite.",
+					"Oui. L'éditeur de texte pour captures d'écran est gratuit, sans filigrane, sans compte requis — les fichiers importés sont traités puis automatiquement supprimés en une heure. Cela inclut la localisation en masse pour App Store, pas seulement la modification d'une seule image.",
 			},
 			{
 				question: "Peut-on changer le texte de n'importe quelle image, ou seulement des captures d'écran ?",
@@ -147,54 +146,7 @@ export const fr: Translations = {
 
 		finalTitle: 'Essayez-le sur votre propre capture d\'écran.',
 		finalSubtitle: "Aucun compte requis pour l'essayer. Supprimée automatiquement au bout d'une heure.",
-		finalCta: "Ouvrir l'éditeur",
-	},
-	pricing: {
-		metaTitle: 'Tarifs — ScreenshotTextEditor',
-		metaDescription:
-			"Des tarifs simples pour l'édition de texte dans les captures d'écran et la localisation App Store — d'un essai gratuit aux forfaits d'équipe avec localisation par lot CSV.",
-		eyebrow: 'Tarifs',
-		title: 'Des tarifs simples, sans mauvaise surprise par poste.',
-		subtitle:
-			"Chaque forfait bénéficie du même pipeline déterministe et du même score de confiance. Les forfaits supérieurs débloquent plus de volume et le flux de localisation par lot. Aucun forfait ne retire les identifiants de contenu intégrés à un export.",
-		freeTier: {
-			name: 'Gratuit',
-			period: '',
-			description: "Testez-le sur une vraie capture d'écran avant de vous engager.",
-			features: [
-				'10 rendus / mois',
-				'Éditeur pour image unique',
-				'Score de confiance et remplacement manuel de police',
-				'Import PNG et JPEG, export PNG',
-				'Fichiers supprimés après 1 heure',
-			],
-			ctaLabel: "Ouvrir l'éditeur",
-		},
-		proTier: {
-			name: 'Pro',
-			period: '/ mois',
-			description: "Pour les équipes qui livrent des captures localisées régulièrement.",
-			features: [
-				'Modifications d\'image unique illimitées',
-				'Localisation par lot CSV — importez une fois, exportez un ZIP par langue',
-				'Score de confiance et remplacement manuel de police',
-				'Traitement prioritaire',
-				'Tout ce qui est inclus dans Gratuit',
-			],
-			ctaLabel: 'Commencer avec Pro',
-		},
-		teamTier: {
-			name: 'Équipe',
-			period: '/ poste / mois',
-			description: "Traitements par lot partagés et support prioritaire pour toute l'équipe.",
-			features: ['Tout ce qui est inclus dans Pro, par poste', 'Tâches de localisation par lot partagées', 'Support prioritaire', "Accès anticipé à l'API"],
-			ctaLabel: 'Nous contacter',
-		},
-		notHereYetTitle: "Ce qui n'est pas encore disponible",
-		notHereYetPre:
-			"Le texte sur photos et textures complexes, les écritures CJK et RTL, le texte en dégradé ou avec contour, les ombres portées, un plugin Figma et une API publique sont tous sur la feuille de route mais pas encore livrés en v1 — consultez les",
-		notHereYetLinkText: 'conditions',
-		notHereYetPost: 'pour connaître le périmètre actuel.',
+		finalCta: 'Commencer gratuitement',
 	},
 	about: {
 		metaTitle: 'À propos — ScreenshotTextEditor',
@@ -230,7 +182,7 @@ export const fr: Translations = {
 		ctaTitle: 'Des questions, des retours, ou un bug à signaler ?',
 		ctaSubtitle: 'Nous lisons tout ce qui nous arrive via la page de contact.',
 		ctaPrimary: 'Nous contacter',
-		ctaSecondary: "Ouvrir l'éditeur",
+		ctaSecondary: 'Commencer gratuitement',
 	},
 	contact: {
 		metaTitle: 'Contact — ScreenshotTextEditor',
