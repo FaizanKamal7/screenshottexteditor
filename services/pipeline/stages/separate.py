@@ -1,4 +1,5 @@
 import base64
+import math
 from dataclasses import dataclass
 
 import cv2
@@ -142,13 +143,26 @@ def _encode_alpha_png(alpha: np.ndarray) -> str:
     return base64.b64encode(buffer.tobytes()).decode("ascii")
 
 
-def separate(image_bgr: np.ndarray, bbox: tuple[float, float, float, float]) -> SeparationResult:
+def separate(
+    image_bgr: np.ndarray,
+    bbox: tuple[float, float, float, float],
+    neighbor_bounds: tuple[float, float, float, float] = (0.0, float("inf"), 0.0, float("inf")),
+) -> SeparationResult:
+    """`neighbor_bounds` is (min_x, max_x, min_y, max_y) from
+    stages/detect.py's `neighbor_clamp_for` — the rectangle this crop may
+    never cross, so CROP_PADDING_PX can't bridge a tight gap into a
+    vertically- or horizontally-adjacent line/label's real ink. Rounded
+    inward (ceil the lower bound, floor the upper) so the clamp is never
+    looser than intended.
+    """
     img_h, img_w = image_bgr.shape[:2]
     x, y, w, h = bbox
-    x0 = max(int(x) - CROP_PADDING_PX, 0)
-    y0 = max(int(y) - CROP_PADDING_PX, 0)
-    x1 = min(int(x + w) + CROP_PADDING_PX, img_w)
-    y1 = min(int(y + h) + CROP_PADDING_PX, img_h)
+    min_x, max_x, min_y, max_y = neighbor_bounds
+
+    x0 = max(int(x) - CROP_PADDING_PX, 0, math.ceil(min_x))
+    y0 = max(int(y) - CROP_PADDING_PX, 0, math.ceil(min_y))
+    x1 = min(int(x + w) + CROP_PADDING_PX, img_w, math.floor(max_x) if math.isfinite(max_x) else img_w)
+    y1 = min(int(y + h) + CROP_PADDING_PX, img_h, math.floor(max_y) if math.isfinite(max_y) else img_h)
 
     crop = image_bgr[y0:y1, x0:x1]
     if crop.size == 0:

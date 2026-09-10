@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# pipeline debug capture output (services/pipeline/main.py, DEBUG_CAPTURE_DIR)
+services/pipeline/debug_captures/

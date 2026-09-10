@@ -41,6 +41,24 @@ def test_char_boxes_roughly_match_character_count():
     assert 1 <= len(result.char_boxes) <= 4
 
 
+def test_neighbor_bounds_clamp_the_padded_crop():
+    """A tight neighbor_bounds (as computed by stages/detect.py's
+    neighbor_clamp_for for a closely-stacked line) must actually constrain
+    the padded crop, not just get accepted and ignored.
+    """
+    image_bgr, bbox = _render_text_image("Hello")
+    x, y, w, h = bbox
+
+    unclamped = separate(image_bgr, bbox)
+    # Force min_y to sit a few pixels below the crop's own default top edge.
+    tight_min_y = unclamped.crop_bbox[1] + 4
+    clamped = separate(image_bgr, bbox, (0.0, float("inf"), tight_min_y, float("inf")))
+
+    assert clamped.crop_bbox[1] == int(tight_min_y)
+    assert clamped.crop_bbox[1] > unclamped.crop_bbox[1]
+    assert clamped.crop_bbox[0] == unclamped.crop_bbox[0]  # x untouched by a y-only clamp
+
+
 def test_textured_background_is_detected_as_non_flat():
     rng = np.random.default_rng(seed=42)
     noisy = rng.integers(0, 255, size=(60, 220, 3), dtype=np.uint8)

@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-from stages.detect import detect, estimate_scale_factor, group_into_blocks
+from stages.detect import detect, estimate_scale_factor, group_into_blocks, neighbor_clamp_for
 
 
 def _render_screenshot_like_image() -> np.ndarray:
@@ -74,3 +74,64 @@ def test_estimate_scale_factor_returns_valid_bucket_for_synthetic_mask():
     scale = estimate_scale_factor([mask])
 
     assert scale in (1, 2, 3)
+
+
+def test_neighbor_clamp_for_bounds_tight_vertically_stacked_lines():
+    """Regression coverage for a receipt-style 'Order Number:' / 'Date:'
+    pair: two lines close enough together that CROP_PADDING_PX plus normal
+    OCR bbox slop would otherwise bridge the gap between them.
+    """
+    order_bbox = (20.0, 10.0, 180.0, 12.0)  # y: 10-22
+    date_bbox = (20.0, 24.0, 140.0, 14.0)  # y: 24-38, only 2px below order_bbox
+
+    min_x, max_x, min_y, max_y = neighbor_clamp_for(date_bbox, [order_bbox, date_bbox])
+
+    assert min_y == 23.0  # midpoint of the 22-24 gap between the two reported boxes
+    assert max_y == float("inf")  # nothing below date_bbox to clamp against
+    assert min_x == 0.0 and max_x == float("inf")  # order_bbox overlaps horizontally, not a side-by-side neighbor
+
+
+def test_neighbor_clamp_for_bounds_side_by_side_labels():
+    left_bbox = (10.0, 10.0, 40.0, 20.0)  # x: 10-50
+    right_bbox = (54.0, 10.0, 40.0, 20.0)  # x: 54-94, only 4px to the right
+
+    min_x, max_x, min_y, max_y = neighbor_clamp_for(left_bbox, [right_bbox])
+
+    assert max_x == 52.0  # midpoint of the 50-54 gap
+    assert min_x == 0.0
+    assert min_y == 0.0 and max_y == float("inf")
+
+
+def test_neighbor_clamp_for_ignores_diagonal_boxes():
+    """A box that overlaps neither axis (diagonally offset) isn't a real
+    visual neighbor -- e.g. two unrelated fields in different rows AND
+    columns -- and must not affect the clamp at all.
+    """
+    bbox = (20.0, 20.0, 40.0, 20.0)
+    diagonal = (200.0, 200.0, 40.0, 20.0)  # overlaps neither axis
+
+    bounds = neighbor_clamp_for(bbox, [diagonal])
+
+    assert bounds == (0.0, float("inf"), 0.0, float("inf"))
+
+
+def test_neighbor_clamp_for_still_bounds_a_distant_aligned_neighbor():
+    """A far-away neighbor in the same column still produces a (very loose)
+    clamp -- there's no distance cutoff, just whichever neighbor is closest
+    on that axis. Harmless in practice since normal padding never reaches
+    anywhere near that far.
+    """
+    bbox = (20.0, 20.0, 40.0, 20.0)
+    far_below = (20.0, 500.0, 40.0, 20.0)  # same columns, y: 500-520
+
+    _, _, _, max_y = neighbor_clamp_for(bbox, [far_below])
+
+    assert max_y == 270.0  # midpoint of the 40-500 gap
+
+
+def test_neighbor_clamp_for_ignores_itself_when_present_in_other_bboxes():
+    bbox = (20.0, 20.0, 40.0, 20.0)
+
+    bounds = neighbor_clamp_for(bbox, [bbox])
+
+    assert bounds == (0.0, float("inf"), 0.0, float("inf"))

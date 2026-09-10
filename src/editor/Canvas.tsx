@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { AnalyzingLoader } from './AnalyzingLoader';
 import { MAX_NUDGE_PX, useEditorStore, type Region } from './store';
 import { backgroundCss, confidenceLevel, fontFamilyCss } from './styleHelpers';
 
@@ -49,6 +50,9 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	const status = useEditorStore((s) => s.status);
 	const uploadProgress = useEditorStore((s) => s.uploadProgress);
 	const analyzeProgress = useEditorStore((s) => s.analyzeProgress);
+	const errorMessage = useEditorStore((s) => s.errorMessage);
+	const cancelAnalyze = useEditorStore((s) => s.cancelAnalyze);
+	const reset = useEditorStore((s) => s.reset);
 	const startEditingWithStyle = useEditorStore((s) => s.startEditingWithStyle);
 	const cancelEditing = useEditorStore((s) => s.cancelEditing);
 	const commitEdit = useEditorStore((s) => s.commitEdit);
@@ -66,17 +70,31 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	// that exact font matching is still finishing in the background.
 	const isDetecting = status === 'analyzing';
 	const isEnriching = status === 'enriching';
-	const isBusy = isUploading || isDetecting;
 
-	const [detectElapsedSeconds, setDetectElapsedSeconds] = useState(0);
+	// The detecting overlay's own exit animation (AnalyzingLoader's
+	// 'completing' tween + success check) needs to keep rendering for a
+	// moment after `status` has already moved past 'analyzing' — this lags
+	// that flip instead of unmounting the loader the instant isDetecting
+	// goes false.
+	const [detectOverlayPhase, setDetectOverlayPhase] = useState<'hidden' | 'active' | 'completing'>('hidden');
 	useEffect(() => {
-		if (!isDetecting) {
-			setDetectElapsedSeconds(0);
+		if (isDetecting) {
+			setDetectOverlayPhase('active');
 			return;
 		}
-		const interval = setInterval(() => setDetectElapsedSeconds((s) => s + 1), 1000);
-		return () => clearInterval(interval);
-	}, [isDetecting]);
+		setDetectOverlayPhase((phase) => {
+			if (phase !== 'active') return phase === 'completing' ? 'hidden' : phase;
+			return status === 'error' ? 'hidden' : 'completing';
+		});
+	}, [isDetecting, status]);
+	useEffect(() => {
+		if (detectOverlayPhase !== 'completing') return;
+		const timeout = setTimeout(() => setDetectOverlayPhase('hidden'), 900);
+		return () => clearTimeout(timeout);
+	}, [detectOverlayPhase]);
+
+	const isBusy = isUploading || detectOverlayPhase !== 'hidden';
+	const isAnalyzeError = status === 'error' && !!errorMessage;
 
 	const [matchingCaptionIndex, setMatchingCaptionIndex] = useState(0);
 	useEffect(() => {
@@ -425,7 +443,7 @@ export function Canvas({ embedded = false }: CanvasProps) {
 											const { selectionStart, selectionEnd } = e.currentTarget;
 											setEditingSelection(
 												selectionStart != null && selectionEnd != null && selectionStart !== selectionEnd
-													? { start: selectionStart, end: selectionEnd }
+													? { regionId: region.id, start: selectionStart, end: selectionEnd }
 													: null,
 											);
 										}}
@@ -555,29 +573,40 @@ export function Canvas({ embedded = false }: CanvasProps) {
 			{isBusy && (
 				// Uploading or OCR detection — no regions exist yet, so this is
 				// the only phase that still fully blocks the canvas.
-				<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-					<div className="flex w-max min-w-72 max-w-sm flex-col items-center gap-3 rounded-lg border border-hairline bg-canvas-elevated/95 px-6 py-5 shadow-md backdrop-blur-sm">
-						{isUploading ? (
-							<>
-								<div className="h-1.5 w-full overflow-hidden rounded-full bg-hairline">
-									<div
-										className="h-full rounded-full bg-link transition-[width] duration-150 ease-out"
-										style={{ width: `${uploadProgress}%` }}
-									/>
-								</div>
-								<p className="whitespace-nowrap text-[13px] text-body">Uploading screenshot… {uploadProgress}%</p>
-							</>
-						) : (
-							<>
-								<div className="h-2 w-full overflow-hidden rounded-full bg-hairline">
-									<div className="loader-indeterminate-bar h-full w-2/5 rounded-full bg-link" />
-								</div>
-								<p className="whitespace-nowrap text-[13px] text-body">
-									Detecting text{detectElapsedSeconds > 0 ? `… ${detectElapsedSeconds}s` : '…'}
-								</p>
-								<p className="whitespace-nowrap text-[11px] text-faint">Reading text in image</p>
-							</>
-						)}
+				<div className="pointer-events-none absolute inset-0 flex items-center justify-center px-4">
+					{isUploading ? (
+						<div className="flex w-max min-w-72 max-w-sm flex-col items-center gap-3 rounded-lg border border-hairline bg-canvas-elevated/95 px-6 py-5 shadow-md backdrop-blur-sm">
+							<div className="h-1.5 w-full overflow-hidden rounded-full bg-hairline">
+								<div
+									className="h-full rounded-full bg-link transition-[width] duration-150 ease-out"
+									style={{ width: `${uploadProgress}%` }}
+								/>
+							</div>
+							<p className="whitespace-nowrap text-[13px] text-body">Uploading screenshot… {uploadProgress}%</p>
+						</div>
+					) : (
+						<div className="pointer-events-auto flex w-full max-w-xs flex-col items-center gap-3 rounded-lg border border-hairline bg-canvas-elevated/95 px-6 py-6 shadow-md backdrop-blur-sm sm:max-w-sm">
+							<AnalyzingLoader
+								phase={detectOverlayPhase === 'completing' ? 'completing' : 'active'}
+								onCancel={cancelAnalyze}
+							/>
+						</div>
+					)}
+				</div>
+			)}
+
+			{isAnalyzeError && (
+				<div className="pointer-events-none absolute inset-0 flex items-center justify-center px-4">
+					<div className="pointer-events-auto flex w-full max-w-xs flex-col items-center gap-3 rounded-lg border border-hairline bg-canvas-elevated/95 px-6 py-6 text-center shadow-md backdrop-blur-sm">
+						<p className="text-sm font-medium text-error">Something went wrong</p>
+						<p className="text-[13px] text-body">{errorMessage}</p>
+						<button
+							type="button"
+							onClick={() => reset()}
+							className="rounded-full border border-hairline px-4 py-1.5 text-xs text-body hover:text-link"
+						>
+							Try again
+						</button>
 					</div>
 				</div>
 			)}

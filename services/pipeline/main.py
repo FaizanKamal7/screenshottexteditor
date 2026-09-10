@@ -1,4 +1,5 @@
 import base64
+import hashlib
 import io
 import json
 import multiprocessing
@@ -9,6 +10,7 @@ from collections import defaultdict
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass
 
+import cv2
 import numpy as np
 from fastapi import FastAPI, Form, Header, HTTPException, UploadFile, status
 from fastapi.responses import StreamingResponse
@@ -17,10 +19,19 @@ from pydantic import ValidationError
 
 from fonts.registry import estimated_true_font_size, find_font_path, style_role_for
 from models import AnalyzeResponse, FontCandidateScore, Region, RenderEdit, RenderRegionResult, RenderResponse
-from stages.detect import DetectedLine, detect, estimate_scale_factor
+from stages.debug_viz import render_debug_overlay
+from stages.detect import DetectedLine, detect, estimate_scale_factor, neighbor_clamp_for
+from stages.erase import clean_inpaint_mask, erase
 from stages.match import calibrate_confidence, detect_ui_element, estimate_color, estimate_layout, match_font
 from stages.render_stage import compose_region
 from stages.separate import separate
+
+# Pure diagnostic capture, off by default (unset env var). When set to a
+# directory path, /render dumps every intermediate stage of each edit to
+# numbered PNGs there, plus a pixel-diff report on stdout — see
+# _capture_render_debug below. Never changes what /render computes or
+# returns; only ever reads already-computed values to write extra files.
+DEBUG_CAPTURE_DIR = os.environ.get("PIPELINE_DEBUG_CAPTURE_DIR")
 
 app = FastAPI(title="screenshottexteditor pipeline")
 
@@ -122,7 +133,7 @@ class FontMatchTelemetry:
 
 
 def _process_line(
-    image_bgr: np.ndarray, line: DetectedLine, region_id: str
+    image_bgr: np.ndarray, line: DetectedLine, region_id: str, all_bboxes: list[tuple[float, float, float, float]]
 ) -> tuple[Region, np.ndarray, LineTimings, FontMatchTelemetry]:
     """One detected line's full stage-2/stage-3 work: separate, match font, estimate color/UI.
 
@@ -131,10 +142,14 @@ def _process_line(
     by the caller (not here, as it used to be) and reused for the same
     line's "detected" stub, "region" stream message, and final `result`
     entry, so the frontend can match them up by id as progressively richer
-    versions of the same region arrive.
+    versions of the same region arrive. `all_bboxes` is every detected
+    line's bbox in this image (this line's own included — see
+    `neighbor_clamp_for`), so `separate` can keep this line's padded crop
+    from ever crossing into a tightly-spaced neighbor's real ink.
     """
     t0 = time.perf_counter()
-    separation = separate(image_bgr, line.bbox)
+    neighbor_bounds = neighbor_clamp_for(line.bbox, all_bboxes)
+    separation = separate(image_bgr, line.bbox, neighbor_bounds)
     t1 = time.perf_counter()
 
     region_h = line.bbox[3]
@@ -285,9 +300,10 @@ def _run_analysis(contents: bytes):
     regions: list[Region | None] = [None] * total
     masks: list[np.ndarray | None] = [None] * total
 
+    all_bboxes = [line.bbox for line in lines]
     executor = _get_executor()
     futures = {
-        executor.submit(_process_line, image_bgr, line, region_ids[i]): i for i, line in enumerate(lines)
+        executor.submit(_process_line, image_bgr, line, region_ids[i], all_bboxes): i for i, line in enumerate(lines)
     }
 
     enrich_start = time.perf_counter()
@@ -377,12 +393,97 @@ async def analyze(
     return StreamingResponse(_run_analysis(contents), media_type="application/x-ndjson")
 
 
+def _save_png(path: str, image_bgr: np.ndarray) -> None:
+    ok, buf = cv2.imencode(".png", image_bgr)
+    if ok:
+        with open(path, "wb") as f:
+            f.write(buf.tobytes())
+
+
+def _capture_boxes(dir_: str, image_bgr: np.ndarray, all_bboxes: list, edit_list: list) -> None:
+    """02_detected_boxes.png: every region_bboxes entry the request carried
+    (green) plus every bbox actually being edited this call (red), drawn on
+    the untouched original — the real geometry PaddleOCR + the frontend
+    reported for this exact image, not an assumed/synthetic one.
+    """
+    overlay = image_bgr.copy()
+    for bx in all_bboxes:
+        x, y, w, h = bx
+        cv2.rectangle(overlay, (int(x), int(y)), (int(x + w), int(y + h)), (0, 200, 0), 1)
+    for edit in edit_list:
+        x, y, w, h = edit.bbox
+        cv2.rectangle(overlay, (int(x), int(y)), (int(x + w), int(y + h)), (0, 0, 255), 1)
+    _save_png(os.path.join(dir_, "02_detected_boxes.png"), overlay)
+
+
+def _capture_erase_mask(dir_: str, image_bgr: np.ndarray, region_id: str, crop_bbox: tuple, alpha: np.ndarray) -> None:
+    """03_erase_mask_<region_id>.png: the padded crop rectangle (amber) and
+    the exact glyph-shaped mask (red) that erase() will actually reconstruct
+    for this edit, drawn at full-image scale so its position relative to
+    every other line (e.g. a line directly above it) is unambiguous.
+    """
+    x0, y0, x1, y1 = crop_bbox
+    overlay = image_bgr.copy()
+    mask = clean_inpaint_mask(alpha)
+    if mask.shape == (y1 - y0, x1 - x0):
+        region = overlay[y0:y1, x0:x1]
+        region[mask.astype(bool)] = (0, 0, 255)
+    cv2.rectangle(overlay, (x0, y0), (x1 - 1, y1 - 1), (0, 200, 255), 1)
+    _save_png(os.path.join(dir_, f"03_erase_mask_{region_id}.png"), overlay)
+
+
+def _capture_final_diff(dir_: str, original_bgr: np.ndarray, final_png_bytes: bytes, all_bboxes: list) -> None:
+    """07_pixel_diff.png plus the stdout report: a real pixel-by-pixel
+    comparison of the untouched original against the EXACT bytes returned
+    to the client (decoded straight back from those bytes, not from the
+    in-memory array, so this is provably the same image the frontend
+    receives) — never the OCR bbox, which is only used afterward to label
+    which reported region a changed pixel falls inside.
+    """
+    digest = hashlib.sha256(final_png_bytes).hexdigest()
+    final_path = os.path.join(dir_, "06_final_composite.png")
+    with open(final_path, "wb") as f:
+        f.write(final_png_bytes)
+
+    final_bgr = cv2.imdecode(np.frombuffer(final_png_bytes, dtype=np.uint8), cv2.IMREAD_COLOR)
+    diff = np.any(final_bgr != original_bgr, axis=2)
+    ys, xs = np.nonzero(diff)
+    diff_bbox = (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1) if len(ys) else None
+
+    diff_overlay = original_bgr.copy()
+    diff_overlay[diff] = (0, 0, 255)
+    _save_png(os.path.join(dir_, "07_pixel_diff.png"), diff_overlay)
+
+    print(
+        f"DEBUG_CAPTURE final_png_sha256={digest} final_png_path={final_path} "
+        f"changed_px_total={int(diff.sum())} changed_px_bbox={diff_bbox}",
+        flush=True,
+    )
+    for i, bx in enumerate(all_bboxes):
+        x, y, w, h = bx
+        x0, y0, x1, y1 = int(x), int(y), int(x + w), int(y + h)
+        region_diff = diff[y0:y1, x0:x1]
+        changed = int(region_diff.sum()) if region_diff.size else 0
+        print(f"DEBUG_CAPTURE region_bboxes[{i}]={bx} changed_px_inside_bbox={changed}", flush=True)
+
+
 @app.post("/render", response_model=RenderResponse)
 async def render(
     file: UploadFile,
     edits: str = Form(...),
+    region_bboxes: str = Form("[]"),
+    debug: bool = Form(False),
     x_pipeline_secret: str | None = Header(default=None, alias="X-Pipeline-Secret"),
 ) -> RenderResponse:
+    """`region_bboxes` is every currently-detected region's bbox (edited or
+    not), as a JSON list of [x, y, w, h] — the frontend already holds this
+    from /analyze. /render is otherwise stateless (re-renders always start
+    from the pristine upload, see RenderEdit's docstring) and has no other
+    way to know where an *unedited* neighboring line sits, so without this
+    an edited region's padded crop could bridge a tight gap into a
+    neighbor's real ink (see stages/detect.py's neighbor_clamp_for). Omitted
+    or empty just means no clamp, same as before this field existed.
+    """
     require_shared_secret(x_pipeline_secret)
 
     try:
@@ -390,9 +491,20 @@ async def render(
     except (json.JSONDecodeError, TypeError, ValidationError) as exc:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"invalid edits payload: {exc}") from exc
 
+    try:
+        all_bboxes = [tuple(b) for b in json.loads(region_bboxes)]
+    except (json.JSONDecodeError, TypeError) as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"invalid region_bboxes payload: {exc}") from exc
+
     contents = await file.read()
     image = Image.open(io.BytesIO(contents)).convert("RGB")
     image_bgr = np.array(image)[:, :, ::-1].copy()
+
+    if DEBUG_CAPTURE_DIR:
+        os.makedirs(DEBUG_CAPTURE_DIR, exist_ok=True)
+        original_bgr_for_diff = image_bgr.copy()
+        _save_png(os.path.join(DEBUG_CAPTURE_DIR, "01_original.png"), image_bgr)
+        _capture_boxes(DEBUG_CAPTURE_DIR, image_bgr, all_bboxes, edit_list)
 
     results: list[RenderRegionResult] = []
     for edit in edit_list:
@@ -401,9 +513,18 @@ async def render(
         except ValueError as exc:
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
 
-        separation = separate(image_bgr, edit.bbox)
+        neighbor_bounds = neighbor_clamp_for(edit.bbox, all_bboxes)
+        separation = separate(image_bgr, edit.bbox, neighbor_bounds)
         local_baseline = edit.baseline_y - separation.crop_bbox[1]
         local_x_offset = edit.x_offset - separation.crop_bbox[0]
+
+        if DEBUG_CAPTURE_DIR:
+            _capture_erase_mask(DEBUG_CAPTURE_DIR, image_bgr, edit.region_id, separation.crop_bbox, separation.alpha)
+            # Same erase() call compose_region makes internally — a pure
+            # function, so calling it again here to capture the intermediate
+            # cannot change what compose_region itself produces below.
+            erase_only = erase(image_bgr, separation.crop_bbox, separation.alpha, edit.background)
+            _save_png(os.path.join(DEBUG_CAPTURE_DIR, f"04_after_erase_{edit.region_id}.png"), erase_only)
 
         compose_result = compose_region(
             image_bgr,
@@ -421,14 +542,35 @@ async def render(
             edit.offset_x,
             edit.offset_y,
         )
+        debug_overlay = (
+            render_debug_overlay(image_bgr, edit.bbox, separation.crop_bbox, separation.alpha) if debug else None
+        )
+        if DEBUG_CAPTURE_DIR:
+            # compose_region fuses "render new text" and "composite it in"
+            # into one return value in the current code — there is no
+            # separate full-image state between them to capture, so this is
+            # deliberately identical to 06 for a single-edit request (see
+            # the readout below for what that implies about where to look).
+            _save_png(
+                os.path.join(DEBUG_CAPTURE_DIR, f"05_after_render_{edit.region_id}.png"), compose_result.image_bgr
+            )
         image_bgr = compose_result.image_bgr
         results.append(
-            RenderRegionResult(region_id=edit.region_id, font_size=compose_result.font_size, overflowed=compose_result.overflowed)
+            RenderRegionResult(
+                region_id=edit.region_id,
+                font_size=compose_result.font_size,
+                overflowed=compose_result.overflowed,
+                debug_overlay_png_base64=debug_overlay,
+            )
         )
 
     out_image = Image.fromarray(image_bgr[:, :, ::-1])
     buffer = io.BytesIO()
     out_image.save(buffer, format="PNG")
-    image_png_base64 = base64.b64encode(buffer.getvalue()).decode("ascii")
+    final_png_bytes = buffer.getvalue()
+    image_png_base64 = base64.b64encode(final_png_bytes).decode("ascii")
+
+    if DEBUG_CAPTURE_DIR:
+        _capture_final_diff(DEBUG_CAPTURE_DIR, original_bgr_for_diff, final_png_bytes, all_bboxes)
 
     return RenderResponse(image_png_base64=image_png_base64, results=results)

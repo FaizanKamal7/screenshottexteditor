@@ -1,13 +1,19 @@
+import cv2
 import numpy as np
 
 from models import BackgroundFill
 
-# BackgroundFill only models 'flat' and 'gradient' today (stages/match.py's
-# estimate_color falls back to a fitted gradient for any non-flat crop, textured
-# backgrounds included) — so those are the only two fills this stage handles.
-# A textured/photo branch (LaMa inpainting, per the brief) is a real gap, not
-# an oversight: it needs stage 3 to actually classify "textured" separately
-# from "gradient" first.
+# BackgroundFill ('flat' / 'gradient', see stages/match.py's estimate_color)
+# is only used to invent pixels where none exist in the source image — the
+# expansion strip(s) render_stage.py adds when replacement text is wider
+# than the original crop (see compose_region) — and as a last-resort fill
+# when a crop's mask covers it edge-to-edge (see erase() below). It is
+# deliberately NOT used to reconstruct the background under the erased
+# glyphs anymore: painting a flat color or a 2-stop gradient over the whole
+# crop rectangle discarded real texture and any content the mask
+# over-included, which is what produced the reported gray/blurred wash and
+# smearing on nearby content. That reconstruction is now cv2.inpaint,
+# restricted to the actual (cleaned) glyph mask — see _clean_inpaint_mask.
 
 
 def _flat_fill(color: tuple[int, int, int], height: int, width: int) -> np.ndarray:
@@ -45,16 +51,52 @@ def fill_array(background: BackgroundFill | None, height: int, width: int) -> np
     return _gradient_fill(background, height, width)
 
 
-# Any pixel the separation mask considers even lightly "text" gets fully
-# erased rather than proportionally blended. A pure linear alpha blend looks
-# principled but is wrong for erasure specifically: it leaves the old glyph's
-# anti-aliased halo — every edge pixel at, say, 40% mask coverage — visibly
-# ghosted at 40% strength, which reads as a shadow of the deleted/replaced
-# text. The new text drawn on top afterwards supplies its own anti-aliasing,
-# so the erase step doesn't need to preserve soft edges; it needs to be
-# clean. Only near-zero-alpha pixels (true background, not text) stay a
-# proportional (effectively no-op) blend.
-ERASE_ALPHA_FLOOR = 0.05
+# A pixel needs to clear this before it's treated as "definitely glyph ink"
+# for erasure — higher than separate.py's own soft-alpha values so faint
+# anti-aliasing/compression noise near the mask boundary doesn't get pulled
+# into the inpaint mask. Real inpainting doesn't need the soft fringe
+# included: cv2.inpaint blends from the reconstructed interior outward, so
+# leaving a 1px unmasked band of faint old-glyph color at the very edge
+# still disappears once dilated back in below.
+MASK_ALPHA_THRESHOLD = 0.35
+
+# Isolated speckles below this pixel count are near-certainly a false
+# positive from separate.py's classifiers (e.g. _kmeans_alpha finding a
+# stray pixel that happens to match the "text" color cluster), not a real
+# glyph fragment — even the thinnest legitimate stroke spans more pixels
+# than this once anti-aliased. Dropped via connected-component area, not a
+# blanket morphological opening, so genuinely thin (1-2px) strokes aren't
+# eroded away along with the noise.
+MIN_INK_COMPONENT_PX = 2
+
+# cv2.inpaint's search radius in source pixels. Small on purpose: erasure
+# only needs to reconstruct a thin band around each glyph stroke, and a
+# larger radius risks pulling in unrelated content near the mask boundary.
+INPAINT_RADIUS_PX = 3
+
+
+def clean_inpaint_mask(alpha: np.ndarray) -> np.ndarray:
+    """Binarize `alpha` into a glyph-shaped 8-bit (0/1) mask for cv2.inpaint.
+
+    Precise by construction: this only marks pixels the mask actually
+    considers ink (plus a 1px dilation to fully cover anti-aliased fringes),
+    never the bounding rectangle around them. Background pixels adjacent to
+    a glyph — even one pixel away — are never in this mask and are never
+    touched by erase() below. Also used by stages/debug_viz.py to visualize
+    exactly which pixels a given edit will touch.
+    """
+    hard = (alpha > MASK_ALPHA_THRESHOLD).astype(np.uint8)
+    if not hard.any():
+        return hard
+
+    num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(hard, connectivity=8)
+    cleaned = np.zeros_like(hard)
+    for label in range(1, num_labels):
+        if stats[label, cv2.CC_STAT_AREA] >= MIN_INK_COMPONENT_PX:
+            cleaned[labels == label] = 1
+
+    kernel = np.ones((3, 3), np.uint8)
+    return cv2.dilate(cleaned, kernel, iterations=1)
 
 
 def erase(
@@ -63,16 +105,36 @@ def erase(
     alpha: np.ndarray,
     background: BackgroundFill | None,
 ) -> np.ndarray:
-    """Returns a copy of `image_bgr` with the glyphs inside `crop_bbox` erased."""
+    """Returns a copy of `image_bgr` with the glyphs inside `crop_bbox` erased.
+
+    Reconstruction is mask-driven (cv2.inpaint), not a rectangle fill: only
+    pixels `_clean_inpaint_mask` marks as glyph ink are ever written, using
+    their real neighboring pixels to rebuild whatever texture/gradient the
+    background actually has. Every other pixel — including background
+    immediately next to a glyph, and any other text elsewhere in the crop —
+    passes through byte-for-byte unchanged.
+
+    The one case with no real background to reconstruct from is a mask that
+    covers the crop edge-to-edge (glyphs fill the whole assigned region,
+    leaving no unmasked pixel for inpainting to source texture from) — that
+    still falls back to `fill_array`'s fitted flat/gradient guess, same as
+    the old behavior, since there is nothing else to go on.
+    """
     x0, y0, x1, y1 = crop_bbox
     out = image_bgr.copy()
-    crop = out[y0:y1, x0:x1].astype(np.float32)
+    crop = out[y0:y1, x0:x1]
     if crop.size == 0:
         return out
 
-    fill = fill_array(background, crop.shape[0], crop.shape[1])
-    hardened_alpha = np.where(alpha > ERASE_ALPHA_FLOOR, 1.0, alpha).astype(np.float32)
-    weight = hardened_alpha[..., None]
-    blended = crop * (1.0 - weight) + fill * weight
-    out[y0:y1, x0:x1] = np.clip(blended, 0, 255).astype(np.uint8)
+    inpaint_mask = clean_inpaint_mask(alpha)
+    if not inpaint_mask.any():
+        return out
+
+    if inpaint_mask.all():
+        fill = fill_array(background, crop.shape[0], crop.shape[1])
+        out[y0:y1, x0:x1] = np.clip(fill, 0, 255).astype(np.uint8)
+        return out
+
+    reconstructed = cv2.inpaint(crop, inpaint_mask * 255, INPAINT_RADIUS_PX, cv2.INPAINT_TELEA)
+    out[y0:y1, x0:x1] = reconstructed
     return out

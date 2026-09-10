@@ -194,14 +194,21 @@ interface EditorState {
 	selectedRegionId: string | null;
 	editingRegionId: string | null;
 	overridePanelRegionId: string | null;
-	// The current native browser text selection inside the editing `<input>`
-	// for editingRegionId, as character offsets into that region's `text` —
-	// null when there's no selection (or nothing is being edited). Lets
-	// FontOverridePanel offer "style just the selection" instead of always
-	// restyling the whole region. Set by Canvas.tsx's input onSelect/onChange;
-	// cleared whenever editing starts/stops or a style is committed, so a
-	// stale range can never be applied against a region it no longer matches.
-	editingSelection: { start: number; end: number } | null;
+	// The current native browser text selection inside the editing `<input>`,
+	// as character offsets into `regionId`'s `text` — null when there's no
+	// selection (or nothing is being edited). Lets FontOverridePanel offer
+	// "style just the selection" instead of always restyling the whole
+	// region. Set by Canvas.tsx's input onSelect/onChange. Tagged with its
+	// own regionId (not just start/end) so it can only ever apply to the
+	// region it was actually selected in: clicking a FontOverridePanel
+	// control (Weight, Size, Text color, …) moves focus out of the edit
+	// input, which blurs it — and that blur must not silently invalidate an
+	// in-progress selection, since choosing a style *is* the next step of
+	// selecting text, not an abandonment of it. Only starting a fresh edit
+	// (startEditing/startEditingWithStyle), truly cancelling it
+	// (cancelEditing/Escape), committing changed text, or undo/redo clear
+	// this — see commitEdit for why a same-text blur does not.
+	editingSelection: { regionId: string; start: number; end: number } | null;
 	edits: Record<string, PendingEdit>;
 	// past[last] is the state one undo away; future[0] is the state one redo
 	// away. Any new edit (commitEdit/nudgeRegion/applyOverride) clears future —
@@ -270,7 +277,7 @@ interface EditorState {
 	openOverridePanel: (id: string) => void;
 	closeOverridePanel: () => void;
 	applyOverride: (id: string, overrides: StyleOverride) => Promise<void>;
-	setEditingSelection: (range: { start: number; end: number } | null) => void;
+	setEditingSelection: (range: { regionId: string; start: number; end: number } | null) => void;
 	// Splits a region into adjacent regions at fragment boundaries and gives
 	// each fragment its own style — how the editor supports mixing styles
 	// within what was one detected text region (see FontOverridePanel's
@@ -287,6 +294,14 @@ interface EditorState {
 	undo: () => Promise<void>;
 	redo: () => Promise<void>;
 	setStatus: (status: EditorState['status'], errorMessage?: string | null) => void;
+	// Lets Dropzone.handleFile hand the in-flight analyze XHR's abort() to
+	// whoever renders the loading UI, without putting the XHR itself (or a
+	// function) into reactive state. Call with null once the request settles
+	// (success, error, or a superseding upload) so a stale abort can't fire.
+	registerAnalyzeAbort: (abort: (() => void) | null) => void;
+	// User-initiated cancel of an in-flight analyze: aborts the XHR (if any
+	// is still registered) and resets back to the empty/Dropzone state.
+	cancelAnalyze: () => void;
 	toggleDebugMode: () => void;
 	reset: () => void;
 }
@@ -297,6 +312,9 @@ export const useEditorStore = create<EditorState>((set, get) => {
 	// letting both race — the debounced auto-apply in FontOverridePanel can
 	// fire several of these close together as the user drags a slider.
 	let renderAbortController: AbortController | null = null;
+
+	// See registerAnalyzeAbort/cancelAnalyze below.
+	let analyzeAbort: (() => void) | null = null;
 
 	// Resolved/rejected by upsertRegion (real enrichment arriving) or
 	// markPendingRegionsFailed (the stream ending without it) — see
@@ -464,6 +482,11 @@ export const useEditorStore = create<EditorState>((set, get) => {
 		try {
 			const formData = new FormData();
 			formData.set('file', state.imageFile);
+			// Every currently-detected region's bbox, not just the edited ones —
+			// /render is otherwise stateless per-edit and has no way to know
+			// where an unedited neighboring line sits, so it can't stop a tight
+			// edit's padded crop from bleeding into that neighbor's real ink.
+			formData.set('region_bboxes', JSON.stringify(state.regions.map((r) => r.bbox)));
 			formData.set(
 				'edits',
 				JSON.stringify(
@@ -578,7 +601,13 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				return;
 			}
 			if (newText === region.text) {
-				set({ editingRegionId: null, editingSelection: null });
+				// A no-op commit — most commonly the blur this input fires when
+				// focus moves to a FontOverridePanel control (Weight, Size, Text
+				// color, …). That's not the user abandoning their selection, it's
+				// the very next step of styling it — so editingSelection survives
+				// this (it's tagged with its own regionId, so it can never be
+				// misapplied if the user goes on to edit a different region).
+				set({ editingRegionId: null });
 				return;
 			}
 
@@ -756,6 +785,14 @@ export const useEditorStore = create<EditorState>((set, get) => {
 			await postRender(next.edits);
 		},
 		setStatus: (status, errorMessage = null) => set({ status, errorMessage }),
+		registerAnalyzeAbort: (abort) => {
+			analyzeAbort = abort;
+		},
+		cancelAnalyze: () => {
+			analyzeAbort?.();
+			analyzeAbort = null;
+			get().reset();
+		},
 		toggleDebugMode: () => set((s) => ({ debugMode: !s.debugMode })),
 		reset: () =>
 			set({

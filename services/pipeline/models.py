@@ -109,6 +109,10 @@ class RenderRegionResult(BaseModel):
     region_id: str
     font_size: float
     overflowed: bool
+    # Base64 PNG tile showing the OCR bbox (green), the padded crop erase()
+    # actually operates on (amber), and the precise glyph mask it reconstructs
+    # (red overlay) — only populated when /render is called with debug=true.
+    debug_overlay_png_base64: str | None = None
 
 
 class RenderResponse(BaseModel):

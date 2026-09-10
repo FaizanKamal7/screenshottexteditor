@@ -100,6 +100,52 @@ def detect(image_bgr: np.ndarray) -> DetectResult:
     return DetectResult(lines=lines, engine_init_s=engine_init_s, ocr_run_s=ocr_run_s)
 
 
+Bbox = tuple[float, float, float, float]
+
+
+def neighbor_clamp_for(bbox: Bbox, other_bboxes: list[Bbox]) -> tuple[float, float, float, float]:
+    """The rectangle `bbox`'s padded crop may never cross, as (min_x, max_x, min_y, max_y).
+
+    Computed as the midpoint gap to every OTHER bbox that overlaps `bbox` on
+    the perpendicular axis — a real visual neighbor (stacked directly above/
+    below, or beside on the same row), not just any text elsewhere in the
+    image. This exists because CROP_PADDING_PX (stages/separate.py) plus
+    OCR's own bbox measurement can otherwise bridge a tight gap between two
+    closely-spaced lines (e.g. a receipt's "Order Number:" / "Date:" rows),
+    letting one line's erase/inpaint/compose reach into its neighbor's ink.
+    The clamp is purely protective: a neighbor further away than the default
+    padding never tightens the bound, so this can only shrink a crop that
+    would otherwise have bled into real content, never affect an isolated
+    line's normal padding.
+
+    `bbox` itself may safely appear in `other_bboxes` (e.g. the full region
+    list at render time) — a box fully overlaps itself on both axes, so it
+    never contributes a clamp against itself.
+    """
+    x0, y0, w, h = bbox
+    x1, y1 = x0 + w, y0 + h
+    min_x, max_x, min_y, max_y = 0.0, float("inf"), 0.0, float("inf")
+
+    for ox0, oy0, ow, oh in other_bboxes:
+        ox1, oy1 = ox0 + ow, oy0 + oh
+        vertically_overlaps = oy0 < y1 and oy1 > y0
+        horizontally_overlaps = ox0 < x1 and ox1 > x0
+
+        if vertically_overlaps and not horizontally_overlaps:
+            if ox1 <= x0:
+                min_x = max(min_x, (ox1 + x0) / 2)
+            elif ox0 >= x1:
+                max_x = min(max_x, (x1 + ox0) / 2)
+
+        if horizontally_overlaps and not vertically_overlaps:
+            if oy1 <= y0:
+                min_y = max(min_y, (oy1 + y0) / 2)
+            elif oy0 >= y1:
+                max_y = min(max_y, (y1 + oy0) / 2)
+
+    return min_x, max_x, min_y, max_y
+
+
 def estimate_scale_factor(masks: list[np.ndarray]) -> int:
     stroke_widths: list[float] = []
 

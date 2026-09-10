@@ -87,27 +87,63 @@ body {
 	}
 }
 
-/* Canvas.tsx's "Detecting text…" loader step has no real progress data
-   (a single opaque OCR call) — this sweeps a highlight left to right on
-   loop so there's still a visible line moving, same intent as the
-   percentage-filled bar the "Analyzing text N of M" step gets once real
-   counts exist. */
-@keyframes loader-indeterminate {
-	0% {
-		transform: translateX(-100%);
-	}
-	100% {
-		transform: translateX(250%);
+/* AnalyzingLoader (Canvas.tsx) — the ~60s "Detecting text" wait has no real
+   backend progress (a single opaque OCR call), so the centerpiece motion and
+   progress fill are time-based estimates, not literal progress. */
+@keyframes loader-orbit-spin {
+	to {
+		transform: rotate(360deg);
 	}
 }
 
-.loader-indeterminate-bar {
-	animation: loader-indeterminate 1.1s ease-in-out infinite;
+.loader-orbit-ring {
+	animation: loader-orbit-spin 2.6s linear infinite;
+}
+
+.loader-orbit-ring--eager {
+	animation-duration: 1.3s;
+}
+
+@keyframes loader-core-pulse {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.1);
+		opacity: 0.82;
+	}
+}
+
+.loader-core-pulse {
+	animation: loader-core-pulse 2.2s ease-in-out infinite;
+}
+
+.loader-core-pulse--eager {
+	animation-duration: 1.1s;
+}
+
+@keyframes loader-msg-fade {
+	0% {
+		opacity: 0;
+		transform: translateY(3px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.loader-msg-fade {
+	animation: loader-msg-fade 400ms ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.loader-indeterminate-bar {
-		animation: none;
+	.loader-orbit-ring,
+	.loader-core-pulse,
+	.loader-msg-fade {
+		animation: none !important;
 	}
 }
 

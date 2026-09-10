@@ -9,6 +9,11 @@ services:
       # __pycache__ dir under Docker Desktop's Windows filesystem and takes the
       # whole container down; polling avoids that watcher entirely.
       - WATCHFILES_FORCE_POLLING=true
+      # Temporary diagnostic only (see main.py's DEBUG_CAPTURE_DIR) — dumps
+      # every /render stage to numbered PNGs under this bind-mounted path so
+      # they're readable from the host at ./services/pipeline/debug_captures.
+      # Remove this line once the Order Number corruption bug is closed.
+      - PIPELINE_DEBUG_CAPTURE_DIR=/app/debug_captures
     volumes:
       - ./services/pipeline:/app
       - paddleocr-models:/root/.paddleocr

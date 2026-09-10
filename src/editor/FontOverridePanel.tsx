@@ -23,11 +23,16 @@ export function FontOverridePanel() {
 	const applyOverride = useEditorStore((s) => s.applyOverride);
 	const applyStyleToSelection = useEditorStore((s) => s.applyStyleToSelection);
 	const editingSelection = useEditorStore((s) => s.editingSelection);
-	// Only treat it as a sub-range split when the selection doesn't already
-	// cover the whole text — a full-text selection is just "style the whole
-	// region," which applyOverride already handles directly.
+	// Only treat it as a sub-range split when it belongs to this region (a
+	// stale selection from a previously edited region must never carry over)
+	// and doesn't already cover the whole text — a full-text selection is
+	// just "style the whole region," which applyOverride already handles
+	// directly.
 	const selection =
-		editingSelection && region && (editingSelection.start > 0 || editingSelection.end < region.text.length)
+		editingSelection &&
+		region &&
+		editingSelection.regionId === region.id &&
+		(editingSelection.start > 0 || editingSelection.end < region.text.length)
 			? editingSelection
 			: null;
 

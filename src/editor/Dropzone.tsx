@@ -141,6 +141,7 @@ export function Dropzone() {
 	const setUploadProgress = useEditorStore((s) => s.setUploadProgress);
 	const setAnalyzeProgress = useEditorStore((s) => s.setAnalyzeProgress);
 	const setStatus = useEditorStore((s) => s.setStatus);
+	const registerAnalyzeAbort = useEditorStore((s) => s.registerAnalyzeAbort);
 	const status = useEditorStore((s) => s.status);
 	const errorMessage = useEditorStore((s) => s.errorMessage);
 	const [isDragging, setIsDragging] = useState(false);
@@ -174,6 +175,7 @@ export function Dropzone() {
 			// not simulated.
 			const xhr = new XMLHttpRequest();
 			xhr.open('POST', '/api/analyze');
+			registerAnalyzeAbort(() => xhr.abort());
 
 			let bytesRead = 0;
 			let buffer = '';
@@ -235,6 +237,7 @@ export function Dropzone() {
 			};
 
 			xhr.onload = () => {
+				registerAnalyzeAbort(null);
 				if (buffer) {
 					handleLine(buffer);
 					buffer = '';
@@ -260,6 +263,7 @@ export function Dropzone() {
 				}
 			};
 			xhr.onerror = () => {
+				registerAnalyzeAbort(null);
 				markPendingRegionsFailed('analyze request failed');
 				setStatus('error', 'analyze request failed');
 			};
@@ -275,6 +279,7 @@ export function Dropzone() {
 			setUploadProgress,
 			setAnalyzeProgress,
 			setStatus,
+			registerAnalyzeAbort,
 		],
 	);
 
