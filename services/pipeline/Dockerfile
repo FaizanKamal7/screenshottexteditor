@@ -11,7 +11,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-roboto \
     fonts-liberation \
     fonts-noto-core \
+    fonts-texgyre \
+    unzip \
+    ca-certificates \
+    curl \
     && rm -rf /var/lib/apt/lists/*
+
+# Selawik (Microsoft's official open-source, SIL OFL 1.1, metrics-compatible
+# Segoe UI substitute — github.com/microsoft/Selawik) isn't packaged for
+# Debian, so it's vendored directly from its one pinned GitHub release
+# rather than apt-get. `unzip`/`ca-certificates`/`curl` above exist only to
+# support this step; consider dropping them if this vendoring approach is
+# replaced.
+RUN mkdir -p /usr/share/fonts/truetype/selawik \
+    && curl -fL -o /tmp/selawik.zip https://github.com/microsoft/Selawik/releases/download/1.01/Selawik_Release.zip \
+    && unzip -j /tmp/selawik.zip 'selawk.ttf' 'selawksb.ttf' 'selawkb.ttf' -d /usr/share/fonts/truetype/selawik \
+    && rm /tmp/selawik.zip
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

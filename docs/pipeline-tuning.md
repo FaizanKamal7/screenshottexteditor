@@ -522,6 +522,230 @@ full family/weight/geometry comparison).
 as the new production performance baseline — no regressions found anywhere
 in the stack.
 
+## Investigated, not fixed: font-identity recovery rate is much lower than assumed
+
+Prompted by a user report that a WhatsApp/Helvetica screenshot's "top
+candidates" panel looked unconvincing (low, closely-clustered scores). Before
+touching the registry or the search, we tried to fix the specific known bug
+noted throughout this doc — coordinate descent converging to a worse local
+optimum for the correct candidate (`test_match.py`'s documented case: Inter/400,
+reachable ceiling ~0.68, loses to Inter/700 at ~0.45) — with a narrow,
+cheap Powell joint-refine pass limited to the top-K (or within-epsilon)
+candidates by the existing search's own score, seeded from both restart
+configs' converged points. This was explicitly *not* a repeat of the
+already-rejected cheap prefilter above (that used one coarse-only pass with
+no restarts/refine, which put the true winner dead last at 0.19 vs 0.64; this
+would have used the full 2-restart sequential-refine score, the same signal
+that decides today's actual winner).
+
+**Before writing that code**, a new diagnostic (`bench/run_match_investigation.py`'s
+`SYNTHETIC_GROUND_TRUTH` + `_ground_truth_rank_info`) checked the premise
+directly: for all 34 regions across the 8 synthetic fixtures — each rendered
+straight from a known registry font/weight/size via
+`generate_synthetic_fixtures.py`, so the "true" answer is exact, not
+inferred — where does that true candidate actually land in today's full,
+already-refined per-candidate ranking (all 11 candidates, both restarts,
+complete search)?
+
+| Metric | Result |
+|---|---:|
+| True candidate wins outright (rank 1 of 11) | **39.4%** (13/33 ground-truth-matched regions) |
+| True candidate within top-3 | 48.5% |
+| True candidate within top-5 | 60.6% |
+| True candidate within score-gap ε=0.15 of the leader (a generous cutoff) | 63.6% |
+| Coarse grid (step 1, before any refine) predicts the final winner | 6.1% (2/33) |
+
+**This falsifies the top-K/epsilon premise.** A narrow refine pass only helps
+when the true winner is *near* the leader. Here it usually isn't: of the 20
+misses, several true candidates rank 8th-11th of 11 with score gaps up to
+0.35 from the leader — far outside any defensible K or ε. No narrow refine
+pass would have reached them.
+
+**Follow-up analysis, same dataset, no new renders** (methodology: exact
+counts from the diagnostic's JSON output, `bench/match_investigation_results.json`,
+not estimated):
+
+- Misses split roughly evenly between same-family-wrong-weight (9/20) and
+  cross-family (11/20) — this isn't purely a weight-adjacency problem.
+- **Inter/600 (SemiBold) is a disproportionate attractor**: it wins 8/34
+  regions (23.5%) against an 11-candidate registry's ~9% fair share, and is
+  specifically the wrong winner in 7/20 misses (35% of all misses). Roboto/500
+  and Noto Sans/700 show smaller versions of the same pattern.
+- Checked and rejected: "heavier weight generically wins." Only 5/9
+  same-family and 6/11 cross-family misses go to a *heavier* winner than the
+  truth — barely above chance, not a real effect.
+- **A specific, repeatable pair**: true Inter/400 loses to Inter/600 on 4
+  separate texts ("Password," "Sidebar icon size," "Unlimited screenshots,"
+  "Priority support") — same direction as (though a different weight pair
+  than) the pre-existing `test_match.py` known gap. This particular pair
+  looks specifically confusable at these fixtures' sizes, not a generic
+  bold-wins bias.
+- Text length was checked as a candidate explanation (shorter text = less
+  shape signal) and rejected: correlation between text length and true-rank
+  is weak (`-0.19`), with clear counterexamples both ways (`"$482,910"`, 8
+  chars, ranks 1st; `"Priority support"`, 16 chars, ranks 11th/worst).
+
+**Why this is a bigger finding than "the search needs a better optimizer":**
+if the wrong candidate's true global optimum under the current objective
+(IoU/SSIM scored against a fully independent per-candidate size/letter-spacing/
+x-offset/baseline fit) genuinely scores higher than the true candidate's own
+global optimum, a better search algorithm (Powell or otherwise) converges to
+the same wrong answer — better optimizers escape *local* optima, not a
+*globally* mis-ranking objective. Fixing this for real likely means changing
+what gets scored or how much geometric freedom each candidate gets (e.g. a
+stroke-density term, or tighter per-candidate parameter bounds), not how it's
+searched — a materially larger, riskier change to the core scoring function
+than this round's scope, and not undertaken here.
+
+**Separately important**: this 39.4% is font-*identity* recovery accuracy,
+not the round-trip pixel-fidelity number `tests/test_round_trip.py` already
+gates on (~97-98% pass rate). A "wrong" candidate can still fit the target
+ink closely enough after full independent geometric refinement to pass the
+visual gate — so the product's actual rendered output is right far more often
+than 39% alone would suggest. But the "top candidates"/confidence UI is
+telling the truth about something worse than assumed: even for fonts that
+*are* in the registry, the matcher frequently doesn't correctly identify
+them, which is exactly the kind of unconvincing-looking result that prompted
+this investigation in the first place.
+
+**Status: documented, not fixed.** Reproducible via
+`docker exec -e PYTHONPATH=/app <pipeline-container> python bench/run_match_investigation.py`
+(needs `MSYS_NO_PATHCONV=1` prefixed on Windows/Git Bash, or the `/app` path
+value gets silently mangled to a Windows path by MSYS's automatic path
+conversion). A real fix is future work and should start from the two leads
+above (Inter/400↔600 confusability; Inter/600's outsized win rate) rather
+than re-attempting a search-side patch.
+
+## Phase 2: does a different scoring objective fix font-identity recovery?
+
+Direct follow-up to the investigation above. Tested whether re-ranking
+candidates by cheap alternative signals — instead of, or alongside, the
+current `0.7*IoU + 0.3*SSIM` — picks the true candidate more often.
+`bench/scoring_investigation.py` (reproducible via
+`docker exec -e PYTHONPATH=/app:/app/bench <pipeline-container> python bench/scoring_investigation.py`,
+same `MSYS_NO_PATHCONV=1` caveat as above on Windows/Git Bash) reuses the
+same 33 ground-truth regions and the exact same (verified bit-exact, unmodified)
+production search from `match_instrumented.py` — every signal below is
+computed against each candidate's **already-converged production geometry**,
+not by re-running search with a different objective. This deliberately
+answers a narrower, cheaper question first: *"would re-ranking already-found
+candidates by a different signal improve top-1 accuracy"* — not *"would
+optimizing for a different signal during search converge to different (and
+possibly better-differentiating) geometry per candidate,"* which is a
+separate, more expensive experiment not run here (see the caveat at the end
+of this section).
+
+**Signals tested** (each computed from the same rendered-vs-target alpha
+mask pair `score_alpha` already uses): ink bounding-box aspect-ratio error,
+ink bounding-box width/height, a stroke-width proxy (median horizontal
+run-length of "on" pixels per row), horizontal and vertical projection-profile
+correlation (column-sum and row-sum profiles respectively — the latter is
+the same profile `_fit_baseline` already correlates for baseline fitting,
+reused here as a candidate-ranking signal instead), and a density-band proxy
+for x-height/cap-height ratio (not a literal font-metric measurement — the
+alpha mask alone doesn't carry per-glyph metric data — a comparable
+substitute for it). Combined into 11 ranking formulas: the production
+formula alone (control), IoU alone, SSIM alone, each alternative signal
+alone, and the production formula blended 60/40 with each alternative.
+
+**Result: none beat the production formula.**
+
+| Formula | Top-1 accuracy |
+|---|---:|
+| **current (0.7·IoU + 0.3·SSIM) — production** | **39.4%** |
+| current + horizontal projection | 39.4% (tied, no real change) |
+| current + cap-height/x-height band | 39.4% (tied, no real change) |
+| IoU alone | 36.4% |
+| SSIM alone | 36.4% |
+| current + aspect ratio | 33.3% |
+| current + stroke width | 33.3% |
+| current + vertical projection | 33.3% |
+| stroke width alone | 33.3% |
+| kitchen-sink (equal-weight average of all signals) | 33.3% |
+| vertical projection alone | 30.3% |
+
+The production formula is already the best of the 11 tested, and every
+alternative either ties or actively hurts. This is a real, if negative,
+answer to "can the small registry get substantially more accurate by
+improving the scoring objective (via these cheap signals)": **not with any
+of these signals, at the geometry the current search already finds.**
+
+**Breakdowns** (by true family/weight, text length, `region_h` as a
+font-size proxy, case, and glyph content — digits/descenders/ascenders/
+capitals/punctuation) found no single strong predictor of failure. Text
+length showed a weak, inconsistent pattern (16.7% accuracy for 14-22 chars
+vs. 75% for 22+ chars, but 28.6% for the shortest bucket doesn't fit a
+monotonic story either); case, digit-presence, and glyph-shape flags were
+all within noise of each other (33-44% each). Region height (font size) was
+the closest to a real signal — the 30-45px bucket (62.5%) outperformed
+20-30px (26.7%) — but the sample per bucket is small (8-15 regions) and this
+alone doesn't explain the Inter/400↔600 pattern below, which spans multiple
+size buckets in both directions.
+
+**The Inter/400↔600 deep dive is the most informative part.** Side-by-side
+IoU/SSIM/converged-size for both candidates on every region where either is
+the ground truth:
+
+| text | true | Inter/400 IoU/SSIM | Inter/600 IoU/SSIM | winner |
+|---|---|---:|---:|---|
+| Password | 400 | 0.306 / 0.521 | 0.562 / 0.672 | Inter/600 (wrong) |
+| Sidebar icon size | 400 | 0.242 / 0.327 | 0.431 / 0.568 | Inter/600 (wrong) |
+| Priority support | 400 | 0.221 / 0.282 | 0.455 / 0.540 | Inter/600 (wrong) |
+| Email address | 400 | 0.825 / 0.939 | 0.590 / 0.765 | Inter/400 (correct) |
+| Accent color | 400 | 0.479 / 0.652 | 0.463 / 0.619 | Inter/400 (correct) |
+
+Two things this rules out:
+
+- **Not a narrow/local-optimum effect.** When Inter/600 wins over true
+  Inter/400, it doesn't edge out narrowly — it dominates on *both* IoU and
+  SSIM simultaneously, by a wide margin (0.221→0.455 IoU on "Priority
+  support," more than double). Same when Inter/400 correctly wins ("Email
+  address": 0.825 vs 0.590 IoU, a decisive gap in the *right* direction).
+  This directly contradicts the natural hypothesis that a better optimizer
+  would fix this — there's no narrow miss to correct here on either side.
+- **Not a size-cheating effect.** Checked whether the wrong weight wins by
+  converging to an atypical size (e.g. shrinking to fake thinner strokes).
+  It doesn't: on "Password," Inter/600 converges to *size 38.17* against
+  Inter/400's own *36.84* — larger, not smaller, and the two aren't far
+  apart. The win isn't geometric trickery at the size-search level.
+
+What's left, per-string, decisive, and not explained by any of the tested
+signals, is most consistent with **rasterizer-mismatch noise dominating the
+signal** for a meaningful fraction of short-to-medium UI text: the ground
+truth is rendered by PIL (`generate_synthetic_fixtures.py`), matched
+candidates are rendered by Skia, and `pipeline-tuning.md`'s "Stage 3 —
+x-offset fit" section already established this mismatch caps achievable
+scores around 0.5-0.7 even for a perfect match. This section's new finding
+is that, for some specific strings, that same mismatch is apparently large
+enough that an *adjacent weight's* Skia rendering coincidentally lands
+closer to PIL's true-weight rendering than that true weight's own Skia
+rendering does — a per-string idiosyncrasy (likely kerning/hinting/subpixel
+rounding differences between the two rasterizers), not a systematically
+fixable bias in IoU, SSIM, or any of the cheap signals tried here.
+
+**Caveat, stated plainly**: this experiment re-ranks candidates at geometry
+found by optimizing the *current* formula — it does not test whether
+optimizing the search itself for a different objective would converge
+differently. Given the decisive (not narrow) score gaps found above, it
+seems unlikely a different geometry would flip these specific cases, but
+that's reasoning, not measured — a real answer would need re-running search
+with each candidate objective, which weighs a full re-implementation of
+`_search_candidate` (and the 2.18x-cost precedent from the Powell
+investigation above) against a negative result already found here, and
+wasn't run this round.
+
+**Recommendation**: the evidence does not support fixing font-identity
+recovery via the scoring objective (within what's cheap to test). Two
+directions worth considering instead, neither attempted here: (1) real
+device screenshots (the 30-fixture set the brief calls for, not yet built)
+to check whether this rasterizer-mismatch pattern is a synthetic-fixture
+artifact (PIL vs. Skia specifically) rather than something that also
+happens for real screenshots (real renderer vs. Skia); (2) accept the
+current ~39% font-identity accuracy as a known limitation for now — it does
+not block the product's actual visual-fidelity goal (the round-trip gate's
+~97-98% pass rate is a mostly separate metric, per the section above) — and
+prioritize registry/UI work over chasing this further without new data.
+
 ## Known gaps
 
 - Per-character boxes are derived from vertical projection on the alpha

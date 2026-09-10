@@ -10,6 +10,35 @@ from renderer import render_text
 IOU_WEIGHT = 0.7
 SSIM_WEIGHT = 0.3
 
+# score_alpha never approaches 1.0 even for a perfect font/size/position
+# match: the target ink comes from a real platform rasterizer, candidates
+# render via Skia, and the two never pixel-align exactly (see
+# docs/pipeline-tuning.md's x-offset section). A correct match typically
+# tops out around 0.5-0.7 on real screenshots, though clean fixtures have
+# been observed reaching into the high 0.8s (see the "borderline match
+# confidence (0.85-0.88)" fixtures noted in tests/test_round_trip.py) — so
+# the raw score and the UI's designed 0.85/0.95 confidence thresholds
+# (styleHelpers.ts's confidenceLevel) were never on the same scale; nearly
+# every region showed a permanent low-confidence warning regardless of
+# match quality. CONFIDENCE_CEILING is set near that observed real-world
+# high end (not the lower 0.7 figure) precisely so a genuinely good match
+# doesn't get pushed all the way to 1.0 and lose the ability to still read
+# as "borderline" — this is a starting calibration against the data
+# currently in the repo, not a measured optimum.
+#
+# calibrate_confidence is a pure, monotonic rescale applied only to already
+# -decided scores for display (main.py, after match_font has picked a
+# winner and ranked top_candidates) — it must never run before a
+# comparison/sort, since that's what guarantees it can't change which
+# candidate wins or how top_candidates is ordered.
+CONFIDENCE_FLOOR = 0.30
+CONFIDENCE_CEILING = 0.90
+
+
+def calibrate_confidence(raw_score: float) -> float:
+    scaled = (raw_score - CONFIDENCE_FLOOR) / (CONFIDENCE_CEILING - CONFIDENCE_FLOOR)
+    return max(0.0, min(1.0, scaled))
+
 # Parameters _fast_ssim hardcodes to exactly match what score_alpha's SSIM
 # call used to resolve to when it went through skimage's
 # `structural_similarity(rendered, target, data_range=1.0)` directly, under
@@ -73,6 +102,15 @@ class MatchResult:
     x_offset: float
     score: float
     top_candidates: list[FontCandidateScore]
+    # Raw score gap between the winner and the runner-up (top_candidates[0]
+    # minus [1]) — a second, distinct signal from `score` itself: `score`
+    # says how good the pixel match is in absolute terms, `margin` says how
+    # much better the winner is than the next-best alternative. None only
+    # when fewer than 2 candidates were searched (not a real case at the
+    # registry's current size, but the type stays honest for tiny test
+    # registries). See calibrate_confidence's docstring for why `score`
+    # alone was never a trustworthy stand-in for "confidence."
+    margin: float | None
 
 
 @dataclass
@@ -356,11 +394,13 @@ def match_font(text: str, target_alpha: np.ndarray, crop_shape: tuple[int, int],
                 x_offset=x_offset,
                 score=final_score,
                 top_candidates=[],
+                margin=None,
             )
 
     assert best is not None
     top_candidates = sorted(all_scores, key=lambda c: c.score, reverse=True)[:3]
     best.top_candidates = top_candidates
+    best.margin = top_candidates[0].score - top_candidates[1].score if len(top_candidates) > 1 else None
     return best
 
 

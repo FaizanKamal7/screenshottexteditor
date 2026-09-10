@@ -3,6 +3,10 @@ import { useEditorStore } from './store';
 export function Header() {
 	const imageUrl = useEditorStore((s) => s.imageUrl);
 	const reset = useEditorStore((s) => s.reset);
+	const undo = useEditorStore((s) => s.undo);
+	const redo = useEditorStore((s) => s.redo);
+	const canUndo = useEditorStore((s) => s.past.length > 0);
+	const canRedo = useEditorStore((s) => s.future.length > 0);
 
 	return (
 		<header className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-hairline bg-canvas-elevated px-3">
@@ -12,6 +16,24 @@ export function Header() {
 
 			{imageUrl && (
 				<div className="flex shrink-0 items-center gap-2">
+					<button
+						type="button"
+						onClick={undo}
+						disabled={!canUndo}
+						title="Undo (Ctrl+Z)"
+						className="rounded-sm border border-hairline bg-canvas-elevated px-2 py-1 text-[12px] text-body hover:text-ink disabled:opacity-40 disabled:hover:text-body"
+					>
+						Undo
+					</button>
+					<button
+						type="button"
+						onClick={redo}
+						disabled={!canRedo}
+						title="Redo (Ctrl+Shift+Z)"
+						className="rounded-sm border border-hairline bg-canvas-elevated px-2 py-1 text-[12px] text-body hover:text-ink disabled:opacity-40 disabled:hover:text-body"
+					>
+						Redo
+					</button>
 					<button
 						type="button"
 						onClick={reset}

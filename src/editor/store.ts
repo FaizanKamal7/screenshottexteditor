@@ -55,10 +55,23 @@ export interface Region {
 	script: 'latin';
 	direction: 'ltr' | 'rtl';
 	confidence: number | null;
+	// Score gap between the winning font candidate and the runner-up — a
+	// distinct signal from `confidence` (match *quality* in absolute terms):
+	// a small margin means a close call between two plausible fonts even
+	// when both scored reasonably well. See FontOverridePanel's "Confidence"
+	// label (kept separate from "Match quality", which is `confidence`).
+	matchMargin: number | null;
 	alphaMaskPng: string | null;
 	fontFamily: string | null;
 	fontWeight: number | null;
 	fontSize: number | null;
+	// Estimated size the real platform font (Helvetica Neue, SF Pro — see
+	// docs/fonts.md's substitution table) would be set at, converted from
+	// fontSize via cap-height ratio. Display-only hint for FontOverridePanel;
+	// never sent to /render, since fontSize (not this) is what the substitute
+	// font actually gets rendered at. null when the matched candidate has no
+	// well-documented true-font target.
+	fontSizeHint: number | null;
 	letterSpacing: number;
 	baselineY: number | null;
 	xOffset: number | null;
@@ -142,6 +155,35 @@ export interface StyleOverride {
 	alignment: 'left' | 'center' | 'right';
 }
 
+// One piece of a region being split by applyStyleToSelection: a substring of
+// the original text, its measured on-screen width (native image-pixel
+// space — same units as Region.bbox), and, only for the fragment(s) actually
+// restyled, the style to apply. A fragment with no `overrides` keeps the
+// source region's existing style — still needed as its own Region/PendingEdit
+// so its slice of the image gets redrawn instead of left stale (see
+// applyStyleToSelection).
+export interface StyleFragment {
+	text: string;
+	widthPx: number;
+	overrides?: StyleOverride;
+}
+
+// A point-in-time copy of everything undo/redo needs to restore: the region
+// list (text, position, style) and the cumulative edit payload /render was
+// last called with. Safe to store by reference rather than deep-cloning —
+// every store action replaces `regions`/`edits` wholesale (map/spread), never
+// mutates them in place, so a past snapshot can't be silently changed out
+// from under it by a later action.
+interface HistorySnapshot {
+	regions: Region[];
+	edits: Record<string, PendingEdit>;
+}
+
+// "Last five actions" per the editor's undo affordance — deliberately small:
+// each entry pins a full regions/edits snapshot, and undo/redo both re-render
+// against the backend, so this isn't meant as a deep scrollback.
+const MAX_UNDO_STEPS = 5;
+
 interface EditorState {
 	imageUrl: string | null;
 	imageFile: File | null;
@@ -152,7 +194,21 @@ interface EditorState {
 	selectedRegionId: string | null;
 	editingRegionId: string | null;
 	overridePanelRegionId: string | null;
+	// The current native browser text selection inside the editing `<input>`
+	// for editingRegionId, as character offsets into that region's `text` —
+	// null when there's no selection (or nothing is being edited). Lets
+	// FontOverridePanel offer "style just the selection" instead of always
+	// restyling the whole region. Set by Canvas.tsx's input onSelect/onChange;
+	// cleared whenever editing starts/stops or a style is committed, so a
+	// stale range can never be applied against a region it no longer matches.
+	editingSelection: { start: number; end: number } | null;
 	edits: Record<string, PendingEdit>;
+	// past[last] is the state one undo away; future[0] is the state one redo
+	// away. Any new edit (commitEdit/nudgeRegion/applyOverride) clears future —
+	// standard undo/redo semantics, redoing a branch abandoned by a fresh edit
+	// isn't supported.
+	past: HistorySnapshot[];
+	future: HistorySnapshot[];
 	// 'uploading' has a real, observable percentage (uploadProgress, driven by
 	// XHR upload progress events in Dropzone). 'analyzing' covers OCR
 	// detection only, up through the "detected" NDJSON message — no regions
@@ -214,6 +270,22 @@ interface EditorState {
 	openOverridePanel: (id: string) => void;
 	closeOverridePanel: () => void;
 	applyOverride: (id: string, overrides: StyleOverride) => Promise<void>;
+	setEditingSelection: (range: { start: number; end: number } | null) => void;
+	// Splits a region into adjacent regions at fragment boundaries and gives
+	// each fragment its own style — how the editor supports mixing styles
+	// within what was one detected text region (see FontOverridePanel's
+	// selection mode). `fragments` must already be in left-to-right order and
+	// carry their own measured widths (native image-pixel space) and, for
+	// whichever fragment(s) the user restyled, the style to apply; a fragment
+	// with no override just carries the source region's existing style
+	// forward. No-ops if fewer than two fragments have non-empty text — that
+	// isn't a split.
+	applyStyleToSelection: (regionId: string, fragments: StyleFragment[]) => Promise<void>;
+	// Steps one entry back/forward through past/future, restoring that
+	// snapshot's regions+edits and re-rendering against it. No-op if there's
+	// nothing to undo/redo.
+	undo: () => Promise<void>;
+	redo: () => Promise<void>;
 	setStatus: (status: EditorState['status'], errorMessage?: string | null) => void;
 	toggleDebugMode: () => void;
 	reset: () => void;
@@ -281,6 +353,7 @@ export const useEditorStore = create<EditorState>((set, get) => {
 					fontFamily: current.fontFamily,
 					fontWeight: current.fontWeight,
 					fontSize: current.fontSize,
+					fontSizeHint: current.fontSizeHint,
 					letterSpacing: current.letterSpacing,
 					textColor: current.textColor,
 					alignment: current.alignment,
@@ -289,6 +362,7 @@ export const useEditorStore = create<EditorState>((set, get) => {
 					fontFamily: incoming.fontFamily,
 					fontWeight: incoming.fontWeight,
 					fontSize: incoming.fontSize,
+					fontSizeHint: incoming.fontSizeHint,
 					letterSpacing: incoming.letterSpacing,
 					textColor: incoming.textColor,
 					alignment: incoming.alignment,
@@ -326,6 +400,52 @@ export const useEditorStore = create<EditorState>((set, get) => {
 			offsetX: region.offsetX,
 			offsetY: region.offsetY,
 		};
+	}
+
+	// A gradient background is fit and re-normalized per-region server-side
+	// (see docs/pipeline-tuning.md) — reusing one gradient BackgroundFill
+	// across several narrower split-fragment bboxes would redraw the *entire*
+	// gradient inside each fragment and produce a hard seam at every split
+	// point. Approximating each fragment as a flat color, sampled from the
+	// original gradient at the fragment's horizontal center, sidesteps that;
+	// exact continuous-gradient-across-fragments rendering isn't supported.
+	function flattenBackgroundForFragment(
+		background: BackgroundFill | null,
+		fragmentBbox: [number, number, number, number],
+		originalBbox: [number, number, number, number],
+	): BackgroundFill | null {
+		if (!background || background.kind !== 'gradient' || background.stops.length === 0) return background;
+		const fragmentCenterX = fragmentBbox[0] + fragmentBbox[2] / 2;
+		const t = originalBbox[2] > 0 ? (fragmentCenterX - originalBbox[0]) / originalBbox[2] : 0;
+		const clampedT = Math.max(0, Math.min(1, t));
+		return { kind: 'flat', color: interpolateGradientColor(background.stops, clampedT), angleDeg: null, stops: [] };
+	}
+
+	function interpolateGradientColor(stops: GradientStop[], t: number): RgbColor {
+		const sorted = [...stops].sort((a, b) => a.position - b.position);
+		let lower = sorted[0];
+		let upper = sorted[sorted.length - 1];
+		for (let i = 0; i < sorted.length - 1; i++) {
+			if (t >= sorted[i].position && t <= sorted[i + 1].position) {
+				lower = sorted[i];
+				upper = sorted[i + 1];
+				break;
+			}
+		}
+		const span = upper.position - lower.position;
+		const localT = span > 0 ? (t - lower.position) / span : 0;
+		const mix = (a: number, b: number) => Math.round(a + (b - a) * localT);
+		return [mix(lower.color[0], upper.color[0]), mix(lower.color[1], upper.color[1]), mix(lower.color[2], upper.color[2])];
+	}
+
+	// Called by commitEdit/nudgeRegion/applyOverride right before they touch
+	// regions/edits, so `past`'s top entry is always "state right before this
+	// action" — not the result of it. Starting a fresh action always clears
+	// `future`: redoing a branch abandoned by a new edit isn't supported.
+	function pushHistory() {
+		const state = get();
+		const entry: HistorySnapshot = { regions: state.regions, edits: state.edits };
+		set({ past: [...state.past, entry].slice(-MAX_UNDO_STEPS), future: [] });
 	}
 
 	// Shared by commitEdit and applyOverride: always re-renders every edit made
@@ -391,7 +511,10 @@ export const useEditorStore = create<EditorState>((set, get) => {
 		selectedRegionId: null,
 		editingRegionId: null,
 		overridePanelRegionId: null,
+		editingSelection: null,
 		edits: {},
+		past: [],
+		future: [],
 		status: 'idle',
 		uploadProgress: 0,
 		analyzeProgress: null,
@@ -409,7 +532,10 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				selectedRegionId: null,
 				editingRegionId: null,
 				overridePanelRegionId: null,
+				editingSelection: null,
 				edits: {},
+				past: [],
+				future: [],
 				uploadProgress: 0,
 				analyzeProgress: null,
 			}),
@@ -438,27 +564,35 @@ export const useEditorStore = create<EditorState>((set, get) => {
 		setUploadProgress: (percent) => set({ uploadProgress: percent }),
 		setAnalyzeProgress: (current, total) => set({ analyzeProgress: { current, total } }),
 		selectRegion: (id) => set({ selectedRegionId: id }),
-		startEditing: (id) => set({ selectedRegionId: id, editingRegionId: id, overridePanelRegionId: null, renderError: null }),
+		startEditing: (id) =>
+			set({ selectedRegionId: id, editingRegionId: id, overridePanelRegionId: null, editingSelection: null, renderError: null }),
 		startEditingWithStyle: (id) =>
-			set({ selectedRegionId: id, editingRegionId: id, overridePanelRegionId: id, renderError: null }),
-		cancelEditing: () => set({ editingRegionId: null }),
+			set({ selectedRegionId: id, editingRegionId: id, overridePanelRegionId: id, editingSelection: null, renderError: null }),
+		cancelEditing: () => set({ editingRegionId: null, editingSelection: null }),
+		setEditingSelection: (range) => set({ editingSelection: range }),
 		commitEdit: async (id, newText) => {
 			const state = get();
 			const region = state.regions.find((r) => r.id === id);
 			if (!region || !state.imageFile) {
-				set({ editingRegionId: null });
+				set({ editingRegionId: null, editingSelection: null });
 				return;
 			}
 			if (newText === region.text) {
-				set({ editingRegionId: null });
+				set({ editingRegionId: null, editingSelection: null });
 				return;
 			}
+
+			pushHistory();
 
 			// Optimistic text update happens immediately, regardless of
 			// enrichment state, so the canvas/sidebar reflect the edit right
 			// away — only the actual /render call (which needs the exact
 			// MatchResult) waits.
-			set({ editingRegionId: null, regions: state.regions.map((r) => (r.id === id ? { ...r, text: newText } : r)) });
+			set({
+				editingRegionId: null,
+				editingSelection: null,
+				regions: state.regions.map((r) => (r.id === id ? { ...r, text: newText } : r)),
+			});
 
 			let ready: Region;
 			try {
@@ -475,6 +609,8 @@ export const useEditorStore = create<EditorState>((set, get) => {
 			const state = get();
 			const region = state.regions.find((r) => r.id === id);
 			if (!region || !state.imageFile) return;
+
+			pushHistory();
 
 			const clamp = (v: number) => Math.max(-MAX_NUDGE_PX, Math.min(MAX_NUDGE_PX, v));
 			const optimistic: Region = { ...region, offsetX: clamp(region.offsetX + dx), offsetY: clamp(region.offsetY + dy) };
@@ -496,6 +632,8 @@ export const useEditorStore = create<EditorState>((set, get) => {
 			const region = state.regions.find((r) => r.id === id);
 			if (!region || !state.imageFile) return;
 
+			pushHistory();
+
 			const optimistic: Region = { ...region, ...overrides, styleOverridden: true };
 			set({ regions: state.regions.map((r) => (r.id === id ? optimistic : r)) });
 
@@ -507,6 +645,115 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				return;
 			}
 			await postRender({ ...get().edits, [id]: pendingEditFor(ready, ready.text, overrides) });
+		},
+		applyStyleToSelection: async (regionId, fragments) => {
+			const state = get();
+			const region = state.regions.find((r) => r.id === regionId);
+			const nonEmpty = fragments.filter((f) => f.text.length > 0);
+			// Fewer than two non-empty fragments isn't a split — nothing to do
+			// (the caller should fall back to a whole-region applyOverride).
+			if (!region || !state.imageFile || nonEmpty.length < 2) return;
+
+			// Unlike commitEdit/nudgeRegion/applyOverride, this waits for
+			// enrichment *before* mutating state: a fragment's bbox is derived
+			// from the caller's measured widths, which were measured against the
+			// region's current (possibly still-pending, soon-to-change) font —
+			// splitting first and re-measuring later would mean either doing the
+			// split twice or leaving fragments sized for the wrong font.
+			let ready: Region;
+			try {
+				ready = await waitForEnrichedRegion(regionId);
+			} catch (err) {
+				set({ renderError: err instanceof Error ? err.message : "could not determine this region's exact style" });
+				return;
+			}
+
+			pushHistory();
+
+			const FRAGMENT_GAP_PX = 2; // see docs/pipeline-tuning.md: server crop padding is 3px per side, so touching bboxes can double-process a shared seam without a small gap
+			const [rx, ry, , rh] = ready.bbox;
+			let cursorX = rx;
+			const newFragmentRegions: Region[] = nonEmpty.map((fragment) => {
+				const width = Math.max(1, fragment.widthPx);
+				const bbox: [number, number, number, number] = [cursorX, ry, width, rh];
+				cursorX += width + FRAGMENT_GAP_PX;
+				return {
+					...ready,
+					...fragment.overrides,
+					id: crypto.randomUUID(),
+					text: fragment.text,
+					bbox,
+					// The source region's per-character OCR boxes don't correspond
+					// to this fragment's substring/geometry — drop them rather than
+					// show misleading marks in the debug overlay (see Canvas.tsx's
+					// debugMode rendering of region.chars).
+					chars: [],
+					// Left-align every fragment regardless of the source region's
+					// alignment — center/right anchor text relative to the
+					// fragment's own bbox width server-side, which would drift
+					// adjacent fragments apart (see docs/pipeline-tuning.md).
+					alignment: 'left',
+					// null, not ready.xOffset: the source region's fitted text
+					// anchor was calibrated for its own (wider) bbox. pendingEditFor
+					// falls back to a region's own bbox[0] when xOffset is null —
+					// exactly "start drawing at this fragment's own left edge",
+					// which is what a left-aligned single-line fragment needs.
+					xOffset: null,
+					background: flattenBackgroundForFragment(ready.background, bbox, ready.bbox),
+					styleOverridden: fragment.overrides != null ? true : ready.styleOverridden,
+				};
+			});
+
+			set({
+				regions: get().regions.flatMap((r) => (r.id === regionId ? newFragmentRegions : [r])),
+				editingRegionId: null,
+				overridePanelRegionId: null,
+				editingSelection: null,
+			});
+
+			// Every fragment needs its own edit entry — even one that kept the
+			// source region's exact style — because the fragments' combined
+			// bboxes are replacing the single original bbox area; leaving one
+			// fragment un-edited would leave that slice showing stale pixels
+			// from the pre-split single-box render.
+			const nextEdits = { ...get().edits };
+			delete nextEdits[regionId];
+			for (const fragment of newFragmentRegions) {
+				nextEdits[fragment.id] = pendingEditFor(fragment, fragment.text);
+			}
+			await postRender(nextEdits);
+		},
+		undo: async () => {
+			const state = get();
+			const previous = state.past[state.past.length - 1];
+			if (!previous) return;
+			const currentSnapshot: HistorySnapshot = { regions: state.regions, edits: state.edits };
+			set({
+				regions: previous.regions,
+				past: state.past.slice(0, -1),
+				future: [currentSnapshot, ...state.future].slice(0, MAX_UNDO_STEPS),
+				editingRegionId: null,
+				overridePanelRegionId: null,
+				editingSelection: null,
+				renderError: null,
+			});
+			await postRender(previous.edits);
+		},
+		redo: async () => {
+			const state = get();
+			const next = state.future[0];
+			if (!next) return;
+			const currentSnapshot: HistorySnapshot = { regions: state.regions, edits: state.edits };
+			set({
+				regions: next.regions,
+				past: [...state.past, currentSnapshot].slice(-MAX_UNDO_STEPS),
+				future: state.future.slice(1),
+				editingRegionId: null,
+				overridePanelRegionId: null,
+				editingSelection: null,
+				renderError: null,
+			});
+			await postRender(next.edits);
 		},
 		setStatus: (status, errorMessage = null) => set({ status, errorMessage }),
 		toggleDebugMode: () => set((s) => ({ debugMode: !s.debugMode })),
@@ -521,7 +768,10 @@ export const useEditorStore = create<EditorState>((set, get) => {
 				selectedRegionId: null,
 				editingRegionId: null,
 				overridePanelRegionId: null,
+				editingSelection: null,
 				edits: {},
+				past: [],
+				future: [],
 				status: 'idle',
 				uploadProgress: 0,
 				analyzeProgress: null,

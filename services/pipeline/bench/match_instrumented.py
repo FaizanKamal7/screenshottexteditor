@@ -238,10 +238,11 @@ def match_font_traced(text: str, target_alpha: np.ndarray, crop_shape, region_h:
         if best is None or final_score > best.score:
             best = MatchResult(
                 family=candidate.family, weight=candidate.weight, size=size, letter_spacing=letter_spacing,
-                baseline_y=baseline_y, x_offset=x_offset, score=final_score, top_candidates=[],
+                baseline_y=baseline_y, x_offset=x_offset, score=final_score, top_candidates=[], margin=None,
             )
 
     assert best is not None
     top_candidates = sorted(all_scores, key=lambda c: c.score, reverse=True)[:3]
     best.top_candidates = top_candidates
+    best.margin = top_candidates[0].score - top_candidates[1].score if len(top_candidates) > 1 else None
     return best, traces

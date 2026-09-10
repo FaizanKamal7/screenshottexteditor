@@ -2,19 +2,20 @@
 
 We do not bundle or serve SF Pro, Segoe UI, Helvetica, or any other
 proprietary platform font. The pipeline only ever renders with openly
-licensed substitutes, installed via `apt-get` in
-`services/pipeline/Dockerfile` (`fonts-inter`, `fonts-roboto`,
-`fonts-liberation`, `fonts-noto-core`) and registered in
-`services/pipeline/fonts/registry.py`.
+licensed substitutes, installed in `services/pipeline/Dockerfile` — most
+via `apt-get` (`fonts-inter`, `fonts-roboto`, `fonts-liberation`,
+`fonts-noto-core`, `fonts-texgyre`), one (Selawik, not packaged for Debian)
+vendored directly from its pinned upstream GitHub release — and registered
+in `services/pipeline/fonts/registry.py`.
 
 | Platform font (never used) | Open substitute we render with | Notes |
 |---|---|---|
-| SF Pro (iOS / macOS) | **Inter** | Metric differences exist; Inter is the closest widely-used open substitute. |
-| Helvetica | **Inter** | Same substitute as SF Pro — both are geometric/grotesque sans faces close enough for UI text matching. |
+| SF Pro (iOS / macOS) | **Inter** | Metric differences exist; Inter is the closest widely-used open substitute. No verified real-metric-clone alternative found. |
+| Helvetica | **TeX Gyre Heros** | Purpose-built metric-compatible Helvetica clone (built on URW Nimbus Sans L, GUST Font License — free, LPPL-equivalent). Used to share Inter's substitute above; split out once a real metric clone was available — see `docs/pipeline-tuning.md`. Measured cap-height ratio 0.729 (fontTools, not a public-table guess). |
 | Roboto (Android) | **Roboto** | This one's the real thing — Roboto itself is open (Apache 2.0) and ships via `fonts-roboto`. |
 | Arial | **Liberation Sans** | Purpose-built metric-compatible clone of Arial; this is the most faithful substitution in the registry. |
-| Segoe UI (Windows) | **Noto Sans** | No true open metric clone of Segoe UI exists. Noto Sans is used as a reasonable visual stand-in, not a metric match — flagged here honestly rather than silently passed off as equivalent. |
-| Any wide-script text | **Noto Sans** | Also the general fallback for coverage beyond Latin, though script support beyond Latin is out of scope for v1 (see brief section 6). |
+| Segoe UI (Windows) | **Selawik** | Microsoft's own official open-source (SIL OFL 1.1) font, purpose-built as a metrics-compatible Segoe UI replacement (github.com/microsoft/Selawik). That compatibility claim covers glyph advance widths/line spacing, not verified cap-height — so unlike TeX Gyre Heros above, `fonts/registry.py`'s size-hint feature doesn't yet apply a correction for it (no real Segoe UI file available here to verify one against). Replaces Noto Sans's previous role as the "not a real metric match" stand-in. |
+| Any wide-script text | **Noto Sans** | General fallback for coverage beyond Latin, though script support beyond Latin is out of scope for v1 (see brief section 6). No longer used as the Segoe UI stand-in now that Selawik fills that role. |
 
 **UI labeling requirement**: whenever a match result is shown to a user
 (debug panel now; the font override panel in a later step), the label
@@ -24,8 +25,9 @@ already reflects this — it's always one of the registry's real family
 names.
 
 **Licenses**: Inter (SIL OFL 1.1), Roboto (Apache 2.0), Liberation
-Sans (SIL OFL 1.1), Noto Sans (SIL OFL 1.1) — all free to bundle,
-serve, and use in a commercial product.
+Sans (SIL OFL 1.1), Noto Sans (SIL OFL 1.1), TeX Gyre Heros (GUST Font
+License — free, LPPL-equivalent), Selawik (SIL OFL 1.1) — all free to
+bundle, serve, and use in a commercial product.
 
 **Future desktop build**: per the brief, a desktop build can read the
 user's installed fonts and match against those directly, potentially

@@ -49,10 +49,12 @@ interface AnalyzeRegion {
 	script: 'latin';
 	direction: 'ltr' | 'rtl';
 	confidence: number | null;
+	match_margin: number | null;
 	alpha_mask_png: string | null;
 	font_family: string | null;
 	font_weight: number | null;
 	font_size: number | null;
+	font_size_hint: number | null;
 	letter_spacing: number;
 	baseline_y: number | null;
 	x_offset: number | null;
@@ -108,10 +110,12 @@ function toRegion(region: AnalyzeRegion): Region {
 		script: region.script,
 		direction: region.direction,
 		confidence: region.confidence,
+		matchMargin: region.match_margin,
 		alphaMaskPng: region.alpha_mask_png,
 		fontFamily: region.font_family,
 		fontWeight: region.font_weight,
 		fontSize: region.font_size,
+		fontSizeHint: region.font_size_hint,
 		letterSpacing: region.letter_spacing,
 		baselineY: region.baseline_y,
 		xOffset: region.x_offset,

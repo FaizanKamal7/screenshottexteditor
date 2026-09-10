@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Canvas } from './Canvas';
 import { Dropzone } from './Dropzone';
 import { Header } from './Header';
@@ -15,6 +16,29 @@ interface EditorIslandProps {
 
 export function EditorIsland({ embedded = false }: EditorIslandProps) {
 	const imageUrl = useEditorStore((s) => s.imageUrl);
+
+	// Ctrl/Cmd+Z to undo, Ctrl/Cmd+Shift+Z (or Ctrl+Y) to redo — skipped while
+	// focus is in a text input (e.g. a region's inline editor) so it doesn't
+	// fight the browser's own native undo for that field.
+	useEffect(() => {
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (!(e.ctrlKey || e.metaKey)) return;
+			if (e.key.toLowerCase() !== 'z' && e.key.toLowerCase() !== 'y') return;
+			const target = e.target as HTMLElement | null;
+			if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) return;
+
+			const key = e.key.toLowerCase();
+			if (key === 'y' || (key === 'z' && e.shiftKey)) {
+				e.preventDefault();
+				useEditorStore.getState().redo();
+			} else if (key === 'z') {
+				e.preventDefault();
+				useEditorStore.getState().undo();
+			}
+		};
+		window.addEventListener('keydown', handleKeyDown);
+		return () => window.removeEventListener('keydown', handleKeyDown);
+	}, []);
 
 	return (
 		<div

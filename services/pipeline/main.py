@@ -15,10 +15,10 @@ from fastapi.responses import StreamingResponse
 from PIL import Image
 from pydantic import ValidationError
 
-from fonts.registry import find_font_path
-from models import AnalyzeResponse, Region, RenderEdit, RenderRegionResult, RenderResponse
+from fonts.registry import estimated_true_font_size, find_font_path, style_role_for
+from models import AnalyzeResponse, FontCandidateScore, Region, RenderEdit, RenderRegionResult, RenderResponse
 from stages.detect import DetectedLine, detect, estimate_scale_factor
-from stages.match import detect_ui_element, estimate_color, estimate_layout, match_font
+from stages.match import calibrate_confidence, detect_ui_element, estimate_color, estimate_layout, match_font
 from stages.render_stage import compose_region
 from stages.separate import separate
 
@@ -101,7 +101,29 @@ class LineTimings:
     ui_s: float
 
 
-def _process_line(image_bgr: np.ndarray, line: DetectedLine, region_id: str) -> tuple[Region, np.ndarray, LineTimings]:
+@dataclass
+class FontMatchTelemetry:
+    """Per-region font-match outcome, for the greppable analyze_timings log
+    below — not part of the API response schema. Lets us later mine Cloud
+    Run logs for which fonts keep showing up as a runner-up (a signal for
+    which commercial font licenses would actually move accuracy) without
+    building a persistent store now. All values are ones match_font already
+    computed — this only decides what gets logged, no new computation.
+    """
+
+    winner_family: str
+    winner_weight: int
+    winner_score: float
+    runner_up_family: str | None
+    runner_up_weight: int | None
+    runner_up_score: float | None
+    margin: float | None
+    match_s: float
+
+
+def _process_line(
+    image_bgr: np.ndarray, line: DetectedLine, region_id: str
+) -> tuple[Region, np.ndarray, LineTimings, FontMatchTelemetry]:
     """One detected line's full stage-2/stage-3 work: separate, match font, estimate color/UI.
 
     Runs inside a worker process (see `_executor` above) — must not touch
@@ -125,6 +147,19 @@ def _process_line(image_bgr: np.ndarray, line: DetectedLine, region_id: str) -> 
     ui_element = detect_ui_element(image_bgr, line.bbox)
     t4 = time.perf_counter()
 
+    # calibrate_confidence/estimated_true_font_size are both O(1) dict
+    # lookups and scalar math over values match_font already computed — no
+    # extra renders or search, so this adds no measurable cost next to the
+    # render-and-score work above (see match.py's docstring on why the
+    # raw score needs rescaling before it means anything against the UI's
+    # confidence thresholds).
+    calibrated_match_score = calibrate_confidence(match.score)
+    calibrated_candidates = [
+        FontCandidateScore(family=c.family, weight=c.weight, score=calibrate_confidence(c.score))
+        for c in match.top_candidates
+    ]
+    font_size_hint = estimated_true_font_size(match.size, match.family, style_role_for(match.family, match.weight))
+
     region = Region(
         id=region_id,
         text=line.text,
@@ -136,22 +171,37 @@ def _process_line(image_bgr: np.ndarray, line: DetectedLine, region_id: str) -> 
         # period) — a font can still render that wrong text as a
         # decent shape match. Taking the min with OCR's own
         # recognition confidence surfaces that case as low-confidence
-        # instead of silently passing it through.
-        confidence=min(line.confidence, match.score),
+        # instead of silently passing it through. OCR's own confidence
+        # is already meaningfully scaled 0..1, so only the match-score
+        # side is calibrated before the min, not the OCR side.
+        confidence=min(line.confidence, calibrated_match_score),
+        match_margin=match.margin,
         alpha_mask_png=separation.alpha_mask_png,
         font_family=match.family,
         font_weight=match.weight,
         font_size=match.size,
+        font_size_hint=font_size_hint,
         letter_spacing=match.letter_spacing,
         baseline_y=separation.crop_bbox[1] + match.baseline_y,
         x_offset=separation.crop_bbox[0] + match.x_offset,
         text_color=color.text_color,
         background=color.background,
         ui_element=ui_element,
-        font_candidates=match.top_candidates,
+        font_candidates=calibrated_candidates,
     )
     timings = LineTimings(separate_s=t1 - t0, match_s=t2 - t1, color_s=t3 - t2, ui_s=t4 - t3)
-    return region, separation.alpha, timings
+    runner_up = match.top_candidates[1] if len(match.top_candidates) > 1 else None
+    font_match_telemetry = FontMatchTelemetry(
+        winner_family=match.family,
+        winner_weight=match.weight,
+        winner_score=match.score,
+        runner_up_family=runner_up.family if runner_up else None,
+        runner_up_weight=runner_up.weight if runner_up else None,
+        runner_up_score=runner_up.score if runner_up else None,
+        margin=match.margin,
+        match_s=t2 - t1,
+    )
+    return region, separation.alpha, timings, font_match_telemetry
 
 
 def _log_analyze_timings(timings: dict) -> None:
@@ -246,16 +296,19 @@ def _run_analysis(contents: bytes):
     color_s_total = 0.0
     ui_s_total = 0.0
 
+    font_match_telemetry: list[FontMatchTelemetry] = []
+
     completed = 0
     for future in as_completed(futures):
         index = futures[future]
-        region, mask, timings = future.result()
+        region, mask, timings, telemetry = future.result()
         regions[index] = region
         masks[index] = mask
         separate_s_total += timings.separate_s
         match_s_total += timings.match_s
         color_s_total += timings.color_s
         ui_s_total += timings.ui_s
+        font_match_telemetry.append(telemetry)
         completed += 1
         yield json.dumps({"type": "progress", "current": completed, "total": total}) + "\n"
         yield json.dumps({"type": "region", "current": completed, "total": total, "region": region.model_dump()}) + "\n"
@@ -291,6 +344,22 @@ def _run_analysis(contents: bytes):
             "enrich_phase_wall_s": round(enrich_done - enrich_start, 4),
             "time_to_full_result_s": round(total_request_s, 4),
             "total_request_s": round(total_request_s, 4),
+            # Per-region winner/runner-up, for later log-mining: which fonts
+            # keep showing up as a close runner-up is exactly the signal that
+            # tells us which commercial font licenses would actually move
+            # accuracy (see docs/pipeline-tuning.md / the font-matching plan).
+            # Not part of AnalyzeResponse — logs only.
+            "font_matches": [
+                {
+                    "winner": f"{t.winner_family}/{t.winner_weight}",
+                    "winner_score": round(t.winner_score, 4),
+                    "runner_up": f"{t.runner_up_family}/{t.runner_up_weight}" if t.runner_up_family else None,
+                    "runner_up_score": round(t.runner_up_score, 4) if t.runner_up_score is not None else None,
+                    "margin": round(t.margin, 4) if t.margin is not None else None,
+                    "match_s": round(t.match_s, 4),
+                }
+                for t in font_match_telemetry
+            ],
         }
     )
 

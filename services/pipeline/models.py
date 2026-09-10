@@ -43,11 +43,23 @@ class Region(BaseModel):
     script: Literal["latin"] = "latin"
     direction: Literal["ltr", "rtl"] = "ltr"
     confidence: float | None = None
+    # Score gap between the winning font candidate and the runner-up — a
+    # distinct signal from `confidence` (which reflects match *quality* in
+    # absolute terms): a small margin means a close call between two
+    # plausible fonts even if both scored reasonably well. See
+    # stages/match.py's MatchResult.margin.
+    match_margin: float | None = None
     alpha_mask_png: str | None = None
 
     font_family: str | None = None
     font_weight: int | None = None
     font_size: float | None = None
+    # Estimated size the real platform font (e.g. Helvetica Neue, SF Pro)
+    # would be set at, converted from font_size via cap-height ratio —
+    # display-only, never sent back through /render (see
+    # fonts/registry.py's estimated_true_font_size). None when the winning
+    # candidate's role has no well-documented true-font target.
+    font_size_hint: float | None = None
     letter_spacing: float = 0.0
     baseline_y: float | None = None
     x_offset: float | None = None

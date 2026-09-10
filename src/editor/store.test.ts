@@ -20,10 +20,12 @@ function makeRegion(id: string, overrides: Partial<Region> = {}): Region {
 		script: 'latin',
 		direction: 'ltr',
 		confidence: 0.9,
+		matchMargin: null,
 		alphaMaskPng: null,
 		fontFamily: null,
 		fontWeight: null,
 		fontSize: null,
+		fontSizeHint: null,
 		letterSpacing: 0,
 		baselineY: null,
 		xOffset: null,
@@ -264,6 +266,64 @@ describe('upsertRegion merges rather than replaces', () => {
 	});
 });
 
+describe('undo/redo', () => {
+	it('reverts the last commitEdit and lets redo bring it back', async () => {
+		const id = nextId('undo-commit');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id)]);
+
+		await useEditorStore.getState().commitEdit(id, 'Edited text');
+		expect(useEditorStore.getState().regions.find((r) => r.id === id)?.text).toBe('Edited text');
+		expect(fetch).toHaveBeenCalledTimes(1);
+
+		await useEditorStore.getState().undo();
+		expect(useEditorStore.getState().regions.find((r) => r.id === id)?.text).toBe('Original');
+		expect(fetch).toHaveBeenCalledTimes(2);
+		const undoBody = (fetch as unknown as ReturnType<typeof vi.fn>).mock.calls[1][1].body as FormData;
+		expect(JSON.parse(undoBody.get('edits') as string)).toEqual([]);
+
+		await useEditorStore.getState().redo();
+		expect(useEditorStore.getState().regions.find((r) => r.id === id)?.text).toBe('Edited text');
+		expect(fetch).toHaveBeenCalledTimes(3);
+	});
+
+	it('are no-ops with nothing to step to', async () => {
+		const id = nextId('undo-noop');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id)]);
+
+		await useEditorStore.getState().undo();
+		expect(fetch).not.toHaveBeenCalled();
+
+		await useEditorStore.getState().redo();
+		expect(fetch).not.toHaveBeenCalled();
+	});
+
+	it('a fresh edit after undo abandons the redo branch', async () => {
+		const id = nextId('undo-branch');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id)]);
+
+		await useEditorStore.getState().commitEdit(id, 'First edit');
+		await useEditorStore.getState().undo();
+		expect(useEditorStore.getState().future.length).toBe(1);
+
+		await useEditorStore.getState().commitEdit(id, 'Second edit');
+		expect(useEditorStore.getState().future.length).toBe(0);
+
+		await useEditorStore.getState().redo();
+		expect(useEditorStore.getState().regions.find((r) => r.id === id)?.text).toBe('Second edit');
+	});
+
+	it('keeps only the last 5 steps', async () => {
+		const id = nextId('undo-cap');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id)]);
+
+		for (let i = 1; i <= 6; i++) {
+			await useEditorStore.getState().commitEdit(id, `Edit ${i}`);
+		}
+
+		expect(useEditorStore.getState().past.length).toBe(5);
+	});
+});
+
 describe('nudgeRegion waits for enrichment the same way', () => {
 	it('does not render a nudge until the region is enriched', async () => {
 		const id = nextId('nudge');
@@ -280,5 +340,145 @@ describe('nudgeRegion waits for enrichment the same way', () => {
 		const region = useEditorStore.getState().regions.find((r) => r.id === id);
 		expect(region?.offsetX).toBe(4);
 		expect(region?.offsetY).toBe(-2);
+	});
+});
+
+describe('applyStyleToSelection splits a region into independently styled fragments', () => {
+	it('splits prefix/middle/suffix, styling only the middle fragment', async () => {
+		const id = nextId('split-3way');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id, { text: 'Hello World Test', bbox: [10, 20, 150, 30] })]);
+
+		await useEditorStore.getState().applyStyleToSelection(id, [
+			{ text: 'Hello ', widthPx: 40 },
+			{
+				text: 'World',
+				widthPx: 50,
+				overrides: { fontFamily: 'Noto Sans', fontWeight: 700, fontSize: 22, letterSpacing: 1, textColor: [9, 9, 9], alignment: 'center' },
+			},
+			{ text: ' Test', widthPx: 45 },
+		]);
+
+		const regions = useEditorStore.getState().regions;
+		expect(regions.find((r) => r.id === id)).toBeUndefined(); // original region is gone
+		expect(regions).toHaveLength(3);
+		expect(regions.map((r) => r.text)).toEqual(['Hello ', 'World', ' Test']);
+
+		// bbox: same y/h as the source region, x accumulated left-to-right with a
+		// small gap between fragments so the server's crop padding can't overlap.
+		expect(regions[0].bbox).toEqual([10, 20, 40, 30]);
+		expect(regions[1].bbox).toEqual([10 + 40 + 2, 20, 50, 30]);
+		expect(regions[2].bbox).toEqual([10 + 40 + 2 + 50 + 2, 20, 45, 30]);
+
+		// Only the middle fragment got the override; alignment is forced left on
+		// every fragment (server rendering constraint), even though the override
+		// asked for 'center'.
+		expect(regions[0].fontFamily).toBe('Roboto');
+		expect(regions[0].styleOverridden).toBe(false);
+		expect(regions[0].alignment).toBe('left');
+		expect(regions[1].fontFamily).toBe('Noto Sans');
+		expect(regions[1].fontWeight).toBe(700);
+		expect(regions[1].styleOverridden).toBe(true);
+		expect(regions[1].alignment).toBe('left');
+		expect(regions[2].fontFamily).toBe('Roboto');
+		expect(regions[2].styleOverridden).toBe(false);
+
+		// Every fragment gets its own edit — even the ones that kept the
+		// original style — because together they replace the single original
+		// bbox area.
+		expect(fetch).toHaveBeenCalledTimes(1);
+		const body = (fetch as unknown as ReturnType<typeof vi.fn>).mock.calls[0][1].body as FormData;
+		const edits = JSON.parse(body.get('edits') as string);
+		expect(edits).toHaveLength(3);
+		expect(edits.map((e: { region_id: string }) => e.region_id)).toEqual(regions.map((r) => r.id));
+		expect(edits.find((e: { text: string }) => e.text === 'World').font_family).toBe('Noto Sans');
+	});
+
+	it('splits into two fragments when the selection touches an edge', async () => {
+		const id = nextId('split-2way');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id, { text: 'World Test', bbox: [0, 0, 100, 20] })]);
+
+		await useEditorStore.getState().applyStyleToSelection(id, [
+			{ text: '', widthPx: 0 },
+			{ text: 'World', widthPx: 50, overrides: { fontFamily: 'Noto Sans', fontWeight: 700, fontSize: 22, letterSpacing: 1, textColor: [1, 2, 3], alignment: 'left' } },
+			{ text: ' Test', widthPx: 45 },
+		]);
+
+		const regions = useEditorStore.getState().regions;
+		expect(regions).toHaveLength(2);
+		expect(regions.map((r) => r.text)).toEqual(['World', ' Test']);
+	});
+
+	it('is a no-op when the selection covers the whole region (nothing to split)', async () => {
+		const id = nextId('split-noop');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id, { text: 'Solo' })]);
+
+		await useEditorStore.getState().applyStyleToSelection(id, [
+			{ text: '', widthPx: 0 },
+			{ text: 'Solo', widthPx: 40, overrides: { fontFamily: 'Noto Sans', fontWeight: 700, fontSize: 22, letterSpacing: 1, textColor: [1, 2, 3], alignment: 'left' } },
+			{ text: '', widthPx: 0 },
+		]);
+
+		expect(fetch).not.toHaveBeenCalled();
+		const regions = useEditorStore.getState().regions;
+		expect(regions).toHaveLength(1);
+		expect(regions[0].id).toBe(id);
+	});
+
+	it('approximates a gradient background as a flat color per fragment, sampled at its center', async () => {
+		const id = nextId('split-gradient');
+		useEditorStore.getState().setRegions([
+			enrichedFieldsFor(id, {
+				text: 'AB',
+				bbox: [0, 0, 100, 20],
+				background: {
+					kind: 'gradient',
+					color: null,
+					angleDeg: 0,
+					stops: [
+						{ position: 0, color: [0, 0, 0] },
+						{ position: 1, color: [200, 100, 0] },
+					],
+				},
+			}),
+		]);
+
+		await useEditorStore.getState().applyStyleToSelection(id, [
+			{ text: 'A', widthPx: 20, overrides: { fontFamily: 'Noto Sans', fontWeight: 700, fontSize: 22, letterSpacing: 1, textColor: [1, 2, 3], alignment: 'left' } },
+			{ text: 'B', widthPx: 20 },
+		]);
+
+		const regions = useEditorStore.getState().regions;
+		expect(regions).toHaveLength(2);
+		for (const region of regions) {
+			expect(region.background?.kind).toBe('flat');
+			expect(region.background?.stops).toEqual([]);
+		}
+		// Fragment A sits left of fragment B, so it should sample an earlier
+		// (darker) point on the gradient than fragment B.
+		const [colorA, colorB] = regions.map((r) => r.background?.color?.[0] ?? 0);
+		expect(colorA).toBeLessThan(colorB);
+	});
+
+	it('lets undo restore the single original region', async () => {
+		const id = nextId('split-undo');
+		useEditorStore.getState().setRegions([enrichedFieldsFor(id, { text: 'Hello World', bbox: [10, 20, 100, 30] })]);
+
+		await useEditorStore.getState().applyStyleToSelection(id, [
+			{ text: 'Hello ', widthPx: 40 },
+			{
+				text: 'World',
+				widthPx: 50,
+				overrides: { fontFamily: 'Noto Sans', fontWeight: 700, fontSize: 22, letterSpacing: 1, textColor: [1, 2, 3], alignment: 'left' },
+			},
+		]);
+		expect(useEditorStore.getState().regions).toHaveLength(2);
+
+		await useEditorStore.getState().undo();
+
+		const regions = useEditorStore.getState().regions;
+		expect(regions).toHaveLength(1);
+		expect(regions[0].id).toBe(id);
+		expect(regions[0].text).toBe('Hello World');
+		expect(regions[0].fontFamily).toBe('Roboto');
 	});
 });

@@ -20,6 +20,35 @@ export function fontFamilyCss(family: string | null): string {
 	}
 }
 
+// Measures how wide `text` renders at the given style, using a throwaway DOM
+// span carrying the exact same font styling — the same reasoning as
+// Canvas.tsx's mirrored-span technique (canvas measureText can under-measure
+// a variable web font at a given weight). Used to size split-region
+// fragments, where each fragment needs its own one-off measurement rather
+// than a single persistent mirrored span.
+export function measureTextWidthPx(
+	text: string,
+	style: { fontFamily: string | null; fontWeight: number | null; fontSize: number | null; letterSpacing: number },
+): number {
+	if (typeof document === 'undefined') return 0;
+	const span = document.createElement('span');
+	span.style.position = 'fixed';
+	span.style.top = '-9999px';
+	span.style.left = '-9999px';
+	span.style.visibility = 'hidden';
+	span.style.whiteSpace = 'pre';
+	span.style.pointerEvents = 'none';
+	span.style.fontFamily = fontFamilyCss(style.fontFamily);
+	span.style.fontSize = `${style.fontSize ?? 16}px`;
+	span.style.fontWeight = String(style.fontWeight ?? 400);
+	span.style.letterSpacing = `${style.letterSpacing}px`;
+	span.textContent = text || ' ';
+	document.body.appendChild(span);
+	const width = span.getBoundingClientRect().width;
+	document.body.removeChild(span);
+	return width;
+}
+
 export function backgroundCss(background: BackgroundFill | null): string {
 	if (!background) return 'transparent';
 	if (background.kind === 'flat' && background.color) {
@@ -55,4 +84,21 @@ export function confidenceLevel(confidence: number | null): ConfidenceLevel {
 	if (confidence == null || confidence >= 0.95) return 'none';
 	if (confidence >= 0.85) return 'quiet';
 	return 'warning';
+}
+
+// A second, distinct signal from `confidence` (match *quality* — how good
+// the pixel match is in absolute terms): the score gap between the winning
+// candidate and the runner-up, i.e. "how sure are we it's this font and not
+// the next-best alternative." A region can have high match quality and low
+// certainty (two very similar open-license substitutes both fit well) or
+// the reverse (a mediocre but clearly-best match). Thresholds are starting
+// values, not measured against real usage data yet — see the font-matching
+// accuracy plan's benchmarking step for where real numbers would come from.
+export type MatchCertainty = 'n/a' | 'clear' | 'close call' | 'ambiguous';
+
+export function matchCertaintyLabel(margin: number | null): MatchCertainty {
+	if (margin == null) return 'n/a';
+	if (margin >= 0.05) return 'clear';
+	if (margin >= 0.02) return 'close call';
+	return 'ambiguous';
 }

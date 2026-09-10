@@ -53,6 +53,7 @@ export function Canvas({ embedded = false }: CanvasProps) {
 	const cancelEditing = useEditorStore((s) => s.cancelEditing);
 	const commitEdit = useEditorStore((s) => s.commitEdit);
 	const nudgeRegion = useEditorStore((s) => s.nudgeRegion);
+	const setEditingSelection = useEditorStore((s) => s.setEditingSelection);
 	const debugMode = useEditorStore((s) => s.debugMode);
 
 	const orderedRegions = useMemo(() => readingOrder(regions), [regions]);
@@ -413,7 +414,21 @@ export function Canvas({ embedded = false }: CanvasProps) {
 									<input
 										ref={inputRef}
 										value={draftText}
-										onChange={(e) => setDraftText(e.target.value)}
+										onChange={(e) => {
+											setDraftText(e.target.value);
+											// Any keystroke invalidates whatever range was previously
+											// selected against the old text — clear it rather than let
+											// a stale {start,end} apply against the new text.
+											setEditingSelection(null);
+										}}
+										onSelect={(e) => {
+											const { selectionStart, selectionEnd } = e.currentTarget;
+											setEditingSelection(
+												selectionStart != null && selectionEnd != null && selectionStart !== selectionEnd
+													? { start: selectionStart, end: selectionEnd }
+													: null,
+											);
+										}}
 										onBlur={() => {
 											// Committing/cancelling unmounts this input, which can itself
 											// fire a native blur — guard so that stray event doesn't
