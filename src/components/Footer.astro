@@ -42,7 +42,7 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
 				{
 					useCases.map((useCase) => (
 						<li>
-							<a href={`/${useCase.id}`} class="hover:text-ink">
+							<a href={`/${useCase.id}/`} class="hover:text-ink">
 								{useCase.data.title}
 							</a>
 						</li>
@@ -56,8 +56,8 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
 			<ul class="mt-3 space-y-2 text-[14px] text-body">
 				<li><a href={localizedPath(lang, 'about')} class="hover:text-ink">{t.footer.about}</a></li>
 				<li><a href={localizedPath(lang, 'contact')} class="hover:text-ink">{t.footer.contact}</a></li>
-				<li><a href="/privacy" class="hover:text-ink">{t.footer.privacy}</a></li>
-				<li><a href="/terms" class="hover:text-ink">{t.footer.terms}</a></li>
+				<li><a href="/privacy/" class="hover:text-ink">{t.footer.privacy}</a></li>
+				<li><a href="/terms/" class="hover:text-ink">{t.footer.terms}</a></li>
 			</ul>
 		</div>
 	</Container>

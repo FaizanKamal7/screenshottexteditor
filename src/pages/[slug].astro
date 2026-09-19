@@ -22,9 +22,14 @@ const { useCase } = Astro.props;
 const { Content } = await render(useCase);
 
 const allUseCases = await getCollection('useCases');
-const related = useCase.data.related
+const curated = useCase.data.related
 	.map((slug) => allUseCases.find((entry) => entry.id === slug))
 	.filter((entry): entry is (typeof allUseCases)[number] => entry != null);
+// Curated picks first, then every remaining use case, so each page links to all of its siblings.
+const related = [
+	...curated,
+	...allUseCases.filter((entry) => entry.id !== useCase.id && !curated.includes(entry)),
+];
 ---
 
 <Layout title={`${useCase.data.title} — ScreenshotTextEditor`} description={useCase.data.metaDescription}>
@@ -90,10 +95,10 @@ const related = useCase.data.related
 				<section class="border-b border-hairline py-16">
 					<Container class="max-w-4xl">
 						<h2 class="text-[13px] font-medium uppercase tracking-wide text-faint">Related</h2>
-						<div class="mt-5 grid gap-4 md:grid-cols-3">
+						<div class="mt-5 grid gap-4 md:grid-cols-2">
 							{related.map((entry) => (
 								<a
-									href={`/${entry.id}`}
+									href={`/${entry.id}/`}
 									class="rounded-xl border border-hairline bg-canvas-elevated p-5 transition-colors hover:border-ink/20"
 								>
 									<p class="text-[14px] font-medium text-ink">{entry.data.title}</p>

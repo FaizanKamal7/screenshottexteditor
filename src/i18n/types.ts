@@ -121,6 +121,11 @@ export interface Translations {
 		valuesEyebrow: string;
 		valuesTitle: string;
 		values: [ValueItem, ValueItem, ValueItem];
+		howEyebrow: string;
+		howTitle: string;
+		howSteps: [StepItem, StepItem, StepItem];
+		audienceTitle: string;
+		audienceBody: string;
 		ctaTitle: string;
 		ctaSubtitle: string;
 		ctaPrimary: string;
@@ -135,6 +140,12 @@ export interface Translations {
 		supportChannel: ContactChannel;
 		privacyChannel: ContactChannel;
 		legalChannel: ContactChannel;
+		includeEyebrow: string;
+		includeTitle: string;
+		includeItems: [ValueItem, ValueItem, ValueItem];
+		faqEyebrow: string;
+		faqTitle: string;
+		faqs: [FaqItem, FaqItem, FaqItem];
 		footerNote: string;
 	};
 }

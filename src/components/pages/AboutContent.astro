@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../Nav.astro';
 import Footer from '../Footer.astro';
+import ExploreLinks from '../ExploreLinks.astro';
 import LocaleRedirect from '../LocaleRedirect.astro';
 import Container from '../Container.astro';
 import Eyebrow from '../Eyebrow.astro';
@@ -49,6 +50,18 @@ const contactHref = localizedPath(lang, 'contact');
 
 		<section class="border-b border-hairline py-16">
 			<Container class="max-w-4xl">
+				<Eyebrow>{t.about.howEyebrow}</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.about.howTitle}</h2>
+				<div class="mt-8 grid gap-4 md:grid-cols-3">
+					{t.about.howSteps.map((step) => <FeatureCard title={step.title}>{step.body}</FeatureCard>)}
+				</div>
+				<h3 class="mt-12 text-[18px] font-semibold tracking-tight text-ink">{t.about.audienceTitle}</h3>
+				<p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-body">{t.about.audienceBody}</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-4xl">
 				<Eyebrow>{t.about.valuesEyebrow}</Eyebrow>
 				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.about.valuesTitle}</h2>
 				<div class="mt-8 grid gap-4 md:grid-cols-3">
@@ -68,6 +81,8 @@ const contactHref = localizedPath(lang, 'contact');
 			</Container>
 		</section>
 	</main>
+
+	<ExploreLinks lang={lang} current="about" />
 
 	<Footer lang={lang} />
 </Layout>

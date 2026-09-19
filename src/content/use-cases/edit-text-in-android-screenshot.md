@@ -2,6 +2,7 @@
 title: 'Edit Text in an Android Screenshot'
 metaDescription: 'Change text in a Play Store or Android UI screenshot while keeping Roboto rendering, density scale, and Material layout intact.'
 platform: android
+updated: 2026-09-01
 eyebrow: 'Android & Play Store'
 heroHeadline: 'Edit Android screenshot text and keep it looking like Android.'
 heroSubhead: 'Android screenshots come in a wider spread of densities than iOS, and Roboto renders differently at each one. We detect the density scale, match weight and size against Roboto, and rebuild the text at native resolution.'

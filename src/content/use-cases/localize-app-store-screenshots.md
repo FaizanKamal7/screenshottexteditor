@@ -2,6 +2,7 @@
 title: 'Localize App Store & Play Store Screenshots'
 metaDescription: 'Turn one set of app screenshots into 20 languages without rebuilding them in Figma. Upload once, edit a CSV of translations, download a ZIP.'
 platform: general
+updated: 2026-09-01
 eyebrow: 'App Store & Play Store'
 heroHeadline: 'Eight screenshots. Twenty languages. One upload.'
 heroSubhead: 'Stop rebuilding App Store and Play Store screenshots in Figma for every locale. Upload your screenshots once, hand us a CSV of translations, and get back a ZIP with every language rendered in the original font, size, and layout.'

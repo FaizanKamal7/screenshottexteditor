@@ -4,6 +4,7 @@ export const prerender = true;
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import ExploreLinks from '../components/ExploreLinks.astro';
 import Container from '../components/Container.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 
@@ -60,7 +61,7 @@ const lastUpdated = 'September 1, 2026';
 				<h2>Your content</h2>
 				<p>
 					You retain ownership of everything you upload. We process it only to provide the editing service — see our
-					<a href="/privacy">privacy policy</a> for retention and deletion details.
+					<a href="/privacy/">privacy policy</a> for retention and deletion details.
 				</p>
 
 				<h2>No warranty</h2>
@@ -76,6 +77,8 @@ const lastUpdated = 'September 1, 2026';
 			</Container>
 		</section>
 	</main>
+
+	<ExploreLinks current="terms" />
 
 	<Footer />
 </Layout>

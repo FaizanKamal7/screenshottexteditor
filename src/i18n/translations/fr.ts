@@ -25,7 +25,7 @@ export const fr: Translations = {
 		ariaLabel: 'Changer de langue',
 	},
 	home: {
-		metaTitle: "Éditeur de texte pour captures d'écran — Éditeur de texte d'image IA gratuit en ligne",
+		metaTitle: "Éditeur de texte pour captures d'écran — IA gratuite en ligne",
 		metaDescription:
 			"Modifiez le texte de n'importe quelle capture d'écran ou image en ligne avec notre éditeur de texte IA gratuit. Police, taille, graisse et couleur ajustées automatiquement — sans filigrane, sans inscription.",
 		heroEyebrow: "Édition de captures d'écran au pixel près",
@@ -179,13 +179,32 @@ export const fr: Translations = {
 				body: "Les fichiers importés sont supprimés automatiquement et nous n'entraînons jamais de modèle sur les images des utilisateurs. Chaque export porte des identifiants de contenu intégrés indiquant qu'il a été modifié. Ce sont des métadonnées invisibles, pas un tampon sur l'image — les exports ne portent aucun filigrane visible.",
 			},
 		],
+		howEyebrow: 'Comment ça marche',
+		howTitle: "De l'import à l'export en trois étapes.",
+		howSteps: [
+			{
+				title: 'Détecter le texte',
+				body: "L'OCR repère chaque ligne de texte de votre image, puis mesure le facteur d'échelle à partir des glyphes eux-mêmes, pour que les tailles soient justes sur les écrans 1x, 2x et 3x.",
+			},
+			{
+				title: 'Faire correspondre le style',
+				body: "Votre texte d'origine est rendu dans une courte liste de polices probables selon la plateforme, puis comparé aux pixels réels jusqu'à trouver la famille, la taille, la graisse et l'espacement les plus proches.",
+			},
+			{
+				title: 'Reconstruire et vérifier',
+				body: "L'ancien texte est effacé avec un remplissage équivalent, votre nouveau texte est rendu sur la même ligne de base, et le résultat est comparé à l'original avant que vous ne le téléchargiez.",
+			},
+		],
+		audienceTitle: 'À qui cela s’adresse',
+		audienceBody:
+			"Aux équipes produit et marketing qui corrigent une faute dans une capture de lancement, aux équipes support qui masquent des noms de clients avant de partager une image, aux éditeurs d'apps qui localisent leurs captures App Store et Play Store, et à toute personne ayant perdu le fichier de conception d'origine. Le résultat est meilleur avec du texte en alphabet latin sur des arrière-plans unis ou des dégradés simples ; les arrière-plans photo chargés et les écritures CJK ou RTL ne sont pas encore pris en charge.",
 		ctaTitle: 'Des questions, des retours, ou un bug à signaler ?',
 		ctaSubtitle: 'Nous lisons tout ce qui nous arrive via la page de contact.',
 		ctaPrimary: 'Nous contacter',
 		ctaSecondary: 'Commencer gratuitement',
 	},
 	contact: {
-		metaTitle: 'Contact — ScreenshotTextEditor',
+		metaTitle: 'Nous contacter — ScreenshotTextEditor',
 		metaDescription:
 			"Contactez ScreenshotTextEditor pour du support, des questions de confidentialité, ou toute question sur le pipeline d'édition de texte dans les captures d'écran.",
 		eyebrow: 'Contact',
@@ -203,6 +222,40 @@ export const fr: Translations = {
 			title: 'Juridique',
 			body: "Conditions d'utilisation, usage acceptable, ou questions sur les identifiants de contenu.",
 		},
+		includeEyebrow: 'Avant de nous écrire',
+		includeTitle: 'Ce qui nous aide à vous aider plus vite.',
+		includeItems: [
+			{
+				title: "La capture d'écran d'origine",
+				body: "Le fichier que vous avez importé, tel quel. Il nous permet de relancer la même détection et de reproduire exactement ce que vous avez vu.",
+			},
+			{
+				title: 'Ce que vous avez saisi',
+				body: "Le texte de remplacement et la ligne modifiée, afin que nous puissions distinguer une police qui ne correspond pas d'un texte non détecté.",
+			},
+			{
+				title: 'Votre navigateur et votre appareil',
+				body: "Quelque chose comme « Safari sur iPhone » ou « Chrome sur Windows » suffit. Les numéros de version aident, mais seulement si vous les avez sous la main.",
+			},
+		],
+		faqEyebrow: 'Questions fréquentes',
+		faqTitle: 'Avant de nous écrire.',
+		faqs: [
+			{
+				question: "Ai-je besoin d'un compte pour obtenir de l'aide ?",
+				answer: "Non. ScreenshotTextEditor n'a pas de comptes. Écrivez à l'adresse qui correspond à votre question et nous vous répondrons directement.",
+			},
+			{
+				question: 'Ma capture peut-elle être supprimée plus tôt ?',
+				answer:
+					"Les fichiers importés sont supprimés automatiquement, après une heure par défaut. Si vous souhaitez qu'un fichier soit retiré immédiatement, ou si vous avez une question sur le traitement de vos données, écrivez à l'adresse confidentialité en indiquant à peu près quand vous l'avez importé.",
+			},
+			{
+				question: 'Puis-je suggérer une fonctionnalité ou une autre langue ?',
+				answer:
+					"Oui, n'hésitez pas. Les demandes de nouvelles écritures, de types d'arrière-plan supplémentaires ou d'options d'export vont à l'adresse du support. Nous les lisons toutes, et elles nous aident à décider de ce que nous construirons ensuite.",
+			},
+		],
 		footerNote:
 			"Vous signalez une modification précise qui n'a pas bien fonctionné ? Joignez la capture d'écran originale et, si vous l'avez encore, le résultat exporté — c'est le moyen le plus rapide pour nous de reproduire et corriger le problème.",
 	},

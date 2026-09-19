@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../Nav.astro';
 import Footer from '../Footer.astro';
+import ExploreLinks from '../ExploreLinks.astro';
 import LocaleRedirect from '../LocaleRedirect.astro';
 import Container from '../Container.astro';
 import Eyebrow from '../Eyebrow.astro';
@@ -57,7 +58,36 @@ const channels = [
 				</p>
 			</Container>
 		</section>
+
+		<section class="border-t border-hairline py-16">
+			<Container class="max-w-4xl">
+				<Eyebrow>{t.contact.includeEyebrow}</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.contact.includeTitle}</h2>
+				<div class="mt-8 grid gap-4 md:grid-cols-3">
+					{t.contact.includeItems.map((item) => <FeatureCard title={item.title}>{item.body}</FeatureCard>)}
+				</div>
+			</Container>
+		</section>
+
+		<section class="border-t border-hairline py-16">
+			<Container class="max-w-2xl">
+				<Eyebrow>{t.contact.faqEyebrow}</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.contact.faqTitle}</h2>
+				<dl class="mt-8 space-y-8">
+					{
+						t.contact.faqs.map((faq) => (
+							<div>
+								<dt class="text-[17px] font-semibold leading-tight text-ink">{faq.question}</dt>
+								<dd class="mt-2 text-[15px] leading-relaxed text-body">{faq.answer}</dd>
+							</div>
+						))
+					}
+				</dl>
+			</Container>
+		</section>
 	</main>
+
+	<ExploreLinks lang={lang} current="contact" />
 
 	<Footer lang={lang} />
 </Layout>

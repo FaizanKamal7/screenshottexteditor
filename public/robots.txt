@@ -1,10 +1,10 @@
-# Content signals: search=yes, ai-train=no, use=reference
-# search engines may index and link to this content; AI systems may not
-# use it for model training. See https://contentsignals.org
+# Search engines may index and link to this content; AI training crawlers
+# are blocked below.
 
 User-agent: *
-Content-Signal: search=yes,ai-train=no,use=reference
 Allow: /
+# Backend processing endpoints (image analyze/render); no indexable content.
+Disallow: /api/
 
 User-agent: Amazonbot
 Disallow: /

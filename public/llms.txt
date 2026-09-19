@@ -1,0 +1,34 @@
+# ScreenshotTextEditor
+
+> ScreenshotTextEditor is a free online tool for editing text inside screenshots and images. Click a line of text, retype it, and the tool automatically matches the original font, size, weight, and color while leaving every other pixel unchanged. No signup, no credit card, no watermark.
+
+It uses a deterministic detect, match, rebuild pipeline rather than generative image editing: OCR finds each text run (including the 1x/2x/3x scale of the screenshot), the original text is scored against candidate platform fonts using a real alpha mask, and the replacement is rendered at the same baseline and anti-aliasing, then re-verified against the original. It works best on flat or simple-gradient backgrounds with Latin-script text. Busy photo backgrounds and CJK or RTL scripts are not supported yet.
+
+Privacy: uploads are deleted automatically (after one hour by default) and are never used to train models. Exports carry embedded content credentials marking them as edited; this is invisible metadata, not a visible watermark.
+
+The site and editor UI are available in English, Spanish, French, German, Portuguese, Italian, Japanese, and Chinese. Use-case articles, legal pages, and the editor itself are English-only.
+
+## Main pages
+
+- [Home](https://screenshottexteditor.com/): What the tool does, how the pipeline works, and a FAQ
+- [Editor](https://screenshottexteditor.com/app): The screenshot text editor itself
+- [About](https://screenshottexteditor.com/about/): Principles behind the pipeline and who it is for
+- [Contact](https://screenshottexteditor.com/contact/): Support and privacy questions
+
+## Use cases
+
+- [Change Text in a PNG](https://screenshottexteditor.com/change-text-in-png/): Change text in any PNG screenshot with the same font, size, color, and background
+- [Edit Text in an iOS Screenshot](https://screenshottexteditor.com/edit-text-in-ios-screenshot/): Edit iPhone screenshots while matching SF Pro rendering and retina scale
+- [Edit Text in an Android Screenshot](https://screenshottexteditor.com/edit-text-in-android-screenshot/): Edit Play Store or Android UI screenshots while keeping Roboto rendering and Material layout
+- [Localize App Store & Play Store Screenshots](https://screenshottexteditor.com/localize-app-store-screenshots/): Turn one set of app screenshots into many languages by uploading once, editing a CSV of translations, and downloading a ZIP
+- [Fix Stale Numbers in Dashboard Screenshots](https://screenshottexteditor.com/fix-stale-numbers-in-dashboard-screenshots/): Update outdated metrics in a dashboard screenshot without rebuilding the slide
+- [Redact or Replace Demo Data in Screenshots](https://screenshottexteditor.com/redact-demo-data-in-screenshots/): Replace real or stale data with placeholder text instead of a visible redaction bar
+
+## Legal
+
+- [Privacy Policy](https://screenshottexteditor.com/privacy/): How uploads are handled and deleted
+- [Terms of Service](https://screenshottexteditor.com/terms/): Terms of use
+
+## Optional
+
+- [Sitemap](https://screenshottexteditor.com/sitemap.xml): Full list of indexable URLs, including localized pages

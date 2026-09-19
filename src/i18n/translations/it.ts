@@ -25,7 +25,7 @@ export const it: Translations = {
 		ariaLabel: 'Cambia lingua',
 	},
 	home: {
-		metaTitle: 'Editor di Testo per Screenshot — Editor di Testo per Immagini con IA Gratuito Online',
+		metaTitle: 'Editor di Testo per Screenshot — Editor IA Gratuito Online',
 		metaDescription:
 			"Modifica il testo di qualsiasi screenshot o immagine online con il nostro editor di testo IA gratuito. Font, dimensione, peso e colore corrispondono automaticamente — senza watermark, senza registrazione.",
 		heroEyebrow: 'Modifica di screenshot con precisione al pixel',
@@ -179,6 +179,25 @@ export const it: Translations = {
 				body: "I file caricati vengono eliminati automaticamente e non addestriamo mai modelli sulle immagini degli utenti. Ogni esportazione include credenziali di contenuto incorporate che la contrassegnano come modificata. Sono metadati invisibili, non un timbro sull'immagine — le esportazioni non portano alcun watermark visibile.",
 			},
 		],
+		howEyebrow: 'Come funziona',
+		howTitle: "Dal caricamento all'esportazione in tre passaggi.",
+		howSteps: [
+			{
+				title: 'Rilevare il testo',
+				body: "L'OCR individua ogni riga di testo nella tua immagine e misura il fattore di scala dai glifi stessi, così le dimensioni risultano corrette su schermi 1x, 2x e 3x.",
+			},
+			{
+				title: 'Abbinare lo stile',
+				body: 'Il tuo testo originale viene renderizzato con un breve elenco di font probabili per la piattaforma e confrontato con i pixel reali finché non si trovano la famiglia, la dimensione, lo spessore e la spaziatura più vicini.',
+			},
+			{
+				title: 'Ricostruire e verificare',
+				body: "Il vecchio testo viene cancellato con un riempimento corrispondente, il nuovo testo viene renderizzato sulla stessa linea di base e il risultato viene confrontato con l'originale prima del download.",
+			},
+		],
+		audienceTitle: 'A chi è rivolto',
+		audienceBody:
+			"A team di prodotto e marketing che correggono un refuso in uno screenshot di lancio, a team di assistenza che oscurano i nomi dei clienti prima di condividere un'immagine, a editori di app che localizzano gli screenshot di App Store e Play Store e a chiunque abbia perso il file di design originale. Funziona meglio con testo in alfabeto latino su sfondi piatti o sfumature semplici; gli sfondi fotografici complessi e le scritture CJK o RTL non sono ancora supportati.",
 		ctaTitle: 'Domande, feedback o un bug da segnalare?',
 		ctaSubtitle: 'Leggiamo tutto ciò che arriva tramite la pagina dei contatti.',
 		ctaPrimary: 'Contattaci',
@@ -202,6 +221,40 @@ export const it: Translations = {
 			title: 'Legale',
 			body: 'Termini di servizio, uso accettabile o domande sulle credenziali di contenuto.',
 		},
+		includeEyebrow: 'Prima di scriverci',
+		includeTitle: 'Cosa ci aiuta ad aiutarti più in fretta.',
+		includeItems: [
+			{
+				title: 'Lo screenshot originale',
+				body: 'Il file che hai caricato, così com’era. Ci permette di rieseguire lo stesso rilevamento e riprodurre esattamente ciò che hai visto.',
+			},
+			{
+				title: 'Cosa hai digitato',
+				body: 'Il testo sostitutivo e la riga che hai modificato, così possiamo distinguere un font non corrispondente da un testo non rilevato.',
+			},
+			{
+				title: 'Browser e dispositivo',
+				body: 'Basta qualcosa come «Safari su iPhone» o «Chrome su Windows». I numeri di versione aiutano, ma solo se li hai a portata di mano.',
+			},
+		],
+		faqEyebrow: 'Domande frequenti',
+		faqTitle: 'Prima di scriverci.',
+		faqs: [
+			{
+				question: "Serve un account per ricevere assistenza?",
+				answer: "No. ScreenshotTextEditor non ha account. Scrivi all'indirizzo più adatto alla tua domanda e ti risponderemo direttamente.",
+			},
+			{
+				question: 'Il mio screenshot può essere eliminato prima?',
+				answer:
+					"I file caricati vengono eliminati automaticamente, per impostazione predefinita dopo un'ora. Se vuoi che qualcosa venga rimosso subito, o hai domande su come vengono trattati i tuoi dati, scrivi all'indirizzo della privacy indicando più o meno quando hai caricato il file.",
+			},
+			{
+				question: 'Posso suggerire una funzione o un’altra lingua?',
+				answer:
+					"Sì, ti preghiamo di farlo. Le richieste di nuove scritture, altri tipi di sfondo o opzioni di esportazione vanno all'indirizzo dell'assistenza. Le leggiamo tutte e ci aiutano a decidere cosa costruire dopo.",
+			},
+		],
 		footerNote:
 			"Stai segnalando una modifica specifica che non è venuta bene? Includi lo screenshot originale e, se lo hai ancora, il risultato esportato — è il modo più veloce per riprodurre e risolvere il problema.",
 	},

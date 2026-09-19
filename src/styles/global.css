@@ -49,6 +49,44 @@ body {
 	font-family: var(--font-sans);
 }
 
+/* Site chrome (Nav, LanguageSwitcher, ThemeToggle). These repeat on every page, so
+   they are named classes rather than long inline utility strings — that keeps the
+   per-page HTML small (text-to-HTML ratio is an SEO audit signal). */
+@layer components {
+	.nav-shell {
+		@apply mx-4 mt-4 rounded-3xl border border-hairline bg-canvas-elevated/90 shadow-sm backdrop-blur-md transition-[margin,border-radius,box-shadow,max-width] duration-500 ease-out sm:mx-auto sm:max-w-6xl data-[scrolled=true]:mx-0 data-[scrolled=true]:mt-0 data-[scrolled=true]:max-w-none data-[scrolled=true]:rounded-none data-[scrolled=true]:border-x-0 data-[scrolled=true]:border-t-0 data-[scrolled=true]:shadow-none;
+	}
+
+	.nav-link {
+		@apply rounded-full px-3 py-1.5 text-[14px] text-body transition-colors hover:bg-hairline-soft hover:text-ink;
+	}
+
+	.nav-icon-btn {
+		@apply flex list-none cursor-pointer items-center justify-center rounded-full p-2 text-body transition-colors hover:bg-hairline-soft hover:text-ink [&::-webkit-details-marker]:hidden;
+	}
+
+	.nav-popover {
+		@apply absolute z-30 rounded-lg border border-hairline bg-canvas-elevated shadow-lg;
+	}
+
+	.lang-item {
+		@apply flex items-center gap-2 rounded-md px-2.5 py-1.5 text-[13px] text-body transition-colors hover:bg-hairline-soft;
+	}
+
+	.lang-item[aria-current='true'] {
+		@apply font-medium text-ink;
+	}
+
+	.theme-toggle-moon,
+	:root.dark .theme-toggle-sun {
+		display: none;
+	}
+
+	:root.dark .theme-toggle-moon {
+		display: block;
+	}
+}
+
 /* AnimatedEditorDemo (src/components/demo) — click ripple on the fake
    cursor and a soft attention pulse on the demo's Download button. */
 @keyframes editor-demo-ripple {

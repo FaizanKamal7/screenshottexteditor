@@ -1,0 +1,38 @@
+---
+import Container from './Container.astro';
+import { getTranslations, localizedPath } from '../i18n';
+
+interface Props {
+	lang?: string;
+	/** The page this strip is rendered on; it is left out of the list. */
+	current: 'about' | 'contact' | 'privacy' | 'terms';
+}
+
+const { lang = 'en', current } = Astro.props;
+const t = getTranslations(lang);
+
+// Contextual in-body links between the company/legal pages, so they don't depend on the nav and footer alone.
+const links = [
+	{ key: 'about', href: localizedPath(lang, 'about'), label: t.nav.about },
+	{ key: 'contact', href: localizedPath(lang, 'contact'), label: t.nav.contact },
+	{ key: 'privacy', href: '/privacy/', label: t.footer.privacy },
+	{ key: 'terms', href: '/terms/', label: t.footer.terms },
+	{ key: 'use-cases', href: `${localizedPath(lang, '')}#use-cases`, label: t.nav.useCases },
+].filter((link) => link.key !== current);
+---
+
+<section class="border-t border-hairline py-10">
+	<Container class="max-w-4xl">
+		<ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px]">
+			{
+				links.map((link) => (
+					<li>
+						<a href={link.href} class="text-link hover:underline">
+							{link.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</Container>
+</section>

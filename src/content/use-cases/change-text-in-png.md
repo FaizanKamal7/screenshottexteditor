@@ -2,6 +2,7 @@
 title: 'Change Text in a PNG'
 metaDescription: 'Change text in any PNG screenshot and get a pixel-accurate result — same font, size, color, and background, no visible edit.'
 platform: general
+updated: 2026-09-01
 eyebrow: 'Any screenshot, PNG or JPEG'
 heroHeadline: 'Change text in a screenshot. Keep every other pixel exactly the same.'
 heroSubhead: 'Drop in a PNG or JPEG, click the text you want to change, type the replacement. We detect the font, size, color, and background well enough to erase the old text and rebuild the new text so it belongs.'

@@ -31,10 +31,11 @@ export function isValidLocale(code: string | undefined): code is LocaleCode {
 	return !!code && localeCodes.includes(code);
 }
 
+/** Paths carry a trailing slash: the static pages are served as directories, and the slashless form 307-redirects to it (which breaks hreflang, per SEO audits). */
 export function localizedPath(locale: string, routeKey: TranslatableRouteKey): string {
 	const base = locale === defaultLocale ? '' : `/${locale}`;
-	if (routeKey === '') return base || '/';
-	return `${base}/${routeKey}`;
+	if (routeKey === '') return `${base}/`;
+	return `${base}/${routeKey}/`;
 }
 
 const siteOrigin = 'https://screenshottexteditor.com';

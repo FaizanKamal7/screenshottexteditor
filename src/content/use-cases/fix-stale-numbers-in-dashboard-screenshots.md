@@ -2,6 +2,7 @@
 title: 'Fix Stale Numbers in Dashboard Screenshots'
 metaDescription: 'Update outdated metrics in a dashboard screenshot for a deck or doc without re-opening the app or rebuilding the slide.'
 platform: web
+updated: 2026-09-01
 eyebrow: 'Decks & docs'
 heroHeadline: 'The dashboard screenshot is a year old. The number in it doesn’t have to be.'
 heroSubhead: 'A quarterly deck, a case study, an onboarding doc — all full of dashboard screenshots with numbers that quietly went stale. Update the figure in place instead of re-logging into the product, re-arranging the browser window, and re-taking the shot.'

@@ -25,7 +25,7 @@ export const es: Translations = {
 		ariaLabel: 'Cambiar idioma',
 	},
 	home: {
-		metaTitle: 'Editor de texto para capturas de pantalla — Editor de texto en imágenes con IA, gratis y online',
+		metaTitle: 'Editor de texto para capturas de pantalla — IA gratis y online',
 		metaDescription:
 			'Edita el texto de cualquier captura de pantalla o imagen online con nuestro editor de texto con IA gratuito. Coincide fuente, tamaño, grosor y color — sin marca de agua, sin registro.',
 		heroEyebrow: 'Edición de capturas con precisión de píxel',
@@ -179,6 +179,25 @@ export const es: Translations = {
 				body: 'Los archivos subidos se eliminan automáticamente y nunca entrenamos con las imágenes de los usuarios. Cada exportación incluye credenciales de contenido que la marcan como editada. Son metadatos invisibles, no un sello sobre la imagen — las exportaciones no llevan marca de agua visible.',
 			},
 		],
+		howEyebrow: 'Cómo funciona',
+		howTitle: 'De la subida a la exportación en tres pasos.',
+		howSteps: [
+			{
+				title: 'Detectar el texto',
+				body: 'El OCR localiza cada línea de texto de tu imagen y mide el factor de escala a partir de los propios glifos, para que los tamaños salgan bien en pantallas 1x, 2x y 3x.',
+			},
+			{
+				title: 'Igualar el estilo',
+				body: 'Tu texto original se dibuja con una lista corta de fuentes probables según la plataforma y se compara con los píxeles reales hasta encontrar la familia, el tamaño, el grosor y el espaciado más cercanos.',
+			},
+			{
+				title: 'Reconstruir y verificar',
+				body: 'El texto antiguo se borra con un relleno equivalente, tu texto nuevo se dibuja sobre la misma línea base y el resultado se compara con el original antes de que lo descargues.',
+			},
+		],
+		audienceTitle: 'Para quién es',
+		audienceBody:
+			'Para equipos de producto y marketing que corrigen una errata en una captura de lanzamiento, equipos de soporte que ocultan nombres de clientes antes de compartir una imagen, editores de apps que localizan capturas de App Store y Play Store, y cualquiera que haya perdido el archivo de diseño original. Funciona mejor con texto en alfabeto latino sobre fondos planos o degradados simples; los fondos fotográficos complejos y los alfabetos CJK o RTL todavía no son compatibles.',
 		ctaTitle: '¿Preguntas, comentarios o un error que reportar?',
 		ctaSubtitle: 'Leemos todo lo que llega por la página de contacto.',
 		ctaPrimary: 'Contáctanos',
@@ -202,6 +221,40 @@ export const es: Translations = {
 			title: 'Legal',
 			body: 'Términos del servicio, uso aceptable o preguntas sobre credenciales de contenido.',
 		},
+		includeEyebrow: 'Antes de escribirnos',
+		includeTitle: 'Lo que nos ayuda a ayudarte más rápido.',
+		includeItems: [
+			{
+				title: 'La captura original',
+				body: 'El archivo que subiste, tal cual. Nos permite repetir la misma detección y reproducir exactamente lo que viste.',
+			},
+			{
+				title: 'Lo que escribiste',
+				body: 'El texto de reemplazo y la línea que cambiaste, para poder distinguir una fuente que no coincide de un texto que no se detectó.',
+			},
+			{
+				title: 'Tu navegador y dispositivo',
+				body: 'Algo como «Safari en iPhone» o «Chrome en Windows» es suficiente. Los números de versión ayudan, pero solo si los tienes a mano.',
+			},
+		],
+		faqEyebrow: 'Preguntas frecuentes',
+		faqTitle: 'Antes de escribirnos.',
+		faqs: [
+			{
+				question: '¿Necesito una cuenta para recibir soporte?',
+				answer: 'No. ScreenshotTextEditor no tiene cuentas. Escribe a la dirección que encaje con tu pregunta y te responderemos directamente.',
+			},
+			{
+				question: '¿Se puede eliminar mi captura antes?',
+				answer:
+					'Los archivos subidos se eliminan automáticamente, por defecto al cabo de una hora. Si quieres que se elimine algo de inmediato, o tienes dudas sobre cómo se tratan tus datos, escribe a la dirección de privacidad e indica más o menos cuándo lo subiste.',
+			},
+			{
+				question: '¿Puedo sugerir una función u otro idioma?',
+				answer:
+					'Sí, por favor. Las solicitudes de nuevos alfabetos, más tipos de fondo u opciones de exportación van a la dirección de soporte. Las leemos todas y nos ayudan a decidir qué construir a continuación.',
+			},
+		],
 		footerNote:
 			'¿Reportas una edición concreta que no salió bien? Incluye la captura original y, si aún la tienes, el resultado exportado — es la forma más rápida de que podamos reproducir y solucionar el problema.',
 	},

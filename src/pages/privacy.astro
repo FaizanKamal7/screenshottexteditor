@@ -4,6 +4,7 @@ export const prerender = true;
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import ExploreLinks from '../components/ExploreLinks.astro';
 import Container from '../components/Container.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 
@@ -48,7 +49,7 @@ const lastUpdated = 'September 1, 2026';
 				<ul>
 					<li>We do not use uploaded screenshots to train any model, ours or anyone else's.</li>
 					<li>We do not sell or share uploaded images with third parties.</li>
-					<li>We do not offer a way to strip the embedded content credentials from an export, at any tier — see our <a href="/terms">terms</a>.</li>
+					<li>We do not offer a way to strip the embedded content credentials from an export, at any tier — see our <a href="/terms/">terms</a>.</li>
 				</ul>
 
 				<h2>Analytics</h2>
@@ -70,6 +71,8 @@ const lastUpdated = 'September 1, 2026';
 			</Container>
 		</section>
 	</main>
+
+	<ExploreLinks current="privacy" />
 
 	<Footer />
 </Layout>

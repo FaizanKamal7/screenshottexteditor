@@ -179,6 +179,25 @@ export const de: Translations = {
 				body: 'Uploads werden automatisch gelöscht, und wir trainieren nie mit Nutzerbildern. Jeder Export enthält eingebettete Content-Credentials, die ihn als bearbeitet kennzeichnen. Das sind unsichtbare Metadaten, kein Stempel auf dem Bild — Exporte tragen kein sichtbares Wasserzeichen.',
 			},
 		],
+		howEyebrow: 'So funktioniert es',
+		howTitle: 'Vom Upload zum Export in drei Schritten.',
+		howSteps: [
+			{
+				title: 'Text erkennen',
+				body: 'OCR findet jede Textzeile in deinem Bild und misst den Skalierungsfaktor direkt an den Glyphen, damit die Größen auf 1x-, 2x- und 3x-Displays stimmen.',
+			},
+			{
+				title: 'Stil abgleichen',
+				body: 'Dein Originaltext wird in einer Auswahl plattformtypischer Schriften gerendert und mit den echten Pixeln verglichen, bis die passendste Schriftfamilie, Größe, Stärke und Laufweite gefunden ist.',
+			},
+			{
+				title: 'Neu aufbauen und prüfen',
+				body: 'Der alte Text wird mit einer passenden Füllung entfernt, dein Ersatztext wird auf derselben Grundlinie gerendert, und das Ergebnis wird vor dem Download mit dem Original abgeglichen.',
+			},
+		],
+		audienceTitle: 'Für wen es gedacht ist',
+		audienceBody:
+			'Für Produkt- und Marketingteams, die einen Tippfehler in einem Launch-Screenshot korrigieren, Support-Teams, die vor dem Teilen Kundennamen schwärzen, App-Publisher, die App-Store- und Play-Store-Screenshots lokalisieren, und alle, die die ursprüngliche Designdatei verloren haben. Am besten funktioniert es mit lateinischer Schrift auf einfarbigen Hintergründen oder einfachen Verläufen; unruhige Fotohintergründe sowie CJK- und RTL-Schriften werden noch nicht unterstützt.',
 		ctaTitle: 'Fragen, Feedback oder ein Bug zu melden?',
 		ctaSubtitle: 'Wir lesen alles, was über die Kontaktseite eingeht.',
 		ctaPrimary: 'Kontaktiere uns',
@@ -202,6 +221,40 @@ export const de: Translations = {
 			title: 'Rechtliches',
 			body: 'Nutzungsbedingungen, zulässige Nutzung oder Fragen zu Content-Credentials.',
 		},
+		includeEyebrow: 'Bevor du schreibst',
+		includeTitle: 'Was uns hilft, dir schneller zu helfen.',
+		includeItems: [
+			{
+				title: 'Der Original-Screenshot',
+				body: 'Die Datei, die du hochgeladen hast, unverändert. So können wir dieselbe Erkennung erneut ausführen und genau nachvollziehen, was du gesehen hast.',
+			},
+			{
+				title: 'Was du eingegeben hast',
+				body: 'Der Ersatztext und die geänderte Zeile, damit wir eine abweichende Schrift von einer nicht erkannten Textzeile unterscheiden können.',
+			},
+			{
+				title: 'Browser und Gerät',
+				body: 'Etwas wie „Safari auf dem iPhone“ oder „Chrome unter Windows“ genügt. Versionsnummern helfen, aber nur, wenn du sie zur Hand hast.',
+			},
+		],
+		faqEyebrow: 'Häufige Fragen',
+		faqTitle: 'Bevor du uns schreibst.',
+		faqs: [
+			{
+				question: 'Brauche ich ein Konto, um Support zu bekommen?',
+				answer: 'Nein. ScreenshotTextEditor hat keine Konten. Schreib an die Adresse, die zu deiner Frage passt, und wir antworten dir direkt.',
+			},
+			{
+				question: 'Kann mein Screenshot früher gelöscht werden?',
+				answer:
+					'Uploads werden automatisch gelöscht, standardmäßig nach einer Stunde. Wenn du etwas sofort entfernt haben möchtest oder Fragen dazu hast, wie mit deinen Daten umgegangen wird, schreib an die Datenschutz-Adresse und nenne ungefähr den Zeitpunkt deines Uploads.',
+			},
+			{
+				question: 'Kann ich eine Funktion oder eine weitere Sprache vorschlagen?',
+				answer:
+					'Ja, unbedingt. Wünsche nach neuen Schriftsystemen, weiteren Hintergrundtypen oder Exportoptionen gehen an die Support-Adresse. Wir lesen sie alle, und sie helfen uns zu entscheiden, was wir als Nächstes bauen.',
+			},
+		],
 		footerNote:
 			'Meldest du eine bestimmte Bearbeitung, die nicht gut ausgesehen hat? Füge den Original-Screenshot bei und, falls noch vorhanden, das exportierte Ergebnis — so können wir das Problem am schnellsten nachvollziehen und beheben.',
 	},

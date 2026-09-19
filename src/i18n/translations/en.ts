@@ -179,6 +179,25 @@ export const en: Translations = {
 				body: 'Uploads are deleted automatically and we never train on user images. Every export carries embedded content credentials marking it as edited — invisible metadata, not a visible watermark.',
 			},
 		],
+		howEyebrow: 'How it works',
+		howTitle: 'From upload to export in three steps.',
+		howSteps: [
+			{
+				title: 'Detect the text',
+				body: 'OCR locates every line of text in your image, then measures the image scale factor from the glyphs themselves, so sizes come out right on 1x, 2x, and 3x screens.',
+			},
+			{
+				title: 'Match the style',
+				body: 'Your original text is rendered in a shortlist of platform-likely fonts and scored against the real pixels until the closest family, size, weight, and spacing is found.',
+			},
+			{
+				title: 'Rebuild and verify',
+				body: 'The old text is erased with a matching fill, your replacement is rendered at the same baseline, and the result is checked against the original before you download it.',
+			},
+		],
+		audienceTitle: "Who it's for",
+		audienceBody:
+			"Product and marketing teams fixing a typo in a launch screenshot, support teams redacting customer names before sharing an image, app publishers localizing App Store and Play Store screenshots, and anyone who has lost the original design file. It works best on Latin-script text over flat or simple-gradient backgrounds; busy photo backgrounds and CJK or RTL scripts aren't supported yet.",
 		ctaTitle: 'Questions, feedback, or a bug to report?',
 		ctaSubtitle: 'We read everything that comes in through the contact page.',
 		ctaPrimary: 'Contact us',
@@ -202,6 +221,40 @@ export const en: Translations = {
 			title: 'Legal',
 			body: 'Terms of service, acceptable use, or content credential questions.',
 		},
+		includeEyebrow: 'Before you write',
+		includeTitle: 'What helps us help you faster.',
+		includeItems: [
+			{
+				title: 'The original screenshot',
+				body: 'The file you uploaded, as it was. It lets us re-run the same detection and reproduce exactly what you saw.',
+			},
+			{
+				title: 'What you typed',
+				body: 'The replacement text and which line you changed, so we can tell a font mismatch apart from a text-detection miss.',
+			},
+			{
+				title: 'Your browser and device',
+				body: 'Something like "Safari on iPhone" or "Chrome on Windows" is enough. Version numbers help, but only if you have them.',
+			},
+		],
+		faqEyebrow: 'Common questions',
+		faqTitle: 'Before you email us.',
+		faqs: [
+			{
+				question: 'Do I need an account to get support?',
+				answer: 'No. ScreenshotTextEditor has no accounts. Email the address that fits your question and we will reply to you directly.',
+			},
+			{
+				question: 'Can my screenshot be deleted sooner?',
+				answer:
+					'Uploads are deleted automatically, after one hour by default. If you want something removed right away, or have a question about how your data is handled, write to the privacy address and mention roughly when you uploaded.',
+			},
+			{
+				question: 'Can I suggest a feature or another language?',
+				answer:
+					'Yes, please do. Requests for new scripts, more background types, or export options go to the support address. We read all of them, and they help decide what we build next.',
+			},
+		],
 		footerNote:
 			"Reporting a specific edit that didn't come out right? Include the original screenshot and, if you still have it, the exported result — it's the fastest way for us to reproduce and fix it.",
 	},

@@ -8,6 +8,8 @@ const useCases = defineCollection({
 		title: z.string(),
 		metaDescription: z.string(),
 		platform: z.enum(['ios', 'android', 'web', 'general']),
+		// Last meaningful content change (YYYY-MM-DD); feeds the sitemap's <lastmod>.
+		updated: z.coerce.date(),
 		eyebrow: z.string(),
 		heroHeadline: z.string(),
 		heroSubhead: z.string(),

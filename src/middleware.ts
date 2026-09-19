@@ -6,7 +6,17 @@ import { defineMiddleware } from 'astro:middleware';
 // across duplicates instead of the canonical apex/https URL.
 const CANONICAL_HOST = 'screenshottexteditor.com';
 
-export const onRequest = defineMiddleware((context, next) => {
+// HSTS is only honoured by browsers when received over HTTPS, so it is skipped on the
+// http:// -> https:// redirect. No includeSubDomains/preload: other subdomains may not be
+// HTTPS-only, and preload is effectively irreversible.
+const HSTS = 'max-age=31536000';
+
+const withHsts = (response: Response) => {
+	response.headers.set('Strict-Transport-Security', HSTS);
+	return response;
+};
+
+export const onRequest = defineMiddleware(async (context, next) => {
 	const { url, request } = context;
 	const hostname = url.hostname;
 
@@ -16,13 +26,15 @@ export const onRequest = defineMiddleware((context, next) => {
 	}
 
 	const protocol = request.headers.get('x-forwarded-proto') ?? url.protocol.replace(':', '');
+	const isHttps = protocol === 'https';
 
-	if (hostname !== CANONICAL_HOST || protocol !== 'https') {
+	if (hostname !== CANONICAL_HOST || !isHttps) {
 		const target = new URL(url);
 		target.protocol = 'https:';
 		target.hostname = CANONICAL_HOST;
-		return context.redirect(target.toString(), 301);
+		const redirect = context.redirect(target.toString(), 301);
+		return isHttps ? withHsts(redirect) : redirect;
 	}
 
-	return next();
+	return withHsts(await next());
 });

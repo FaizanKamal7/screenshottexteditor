@@ -2,6 +2,7 @@
 title: 'Edit Text in an iOS Screenshot'
 metaDescription: 'Change text in an iPhone screenshot without it looking edited. Matches SF Pro rendering, retina scale, and iOS anti-aliasing down to the pixel.'
 platform: ios
+updated: 2026-09-01
 eyebrow: 'iOS & iPadOS'
 heroHeadline: 'Edit iOS screenshot text without it ever looking edited.'
 heroSubhead: 'iOS screenshots are unforgiving — 3x retina text is small, crisp, and instantly reveals a bad edit. We detect the actual scale factor, match the SF Pro substitute at the right weight and size, and re-render at native resolution.'

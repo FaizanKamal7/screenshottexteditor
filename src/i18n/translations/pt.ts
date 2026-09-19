@@ -25,7 +25,7 @@ export const pt: Translations = {
 		ariaLabel: 'Alterar idioma',
 	},
 	home: {
-		metaTitle: 'Editor de Texto para Capturas de Tela — Editor de Texto em Imagens com IA, Gratuito e Online',
+		metaTitle: 'Editor de Texto para Capturas de Tela — IA Grátis e Online',
 		metaDescription:
 			'Edite o texto de qualquer captura de tela ou imagem online com nosso editor de texto com IA gratuito. Ajusta fonte, tamanho, peso e cor automaticamente — sem marca d\'água, sem cadastro.',
 		heroEyebrow: 'Edição de capturas de tela com precisão de pixel',
@@ -179,6 +179,25 @@ export const pt: Translations = {
 				body: 'Os uploads são excluídos automaticamente e nunca treinamos modelos com imagens de usuários. Cada exportação carrega credenciais de conteúdo incorporadas indicando que foi editada. Isso é metadado invisível, não uma marca estampada na imagem — as exportações não têm marca d\'água visível.',
 			},
 		],
+		howEyebrow: 'Como funciona',
+		howTitle: 'Do upload à exportação em três passos.',
+		howSteps: [
+			{
+				title: 'Detectar o texto',
+				body: 'O OCR localiza cada linha de texto na sua imagem e mede o fator de escala a partir dos próprios glifos, para que os tamanhos fiquem corretos em telas 1x, 2x e 3x.',
+			},
+			{
+				title: 'Combinar o estilo',
+				body: 'O seu texto original é renderizado em uma lista curta de fontes prováveis para a plataforma e comparado com os pixels reais até encontrar a família, o tamanho, o peso e o espaçamento mais próximos.',
+			},
+			{
+				title: 'Reconstruir e verificar',
+				body: 'O texto antigo é apagado com um preenchimento equivalente, o seu novo texto é renderizado na mesma linha de base e o resultado é comparado com o original antes de você baixá-lo.',
+			},
+		],
+		audienceTitle: 'Para quem é',
+		audienceBody:
+			'Para equipes de produto e marketing que corrigem um erro de digitação em uma captura de lançamento, equipes de suporte que ocultam nomes de clientes antes de compartilhar uma imagem, publicadores de apps que localizam capturas da App Store e da Play Store, e qualquer pessoa que tenha perdido o arquivo de design original. Funciona melhor com texto em alfabeto latino sobre fundos lisos ou gradientes simples; fundos fotográficos complexos e escritas CJK ou RTL ainda não são compatíveis.',
 		ctaTitle: 'Perguntas, sugestões ou um bug para relatar?',
 		ctaSubtitle: 'Lemos tudo o que chega pela página de contato.',
 		ctaPrimary: 'Fale conosco',
@@ -202,6 +221,40 @@ export const pt: Translations = {
 			title: 'Jurídico',
 			body: 'Termos de serviço, uso aceitável ou dúvidas sobre credenciais de conteúdo.',
 		},
+		includeEyebrow: 'Antes de escrever',
+		includeTitle: 'O que nos ajuda a ajudar você mais rápido.',
+		includeItems: [
+			{
+				title: 'A captura de tela original',
+				body: 'O arquivo que você enviou, como estava. Ele nos permite repetir a mesma detecção e reproduzir exatamente o que você viu.',
+			},
+			{
+				title: 'O que você digitou',
+				body: 'O texto de substituição e a linha que você alterou, para distinguirmos uma fonte que não combina de um texto que não foi detectado.',
+			},
+			{
+				title: 'Seu navegador e dispositivo',
+				body: 'Algo como “Safari no iPhone” ou “Chrome no Windows” já basta. Números de versão ajudam, mas só se você os tiver à mão.',
+			},
+		],
+		faqEyebrow: 'Perguntas frequentes',
+		faqTitle: 'Antes de nos escrever.',
+		faqs: [
+			{
+				question: 'Preciso de uma conta para receber suporte?',
+				answer: 'Não. O ScreenshotTextEditor não tem contas. Escreva para o endereço que combina com a sua dúvida e responderemos diretamente para você.',
+			},
+			{
+				question: 'Minha captura de tela pode ser excluída antes?',
+				answer:
+					'Os uploads são excluídos automaticamente, por padrão após uma hora. Se você quiser algo removido imediatamente, ou tiver dúvidas sobre como seus dados são tratados, escreva para o endereço de privacidade e informe mais ou menos quando fez o upload.',
+			},
+			{
+				question: 'Posso sugerir um recurso ou outro idioma?',
+				answer:
+					'Sim, por favor. Pedidos de novas escritas, mais tipos de fundo ou opções de exportação vão para o endereço de suporte. Lemos todos eles, e eles nos ajudam a decidir o que construir a seguir.',
+			},
+		],
 		footerNote:
 			'Está relatando uma edição específica que não saiu bem? Inclua a captura de tela original e, se ainda tiver, o resultado exportado — é a forma mais rápida de reproduzirmos e corrigirmos o problema.',
 	},
