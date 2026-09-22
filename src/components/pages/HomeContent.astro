@@ -29,10 +29,58 @@ const p5End = cjk ? '。' : '.';
 
 const useCases = await getCollection('useCases');
 
+const isEn = lang === 'en';
+
+// English-only supplemental FAQ entries answering common "screenshot text editor"
+// search intent not already covered by t.home.faqs. Kept out of the shared
+// Translations type since faqs there is a fixed-length tuple mirrored by every
+// locale file — these extend the English page only.
+const enExtraFaqs: { question: string; answer: string }[] = isEn
+	? [
+			{
+				question: 'Can I edit text in a PNG?',
+				answer:
+					'Yes — PNG is one of the two supported formats. Upload your PNG screenshot, click the text you want to change, and download the result as a PNG.',
+			},
+			{
+				question: 'Can I edit text in a JPEG or JPG screenshot?',
+				answer:
+					'Yes — JPEG and JPG screenshots are supported the same way as PNG. Upload the file, replace the text you need, and export it back out as a JPG.',
+			},
+			{
+				question: 'Does ScreenshotTextEditor preserve the original font?',
+				answer:
+					'It tries to. Your text is rendered in a shortlist of likely fonts and scored against the real pixels to find the closest match for family, size, weight, and spacing — with a confidence score shown, not hidden.',
+			},
+			{
+				question: 'Do I need to install software?',
+				answer: "No. It runs entirely in your browser — there's nothing to download or install, and no design software required.",
+			},
+			{
+				question: 'Do I need an account to edit screenshots?',
+				answer: 'No account is required. Upload a screenshot and start editing right away — no signup, no login.',
+			},
+			{
+				question: 'Are my screenshots private?',
+				answer: 'Uploads are deleted automatically, one hour by default, and we never train on user images.',
+			},
+			{
+				question: 'Can I edit screenshots from iPhone and Android?',
+				answer:
+					'Yes. The editor runs online, so you can upload directly from an iPhone or Android device and download the edited screenshot back to it.',
+			},
+			{
+				question: 'What happens if the original font cannot be matched?',
+				answer:
+					"If a font can't be matched with high confidence, the closest match found is still used, but it's flagged as low-confidence instead of presented as an exact match, so you can judge the result before downloading it.",
+			},
+		]
+	: [];
+
 const faqJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'FAQPage',
-	mainEntity: t.home.faqs.map((faq) => ({
+	mainEntity: [...t.home.faqs, ...enExtraFaqs].map((faq) => ({
 		'@type': 'Question',
 		name: faq.question,
 		acceptedAnswer: {
@@ -73,6 +121,42 @@ const faqJsonLd = {
 				</div>
 			</Container>
 		</section>
+
+		{
+			isEn && (
+				<section class="border-b border-hairline py-20">
+					<Container class="max-w-5xl">
+						<Eyebrow>Getting started</Eyebrow>
+						<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">How to edit text in a screenshot</h2>
+						<p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-body">
+							ScreenshotTextEditor replaces text that's already in your screenshot — it doesn't paint a new text box on
+							top. Upload a <a href="/change-text-in-png/" class="text-link hover:underline">PNG</a> or JPEG/JPG
+							screenshot and the background, icons, and layout around your text stay exactly as they were.
+						</p>
+						<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+							<FeatureCard title="1. Upload your screenshot">
+								Drop in your screenshot or click to browse. Nothing to install, no design software.
+							</FeatureCard>
+							<FeatureCard title="2. Click the text you want to change">
+								Every line of detected text is clickable — no need to trace a box or select pixels yourself.
+							</FeatureCard>
+							<FeatureCard title="3. Enter the replacement text">
+								Type your new wording. The font, size, weight, and color are matched automatically.
+							</FeatureCard>
+							<FeatureCard title="4. Download the edited screenshot">
+								Export a pixel-accurate PNG or JPG with no watermark, ready to share.
+							</FeatureCard>
+						</div>
+						<p class="mt-6 text-[14px] text-mute">
+							It works the same on <a href="/edit-text-in-ios-screenshot/" class="text-link hover:underline">iPhone screenshots</a> and <a href="/edit-text-in-android-screenshot/" class="text-link hover:underline">Android screenshots</a>.
+						</p>
+						<div class="mt-5">
+							<Button href="/app" variant="secondary">Open the screenshot editor</Button>
+						</div>
+					</Container>
+				</section>
+			)
+		}
 
 		<section class="border-b border-hairline py-20">
 			<Container class="max-w-4xl">
@@ -214,7 +298,7 @@ const faqJsonLd = {
 				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.home.faqTitle}</h2>
 				<div class="mt-6 space-y-3">
 					{
-						t.home.faqs.map((faq) => (
+						[...t.home.faqs, ...enExtraFaqs].map((faq) => (
 							<details class="group rounded-xl border border-hairline bg-canvas-elevated p-5 open:pb-5">
 								<summary class="cursor-pointer list-none text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
 									<span class="flex items-center justify-between gap-4">

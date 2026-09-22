@@ -32,10 +32,10 @@ export const en: Translations = {
 		heroTitleLine1: 'Screenshot text editor: edit any text.',
 		heroTitleLine2: 'Keep every other pixel exactly the same.',
 		heroSubtitle:
-			'Our screenshot text editor lets you click any line of text, retype it, and match its font, size, weight, and color automatically — everything else stays pixel-for-pixel the same.',
+			'Our screenshot text editor runs online, in your browser: click any line of text, retype it, and it matches the original font, size, weight, and color automatically — everything else in the screenshot stays pixel-for-pixel the same.',
 		ctaPrimary: 'Start for free',
 		ctaSecondary: 'See it work',
-		heroFreeNote: 'Free to use — no signup, no credit card, no watermark.',
+		heroFreeNote: 'Free to use — no account, no credit card, no watermark.',
 
 		diffEyebrow: 'Why this is different',
 		diffTitle: 'A deterministic pipeline, not a generated guess.',
