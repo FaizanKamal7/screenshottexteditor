@@ -1,5 +1,24 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(npm test *)",
+      "Bash(chromium-cli --help)",
+      "Bash(timeout 40 bash -c 'until curl -sf http://127.0.0.1:8000/docs >/dev/null 2>&1; do sleep 1; done')",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:4321/find-font-from-image/ >/dev/null 2>&1; do sleep 1; done')",
+      "Bash(mkdir -p screenshots)",
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "Bash(node test_font_finder.mjs)",
+      "Bash(tail -c 4000 /tmp/pipeline.log 2>/dev/null; echo \"---nohup---\"; find / -maxdepth 3 -iname \"nohup.out\" 2>/dev/null)",
+      "Read(//e//**)",
+      "Bash(.venv/Scripts/python.exe -c \"import sys; print\\(sys.version\\)\")",
+      "Bash(.venv/Scripts/pip.exe list *)",
+      "Bash(timeout 45 .venv/Scripts/pip.exe install --dry-run paddleocr==3.7.0)",
+      "Bash(node test_mobile.mjs)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8000 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"done\")",
+      "Bash(curl -sf http://127.0.0.1:8000/docs)",
+      "Bash(rm -f /tmp/pipeline.log)"
+    ],
     "defaultMode": "bypassPermissions"
   }
 }

@@ -1,0 +1,215 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Container from '../components/Container.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Button from '../components/Button.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import { EditorIsland } from '../editor/EditorIsland';
+
+// Reuses the exact same detection pipeline as /app and the use-case pages'
+// "Try it live" embeds (see [slug].astro) — clicking a detected text region
+// opens FontOverridePanel, whose "Top candidates" list (region.fontCandidates)
+// is the real font-matching result. No separate/demo font-detection code here.
+const steps = [
+	{
+		title: '1. Upload your image',
+		body: 'Drop in a screenshot, UI mockup, or graphic — PNG or JPEG both work, and nothing is saved beyond the automatic one-hour cleanup.',
+	},
+	{
+		title: '2. Click the text',
+		body: 'Every line of text is detected automatically. Click the one whose font you want to find.',
+	},
+	{
+		title: '3. Let it match',
+		body: "The same font-matching engine used throughout ScreenshotTextEditor scores your text against its supported typefaces and ranks the closest candidates.",
+	},
+	{
+		title: '4. Review the result',
+		body: 'A "Top candidates" list opens showing each matched font family, its weight, and a score — plus a confidence label if two candidates are a close call.',
+	},
+];
+
+const faqs = [
+	{
+		question: 'How can I find a font from an image?',
+		answer:
+			'Upload the image or screenshot into the tool above, then click the line of text you want to identify. A panel opens showing the closest matching font family, its weight, and a match score — no signup required.',
+	},
+	{
+		question: 'Can I identify a font from a screenshot?',
+		answer:
+			'Yes — screenshots are exactly what this is tuned for: app UI, web pages, dashboards, and marketing graphics with flat or simple-gradient backgrounds.',
+	},
+	{
+		question: 'Can I find the font name from an image?',
+		answer:
+			"You'll see the name of the closest matching open-source typeface (for example Inter, Roboto, or Liberation Sans) rather than a proprietary commercial font we're not licensed to identify by name. See \"What the font finder can identify\" above for details.",
+	},
+	{
+		question: 'Is the font finder free?',
+		answer: 'Yes. It is free to use, with no signup, no credit card, and no watermark.',
+	},
+	{
+		question: 'Can I use a PNG or JPEG?',
+		answer: 'Yes, both formats work directly in the tool.',
+	},
+	{
+		question: 'How accurate is font identification?',
+		answer:
+			'Each match comes with a match-quality score and a confidence label, so a clear match and a close call between two similar fonts look different. Accuracy is highest on flat or simple-gradient backgrounds with Latin-script text; busy photo backgrounds and CJK or right-to-left scripts aren\'t supported yet.',
+	},
+];
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: faq.answer,
+		},
+	})),
+};
+---
+
+<Layout
+	title="Find Font from Image — Free Font Finder | ScreenshotTextEditor"
+	description="Upload an image and find the font used in it — free, no signup. Our font finder matches your text against known typefaces and shows the closest result."
+	editorFonts
+>
+	<Nav />
+
+	<main>
+		<section class="border-b border-hairline py-20">
+			<Container class="max-w-3xl text-center">
+				<Eyebrow>Font finder</Eyebrow>
+				<h1 class="mt-4 text-[40px] font-semibold leading-[1.1] tracking-tight text-ink md:text-[48px] md:leading-[1.05] md:tracking-[-0.02em]">
+					Find Font from Image
+				</h1>
+				<p class="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-body">
+					Need to find font from image files fast? Upload a screenshot or graphic below, click the text you want to
+					identify, and our font finder shows you the closest matching font family — the same matching engine used
+					throughout ScreenshotTextEditor, giving you a real result with a confidence score, not a guess.
+				</p>
+				<div class="mt-8 flex items-center justify-center gap-3">
+					<Button href="#font-finder" variant="primary">Try the font finder</Button>
+					<Button href="/app" variant="secondary">Open the full editor</Button>
+				</div>
+				<p class="mt-4 text-[13px] text-mute">Free to use — no signup, no credit card, no watermark.</p>
+			</Container>
+		</section>
+
+		<section id="font-finder" class="border-b border-hairline bg-hairline-soft/50 py-16">
+			<Container class="max-w-4xl">
+				<Eyebrow>Interactive font finder</Eyebrow>
+				<h2 class="mt-2 text-[24px] font-semibold tracking-tight text-ink">
+					Upload an image to find a font from an image right now.
+				</h2>
+				<p class="mt-2 text-[14px] text-mute">
+					This is the real detection pipeline, running live — not a mockup or a pre-baked demo result.
+				</p>
+				<div class="mt-6">
+					<EditorIsland client:only="react" embedded />
+				</div>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-4xl">
+				<Eyebrow>Walkthrough</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">How to find a font from an image</h2>
+				<div class="mt-8 grid gap-4 md:grid-cols-2">
+					{steps.map((step) => <FeatureCard title={step.title}>{step.body}</FeatureCard>)}
+				</div>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-3xl space-y-4 text-[15px] leading-relaxed text-body">
+				<Eyebrow>Capabilities</Eyebrow>
+				<h2 class="mt-2 text-[26px] font-semibold tracking-tight text-ink">What the font finder can identify</h2>
+				<p>For each line of text you click, the font finder returns:</p>
+				<ul class="list-disc space-y-2 pl-5">
+					<li>
+						The closest matching font family — shown as the actual open-source typeface used to reproduce it (for
+						example Inter, Roboto, or Liberation Sans), since we don't bundle or claim to identify proprietary fonts
+						like SF Pro, Segoe UI, or Helvetica by name.
+					</li>
+					<li>An estimated font weight, size, and letter spacing.</li>
+					<li>
+						A match-quality score and a confidence label, so you can tell a clear match from a close call between two
+						similar-looking fonts.
+					</li>
+				</ul>
+				<p>
+					This is a closest-match system, not a guaranteed exact identification. Two visually similar fonts can score
+					close to each other, and the family name you see is always our best open-source substitute — not a claim
+					about the exact commercial font used in the original design.
+				</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-3xl space-y-4 text-[15px] leading-relaxed text-body">
+				<Eyebrow>Best results</Eyebrow>
+				<h2 class="mt-2 text-[26px] font-semibold tracking-tight text-ink">Where it works best</h2>
+				<p>
+					The font finder works best on Latin-script text over flat or simple-gradient backgrounds — which covers
+					most app screenshots, web UI, and dashboard exports. If a match looks off, the confidence label will
+					usually say so.
+				</p>
+				<p>
+					Busy photo backgrounds and CJK or right-to-left scripts aren't supported yet. In that case the tool tells
+					you it isn't confident in the match rather than quietly showing a wrong font.
+				</p>
+			</Container>
+		</section>
+
+		<section class="border-b border-hairline py-16">
+			<Container class="max-w-3xl text-center">
+				<Eyebrow>Go further</Eyebrow>
+				<h2 class="mt-2 text-[26px] font-semibold tracking-tight text-ink">Want to edit the text too?</h2>
+				<p class="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-body">
+					Once you've found the font, you can keep going in the same editor: change the words, and the original
+					font, size, weight, and color carry over automatically.
+				</p>
+				<div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+					<Button href="/app" variant="primary">Open the full editor</Button>
+					<Button href="/change-text-in-png/" variant="secondary">Edit text in a PNG</Button>
+				</div>
+			</Container>
+		</section>
+
+		<section id="faq" class="py-16">
+			<Container class="max-w-3xl">
+				<Eyebrow>FAQ</Eyebrow>
+				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">Frequently asked questions</h2>
+				<div class="mt-6 space-y-3">
+					{
+						faqs.map((faq) => (
+							<details class="group rounded-xl border border-hairline bg-canvas-elevated p-5 open:pb-5">
+								<summary class="cursor-pointer list-none text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+									<span class="flex items-center justify-between gap-4">
+										{faq.question}
+										<span class="shrink-0 text-faint transition-transform group-open:rotate-45">+</span>
+									</span>
+								</summary>
+								<p class="mt-3 text-[14px] leading-relaxed text-body">{faq.answer}</p>
+							</details>
+						))
+					}
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+
+	<Footer />
+</Layout>

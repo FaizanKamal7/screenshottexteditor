@@ -29,10 +29,10 @@ export const en: Translations = {
 		metaDescription:
 			'Edit text in any screenshot or image online with our free AI screenshot text editor. Matches font, size, weight, and color — no watermark, no signup required.',
 		heroEyebrow: 'Pixel-accurate screenshot editing',
-		heroTitleLine1: 'Edit text in a screenshot.',
+		heroTitleLine1: 'Screenshot text editor: edit any text.',
 		heroTitleLine2: 'Keep every other pixel exactly the same.',
 		heroSubtitle:
-			'Click any line of text in a screenshot, retype it, and match its font, size, weight, and color automatically — everything else stays pixel-for-pixel the same.',
+			'Our screenshot text editor lets you click any line of text, retype it, and match its font, size, weight, and color automatically — everything else stays pixel-for-pixel the same.',
 		ctaPrimary: 'Start for free',
 		ctaSecondary: 'See it work',
 		heroFreeNote: 'Free to use — no signup, no credit card, no watermark.',

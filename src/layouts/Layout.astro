@@ -7,6 +7,8 @@ interface Props {
 	ogImage?: string;
 	lang?: string;
 	alternates?: { hreflang: string; href: string }[];
+	/** Loads Inter / Roboto / Noto Sans too — only the editor's canvas and font picker use them. */
+	editorFonts?: boolean;
 }
 
 const {
@@ -15,10 +17,15 @@ const {
 	ogImage = '/og-image.png',
 	lang = 'en',
 	alternates = [],
+	editorFonts = false,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://screenshottexteditor.com');
 const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://screenshottexteditor.com');
+
+const fontFamilies = ['Geist:wght@400;500;600;700', 'Geist+Mono:wght@400;500'];
+if (editorFonts) fontFamilies.push('Inter:wght@400;500;600;700', 'Roboto:wght@400;500;700', 'Noto+Sans:wght@400;700');
+const fontsHref = `https://fonts.googleapis.com/css2?${fontFamilies.map((family) => `family=${family}`).join('&')}&display=swap`;
 ---
 
 <!doctype html>
@@ -60,20 +67,35 @@ const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://screenshottexteditor.
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-B6DT4DMC2Q"></script>
+		<!-- Non-blocking: the stylesheet loads as `print` and flips to `all` once fetched, so text paints in the fallback font first (display=swap). -->
+		<link href={fontsHref} rel="stylesheet" media="print" onload="this.media='all'" />
+		<noscript><link href={fontsHref} rel="stylesheet" /></noscript>
+		<!-- Google tag (gtag.js). The dataLayer stub queues events immediately; the ~175 KB library itself is injected on first interaction or 4s after load, so it never competes with first paint. -->
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
-
 			gtag('config', 'G-B6DT4DMC2Q');
+
+			(function () {
+				var loaded = false;
+				function loadGtag() {
+					if (loaded) return;
+					loaded = true;
+					var s = document.createElement('script');
+					s.async = true;
+					s.src = 'https://www.googletagmanager.com/gtag/js?id=G-B6DT4DMC2Q';
+					document.head.appendChild(s);
+				}
+				['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (type) {
+					window.addEventListener(type, loadGtag, { once: true, passive: true });
+				});
+				window.addEventListener('load', function () {
+					setTimeout(loadGtag, 4000);
+				});
+			})();
 		</script>
 	</head>
 	<body class="h-full w-full m-0 bg-canvas text-ink">

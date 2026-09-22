@@ -20,7 +20,7 @@
 	--color-violet: #7928ca;
 	--color-cyan: #50e3c2;
 
-	--font-sans: 'Geist', 'Inter', Arial, sans-serif;
+	--font-sans: 'Geist', 'Geist Fallback', 'Inter', Arial, sans-serif;
 	--font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 }
 
@@ -47,6 +47,18 @@
 
 body {
 	font-family: var(--font-sans);
+}
+
+/* Geist loads non-blocking (see Layout.astro), so text first paints in a system font. This face
+   scales Arial to Geist's measured metrics (avg. glyph width 1.042x Arial's; ascent/descent from
+   Geist's hhea table, divided by that scale) so the swap doesn't reflow the page (CLS). */
+@font-face {
+	font-family: 'Geist Fallback';
+	src: local('Arial'), local('Helvetica');
+	size-adjust: 104.2%;
+	ascent-override: 96.4%;
+	descent-override: 28.3%;
+	line-gap-override: 0%;
 }
 
 /* Site chrome (Nav, LanguageSwitcher, ThemeToggle). These repeat on every page, so

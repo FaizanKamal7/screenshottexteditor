@@ -25,14 +25,14 @@ export const it: Translations = {
 		ariaLabel: 'Cambia lingua',
 	},
 	home: {
-		metaTitle: 'Editor di Testo per Screenshot — Editor IA Gratuito Online',
+		metaTitle: 'Modifica Screenshot: Editor di Testo IA Gratuito e Online',
 		metaDescription:
 			"Modifica il testo di qualsiasi screenshot o immagine online con il nostro editor di testo IA gratuito. Font, dimensione, peso e colore corrispondono automaticamente — senza watermark, senza registrazione.",
 		heroEyebrow: 'Modifica di screenshot con precisione al pixel',
-		heroTitleLine1: 'Modifica il testo in uno screenshot.',
+		heroTitleLine1: 'Modifica screenshot: cambia qualsiasi testo.',
 		heroTitleLine2: 'Mantieni ogni altro pixel esattamente identico.',
 		heroSubtitle:
-			'Fai clic su qualsiasi riga di testo in uno screenshot, riscrivila, e font, dimensione, peso e colore si adattano automaticamente — tutto il resto resta identico, pixel per pixel.',
+			'Modifica screenshot direttamente dal browser: fai clic su qualsiasi riga di testo, riscrivila, e font, dimensione, peso e colore si adattano automaticamente — tutto il resto resta identico, pixel per pixel.',
 		ctaPrimary: 'Inizia gratis',
 		ctaSecondary: 'Guarda come funziona',
 		heroFreeNote: 'Gratis — senza registrazione, senza carta di credito, senza watermark.',

@@ -15,6 +15,7 @@ const SITE_URL = 'https://screenshottexteditor.com';
 // /app is server-rendered and returns 200 either way.
 const staticPages = [
 	{ path: '/app', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-19' },
+	{ path: '/find-font-from-image/', changefreq: 'monthly', priority: '0.8', lastmod: '2026-09-22' },
 	{ path: '/privacy/', changefreq: 'yearly', priority: '0.2', lastmod: '2026-09-19' },
 	{ path: '/terms/', changefreq: 'yearly', priority: '0.2', lastmod: '2026-09-19' },
 ];

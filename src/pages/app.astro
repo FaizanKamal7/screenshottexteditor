@@ -27,6 +27,7 @@ const steps = [
 <Layout
 	title="Editor — ScreenshotTextEditor"
 	description="Upload a screenshot, click any text and rewrite it in the editor. Font, size, weight and color are matched automatically, then download the result as a PNG."
+	editorFonts
 >
 	<EditorIsland client:only="react" />
 
@@ -48,6 +49,10 @@ const steps = [
 				<p>
 					Busy photo backgrounds and CJK or right-to-left scripts aren't supported yet. In that case the tool will tell you how
 					confident it is in each match instead of quietly producing an edit that looks wrong.
+				</p>
+				<p>
+					Just want to know what font is used in an image, without editing anything? Try the
+					<a href="/find-font-from-image/" class="text-link hover:underline">font finder</a>.
 				</p>
 
 				<h3 class="pt-4 text-[18px] font-semibold tracking-tight text-ink">Your uploads stay private</h3>
