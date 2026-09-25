@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 0.5422847810004896,
+ "total_s": 0.5779454330004228,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.5788154999900144,
+ "orchestrator_wall_s": 0.6788700000033714,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "883d7bc1644769ed49c3e6117d0ff646bfef2ea4a8f6b23efd07a4e27fc7457a",
+ "input_pixel_sha256": "cd3f309e88f3d90304b8a10dc7944e99b84a0a8f26095eec39895f24a802bb69",
+ "peak_rss_mb": 42.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -66,7 +70,7 @@
     12.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.85
+   "confidence": 0.86
   },
   {
    "bbox": [
@@ -81,12 +85,12 @@
   {
    "bbox": [
     31.0,
-    269.0,
+    270.0,
     328.0,
-    32.0
+    31.0
    ],
    "text": "Notifications on",
-   "confidence": 0.945
+   "confidence": 0.935
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     15.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9266666666666667
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.94
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -181,5 +185,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:53:41.297364+00:00"
+ "completed_at": "2026-09-25T09:48:54.875200+00:00"
 }

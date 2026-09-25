@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr1_dark_V03",
  "status": "ok",
  "error": null,
- "total_s": 0.598906466999324,
+ "total_s": 0.5441333090002445,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.6103622000082396,
+ "orchestrator_wall_s": 0.5575731999706477,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "b7c635839d590b8f63507985041776cae8d169a85b204efbe45ebdbdc054148a",
+ "input_pixel_sha256": "4c34d1ae93fc0982e3c223f213500bfb6083d372afd9df210c1d53229776f067",
+ "peak_rss_mb": 52.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -96,17 +100,17 @@
     16.0
    ],
    "text": "invoice total? | got $1,248.50 but",
-   "confidence": 0.935
+   "confidence": 0.9333333333333332
   },
   {
    "bbox": [
     26.0,
     334.0,
-    153.0,
+    154.0,
     16.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.95
+   "confidence": 0.9366666666666668
   },
   {
    "bbox": [
@@ -126,7 +130,7 @@
     31.0
    ],
    "text": "Q3-invoice-final. pdf",
-   "confidence": 0.395
+   "confidence": 0.49
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     12.0
    ],
    "text": "2.4M8 6 pages",
-   "confidence": 0.5966666666666667
+   "confidence": 0.6066666666666667
   },
   {
    "bbox": [
@@ -156,13 +160,13 @@
     15.0
    ],
    "text": "Thanks, got it. Order #A-20931 is.",
-   "confidence": 0.8733333333333333
+   "confidence": 0.8716666666666667
   },
   {
    "bbox": [
     26.0,
     576.0,
-    70.0,
+    71.0,
     12.0
    ],
    "text": "confirmed.",
@@ -181,5 +185,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:12.010600+00:00"
+ "completed_at": "2026-09-25T08:15:09.269169+00:00"
 }

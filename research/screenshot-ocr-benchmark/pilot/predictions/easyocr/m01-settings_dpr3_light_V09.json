@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr3_light_V09",
  "status": "ok",
  "error": null,
- "total_s": 8.7566104739999,
+ "total_s": 8.504288662999897,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.815517500013812,
+ "orchestrator_wall_s": 8.558054400025867,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "233da9bef709cfcfc31313f5e3bb878181c4260777ffdfb14b17fdb723a58192",
+ "input_pixel_sha256": "72581e5e2d5fe860a593f4fa675aa8535f661cd81b47592a7d85b2dbeea99089",
+ "peak_rss_mb": 3215.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -32,7 +36,7 @@
     48.0
    ],
    "text": "9:41",
-   "confidence": 0.9627711176872253
+   "confidence": 0.9339556097984314
   },
   {
    "bbox": [
@@ -56,13 +60,13 @@
   },
   {
    "bbox": [
-    78.0,
-    328.0,
-    50.0,
-    50.0
+    79.0,
+    329.0,
+    44.0,
+    46.0
    ],
-   "text": "Q",
-   "confidence": 0.9996067672193796
+   "text": "0",
+   "confidence": 0.5820118549129347
   },
   {
    "bbox": [
@@ -72,7 +76,7 @@
     62.0
    ],
    "text": "Search settings",
-   "confidence": 0.9999404233828604
+   "confidence": 0.9999430163360258
   },
   {
    "bbox": [
@@ -82,7 +86,7 @@
     74.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9992277082233545
+   "confidence": 0.9992461036813239
   },
   {
    "bbox": [
@@ -92,7 +96,7 @@
     57.0
    ],
    "text": "avery collins@example.com",
-   "confidence": 0.9163240870420956
+   "confidence": 0.9171610473207052
   },
   {
    "bbox": [
@@ -102,7 +106,7 @@
     42.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9856763967223082
+   "confidence": 0.9850535916376211
   },
   {
    "bbox": [
@@ -112,17 +116,17 @@
     54.0
    ],
    "text": "Notifications",
-   "confidence": 0.9999880973681993
+   "confidence": 0.9999876344857762
   },
   {
    "bbox": [
     1017.0,
     833.0,
-    64.0,
+    66.0,
     42.0
    ],
    "text": "On",
-   "confidence": 0.9997644072460141
+   "confidence": 0.9997730889086921
   },
   {
    "bbox": [
@@ -167,12 +171,12 @@
   {
    "bbox": [
     815.0,
-    1225.0,
+    1227.0,
     272.0,
-    62.0
+    60.0
    ],
    "text": "English (US)",
-   "confidence": 0.7215819692704082
+   "confidence": 0.9478975956249798
   },
   {
    "bbox": [
@@ -182,27 +186,27 @@
     53.0
    ],
    "text": "Screen Time",
-   "confidence": 0.9251131881129442
+   "confidence": 0.9391040975192377
   },
   {
    "bbox": [
-    929.0,
-    1363.0,
-    154.0,
-    44.0
+    928.0,
+    1360.0,
+    156.0,
+    48.0
    ],
    "text": "3h 12m",
-   "confidence": 0.8499131772441948
+   "confidence": 0.6862734060384846
   },
   {
    "bbox": [
-    90.0,
-    1498.0,
+    91.0,
+    1499.0,
     186.0,
     42.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.9995932448653149
+   "confidence": 0.9995798161231988
   },
   {
    "bbox": [
@@ -212,7 +216,7 @@
     67.0
    ],
    "text": "Help Center",
-   "confidence": 0.7832658338648115
+   "confidence": 0.8057328558184087
   },
   {
    "bbox": [
@@ -232,7 +236,7 @@
     53.0
    ],
    "text": "About",
-   "confidence": 0.9999784619185637
+   "confidence": 0.9999763827444379
   },
   {
    "bbox": [
@@ -242,7 +246,7 @@
     50.0
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.67885872886457
+   "confidence": 0.744527864108409
   },
   {
    "bbox": [
@@ -252,7 +256,7 @@
     52.0
    ],
    "text": "Delete Account",
-   "confidence": 0.9965060500535347
+   "confidence": 0.9955143154641567
   },
   {
    "bbox": [
@@ -262,7 +266,7 @@
     45.0
    ],
    "text": "Last synced 2 minutes ago",
-   "confidence": 0.8781032553436016
+   "confidence": 0.8794400986526791
   },
   {
    "bbox": [
@@ -272,7 +276,7 @@
     48.0
    ],
    "text": "Backup size 318 MB",
-   "confidence": 0.8188848645353654
+   "confidence": 0.8710271036340055
   },
   {
    "bbox": [
@@ -282,7 +286,7 @@
     32.0
    ],
    "text": "Home",
-   "confidence": 0.9999809265136719
+   "confidence": 0.9999797344207764
   },
   {
    "bbox": [
@@ -317,5 +321,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:58:58.284528+00:00"
+ "completed_at": "2026-09-25T08:40:36.140618+00:00"
 }

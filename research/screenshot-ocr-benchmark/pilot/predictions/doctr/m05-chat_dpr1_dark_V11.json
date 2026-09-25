@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 1.814101216000381,
+ "total_s": 1.867419248999795,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.8360258999746293,
+ "orchestrator_wall_s": 1.889431899995543,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "50e4d96bf59806184299db04e188e9deec176f2e7dc763112d92533beeb3a344",
+ "input_pixel_sha256": "73434965a2b07d2135672441070f586374c8f569feb5525ee5340d19236e3853",
+ "peak_rss_mb": 1372.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -134,22 +138,22 @@
   {
    "bbox": [
     26.035156250000004,
-    312.37890625,
+    314.02734375,
     217.59374999999997,
-    19.78125
+    18.1328125
    ],
-   "text": "invoice total? - I got $1,248.50 but",
-   "confidence": 0.6238835453987122
+   "text": "invoice total? I I got $1,248.50 but",
+   "confidence": 0.6570587158203125
   },
   {
    "bbox": [
     25.210937500000004,
     333.80859375,
-    154.953125,
+    155.77734375,
     18.1328125
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.8229877352714539
+   "confidence": 0.992295503616333
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     12.36328125
    ],
    "text": "4:19 PM",
-   "confidence": 0.9973810315132141
+   "confidence": 0.9972401857376099
   },
   {
    "bbox": [
@@ -179,17 +183,17 @@
     18.95703125
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.8685255646705627
+   "confidence": 0.8687592148780823
   },
   {
    "bbox": [
     197.47265625,
     469.8046875,
-    126.92968750000001,
+    128.578125,
     14.8359375
    ],
-   "text": "Q3-invoice-final.pdr",
-   "confidence": 0.37159082293510437
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.5268908143043518
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     12.36328125
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.9947686195373535
+   "confidence": 0.9936730861663818
   },
   {
    "bbox": [
@@ -224,12 +228,12 @@
   {
    "bbox": [
     26.035156250000004,
-    574.48046875,
-    71.70703125,
-    14.8359375
+    575.3046875,
+    72.53125,
+    14.01171875
    ],
    "text": "confirmed.",
-   "confidence": 0.6306585669517517
+   "confidence": 0.7396460175514221
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     16.484375
    ],
    "text": "Sounds good",
-   "confidence": 0.945816159248352
+   "confidence": 0.9986110925674438
   },
   {
    "bbox": [
@@ -249,7 +253,7 @@
     16.484375
    ],
    "text": "On my way",
-   "confidence": 0.6716952919960022
+   "confidence": 0.6985288262367249
   },
   {
    "bbox": [
@@ -259,7 +263,7 @@
     15.66015625
    ],
    "text": "10 min late",
-   "confidence": 0.7478414177894592
+   "confidence": 0.519687831401825
   },
   {
    "bbox": [
@@ -269,7 +273,7 @@
     15.66015625
    ],
    "text": "Call r",
-   "confidence": 0.9652407169342041
+   "confidence": 0.964562714099884
   },
   {
    "bbox": [
@@ -279,7 +283,7 @@
     15.66015625
    ],
    "text": "Message",
-   "confidence": 0.999595582485199
+   "confidence": 0.9995039701461792
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     12.36328125
    ],
    "text": "Send",
-   "confidence": 0.9924998879432678
+   "confidence": 0.992384672164917
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:48:48.725274+00:00"
+ "completed_at": "2026-09-25T08:18:49.773142+00:00"
 }

@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V09",
  "status": "ok",
  "error": null,
- "total_s": 1.9078835569998773,
+ "total_s": 1.726503904999845,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.9247380000015255,
+ "orchestrator_wall_s": 1.7433449000236578,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "4f9e5679a605a4969a81e3e141aa2cca45813f4ab605f0b9c69371de1c89fb44",
+ "input_pixel_sha256": "afacf5f5d1cfc00f7e828d655791e8aa3abacbf5d906de103107e980db32be1f",
+ "peak_rss_mb": 1246.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -32,7 +36,7 @@
     16.0
    ],
    "text": "9.41",
-   "confidence": 0.9258475436832627
+   "confidence": 0.9272948197660373
   },
   {
    "bbox": [
@@ -52,27 +56,17 @@
     24.0
    ],
    "text": "Jordan Lee",
-   "confidence": 0.992738418629573
+   "confidence": 0.9967393527854179
   },
   {
    "bbox": [
     97.0,
-    71.0,
-    40.0,
-    16.0
-   ],
-   "text": "Active",
-   "confidence": 0.9996620922656991
-  },
-  {
-   "bbox": [
-    145.0,
     73.0,
-    50.0,
+    98.0,
     16.0
    ],
-   "text": "minago",
-   "confidence": 0.996151305710747
+   "text": "Active 5 min ago",
+   "confidence": 0.7094848048929447
   },
   {
    "bbox": [
@@ -82,7 +76,7 @@
     14.0
    ],
    "text": "Tue;",
-   "confidence": 0.43214794993400574
+   "confidence": 0.36699771881103516
   },
   {
    "bbox": [
@@ -92,7 +86,7 @@
     14.0
    ],
    "text": "4.12 PM",
-   "confidence": 0.42361856384666974
+   "confidence": 0.798976453641621
   },
   {
    "bbox": [
@@ -102,7 +96,7 @@
     26.0
    ],
    "text": "Hey! Are we still on for the design",
-   "confidence": 0.9010219685188402
+   "confidence": 0.8953189309399784
   },
   {
    "bbox": [
@@ -112,7 +106,7 @@
     14.0
    ],
    "text": "review tomorrow",
-   "confidence": 0.7093975029959773
+   "confidence": 0.7114293419742953
   },
   {
    "bbox": [
@@ -122,7 +116,7 @@
     20.0
    ],
    "text": "morning?",
-   "confidence": 0.9998637353930944
+   "confidence": 0.999898339660937
   },
   {
    "bbox": [
@@ -132,7 +126,7 @@
     20.0
    ],
    "text": "Yes; 10.30 in room 4B. IIl bring the",
-   "confidence": 0.6099800843802939
+   "confidence": 0.4982646932264908
   },
   {
    "bbox": [
@@ -142,7 +136,7 @@
     20.0
    ],
    "text": "updated mockups and the",
-   "confidence": 0.9011302838368696
+   "confidence": 0.9518918719522252
   },
   {
    "bbox": [
@@ -152,7 +146,7 @@
     18.0
    ],
    "text": "component list:",
-   "confidence": 0.970405425507127
+   "confidence": 0.9435899346128096
   },
   {
    "bbox": [
@@ -162,27 +156,27 @@
     24.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.7583641810294551
+   "confidence": 0.5770368604244801
   },
   {
    "bbox": [
     22.0,
     310.0,
-    226.0,
+    224.0,
     24.0
    ],
    "text": "invoice total? I got S1,248.50 but",
-   "confidence": 0.6143553197339717
+   "confidence": 0.4752546592676699
   },
   {
    "bbox": [
-    22.0,
+    24.0,
     330.0,
     160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9925055830577098
+   "confidence": 0.862717515165049
   },
   {
    "bbox": [
@@ -192,7 +186,7 @@
     14.0
    ],
    "text": "419 PM",
-   "confidence": 0.6477694148492377
+   "confidence": 0.7862209663414681
   },
   {
    "bbox": [
@@ -202,27 +196,27 @@
     24.0
    ],
    "text": "Good catch; the second one is right:",
-   "confidence": 0.7701665213062769
+   "confidence": 0.7658234283588212
   },
   {
    "bbox": [
-    111.0,
-    416.0,
-    153.0,
-    26.0
+    113.0,
+    418.0,
+    151.0,
+    24.0
    ],
    "text": "Sending the PDF now:",
-   "confidence": 0.7326246740616849
+   "confidence": 0.936396413185603
   },
   {
    "bbox": [
-    195.0,
-    467.0,
-    108.0,
-    18.0
+    194.0,
+    464.0,
+    136.0,
+    24.0
    ],
-   "text": "03-invoice-final ",
-   "confidence": 0.6469327542335048
+   "text": "03-invoice-final-pdf",
+   "confidence": 0.683089033316668
   },
   {
    "bbox": [
@@ -232,17 +226,17 @@
     16.0
    ],
    "text": "24MB",
-   "confidence": 0.9869486689567566
+   "confidence": 0.9948792457580566
   },
   {
    "bbox": [
-    253.0,
+    243.0,
     487.0,
-    38.0,
+    50.0,
     16.0
    ],
-   "text": "pages",
-   "confidence": 0.9312541554671536
+   "text": "6 pages",
+   "confidence": 0.9991391588356331
   },
   {
    "bbox": [
@@ -252,27 +246,27 @@
     14.0
    ],
    "text": "Read 4.21 PM",
-   "confidence": 0.38033479788010177
+   "confidence": 0.5738063738810117
   },
   {
    "bbox": [
-    22.0,
-    550.0,
-    226.0,
-    26.0
+    24.0,
+    552.0,
+    224.0,
+    24.0
    ],
-   "text": "Thanks; got it. Order #A-20931 is",
-   "confidence": 0.6698807068082623
+   "text": "Thanks, got it. Order #A-20931 is",
+   "confidence": 0.729473508377529
   },
   {
    "bbox": [
     25.0,
     575.0,
-    72.0,
+    74.0,
     16.0
    ],
    "text": "confirmed:",
-   "confidence": 0.9553304597419225
+   "confidence": 0.9665147603037668
   },
   {
    "bbox": [
@@ -282,7 +276,7 @@
     18.0
    ],
    "text": "Sounds good",
-   "confidence": 0.894644534455268
+   "confidence": 0.7377751069479087
   },
   {
    "bbox": [
@@ -292,17 +286,17 @@
     16.0
    ],
    "text": "On my way",
-   "confidence": 0.7757396534201911
+   "confidence": 0.6802187214333462
   },
   {
    "bbox": [
-    249.0,
-    757.0,
-    74.0,
-    16.0
+    247.0,
+    755.0,
+    76.0,
+    18.0
    ],
    "text": "10 min late",
-   "confidence": 0.7963064971236687
+   "confidence": 0.6484233628303379
   },
   {
    "bbox": [
@@ -312,7 +306,7 @@
     16.0
    ],
    "text": "Call",
-   "confidence": 0.9784979820251465
+   "confidence": 0.6027304203689829
   },
   {
    "bbox": [
@@ -322,7 +316,7 @@
     19.0
    ],
    "text": "Message",
-   "confidence": 0.9999982878382272
+   "confidence": 0.9999984230089279
   },
   {
    "bbox": [
@@ -332,7 +326,7 @@
     16.0
    ],
    "text": "Send",
-   "confidence": 0.9999687671661377
+   "confidence": 0.9999486207962036
   },
   {
    "bbox": [
@@ -341,21 +335,11 @@
     26.88177482373743,
     18.723868430315534
    ],
-   "text": "Scp",
-   "confidence": 0.35428779169361485
-  },
-  {
-   "bbox": [
-    296.8905996075495,
-    462.7030670888004,
-    33.218800784900964,
-    25.593865822399152
-   ],
-   "text": "pdf",
-   "confidence": 0.9998818275255391
+   "text": "Scp _",
+   "confidence": 0.18790085782972002
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:39.561425+00:00"
+ "completed_at": "2026-09-25T08:41:15.259801+00:00"
 }

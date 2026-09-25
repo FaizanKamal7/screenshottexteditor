@@ -1,11 +1,12 @@
 """Evaluate PILOT_PLAN §3 checks A–G and write pilot/validation/pilot_checks.{json,md}.
 
-Also renders review material for the checks that need a human
-(pilot/review/): ground-truth overlays for all bases, per-variant overlays for
-two bases, engine-prediction overlays, and line-crop review sheets.
+Every check is automated (AUTOMATED_VALIDATION.md); nothing depends on a person
+inspecting images. Exits 1 if any check FAILs, so an unattended run cannot pass
+silently. --overlays additionally writes optional debugging images to
+pilot/diagnostics/ (not used by any criterion).
 
 Run inside the tools image after rendering, variants, OCR passes and pytest:
-    python scripts/validate_pilot.py
+    python scripts/validate_pilot.py [--overlays]
 """
 
 import filecmp
@@ -23,13 +24,14 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import auto_checks  # noqa: E402
 import bootstrap  # noqa: E402
 import score  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PILOT = os.path.join(ROOT, "pilot")
 DATASET = os.path.join(PILOT, "dataset")
-REVIEW = os.path.join(PILOT, "review")
+DIAGNOSTICS = os.path.join(PILOT, "diagnostics")
 CORE_ENGINES = ["tesseract5", "paddle_v5_mobile", "paddle_v5_server", "easyocr", "doctr", "windows_ocr"]
 FULL_TEMPLATES_PER_STRATUM = 40  # amendment A1 (was 20)
 PILOT_TEMPLATES_PER_STRATUM = 2
@@ -65,26 +67,27 @@ def checks_a(gts: dict, vals: dict, pytest_results: dict) -> dict:
            for b, v in vals.items()}
     out["A2"] = check("PASS" if all(all(x) for x in det.values()) else "FAIL",
                       {"bases_deterministic": sum(all(x) for x in det.values()), "bases": len(det)})
-    auto_ok = {b: v["token_reconciliation"]["ok"] and not v["untagged_visible_text"] and v["nested_tagged_elements"] == 0
-               and v["invisible_non_space_chars"] == 0 and not v["style_violations"] for b, v in vals.items()}
-    out["A3"] = check("AUTO-PASS, HUMAN REVIEW PENDING" if all(auto_ok.values()) else "FAIL",
-                      {"automated_reconciliation_ok": sum(auto_ok.values()), "bases": len(auto_ok),
-                       "human_review": "overlays in pilot/review/gt_overlays/ (24 bases) — not yet reviewed by a human"})
-    out["A4"] = check("HUMAN REVIEW PENDING",
-                      {"review_sheets": "pilot/review/line_sheets/ (4 bases at largest scale, 100% of lines) and "
-                                        "pilot/review/line_sample.csv (>=10% random sample of other lines)"})
-    # A5 automated part: text reconstructed per element from its lines equals the element's text.
-    wrapped = 0
-    for bid, gt in gts.items():
-        by_el = defaultdict(list)
-        for ln in gt["lines"]:
-            by_el[ln["element_idx"]].append(ln["text"])
-        wrapped += sum(1 for t in by_el.values() if len(t) > 1)
-    out["A5"] = check("AUTO-PASS, HUMAN REVIEW PENDING",
-                      {"multi_line_elements_total": wrapped,
-                       "note": "line splits come from rendered character positions; visual confirmation is in "
-                               "the overlays (paragraph elements in m05-chat and d06-code-editor)"})
+    # A3, A4, A5: automated replacements for the former human review (AUTOMATED_VALIDATION §1-3).
+    masks = {b: np.asarray(Image.open(os.path.join(DATASET, "masks", f"{b}.png")).convert("L")) > 0 for b in gts}
+    a3 = {b: auto_checks.a3_completeness(vals[b], gts[b], masks[b]) for b in gts}
+    out["A3"] = check("PASS" if all(r["pass"] for r in a3.values()) else "FAIL",
+                      {"bases_passing": sum(r["pass"] for r in a3.values()), "bases": len(a3),
+                       "failing": {b: r for b, r in a3.items() if not r["pass"]}})
+    a4 = {b: auto_checks.a4_text_fidelity(vals[b]) for b in gts}
+    cross = auto_checks.a4_cross_scale_text(gts)
+    mut = pytest_results.get("tests/test_automated_checks.py")
     a6 = pytest_results.get("tests/test_extract_whitespace.py")
+    fixtures_ok = bool(mut and mut["failed"] == 0 and mut["passed"] > 0 and a6 and a6["failed"] == 0)
+    out["A4"] = check("PASS" if all(r["pass"] for r in a4.values()) and cross["pass"] and fixtures_ok else "FAIL",
+                      {"bases_passing": sum(r["pass"] for r in a4.values()), "bases": len(a4),
+                       "A4.4_cross_scale_text": cross,
+                       "A4.5_A4.6_fixture_and_mutation_tests": {"whitespace": a6, "mutation": mut},
+                       "failing": {b: r for b, r in a4.items() if not r["pass"]}})
+    a5 = {b: auto_checks.a5_wrapping(vals[b]) for b in gts}
+    out["A5"] = check("PASS" if all(r["pass"] for r in a5.values()) else "FAIL",
+                      {"bases_passing": sum(r["pass"] for r in a5.values()), "bases": len(a5),
+                       "multi_line_elements_total": sum(r["multi_line_elements"] for r in a5.values()),
+                       "failing": {b: r for b, r in a5.items() if not r["pass"]}})
     out["A6"] = check("PASS" if a6 and a6["failed"] == 0 and a6["passed"] > 0 else "FAIL", a6)
     clipped = {b: v["clipped_elements"] for b, v in vals.items() if v["clipped_elements"]}
     m05 = [b for b in gts if b.startswith("m05-chat")]
@@ -153,14 +156,22 @@ def checks_b(gts: dict, vals: dict, rows: list) -> dict:
     no_ink = {b: v["lines_without_ink"] for b, v in vals.items() if v["lines_without_ink"]}
     out["B3"] = check("PASS" if not no_ink else "FAIL",
                       {"lines_total": total, "lines_without_ink": no_ink})
-    out["B4"] = check("OVERLAYS GENERATED, HUMAN REVIEW PENDING",
-                      {"gt_overlays": "pilot/review/gt_overlays/ (24 bases)",
-                       "variant_overlays": "pilot/review/variant_overlays/ (13 variants × 2 bases)"})
+    # B4: automated replacement for the former overlay review (AUTOMATED_VALIDATION §4).
+    b4 = {}
+    for b, gt in gts.items():
+        mask = np.asarray(Image.open(os.path.join(DATASET, "masks", f"{b}.png")).convert("L")) > 0
+        b4[b] = auto_checks.b4_boxes(gt, mask)
+    reg = auto_checks.b4_registration(DATASET, rows)
+    earlier_ok = all(out[k]["status"] == "PASS" for k in ("B1", "B2", "B3"))
+    out["B4"] = check("PASS" if all(r["pass"] for r in b4.values()) and reg["pass"] and earlier_ok else "FAIL",
+                      {"B4.1_B4.2_B4.4_bases_passing": sum(r["pass"] for r in b4.values()), "bases": len(b4),
+                       "B4.3_registration": reg, "B4.5_B1_B2_B3_pass": earlier_ok,
+                       "failing": {b: r for b, r in b4.items() if not r["pass"]}})
     out["B5"] = check_b5(gts, rows)
-    out["B6"] = check("NOT RUN", {"reason": "No device captures were taken: iOS/Android/macOS devices are not "
-                                            "available to this session, and a Windows Edge capture would take "
-                                            "over the user's desktop. device_collector.py / register_device.py "
-                                            "are not implemented yet."})
+    out["B6"] = check("N/A (SYNTHETIC-ONLY SCOPE)",
+                      {"reason": "The benchmark is synthetic-only (PREREGISTRATION amendment A4, "
+                                 "AUTOMATED_VALIDATION §6). There is no device set, so there is no device "
+                                 "registration to check. This is a scope decision, not a pass."})
     return out
 
 
@@ -351,15 +362,22 @@ def checks_e(rows: list, scored: dict) -> dict:
         cov[e] = {"attempted": len(got), "expected": len(ocr_rows), "statuses": dict(statuses)}
     out["E1"] = check("PASS" if all(c["attempted"] == c["expected"] for c in cov.values()) else "FAIL", cov)
 
-    # E2: median best IoU of GT lines that ended up in a component with a prediction, V00 only.
-    med = {}
+    # E2: automated coordinate sanity (AUTOMATED_VALIDATION §5): IoU, systematic offset and
+    # scale error of each engine's boxes against ground truth, over every scored image.
+    by_id = {r["image_id"]: r for r in rows}
+    gts = {}
+    e2 = {}
     for e in CORE_ENGINES:
-        vals = [float(ln["iou"]) for ln in scored["lines"] if ln["engine_id"] == e and ln["variant"] == "V00"
-                and int(ln["component_pred_count"]) > 0]
-        med[e] = round(statistics.median(vals), 4) if vals else None
-    out["E2"] = check("PASS (overlays pending human review)" if all(v is not None and v >= 0.3 for v in med.values())
-                      else "FAIL", {"median_iou_V00": med, "threshold": 0.3,
-                                    "overlays": "pilot/review/engine_overlays/"})
+        images = []
+        for image_id, p in preds.get(e, {}).items():
+            if p["status"] != "ok":
+                continue
+            row = by_id[image_id]
+            if row["base_id"] not in gts:
+                gts[row["base_id"]] = load_json(os.path.join(DATASET, "ground_truth", f"{row['base_id']}.json"))
+            images.append((gts[row["base_id"]], p["lines"], row["downscale"]))
+        e2[e] = auto_checks.e2_coordinates(images)
+    out["E2"] = check("PASS" if all(r["pass"] for r in e2.values()) else "FAIL", e2)
 
     rerun = load_predictions("predictions_rerun")
     det = {}
@@ -504,9 +522,10 @@ def draw_boxes(img: Image.Image, boxes, color, width=1):
         d.rectangle([b[0], b[1], b[0] + b[2], b[1] + b[3]], outline=color, width=width)
 
 
-def review_material(gts: dict, rows: list):
-    for sub in ("gt_overlays", "variant_overlays", "engine_overlays", "line_sheets"):
-        os.makedirs(os.path.join(REVIEW, sub), exist_ok=True)
+def diagnostic_overlays(gts: dict, rows: list):
+    """Optional debugging images (--overlays). Not part of any acceptance criterion."""
+    for sub in ("gt_overlays", "variant_overlays", "engine_overlays"):
+        os.makedirs(os.path.join(DIAGNOSTICS, sub), exist_ok=True)
     by_id = {r["image_id"]: r for r in rows}
     for bid, gt in gts.items():
         img = Image.open(os.path.join(DATASET, "renders", f"{bid}.png")).convert("RGB")
@@ -515,7 +534,7 @@ def review_material(gts: dict, rows: list):
         draw_boxes(img, [ln["ink_box"] for ln in gt["lines"]], (0, 200, 0), lw)
         draw_boxes(img, gt["ignore_regions"], (255, 0, 0), lw * 2)
         draw_boxes(img, gt["icon_regions"], (255, 140, 0), lw)
-        img.save(os.path.join(REVIEW, "gt_overlays", f"{bid}.png"))
+        img.save(os.path.join(DIAGNOSTICS, "gt_overlays", f"{bid}.png"))
     for bid in ("m05-chat_dpr2_light", "d01-dashboard_dpr1_dark"):
         gt = gts[bid]
         for r in rows:
@@ -524,7 +543,7 @@ def review_material(gts: dict, rows: list):
             img = Image.open(os.path.join(DATASET, r["file"])).convert("RGB")
             _, _, box_of = score.geometry_for(gt, r["downscale"])
             draw_boxes(img, [box_of(ln) for ln in gt["lines"]], (0, 200, 0))
-            img.save(os.path.join(REVIEW, "variant_overlays", f"{r['image_id']}.png"))
+            img.save(os.path.join(DIAGNOSTICS, "variant_overlays", f"{r['image_id']}.png"))
     preds = load_predictions("predictions")
     for e in CORE_ENGINES:
         for image_id in ("m01-settings_dpr1_light_V00", "m05-chat_dpr3_dark_V00", "d01-dashboard_dpr1p5_light_V00",
@@ -536,61 +555,10 @@ def review_material(gts: dict, rows: list):
             img = Image.open(os.path.join(DATASET, by_id[image_id]["file"])).convert("RGB")
             draw_boxes(img, [ln["ink_box"] for ln in gt["lines"]], (0, 200, 0))
             draw_boxes(img, [ln["bbox"] for ln in p["lines"]], (255, 0, 255), 2)
-            img.save(os.path.join(REVIEW, "engine_overlays", f"{e}__{image_id}.png"))
-    # Line review sheets: 4 bases at largest scale, every line crop with its GT text.
-    from PIL import ImageFont
-
-    label_font = ImageFont.truetype(os.path.join(ROOT, "fonts", "liberation-sans", "LiberationSans-Regular.ttf"), 18)
-    for bid in ("m01-settings_dpr3_light", "m05-chat_dpr3_dark", "d01-dashboard_dpr2_light", "d06-code-editor_dpr2_dark"):
-        gt = gts[bid]
-        src = Image.open(os.path.join(DATASET, "renders", f"{bid}.png")).convert("RGB")
-        crops = []
-        for ln in gt["lines"]:
-            x, y, w, h = ln["ink_box"]
-            crops.append((ln, src.crop((max(0, x - 4), max(0, y - 4), x + w + 4, y + h + 4))))
-        width = min(1400, max(c.width for _, c in crops) + 20)
-        height = sum(c.height + 40 for _, c in crops) + 10
-        sheet = Image.new("RGB", (width, height), "white")
-        d = ImageDraw.Draw(sheet)
-        yy = 5
-        for ln, c in crops:
-            d.text((10, yy), f"{ln['line_id']}  GT: {ln['text']}", fill=(200, 0, 0), font=label_font)
-            sheet.paste(c.crop((0, 0, min(c.width, width - 20), c.height)), (10, yy + 24))
-            yy += c.height + 40
-        sheet.save(os.path.join(REVIEW, "line_sheets", f"{bid}.png"))
-    # >=10% random sample of the remaining lines, as a CSV to fill in.
-    rng = np.random.default_rng(bootstrap.SEED)
-    others = [(bid, ln) for bid, gt in gts.items() if bid not in {"m01-settings_dpr3_light", "m05-chat_dpr3_dark",
-                                                                  "d01-dashboard_dpr2_light", "d06-code-editor_dpr2_dark"}
-              for ln in gt["lines"]]
-    pick = sorted(rng.choice(len(others), size=math.ceil(0.10 * len(others)), replace=False))
-    with open(os.path.join(REVIEW, "line_sample.csv"), "w", encoding="utf-8", newline="") as f:
-        f.write("base_id,line_id,gt_text,ink_box,reviewer_agrees(y/n),note\n")
-        for i in pick:
-            bid, ln = others[i]
-            text = ln["text"].replace('"', '""')
-            f.write(f'{bid},{ln["line_id"]},"{text}","{ln["ink_box"]}",,\n')
+            img.save(os.path.join(DIAGNOSTICS, "engine_overlays", f"{e}__{image_id}.png"))
 
 
 # ---------------------------------------------------------------------------
-
-def apply_human_review(checks: dict) -> None:
-    """Replace 'pending' statuses with ingested reviewer results (scripts/ingest_review.py)."""
-    path = os.path.join(PILOT, "validation", "human_review.json")
-    hr = load_json(path) if os.path.exists(path) else None
-    for k in ("A3", "A4", "A5", "B4", "E2"):
-        auto = checks[k]
-        if hr and k in hr["checks"]:
-            human = hr["checks"][k]
-            auto_ok = not auto["status"].startswith("FAIL")
-            status = "PASS" if human["status"] == "PASS" and auto_ok else \
-                ("FAIL" if human["status"] == "FAIL" or not auto_ok else human["status"])
-            checks[k] = check(status, {"automated": auto, "human": human, "reviewers": hr["reviewers"]})
-        else:
-            checks[k] = check(auto["status"] if "PENDING" in auto["status"] else auto["status"] + ", HUMAN REVIEW PENDING",
-                              {**(auto["detail"] if isinstance(auto["detail"], dict) else {"automated": auto["detail"]}),
-                               "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"})
-
 
 def main() -> None:
     rows = manifest()
@@ -609,7 +577,6 @@ def main() -> None:
     checks.update(checks_e(rows, scored))
     checks.update(checks_f(rows))
     checks.update(checks_g(rows))
-    apply_human_review(checks)
     result = {"note": "PILOT validation — engineering checks only; no benchmark results.",
               "checks": checks, "sample_size_rule": sample_size(scored, gts)}
     os.makedirs(os.path.join(PILOT, "validation"), exist_ok=True)
@@ -619,9 +586,14 @@ def main() -> None:
         f.write("| Check | Status |\n|---|---|\n")
         for k in sorted(checks):
             f.write(f"| {k} | {checks[k]['status']} |\n")
-    review_material(gts, rows)
+    if "--overlays" in sys.argv:
+        diagnostic_overlays(gts, rows)
     for k in sorted(checks):
         print(f"{k}: {checks[k]['status']}")
+    failed = sorted(k for k, c in checks.items() if c["status"].startswith("FAIL"))
+    if failed:
+        print("FAILED CHECKS: " + ", ".join(failed))
+        sys.exit(1)
 
 
 if __name__ == "__main__":

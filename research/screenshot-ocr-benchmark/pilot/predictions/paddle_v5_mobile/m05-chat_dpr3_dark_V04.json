@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr3_dark_V04",
  "status": "ok",
  "error": null,
- "total_s": 7.173952516000099,
+ "total_s": 7.985587883000335,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.2222154999908525,
+ "orchestrator_wall_s": 8.037854499998502,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "e22edece4768725c55c19cc4bb5f493dce8b2a24293a7134b005cc51dc762bfc",
+ "input_pixel_sha256": "f1751abe4e4b47d39a1bd7a37911cc4aca628e6c9fb76f859c5859b3766a3566",
+ "peak_rss_mb": 1894.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -94,12 +98,12 @@
   {
    "bbox": [
     342.0,
-    621.0,
+    623.0,
     702.0,
-    58.0
+    56.0
    ],
-   "text": "Yes, 10:30 in room 4B. I'Il bring the",
-   "confidence": 0.9386537075042725
+   "text": "Yes, 10:30 in room 4B. I'll bring the",
+   "confidence": 0.9445995688438416
   },
   {
    "bbox": [
@@ -139,17 +143,17 @@
     57.0
    ],
    "text": "invoice total? | got $1,248.50 but",
-   "confidence": 0.9649196863174438
+   "confidence": 0.9649819731712341
   },
   {
    "bbox": [
     72.0,
     999.0,
-    472.0,
+    474.0,
     54.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9767643213272095
+   "confidence": 0.9861757159233093
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     588.0,
     1402.0,
-    387.0,
-    50.0
+    389.0,
+    51.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9749305844306946
+   "confidence": 0.9997711181640625
   },
   {
    "bbox": [
@@ -225,11 +229,11 @@
    "bbox": [
     72.0,
     1721.0,
-    220.0,
+    223.0,
     51.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9514228105545044
+   "confidence": 0.9996030926704407
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:28:19.976879+00:00"
+ "completed_at": "2026-09-25T08:32:22.302925+00:00"
 }

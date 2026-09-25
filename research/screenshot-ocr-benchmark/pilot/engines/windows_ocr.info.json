@@ -14,6 +14,6 @@
   "winrt-Windows.Graphics.Imaging": "3.2.1"
  },
  "weights_sha256": null,
- "init_s": 0.24393810000037774,
+ "init_s": 0.2207838000031188,
  "host_python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
 }

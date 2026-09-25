@@ -10,15 +10,29 @@
  "image_id": "m05-chat_dpr1_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 0.013318399986019358,
+ "total_s": 0.02056330000050366,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.016896999994060025,
+ "orchestrator_wall_s": 0.0242879000143148,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "input_pixel_sha256": "88e1267a98be20a3ca854e2d7d934b866158b746a61e2f7efc64fc51dc8bdc88",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
+  {
+   "bbox": [
+    57.0,
+    167.0,
+    33.0,
+    8.0
+   ],
+   "text": "S 12840",
+   "confidence": null
+  },
   {
    "bbox": [
     62.0,
@@ -32,5 +46,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:44:14.139919+00:00"
+ "completed_at": "2026-09-25T08:16:19.243611+00:00"
 }

@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr2_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 0.7893512740001825,
+ "total_s": 0.5018946290001622,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8176563000015449,
+ "orchestrator_wall_s": 0.5372756000142545,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "b50ef495bcc79b9112fbe897a93b6751607a38d28ca4c73bae8348410c50b47e",
+ "input_pixel_sha256": "e273810cbdb56619ba689f689e8e2fcb440b598e0861984368c507aa14a9bc8b",
+ "peak_rss_mb": 74.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     23.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -80,23 +84,23 @@
   },
   {
    "bbox": [
-    63.0,
+    62.0,
     554.0,
-    654.0,
+    655.0,
     38.0
    ],
    "text": "Notifications On",
-   "confidence": 0.95
+   "confidence": 0.955
   },
   {
    "bbox": [
-    63.0,
+    62.0,
     646.0,
-    270.0,
+    271.0,
     31.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.94
+   "confidence": 0.9266666666666667
   },
   {
    "bbox": [
@@ -110,13 +114,13 @@
   },
   {
    "bbox": [
-    63.0,
-    822.0,
-    655.0,
-    31.0
+    62.0,
+    823.0,
+    656.0,
+    30.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9566666666666667
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -200,6 +204,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:28.428940+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:44.155912+00:00"
 }

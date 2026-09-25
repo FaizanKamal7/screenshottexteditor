@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V02",
  "status": "ok",
  "error": null,
- "total_s": 2.009254571001293,
+ "total_s": 1.8265349089997471,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.0359012999979313,
+ "orchestrator_wall_s": 1.8399447000119835,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "363c56d61734651aa4040a14108f628f0d31ecdb102f6a8531f2cd66022e25a2",
+ "input_pixel_sha256": "c467698aa0b47c5dce2d69191193d5752c94ba119350091c50cf85974b4b7384",
+ "peak_rss_mb": 1224.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -166,33 +170,23 @@
   },
   {
    "bbox": [
-    25.0,
-    313.0,
-    94.0,
-    18.0
+    24.0,
+    310.0,
+    222.0,
+    24.0
    ],
-   "text": "invoice total?",
-   "confidence": 0.7899328285342947
-  },
-  {
-   "bbox": [
-    151.0,
-    311.0,
-    94.0,
-    20.0
-   ],
-   "text": "S1,248.50 but",
-   "confidence": 0.43319749940077845
+   "text": "invoice total? I got S1,248.50 but",
+   "confidence": 0.5006259513455896
   },
   {
    "bbox": [
     24.0,
     330.0,
-    158.0,
+    160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9330111419829193
+   "confidence": 0.8640393426859616
   },
   {
    "bbox": [
@@ -226,13 +220,13 @@
   },
   {
    "bbox": [
-    197.0,
-    467.0,
-    132.0,
-    18.0
+    196.0,
+    464.0,
+    134.0,
+    24.0
    ],
    "text": "03-invoice-final pdf",
-   "confidence": 0.9058179675355724
+   "confidence": 0.8274125712050623
   },
   {
    "bbox": [
@@ -248,11 +242,11 @@
    "bbox": [
     243.0,
     487.0,
-    48.0,
+    50.0,
     16.0
    ],
    "text": "6 pages",
-   "confidence": 0.8039554723974444
+   "confidence": 0.8408412744153843
   },
   {
    "bbox": [
@@ -278,11 +272,11 @@
    "bbox": [
     25.0,
     575.0,
-    70.0,
-    16.0
+    74.0,
+    18.0
    ],
    "text": "confirmed",
-   "confidence": 0.970199042434502
+   "confidence": 0.9999563291868061
   },
   {
    "bbox": [
@@ -353,19 +347,9 @@
    ],
    "text": "Scp -",
    "confidence": 0.09055511104694447
-  },
-  {
-   "bbox": [
-    124.65465441200737,
-    312.72623710600743,
-    29.69069117598525,
-    21.547525787985137
-   ],
-   "text": "got",
-   "confidence": 0.9997394999703889
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:26.182593+00:00"
+ "completed_at": "2026-09-25T08:41:02.716648+00:00"
 }

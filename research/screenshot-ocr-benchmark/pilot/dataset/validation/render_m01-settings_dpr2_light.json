@@ -19,6 +19,582 @@
   "extra_in_tagged": {}
  },
  "clipped_elements": [],
+ "canonical_render_diff_pixels": 0,
+ "glyph_count_mismatches": [],
+ "forbidden_sources": {
+  "tags": [],
+  "background_images": [],
+  "generated_content": []
+ },
+ "elements": [
+  {
+   "idx": 0,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "9:41"
+   ],
+   "gt_line_rects_css": [
+    [
+     24,
+     14,
+     31,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "9:41",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 1,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "87%"
+   ],
+   "gt_line_rects_css": [
+    [
+     332,
+     14,
+     34,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "87%",
+   "occluded_chars": 0,
+   "hit_tested_chars": 3,
+   "order_violations": 0
+  },
+  {
+   "idx": 2,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Settings"
+   ],
+   "gt_line_rects_css": [
+    [
+     20,
+     50,
+     131,
+     39
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Settings",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 3,
+   "category": "input",
+   "clipped": false,
+   "gt_lines": [
+    "Search settings"
+   ],
+   "gt_line_rects_css": [
+    [
+     50,
+     108,
+     115,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Search settings",
+   "occluded_chars": 0,
+   "hit_tested_chars": 14,
+   "order_violations": 0
+  },
+  {
+   "idx": 4,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Avery Collins"
+   ],
+   "gt_line_rects_css": [
+    [
+     94,
+     166.5625,
+     122,
+     23
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Avery Collins",
+   "occluded_chars": 0,
+   "hit_tested_chars": 12,
+   "order_violations": 0
+  },
+  {
+   "idx": 5,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "avery.collins@example.com"
+   ],
+   "gt_line_rects_css": [
+    [
+     94,
+     192.25,
+     171,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "avery.collins@example.com",
+   "occluded_chars": 0,
+   "hit_tested_chars": 25,
+   "order_violations": 0
+  },
+  {
+   "idx": 6,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "ACCOUNT"
+   ],
+   "gt_line_rects_css": [
+    [
+     32,
+     242,
+     63.6875,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "ACCOUNT",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 7,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Notifications"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     274.59375,
+     95,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Notifications",
+   "occluded_chars": 0,
+   "hit_tested_chars": 13,
+   "order_violations": 0
+  },
+  {
+   "idx": 8,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "On"
+   ],
+   "gt_line_rects_css": [
+    [
+     340,
+     275.25,
+     20,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "On",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 9,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Privacy & Security"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     319.09375,
+     137,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Privacy & Security",
+   "occluded_chars": 0,
+   "hit_tested_chars": 16,
+   "order_violations": 0
+  },
+  {
+   "idx": 10,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Storage"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     363.09375,
+     59,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Storage",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 11,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "12.4 GB of 64 GB"
+   ],
+   "gt_line_rects_css": [
+    [
+     239,
+     363.75,
+     121,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "12.4 GB of 64 GB",
+   "occluded_chars": 0,
+   "hit_tested_chars": 12,
+   "order_violations": 0
+  },
+  {
+   "idx": 12,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Language"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     407.09375,
+     74,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Language",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 13,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "English (US)"
+   ],
+   "gt_line_rects_css": [
+    [
+     273,
+     407.75,
+     87,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "English (US)",
+   "occluded_chars": 0,
+   "hit_tested_chars": 11,
+   "order_violations": 0
+  },
+  {
+   "idx": 14,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Screen Time"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     451.09375,
+     94,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Screen Time",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 15,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "3h 12m"
+   ],
+   "gt_line_rects_css": [
+    [
+     310,
+     451.75,
+     50,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "3h 12m",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 16,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "SUPPORT"
+   ],
+   "gt_line_rects_css": [
+    [
+     32,
+     499,
+     59.6875,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "SUPPORT",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 17,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Help Center"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     531.59375,
+     90,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Help Center",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 18,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Send Feedback"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     576.09375,
+     116,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Send Feedback",
+   "occluded_chars": 0,
+   "hit_tested_chars": 12,
+   "order_violations": 0
+  },
+  {
+   "idx": 19,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "About"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     620.09375,
+     45,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "About",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 20,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "Version 4.18.2"
+   ],
+   "gt_line_rects_css": [
+    [
+     262,
+     620.75,
+     98,
+     19
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Version 4.18.2",
+   "occluded_chars": 0,
+   "hit_tested_chars": 13,
+   "order_violations": 0
+  },
+  {
+   "idx": 21,
+   "category": "disabled",
+   "clipped": false,
+   "gt_lines": [
+    "Delete Account"
+   ],
+   "gt_line_rects_css": [
+    [
+     30,
+     664.09375,
+     115,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Delete Account",
+   "occluded_chars": 0,
+   "hit_tested_chars": 13,
+   "order_violations": 0
+  },
+  {
+   "idx": 22,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Last synced 2 minutes ago · Backup size 318 MB"
+   ],
+   "gt_line_rects_css": [
+    [
+     32,
+     712,
+     255,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Last synced 2 minutes ago · Backup size 318 MB",
+   "occluded_chars": 0,
+   "hit_tested_chars": 37,
+   "order_violations": 0
+  },
+  {
+   "idx": 23,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Home"
+   ],
+   "gt_line_rects_css": [
+    [
+     34.75,
+     802,
+     28,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Home",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 24,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Search"
+   ],
+   "gt_line_rects_css": [
+    [
+     129.25,
+     802,
+     34,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Search",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 25,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Inbox"
+   ],
+   "gt_line_rects_css": [
+    [
+     230.25,
+     802,
+     27,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Inbox",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 26,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Settings"
+   ],
+   "gt_line_rects_css": [
+    [
+     322.25,
+     802,
+     38,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Settings",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  }
+ ],
  "viewport_css": [
   390,
   844

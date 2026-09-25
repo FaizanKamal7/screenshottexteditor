@@ -10,7 +10,7 @@
  "weights_sha256": {
   "eng.traineddata": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba"
  },
- "init_s": 0.5196062579998397,
+ "init_s": 1.1833787800005666,
  "docker_image": "ocrbench-ocr-tesseract:pilot",
  "docker_image_id": "sha256:8ff502602ddb44a420a61b9a24bb7013dbb1167227fdc43c58b179dec84f252c"
 }

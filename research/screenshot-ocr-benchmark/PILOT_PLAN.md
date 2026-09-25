@@ -18,7 +18,7 @@ exists.
 | Base renders (template × scale × theme) | 240 | **24** |
 | OCR'd synthetic images (13 variants each) | 3,120 | **312** |
 | Size-only variant (V01) | 240 | 24 |
-| Device captures | 160 (120 without a Mac) | **16** (2 templates × 2 themes × 4 platforms; 12 without a Mac) |
+| Device captures | removed (A4) | removed (A4) |
 | Core engines | 6 | 6 |
 | Engine runs (accuracy pass) | 6 × 3,280 = 19,680 | 6 × 328 = **1,968** |
 | Timing subset | V00 of 8 templates (48 images) × 3 reps | V00 of all 4 pilot templates (24 images) × 3 reps |
@@ -38,8 +38,8 @@ Pilot templates. Together they cover all 7 fonts and both form factors:
 2. Run the renderer to produce base PNGs, text-hidden renders, DOM geometry,
    ink masks and ground-truth JSON.
 3. Run the variant generator: 13 files per base, plus the manifest.
-4. Capture the device set: collector on the LAN, fiducial registration,
-   Label Studio verification.
+4. ~~Capture the device set~~: removed (synthetic-only scope, A4). The whole
+   pipeline runs unattended: `python scripts/run_pilot.py`.
 5. Run the engine adapters: accuracy pass (parallelism allowed), then the
    timing subset (serial, idle machine).
 6. Run the scorer: unit tests, then oracle, perturbed-oracle, empty and
@@ -58,9 +58,9 @@ re-run. The pilot does not pass with known failures in these checks.
 |---|---|---|
 | A1 | Font fallback via CDP `CSS.getPlatformFontsForNode` | 0 nodes with any fallback glyphs, all 24 bases |
 | A2 | Render determinism (render twice) | Pixel-identical, 24/24 |
-| A3 | Completeness: all visible DOM text in ground truth | Automated token-count reconciliation against `innerText`, plus human review of box overlays on all 24 bases: no missing or extra lines |
-| A4 | Line text correctness | A human reads 100% of lines on 4 bases (largest scale, one per template) and a ≥ 10% random sample elsewhere: 0 errors |
-| A5 | Wrapping | Every wrapped paragraph's line splits match what is visible in the render |
+| A3 | Completeness (automated, A4) | All of AUTOMATED_VALIDATION §1 on every base: token reconciliation; no untagged/nested text; 0 non-DOM text sources; 0 unowned ink and 0 ink in icon regions; Chrome glyph count = rendered characters; 0 occluded characters. (Formerly included human review of 24 overlays.) |
+| A4 | Line text correctness (automated, A4) | Every base render pixel-identical to its canonical render; 0 fallback glyphs; visual order = logical order; line texts identical across scales; whitespace fixture and mutation tests pass (AUTOMATED_VALIDATION §2). (Formerly a person reading ~270 lines.) |
+| A5 | Wrapping (automated, A4) | For every element: independent range line count = ground-truth line count; lines joined = normalized `innerText`; lines in strict vertical order without overlap (AUTOMATED_VALIDATION §3) |
 | A6 | Whitespace reconstruction | Unit fixture with double spaces, `&nbsp;` and `<br>` produces the expected strings exactly |
 | A7 | Ignore regions | A deliberately clipped element in one template becomes an ignore region, not ground truth |
 
@@ -71,9 +71,9 @@ re-run. The pilot does not pass with known failures in these checks.
 | B1 | Scale consistency | Layout box at scale k = k × box at scale 1, within ±1·k px per edge; ink box within ±2·k px |
 | B2 | Ink containment | Ink box inside layout box (+2 px padding), 100% of lines |
 | B3 | Ink non-empty | ≥ 1 ink pixel for 100% of lines |
-| B4 | Visual overlays | Reviewed for all 24 bases and all 13 variants of 2 bases |
+| B4 | Box placement (automated, A4) | Boxes reproducible from the saved mask; tight; every variant exactly sized and registered to its reference within 0.5 px (phase correlation); ignore regions contain ink and touch no ground-truth box; B1–B3 pass (AUTOMATED_VALIDATION §4) |
 | B5 | Downscaled boxes (amended, A2) | V12/V13 boxes are measured on the downscaled pixels: every V12 file is pixel-identical to the downscale the boxes were measured on, no downscaled ink falls outside every line's padded region, and every line has ink. (Originally "= 0.5 × V00 boxes within ±1 px"; the pilot showed that assumption is off by up to 6.0 px.) |
-| B6 | Device registration | Fiducial residual ≤ 2 px; human verification of all 16 device captures |
+| B6 | Device registration | **N/A: synthetic-only scope (A4).** No device set exists |
 
 ### C. Scoring (zero tolerance)
 
@@ -103,7 +103,7 @@ re-run. The pilot does not pass with known failures in these checks.
 | # | Check | Pass criterion |
 |---|---|---|
 | E1 | Coverage | Every engine attempts all 328 images; failures and timeouts are logged with the error. Failures are classified as engine failure, `resource_oom` (Docker-confirmed kill at the declared 24 GB budget) or infrastructure failure (amendment A3) |
-| E2 | Coordinate sanity (bug detector, not a result) | Overlays of every engine's predictions on 4 images reviewed. If median IoU of detection-matched lines on V00 is < 0.3 for any engine, that engine's coordinate mapping is investigated (for example an internal resize not mapped back). |
+| E2 | Coordinate sanity (automated, A4; bug detector, not a result) | Per engine over all scored images: median best IoU ≥ 0.30; median centre offset within ±0.25 line heights on each axis; median centre-regression slope within [0.98, 1.02] and every image's within [0.95, 1.05] (images with ≥ 8 matches) (AUTOMATED_VALIDATION §5). (Formerly overlay review.) |
 | E3 | Determinism | Re-run on a 10% subset (33 images): identical text. A nondeterministic engine switches to 3 runs per image with the mean reported, recorded as a pre-registration amendment before tagging. |
 | E4 | Version lock | `engines.lock.json` complete: package versions, model files, weight SHA-256 hashes, Tesseract and tessdata versions |
 | E5 | Dependency isolation | Each engine runs in its own environment where pins conflict (for example Paddle's `numpy<2.0`). The same image bytes are confirmed across environments by hash. |
@@ -169,7 +169,7 @@ total per base.
 | Images, 13 variants plus V01 | about 15–190 MB | about 0.15–1.9 GB |
 | Text-hidden renders (internal, not published) | about 5–25 MB | about 50–250 MB |
 | Masks (1-bit) | < 5 MB | < 50 MB |
-| Device captures | about 16–80 MB | about 0.15–0.8 GB |
+| Device captures | removed (A4) | removed (A4) |
 | Predictions JSON (6 engines, 5–50 KB each) | about 10–100 MB | about 0.1–1 GB |
 | Scores (Parquet/CSV) | < 20 MB | < 200 MB |
 | **Total** | **about 50–400 MB** | **about 0.5–4 GB** |
@@ -193,12 +193,13 @@ executed.
 ```
 research/screenshot-ocr-benchmark/
   templates/{m01-settings,m05-chat,d01-dashboard,d06-code-editor}/index.html
-  templates/_shared/{theme.css, fiducials.css, collect.js}
+  templates/_shared/{base.css, theme.js}
+  templates/_fixtures/{whitespace, glyphs}/   # extractor + mutation-test fixtures
   fonts/ (OFL files + fonts.lock.json)
   scripts/render_chromium.py      # base + text-hidden renders, CDP font check, geometry, ink boxes
   scripts/derive_variants.py      # V00–V13, manifest.jsonl
-  scripts/device_collector.py     # LAN endpoint receiving rects from device browsers
-  scripts/register_device.py      # fiducial detection → transform → ground truth
+  scripts/auto_checks.py          # automated replacements for human review (A4)
+  scripts/run_pilot.py            # unattended end-to-end runner
   scripts/engines/*.py            # adapters (Appendix A of METHODOLOGY.md)
   scripts/run_ocr.py              # resumable, cached, per-engine environments
   scripts/score.py                # normalization, components, M1–M9

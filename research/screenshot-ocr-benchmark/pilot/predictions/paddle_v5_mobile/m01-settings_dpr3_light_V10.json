@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr3_light_V10",
  "status": "ok",
  "error": null,
- "total_s": 6.6942713500002355,
+ "total_s": 6.874732938999841,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 6.751116100000218,
+ "orchestrator_wall_s": 6.93545659998199,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "910bedb20bacceb0a68ca1da1fa18c4b505c1113426f645c57a5282c6015045e",
+ "input_pixel_sha256": "15272620e53043a929c7ff86b886363e4018dec3f2efaeeb68f33fbe0434870c",
+ "peak_rss_mb": 1777.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     60.0,
-    36.0,
+    35.0,
     119.0,
-    64.0
+    65.0
    ],
    "text": "9:41",
-   "confidence": 0.9944336414337158
+   "confidence": 0.9956502318382263
   },
   {
    "bbox": [
@@ -49,7 +53,7 @@
     136.0
    ],
    "text": "Settings",
-   "confidence": 0.9998234510421753
+   "confidence": 0.9998231530189514
   },
   {
    "bbox": [
@@ -59,17 +63,17 @@
     69.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.989519476890564
+   "confidence": 0.9894307255744934
   },
   {
    "bbox": [
-    272.0,
-    493.0,
-    390.0,
-    82.0
+    271.0,
+    491.0,
+    391.0,
+    84.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9949312806129456
+   "confidence": 0.9896495342254639
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     51.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9828202724456787
+   "confidence": 0.9789981245994568
   },
   {
    "bbox": [
@@ -153,13 +157,13 @@
   },
   {
    "bbox": [
-    809.0,
-    1214.0,
-    280.0,
-    72.0
+    810.0,
+    1217.0,
+    279.0,
+    70.0
    ],
    "text": "English (Us)",
-   "confidence": 0.9743523597717285
+   "confidence": 0.950547456741333
   },
   {
    "bbox": [
@@ -223,13 +227,13 @@
   },
   {
    "bbox": [
-    777.0,
-    1857.0,
-    312.0,
-    64.0
+    778.0,
+    1860.0,
+    310.0,
+    59.0
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.9683809280395508
+   "confidence": 0.9973675012588501
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:23:24.797720+00:00"
+ "completed_at": "2026-09-25T08:27:27.333762+00:00"
 }

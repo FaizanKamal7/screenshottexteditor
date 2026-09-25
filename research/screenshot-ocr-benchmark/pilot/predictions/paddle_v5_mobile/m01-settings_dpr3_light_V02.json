@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr3_light_V02",
  "status": "ok",
  "error": null,
- "total_s": 6.186229943000399,
+ "total_s": 6.875908867000362,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 6.536382600024808,
+ "orchestrator_wall_s": 6.927868700004183,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "48f9d201b93c15b4a8804ee1382bd9f3baefc49cc680ff02932cafb65bc08bba",
+ "input_pixel_sha256": "570d472adfd0fc0a9369ef5d79e854e2a369405178c5283ffb30baa3f384c2bf",
+ "peak_rss_mb": 1766.0,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     60.0,
     35.0,
     119.0,
-    64.0
+    65.0
    ],
    "text": "9:41",
-   "confidence": 0.9915742874145508
+   "confidence": 0.9948784112930298
   },
   {
    "bbox": [
@@ -133,13 +137,13 @@
   },
   {
    "bbox": [
-    709.0,
-    1088.0,
-    377.0,
-    60.0
+    710.0,
+    1090.0,
+    375.0,
+    55.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9833778142929077
+   "confidence": 0.9691779613494873
   },
   {
    "bbox": [
@@ -153,13 +157,13 @@
   },
   {
    "bbox": [
-    810.0,
-    1216.0,
-    277.0,
-    69.0
+    811.0,
+    1218.0,
+    276.0,
+    67.0
    ],
    "text": "English (Us)",
-   "confidence": 0.980993926525116
+   "confidence": 0.9397428631782532
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     56.0
    ],
    "text": "Delete Account",
-   "confidence": 0.9949542284011841
+   "confidence": 0.9939132332801819
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:22:30.772816+00:00"
+ "completed_at": "2026-09-25T08:26:31.141821+00:00"
 }

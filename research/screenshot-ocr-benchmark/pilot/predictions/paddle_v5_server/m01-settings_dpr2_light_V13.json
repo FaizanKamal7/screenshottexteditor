@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr2_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 7.96746001900101,
+ "total_s": 7.759334491000118,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.9929508000204805,
+ "orchestrator_wall_s": 7.774246199987829,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "d4fb0350ec5880ed4a8adcac3666067c4bcd3945891607bfb36ede207763e2a3",
- "peak_rss_mb": 3094.5,
+ "input_pixel_sha256": "fc0bf24a783c61d777a85ae82d7c5a2c4d16b30d75216f13bf43ce28a10af422",
+ "peak_rss_mb": 2603.3,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     23.0
    ],
    "text": "9:41",
-   "confidence": 0.9866894483566284
+   "confidence": 0.9861005544662476
   },
   {
    "bbox": [
@@ -57,13 +57,13 @@
   },
   {
    "bbox": [
-    19.0,
+    18.0,
     103.0,
-    150.0,
+    151.0,
     27.0
    ],
    "text": "Q.Search settings",
-   "confidence": 0.9002814292907715
+   "confidence": 0.9198260307312012
   },
   {
    "bbox": [
@@ -83,7 +83,7 @@
     20.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9737560153007507
+   "confidence": 0.9732351899147034
   },
   {
    "bbox": [
@@ -143,7 +143,7 @@
     17.0
    ],
    "text": "12.4GBof 64GB",
-   "confidence": 0.964191198348999
+   "confidence": 0.963850736618042
   },
   {
    "bbox": [
@@ -157,13 +157,13 @@
   },
   {
    "bbox": [
-    268.0,
-    404.0,
-    96.0,
-    24.0
+    269.0,
+    406.0,
+    94.0,
+    21.0
    ],
    "text": "English (US)",
-   "confidence": 0.9903478026390076
+   "confidence": 0.984494149684906
   },
   {
    "bbox": [
@@ -233,7 +233,7 @@
     17.0
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.9669907689094543
+   "confidence": 0.9670453071594238
   },
   {
    "bbox": [
@@ -248,12 +248,12 @@
   {
    "bbox": [
     30.0,
-    711.0,
-    256.0,
+    710.0,
+    255.0,
     14.0
    ],
-   "text": "Last synced 2 minutes ago·Backup size 318 MB",
-   "confidence": 0.9524330496788025
+   "text": "Last synced 2 minutes ago·Backup size 318 ME",
+   "confidence": 0.944134533405304
   },
   {
    "bbox": [
@@ -318,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:20:12.725562+00:00"
+ "completed_at": "2026-09-25T08:59:00.890323+00:00"
 }

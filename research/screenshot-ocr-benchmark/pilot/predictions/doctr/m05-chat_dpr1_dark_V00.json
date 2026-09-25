@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_dark_V00",
  "status": "ok",
  "error": null,
- "total_s": 1.9138881109993235,
+ "total_s": 1.9204649670000435,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.933892700006254,
+ "orchestrator_wall_s": 1.939368499966804,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "c099a0609e942b688e59726a0430c054e127a1342d7cbf5a201d504d4ad6a755",
+ "input_pixel_sha256": "87266544e6e119965a08391be6661d9d3ff8d4af5142bb0a704590408ae1e3ec",
+ "peak_rss_mb": 1215.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -134,22 +138,22 @@
   {
    "bbox": [
     26.035156250000004,
-    312.37890625,
+    314.02734375,
     217.59374999999997,
-    19.78125
+    18.1328125
    ],
    "text": "invoice total? - I got $1,248.50 but",
-   "confidence": 0.6415197253227234
+   "confidence": 0.698820173740387
   },
   {
    "bbox": [
     25.210937500000004,
     333.80859375,
-    154.953125,
+    155.77734375,
     18.1328125
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.8851776123046875
+   "confidence": 0.8228831887245178
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     197.47265625,
     469.8046875,
-    126.92968750000001,
+    128.578125,
     14.8359375
    ],
-   "text": "Q3-iInvoice-final.pdfr",
-   "confidence": 0.35267123579978943
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.5884334743022919
   },
   {
    "bbox": [
@@ -224,12 +228,12 @@
   {
    "bbox": [
     26.035156250000004,
-    574.48046875,
-    71.70703125,
-    14.8359375
+    575.3046875,
+    72.53125,
+    14.01171875
    ],
    "text": "confirmed.",
-   "confidence": 0.6117969751358032
+   "confidence": 0.773512601852417
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:48:29.425454+00:00"
+ "completed_at": "2026-09-25T08:18:30.426666+00:00"
 }

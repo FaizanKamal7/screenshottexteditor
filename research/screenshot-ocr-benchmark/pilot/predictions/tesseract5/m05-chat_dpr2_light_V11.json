@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr2_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 0.9064589640001941,
+ "total_s": 0.7808987270000216,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.9485320000094362,
+ "orchestrator_wall_s": 0.81116209999891,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "6f934340609715686f5c2c30da96de25222d5b48e52c5867ec02b80c4a762533",
+ "input_pixel_sha256": "bad8882e09b00cb86666c876b33c33e3fb163e6fbe83c8fef9b524f2ea55deca",
+ "peak_rss_mb": 58.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -140,9 +144,9 @@
   },
   {
    "bbox": [
-    52.0,
+    53.0,
     669.0,
-    306.0,
+    307.0,
     31.0
    ],
    "text": "finance says $1,284.50.",
@@ -156,7 +160,7 @@
     16.0
    ],
    "text": "4:19PM",
-   "confidence": 0.9
+   "confidence": 0.91
   },
   {
    "bbox": [
@@ -170,19 +174,19 @@
   },
   {
    "bbox": [
-    233.0,
+    234.0,
     847.0,
-    285.0,
+    284.0,
     29.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.96
+   "confidence": 0.9575
   },
   {
    "bbox": [
     395.0,
     941.0,
-    253.0,
+    255.0,
     27.0
    ],
    "text": "Q3-invoice-final.pdf",
@@ -222,7 +226,7 @@
    "bbox": [
     53.0,
     1153.0,
-    139.0,
+    141.0,
     23.0
    ],
    "text": "confirmed.",
@@ -251,5 +255,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:43.368507+00:00"
+ "completed_at": "2026-09-25T08:15:40.258724+00:00"
 }

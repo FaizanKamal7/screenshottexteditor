@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr2_light_V03",
  "status": "ok",
  "error": null,
- "total_s": 1.9071299540009932,
+ "total_s": 1.9762774080008967,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.9318571999901906,
+ "orchestrator_wall_s": 2.003573999973014,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "5d8dd376482cdf14192e08525b8a7e49f0330b695ef8c06923ea1b60ca46aa66",
+ "input_pixel_sha256": "3ca4df695a5e05597ecc5ae594f5f76d79b448d4e827efddba6498aa9c3ebd11",
+ "peak_rss_mb": 1385.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -139,17 +143,17 @@
     37.9140625
    ],
    "text": "invoice total? - I got $1,248.50 but",
-   "confidence": 0.8316382765769958
+   "confidence": 0.8312740325927734
   },
   {
    "bbox": [
-    50.42187500000001,
-    667.6171875,
+    52.07031250000001,
+    669.265625,
     309.90625,
-    37.9140625
+    34.6171875
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.8581257462501526
+   "confidence": 0.929955005645752
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     393.296875,
     939.609375,
-    257.15625,
+    258.8046875,
     29.671875
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.6132548153400421
+   "confidence": 0.635860800743103
   },
   {
    "bbox": [
@@ -225,11 +229,11 @@
    "bbox": [
     52.07031250000001,
     1150.609375,
-    143.4140625,
+    145.0625,
     29.671875
    ],
    "text": "confirmed.",
-   "confidence": 0.8827587366104126
+   "confidence": 0.8734169006347656
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:55:12.022060+00:00"
+ "completed_at": "2026-09-25T09:49:44.177280+00:00"
 }

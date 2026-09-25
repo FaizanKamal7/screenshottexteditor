@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr2_dark_V07",
  "status": "ok",
  "error": null,
- "total_s": 0.8301551910008129,
+ "total_s": 0.9271562150006503,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8760881000198424,
+ "orchestrator_wall_s": 0.9730965999769978,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "701a543c19f54dd9e1b8dbd4a49cebb0ed9c76512f5e8c544fd5ddb009dda2d7",
+ "input_pixel_sha256": "91126d90c27b76c4840f6283e5db68ac62035a11410d330b7b1755e3c19e43c3",
+ "peak_rss_mb": 62.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     23.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.945
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     31.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9333333333333332
+   "confidence": 0.9266666666666667
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     18.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -201,5 +205,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:53:42.989555+00:00"
+ "completed_at": "2026-09-25T09:48:56.875928+00:00"
 }

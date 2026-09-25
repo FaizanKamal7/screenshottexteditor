@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr3_light_V08",
  "status": "ok",
  "error": null,
- "total_s": 1.365919723000843,
+ "total_s": 1.4319615750000594,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.4084317999950144,
+ "orchestrator_wall_s": 1.476655300008133,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7c63afe09e4b366bb41a2e28e090fbbb15c7c8b21d9f100bbee73a7eec8e7dbd",
+ "input_pixel_sha256": "882cdef37b608032397a9f745d605b504379613bd4a62570c20a22c9aa608111",
+ "peak_rss_mb": 1208.6,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     70.68750000000001,
-    46.98046875,
+    49.453125,
     101.37890624999997,
-    46.98046875
+    44.5078125
    ],
    "text": "9:41",
-   "confidence": 0.839227020740509
+   "confidence": 0.9652275443077087
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     51.92578125
    ],
    "text": "Search settings",
-   "confidence": 0.9912108182907104
+   "confidence": 0.9909496903419495
   },
   {
    "bbox": [
@@ -69,7 +73,7 @@
     64.2890625
    ],
    "text": "Avery Collins",
-   "confidence": 0.9873098731040955
+   "confidence": 0.9874191880226135
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     42.03515625
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.6915993988513947
+   "confidence": 0.691082552075386
   },
   {
    "bbox": [
@@ -89,7 +93,7 @@
     34.6171875
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9984886646270752
+   "confidence": 0.9984788298606873
   },
   {
    "bbox": [
@@ -99,7 +103,7 @@
     34.6171875
    ],
    "text": "Notifications",
-   "confidence": 0.8646978139877319
+   "confidence": 0.8645012378692627
   },
   {
    "bbox": [
@@ -119,7 +123,7 @@
     56.87109375
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9693204760551453
+   "confidence": 0.9554393887519836
   },
   {
    "bbox": [
@@ -129,7 +133,7 @@
     54.3984375
    ],
    "text": "Storage",
-   "confidence": 0.94373619556427
+   "confidence": 0.9425337910652161
   },
   {
    "bbox": [
@@ -149,7 +153,7 @@
     46.98046875
    ],
    "text": "Language",
-   "confidence": 0.9914458990097046
+   "confidence": 0.9914793372154236
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     51.92578125
    ],
    "text": "English (US)",
-   "confidence": 0.98493492603302
+   "confidence": 0.9991740584373474
   },
   {
    "bbox": [
@@ -169,7 +173,7 @@
     46.98046875
    ],
    "text": "Screen Time",
-   "confidence": 0.9585952758789062
+   "confidence": 0.9609405994415283
   },
   {
    "bbox": [
@@ -179,7 +183,7 @@
     46.98046875
    ],
    "text": "3h 12m",
-   "confidence": 0.892650842666626
+   "confidence": 0.8920279145240784
   },
   {
    "bbox": [
@@ -189,7 +193,7 @@
     34.6171875
    ],
    "text": "SUPPORT",
-   "confidence": 0.9984111785888672
+   "confidence": 0.9984126091003418
   },
   {
    "bbox": [
@@ -199,7 +203,7 @@
     51.92578125
    ],
    "text": "Help Center",
-   "confidence": 0.9108395576477051
+   "confidence": 0.9102586507797241
   },
   {
    "bbox": [
@@ -219,7 +223,7 @@
     44.5078125
    ],
    "text": "About",
-   "confidence": 0.9984897375106812
+   "confidence": 0.9985741376876831
   },
   {
    "bbox": [
@@ -229,7 +233,7 @@
     44.5078125
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.8761318922042847
+   "confidence": 0.5088346004486084
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     44.5078125
    ],
    "text": "Delete Account",
-   "confidence": 0.8639217019081116
+   "confidence": 0.8625679612159729
   },
   {
    "bbox": [
@@ -269,7 +273,7 @@
     34.6171875
    ],
    "text": "Search",
-   "confidence": 0.9998818635940552
+   "confidence": 0.9998831748962402
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     37.08984375
    ],
    "text": "Settings",
-   "confidence": 0.7911400198936462
+   "confidence": 0.780637264251709
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:48:20.072600+00:00"
+ "completed_at": "2026-09-25T08:18:21.072616+00:00"
 }

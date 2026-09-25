@@ -19,6 +19,1268 @@
   "extra_in_tagged": {}
  },
  "clipped_elements": [],
+ "canonical_render_diff_pixels": 0,
+ "glyph_count_mismatches": [],
+ "forbidden_sources": {
+  "tags": [],
+  "background_images": [],
+  "generated_content": []
+ },
+ "elements": [
+  {
+   "idx": 0,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "EXPLORER"
+   ],
+   "gt_line_rects_css": [
+    [
+     14,
+     12,
+     56,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "EXPLORER",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 1,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "src"
+   ],
+   "gt_line_rects_css": [
+    [
+     14,
+     38.390625,
+     21,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "src",
+   "occluded_chars": 0,
+   "hit_tested_chars": 3,
+   "order_violations": 0
+  },
+  {
+   "idx": 2,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "server.ts"
+   ],
+   "gt_line_rects_css": [
+    [
+     28,
+     61.1875,
+     63,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "server.ts",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 3,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "db.ts"
+   ],
+   "gt_line_rects_css": [
+    [
+     28,
+     83.984375,
+     35,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "db.ts",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 4,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "routes.ts"
+   ],
+   "gt_line_rects_css": [
+    [
+     28,
+     106.78125,
+     63,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "routes.ts",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 5,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "package.json"
+   ],
+   "gt_line_rects_css": [
+    [
+     14,
+     129.578125,
+     84,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "package.json",
+   "occluded_chars": 0,
+   "hit_tested_chars": 12,
+   "order_violations": 0
+  },
+  {
+   "idx": 6,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "tsconfig.json"
+   ],
+   "gt_line_rects_css": [
+    [
+     14,
+     152.375,
+     91,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "tsconfig.json",
+   "occluded_chars": 0,
+   "hit_tested_chars": 13,
+   "order_violations": 0
+  },
+  {
+   "idx": 7,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "server.ts"
+   ],
+   "gt_line_rects_css": [
+    [
+     196,
+     9.5,
+     63,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "server.ts",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 8,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "config.json"
+   ],
+   "gt_line_rects_css": [
+    [
+     292,
+     9.5,
+     77,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "config.json",
+   "occluded_chars": 0,
+   "hit_tested_chars": 11,
+   "order_violations": 0
+  },
+  {
+   "idx": 9,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "README.md"
+   ],
+   "gt_line_rects_css": [
+    [
+     402,
+     9.5,
+     63,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "README.md",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 10,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "1"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     46,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "1",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 11,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     66,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 12,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "3"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     86,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "3",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 13,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "4"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     106,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "4",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 14,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "5"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     126,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "5",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 15,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "6"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     146,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "6",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 16,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "7"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     166,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "7",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 17,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "8"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     186,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "8",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 18,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "9"
+   ],
+   "gt_line_rects_css": [
+    [
+     201,
+     206,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "9",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 19,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "10"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     226,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "10",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 20,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "11"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     246,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "11",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 21,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "12"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     266,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "12",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 22,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "13"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     286,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "13",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 23,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "14"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     306,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "14",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 24,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "15"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     326,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "15",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 25,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "16"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     346,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "16",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 26,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "17"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     366,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "17",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 27,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "18"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     386,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "18",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 28,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "19"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     406,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "19",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 29,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "20"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     426,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "20",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 30,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "21"
+   ],
+   "gt_line_rects_css": [
+    [
+     194,
+     446,
+     14,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "21",
+   "occluded_chars": 0,
+   "hit_tested_chars": 2,
+   "order_violations": 0
+  },
+  {
+   "idx": 31,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "import { createServer } from \"node:http\";"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     46,
+     287,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "import { createServer } from \"node:http\";",
+   "occluded_chars": 0,
+   "hit_tested_chars": 36,
+   "order_violations": 0
+  },
+  {
+   "idx": 32,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "import { readFile } from \"node:fs/promises\";"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     66,
+     308,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "import { readFile } from \"node:fs/promises\";",
+   "occluded_chars": 0,
+   "hit_tested_chars": 39,
+   "order_violations": 0
+  },
+  {
+   "idx": 33,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "const PORT = Number(process.env.PORT ?? 8080);"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     106,
+     322,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "const PORT = Number(process.env.PORT ?? 8080);",
+   "occluded_chars": 0,
+   "hit_tested_chars": 41,
+   "order_violations": 0
+  },
+  {
+   "idx": 34,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "const MAX_BODY = 1_048_576; // 1 MiB"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     126,
+     252,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "const MAX_BODY = 1_048_576; // 1 MiB",
+   "occluded_chars": 0,
+   "hit_tested_chars": 30,
+   "order_violations": 0
+  },
+  {
+   "idx": 35,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "type Route = (req: Request) => Promise<Response>;"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     166,
+     343,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "type Route = (req: Request) => Promise<Response>;",
+   "occluded_chars": 0,
+   "hit_tested_chars": 43,
+   "order_violations": 0
+  },
+  {
+   "idx": 36,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "const routes = new Map<string, Route>(["
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     206,
+     273,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "const routes = new Map<string, Route>([",
+   "occluded_chars": 0,
+   "hit_tested_chars": 34,
+   "order_violations": 0
+  },
+  {
+   "idx": 37,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "[\"/health\", async () => json({ ok: true, uptime: 0 })],"
+   ],
+   "gt_line_rects_css": [
+    [
+     234,
+     226,
+     385,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "  [\"/health\", async () => json({ ok: true, uptime: 0 })],",
+   "occluded_chars": 0,
+   "hit_tested_chars": 46,
+   "order_violations": 0
+  },
+  {
+   "idx": 38,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "[\"/invoices\", listInvoices],"
+   ],
+   "gt_line_rects_css": [
+    [
+     234,
+     246,
+     196,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "  [\"/invoices\", listInvoices],",
+   "occluded_chars": 0,
+   "hit_tested_chars": 27,
+   "order_violations": 0
+  },
+  {
+   "idx": 39,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "]);"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     266,
+     21,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "]);",
+   "occluded_chars": 0,
+   "hit_tested_chars": 3,
+   "order_violations": 0
+  },
+  {
+   "idx": 40,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "export async function listInvoices(req: Request) {"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     306,
+     350,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "export async function listInvoices(req: Request) {",
+   "occluded_chars": 0,
+   "hit_tested_chars": 45,
+   "order_violations": 0
+  },
+  {
+   "idx": 41,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "const page = Number(new URL(req.url).searchParams.get(\"page\") ?? \"1\");"
+   ],
+   "gt_line_rects_css": [
+    [
+     234,
+     326,
+     490,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "  const page = Number(new URL(req.url).searchParams.get(\"page\") ?? \"1\");",
+   "occluded_chars": 0,
+   "hit_tested_chars": 64,
+   "order_violations": 0
+  },
+  {
+   "idx": 42,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "if (page < 1 || page > 500) return json({ error: \"bad page\" }, 400);"
+   ],
+   "gt_line_rects_css": [
+    [
+     234,
+     346,
+     476,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "  if (page < 1 || page > 500) return json({ error: \"bad page\" }, 400);",
+   "occluded_chars": 0,
+   "hit_tested_chars": 54,
+   "order_violations": 0
+  },
+  {
+   "idx": 43,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "const rows = await db.query(\"SELECT id, total FROM invoices LIMIT 25\");"
+   ],
+   "gt_line_rects_css": [
+    [
+     234,
+     366,
+     497,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "  const rows = await db.query(\"SELECT id, total FROM invoices LIMIT 25\");",
+   "occluded_chars": 0,
+   "hit_tested_chars": 61,
+   "order_violations": 0
+  },
+  {
+   "idx": 44,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "return json({ page, rows });"
+   ],
+   "gt_line_rects_css": [
+    [
+     234,
+     386,
+     196,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "  return json({ page, rows });",
+   "occluded_chars": 0,
+   "hit_tested_chars": 24,
+   "order_violations": 0
+  },
+  {
+   "idx": 45,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "}"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     406,
+     7,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "}",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 46,
+   "category": "code",
+   "clipped": false,
+   "gt_lines": [
+    "createServer(handler).listen(PORT);"
+   ],
+   "gt_line_rects_css": [
+    [
+     220,
+     446,
+     245,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "createServer(handler).listen(PORT);",
+   "occluded_chars": 0,
+   "hit_tested_chars": 35,
+   "order_violations": 0
+  },
+  {
+   "idx": 47,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Request lifecycle"
+   ],
+   "gt_line_rects_css": [
+    [
+     875,
+     19,
+     180,
+     30
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Request lifecycle",
+   "occluded_chars": 0,
+   "hit_tested_chars": 16,
+   "order_violations": 0
+  },
+  {
+   "idx": 48,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Every request passes through the router before any",
+    "handler runs. Unknown paths return 404 without",
+    "touching the database."
+   ],
+   "gt_line_rects_css": [
+    [
+     875,
+     59.59375,
+     369,
+     21
+    ],
+    [
+     875,
+     82.84375,
+     356,
+     21
+    ],
+    [
+     875,
+     106.09375,
+     162,
+     21
+    ]
+   ],
+   "range_line_count": 3,
+   "inner_text": "Every request passes through the router before any handler runs. Unknown paths return 404 without touching the database.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 103,
+   "order_violations": 0
+  },
+  {
+   "idx": 49,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Pagination is 1-indexed. Pages above 500 are rejected",
+    "so that a single client cannot scan the whole table;",
+    "use the export job for bulk access instead."
+   ],
+   "gt_line_rects_css": [
+    [
+     875,
+     141.34375,
+     381,
+     21
+    ],
+    [
+     875,
+     164.59375,
+     363,
+     21
+    ],
+    [
+     875,
+     187.84375,
+     302,
+     21
+    ]
+   ],
+   "range_line_count": 3,
+   "inner_text": "Pagination is 1-indexed. Pages above 500 are rejected so that a single client cannot scan the whole table; use the export job for bulk access instead.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 125,
+   "order_violations": 0
+  },
+  {
+   "idx": 50,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Tip: set PORT=9090 to run two instances side by side",
+    "during local testing."
+   ],
+   "gt_line_rects_css": [
+    [
+     887,
+     232.09375,
+     345,
+     20
+    ],
+    [
+     887,
+     253.09375,
+     135,
+     20
+    ]
+   ],
+   "range_line_count": 2,
+   "inner_text": "Tip: set PORT=9090 to run two instances side by side during local testing.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 62,
+   "order_violations": 0
+  },
+  {
+   "idx": 51,
+   "category": "stress",
+   "clipped": false,
+   "gt_lines": [
+    "Glyph check: Il1| O0o rn m 5S 8B"
+   ],
+   "gt_line_rects_css": [
+    [
+     875,
+     296.09375,
+     236,
+     21
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Glyph check: Il1| O0o rn m 5S 8B",
+   "occluded_chars": 0,
+   "hit_tested_chars": 25,
+   "order_violations": 0
+  },
+  {
+   "idx": 52,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "main"
+   ],
+   "gt_line_rects_css": [
+    [
+     12,
+     779.84375,
+     28,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "main",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 53,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "0 errors, 2 warnings"
+   ],
+   "gt_line_rects_css": [
+    [
+     60,
+     779.84375,
+     140,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "0 errors, 2 warnings",
+   "occluded_chars": 0,
+   "hit_tested_chars": 17,
+   "order_violations": 0
+  },
+  {
+   "idx": 54,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Ln 14, Col 27"
+   ],
+   "gt_line_rects_css": [
+    [
+     949,
+     779.84375,
+     91,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Ln 14, Col 27",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 55,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Spaces: 2"
+   ],
+   "gt_line_rects_css": [
+    [
+     1060,
+     779.84375,
+     63,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Spaces: 2",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 56,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "UTF-8"
+   ],
+   "gt_line_rects_css": [
+    [
+     1143,
+     779.84375,
+     35,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "UTF-8",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 57,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "TypeScript"
+   ],
+   "gt_line_rects_css": [
+    [
+     1198,
+     779.84375,
+     70,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "TypeScript",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  }
+ ],
  "viewport_css": [
   1280,
   800

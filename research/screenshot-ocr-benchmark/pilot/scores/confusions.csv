@@ -19,10 +19,10 @@ doctr,"""",*,2
 doctr,|,l,2
 doctr,{,i,2
 doctr,v,V,1
-easyocr,.,:,37
+easyocr,.,:,38
 easyocr,:,.,33
 easyocr,$,S,31
-easyocr,., ,23
+easyocr,., ,25
 easyocr,$,5,22
 easyocr,l,L,15
 easyocr,",",;,15
@@ -36,11 +36,11 @@ easyocr,],1,5
 easyocr,/,1,5
 easyocr,!,l,5
 easyocr,0,O,4
-easyocr,.,_,4
 easyocr,5,S,4
 easyocr,1,l,4
+easyocr,G,6,4
 paddle_v5_mobile,O,o,22
-paddle_v5_mobile,S,s,16
+paddle_v5_mobile,S,s,14
 paddle_v5_mobile,l,L,9
 paddle_v5_mobile,O,0,8
 paddle_v5_mobile,C,c,7

@@ -12,14 +12,18 @@
  "image_id": "m01-settings_dpr2_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 4.355980732999342,
+ "total_s": 4.272561769999811,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.371102700009942,
+ "orchestrator_wall_s": 4.2903140999842435,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "3101bf5f5b1e34b8f03f253938e9262b179e9874bad2c2815cc0a797ea295dd4",
+ "input_pixel_sha256": "9227f74eb9245d1120b43724affbf775d1237e7c23b6e133d9563e3c409aa6a3",
+ "peak_rss_mb": 965.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -29,7 +33,7 @@
     19.0
    ],
    "text": "9:41",
-   "confidence": 0.9830493927001953
+   "confidence": 0.972051739692688
   },
   {
    "bbox": [
@@ -73,13 +77,13 @@
   },
   {
    "bbox": [
-    89.0,
+    88.0,
     192.0,
     179.0,
     17.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9988141655921936
+   "confidence": 0.994496762752533
   },
   {
    "bbox": [
@@ -103,13 +107,13 @@
   },
   {
    "bbox": [
-    336.0,
-    273.0,
-    26.0,
-    21.0
+    337.0,
+    275.0,
+    25.0,
+    17.0
    ],
-   "text": "on",
-   "confidence": 0.8325165510177612
+   "text": "On",
+   "confidence": 0.8609355688095093
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     23.0
    ],
    "text": "English (US)",
-   "confidence": 0.9797458052635193
+   "confidence": 0.9885034561157227
   },
   {
    "bbox": [
@@ -314,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:19:45.178021+00:00"
+ "completed_at": "2026-09-25T08:23:41.047943+00:00"
 }

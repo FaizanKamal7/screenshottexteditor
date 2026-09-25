@@ -1,4 +1,10 @@
 {
+ "tests/test_automated_checks.py": {
+  "passed": 24,
+  "failed": 0,
+  "skipped": 0,
+  "failures": []
+ },
  "tests/test_bootstrap.py": {
   "passed": 11,
   "failed": 0,

@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_dark_V00",
  "status": "ok",
  "error": null,
- "total_s": 5.064007925000624,
+ "total_s": 4.4888987269996505,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 5.096300399978645,
+ "orchestrator_wall_s": 4.519918499980122,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "673e8584a82744b0a8c31dd3884f6ed1aa913608659f60ef8f5c07806624bc8d",
+ "input_pixel_sha256": "a99dd86c0354cd7a564071c30b37162b08436fe1b1131071ba13ece59fc1e4bf",
+ "peak_rss_mb": 1955.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -149,20 +153,20 @@
     47.0,
     625.0,
     444.0,
-    40.0
+    42.0
    ],
    "text": "invoice total? | got S1,248.50 but",
-   "confidence": 0.7902108329288102
+   "confidence": 0.4415684606321646
   },
   {
    "bbox": [
     47.0,
     665.0,
-    312.0,
+    316.0,
     40.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9827963807263822
+   "confidence": 0.7583947168287036
   },
   {
    "bbox": [
@@ -198,11 +202,11 @@
    "bbox": [
     388.0,
     934.0,
-    267.0,
-    42.0
+    269.0,
+    40.0
    ],
    "text": "Q3-invoice-final pdf",
-   "confidence": 0.7855164998513741
+   "confidence": 0.5627770989477945
   },
   {
    "bbox": [
@@ -248,11 +252,11 @@
    "bbox": [
     48.0,
     1150.0,
-    146.0,
+    150.0,
     32.0
    ],
    "text": "confirmed:",
-   "confidence": 0.6814302930700057
+   "confidence": 0.9001309915508272
   },
   {
    "bbox": [
@@ -317,5 +321,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:00:15.452991+00:00"
+ "completed_at": "2026-09-25T08:41:49.920306+00:00"
 }

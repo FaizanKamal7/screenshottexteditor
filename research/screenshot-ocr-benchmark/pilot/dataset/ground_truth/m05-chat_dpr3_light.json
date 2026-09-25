@@ -553,7 +553,7 @@
    "layout_box": [
     78,
     999.422,
-    462,
+    465,
     54
    ],
    "font_family": "Roboto",
@@ -580,18 +580,18 @@
    "ink_box": [
     78,
     1004,
-    459,
+    462,
     46
    ],
-   "ink_pixels": 6204,
+   "ink_pixels": 6196,
    "line_id": "L0013",
    "ink_box_half": [
     39,
     502,
-    230,
+    231,
     23
    ],
-   "ink_pixels_half": 1925
+   "ink_pixels_half": 1979
   },
   {
    "text": "4:19 PM",
@@ -733,7 +733,7 @@
    "layout_box": [
     591,
     1404.844,
-    381,
+    384,
     48
    ],
    "font_family": "Roboto",
@@ -760,18 +760,18 @@
    "ink_box": [
     592,
     1411,
-    381,
+    384,
     41
    ],
-   "ink_pixels": 5528,
+   "ink_pixels": 5547,
    "line_id": "L0017",
    "ink_box_half": [
     296,
     705,
-    191,
+    192,
     21
    ],
-   "ink_pixels_half": 1581
+   "ink_pixels_half": 1555
   },
   {
    "text": "2.4 MB · 6 pages",
@@ -913,7 +913,7 @@
    "layout_box": [
     78,
     1721.719,
-    213,
+    216,
     54
    ],
    "font_family": "Roboto",
@@ -940,18 +940,18 @@
    "ink_box": [
     79,
     1730,
-    209,
+    212,
     34
    ],
-   "ink_pixels": 2882,
+   "ink_pixels": 2874,
    "line_id": "L0021",
    "ink_box_half": [
     39,
     865,
-    105,
+    107,
     17
    ],
-   "ink_pixels_half": 826
+   "ink_pixels_half": 821
   },
   {
    "text": "Sounds good",

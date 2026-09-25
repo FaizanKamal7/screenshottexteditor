@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_dark_V00",
  "status": "ok",
  "error": null,
- "total_s": 4.2497355759996935,
+ "total_s": 4.3175812740000765,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.265300099999877,
+ "orchestrator_wall_s": 4.3343278000247665,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "c099a0609e942b688e59726a0430c054e127a1342d7cbf5a201d504d4ad6a755",
+ "input_pixel_sha256": "87266544e6e119965a08391be6661d9d3ff8d4af5142bb0a704590408ae1e3ec",
+ "peak_rss_mb": 1138.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -69,7 +73,7 @@
     19.0
    ],
    "text": "Active 5 min ago",
-   "confidence": 0.959754228591919
+   "confidence": 0.9593778252601624
   },
   {
    "bbox": [
@@ -129,17 +133,17 @@
     23.0
    ],
    "text": "component list.",
-   "confidence": 0.9985325932502747
+   "confidence": 0.998356819152832
   },
   {
    "bbox": [
-    24.0,
+    23.0,
     292.0,
-    205.0,
+    206.0,
     17.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9891488552093506
+   "confidence": 0.9762152433395386
   },
   {
    "bbox": [
@@ -155,11 +159,11 @@
    "bbox": [
     22.0,
     331.0,
-    159.0,
+    160.0,
     20.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9726352691650391
+   "confidence": 0.9872516989707947
   },
   {
    "bbox": [
@@ -189,27 +193,27 @@
     20.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9546996355056763
+   "confidence": 0.9545661211013794
   },
   {
    "bbox": [
-    193.0,
-    463.0,
+    194.0,
+    467.0,
     133.0,
-    23.0
+    17.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9951252937316895
+   "confidence": 0.9984283447265625
   },
   {
    "bbox": [
     194.0,
     483.0,
-    98.0,
+    97.0,
     18.0
    ],
    "text": "2.4 MB · 6 pages",
-   "confidence": 0.9307998418807983
+   "confidence": 0.9321925640106201
   },
   {
    "bbox": [
@@ -219,27 +223,27 @@
     15.0
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.973626434803009
+   "confidence": 0.9819123148918152
   },
   {
    "bbox": [
-    24.0,
-    552.0,
-    222.0,
-    19.0
+    23.0,
+    551.0,
+    224.0,
+    21.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.9824655652046204
+   "confidence": 0.9557058811187744
   },
   {
    "bbox": [
     22.0,
     573.0,
-    76.0,
+    77.0,
     17.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9776204228401184
+   "confidence": 0.9992229342460632
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:23:45.045574+00:00"
+ "completed_at": "2026-09-25T08:27:47.082321+00:00"
 }

@@ -15,7 +15,25 @@ No results exist at the time of writing. Nothing in this document is a
 finding.
 
 Companion documents: [METHODOLOGY.md](METHODOLOGY.md) (full design),
+[AUTOMATED_VALIDATION.md](AUTOMATED_VALIDATION.md) (validity checks),
 [SOURCES_AND_LICENSES.md](SOURCES_AND_LICENSES.md).
+
+## 0. Scope and validation model (amendment A4)
+
+- **Synthetic-only.** Every image is a headless-Chromium render of our own
+  templates. Ground truth is generated with the render and is the
+  authoritative expected text for scoring. Results describe OCR on these
+  synthetic UI screenshots only (METHODOLOGY §6). **No claim is made about
+  OCR on real-device screenshots or real-world screenshots generally.**
+- **No human review anywhere.**
+  - Ground-truth validity, box placement and engine coordinate sanity are
+    established by deterministic, automated checks with fixed acceptance
+    criteria. Each criterion is proven able to catch its known defect by a
+    mutation test (AUTOMATED_VALIDATION.md).
+  - All metrics (§6) are computed automatically against the generated ground
+    truth.
+  - The pilot and the full run execute unattended (`scripts/run_pilot.py`) and
+    fail loudly if any check fails.
 
 ## 1. Research questions
 
@@ -41,9 +59,9 @@ We make **no directional predictions**. All tests are two-sided.
   ("x95").
 - **RQ6. Numbers.** Numeric-token accuracy (M7) per engine, overall and per
   variant.
-- **RQ7. Real devices.** Agreement between engine rankings on the real-device
-  set and on the matching synthetic renders (Kendall τ-b), and the per-engine
-  M1 difference.
+- ~~RQ7. Real devices.~~ **Removed** (amendment A4): the benchmark is
+  synthetic-only. Real-device agreement is not studied, and nothing in the
+  results may be presented as answering it.
 - **RQ8. Rate vs. accuracy.** M1 as a function of bits per pixel, per format
   family.
 - **RQ9. Confusions.** The most frequent character substitution pairs per
@@ -72,15 +90,16 @@ cloud engines if added.
   interval half-width for any core engine's V00 M1 greater than
   max(0.2 percentage points, 25% of that engine's pilot M1). It may never be
   decreased. The pilot's variance estimate is the only input to this rule.
-- **Real-device set.** 20 templates (10 mobile, 10 desktop) × 2 themes ×
-  {iOS Safari, Android Chrome, Windows Edge, macOS Safari*} = 160 images
-  (*120 if no Mac is available; `DECISION D3`). Lossless native screenshots
-  only.
+- **No real-device set** (amendment A4; the draft had 160 device screenshots
+  with human-verified geometry).
 - **Ground truth.**
-  - Text and geometry are extracted from the DOM and ink boxes from
-    text/no-text difference renders (synthetic). Device geometry comes from
-    fiducial registration, human-verified.
-  - Generation, validation and exclusion rules are in METHODOLOGY.md §4–6
+  - Text and geometry are extracted from the DOM, and ink boxes from
+    text/no-text difference renders.
+  - Templates render with ligatures and contextual alternates disabled, so
+    each character is drawn as its own glyph (METHODOLOGY §3).
+  - Ground truth is accepted only if every automated validity check in
+    AUTOMATED_VALIDATION.md passes (A3–A5, B1–B5).
+  - Generation, validation and exclusion rules are in METHODOLOGY.md §4–5
     and §8 here.
 - **Content.** Written by us, English, Latin script only. Confusable-glyph
   "stress" lines are tagged `stress=true` and **excluded from all
@@ -282,12 +301,7 @@ family:
 **7.6 Effect sizes.** Always report Δ (absolute percentage points) and the
 ratio, with 95% intervals. p-values are secondary.
 
-**7.7 RQ7 (devices).**
-- Kendall τ-b between engine orderings by M1 on (a) the device set and (b)
-  the synthetic V00 renders of the same 20 templates and 2 themes, at the
-  scale factor nearest the device's. Bootstrap interval over templates.
-- Per-engine Δ(device − synthetic) with intervals.
-- Descriptive only; the device set is too small for confirmatory claims.
+**7.7 RQ7 (devices).** Removed (amendment A4, synthetic-only scope).
 
 **7.8 RQ8 (rate vs. accuracy).**
 - Plot M1 against mean bits per pixel for JPEG 4:2:0 (V02–V05), WebP
@@ -354,7 +368,6 @@ Decided before any data exists:
 | Line chart: P(exact) vs. x-height per engine, with x95 markers | RQ5 | synthetic V00 |
 | Rate-accuracy chart: M1 vs. bits per pixel per format family and engine | RQ8 | synthetic V02–V11 |
 | Grouped bars: M1 by scale factor; M1 by theme | RQ3, RQ4 | synthetic V00 |
-| Synthetic vs. device comparison and τ-b | RQ7 | device + matched synthetic |
 | Confusion-pair table | RQ9 | synthetic V00 (includes stress) |
 | Runtime table | RQ10 | timing subset |
 | Sensitivity table: M1 under N0/N2/no-whitespace, τ_c ∈ {0.3, 0.7}, icon-insertion removal | robustness | synthetic V00 |
@@ -386,6 +399,7 @@ Pre-registration amendments made **before tagging**, driven by the pilot
 | A2 | 2026-09-24/25 | §5 | 50%-variant ground-truth boxes measured on downscaled pixels (ink = change > 16/255) | Pilot B5: 0.5 × boxes missed Lanczos-spread ink by up to 6.0 px. The threshold was added after "any change" made C5 fail on 4/312 of the smallest images |
 | A3 | 2026-09-24 | §8.3 | Failure classes (engine / `resource_oom` / infrastructure); declared 24 GB container budget; OOM kills excluded, not scored empty; peak memory recorded | Pilot: `paddle_v5_server` was OOM-killed by a 15.5 GB VM on 2560×1600 images; scoring that as engine failure measured the host, not the engine |
 | A3b | 2026-09-24 | §3, §8.3 | 120 s timeout-as-failure replaced by a 900 s hang guard; completed output always scored; speed via M10 (owner decision) | With memory fixed, `paddle_v5_server` completes 2560×1600 images in ~140–240 s (peak ~21.7 GB); the 120 s rule would score slowness as wrong answers |
+| A4 | 2026-09-25 | §0, §1, §2, §7.7, §9, §12 | **No human review**: the A3/A4/A5/B4/E2 review steps were replaced by automated criteria, each mutation-tested (AUTOMATED_VALIDATION.md). **Synthetic-only scope**: RQ7, the device set and D4 removed. Templates render without ligatures or contextual alternates. Unattended runner | Owner decision: no manual review in SEO-44. Canonical-render check showed Inter `calt` and Roboto `liga` alter glyphs, so a strict one-glyph-per-character rule is the only automatically provable one |
 
 Deviations after tagging:
 
@@ -397,7 +411,8 @@ Deviations after tagging:
 
 - `D1` Paddle recognition model variant and MKL-DNN setting (§3).
 - `D2` Include optional cloud engines and/or Track T (vision LLMs) in v1?
-- `D3` Is a Mac available (Apple Vision engine, macOS Safari device captures)?
-- `D4` Which physical devices, OS and browser versions for the device set?
+- `D3` Is a Mac available for the optional Apple Vision engine? (Device
+  captures no longer exist; A4.)
+- ~~`D4` Physical devices for the device set~~: removed (A4, synthetic-only).
 - `D5` Accept the reciprocal-benchmarking conditions (Google, AWS,
   Microsoft) if cloud engines are included?

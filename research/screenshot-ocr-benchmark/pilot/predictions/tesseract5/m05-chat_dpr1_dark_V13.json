@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr1_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 0.30974496899943915,
+ "total_s": 0.3057515479995345,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.3202449000091292,
+ "orchestrator_wall_s": 0.3156797999981791,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "input_pixel_sha256": "43abcaff6b01de72bed1585957bcb1988281733451c9e8598662bed5c2c970f7",
+ "peak_rss_mb": 54.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -56,36 +60,36 @@
     28.0
    ],
    "text": "Grn Conus chock pe",
-   "confidence": 0.5475
+   "confidence": 0.545
   },
   {
    "bbox": [
-    9.0,
+    13.0,
     146.0,
-    112.0,
+    108.0,
     28.0
    ],
-   "text": "me rg 612m Sk",
-   "confidence": 0.4625
+   "text": "me rg 612m 0k",
+   "confidence": 0.475
   },
   {
    "bbox": [
-    9.0,
+    13.0,
     156.0,
-    80.0,
+    77.0,
     28.0
    ],
-   "text": "fo an 120450",
-   "confidence": 0.35333333333333333
+   "text": "nr sp 120450.",
+   "confidence": 0.52
   },
   {
    "bbox": [
     98.0,
     235.0,
-    64.0,
+    65.0,
     14.0
    ],
-   "text": "bimroiosial",
+   "text": "bimirroniad",
    "confidence": 0.0
   },
   {
@@ -95,18 +99,8 @@
     105.0,
     28.0
    ],
-   "text": "Tork got. Oe 4 2031",
-   "confidence": 0.34
-  },
-  {
-   "bbox": [
-    13.0,
-    288.0,
-    35.0,
-    7.0
-   ],
-   "text": "Ctr",
-   "confidence": 0.36
+   "text": "Tork got. 0 4 2031",
+   "confidence": 0.312
   },
   {
    "bbox": [
@@ -131,5 +125,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:17.479099+00:00"
+ "completed_at": "2026-09-25T08:15:14.355501+00:00"
 }

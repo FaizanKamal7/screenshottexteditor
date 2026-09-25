@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_light_V07",
  "status": "ok",
  "error": null,
- "total_s": 0.8541018189998795,
+ "total_s": 0.32860554099988804,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8771455000096466,
+ "orchestrator_wall_s": 0.34472599998116493,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "56d6e82cface6fda82d432955b07d7a036ed5143a7520ca26f476b34be44004a",
+ "input_pixel_sha256": "b6f9a5b33b66c705fcdc2103ada022af1af9af1ca019cedf17b985c4dd827e73",
+ "peak_rss_mb": 45.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.94
+   "confidence": 0.93
   },
   {
    "bbox": [
@@ -66,7 +70,7 @@
     12.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.58
+   "confidence": 0.64
   },
   {
    "bbox": [
@@ -86,7 +90,7 @@
     24.0
    ],
    "text": "Notifications On",
-   "confidence": 0.845
+   "confidence": 0.84
   },
   {
    "bbox": [
@@ -106,7 +110,7 @@
     16.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.96
+   "confidence": 0.9233333333333333
   },
   {
    "bbox": [
@@ -116,7 +120,7 @@
     16.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9533333333333333
+   "confidence": 0.9233333333333333
   },
   {
    "bbox": [
@@ -125,8 +129,8 @@
     328.0,
     12.0
    ],
-   "text": "Screen Time 3h12m",
-   "confidence": 0.81
+   "text": "Screen Time 3h 12m",
+   "confidence": 0.57
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     9.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.96
+   "confidence": 0.945
   },
   {
    "bbox": [
@@ -166,7 +170,7 @@
     28.0
    ],
    "text": "About Version 418.2",
-   "confidence": 0.9433333333333332
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -176,10 +180,10 @@
     28.0
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.91
+   "confidence": 0.904
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:49.340066+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:25.464424+00:00"
 }

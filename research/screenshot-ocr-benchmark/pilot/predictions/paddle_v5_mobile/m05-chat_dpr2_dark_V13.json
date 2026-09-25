@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr2_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 4.343187051000314,
+ "total_s": 4.3608088280007,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.357749499991769,
+ "orchestrator_wall_s": 4.376753800024744,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "e5981548a8306232aa85c82955f020b7b37e72e692bb9dbd9327625b66b497ac",
+ "input_pixel_sha256": "3473648bb01998582c05c69f05357175b8a426ff25e69ebce82b416e12f364e0",
+ "peak_rss_mb": 1205.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -149,17 +153,17 @@
     18.0
    ],
    "text": "invoice total? I got S1,248.50 but",
-   "confidence": 0.934154748916626
+   "confidence": 0.9389356970787048
   },
   {
    "bbox": [
     21.0,
     330.0,
-    161.0,
+    162.0,
     21.0
    ],
-   "text": "finance says S1,284.50.",
-   "confidence": 0.9679662585258484
+   "text": "finance says $1,284.50.",
+   "confidence": 0.9836068153381348
   },
   {
    "bbox": [
@@ -195,11 +199,11 @@
    "bbox": [
     194.0,
     467.0,
-    132.0,
+    134.0,
     17.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9971597790718079
+   "confidence": 0.9883737564086914
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     20.0
    ],
    "text": "2.4 MB · 6 pages",
-   "confidence": 0.9079688191413879
+   "confidence": 0.917468249797821
   },
   {
    "bbox": [
@@ -229,17 +233,17 @@
     17.0
    ],
    "text": "Thanks, got it. Order#A-20931 is",
-   "confidence": 0.9710574150085449
+   "confidence": 0.9708682298660278
   },
   {
    "bbox": [
     21.0,
     572.0,
-    78.0,
+    79.0,
     20.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9719339609146118
+   "confidence": 0.9865433573722839
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:26:41.557916+00:00"
+ "completed_at": "2026-09-25T08:30:41.395620+00:00"
 }

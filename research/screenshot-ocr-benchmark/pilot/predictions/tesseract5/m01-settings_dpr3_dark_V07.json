@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr3_dark_V07",
  "status": "ok",
  "error": null,
- "total_s": 1.7035427460000392,
+ "total_s": 0.959766357999797,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.81226420000894,
+ "orchestrator_wall_s": 1.0080252999905497,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7586b8932c7e0abf9cbadaf8102e6255ad7b8b802e8253a2ac5d516391f67704",
+ "input_pixel_sha256": "72b1b7710a00d09c45f8c94bd3198ef35c5c50a1b6734815de01e493979690a8",
+ "peak_rss_mb": 116.0,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -46,7 +50,7 @@
     49.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.9433333333333332
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -66,7 +70,7 @@
     37.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9
+   "confidence": 0.91
   },
   {
    "bbox": [
@@ -111,12 +115,12 @@
   {
    "bbox": [
     94.0,
-    1232.0,
+    1234.0,
     983.0,
-    47.0
+    45.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9566666666666667
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -196,10 +200,10 @@
     30.0
    ],
    "text": "Home Search Inbox Settings",
-   "confidence": 0.955
+   "confidence": 0.9525
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:43.349338+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:52.202698+00:00"
 }

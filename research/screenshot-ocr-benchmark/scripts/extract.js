@@ -61,7 +61,8 @@
           continue;
         }
         const r = rs[0];
-        chars.push({ ch, space: isSpace(ch), left: r.left, top: r.top, right: r.right, bottom: r.bottom });
+        chars.push({ ch, space: isSpace(ch), left: r.left, top: r.top, right: r.right, bottom: r.bottom,
+                     owner: node.parentElement });
       }
     }
 
@@ -75,15 +76,49 @@
         continue;
       }
       if (!cur || Math.abs(cy - cur.cy) > 0.5 * Math.min(h, cur.h)) {
-        cur = { text: "", cy, h, left: c.left, top: c.top, right: c.right, bottom: c.bottom, n: 0 };
+        cur = { text: "", cy, h, left: c.left, top: c.top, right: c.right, bottom: c.bottom, n: 0,
+                prev: null, orderViolations: 0 };
         lines.push(cur);
       }
+      // A4.3: visual order must equal logical (DOM) order, with no overprinting.
+      if (cur.prev) {
+        const p = cur.prev, w = c.right - c.left;
+        if (c.left < p.left - 0.5 || (p.right - c.left) > 0.5 * w) cur.orderViolations++;
+      }
+      cur.prev = c;
       cur.text += c.ch;
       cur.n++;
       cur.left = Math.min(cur.left, c.left);
       cur.top = Math.min(cur.top, c.top);
       cur.right = Math.max(cur.right, c.right);
       cur.bottom = Math.max(cur.bottom, c.bottom);
+    }
+
+    // A5.1: line boxes from the element's whole range (a different API path than the
+    // per-character grouping above), grouped by vertical overlap.
+    range.selectNodeContents(el);
+    const boxes = Array.from(range.getClientRects()).filter((r) => r.width > 0 && r.height > 0)
+      .sort((a, b) => a.top - b.top);
+    const rangeLines = [];
+    for (const r of boxes) {
+      const last = rangeLines[rangeLines.length - 1];
+      const overlap = last ? Math.min(last.bottom, r.bottom) - Math.max(last.top, r.top) : -1;
+      if (last && overlap > 0.5 * Math.min(last.bottom - last.top, r.height)) {
+        last.top = Math.min(last.top, r.top); last.bottom = Math.max(last.bottom, r.bottom);
+      } else {
+        rangeLines.push({ top: r.top, bottom: r.bottom });
+      }
+    }
+
+    // A3.6: hit-testing each visible character's centre must land on exactly the element
+    // that directly holds its text node. Anything else, even a descendant, is on top of it.
+    let occluded = 0, hitTested = 0;
+    for (const c of chars) {
+      if (c.space) continue;
+      const cx = (c.left + c.right) / 2, cy = (c.top + c.bottom) / 2;
+      if (cx < 0 || cy < 0 || cx >= vw || cy >= vh) continue;
+      hitTested++;
+      if (document.elementFromPoint(cx, cy) !== c.owner) occluded++;
     }
 
     const clips = clipRects(el);
@@ -119,9 +154,27 @@
       invisible_non_space_chars: invisibleNonSpace,
       style: { textTransform: cs.textTransform, textOverflow: cs.textOverflow, fontVariantCaps: cs.fontVariantCaps,
                transform: cs.transform, writingMode: cs.writingMode, fontVariantLigatures: cs.fontVariantLigatures },
-      lines: lines.map((l) => ({ text: l.text.replace(/ +/g, " ").trim(), rect: [l.left, l.top, l.right - l.left, l.bottom - l.top], chars: l.n })),
+      lines: lines.map((l) => ({ text: l.text.replace(/ +/g, " ").trim(), rect: [l.left, l.top, l.right - l.left, l.bottom - l.top],
+                                 chars: l.n, order_violations: l.orderViolations })),
+      range_line_count: rangeLines.length,
+      inner_text: el.innerText,
+      occluded_chars: occluded,
+      hit_tested_chars: hitTested,
     });
   });
+
+  // A3.3: text sources outside the DOM text layer are forbidden in templates.
+  const forbiddenTags = Array.from(document.querySelectorAll(
+    "canvas, img, picture, video, iframe, object, embed, input, textarea, select, svg text"))
+    .map((n) => n.tagName.toLowerCase());
+  const bgImages = [], generated = [];
+  for (const n of document.querySelectorAll("*")) {
+    if (getComputedStyle(n).backgroundImage.includes("url(")) bgImages.push(n.tagName.toLowerCase());
+    for (const pseudo of ["::before", "::after"]) {
+      const c = getComputedStyle(n, pseudo).content;
+      if (c && c !== "none" && c !== "normal") generated.push(`${n.tagName.toLowerCase()}${pseudo} ${c}`);
+    }
+  }
 
   // Visible text outside any tagged element must not exist (completeness, PILOT A3).
   const untagged = [];
@@ -145,5 +198,6 @@
     nested_tagged: document.querySelectorAll("[data-category] [data-category]").length,
     inner_text: document.body.innerText,
     icons,
+    forbidden_sources: { tags: forbiddenTags, background_images: bgImages, generated_content: generated },
   };
 }

@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr2_light_V10",
  "status": "ok",
  "error": null,
- "total_s": 4.160477772000377,
+ "total_s": 4.480301929999769,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.202386700024363,
+ "orchestrator_wall_s": 4.511748300050385,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "6d370b53520d6c7d064b0d5ce19d4ad9ef268e6ece1fe592904836140ef2f55d",
+ "input_pixel_sha256": "0651114bca745d6c4eabd7d0607768819a663d8675acd53dff86f2d25086fae6",
+ "peak_rss_mb": 1763.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -32,7 +36,7 @@
     32.0
    ],
    "text": "9:41",
-   "confidence": 0.9276732206344604
+   "confidence": 0.8973375558853149
   },
   {
    "bbox": [
@@ -42,7 +46,7 @@
     32.0
    ],
    "text": "87%",
-   "confidence": 0.9479154944419861
+   "confidence": 0.9388137459754944
   },
   {
    "bbox": [
@@ -52,7 +56,7 @@
     87.0
    ],
    "text": "Settings",
-   "confidence": 0.999977072005535
+   "confidence": 0.9999793479558968
   },
   {
    "bbox": [
@@ -62,7 +66,7 @@
     30.0
    ],
    "text": "0",
-   "confidence": 0.5099624074668843
+   "confidence": 0.36630537397242685
   },
   {
    "bbox": [
@@ -72,7 +76,7 @@
     49.0
    ],
    "text": "Search settings",
-   "confidence": 0.9782323963099271
+   "confidence": 0.9954047450967893
   },
   {
    "bbox": [
@@ -82,7 +86,7 @@
     50.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9964881469269298
+   "confidence": 0.99603790107184
   },
   {
    "bbox": [
@@ -92,7 +96,7 @@
     36.0
    ],
    "text": "avery collins@example.com",
-   "confidence": 0.8745987466272602
+   "confidence": 0.8921749861366625
   },
   {
    "bbox": [
@@ -182,7 +186,7 @@
     42.0
    ],
    "text": "English (US)",
-   "confidence": 0.7717137766547694
+   "confidence": 0.7706396916739884
   },
   {
    "bbox": [
@@ -327,5 +331,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:55:44.244923+00:00"
+ "completed_at": "2026-09-25T08:37:28.648223+00:00"
 }

@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_light_V00",
  "status": "ok",
  "error": null,
- "total_s": 1.8887738849989546,
+ "total_s": 1.738758430999951,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.9073353999992833,
+ "orchestrator_wall_s": 1.754368100024294,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "e3238401298f44a27b8cbf5b9b6eb52c5681a1e11bc85af2b6a5dbee4f62984e",
+ "input_pixel_sha256": "73208c76b29bb4e7f496d5a5d3c4df34df20b41611830f6f3ab3cfba252d3682",
+ "peak_rss_mb": 1225.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -146,23 +150,33 @@
   },
   {
    "bbox": [
-    24.0,
+    25.0,
+    315.0,
+    94.0,
+    16.0
+   ],
+   "text": "invoice total?",
+   "confidence": 0.9365134356367893
+  },
+  {
+   "bbox": [
+    126.0,
     310.0,
-    222.0,
+    120.0,
     24.0
    ],
-   "text": "invoice total? | got S1,248.50 but",
-   "confidence": 0.785129450681985
+   "text": "got S1,248.50 but",
+   "confidence": 0.6576344205885071
   },
   {
    "bbox": [
     24.0,
     330.0,
-    158.0,
+    160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.8590976895789718
+   "confidence": 0.6408755895465412
   },
   {
    "bbox": [
@@ -197,12 +211,12 @@
   {
    "bbox": [
     197.0,
-    469.0,
+    467.0,
     132.0,
-    16.0
+    18.0
    ],
-   "text": "03-invoice-final pdf",
-   "confidence": 0.7481255049951857
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.8508840630705453
   },
   {
    "bbox": [
@@ -248,11 +262,11 @@
    "bbox": [
     25.0,
     575.0,
-    70.0,
+    74.0,
     16.0
    ],
-   "text": "confirmed_",
-   "confidence": 0.9480383046616812
+   "text": "confirmed:",
+   "confidence": 0.9335854094886402
   },
   {
    "bbox": [
@@ -317,5 +331,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:48.645415+00:00"
+ "completed_at": "2026-09-25T08:41:24.045946+00:00"
 }

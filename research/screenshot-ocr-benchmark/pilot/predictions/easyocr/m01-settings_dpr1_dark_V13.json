@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr1_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 0.9611341950003407,
+ "total_s": 0.9409290570001758,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.9814186000148766,
+ "orchestrator_wall_s": 0.9519307999871671,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "024fd10b9e4028000898d5e56c237de8f5cb479af6439b96d6e39e1cdf7e21b7",
+ "input_pixel_sha256": "32bff89e4049aeb9c356d7d6f4dd38299f73e84990829aee9fd8b50c18650577",
+ "peak_rss_mb": 710.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -118,11 +122,11 @@
    "bbox": [
     119.0,
     181.0,
-    62.0,
+    50.0,
     12.0
    ],
-   "text": "12 4OB 0l64Gu",
-   "confidence": 0.013554965694081081
+   "text": "12 4OB ol64",
+   "confidence": 0.030267903256012137
   },
   {
    "bbox": [
@@ -138,11 +142,11 @@
    "bbox": [
     135.0,
     203.0,
-    48.0,
+    46.0,
     14.0
    ],
-   "text": "Engeeh FUS}",
-   "confidence": 0.01687227888910356
+   "text": "Engeeh (USI",
+   "confidence": 0.041247591231728255
   },
   {
    "bbox": [
@@ -217,5 +221,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:53:48.001523+00:00"
+ "completed_at": "2026-09-25T08:35:31.988097+00:00"
 }

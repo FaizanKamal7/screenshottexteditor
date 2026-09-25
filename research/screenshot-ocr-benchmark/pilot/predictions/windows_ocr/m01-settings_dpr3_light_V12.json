@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr3_light_V12",
  "status": "ok",
  "error": null,
- "total_s": 0.06798770002205856,
+ "total_s": 0.056525600026361644,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.0952670999977272,
+ "orchestrator_wall_s": 0.08271330001298338,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "1b0ee5533e6617ac79b6963beed3068abe8357ff4e59fd4b045447de5ce9d0ee",
+ "input_pixel_sha256": "d074b11beb54934e4b40ab874e1b6a051787929b51f4c27b6260a1c04e789107",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -212,9 +216,9 @@
   {
    "bbox": [
     411.0,
-    616.0,
+    617.0,
     128.0,
-    24.0
+    23.0
    ],
    "text": "English (US)",
    "confidence": null
@@ -291,6 +295,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:10:15.215466+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:16:17.887196+00:00"
 }

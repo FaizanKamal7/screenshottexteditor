@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr3_light_V05",
  "status": "ok",
  "error": null,
- "total_s": 49.05516155100122,
+ "total_s": 54.014091347999965,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 49.16158899999573,
+ "orchestrator_wall_s": 54.06100030004745,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "fd2dfdcdd0eca11c1eceecbe2ce03efe804f669a80b0ce6058a2ceaaf469192c",
- "peak_rss_mb": 16497.6,
+ "input_pixel_sha256": "9aab8ec4692629e297299a8b0dda7153ce5d8fcbcbdc3ce8815e6a45cc9d0608",
+ "peak_rss_mb": 16198.2,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     56.0
    ],
    "text": "9:41",
-   "confidence": 0.9660626649856567
+   "confidence": 0.9614908695220947
   },
   {
    "bbox": [
@@ -53,7 +53,7 @@
     126.0
    ],
    "text": "Settings",
-   "confidence": 0.9981483221054077
+   "confidence": 0.9984621405601501
   },
   {
    "bbox": [
@@ -137,13 +137,13 @@
   },
   {
    "bbox": [
-    717.0,
-    1100.0,
-    362.0,
-    38.0
+    716.0,
+    1098.0,
+    363.0,
+    40.0
    ],
    "text": "12.4GBof64GB",
-   "confidence": 0.9914853572845459
+   "confidence": 0.985321044921875
   },
   {
    "bbox": [
@@ -158,12 +158,12 @@
   {
    "bbox": [
     813.0,
-    1224.0,
-    272.0,
+    1225.0,
+    271.0,
     55.0
    ],
    "text": "English (US)",
-   "confidence": 0.9615889191627502
+   "confidence": 0.9769999384880066
   },
   {
    "bbox": [
@@ -318,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:36:28.157050+00:00"
+ "completed_at": "2026-09-25T09:13:00.504314+00:00"
 }

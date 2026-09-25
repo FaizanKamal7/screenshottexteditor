@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr1_dark_V04",
  "status": "ok",
  "error": null,
- "total_s": 7.10755665599936,
+ "total_s": 7.707629396998527,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.128774499986321,
+ "orchestrator_wall_s": 7.723585499974433,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "8ad12e2416ab18de7bf8f415a2cfd89899551ac1bd6bcdbaf23eda228bfde263",
- "peak_rss_mb": 2783.8,
+ "input_pixel_sha256": "438b67023befe219b127c168cd69278b4e47922373091dc1bb32bbf138a5bfb5",
+ "peak_rss_mb": 2706.8,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -40,10 +40,10 @@
     317.0,
     9.0,
     54.0,
-    21.0
+    20.0
    ],
    "text": "5G 72%",
-   "confidence": 0.9769287109375
+   "confidence": 0.9529014229774475
   },
   {
    "bbox": [
@@ -78,12 +78,12 @@
   {
    "bbox": [
     22.0,
-    143.0,
-    233.0,
+    142.0,
+    232.0,
     17.0
    ],
    "text": "Hey!Are we still on for the design",
-   "confidence": 0.9453444480895996
+   "confidence": 0.9381961226463318
   },
   {
    "bbox": [
@@ -143,17 +143,17 @@
     21.0
    ],
    "text": "invoice total?Igot $1,248.50 but",
-   "confidence": 0.9443590641021729
+   "confidence": 0.9430673122406006
   },
   {
    "bbox": [
-    22.0,
-    333.0,
-    158.0,
-    17.0
+    21.0,
+    330.0,
+    161.0,
+    21.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9520268440246582
+   "confidence": 0.9807280898094177
   },
   {
    "bbox": [
@@ -189,11 +189,11 @@
    "bbox": [
     194.0,
     467.0,
-    132.0,
+    133.0,
     17.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9633215069770813
+   "confidence": 0.9631072282791138
   },
   {
    "bbox": [
@@ -203,7 +203,7 @@
     18.0
    ],
    "text": "2.4 MB-6pages",
-   "confidence": 0.9151536226272583
+   "confidence": 0.9141812920570374
   },
   {
    "bbox": [
@@ -229,11 +229,11 @@
    "bbox": [
     23.0,
     573.0,
-    73.0,
+    75.0,
     17.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9565650820732117
+   "confidence": 0.992710292339325
   },
   {
    "bbox": [
@@ -298,5 +298,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T15:29:58.932014+00:00"
+ "completed_at": "2026-09-25T09:56:12.824537+00:00"
 }

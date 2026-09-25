@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_dark_V07",
  "status": "ok",
  "error": null,
- "total_s": 0.8303991850002603,
+ "total_s": 0.4388911399992139,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8476577999826986,
+ "orchestrator_wall_s": 0.5131957000121474,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "0b3a6887ec7652f2b233e241bfe652f16d558c496d8674d9a04f5a410ee818dd",
+ "input_pixel_sha256": "6527359d24e735f274e67378147d768db750bdbac6058d536e611c7b0be07de6",
+ "peak_rss_mb": 46.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "bbox": [
@@ -46,7 +50,7 @@
     17.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.95
+   "confidence": 0.9466666666666668
   },
   {
    "bbox": [
@@ -66,7 +70,7 @@
     12.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.81
+   "confidence": 0.82
   },
   {
    "bbox": [
@@ -93,7 +97,7 @@
     31.0,
     323.0,
     136.0,
-    15.0
+    16.0
    ],
    "text": "Privacy & Security",
    "confidence": 0.9033333333333333
@@ -106,7 +110,7 @@
     31.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.9533333333333333
+   "confidence": 0.955
   },
   {
    "bbox": [
@@ -116,7 +120,7 @@
     31.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9533333333333333
+   "confidence": 0.9466666666666668
   },
   {
    "bbox": [
@@ -166,7 +170,7 @@
     31.0
    ],
    "text": "About Version 418.2",
-   "confidence": 0.87
+   "confidence": 0.88
   },
   {
    "bbox": [
@@ -176,10 +180,10 @@
     28.0
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.9
+   "confidence": 0.892
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:38.547953+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:20.141441+00:00"
 }

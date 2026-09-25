@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_dark_V05",
  "status": "ok",
  "error": null,
- "total_s": 4.665830208999978,
+ "total_s": 4.728997629999867,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.699689100001706,
+ "orchestrator_wall_s": 4.754811700026039,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "d45c41c9a22fc536445448b316b21580c39efe9cc147a72146d8e47669cd85b3",
+ "input_pixel_sha256": "ce26e3f3f5c72ebadb22d7d1129b170d66ab13ea4b09c2ab145adf09f1869dd3",
+ "peak_rss_mb": 1955.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -162,17 +166,17 @@
     43.0
    ],
    "text": "invoice total? | got S1,248.50 but",
-   "confidence": 0.6056798883692275
+   "confidence": 0.6077080393140687
   },
   {
    "bbox": [
-    45.0,
+    47.0,
     665.0,
-    314.0,
+    316.0,
     40.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9314088831718604
+   "confidence": 0.8898633513165408
   },
   {
    "bbox": [
@@ -206,13 +210,13 @@
   },
   {
    "bbox": [
-    390.0,
-    936.0,
-    214.0,
-    32.0
+    388.0,
+    934.0,
+    269.0,
+    40.0
    ],
-   "text": "Q3-invoice-final.",
-   "confidence": 0.6835191752624691
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.5729636168988949
   },
   {
    "bbox": [
@@ -229,10 +233,10 @@
     486.0,
     972.0,
     94.0,
-    32.0
+    33.0
    ],
    "text": "6 pages",
-   "confidence": 0.8760985717913236
+   "confidence": 0.8889700487294162
   },
   {
    "bbox": [
@@ -258,11 +262,11 @@
    "bbox": [
     48.0,
     1150.0,
-    150.0,
+    148.0,
     32.0
    ],
    "text": "confirmed:",
-   "confidence": 0.6367758733786585
+   "confidence": 0.8367108461042618
   },
   {
    "bbox": [
@@ -343,19 +347,9 @@
    ],
    "text": "Yes;",
    "confidence": 0.6291998624801636
-  },
-  {
-   "bbox": [
-    591.3447882227953,
-    933.7672932307345,
-    65.31042355440945,
-    41.46541353853104
-   ],
-   "text": "Ipdf",
-   "confidence": 0.544137716293335
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:00:34.367301+00:00"
+ "completed_at": "2026-09-25T08:42:08.239507+00:00"
 }

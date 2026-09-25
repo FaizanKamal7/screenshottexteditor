@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 2.000341593000485,
+ "total_s": 1.9359221360000447,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.01339409998036,
+ "orchestrator_wall_s": 1.946336799999699,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ace3f2ffd4b62052ca60ff026ed014fa7b8c03a40c6e9bb9ed798e624740a0a5",
+ "input_pixel_sha256": "58c41db6dad81157b643edb18ae70ba000b29042616713176b5ed48171121a6a",
+ "peak_rss_mb": 1035.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -138,11 +142,11 @@
    "bbox": [
     38.0,
     166.0,
-    40.0,
+    52.0,
     8.0
    ],
-   "text": "Lnsieat",
-   "confidence": 0.00021187108412068042
+   "text": "Jni617a450",
+   "confidence": 0.0008128830287950304
   },
   {
    "bbox": [
@@ -181,18 +185,28 @@
     64.0,
     8.0
    ],
-   "text": "03inolet-Imnal Mdi",
-   "confidence": 0.01360611701023046
+   "text": "0jnolet lirulea",
+   "confidence": 0.009077321518264786
   },
   {
    "bbox": [
-    150.0,
-    258.0,
-    39.0,
-    12.0
+    122.0,
+    244.0,
+    22.0,
+    6.0
    ],
-   "text": "Aaalttu",
-   "confidence": 0.003777289420162966
+   "text": "h [in",
+   "confidence": 0.02261577323748707
+  },
+  {
+   "bbox": [
+    152.0,
+    260.0,
+    36.0,
+    8.0
+   ],
+   "text": "Atlelth",
+   "confidence": 0.0037188785077214366
   },
   {
    "bbox": [
@@ -202,7 +216,7 @@
     8.0
    ],
    "text": "Hhang,oot",
-   "confidence": 0.11218641207844035
+   "confidence": 0.10745232435573858
   },
   {
    "bbox": [
@@ -221,8 +235,8 @@
     36.0,
     6.0
    ],
-   "text": "Kanhnct",
-   "confidence": 0.005570586989226008
+   "text": "aniem-d",
+   "confidence": 0.018379834388030463
   },
   {
    "bbox": [
@@ -267,5 +281,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:45.299910+00:00"
+ "completed_at": "2026-09-25T08:41:20.874055+00:00"
 }

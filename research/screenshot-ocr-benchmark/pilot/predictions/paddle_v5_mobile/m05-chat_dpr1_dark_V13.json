@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 2.7470172379998985,
+ "total_s": 2.648186921999695,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.7566324999788776,
+ "orchestrator_wall_s": 2.659383100050036,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "input_pixel_sha256": "43abcaff6b01de72bed1585957bcb1988281733451c9e8598662bed5c2c970f7",
+ "peak_rss_mb": 1080.6,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -69,67 +73,47 @@
     14.0
    ],
    "text": "Hey! Are we sti on foe the design",
-   "confidence": 0.8598681688308716
+   "confidence": 0.9085145592689514
   },
   {
    "bbox": [
     10.0,
     81.0,
-    81.0,
+    94.0,
     10.0
    ],
-   "text": "teview tomorow mom",
-   "confidence": 0.886182427406311
-  },
-  {
-   "bbox": [
-    88.0,
-    82.0,
-    15.0,
-    7.0
-   ],
-   "text": "na?",
-   "confidence": 0.502265989780426
+   "text": "teview tomoerow moing?",
+   "confidence": 0.863140881061554
   },
   {
    "bbox": [
     58.0,
     102.0,
-    41.0,
+    117.0,
     11.0
    ],
-   "text": "Yes,10:30",
-   "confidence": 0.8826920986175537
+   "text": "Yes,10-30 nroom 4B.rbring the",
+   "confidence": 0.8247926831245422
   },
   {
    "bbox": [
-    103.0,
-    102.0,
-    72.0,
-    11.0
+    101.0,
+    125.0,
+    5.0,
+    5.0
    ],
-   "text": "room4B. rl bring the",
-   "confidence": 0.815804123878479
-  },
-  {
-   "bbox": [
-    99.0,
-    113.0,
-    46.0,
-    10.0
-   ],
-   "text": "ckups and the",
-   "confidence": 0.9400135278701782
+   "text": "5",
+   "confidence": 0.41489940881729126
   },
   {
    "bbox": [
     10.0,
     145.0,
-    37.0,
+    38.0,
     10.0
    ],
-   "text": "Geeat.Ca",
-   "confidence": 0.7884056568145752
+   "text": "Geeat.Can",
+   "confidence": 0.8141354322433472
   },
   {
    "bbox": [
@@ -138,28 +122,18 @@
     41.0,
     15.0
    ],
-   "text": "fnance say",
-   "confidence": 0.7869304418563843
+   "text": "finance say",
+   "confidence": 0.9272398352622986
   },
   {
    "bbox": [
-    12.0,
-    157.0,
-    17.0,
-    7.0
+    55.0,
+    199.0,
+    124.0,
+    10.0
    ],
-   "text": "ievoi",
-   "confidence": 0.6603877544403076
-  },
-  {
-   "bbox": [
-    54.0,
-    197.0,
-    126.0,
-    13.0
-   ],
-   "text": "Good catch the second one isnigha",
-   "confidence": 0.8484460115432739
+   "text": "Good catch,the second one isnga.",
+   "confidence": 0.8110843896865845
   },
   {
    "bbox": [
@@ -169,17 +143,17 @@
     10.0
    ],
    "text": "Sending the PDF now",
-   "confidence": 0.9394233822822571
+   "confidence": 0.9395615458488464
   },
   {
    "bbox": [
-    127.0,
-    232.0,
-    35.0,
-    10.0
+    132.0,
+    233.0,
+    29.0,
+    7.0
    ],
-   "text": "e-fnal.pdf",
-   "confidence": 0.9443119764328003
+   "text": "-foaled",
+   "confidence": 0.5838400721549988
   },
   {
    "bbox": [
@@ -194,22 +168,22 @@
   {
    "bbox": [
     9.0,
-    273.0,
-    115.0,
+    274.0,
+    116.0,
     13.0
    ],
-   "text": "Thanks, got it.Order#A-20931 is",
-   "confidence": 0.9011729955673218
+   "text": "Thanks, got it. Order#A-20931is",
+   "confidence": 0.9381964802742004
   },
   {
    "bbox": [
     11.0,
-    286.0,
-    38.0,
-    10.0
+    285.0,
+    39.0,
+    11.0
    ],
-   "text": "confirmed.",
-   "confidence": 0.9702546000480652
+   "text": "confirmed",
+   "confidence": 0.9800461530685425
   },
   {
    "bbox": [
@@ -219,7 +193,7 @@
     11.0
    ],
    "text": "Soundsgood",
-   "confidence": 0.9432913064956665
+   "confidence": 0.9365142583847046
   },
   {
    "bbox": [
@@ -228,8 +202,8 @@
     34.0,
     7.0
    ],
-   "text": "On my wa",
-   "confidence": 0.7100597620010376
+   "text": "Onmy wa",
+   "confidence": 0.7507351040840149
   },
   {
    "bbox": [
@@ -264,5 +238,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:24:34.637930+00:00"
+ "completed_at": "2026-09-25T08:28:34.876733+00:00"
 }

@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr1_light_V09",
  "status": "ok",
  "error": null,
- "total_s": 0.03466849998221733,
+ "total_s": 0.04805709997890517,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.05544649998773821,
+ "orchestrator_wall_s": 0.05930230004014447,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "223cf6652aa65aa066da896734dcec1a24516e29c834737d10beb5afd5120bdb",
+ "input_pixel_sha256": "868e170d078b1871ba343bf4d7d52cac013385ec3beb029ee0605b457d637f0f",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -61,40 +65,10 @@
   },
   {
    "bbox": [
-    94.0,
-    195.0,
-    171.0,
-    13.0
-   ],
-   "text": "avery_collins@example.com",
-   "confidence": null
-  },
-  {
-   "bbox": [
-    332.0,
-    18.0,
-    33.0,
-    12.0
-   ],
-   "text": "87%",
-   "confidence": null
-  },
-  {
-   "bbox": [
-    341.0,
-    279.0,
-    18.0,
-    11.0
-   ],
-   "text": "On",
-   "confidence": null
-  },
-  {
-   "bbox": [
     32.0,
     245.0,
     63.0,
-    10.0
+    9.0
    ],
    "text": "ACCOUNT",
    "confidence": null
@@ -151,10 +125,10 @@
   },
   {
    "bbox": [
-    33.0,
+    32.0,
     502.0,
-    58.0,
-    9.0
+    59.0,
+    10.0
    ],
    "text": "sup PORT",
    "confidence": null
@@ -183,7 +157,7 @@
    "bbox": [
     30.0,
     624.0,
-    45.0,
+    46.0,
     13.0
    ],
    "text": "About",
@@ -196,7 +170,27 @@
     113.0,
     12.0
    ],
-   "text": "Deiete Account",
+   "text": "Delete Account",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    332.0,
+    18.0,
+    33.0,
+    12.0
+   ],
+   "text": "87%",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    341.0,
+    279.0,
+    18.0,
+    11.0
+   ],
+   "text": "On",
    "confidence": null
   },
   {
@@ -212,9 +206,9 @@
   {
    "bbox": [
     274.0,
-    410.0,
+    411.0,
     85.0,
-    17.0
+    16.0
    ],
    "text": "English (US)",
    "confidence": null
@@ -234,7 +228,7 @@
     262.0,
     625.0,
     98.0,
-    12.0
+    11.0
    ],
    "text": "Version 4.18.2",
    "confidence": null
@@ -264,13 +258,13 @@
     322.0,
     804.0,
     38.0,
-    8.0
+    10.0
    ],
-   "text": "Setti s",
+   "text": "Setti ngs",
    "confidence": null
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:10:06.476071+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:16:12.015969+00:00"
 }

@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr2_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 1.1710778860001483,
+ "total_s": 0.57124586000009,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.2053972999856342,
+ "orchestrator_wall_s": 0.5840639999951236,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "afc46011e18dc5fb29146c7c26245bf524f9aa022b18eb8646eefd5948c44586",
+ "input_pixel_sha256": "ddc2ac18f9a1771dc29094b19ac266271097a54e80a913a9a4ecfb36a8de399c",
+ "peak_rss_mb": 55.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.935
+   "confidence": 0.92
   },
   {
    "bbox": [
@@ -76,17 +80,17 @@
     9.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.94
+   "confidence": 0.95
   },
   {
    "bbox": [
     31.0,
-    269.0,
+    271.0,
     328.0,
-    32.0
+    30.0
    ],
    "text": "Notifications on",
-   "confidence": 0.94
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     16.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9
+   "confidence": 0.9266666666666667
   },
   {
    "bbox": [
@@ -106,7 +110,7 @@
     16.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.9533333333333333
+   "confidence": 0.955
   },
   {
    "bbox": [
@@ -116,7 +120,7 @@
     16.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -126,7 +130,7 @@
     13.0
    ],
    "text": "Screen Time 3h 12m",
-   "confidence": 0.52
+   "confidence": 0.48
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     9.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.89
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.94
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -200,6 +204,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:15.771653+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:37.778807+00:00"
 }

@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 2.344461343000148,
+ "total_s": 1.749173262000113,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.361866400024155,
+ "orchestrator_wall_s": 1.7640772999729961,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "e5981548a8306232aa85c82955f020b7b37e72e692bb9dbd9327625b66b497ac",
+ "input_pixel_sha256": "3473648bb01998582c05c69f05357175b8a426ff25e69ebce82b416e12f364e0",
+ "peak_rss_mb": 1266.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -162,7 +166,7 @@
     18.0
    ],
    "text": "invoice total?",
-   "confidence": 0.9362031979241657
+   "confidence": 0.9314526484871684
   },
   {
    "bbox": [
@@ -172,17 +176,17 @@
     24.0
    ],
    "text": "got S1,248.50 but",
-   "confidence": 0.763236574359889
+   "confidence": 0.7722481845227007
   },
   {
    "bbox": [
     24.0,
     330.0,
-    158.0,
+    160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.6855084473301613
+   "confidence": 0.8781180044449629
   },
   {
    "bbox": [
@@ -217,12 +221,12 @@
   {
    "bbox": [
     197.0,
-    467.0,
+    469.0,
     132.0,
-    20.0
+    18.0
    ],
    "text": "03-invoice-final pdf",
-   "confidence": 0.985711303557917
+   "confidence": 0.9154843461544905
   },
   {
    "bbox": [
@@ -242,7 +246,7 @@
     16.0
    ],
    "text": "6 pages",
-   "confidence": 0.9999646752075282
+   "confidence": 0.999961836590644
   },
   {
    "bbox": [
@@ -256,13 +260,13 @@
   },
   {
    "bbox": [
-    24.0,
-    552.0,
-    224.0,
-    24.0
+    22.0,
+    550.0,
+    226.0,
+    26.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.6108787721430579
+   "confidence": 0.7971990436593894
   },
   {
    "bbox": [
@@ -272,7 +276,7 @@
     20.0
    ],
    "text": "confirmed:",
-   "confidence": 0.9652723727656906
+   "confidence": 0.96905995284919
   },
   {
    "bbox": [
@@ -337,5 +341,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:01:08.586024+00:00"
+ "completed_at": "2026-09-25T08:42:38.732225+00:00"
 }

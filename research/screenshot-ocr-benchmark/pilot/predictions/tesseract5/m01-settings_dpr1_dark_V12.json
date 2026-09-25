@@ -9,21 +9,25 @@
  "image_id": "m01-settings_dpr1_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 0.6133294040000692,
+ "total_s": 0.2560752589997719,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.6253312000189908,
+ "orchestrator_wall_s": 0.27263749996200204,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "2997adc72b6b3e84b00141dd3830cc5dbfe66bb580027a87ee0f385e2efd0e96",
+ "input_pixel_sha256": "a6c5c0da23ba2d9eea64828659fa97c4fb897c5e7eb5e3b1e359b19cb3e3973a",
+ "peak_rss_mb": 45.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     10.0,
-    29.0,
+    28.0,
     65.0,
-    15.0
+    16.0
    ],
    "text": "Settings",
    "confidence": 0.96
@@ -85,8 +89,8 @@
     169.0,
     28.0
    ],
-   "text": "Language ern)",
-   "confidence": 0.38
+   "text": "Language Enns)",
+   "confidence": 0.55
   },
   {
    "bbox": [
@@ -130,6 +134,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:42.904558+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:22.432852+00:00"
 }

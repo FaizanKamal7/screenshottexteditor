@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr2_light_V12",
  "status": "ok",
  "error": null,
- "total_s": 1.9058777239997653,
+ "total_s": 1.9945155189998331,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.9264028000179678,
+ "orchestrator_wall_s": 2.013426100020297,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "bade289077fb12f41f60bb9a84c2e939ca5530b7cba7a840792a5efdf6e959a5",
+ "input_pixel_sha256": "b507d5b4876873a907d6758b94023cad6eb8b1b17bc9e625a452f28d6662e075",
+ "peak_rss_mb": 1428.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -143,13 +147,13 @@
   },
   {
    "bbox": [
-    25.210937500000004,
+    26.035156250000004,
     333.80859375,
     154.953125,
     18.1328125
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.6877877712249756
+   "confidence": 0.792681097984314
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     196.6484375,
     469.8046875,
-    127.75390625000001,
+    128.578125,
     14.8359375
    ],
-   "text": "Q3-invoice-final.pdr",
-   "confidence": 0.5334899425506592
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.7118320465087891
   },
   {
    "bbox": [
@@ -225,11 +229,11 @@
    "bbox": [
     26.035156250000004,
     575.3046875,
-    71.70703125,
+    72.53125,
     14.8359375
    ],
    "text": "confirmed.",
-   "confidence": 0.6212292313575745
+   "confidence": 0.7020072937011719
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:50:13.957614+00:00"
+ "completed_at": "2026-09-25T08:20:07.772429+00:00"
 }

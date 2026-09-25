@@ -25,7 +25,7 @@
    "failed": []
   },
   "D2_v00_equals_render": true,
-  "generator_source_sha256": "1b884d3a5853604e3fd3281e03ecc49534c9ac6a8155ad3f7839a3ef169cc30a"
+  "generator_source_sha256": "ea852d91beac4c9387f5ce9a25ed25c14658920d5a0a140582b4bbd183da25c9"
  },
  "details": {
   "D1": [
@@ -3541,10 +3541,10 @@
     "base_id": "m01-settings_dpr1_dark",
     "family": "jpeg_420",
     "bytes": [
-     59774,
-     38010,
-     30521,
-     24292
+     59902,
+     38077,
+     30455,
+     24257
     ],
     "ok": true
    },
@@ -3552,9 +3552,9 @@
     "base_id": "m01-settings_dpr1_dark",
     "family": "webp",
     "bytes": [
-     24522,
-     15496,
-     12616
+     24582,
+     15544,
+     12634
     ],
     "ok": true
    },
@@ -3562,8 +3562,8 @@
     "base_id": "m01-settings_dpr1_dark",
     "family": "avif",
     "bytes": [
-     19804,
-     14124
+     19919,
+     14086
     ],
     "ok": true
    },
@@ -3571,10 +3571,10 @@
     "base_id": "m01-settings_dpr1_light",
     "family": "jpeg_420",
     "bytes": [
-     60135,
-     38194,
-     30096,
-     24685
+     60261,
+     37989,
+     30013,
+     24658
     ],
     "ok": true
    },
@@ -3582,9 +3582,9 @@
     "base_id": "m01-settings_dpr1_light",
     "family": "webp",
     "bytes": [
-     24958,
-     15968,
-     12982
+     24980,
+     15988,
+     13048
     ],
     "ok": true
    },
@@ -3592,8 +3592,8 @@
     "base_id": "m01-settings_dpr1_light",
     "family": "avif",
     "bytes": [
-     19997,
-     14291
+     20031,
+     14265
     ],
     "ok": true
    },
@@ -3601,10 +3601,10 @@
     "base_id": "m01-settings_dpr2_dark",
     "family": "jpeg_420",
     "bytes": [
-     148311,
-     96016,
-     77655,
-     64216
+     148333,
+     96051,
+     77659,
+     64195
     ],
     "ok": true
    },
@@ -3612,9 +3612,9 @@
     "base_id": "m01-settings_dpr2_dark",
     "family": "webp",
     "bytes": [
-     56122,
-     35164,
-     28350
+     56082,
+     35134,
+     28356
     ],
     "ok": true
    },
@@ -3622,8 +3622,8 @@
     "base_id": "m01-settings_dpr2_dark",
     "family": "avif",
     "bytes": [
-     38862,
-     27285
+     38797,
+     27309
     ],
     "ok": true
    },
@@ -3631,10 +3631,10 @@
     "base_id": "m01-settings_dpr2_light",
     "family": "jpeg_420",
     "bytes": [
-     150549,
-     97633,
-     77751,
-     64674
+     150575,
+     97641,
+     77675,
+     64649
     ],
     "ok": true
    },
@@ -3643,8 +3643,8 @@
     "family": "webp",
     "bytes": [
      57856,
-     36212,
-     29606
+     36216,
+     29596
     ],
     "ok": true
    },
@@ -3652,8 +3652,8 @@
     "base_id": "m01-settings_dpr2_light",
     "family": "avif",
     "bytes": [
-     38745,
-     27648
+     38673,
+     27575
     ],
     "ok": true
    },
@@ -3661,10 +3661,10 @@
     "base_id": "m01-settings_dpr3_dark",
     "family": "jpeg_420",
     "bytes": [
-     259933,
-     173631,
-     143349,
-     122172
+     259931,
+     173589,
+     143354,
+     121982
     ],
     "ok": true
    },
@@ -3672,9 +3672,9 @@
     "base_id": "m01-settings_dpr3_dark",
     "family": "webp",
     "bytes": [
-     88366,
-     54220,
-     44052
+     88344,
+     54258,
+     44070
     ],
     "ok": true
    },
@@ -3682,8 +3682,8 @@
     "base_id": "m01-settings_dpr3_dark",
     "family": "avif",
     "bytes": [
-     53526,
-     37550
+     53603,
+     37511
     ],
     "ok": true
    },
@@ -3691,10 +3691,10 @@
     "base_id": "m01-settings_dpr3_light",
     "family": "jpeg_420",
     "bytes": [
-     262691,
-     174604,
-     146047,
-     121514
+     262612,
+     174238,
+     146034,
+     121484
     ],
     "ok": true
    },
@@ -3702,9 +3702,9 @@
     "base_id": "m01-settings_dpr3_light",
     "family": "webp",
     "bytes": [
-     91304,
-     56670,
-     46070
+     91344,
+     56674,
+     46096
     ],
     "ok": true
    },
@@ -3712,8 +3712,8 @@
     "base_id": "m01-settings_dpr3_light",
     "family": "avif",
     "bytes": [
-     54285,
-     37666
+     54311,
+     37751
     ],
     "ok": true
    },
@@ -3721,10 +3721,10 @@
     "base_id": "m05-chat_dpr1_dark",
     "family": "jpeg_420",
     "bytes": [
-     77238,
-     48869,
-     38263,
-     30156
+     77343,
+     48882,
+     38233,
+     30166
     ],
     "ok": true
    },
@@ -3732,9 +3732,9 @@
     "base_id": "m05-chat_dpr1_dark",
     "family": "webp",
     "bytes": [
-     33176,
-     21466,
-     17530
+     33252,
+     21494,
+     17616
     ],
     "ok": true
    },
@@ -3742,8 +3742,8 @@
     "base_id": "m05-chat_dpr1_dark",
     "family": "avif",
     "bytes": [
-     23581,
-     16695
+     23583,
+     16639
     ],
     "ok": true
    },
@@ -3751,10 +3751,10 @@
     "base_id": "m05-chat_dpr1_light",
     "family": "jpeg_420",
     "bytes": [
-     79357,
-     50177,
-     38992,
-     31061
+     79330,
+     50229,
+     39032,
+     31107
     ],
     "ok": true
    },
@@ -3762,9 +3762,9 @@
     "base_id": "m05-chat_dpr1_light",
     "family": "webp",
     "bytes": [
-     34426,
-     22748,
-     18534
+     34446,
+     22722,
+     18592
     ],
     "ok": true
    },
@@ -3772,8 +3772,8 @@
     "base_id": "m05-chat_dpr1_light",
     "family": "avif",
     "bytes": [
-     23985,
-     16993
+     23933,
+     16979
     ],
     "ok": true
    },
@@ -3781,10 +3781,10 @@
     "base_id": "m05-chat_dpr2_dark",
     "family": "jpeg_420",
     "bytes": [
-     190637,
-     120848,
-     95502,
-     78341
+     190795,
+     121021,
+     95649,
+     78417
     ],
     "ok": true
    },
@@ -3792,9 +3792,9 @@
     "base_id": "m05-chat_dpr2_dark",
     "family": "webp",
     "bytes": [
-     80028,
-     50824,
-     41100
+     80064,
+     50838,
+     41130
     ],
     "ok": true
    },
@@ -3802,8 +3802,8 @@
     "base_id": "m05-chat_dpr2_dark",
     "family": "avif",
     "bytes": [
-     50635,
-     35333
+     50657,
+     35339
     ],
     "ok": true
    },
@@ -3811,10 +3811,10 @@
     "base_id": "m05-chat_dpr2_light",
     "family": "jpeg_420",
     "bytes": [
-     196636,
-     124794,
-     98706,
-     80805
+     196897,
+     124872,
+     98751,
+     80945
     ],
     "ok": true
    },
@@ -3822,9 +3822,9 @@
     "base_id": "m05-chat_dpr2_light",
     "family": "webp",
     "bytes": [
-     83350,
-     53630,
-     43942
+     83430,
+     53676,
+     43970
     ],
     "ok": true
    },
@@ -3832,8 +3832,8 @@
     "base_id": "m05-chat_dpr2_light",
     "family": "avif",
     "bytes": [
-     51442,
-     36082
+     51376,
+     36025
     ],
     "ok": true
    },
@@ -3841,10 +3841,10 @@
     "base_id": "m05-chat_dpr3_dark",
     "family": "jpeg_420",
     "bytes": [
-     342673,
-     222380,
-     180453,
-     149119
+     342688,
+     222286,
+     180398,
+     149063
     ],
     "ok": true
    },
@@ -3852,9 +3852,9 @@
     "base_id": "m05-chat_dpr3_dark",
     "family": "webp",
     "bytes": [
-     128342,
-     79978,
-     64836
+     128572,
+     80086,
+     64852
     ],
     "ok": true
    },
@@ -3862,8 +3862,8 @@
     "base_id": "m05-chat_dpr3_dark",
     "family": "avif",
     "bytes": [
-     76260,
-     52787
+     76440,
+     52822
     ],
     "ok": true
    },
@@ -3871,10 +3871,10 @@
     "base_id": "m05-chat_dpr3_light",
     "family": "jpeg_420",
     "bytes": [
-     352637,
-     229041,
-     184938,
-     153911
+     352533,
+     228871,
+     184827,
+     153852
     ],
     "ok": true
    },
@@ -3882,9 +3882,9 @@
     "base_id": "m05-chat_dpr3_light",
     "family": "webp",
     "bytes": [
-     134196,
-     84942,
-     69608
+     134100,
+     84860,
+     69628
     ],
     "ok": true
    },
@@ -3892,8 +3892,8 @@
     "base_id": "m05-chat_dpr3_light",
     "family": "avif",
     "bytes": [
-     77625,
-     53653
+     77697,
+     53869
     ],
     "ok": true
    }
@@ -4263,10 +4263,10 @@
     "base_id": "m01-settings_dpr1_dark",
     "family": "jpeg_420",
     "psnr": [
-     34.5154,
-     33.4213,
-     32.4966,
-     31.4717
+     34.5138,
+     33.4177,
+     32.4941,
+     31.4696
     ],
     "ok": true
    },
@@ -4274,9 +4274,9 @@
     "base_id": "m01-settings_dpr1_dark",
     "family": "webp",
     "psnr": [
-     34.4797,
-     33.6359,
-     32.9392
+     34.4756,
+     33.633,
+     32.9565
     ],
     "ok": true
    },
@@ -4284,29 +4284,29 @@
     "base_id": "m01-settings_dpr1_dark",
     "family": "avif",
     "psnr": [
-     34.4901,
-     34.0331
+     34.4875,
+     34.0167
     ],
     "ok": true
    },
    {
     "base_id": "m01-settings_dpr1_light",
     "family": "jpeg_420",
-    "psnr": [
-     34.0508,
-     33.1231,
-     32.3315,
-     31.4857
-    ],
-    "ok": true
-   },
-   {
-    "base_id": "m01-settings_dpr1_light",
-    "family": "webp",
     "psnr": [
      34.0507,
-     33.3462,
-     32.5861
+     33.1229,
+     32.3288,
+     31.482
+    ],
+    "ok": true
+   },
+   {
+    "base_id": "m01-settings_dpr1_light",
+    "family": "webp",
+    "psnr": [
+     34.0485,
+     33.3422,
+     32.6063
     ],
     "ok": true
    },
@@ -4314,8 +4314,8 @@
     "base_id": "m01-settings_dpr1_light",
     "family": "avif",
     "psnr": [
-     34.0122,
-     33.6008
+     34.0142,
+     33.5889
     ],
     "ok": true
    },
@@ -4323,10 +4323,10 @@
     "base_id": "m01-settings_dpr2_dark",
     "family": "jpeg_420",
     "psnr": [
-     38.7249,
-     37.0343,
-     35.8487,
-     34.6395
+     38.7245,
+     37.0321,
+     35.8497,
+     34.6391
     ],
     "ok": true
    },
@@ -4334,9 +4334,9 @@
     "base_id": "m01-settings_dpr2_dark",
     "family": "webp",
     "psnr": [
-     38.694,
-     37.3067,
-     36.3164
+     38.6934,
+     37.3001,
+     36.3092
     ],
     "ok": true
    },
@@ -4344,8 +4344,8 @@
     "base_id": "m01-settings_dpr2_dark",
     "family": "avif",
     "psnr": [
-     38.5782,
-     37.7778
+     38.5773,
+     37.7765
     ],
     "ok": true
    },
@@ -4353,10 +4353,10 @@
     "base_id": "m01-settings_dpr2_light",
     "family": "jpeg_420",
     "psnr": [
-     38.4365,
-     36.9214,
-     35.7873,
-     34.7495
+     38.437,
+     36.9189,
+     35.7868,
+     34.7493
     ],
     "ok": true
    },
@@ -4364,9 +4364,9 @@
     "base_id": "m01-settings_dpr2_light",
     "family": "webp",
     "psnr": [
-     38.3158,
-     37.1134,
-     36.1464
+     38.3139,
+     37.1077,
+     36.1449
     ],
     "ok": true
    },
@@ -4374,8 +4374,8 @@
     "base_id": "m01-settings_dpr2_light",
     "family": "avif",
     "psnr": [
-     38.3062,
-     37.5592
+     38.3082,
+     37.5469
     ],
     "ok": true
    },
@@ -4383,10 +4383,10 @@
     "base_id": "m01-settings_dpr3_dark",
     "family": "jpeg_420",
     "psnr": [
-     40.918,
-     39.1991,
-     37.957,
-     36.5828
+     40.9182,
+     39.1986,
+     37.9568,
+     36.5831
     ],
     "ok": true
    },
@@ -4394,9 +4394,9 @@
     "base_id": "m01-settings_dpr3_dark",
     "family": "webp",
     "psnr": [
-     40.8639,
-     39.2526,
-     38.1484
+     40.8631,
+     39.2476,
+     38.1519
     ],
     "ok": true
    },
@@ -4404,8 +4404,8 @@
     "base_id": "m01-settings_dpr3_dark",
     "family": "avif",
     "psnr": [
-     40.5946,
-     39.6409
+     40.5941,
+     39.6368
     ],
     "ok": true
    },
@@ -4413,10 +4413,10 @@
     "base_id": "m01-settings_dpr3_light",
     "family": "jpeg_420",
     "psnr": [
-     40.6262,
-     39.1054,
-     37.9427,
-     36.766
+     40.6259,
+     39.1066,
+     37.944,
+     36.7653
     ],
     "ok": true
    },
@@ -4424,9 +4424,9 @@
     "base_id": "m01-settings_dpr3_light",
     "family": "webp",
     "psnr": [
-     40.5227,
-     39.1082,
-     38.0215
+     40.5216,
+     39.1087,
+     38.0226
     ],
     "ok": true
    },
@@ -4434,29 +4434,29 @@
     "base_id": "m01-settings_dpr3_light",
     "family": "avif",
     "psnr": [
-     40.3957,
-     39.437
+     40.395,
+     39.4355
     ],
     "ok": true
    },
    {
     "base_id": "m05-chat_dpr1_dark",
     "family": "jpeg_420",
+    "psnr": [
+     32.3243,
+     31.3111,
+     30.3991,
+     29.2673
+    ],
+    "ok": true
+   },
+   {
+    "base_id": "m05-chat_dpr1_dark",
+    "family": "webp",
     "psnr": [
      32.3072,
-     31.3018,
-     30.3975,
-     29.2545
-    ],
-    "ok": true
-   },
-   {
-    "base_id": "m05-chat_dpr1_dark",
-    "family": "webp",
-    "psnr": [
-     32.2914,
-     31.5144,
-     30.8986
+     31.5211,
+     30.9241
     ],
     "ok": true
    },
@@ -4464,8 +4464,8 @@
     "base_id": "m05-chat_dpr1_dark",
     "family": "avif",
     "psnr": [
-     32.2454,
-     31.8618
+     32.2592,
+     31.8702
     ],
     "ok": true
    },
@@ -4473,10 +4473,10 @@
     "base_id": "m05-chat_dpr1_light",
     "family": "jpeg_420",
     "psnr": [
-     31.5838,
-     30.6864,
-     29.9124,
-     28.9233
+     31.5992,
+     30.6988,
+     29.91,
+     28.9352
     ],
     "ok": true
    },
@@ -4484,9 +4484,9 @@
     "base_id": "m05-chat_dpr1_light",
     "family": "webp",
     "psnr": [
-     31.6102,
-     30.9845,
-     30.4118
+     31.6233,
+     30.9975,
+     30.4228
     ],
     "ok": true
    },
@@ -4494,8 +4494,8 @@
     "base_id": "m05-chat_dpr1_light",
     "family": "avif",
     "psnr": [
-     31.4795,
-     31.1602
+     31.4966,
+     31.1747
     ],
     "ok": true
    },
@@ -4503,10 +4503,10 @@
     "base_id": "m05-chat_dpr2_dark",
     "family": "jpeg_420",
     "psnr": [
-     36.4151,
-     34.8088,
-     33.5769,
-     32.1951
+     36.408,
+     34.8017,
+     33.5739,
+     32.1864
     ],
     "ok": true
    },
@@ -4514,9 +4514,9 @@
     "base_id": "m05-chat_dpr2_dark",
     "family": "webp",
     "psnr": [
-     36.4781,
-     35.2576,
-     34.246
+     36.4741,
+     35.2548,
+     34.2348
     ],
     "ok": true
    },
@@ -4524,8 +4524,8 @@
     "base_id": "m05-chat_dpr2_dark",
     "family": "avif",
     "psnr": [
-     36.2191,
-     35.5328
+     36.2168,
+     35.5355
     ],
     "ok": true
    },
@@ -4533,10 +4533,10 @@
     "base_id": "m05-chat_dpr2_light",
     "family": "jpeg_420",
     "psnr": [
-     35.7279,
-     34.3041,
-     33.0988,
-     31.8834
+     35.7266,
+     34.3012,
+     33.1049,
+     31.8738
     ],
     "ok": true
    },
@@ -4544,9 +4544,9 @@
     "base_id": "m05-chat_dpr2_light",
     "family": "webp",
     "psnr": [
-     35.7579,
-     34.7156,
-     33.7856
+     35.7576,
+     34.7209,
+     33.7816
     ],
     "ok": true
    },
@@ -4554,8 +4554,8 @@
     "base_id": "m05-chat_dpr2_light",
     "family": "avif",
     "psnr": [
-     35.5313,
-     34.9474
+     35.5303,
+     34.9428
     ],
     "ok": true
    },
@@ -4563,10 +4563,10 @@
     "base_id": "m05-chat_dpr3_dark",
     "family": "jpeg_420",
     "psnr": [
-     38.0807,
-     36.5956,
-     35.435,
-     33.8149
+     38.0782,
+     36.5945,
+     35.4286,
+     33.8075
     ],
     "ok": true
    },
@@ -4574,9 +4574,9 @@
     "base_id": "m05-chat_dpr3_dark",
     "family": "webp",
     "psnr": [
-     38.145,
-     36.8349,
-     35.8669
+     38.1429,
+     36.8315,
+     35.8622
     ],
     "ok": true
    },
@@ -4584,8 +4584,8 @@
     "base_id": "m05-chat_dpr3_dark",
     "family": "avif",
     "psnr": [
-     37.8031,
-     37.0989
+     37.7993,
+     37.0911
     ],
     "ok": true
    },
@@ -4593,10 +4593,10 @@
     "base_id": "m05-chat_dpr3_light",
     "family": "jpeg_420",
     "psnr": [
-     37.4688,
-     36.1114,
-     35.03,
-     33.6229
+     37.4637,
+     36.1082,
+     35.026,
+     33.6147
     ],
     "ok": true
    },
@@ -4604,9 +4604,9 @@
     "base_id": "m05-chat_dpr3_light",
     "family": "webp",
     "psnr": [
-     37.4622,
-     36.3863,
-     35.4299
+     37.4518,
+     36.3742,
+     35.418
     ],
     "ok": true
    },
@@ -4614,8 +4614,8 @@
     "base_id": "m05-chat_dpr3_light",
     "family": "avif",
     "psnr": [
-     37.1873,
-     36.5744
+     37.1821,
+     36.5694
     ],
     "ok": true
    }

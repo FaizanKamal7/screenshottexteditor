@@ -12,14 +12,18 @@
  "image_id": "m01-settings_dpr1_light_V06",
  "status": "ok",
  "error": null,
- "total_s": 3.598934714999814,
+ "total_s": 3.6941179199993712,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.6136018999968655,
+ "orchestrator_wall_s": 3.7110118999844417,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7dfd062d4d5056824d2cde75c914e448d522e6054b8fd64f5fa131b97ceab369",
+ "input_pixel_sha256": "b60fb04d60cd577752bba84792368fd133316cbeac93489b6cfc80bb5658dde8",
+ "peak_rss_mb": 737.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -29,7 +33,7 @@
     28.0
    ],
    "text": "9:41",
-   "confidence": 0.9896165132522583
+   "confidence": 0.9915710687637329
   },
   {
    "bbox": [
@@ -65,11 +69,11 @@
    "bbox": [
     88.0,
     162.0,
-    134.0,
+    133.0,
     29.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.8992539644241333
+   "confidence": 0.8828498125076294
   },
   {
    "bbox": [
@@ -154,12 +158,12 @@
   {
    "bbox": [
     267.0,
-    399.0,
+    400.0,
     99.0,
     31.0
    ],
-   "text": "English (us)",
-   "confidence": 0.9563460946083069
+   "text": "English (Us)",
+   "confidence": 0.9246417880058289
   },
   {
    "bbox": [
@@ -314,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:18:27.731799+00:00"
+ "completed_at": "2026-09-25T08:22:20.381480+00:00"
 }

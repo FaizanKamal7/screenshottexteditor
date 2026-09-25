@@ -12,28 +12,28 @@
  "image_id": "m01-settings_dpr2_light_V04",
  "status": "ok",
  "error": null,
- "total_s": 22.37465062800038,
+ "total_s": 21.680423550999876,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 22.40108579999651,
+ "orchestrator_wall_s": 21.707552500010934,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "13f24c7f708299ba0c68f29fe412852b59e494fa22b242b99ccc2a7162f5f192",
- "peak_rss_mb": 8033.8,
+ "input_pixel_sha256": "0813db6a8b8a7d8698f0a06473b948cb30da6afaf13c61c0a395644ee575c827",
+ "peak_rss_mb": 7507.0,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
-    42.0,
-    25.0,
-    75.0,
-    42.0
+    41.0,
+    24.0,
+    77.0,
+    43.0
    ],
    "text": "9:41",
-   "confidence": 0.9772597551345825
+   "confidence": 0.9740270376205444
   },
   {
    "bbox": [
@@ -47,23 +47,23 @@
   },
   {
    "bbox": [
-    29.0,
+    28.0,
     98.0,
-    281.0,
+    282.0,
     83.0
    ],
    "text": "Settings",
-   "confidence": 0.9990344643592834
+   "confidence": 0.9990355968475342
   },
   {
    "bbox": [
-    41.0,
+    40.0,
     211.0,
-    295.0,
-    47.0
+    296.0,
+    48.0
    ],
-   "text": "Q Search setings",
-   "confidence": 0.9590962529182434
+   "text": "Q Search settings",
+   "confidence": 0.9754902124404907
   },
   {
    "bbox": [
@@ -138,12 +138,12 @@
   {
    "bbox": [
     476.0,
-    731.0,
+    732.0,
     245.0,
     26.0
    ],
    "text": "12.4GBof64GB",
-   "confidence": 0.9678593277931213
+   "confidence": 0.9860365390777588
   },
   {
    "bbox": [
@@ -158,12 +158,12 @@
   {
    "bbox": [
     540.0,
-    814.0,
+    815.0,
     184.0,
     38.0
    ],
    "text": "English (US)",
-   "confidence": 0.9525216221809387
+   "confidence": 0.9583482146263123
   },
   {
    "bbox": [
@@ -298,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:17:16.140230+00:00"
+ "completed_at": "2026-09-25T08:56:09.176463+00:00"
 }

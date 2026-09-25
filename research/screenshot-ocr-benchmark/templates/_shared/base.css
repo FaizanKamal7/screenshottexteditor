@@ -32,6 +32,11 @@
   padding: 0;
   text-transform: none;
   font-variant-caps: normal; /* not the font-variant shorthand: it would reset font-variant-ligatures */
+  /* Every character is drawn as its own glyph (AUTOMATED_VALIDATION §2): no ligatures,
+     no contextual alternates. Pilot: Inter calt re-shaped "9:41", Roboto liga joined "fi",
+     JetBrains Mono calt drew "=>" as one arrow. Verified by the canonical-render check. */
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "calt" 0;
   font-synthesis: none;
   text-overflow: clip;
   list-style: none;
@@ -61,6 +66,12 @@ html[data-hidetext="1"] *, html[data-hidetext="1"] *::before, html[data-hidetext
   text-shadow: none !important;
 }
 
-/* Device-capture fiducials (only shown when ?device=1). */
-.fid { display: none; position: fixed; width: 16px; height: 16px; background: #ff00ff; z-index: 9999; }
-html[data-device="1"] .fid { display: block; }
+/* Canonical render (ground-truth validator only, check A4.1): every character-changing
+   feature forced neutral. A template render must be pixel-identical to this. */
+html[data-canonical="1"] *, html[data-canonical="1"] *::before, html[data-canonical="1"] *::after {
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "calt" 0 !important;
+  text-transform: none !important;
+  font-variant-caps: normal !important;
+}
+html[data-canonical="1"] *::before, html[data-canonical="1"] *::after { content: none !important; }

@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 3.7740602349995243,
+ "total_s": 3.378969350999796,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.78681510000024,
+ "orchestrator_wall_s": 3.3909866000176407,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ace3f2ffd4b62052ca60ff026ed014fa7b8c03a40c6e9bb9ed798e624740a0a5",
+ "input_pixel_sha256": "58c41db6dad81157b643edb18ae70ba000b29042616713176b5ed48171121a6a",
+ "peak_rss_mb": 1080.6,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -59,7 +63,7 @@
     10.0
    ],
    "text": "Jordan Lee",
-   "confidence": 0.9559644460678101
+   "confidence": 0.9573066830635071
   },
   {
    "bbox": [
@@ -69,7 +73,7 @@
     7.0
    ],
    "text": "2.412PU",
-   "confidence": 0.8770524263381958
+   "confidence": 0.883056640625
   },
   {
    "bbox": [
@@ -119,7 +123,17 @@
     12.0
    ],
    "text": "component list.",
-   "confidence": 0.9519588947296143
+   "confidence": 0.9316414594650269
+  },
+  {
+   "bbox": [
+    9.0,
+    152.0,
+    114.0,
+    15.0
+   ],
+   "text": "Iirvolce total? 1 gotS1,248.50 but",
+   "confidence": 0.8753910064697266
   },
   {
    "bbox": [
@@ -133,23 +147,13 @@
   },
   {
    "bbox": [
-    8.0,
-    162.0,
-    83.0,
-    16.0
-   ],
-   "text": "fnance says $1,284.50.",
-   "confidence": 0.9409112334251404
-  },
-  {
-   "bbox": [
     10.0,
-    153.0,
-    113.0,
+    163.0,
+    80.0,
     13.0
    ],
-   "text": "involce total? 1 got S1,248.50 but",
-   "confidence": 0.8845886588096619
+   "text": "finance says $1,284.50.",
+   "confidence": 0.9365342259407043
   },
   {
    "bbox": [
@@ -179,7 +183,7 @@
     11.0
    ],
    "text": "Sending the PDF now",
-   "confidence": 0.970480740070343
+   "confidence": 0.9493569731712341
   },
   {
    "bbox": [
@@ -188,8 +192,8 @@
     68.0,
     10.0
    ],
-   "text": "Q3-involce-final.pdf",
-   "confidence": 0.8527018427848816
+   "text": "q3-involce-finalpdf",
+   "confidence": 0.8430840373039246
   },
   {
    "bbox": [
@@ -199,17 +203,17 @@
     11.0
    ],
    "text": "-6p925",
-   "confidence": 0.5429070591926575
+   "confidence": 0.541702926158905
   },
   {
    "bbox": [
-    150.0,
+    151.0,
     259.0,
-    39.0,
+    38.0,
     10.0
    ],
    "text": "Read 421 PM",
-   "confidence": 0.9327442646026611
+   "confidence": 0.9490238428115845
   },
   {
    "bbox": [
@@ -219,7 +223,7 @@
     10.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.969180166721344
+   "confidence": 0.9691909551620483
   },
   {
    "bbox": [
@@ -228,8 +232,8 @@
     39.0,
     10.0
    ],
-   "text": "confirmed.",
-   "confidence": 0.9866092801094055
+   "text": "confirmed",
+   "confidence": 0.9985278248786926
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     12.0
    ],
    "text": "Sounds good",
-   "confidence": 0.9800692200660706
+   "confidence": 0.9850471615791321
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:24:31.879878+00:00"
+ "completed_at": "2026-09-25T08:28:32.214866+00:00"
 }

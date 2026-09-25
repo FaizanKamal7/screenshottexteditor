@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 2.2799967949995334,
+ "total_s": 1.8313696690001962,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.2981428999919444,
+ "orchestrator_wall_s": 1.8476781999925151,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "input_pixel_sha256": "88e1267a98be20a3ca854e2d7d934b866158b746a61e2f7efc64fc51dc8bdc88",
+ "peak_rss_mb": 1424.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -136,20 +140,20 @@
     12.605468750000002,
     156.189453125,
     109.62109374999999,
-    9.478515625
+    9.890625
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.70967036485672
+   "confidence": 0.7667528986930847
   },
   {
    "bbox": [
     12.605468750000002,
-    166.080078125,
-    77.064453125,
-    9.890625
+    166.4921875,
+    77.4765625,
+    9.478515625
    ],
-   "text": "finance says $1,284.50",
-   "confidence": 0.7334277629852295
+   "text": "finance says $1,284.50,",
+   "confidence": 0.49405667185783386
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     97.912109375,
     234.078125,
-    64.701171875,
+    65.11328125,
     8.654296875
    ],
-   "text": "Q3-ievoice-final.pdf",
-   "confidence": 0.5990510582923889
+   "text": "Q3-ievoice-finalpdf",
+   "confidence": 0.5909537672996521
   },
   {
    "bbox": [
@@ -223,13 +227,13 @@
   },
   {
    "bbox": [
-    13.017578125000002,
+    12.605468750000002,
     287.240234375,
-    35.44140625,
+    36.677734375,
     7.41796875
    ],
-   "text": "confirmed.",
-   "confidence": 0.8324353694915771
+   "text": "confirmed",
+   "confidence": 0.9589350819587708
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:49:21.532959+00:00"
+ "completed_at": "2026-09-25T08:19:18.654454+00:00"
 }

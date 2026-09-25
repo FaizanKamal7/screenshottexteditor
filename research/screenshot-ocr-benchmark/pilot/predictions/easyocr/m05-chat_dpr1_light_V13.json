@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 1.490801374999137,
+ "total_s": 1.5054630730001008,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.5016371000092477,
+ "orchestrator_wall_s": 1.5152067000162788,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "input_pixel_sha256": "88e1267a98be20a3ca854e2d7d934b866158b746a61e2f7efc64fc51dc8bdc88",
+ "peak_rss_mb": 1035.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -111,8 +115,8 @@
     24.0,
     6.0
    ],
-   "text": "Mtee",
-   "confidence": 0.027695937717478553
+   "text": "Buei",
+   "confidence": 0.0038931877352297306
   },
   {
    "bbox": [
@@ -121,18 +125,18 @@
     86.0,
     12.0
    ],
-   "text": "Ictol? | G9t 51,248 50tut",
-   "confidence": 0.06280666130493824
+   "text": "Ictol? | p3t 51,248 50tut",
+   "confidence": 0.12142707548674973
   },
   {
    "bbox": [
-    12.0,
+    38.0,
     166.0,
-    66.0,
+    52.0,
     8.0
    ],
-   "text": "JalerirnSlZR",
-   "confidence": 0.0029972576294932727
+   "text": "451784 E0",
+   "confidence": 0.05576350724214853
   },
   {
    "bbox": [
@@ -158,11 +162,11 @@
    "bbox": [
     98.0,
     234.0,
-    64.0,
+    66.0,
     8.0
    ],
-   "text": "03 -mnulot-(mlal ei",
-   "confidence": 0.014548913402506004
+   "text": "03-mnulet-(4ledi",
+   "confidence": 0.010917781550694542
   },
   {
    "bbox": [
@@ -181,8 +185,8 @@
     40.0,
     8.0
    ],
-   "text": "Thant? Qol",
-   "confidence": 0.032758614778490056
+   "text": "Thank? Qol",
+   "confidence": 0.03739653803237771
   },
   {
    "bbox": [
@@ -201,8 +205,8 @@
     36.0,
     6.0
    ],
-   "text": "cannmt0",
-   "confidence": 0.160806214861766
+   "text": "conhfme d",
+   "confidence": 0.02727310652889057
   },
   {
    "bbox": [
@@ -227,5 +231,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:00:10.353825+00:00"
+ "completed_at": "2026-09-25T08:41:45.398062+00:00"
 }

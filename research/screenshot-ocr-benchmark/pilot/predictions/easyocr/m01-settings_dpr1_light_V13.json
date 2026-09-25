@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr1_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 1.123535130998789,
+ "total_s": 1.2083749589992294,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.1352132000029087,
+ "orchestrator_wall_s": 1.221117899985984,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "13e7e3d033a110ee05fdcc1c5f5d23c6af0b494f1546bbe58b558a59f93f9b84",
+ "input_pixel_sha256": "d8446dba8ad6a80db8fd2df051c38954f85e58214f61e9ed8e492077ee0a9e87",
+ "peak_rss_mb": 710.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -118,21 +122,11 @@
    "bbox": [
     119.0,
     181.0,
-    30.0,
+    62.0,
     12.0
    ],
-   "text": "12 4 OB",
-   "confidence": 0.240460707314167
-  },
-  {
-   "bbox": [
-    158.0,
-    182.0,
-    22.0,
-    8.0
-   ],
-   "text": "64Cr",
-   "confidence": 0.04561504592054626
+   "text": "12 4 OB0l &4: 00",
+   "confidence": 0.06380266720855018
   },
   {
    "bbox": [
@@ -151,8 +145,8 @@
     48.0,
     12.0
    ],
-   "text": "Engrrn QUS}",
-   "confidence": 0.1255432912775918
+   "text": "Engin QUS}",
+   "confidence": 0.33105208503204236
   },
   {
    "bbox": [
@@ -257,5 +251,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:54:08.970196+00:00"
+ "completed_at": "2026-09-25T08:35:53.080613+00:00"
 }

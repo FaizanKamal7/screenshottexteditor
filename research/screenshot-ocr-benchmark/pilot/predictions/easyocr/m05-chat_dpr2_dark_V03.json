@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_dark_V03",
  "status": "ok",
  "error": null,
- "total_s": 4.871340486999543,
+ "total_s": 4.68621657300082,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.895827799977269,
+ "orchestrator_wall_s": 4.71272140002111,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "43da1588ba45673c9cc06314d1f83223d6ec94de4fb6ffdd756de23dc6557e95",
+ "input_pixel_sha256": "32b7c63c73b5a0e8fafe9e21ac989ffcd23b13216558a172562849956325f7e7",
+ "peak_rss_mb": 1955.6,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -159,20 +163,20 @@
     47.0,
     625.0,
     444.0,
-    42.0
+    43.0
    ],
-   "text": "invoice total? | got S1,248.50 but",
-   "confidence": 0.41505234091807475
+   "text": "invoice total? [ got S1,248.50 but",
+   "confidence": 0.46420649672399694
   },
   {
    "bbox": [
     47.0,
     665.0,
-    312.0,
+    316.0,
     40.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9834830835631899
+   "confidence": 0.8760596444530514
   },
   {
    "bbox": [
@@ -206,13 +210,13 @@
   },
   {
    "bbox": [
-    390.0,
-    938.0,
-    214.0,
-    30.0
+    389.0,
+    934.0,
+    268.0,
+    40.0
    ],
-   "text": "Q3-invoice-final.",
-   "confidence": 0.6009744781978479
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.7800815477069271
   },
   {
    "bbox": [
@@ -258,11 +262,11 @@
    "bbox": [
     48.0,
     1150.0,
-    148.0,
+    150.0,
     32.0
    ],
    "text": "confirmed:",
-   "confidence": 0.6974166274053738
+   "confidence": 0.8068975209098622
   },
   {
    "bbox": [
@@ -336,16 +340,6 @@
   },
   {
    "bbox": [
-    591.4615384615385,
-    933.6580377846226,
-    65.0769230769231,
-    43.683924430754814
-   ],
-   "text": "Ipdf",
-   "confidence": 0.7571707367897034
-  },
-  {
-   "bbox": [
     149.2802656784306,
     1510.0663091966633,
     77.43946864313881,
@@ -357,5 +351,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:00:25.098641+00:00"
+ "completed_at": "2026-09-25T08:41:59.030984+00:00"
 }

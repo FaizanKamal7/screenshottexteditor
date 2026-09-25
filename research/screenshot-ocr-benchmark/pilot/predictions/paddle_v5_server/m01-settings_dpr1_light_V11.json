@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr1_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 7.585590142000001,
+ "total_s": 7.819397454999489,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.6169668000075035,
+ "orchestrator_wall_s": 7.842729799973313,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "cbc831f4363573b49fb1abca9f5f0782f9113d84f1a05adf413d43ca1c7ee222",
- "peak_rss_mb": 3092.3,
+ "input_pixel_sha256": "5458f4d6f30e40dcde8c2f0851d0fa481046f0bb0a39ed80ac53f07e3cb64fb9",
+ "peak_rss_mb": 2575.4,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,37 +33,37 @@
     24.0
    ],
    "text": "9:41",
-   "confidence": 0.994580864906311
+   "confidence": 0.9959518313407898
   },
   {
    "bbox": [
     326.0,
     10.0,
     44.0,
-    26.0
+    27.0
    ],
    "text": "87%",
-   "confidence": 0.9998095631599426
+   "confidence": 0.9998090863227844
   },
   {
    "bbox": [
     13.0,
     47.0,
     143.0,
-    45.0
+    44.0
    ],
    "text": "Settings",
-   "confidence": 0.999650239944458
+   "confidence": 0.9997311234474182
   },
   {
    "bbox": [
-    15.0,
-    102.0,
-    154.0,
-    30.0
+    17.0,
+    103.0,
+    151.0,
+    28.0
    ],
-   "text": "Q. Search settings",
-   "confidence": 0.9330076575279236
+   "text": "Q.Search settings",
+   "confidence": 0.9521788358688354
   },
   {
    "bbox": [
@@ -73,7 +73,7 @@
     28.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9932135939598083
+   "confidence": 0.9937570095062256
   },
   {
    "bbox": [
@@ -83,7 +83,7 @@
     21.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9995678663253784
+   "confidence": 0.9996094703674316
   },
   {
    "bbox": [
@@ -93,7 +93,7 @@
     24.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9741751551628113
+   "confidence": 0.9723995923995972
   },
   {
    "bbox": [
@@ -103,7 +103,7 @@
     21.0
    ],
    "text": "Notifications",
-   "confidence": 0.9994415044784546
+   "confidence": 0.999525785446167
   },
   {
    "bbox": [
@@ -117,33 +117,33 @@
   },
   {
    "bbox": [
-    24.0,
-    316.0,
-    146.0,
-    25.0
+    23.0,
+    314.0,
+    147.0,
+    28.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9695610404014587
+   "confidence": 0.9744969606399536
   },
   {
    "bbox": [
     22.0,
     358.0,
     72.0,
-    30.0
+    28.0
    ],
    "text": "Storage",
-   "confidence": 0.9996727705001831
+   "confidence": 0.9996970295906067
   },
   {
    "bbox": [
-    235.0,
-    362.0,
-    127.0,
-    21.0
+    236.0,
+    363.0,
+    126.0,
+    17.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.8945387601852417
+   "confidence": 0.890990138053894
   },
   {
    "bbox": [
@@ -153,17 +153,17 @@
     27.0
    ],
    "text": "Language",
-   "confidence": 0.9997668862342834
+   "confidence": 0.9997648000717163
   },
   {
    "bbox": [
     269.0,
-    406.0,
-    95.0,
-    21.0
+    408.0,
+    93.0,
+    18.0
    ],
    "text": "English (US)",
-   "confidence": 0.987053394317627
+   "confidence": 0.9788371920585632
   },
   {
    "bbox": [
@@ -197,23 +197,23 @@
   },
   {
    "bbox": [
-    23.0,
-    530.0,
-    101.0,
-    24.0
+    24.0,
+    531.0,
+    99.0,
+    21.0
    ],
    "text": "Help Center",
-   "confidence": 0.9641337990760803
+   "confidence": 0.9961219429969788
   },
   {
    "bbox": [
     25.0,
     574.0,
-    123.0,
+    122.0,
     21.0
    ],
    "text": "Send Feedback",
-   "confidence": 0.9798586964607239
+   "confidence": 0.9568116068840027
   },
   {
    "bbox": [
@@ -254,6 +254,16 @@
    ],
    "text": "Last synced 2minutes ago·Backup size318ME",
    "confidence": 0.9243135452270508
+  },
+  {
+   "bbox": [
+    39.0,
+    777.0,
+    20.0,
+    18.0
+   ],
+   "text": "←",
+   "confidence": 0.27148064970970154
   },
   {
    "bbox": [
@@ -308,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:11:35.104998+00:00"
+ "completed_at": "2026-09-25T08:50:10.298472+00:00"
 }

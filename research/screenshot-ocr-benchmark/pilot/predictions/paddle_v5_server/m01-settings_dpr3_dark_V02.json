@@ -12,28 +12,28 @@
  "image_id": "m01-settings_dpr3_dark_V02",
  "status": "ok",
  "error": null,
- "total_s": 82.18269316499936,
+ "total_s": 50.274829705999764,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 82.37945880001644,
+ "orchestrator_wall_s": 50.32801820000168,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "3ea6963fe5e7b5bc321d6e6b083b852e0ad3af3574bdef8ed2709729435e0633",
- "peak_rss_mb": 16496.8,
+ "input_pixel_sha256": "e1f8563825352c5dad4e8569a73584ecbd515a0a63eb79f150bbee6495419a1f",
+ "peak_rss_mb": 16106.7,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
-    64.0,
-    42.0,
-    109.0,
-    53.0
+    63.0,
+    41.0,
+    111.0,
+    56.0
    ],
    "text": "9:41",
-   "confidence": 0.9832982420921326
+   "confidence": 0.9785998463630676
   },
   {
    "bbox": [
@@ -47,13 +47,13 @@
   },
   {
    "bbox": [
-    44.0,
-    145.0,
-    419.0,
-    133.0
+    45.0,
+    149.0,
+    417.0,
+    127.0
    ],
    "text": "Settings",
-   "confidence": 0.998986542224884
+   "confidence": 0.999301552772522
   },
   {
    "bbox": [
@@ -147,13 +147,13 @@
   },
   {
    "bbox": [
-    713.0,
-    1096.0,
+    712.0,
+    1095.0,
     371.0,
     47.0
    ],
-   "text": "12.4GBof64GB",
-   "confidence": 0.9945513606071472
+   "text": "12.4 GB of 64 GB",
+   "confidence": 0.9011917114257812
   },
   {
    "bbox": [
@@ -167,13 +167,13 @@
   },
   {
    "bbox": [
-    814.0,
+    813.0,
     1222.0,
-    274.0,
-    59.0
+    276.0,
+    62.0
    ],
    "text": "English (US)",
-   "confidence": 0.9928960204124451
+   "confidence": 0.9974699020385742
   },
   {
    "bbox": [
@@ -189,11 +189,11 @@
    "bbox": [
     923.0,
     1356.0,
-    165.0,
+    164.0,
     54.0
    ],
    "text": "3h 12m",
-   "confidence": 0.9296137690544128
+   "confidence": 0.9224537014961243
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:22:45.291746+00:00"
+ "completed_at": "2026-09-25T09:00:36.062042+00:00"
 }

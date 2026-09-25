@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr2_light_V08",
  "status": "ok",
  "error": null,
- "total_s": 22.501987807998376,
+ "total_s": 20.290529890999096,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 22.53761420000228,
+ "orchestrator_wall_s": 20.324251500016544,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "15acbda6be235ead898d49cb3909f178674166483d161fd96bb7a15741c95958",
- "peak_rss_mb": 8036.7,
+ "input_pixel_sha256": "f357f9d9c3f30a131ee6d4729438fd14dd2f20d5b5422de47b986f373e47f569",
+ "peak_rss_mb": 7742.3,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -118,12 +118,12 @@
   {
    "bbox": [
     228.0,
-    455.0,
+    454.0,
     352.0,
-    35.0
+    36.0
    ],
    "text": "updated mockups and the",
-   "confidence": 0.9730737209320068
+   "confidence": 0.9892974495887756
   },
   {
    "bbox": [
@@ -133,17 +133,17 @@
     38.0
    ],
    "text": "component list.",
-   "confidence": 0.9917858839035034
+   "confidence": 0.9624994397163391
   },
   {
    "bbox": [
-    50.0,
+    49.0,
     585.0,
-    405.0,
+    406.0,
     33.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9705987572669983
+   "confidence": 0.9725449085235596
   },
   {
    "bbox": [
@@ -153,27 +153,27 @@
     31.0
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.9507856965065002
+   "confidence": 0.9607095122337341
   },
   {
    "bbox": [
     47.0,
     665.0,
-    314.0,
+    316.0,
     36.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9856533408164978
+   "confidence": 0.9655020236968994
   },
   {
    "bbox": [
-    345.0,
-    738.0,
-    89.0,
-    24.0
+    344.0,
+    737.0,
+    91.0,
+    27.0
    ],
    "text": "4:19 PM",
-   "confidence": 0.9162864685058594
+   "confidence": 0.9387679100036621
   },
   {
    "bbox": [
@@ -183,7 +183,7 @@
     33.0
    ],
    "text": "Good catch,",
-   "confidence": 0.9668281674385071
+   "confidence": 0.9679113030433655
   },
   {
    "bbox": [
@@ -193,7 +193,7 @@
     38.0
    ],
    "text": "the second one is right.",
-   "confidence": 0.9874208569526672
+   "confidence": 0.9864945411682129
   },
   {
    "bbox": [
@@ -203,27 +203,27 @@
     34.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9402580261230469
+   "confidence": 0.9415229558944702
   },
   {
    "bbox": [
     391.0,
     936.0,
-    259.0,
+    262.0,
     29.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9863370656967163
+   "confidence": 0.9754613637924194
   },
   {
    "bbox": [
-    387.0,
+    388.0,
     968.0,
-    194.0,
-    32.0
+    192.0,
+    31.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9456137418746948
+   "confidence": 0.9552205801010132
   },
   {
    "bbox": [
@@ -233,27 +233,27 @@
     27.0
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.9366516470909119
+   "confidence": 0.940545380115509
   },
   {
    "bbox": [
     50.0,
-    1108.0,
-    439.0,
+    1109.0,
+    440.0,
     30.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.9822791218757629
+   "confidence": 0.9610681533813477
   },
   {
    "bbox": [
     48.0,
     1149.0,
-    147.0,
+    148.0,
     30.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9995485544204712
+   "confidence": 0.9997671842575073
   },
   {
    "bbox": [
@@ -263,17 +263,17 @@
     40.0
    ],
    "text": "Sounds good",
-   "confidence": 0.9507078528404236
+   "confidence": 0.9510664343833923
   },
   {
    "bbox": [
     284.0,
     1506.0,
     149.0,
-    43.0
+    42.0
    ],
    "text": "On my way",
-   "confidence": 0.9429271221160889
+   "confidence": 0.9702231884002686
   },
   {
    "bbox": [
@@ -283,7 +283,7 @@
     35.0
    ],
    "text": "10 min late",
-   "confidence": 0.9366808533668518
+   "confidence": 0.9393969178199768
   },
   {
    "bbox": [
@@ -303,7 +303,7 @@
     41.0
    ],
    "text": "Message",
-   "confidence": 0.9985422492027283
+   "confidence": 0.9985076189041138
   },
   {
    "bbox": [
@@ -313,10 +313,10 @@
     37.0
    ],
    "text": "Send",
-   "confidence": 0.9969534873962402
+   "confidence": 0.9967978000640869
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:52:51.632961+00:00"
+ "completed_at": "2026-09-25T09:28:42.121519+00:00"
 }

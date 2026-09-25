@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 1.997384652000619,
+ "total_s": 1.7820968770001855,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.0131069000053685,
+ "orchestrator_wall_s": 1.7954956999747083,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "input_pixel_sha256": "43abcaff6b01de72bed1585957bcb1988281733451c9e8598662bed5c2c970f7",
+ "peak_rss_mb": 1410.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -133,23 +137,23 @@
   },
   {
    "bbox": [
-    12.605468750000002,
+    12.193359375000002,
     155.77734375,
-    109.62109374999999,
-    9.890625
+    110.03320312499999,
+    10.302734375
    ],
-   "text": "irvolice total?u got $1,248.50 but",
-   "confidence": 0.30861833691596985
+   "text": "invoice total? u got $1,248.50 but",
+   "confidence": 0.6083068251609802
   },
   {
    "bbox": [
     12.193359375000002,
-    165.66796875,
-    77.4765625,
+    166.080078125,
+    77.888671875,
     9.890625
    ],
-   "text": "finance says $1.28450",
-   "confidence": 0.39355915784835815
+   "text": "finance says $1,284.50",
+   "confidence": 0.6046106219291687
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     97.5,
     233.666015625,
-    65.525390625,
-    9.06640625
+    65.9375,
+    8.654296875
    ],
-   "text": "q3-evoice-final.pdt",
-   "confidence": 0.5378158688545227
+   "text": "q3-ievoice-finalpdt",
+   "confidence": 0.4863069951534271
   },
   {
    "bbox": [
@@ -225,11 +229,11 @@
    "bbox": [
     12.605468750000002,
     287.240234375,
-    35.853515625,
+    36.677734375,
     7.41796875
    ],
-   "text": "confirmed.",
-   "confidence": 0.7962074279785156
+   "text": "confirmed",
+   "confidence": 0.9036467671394348
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:48:52.545736+00:00"
+ "completed_at": "2026-09-25T08:18:53.460746+00:00"
 }

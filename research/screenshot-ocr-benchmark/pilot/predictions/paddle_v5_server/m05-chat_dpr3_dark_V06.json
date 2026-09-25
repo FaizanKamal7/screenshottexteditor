@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr3_dark_V06",
  "status": "ok",
  "error": null,
- "total_s": 46.11360899600004,
+ "total_s": 48.08013453100102,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 46.17392729999847,
+ "orchestrator_wall_s": 48.13162589998683,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "87739bd77ca8ee554150536c29363490cd8ee5625906276cfe007b79b92a83c2",
- "peak_rss_mb": 16498.4,
+ "input_pixel_sha256": "491203f43594f33c46852f1d4abec5feafd48ac52d63275fec8aeae2e6c58656",
+ "peak_rss_mb": 16237.8,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -187,53 +187,53 @@
   },
   {
    "bbox": [
-    580.0,
-    746.0,
+    579.0,
+    745.0,
     86.0,
     45.0
    ],
    "text": "list.",
-   "confidence": 0.992442786693573
+   "confidence": 0.9941092729568481
   },
   {
    "bbox": [
     79.0,
     886.0,
-    120.0,
+    121.0,
     36.0
    ],
    "text": "Great.",
-   "confidence": 0.9992015957832336
+   "confidence": 0.9992568492889404
   },
   {
    "bbox": [
-    198.0,
+    197.0,
     875.0,
-    488.0,
+    489.0,
     59.0
    ],
    "text": "Can you also check the",
-   "confidence": 0.9771447777748108
+   "confidence": 0.9928774237632751
   },
   {
    "bbox": [
     78.0,
     946.0,
-    145.0,
+    146.0,
     36.0
    ],
    "text": "invoice",
-   "confidence": 0.9996561408042908
+   "confidence": 0.999637246131897
   },
   {
    "bbox": [
-    228.0,
-    942.0,
-    166.0,
-    43.0
+    226.0,
+    941.0,
+    172.0,
+    46.0
    ],
-   "text": "total?l",
-   "confidence": 0.8965405225753784
+   "text": "total?lg",
+   "confidence": 0.9195301532745361
   },
   {
    "bbox": [
@@ -247,53 +247,53 @@
   },
   {
    "bbox": [
-    437.0,
+    436.0,
     940.0,
-    294.0,
+    295.0,
     49.0
    ],
    "text": "t $1,248.50 but",
-   "confidence": 0.965424120426178
+   "confidence": 0.9780811071395874
   },
   {
    "bbox": [
     76.0,
     1003.0,
-    148.0,
-    44.0
+    152.0,
+    43.0
    ],
    "text": "finance",
-   "confidence": 0.999414324760437
+   "confidence": 0.9996002912521362
   },
   {
    "bbox": [
-    331.0,
+    335.0,
     998.0,
-    212.0,
+    210.0,
     52.0
    ],
    "text": "$1,284.50.",
-   "confidence": 0.9949315786361694
+   "confidence": 0.9961244463920593
   },
   {
    "bbox": [
-    229.0,
+    232.0,
     1009.0,
-    99.0,
+    97.0,
     41.0
    ],
    "text": "says",
-   "confidence": 0.9988596439361572
+   "confidence": 0.9982601404190063
   },
   {
    "bbox": [
-    521.0,
-    1111.0,
+    520.0,
+    1110.0,
     126.0,
     32.0
    ],
    "text": "4:19PM",
-   "confidence": 0.9807102680206299
+   "confidence": 0.9784033894538879
   },
   {
    "bbox": [
@@ -307,13 +307,13 @@
   },
   {
    "bbox": [
-    347.0,
-    1267.0,
-    165.0,
-    46.0
+    346.0,
+    1265.0,
+    166.0,
+    49.0
    ],
    "text": "Sending",
-   "confidence": 0.9993341565132141
+   "confidence": 0.9993025064468384
   },
   {
    "bbox": [
@@ -339,11 +339,11 @@
    "bbox": [
     591.0,
     1408.0,
-    381.0,
+    384.0,
     38.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.996486485004425
+   "confidence": 0.9979791641235352
   },
   {
    "bbox": [
@@ -377,13 +377,13 @@
   },
   {
    "bbox": [
-    76.0,
-    1724.0,
-    213.0,
-    43.0
+    77.0,
+    1726.0,
+    216.0,
+    41.0
    ],
    "text": "confirmed.",
-   "confidence": 0.999411404132843
+   "confidence": 0.9997609257698059
   },
   {
    "bbox": [
@@ -458,5 +458,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:59:09.536667+00:00"
+ "completed_at": "2026-09-25T09:34:49.487047+00:00"
 }

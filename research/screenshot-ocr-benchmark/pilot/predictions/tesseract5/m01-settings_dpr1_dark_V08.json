@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 0.9755892379998841,
+ "total_s": 0.5156225999999151,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.9980001999938395,
+ "orchestrator_wall_s": 0.5314743000199087,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "67a8c6eb78f2a8dc7128fe7e49624828a26791d4423ce63547529e1e136899f6",
+ "input_pixel_sha256": "b13e23e959beebe1ab381f3ca4ff67f2540710a203134b32355160f9da20ab53",
+ "peak_rss_mb": 46.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.935
+   "confidence": 0.905
   },
   {
    "bbox": [
@@ -81,12 +85,12 @@
   {
    "bbox": [
     31.0,
-    270.0,
+    269.0,
     328.0,
-    31.0
+    32.0
    ],
    "text": "Notifications on",
-   "confidence": 0.92
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -96,27 +100,27 @@
     15.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.94
+   "confidence": 0.9333333333333332
   },
   {
    "bbox": [
     27.0,
-    358.0,
+    363.0,
     332.0,
-    32.0
+    24.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.9533333333333333
+   "confidence": 0.93
   },
   {
    "bbox": [
     31.0,
-    402.0,
+    401.0,
     328.0,
-    31.0
+    32.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9466666666666668
+   "confidence": 0.9133333333333333
   },
   {
    "bbox": [
@@ -126,7 +130,7 @@
     13.0
    ],
    "text": "Screen Time 3h 12m",
-   "confidence": 0.705
+   "confidence": 0.65
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     9.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.91
+   "confidence": 0.89
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.96
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -161,12 +165,12 @@
   {
    "bbox": [
     30.0,
-    615.0,
+    620.0,
     329.0,
-    31.0
+    24.0
    ],
    "text": "About Version 418.2",
-   "confidence": 0.9566666666666667
+   "confidence": 0.9133333333333333
   },
   {
    "bbox": [
@@ -180,6 +184,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:39.547947+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:20.674497+00:00"
 }

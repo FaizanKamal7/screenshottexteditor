@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_light_V12",
  "status": "ok",
  "error": null,
- "total_s": 2.0400448910004343,
+ "total_s": 1.794491977000689,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.0591114000126254,
+ "orchestrator_wall_s": 1.8112430999753997,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "bade289077fb12f41f60bb9a84c2e939ca5530b7cba7a840792a5efdf6e959a5",
+ "input_pixel_sha256": "b507d5b4876873a907d6758b94023cad6eb8b1b17bc9e625a452f28d6662e075",
+ "peak_rss_mb": 1266.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -166,13 +170,13 @@
   },
   {
    "bbox": [
-    25.0,
-    333.0,
-    156.0,
-    20.0
+    24.0,
+    330.0,
+    160.0,
+    24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9467636484293279
+   "confidence": 0.8597030548069512
   },
   {
    "bbox": [
@@ -208,11 +212,11 @@
    "bbox": [
     197.0,
     469.0,
-    130.0,
+    132.0,
     16.0
    ],
    "text": "03-invoice-final pdf",
-   "confidence": 0.8722558770195936
+   "confidence": 0.9308766644136511
   },
   {
    "bbox": [
@@ -226,13 +230,13 @@
   },
   {
    "bbox": [
-    253.0,
+    255.0,
     489.0,
-    38.0,
+    36.0,
     14.0
    ],
    "text": "pages",
-   "confidence": 0.9954147772371984
+   "confidence": 0.999715415683864
   },
   {
    "bbox": [
@@ -258,11 +262,11 @@
    "bbox": [
     25.0,
     575.0,
-    70.0,
+    74.0,
     16.0
    ],
-   "text": "confirmed_",
-   "confidence": 0.9987347530728276
+   "text": "confirmed:",
+   "confidence": 0.9692637258538459
   },
   {
    "bbox": [
@@ -332,10 +336,10 @@
     21.547525787985137
    ],
    "text": "got",
-   "confidence": 0.999850443653406
+   "confidence": 0.9998576701912145
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:02:05.321362+00:00"
+ "completed_at": "2026-09-25T08:43:31.158109+00:00"
 }

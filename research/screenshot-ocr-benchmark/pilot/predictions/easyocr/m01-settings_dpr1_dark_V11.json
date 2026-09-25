@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr1_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 1.845218364000175,
+ "total_s": 1.6695209569998042,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.8731388000014704,
+ "orchestrator_wall_s": 1.6890610000118613,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "883d7bc1644769ed49c3e6117d0ff646bfef2ea4a8f6b23efd07a4e27fc7457a",
+ "input_pixel_sha256": "cd3f309e88f3d90304b8a10dc7944e99b84a0a8f26095eec39895f24a802bb69",
+ "peak_rss_mb": 849.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -32,17 +36,17 @@
     18.0
    ],
    "text": "9.41",
-   "confidence": 0.6724247932434082
+   "confidence": 0.9600467085838318
   },
   {
    "bbox": [
-    331.0,
-    17.0,
-    38.0,
-    16.0
+    329.0,
+    15.0,
+    40.0,
+    18.0
    ],
    "text": "87%",
-   "confidence": 0.9994196858179428
+   "confidence": 0.747558057308197
   },
   {
    "bbox": [
@@ -52,7 +56,7 @@
     55.0
    ],
    "text": "Settings",
-   "confidence": 0.9999823404058852
+   "confidence": 0.9999807809605794
   },
   {
    "bbox": [
@@ -62,7 +66,7 @@
     24.0
    ],
    "text": "Search settings",
-   "confidence": 0.7072191293250308
+   "confidence": 0.7350781532301892
   },
   {
    "bbox": [
@@ -72,7 +76,7 @@
     27.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.7153466171555535
+   "confidence": 0.6543885570731809
   },
   {
    "bbox": [
@@ -82,7 +86,7 @@
     18.0
    ],
    "text": "avery collins@example com",
-   "confidence": 0.9442658549588047
+   "confidence": 0.929623128069057
   },
   {
    "bbox": [
@@ -92,7 +96,7 @@
     16.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9990330636333444
+   "confidence": 0.9987420718826913
   },
   {
    "bbox": [
@@ -102,7 +106,7 @@
     20.0
    ],
    "text": "Notifications",
-   "confidence": 0.9971926629988325
+   "confidence": 0.9997545878805795
   },
   {
    "bbox": [
@@ -122,7 +126,7 @@
     26.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.7714965030381631
+   "confidence": 0.7233153333126142
   },
   {
    "bbox": [
@@ -132,7 +136,7 @@
     25.0
    ],
    "text": "Storage",
-   "confidence": 0.9999913040106656
+   "confidence": 0.9999922502075801
   },
   {
    "bbox": [
@@ -146,13 +150,13 @@
   },
   {
    "bbox": [
-    25.0,
-    405.0,
-    83.0,
-    26.0
+    27.0,
+    407.0,
+    81.0,
+    24.0
    ],
    "text": "Language",
-   "confidence": 0.9999918656445336
+   "confidence": 0.9470053767392707
   },
   {
    "bbox": [
@@ -162,7 +166,7 @@
     26.0
    ],
    "text": "English (US)",
-   "confidence": 0.8563389254884001
+   "confidence": 0.753894135962288
   },
   {
    "bbox": [
@@ -177,12 +181,12 @@
   {
    "bbox": [
     307.0,
-    451.0,
+    453.0,
     56.0,
-    20.0
+    18.0
    ],
    "text": "3h 12m",
-   "confidence": 0.6501144181763376
+   "confidence": 0.9631299876031029
   },
   {
    "bbox": [
@@ -317,5 +321,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:53:45.639482+00:00"
+ "completed_at": "2026-09-25T08:35:29.599105+00:00"
 }

@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr3_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 7.67188123699998,
+ "total_s": 7.508155430999977,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.728575799992541,
+ "orchestrator_wall_s": 7.566280099970754,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ac1a0c652a575b1a5635ed3959b6e011ba16f3f18e6fb51a78de96a9e0a27fe2",
+ "input_pixel_sha256": "663cf4ec1ad54c4f1f5436e0ad05747498363f505c3b39c94bc46fa97c7c1ccd",
+ "peak_rss_mb": 1894.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -59,7 +63,7 @@
     51.0
    ],
    "text": "Active 5 min ago",
-   "confidence": 0.9601836204528809
+   "confidence": 0.9573514461517334
   },
   {
    "bbox": [
@@ -68,8 +72,8 @@
     334.0,
     44.0
    ],
-   "text": "Tue, Sep 22 · 4:12 PM",
-   "confidence": 0.9519128203392029
+   "text": "Tue, Sep 22· 4:12 PM",
+   "confidence": 0.9596067667007446
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     63.0
    ],
    "text": "Hey! Are we still on for the design",
-   "confidence": 0.9775641560554504
+   "confidence": 0.9935177564620972
   },
   {
    "bbox": [
@@ -95,11 +99,11 @@
    "bbox": [
     341.0,
     616.0,
-    706.0,
+    707.0,
     66.0
    ],
    "text": "Yes, 10:30 in room 4B. Ill bring the",
-   "confidence": 0.9539200663566589
+   "confidence": 0.9343912601470947
   },
   {
    "bbox": [
@@ -119,7 +123,7 @@
     56.0
    ],
    "text": "component list.",
-   "confidence": 0.9690581560134888
+   "confidence": 0.9704497456550598
   },
   {
    "bbox": [
@@ -139,37 +143,37 @@
     60.0
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.9819367527961731
+   "confidence": 0.9813569188117981
   },
   {
    "bbox": [
     70.0,
     995.0,
-    271.0,
-    62.0
+    272.0,
+    61.0
    ],
    "text": "finance says",
-   "confidence": 0.9927530288696289
+   "confidence": 0.9989959597587585
   },
   {
    "bbox": [
-    329.0,
-    996.0,
-    216.0,
-    57.0
+    331.0,
+    995.0,
+    217.0,
+    58.0
    ],
    "text": "$1,284.50.",
-   "confidence": 0.998454213142395
+   "confidence": 0.9988745450973511
   },
   {
    "bbox": [
-    517.0,
-    1103.0,
-    136.0,
-    45.0
+    518.0,
+    1105.0,
+    135.0,
+    42.0
    ],
    "text": "4:19 PM",
-   "confidence": 0.9362287521362305
+   "confidence": 0.943881630897522
   },
   {
    "bbox": [
@@ -179,27 +183,27 @@
     61.0
    ],
    "text": "Good catch, the second one is right.",
-   "confidence": 0.9862229824066162
+   "confidence": 0.9862092137336731
   },
   {
    "bbox": [
     342.0,
-    1259.0,
+    1258.0,
     446.0,
-    60.0
+    61.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9852659106254578
+   "confidence": 0.9850580096244812
   },
   {
    "bbox": [
-    586.0,
-    1402.0,
-    391.0,
-    51.0
+    585.0,
+    1401.0,
+    395.0,
+    54.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9993810653686523
+   "confidence": 0.9996026158332825
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     54.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9526315927505493
+   "confidence": 0.9497421383857727
   },
   {
    "bbox": [
@@ -219,7 +223,7 @@
     42.0
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.9809777140617371
+   "confidence": 0.9882662296295166
   },
   {
    "bbox": [
@@ -229,17 +233,17 @@
     56.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.9971010684967041
+   "confidence": 0.997098982334137
   },
   {
    "bbox": [
-    75.0,
+    74.0,
     1722.0,
-    218.0,
+    222.0,
     49.0
    ],
    "text": "confirmed.",
-   "confidence": 0.997844398021698
+   "confidence": 0.9970844388008118
   },
   {
    "bbox": [
@@ -249,7 +253,7 @@
     55.0
    ],
    "text": "Sounds good",
-   "confidence": 0.956720769405365
+   "confidence": 0.9597434401512146
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:30:51.114663+00:00"
+ "completed_at": "2026-09-25T08:34:55.422453+00:00"
 }

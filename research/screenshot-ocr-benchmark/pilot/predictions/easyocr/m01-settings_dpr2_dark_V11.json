@@ -15,24 +15,28 @@
  "image_id": "m01-settings_dpr2_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 4.316775551000319,
+ "total_s": 4.183165827999801,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.346737999992911,
+ "orchestrator_wall_s": 4.213718999992125,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7718a4cc34f9190f58c4df49698dfe3be36a728442a1eed7cd321f3b5f4fcf60",
+ "input_pixel_sha256": "e222080a5a22f1127f4e4d155b9c41e7c8e73a5b865e92d88349dfb2881a8cb6",
+ "peak_rss_mb": 1783.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
-    44.0,
+    46.0,
     32.0,
-    72.0,
+    70.0,
     32.0
    ],
    "text": "9:41",
-   "confidence": 0.9688320159912109
+   "confidence": 0.7724472697743816
   },
   {
    "bbox": [
@@ -41,8 +45,8 @@
     72.0,
     32.0
    ],
-   "text": "87%/",
-   "confidence": 0.5737696290016174
+   "text": "87%",
+   "confidence": 0.993184713318761
   },
   {
    "bbox": [
@@ -52,7 +56,7 @@
     84.0
    ],
    "text": "Settings",
-   "confidence": 0.9999678417404047
+   "confidence": 0.9999627840459142
   },
   {
    "bbox": [
@@ -62,7 +66,7 @@
     49.0
    ],
    "text": "Search settings",
-   "confidence": 0.9836435122128564
+   "confidence": 0.9986656104485083
   },
   {
    "bbox": [
@@ -72,17 +76,17 @@
     53.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9999560323268479
+   "confidence": 0.9999543755410328
   },
   {
    "bbox": [
-    186.0,
+    184.0,
     388.0,
-    346.0,
+    350.0,
     32.0
    ],
    "text": "avery collins@example com",
-   "confidence": 0.9212220202963869
+   "confidence": 0.9326703696528471
   },
   {
    "bbox": [
@@ -157,12 +161,12 @@
   {
    "bbox": [
     543.0,
-    817.0,
+    815.0,
     182.0,
-    42.0
+    44.0
    ],
    "text": "English (US)",
-   "confidence": 0.9999881619600546
+   "confidence": 0.9999820364223645
   },
   {
    "bbox": [
@@ -297,5 +301,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:54:57.992948+00:00"
+ "completed_at": "2026-09-25T08:36:40.666268+00:00"
 }

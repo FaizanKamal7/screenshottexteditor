@@ -624,19 +624,19 @@
    "element_idx": 13,
    "ink_box": [
     547,
-    821,
+    822,
     172,
-    32
+    31
    ],
    "ink_pixels": 2022,
    "line_id": "L0014",
    "ink_box_half": [
     274,
-    410,
+    411,
     85,
-    17
+    16
    ],
-   "ink_pixels_half": 502
+   "ink_pixels_half": 499
   },
   {
    "text": "Screen Time",

@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr3_light_V08",
  "status": "ok",
  "error": null,
- "total_s": 1.5963180319999992,
+ "total_s": 0.7651073219994942,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.7124805999919772,
+ "orchestrator_wall_s": 0.8149195000296459,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7c63afe09e4b366bb41a2e28e090fbbb15c7c8b21d9f100bbee73a7eec8e7dbd",
+ "input_pixel_sha256": "882cdef37b608032397a9f745d605b504379613bd4a62570c20a22c9aa608111",
+ "peak_rss_mb": 121.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -46,7 +50,7 @@
     49.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.6633333333333333
+   "confidence": 0.66
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     46.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9333333333333332
+   "confidence": 0.9266666666666667
   },
   {
    "bbox": [
@@ -111,12 +115,12 @@
   {
    "bbox": [
     94.0,
-    1232.0,
+    1234.0,
     983.0,
-    47.0
+    45.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9566666666666667
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -126,7 +130,7 @@
     37.0
    ],
    "text": "Screen Time 3h 12m",
-   "confidence": 0.825
+   "confidence": 0.83
   },
   {
    "bbox": [
@@ -166,7 +170,7 @@
     49.0
    ],
    "text": "About Version 4.18.2",
-   "confidence": 0.9266666666666667
+   "confidence": 0.9233333333333333
   },
   {
    "bbox": [
@@ -186,7 +190,7 @@
     74.0
    ],
    "text": "ft Q |] [J",
-   "confidence": 0.5325
+   "confidence": 0.5375
   },
   {
    "bbox": [
@@ -200,6 +204,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:19:11.846237+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:15:03.811052+00:00"
 }

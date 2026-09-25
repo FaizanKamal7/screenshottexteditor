@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr1_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 0.5782696650003345,
+ "total_s": 0.511332719001075,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.6017889000067953,
+ "orchestrator_wall_s": 0.5449609000352211,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ac59ad8c57c0a00c1c82e0d68af30368ebcbd2f15275d986f163262e04b11967",
+ "input_pixel_sha256": "19fabce7312940d9aaaae1c302169cc82b296484d9bdbd87de00fc79425cd009",
+ "peak_rss_mb": 53.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -126,17 +130,17 @@
     16.0
    ],
    "text": "invoice total? | got $1,248.50 but",
-   "confidence": 0.9416666666666668
+   "confidence": 0.9433333333333332
   },
   {
    "bbox": [
     26.0,
     334.0,
-    153.0,
+    154.0,
     16.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9566666666666667
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -161,12 +165,12 @@
   {
    "bbox": [
     197.0,
-    460.0,
-    131.0,
-    31.0
+    470.0,
+    128.0,
+    14.0
    ],
-   "text": "Q3-invoice-final. pdf",
-   "confidence": 0.31
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.7
   },
   {
    "bbox": [
@@ -175,8 +179,8 @@
     90.0,
     12.0
    ],
-   "text": "24MB 6 pages",
-   "confidence": 0.5
+   "text": "2.4MB 6 pages",
+   "confidence": 0.75
   },
   {
    "bbox": [
@@ -196,17 +200,17 @@
     15.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.8766666666666667
+   "confidence": 0.8733333333333333
   },
   {
    "bbox": [
     26.0,
     576.0,
-    70.0,
+    71.0,
     12.0
    ],
    "text": "confirmed.",
-   "confidence": 0.96
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -216,10 +220,10 @@
     31.0
    ],
    "text": "soundsgood ~~ Onmyway ~~ 10minlate Calls",
-   "confidence": 0.5066666666666666
+   "confidence": 0.495
   }
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:53:48.324279+00:00"
+ "completed_at": "2026-09-25T09:49:02.520064+00:00"
 }

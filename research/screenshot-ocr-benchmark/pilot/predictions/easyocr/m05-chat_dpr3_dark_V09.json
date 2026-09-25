@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr3_dark_V09",
  "status": "ok",
  "error": null,
- "total_s": 9.045578014000057,
+ "total_s": 9.055931509999937,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 9.110598300001584,
+ "orchestrator_wall_s": 9.10937380004907,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "91bb649acf354c5e4823ebd825a72a9096915b4c9739084ebf91e42d49ca8573",
+ "input_pixel_sha256": "9e438b8c7cb5bba79db00c9ea809939278214cf811e9f06f1083f92e4d063fbf",
+ "peak_rss_mb": 3239.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -162,17 +166,17 @@
     61.0
    ],
    "text": "invoice total? | got S1,248.50 but",
-   "confidence": 0.6682138207117652
+   "confidence": 0.4682993861425053
   },
   {
    "bbox": [
-    67.0,
+    68.0,
     997.0,
-    472.0,
+    473.0,
     60.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.945073893747259
+   "confidence": 0.9118764074901168
   },
   {
    "bbox": [
@@ -182,7 +186,7 @@
     36.0
    ],
    "text": "4.19 PM",
-   "confidence": 0.8358417271854446
+   "confidence": 0.8214680740323106
   },
   {
    "bbox": [
@@ -202,17 +206,17 @@
     68.0
    ],
    "text": "Sending the PDF now:",
-   "confidence": 0.8651121757685286
+   "confidence": 0.8303131285979949
   },
   {
    "bbox": [
-    585.0,
-    1403.0,
-    392.0,
-    54.0
+    584.0,
+    1400.0,
+    399.0,
+    60.0
    ],
-   "text": "Q3-invoice-final:pdf",
-   "confidence": 0.5270580925975
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.5071915585359508
   },
   {
    "bbox": [
@@ -222,7 +226,7 @@
     42.0
    ],
    "text": "2.4 MB",
-   "confidence": 0.44091095679011794
+   "confidence": 0.34301719745213377
   },
   {
    "bbox": [
@@ -232,17 +236,17 @@
     45.0
    ],
    "text": "6 pages",
-   "confidence": 0.9999848608525616
+   "confidence": 0.9999857619943614
   },
   {
    "bbox": [
     915.0,
     1567.0,
-    217.0,
+    219.0,
     41.0
    ],
    "text": "Read 4.21 PM",
-   "confidence": 0.9165251900544819
+   "confidence": 0.9084496604438839
   },
   {
    "bbox": [
@@ -252,17 +256,17 @@
     65.0
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.6957586023849325
+   "confidence": 0.6866560334515354
   },
   {
    "bbox": [
     72.0,
-    1724.0,
-    218.0,
-    48.0
+    1722.0,
+    224.0,
+    50.0
    ],
    "text": "confirmed:",
-   "confidence": 0.8020565343173324
+   "confidence": 0.7331169704574845
   },
   {
    "bbox": [
@@ -272,7 +276,7 @@
     48.0
    ],
    "text": "Sounds",
-   "confidence": 0.9999853512122976
+   "confidence": 0.9999843292020535
   },
   {
    "bbox": [
@@ -282,7 +286,7 @@
     52.0
    ],
    "text": "On my way",
-   "confidence": 0.8737361175816858
+   "confidence": 0.9030814999293821
   },
   {
    "bbox": [
@@ -292,7 +296,7 @@
     44.0
    ],
    "text": "10 min late",
-   "confidence": 0.7543397175640945
+   "confidence": 0.7283345017024961
   },
   {
    "bbox": [
@@ -302,7 +306,7 @@
     44.0
    ],
    "text": "Call r",
-   "confidence": 0.748297831295179
+   "confidence": 0.744638901582359
   },
   {
    "bbox": [
@@ -312,7 +316,7 @@
     61.0
    ],
    "text": "Message",
-   "confidence": 0.9999993692036675
+   "confidence": 0.9999994593174372
   },
   {
    "bbox": [
@@ -322,7 +326,7 @@
     48.0
    ],
    "text": "Send",
-   "confidence": 0.9999777674674988
+   "confidence": 0.9999755620956421
   },
   {
    "bbox": [
@@ -342,10 +346,10 @@
     56.65009146788907
    ],
    "text": "good",
-   "confidence": 0.9999799132347107
+   "confidence": 0.9999765753746033
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:03:35.442600+00:00"
+ "completed_at": "2026-09-25T08:44:54.178349+00:00"
 }

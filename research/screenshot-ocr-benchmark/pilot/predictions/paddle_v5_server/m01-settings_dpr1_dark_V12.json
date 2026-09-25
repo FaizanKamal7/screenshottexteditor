@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr1_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 4.896555309998803,
+ "total_s": 4.907537785999921,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.9104932000045665,
+ "orchestrator_wall_s": 4.920067199971527,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "2997adc72b6b3e84b00141dd3830cc5dbfe66bb580027a87ee0f385e2efd0e96",
- "peak_rss_mb": 1907.5,
+ "input_pixel_sha256": "a6c5c0da23ba2d9eea64828659fa97c4fb897c5e7eb5e3b1e359b19cb3e3973a",
+ "peak_rss_mb": 1321.2,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     8.0
    ],
    "text": "9:41",
-   "confidence": 0.9336878061294556
+   "confidence": 0.9186316728591919
   },
   {
    "bbox": [
@@ -47,13 +47,13 @@
   },
   {
    "bbox": [
-    6.0,
-    24.0,
-    71.0,
-    22.0
+    5.0,
+    23.0,
+    72.0,
+    24.0
    ],
    "text": "Settings",
-   "confidence": 0.9994739294052124
+   "confidence": 0.9992052316665649
   },
   {
    "bbox": [
@@ -122,8 +122,8 @@
     70.0,
     11.0
    ],
-   "text": "Privacy & Security",
-   "confidence": 0.8979277014732361
+   "text": "Privacy &Security",
+   "confidence": 0.9174922108650208
   },
   {
    "bbox": [
@@ -159,11 +159,11 @@
    "bbox": [
     134.0,
     203.0,
-    48.0,
+    47.0,
     11.0
    ],
    "text": "English (US)",
-   "confidence": 0.9622811675071716
+   "confidence": 0.9838876724243164
   },
   {
    "bbox": [
@@ -243,7 +243,7 @@
     12.0
    ],
    "text": "Delete Account",
-   "confidence": 0.9424371719360352
+   "confidence": 0.965340793132782
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:10:05.902138+00:00"
+ "completed_at": "2026-09-25T08:48:42.284194+00:00"
 }

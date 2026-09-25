@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr2_light_V08",
  "status": "ok",
  "error": null,
- "total_s": 0.8593634090002524,
+ "total_s": 0.8185624960005953,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8999836000148207,
+ "orchestrator_wall_s": 0.8578590999823064,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "15acbda6be235ead898d49cb3909f178674166483d161fd96bb7a15741c95958",
+ "input_pixel_sha256": "f357f9d9c3f30a131ee6d4729438fd14dd2f20d5b5422de47b986f373e47f569",
+ "peak_rss_mb": 77.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -120,9 +124,9 @@
   },
   {
    "bbox": [
-    53.0,
+    54.0,
     591.0,
-    398.0,
+    397.0,
     29.0
    ],
    "text": "Great. Can you also check the",
@@ -136,13 +140,13 @@
     31.0
    ],
    "text": "invoice total? | got $1,248.50 but",
-   "confidence": 0.9533333333333333
+   "confidence": 0.9516666666666667
   },
   {
    "bbox": [
-    52.0,
+    53.0,
     669.0,
-    306.0,
+    307.0,
     31.0
    ],
    "text": "finance says $1,284.50.",
@@ -156,7 +160,7 @@
     16.0
    ],
    "text": "4:19 PM",
-   "confidence": 0.875
+   "confidence": 0.865
   },
   {
    "bbox": [
@@ -176,13 +180,13 @@
     29.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.96
+   "confidence": 0.9575
   },
   {
    "bbox": [
     395.0,
     941.0,
-    253.0,
+    255.0,
     27.0
    ],
    "text": "Q3-invoice-final.pdf",
@@ -196,7 +200,7 @@
     23.0
    ],
    "text": "2.4 MB - 6 pages",
-   "confidence": 0.898
+   "confidence": 0.904
   },
   {
    "bbox": [
@@ -206,7 +210,7 @@
     17.0
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.9566666666666667
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -222,7 +226,7 @@
    "bbox": [
     53.0,
     1153.0,
-    139.0,
+    141.0,
     23.0
    ],
    "text": "confirmed.",
@@ -236,7 +240,7 @@
     27.0
    ],
    "text": "Sounds good On my way 10 min late Call r",
-   "confidence": 0.7929999999999999
+   "confidence": 0.795
   },
   {
    "bbox": [
@@ -251,5 +255,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:40.688023+00:00"
+ "completed_at": "2026-09-25T08:15:37.820120+00:00"
 }

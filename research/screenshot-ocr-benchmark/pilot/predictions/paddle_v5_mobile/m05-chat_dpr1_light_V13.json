@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 3.422243648999938,
+ "total_s": 3.0944009149998237,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.433140100009041,
+ "orchestrator_wall_s": 3.105137500038836,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "input_pixel_sha256": "88e1267a98be20a3ca854e2d7d934b866158b746a61e2f7efc64fc51dc8bdc88",
+ "peak_rss_mb": 1080.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -113,13 +117,13 @@
   },
   {
    "bbox": [
-    85.0,
+    87.0,
     124.0,
-    25.0,
+    23.0,
     7.0
    ],
-   "text": "cntlst",
-   "confidence": 0.6647118926048279
+   "text": "ntst",
+   "confidence": 0.7995402812957764
   },
   {
    "bbox": [
@@ -138,18 +142,18 @@
     114.0,
     13.0
    ],
-   "text": "invice total?1got$1,248.50 but",
-   "confidence": 0.8117428421974182
+   "text": "imvoice total?1gotS1,248.50 but",
+   "confidence": 0.7993865013122559
   },
   {
    "bbox": [
-    9.0,
+    10.0,
     163.0,
-    83.0,
+    82.0,
     14.0
    ],
-   "text": "fnance says $1,284.50.",
-   "confidence": 0.8283067345619202
+   "text": "finance says $1.284.50.",
+   "confidence": 0.8357217311859131
   },
   {
    "bbox": [
@@ -183,13 +187,13 @@
   },
   {
    "bbox": [
-    98.0,
+    96.0,
     233.0,
-    17.0,
+    19.0,
     8.0
    ],
-   "text": "03-ie",
-   "confidence": 0.6682178974151611
+   "text": "03-e",
+   "confidence": 0.789872407913208
   },
   {
    "bbox": [
@@ -199,17 +203,17 @@
     11.0
    ],
    "text": "4M8·6 pages",
-   "confidence": 0.8057062029838562
+   "confidence": 0.8011943697929382
   },
   {
    "bbox": [
-    118.0,
-    230.0,
+    119.0,
+    232.0,
     46.0,
-    14.0
+    10.0
    ],
-   "text": "roice-final.pdt",
-   "confidence": 0.8993832468986511
+   "text": "oice-final.pdt",
+   "confidence": 0.8457774519920349
   },
   {
    "bbox": [
@@ -229,17 +233,17 @@
     13.0
    ],
    "text": "Thanks, got it. Order #A-20931is",
-   "confidence": 0.9184026718139648
+   "confidence": 0.9191060662269592
   },
   {
    "bbox": [
     10.0,
     285.0,
-    39.0,
+    41.0,
     11.0
    ],
-   "text": "confrmed.",
-   "confidence": 0.9552556276321411
+   "text": "confimed.",
+   "confidence": 0.8910233378410339
   },
   {
    "bbox": [
@@ -256,10 +260,10 @@
     123.0,
     375.0,
     39.0,
-    10.0
+    11.0
    ],
-   "text": "10min late",
-   "confidence": 0.9534263610839844
+   "text": "10min lase",
+   "confidence": 0.8881226778030396
   },
   {
    "bbox": [
@@ -284,5 +288,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:25:26.396182+00:00"
+ "completed_at": "2026-09-25T08:29:24.786796+00:00"
 }

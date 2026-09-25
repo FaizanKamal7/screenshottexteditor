@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr3_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 2.01744438500009,
+ "total_s": 2.017758915999366,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.057046799978707,
+ "orchestrator_wall_s": 2.0580360000021756,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ac1a0c652a575b1a5635ed3959b6e011ba16f3f18e6fb51a78de96a9e0a27fe2",
+ "input_pixel_sha256": "663cf4ec1ad54c4f1f5436e0ad05747498363f505c3b39c94bc46fa97c7c1ccd",
+ "peak_rss_mb": 1459.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -139,17 +143,17 @@
     56.87109375
    ],
    "text": "invoice total? I I got $1,248.50 but",
-   "confidence": 0.5649489760398865
+   "confidence": 0.5795540809631348
   },
   {
    "bbox": [
-    75.63281250000001,
+    78.10546875,
     1003.8984375,
     464.859375,
-    54.3984375
+    51.92578125
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.8137387037277222
+   "confidence": 0.9859987497329712
   },
   {
    "bbox": [
@@ -159,13 +163,13 @@
     37.08984375
    ],
    "text": "4:19 PM",
-   "confidence": 0.9981599450111389
+   "confidence": 0.9981604218482971
   },
   {
    "bbox": [
-    345.15234375,
+    347.625,
     1204.18359375,
-    726.9609375000001,
+    724.4882812499999,
     54.3984375
    ],
    "text": "Good catch, the second one is right.",
@@ -185,11 +189,11 @@
    "bbox": [
     592.41796875,
     1409.4140625,
-    380.7890625,
+    385.734375,
     44.5078125
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.5971825122833252
+   "confidence": 0.6971583664417267
   },
   {
    "bbox": [
@@ -199,7 +203,7 @@
     49.453125
    ],
    "text": "2.4 MB  6 pages",
-   "confidence": 0.6701729893684387
+   "confidence": 0.7089386582374573
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     37.08984375
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.9868594408035278
+   "confidence": 0.9866933226585388
   },
   {
    "bbox": [
@@ -225,11 +229,11 @@
    "bbox": [
     78.10546875,
     1725.9140625,
-    215.12109375,
+    217.59375,
     44.5078125
    ],
    "text": "confirmed.",
-   "confidence": 0.9165077209472656
+   "confidence": 0.905849277973175
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:51:05.727918+00:00"
+ "completed_at": "2026-09-25T08:20:58.036406+00:00"
 }

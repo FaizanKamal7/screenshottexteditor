@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V06",
  "status": "ok",
  "error": null,
- "total_s": 1.932662369999889,
+ "total_s": 1.7407532460001676,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.9494609999819659,
+ "orchestrator_wall_s": 1.7560072999913245,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "247f6d66d4705091841ecf76f938c414c532f2f5f71dfa1719ef739a72e291b0",
+ "input_pixel_sha256": "13f34f4cbe4182162171e3e185964d6ea24646f5be327ee733f77f074bb42eac",
+ "peak_rss_mb": 1246.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -156,23 +160,23 @@
   },
   {
    "bbox": [
-    24.0,
+    22.0,
     310.0,
-    222.0,
+    224.0,
     24.0
    ],
    "text": "invoice total? I got S1,248.50 but",
-   "confidence": 0.5817842297405023
+   "confidence": 0.5281211311106918
   },
   {
    "bbox": [
     24.0,
     330.0,
-    158.0,
+    160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9230987330851123
+   "confidence": 0.8435553875235539
   },
   {
    "bbox": [
@@ -206,13 +210,13 @@
   },
   {
    "bbox": [
-    197.0,
-    469.0,
-    106.0,
-    16.0
+    196.0,
+    464.0,
+    134.0,
+    24.0
    ],
-   "text": "03-invoice-final:",
-   "confidence": 0.7256922470155375
+   "text": "03-invoice-final pdf",
+   "confidence": 0.8433851251670224
   },
   {
    "bbox": [
@@ -232,7 +236,7 @@
     16.0
    ],
    "text": "6 pages",
-   "confidence": 0.9922947742730666
+   "confidence": 0.9903070777506059
   },
   {
    "bbox": [
@@ -261,8 +265,8 @@
     74.0,
     18.0
    ],
-   "text": "confirmed:",
-   "confidence": 0.8616239953022555
+   "text": "confirmed",
+   "confidence": 0.9999673363879338
   },
   {
    "bbox": [
@@ -323,19 +327,9 @@
    ],
    "text": "Send",
    "confidence": 0.999946653842926
-  },
-  {
-   "bbox": [
-    296.8905996075495,
-    462.7030670888004,
-    33.218800784900964,
-    25.593865822399152
-   ],
-   "text": "pdf",
-   "confidence": 0.9999219522735844
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:33.655508+00:00"
+ "completed_at": "2026-09-25T08:41:09.950654+00:00"
 }

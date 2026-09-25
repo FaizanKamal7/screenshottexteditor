@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_light_V10",
  "status": "ok",
  "error": null,
- "total_s": 0.7856055930001276,
+ "total_s": 0.4049775559997215,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8094434000086039,
+ "orchestrator_wall_s": 0.4229083000100218,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "98f3222d61c9ec84929870290840045054260539e040e49e6eaf79f2c972ab13",
+ "input_pixel_sha256": "fba3e8bbf9e298de03dd8b2cb78d387f45988b6a56a5dccbb978f965540e5888",
+ "peak_rss_mb": 47.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.94
+   "confidence": 0.935
   },
   {
    "bbox": [
@@ -46,7 +50,7 @@
     16.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.9066666666666667
+   "confidence": 0.8933333333333333
   },
   {
    "bbox": [
@@ -66,7 +70,7 @@
     12.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.51
+   "confidence": 0.52
   },
   {
    "bbox": [
@@ -86,7 +90,7 @@
     24.0
    ],
    "text": "Notifications On",
-   "confidence": 0.85
+   "confidence": 0.845
   },
   {
    "bbox": [
@@ -106,17 +110,17 @@
     16.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.96
+   "confidence": 0.9333333333333332
   },
   {
    "bbox": [
     31.0,
-    402.0,
+    411.0,
     328.0,
-    31.0
+    16.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9566666666666667
+   "confidence": 0.91
   },
   {
    "bbox": [
@@ -125,8 +129,8 @@
     328.0,
     12.0
    ],
-   "text": "Screen Time 3h12m",
-   "confidence": 0.8466666666666667
+   "text": "Screen Time 3h 12m",
+   "confidence": 0.555
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     9.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.96
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -180,6 +184,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:51.848379+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:26.729328+00:00"
 }

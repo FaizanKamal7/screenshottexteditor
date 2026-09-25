@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr2_light_V11",
  "status": "ok",
  "error": null,
- "total_s": 4.18548999199993,
+ "total_s": 4.231138426000143,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.2141337000066414,
+ "orchestrator_wall_s": 4.262992500036489,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "b50ef495bcc79b9112fbe897a93b6751607a38d28ca4c73bae8348410c50b47e",
+ "input_pixel_sha256": "e273810cbdb56619ba689f689e8e2fcb440b598e0861984368c507aa14a9bc8b",
+ "peak_rss_mb": 1763.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -32,7 +36,7 @@
     32.0
    ],
    "text": "9:41",
-   "confidence": 0.9361499547958374
+   "confidence": 0.8531824946403503
   },
   {
    "bbox": [
@@ -42,7 +46,7 @@
     32.0
    ],
    "text": "87%",
-   "confidence": 0.9605773091316223
+   "confidence": 0.9159872531890869
   },
   {
    "bbox": [
@@ -52,7 +56,7 @@
     87.0
    ],
    "text": "Settings",
-   "confidence": 0.9999783364226675
+   "confidence": 0.9999809495493097
   },
   {
    "bbox": [
@@ -62,7 +66,7 @@
     30.0
    ],
    "text": "0",
-   "confidence": 0.7372319383798784
+   "confidence": 0.32922259149405303
   },
   {
    "bbox": [
@@ -72,7 +76,7 @@
     49.0
    ],
    "text": "Search settings",
-   "confidence": 0.9975782813520875
+   "confidence": 0.9986341805078458
   },
   {
    "bbox": [
@@ -82,17 +86,17 @@
     53.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9999569516101455
+   "confidence": 0.9999614152220039
   },
   {
    "bbox": [
     185.0,
     384.0,
     348.0,
-    37.0
+    38.0
    ],
    "text": "avery collins@example.com",
-   "confidence": 0.9321827598124177
+   "confidence": 0.7381638332360355
   },
   {
    "bbox": [
@@ -182,7 +186,7 @@
     42.0
    ],
    "text": "English (US)",
-   "confidence": 0.9999451477594872
+   "confidence": 0.999968160205132
   },
   {
    "bbox": [
@@ -196,13 +200,13 @@
   },
   {
    "bbox": [
-    620.0,
+    618.0,
     908.0,
-    104.0,
+    106.0,
     32.0
    ],
    "text": "3h 12m",
-   "confidence": 0.9509024102251894
+   "confidence": 0.9094956137724589
   },
   {
    "bbox": [
@@ -327,5 +331,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:55:48.462584+00:00"
+ "completed_at": "2026-09-25T08:37:32.913708+00:00"
 }

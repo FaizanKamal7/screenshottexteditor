@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr2_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 0.06812250000075437,
+ "total_s": 0.05078059999505058,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.14538870000978932,
+ "orchestrator_wall_s": 0.11382250004680827,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7718a4cc34f9190f58c4df49698dfe3be36a728442a1eed7cd321f3b5f4fcf60",
+ "input_pixel_sha256": "e222080a5a22f1127f4e4d155b9c41e7c8e73a5b865e92d88349dfb2881a8cb6",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -202,9 +206,9 @@
   {
    "bbox": [
     548.0,
-    821.0,
+    822.0,
     170.0,
-    32.0
+    31.0
    ],
    "text": "English (US)",
    "confidence": null
@@ -281,6 +285,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:10:08.051806+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:16:12.982185+00:00"
 }

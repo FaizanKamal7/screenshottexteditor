@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr3_light_V03",
  "status": "ok",
  "error": null,
- "total_s": 1.5534038739997413,
+ "total_s": 0.7513496430001396,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.6043445999966934,
+ "orchestrator_wall_s": 0.789748499984853,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7e8e441197ce837acd64da9d49ab4f641a170eeb12fbd307cfa21ffcb4b1de98",
+ "input_pixel_sha256": "a03e14e32495d6d440bd3e8821b31250846a31d127fe09781e39cfd674bce86c",
+ "peak_rss_mb": 103.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -111,12 +115,12 @@
   {
    "bbox": [
     94.0,
-    1232.0,
+    1234.0,
     983.0,
-    47.0
+    45.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9566666666666667
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -126,7 +130,7 @@
     37.0
    ],
    "text": "Screen Time 3h 12m",
-   "confidence": 0.825
+   "confidence": 0.83
   },
   {
    "bbox": [
@@ -200,6 +204,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:19:02.681582+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:59.823937+00:00"
 }

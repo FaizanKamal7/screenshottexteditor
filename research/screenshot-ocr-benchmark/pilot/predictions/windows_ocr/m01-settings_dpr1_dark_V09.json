@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr1_dark_V09",
  "status": "ok",
  "error": null,
- "total_s": 0.040168700012145564,
+ "total_s": 0.02291269996203482,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.05797550000716001,
+ "orchestrator_wall_s": 0.03402650001225993,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "8c5876c25ee7f3f1b670539327854b09ffb82ae72a5ab2aa0a48d4e479115a99",
+ "input_pixel_sha256": "b39c53a248b9c75a8e0d1e1ab63e389c2a741cef38dc713b8b5e91bd84a031c8",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -163,10 +167,10 @@
    "bbox": [
     32.0,
     668.0,
-    113.0,
+    45.0,
     12.0
    ],
-   "text": "Dei?le Account",
+   "text": "Deiæle",
    "confidence": null
   },
   {
@@ -202,9 +206,9 @@
   {
    "bbox": [
     274.0,
-    410.0,
+    411.0,
     85.0,
-    17.0
+    16.0
    ],
    "text": "English (US)",
    "confidence": null
@@ -241,6 +245,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:10:05.806629+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:16:11.548301+00:00"
 }

@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr2_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 1.59048253400033,
+ "total_s": 0.7492124350001177,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.6329491999931633,
+ "orchestrator_wall_s": 0.7760836000088602,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "8cba582aa7d5a0d2211b0c89aaad08433a55592a1cf44f197161635dd71c595c",
+ "input_pixel_sha256": "1e6a4ae8abde4e0f2e2c5383ce8d164eafe7e71969da1c59e15d0052fbdb9700",
+ "peak_rss_mb": 74.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     23.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.945
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -66,7 +70,7 @@
     24.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.91
+   "confidence": 0.92
   },
   {
    "bbox": [
@@ -176,7 +180,7 @@
     21.0
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.9390000000000001
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -196,10 +200,10 @@
     19.0
    ],
    "text": "Home Search Inbox Settings",
-   "confidence": 0.9375
+   "confidence": 0.935
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:06.930124+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:34.262619+00:00"
 }

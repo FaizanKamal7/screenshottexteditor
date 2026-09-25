@@ -18,3 +18,18 @@
 {"cmd": "timing", "engines": ["paddle_v5_server"], "started": "2026-09-24T15:34:27.625391+00:00", "finished": "2026-09-24T16:51:31.636094+00:00", "elapsed_s": 4624.009}
 {"cmd": "lock", "engines": ["tesseract5", "paddle_v5_mobile", "paddle_v5_server", "easyocr", "doctr", "windows_ocr"], "started": "2026-09-24T16:51:32.295300+00:00", "finished": "2026-09-24T16:51:32.300313+00:00", "elapsed_s": 0.005}
 {"cmd": "environment", "engines": ["tesseract5", "paddle_v5_mobile", "paddle_v5_server", "easyocr", "doctr", "windows_ocr"], "started": "2026-09-24T16:51:32.415870+00:00", "finished": "2026-09-24T16:51:45.437377+00:00", "elapsed_s": 13.021}
+{"cmd": "accuracy", "engines": ["tesseract5"], "started": "2026-09-25T08:14:15.361416+00:00", "finished": "2026-09-25T08:16:08.396453+00:00", "elapsed_s": 113.034}
+{"cmd": "accuracy", "engines": ["windows_ocr"], "started": "2026-09-25T08:16:08.532630+00:00", "finished": "2026-09-25T08:16:25.043981+00:00", "elapsed_s": 16.511}
+{"cmd": "accuracy", "engines": ["doctr"], "started": "2026-09-25T08:16:25.147250+00:00", "finished": "2026-09-25T08:21:02.201700+00:00", "elapsed_s": 277.053}
+{"cmd": "accuracy", "engines": ["paddle_v5_mobile"], "started": "2026-09-25T08:21:02.331143+00:00", "finished": "2026-09-25T08:35:05.329042+00:00", "elapsed_s": 842.997}
+{"cmd": "accuracy", "engines": ["easyocr"], "started": "2026-09-25T08:35:05.454923+00:00", "finished": "2026-09-25T08:47:03.585915+00:00", "elapsed_s": 718.131}
+{"cmd": "accuracy", "engines": ["paddle_v5_server"], "started": "2026-09-25T08:47:03.728703+00:00", "finished": "2026-09-25T09:48:51.173158+00:00", "elapsed_s": 3707.443}
+{"cmd": "serial-check", "engines": ["tesseract5", "paddle_v5_mobile", "paddle_v5_server", "easyocr", "doctr", "windows_ocr"], "started": "2026-09-25T09:48:51.391507+00:00", "finished": "2026-09-25T09:48:52.157190+00:00", "elapsed_s": 0.766}
+{"cmd": "rerun", "engines": ["tesseract5"], "started": "2026-09-25T09:48:52.255055+00:00", "finished": "2026-09-25T09:49:09.865231+00:00", "elapsed_s": 17.61}
+{"cmd": "rerun", "engines": ["windows_ocr"], "started": "2026-09-25T09:49:09.996605+00:00", "finished": "2026-09-25T09:49:14.040437+00:00", "elapsed_s": 4.044}
+{"cmd": "rerun", "engines": ["doctr"], "started": "2026-09-25T09:49:14.143664+00:00", "finished": "2026-09-25T09:49:56.622545+00:00", "elapsed_s": 42.479}
+{"cmd": "rerun", "engines": ["paddle_v5_mobile"], "started": "2026-09-25T09:49:56.761859+00:00", "finished": "2026-09-25T09:51:43.129088+00:00", "elapsed_s": 106.367}
+{"cmd": "rerun", "engines": ["easyocr"], "started": "2026-09-25T09:51:43.250357+00:00", "finished": "2026-09-25T09:53:18.289225+00:00", "elapsed_s": 95.039}
+{"cmd": "rerun", "engines": ["paddle_v5_server"], "started": "2026-09-25T09:53:18.429663+00:00", "finished": "2026-09-25T10:01:00.325059+00:00", "elapsed_s": 461.895}
+{"cmd": "lock", "engines": ["tesseract5", "paddle_v5_mobile", "paddle_v5_server", "easyocr", "doctr", "windows_ocr"], "started": "2026-09-25T10:01:00.463541+00:00", "finished": "2026-09-25T10:01:00.466444+00:00", "elapsed_s": 0.003}
+{"cmd": "environment", "engines": ["tesseract5", "paddle_v5_mobile", "paddle_v5_server", "easyocr", "doctr", "windows_ocr"], "started": "2026-09-25T10:01:00.596627+00:00", "finished": "2026-09-25T10:01:12.377583+00:00", "elapsed_s": 11.781}

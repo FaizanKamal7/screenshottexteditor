@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr1_dark_V02",
  "status": "ok",
  "error": null,
- "total_s": 7.994850566999958,
+ "total_s": 7.571380244999091,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.014232599991374,
+ "orchestrator_wall_s": 7.587417299975641,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "363c56d61734651aa4040a14108f628f0d31ecdb102f6a8531f2cd66022e25a2",
- "peak_rss_mb": 3096.5,
+ "input_pixel_sha256": "c467698aa0b47c5dce2d69191193d5752c94ba119350091c50cf85974b4b7384",
+ "peak_rss_mb": 2694.3,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -148,12 +148,12 @@
   {
    "bbox": [
     23.0,
-    292.0,
-    203.0,
+    293.0,
+    205.0,
     17.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9744955897331238
+   "confidence": 0.9461107850074768
   },
   {
    "bbox": [
@@ -163,17 +163,17 @@
     18.0
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.947839617729187
+   "confidence": 0.9470707178115845
   },
   {
    "bbox": [
-    20.0,
-    330.0,
-    161.0,
-    21.0
+    22.0,
+    331.0,
+    159.0,
+    19.0
    ],
-   "text": "finance says $1,284.50.",
-   "confidence": 0.975117564201355
+   "text": "finance says $1,24.50.",
+   "confidence": 0.9305137395858765
   },
   {
    "bbox": [
@@ -213,7 +213,7 @@
     17.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9766088724136353
+   "confidence": 0.9934681057929993
   },
   {
    "bbox": [
@@ -223,7 +223,7 @@
     20.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9050444960594177
+   "confidence": 0.901897132396698
   },
   {
    "bbox": [
@@ -249,11 +249,11 @@
    "bbox": [
     22.0,
     573.0,
-    74.0,
+    76.0,
     17.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9591711163520813
+   "confidence": 0.9908472895622253
   },
   {
    "bbox": [
@@ -318,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:42:18.957458+00:00"
+ "completed_at": "2026-09-25T09:18:37.373730+00:00"
 }

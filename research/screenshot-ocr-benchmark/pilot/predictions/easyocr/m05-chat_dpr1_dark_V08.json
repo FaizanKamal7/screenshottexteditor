@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 1.881617057000767,
+ "total_s": 1.6882751150005788,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.9053369000030216,
+ "orchestrator_wall_s": 1.7032878999598324,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7e729466d2dc0df75120550e832462dc6aabb4a410c1a0e8c7ddab3d89f412f8",
+ "input_pixel_sha256": "a7ec22f43d9067b1a656d216249848da639297a1201c90862a42e5f8e231a0bc",
+ "peak_rss_mb": 1246.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -52,7 +56,7 @@
     24.0
    ],
    "text": "Jordan Lee",
-   "confidence": 0.9920073977526931
+   "confidence": 0.984937660902451
   },
   {
    "bbox": [
@@ -62,17 +66,17 @@
     16.0
    ],
    "text": "Active",
-   "confidence": 0.9953518671845857
+   "confidence": 0.9982571369776315
   },
   {
    "bbox": [
-    169.0,
-    75.0,
-    26.0,
-    14.0
+    145.0,
+    73.0,
+    50.0,
+    16.0
    ],
-   "text": "ago",
-   "confidence": 0.9963893244104157
+   "text": "min ago",
+   "confidence": 0.8453591261986341
   },
   {
    "bbox": [
@@ -81,8 +85,8 @@
     64.0,
     14.0
    ],
-   "text": "Tue; Sep 22",
-   "confidence": 0.407057607194848
+   "text": "Tue, Sep 22",
+   "confidence": 0.407483597777598
   },
   {
    "bbox": [
@@ -91,18 +95,18 @@
     46.0,
     14.0
    ],
-   "text": "412 PM",
-   "confidence": 0.9710340405275185
+   "text": "4.12 PM",
+   "confidence": 0.661154849340097
   },
   {
    "bbox": [
     20.0,
-    139.0,
-    237.0,
-    26.0
+    140.0,
+    236.0,
+    25.0
    ],
    "text": "Hey! Are we still on for the design",
-   "confidence": 0.7593523721163473
+   "confidence": 0.9366557173442684
   },
   {
    "bbox": [
@@ -112,27 +116,27 @@
     14.0
    ],
    "text": "review tomorrow",
-   "confidence": 0.7851469144485672
+   "confidence": 0.8203482483840073
   },
   {
    "bbox": [
     141.0,
     165.0,
-    68.0,
+    66.0,
     20.0
    ],
    "text": "morning?",
-   "confidence": 0.9998086878741494
+   "confidence": 0.9998311116704598
   },
   {
    "bbox": [
-    115.0,
-    207.0,
-    234.0,
-    20.0
+    114.0,
+    206.0,
+    236.0,
+    24.0
    ],
    "text": "Yes; 10.30 in room 4B. IIl bring the",
-   "confidence": 0.6468319918277952
+   "confidence": 0.6099663617350084
   },
   {
    "bbox": [
@@ -142,7 +146,7 @@
     20.0
    ],
    "text": "updated mockups and the",
-   "confidence": 0.9714674155894794
+   "confidence": 0.967780543812464
   },
   {
    "bbox": [
@@ -152,7 +156,7 @@
     18.0
    ],
    "text": "component list:",
-   "confidence": 0.9810974111790942
+   "confidence": 0.9757562117036167
   },
   {
    "bbox": [
@@ -162,7 +166,7 @@
     24.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.6163432697233682
+   "confidence": 0.6694489774186584
   },
   {
    "bbox": [
@@ -172,17 +176,17 @@
     24.0
    ],
    "text": "invoice total? I got S1,248.50 but",
-   "confidence": 0.542754472894708
+   "confidence": 0.4932021917516923
   },
   {
    "bbox": [
     24.0,
     330.0,
-    158.0,
+    160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.797737044839908
+   "confidence": 0.9079233404134321
   },
   {
    "bbox": [
@@ -192,7 +196,7 @@
     14.0
    ],
    "text": "419 PM",
-   "confidence": 0.9706869356096732
+   "confidence": 0.9711969277166537
   },
   {
    "bbox": [
@@ -202,17 +206,17 @@
     24.0
    ],
    "text": "Good catch; the second one is right:",
-   "confidence": 0.6650967733030156
+   "confidence": 0.6677040247217079
   },
   {
    "bbox": [
-    113.0,
-    418.0,
-    151.0,
-    24.0
+    111.0,
+    416.0,
+    153.0,
+    26.0
    ],
    "text": "Sending the PDF now:",
-   "confidence": 0.9577808674794516
+   "confidence": 0.9354542128768333
   },
   {
    "bbox": [
@@ -221,28 +225,28 @@
     134.0,
     24.0
    ],
-   "text": "03-invoice-final-pdf",
-   "confidence": 0.7293781750230715
+   "text": "03-invoice-final pdf",
+   "confidence": 0.7274601097348264
   },
   {
    "bbox": [
     195.0,
-    485.0,
+    487.0,
     44.0,
-    16.0
+    14.0
    ],
    "text": "24MB",
-   "confidence": 0.9992918372154236
+   "confidence": 0.7811334729194641
   },
   {
    "bbox": [
-    243.0,
+    253.0,
     487.0,
-    50.0,
+    40.0,
     16.0
    ],
-   "text": "6 pages",
-   "confidence": 0.6586158972557073
+   "text": "pages",
+   "confidence": 0.7539682537566945
   },
   {
    "bbox": [
@@ -251,28 +255,28 @@
     74.0,
     14.0
    ],
-   "text": "Read 4. 21 PM",
-   "confidence": 0.4416796520495135
+   "text": "Read 4.21 PM",
+   "confidence": 0.7737117938826359
   },
   {
    "bbox": [
-    21.0,
-    549.0,
-    227.0,
-    27.0
+    24.0,
+    552.0,
+    224.0,
+    24.0
    ],
-   "text": "Thanks, got it: Order #A-20931 is",
-   "confidence": 0.6866470562336482
+   "text": "Thanks, got it. Order #A-20931 is",
+   "confidence": 0.7981847538723414
   },
   {
    "bbox": [
     25.0,
     575.0,
-    70.0,
-    16.0
+    74.0,
+    18.0
    ],
    "text": "confirmed",
-   "confidence": 0.9998910794798067
+   "confidence": 0.9999143264222261
   },
   {
    "bbox": [
@@ -292,7 +296,7 @@
     16.0
    ],
    "text": "On my way",
-   "confidence": 0.8419090800226935
+   "confidence": 0.8467458589620876
   },
   {
    "bbox": [
@@ -302,7 +306,7 @@
     16.0
    ],
    "text": "10 min late",
-   "confidence": 0.7349701577450585
+   "confidence": 0.743000858665674
   },
   {
    "bbox": [
@@ -312,7 +316,7 @@
     16.0
    ],
    "text": "Call",
-   "confidence": 0.7945697135972154
+   "confidence": 0.8450620015726633
   },
   {
    "bbox": [
@@ -322,7 +326,7 @@
     19.0
    ],
    "text": "Message",
-   "confidence": 0.9999977471553655
+   "confidence": 0.9999989636916716
   },
   {
    "bbox": [
@@ -332,10 +336,10 @@
     16.0
    ],
    "text": "Send",
-   "confidence": 0.9999613165855408
+   "confidence": 0.9999618530273438
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:37.632737+00:00"
+ "completed_at": "2026-09-25T08:41:13.514099+00:00"
 }

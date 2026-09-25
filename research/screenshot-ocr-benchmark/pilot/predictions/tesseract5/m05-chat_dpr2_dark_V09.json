@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr2_dark_V09",
  "status": "ok",
  "error": null,
- "total_s": 0.8138162949999241,
+ "total_s": 0.8257239849999678,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8416272999893408,
+ "orchestrator_wall_s": 0.8546132000046782,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "4e2189589e7034fcbe764dd9398f53cfe6d6c89f8af6dc11b27fbfd963acfe56",
+ "input_pixel_sha256": "69c83d9ae54d6788b428f71d0990dd9d0a83c926ca87d615e2eb028c14d72376",
+ "peak_rss_mb": 50.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -112,11 +116,11 @@
    "bbox": [
     52.0,
     669.0,
-    306.0,
+    308.0,
     31.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.96
+   "confidence": 0.9566666666666667
   },
   {
    "bbox": [
@@ -132,11 +136,11 @@
    "bbox": [
     395.0,
     941.0,
-    253.0,
+    255.0,
     27.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.83
+   "confidence": 0.89
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     24.0
    ],
    "text": "2.4 MB - 6 pages",
-   "confidence": 0.922
+   "confidence": 0.924
   },
   {
    "bbox": [
@@ -156,7 +160,7 @@
     17.0
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.9566666666666667
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -172,7 +176,7 @@
    "bbox": [
     53.0,
     1153.0,
-    139.0,
+    141.0,
     23.0
    ],
    "text": "confirmed.",
@@ -186,7 +190,7 @@
     27.0
    ],
    "text": "Sounds good On my way 10 min late Call r",
-   "confidence": 0.792
+   "confidence": 0.794
   },
   {
    "bbox": [
@@ -201,5 +205,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:31.240777+00:00"
+ "completed_at": "2026-09-25T08:15:28.279045+00:00"
 }

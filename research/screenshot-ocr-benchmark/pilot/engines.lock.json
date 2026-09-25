@@ -1,6 +1,6 @@
 {
  "status": "PILOT lock — provisional (PREREGISTRATION D1 unresolved for Paddle)",
- "recorded_at": "2026-09-24T16:51:32.298638+00:00",
+ "recorded_at": "2026-09-25T10:01:00.464972+00:00",
  "engines": {
   "tesseract5": {
    "engine_id": "tesseract5",
@@ -14,7 +14,7 @@
    "weights_sha256": {
     "eng.traineddata": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba"
    },
-   "init_s": 0.5196062579998397,
+   "init_s": 1.1833787800005666,
    "docker_image": "ocrbench-ocr-tesseract:pilot",
    "docker_image_id": "sha256:8ff502602ddb44a420a61b9a24bb7013dbb1167227fdc43c58b179dec84f252c"
   },
@@ -77,7 +77,7 @@
      "inference.yml": "5dfeb2777f6d0db8177d8128a8acfcf6e6276dc4ac73ea3bf0dc06d6a5e85d8e"
     }
    },
-   "init_s": 3.471634929999709,
+   "init_s": 4.522818605999419,
    "docker_image": "ocrbench-ocr-paddle:pilot",
    "docker_image_id": "sha256:ef31035bddeed0f9002808af5c42b20da0e960b447ad2c562d484a1d9be043f9"
   },
@@ -140,7 +140,7 @@
      "inference.yml": "2c719dba044c4e2228aef8ff92f5f575394d75d24c16de096a33b7cfd902f66d"
     }
    },
-   "init_s": 6.859021812000719,
+   "init_s": 4.019906265000827,
    "docker_image": "ocrbench-ocr-paddle:pilot",
    "docker_image_id": "sha256:ef31035bddeed0f9002808af5c42b20da0e960b447ad2c562d484a1d9be043f9"
   },
@@ -163,7 +163,7 @@
     "english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8"
    },
    "torch_num_threads": 10,
-   "init_s": 4.659347580000031,
+   "init_s": 5.351869197000269,
    "docker_image": "ocrbench-ocr-torch:pilot",
    "docker_image_id": "sha256:5bd46a2297ef2a98f26a220a6a31179f5090a001ad5b04731734556559600cfb"
   },
@@ -183,7 +183,7 @@
     "fast_base-688a8b34.pt": "688a8b3489e9f5d0290c476c6272ec3b18de3ee646c8a0dc158203b1a9c62ace"
    },
    "torch_num_threads": 10,
-   "init_s": 6.573313225000675,
+   "init_s": 8.59278635300143,
    "docker_image": "ocrbench-ocr-torch:pilot",
    "docker_image_id": "sha256:5bd46a2297ef2a98f26a220a6a31179f5090a001ad5b04731734556559600cfb"
   },
@@ -203,7 +203,7 @@
     "winrt-Windows.Graphics.Imaging": "3.2.1"
    },
    "weights_sha256": null,
-   "init_s": 0.24393810000037774,
+   "init_s": 0.2207838000031188,
    "host_python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
   }
  }

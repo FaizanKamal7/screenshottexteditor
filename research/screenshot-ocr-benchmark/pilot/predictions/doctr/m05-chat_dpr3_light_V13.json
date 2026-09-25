@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr3_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 1.848929584999496,
+ "total_s": 1.8724963559998287,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.8701854999817442,
+ "orchestrator_wall_s": 1.8931423000176437,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "25bc05206a78a153a2177787224ea1596a0aa1bb381d8b3716c1cf4da3ecb974",
+ "input_pixel_sha256": "cd43f1c69526462d5e7cf9f0fd0f86af0e11b022556f284003866dd75cc72fbf",
+ "peak_rss_mb": 1508.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -139,17 +143,17 @@
     28.435546875
    ],
    "text": "invoice total? - I got $1,248.50 but",
-   "confidence": 0.5670129656791687
+   "confidence": 0.5680138468742371
   },
   {
    "bbox": [
-    37.81640625000001,
+    39.052734375,
     501.94921875,
     232.4296875,
-    27.19921875
+    25.962890625
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.949635922908783
+   "confidence": 0.8680058121681213
   },
   {
    "bbox": [
@@ -175,21 +179,21 @@
    "bbox": [
     172.576171875,
     633.0,
-    220.06640625000003,
+    218.83007812499997,
     27.19921875
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9901177287101746
+   "confidence": 0.9800272583961487
   },
   {
    "bbox": [
     296.208984375,
     704.70703125,
-    190.39453125,
+    192.8671875,
     22.25390625
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.7115091681480408
+   "confidence": 0.7585804164409637
   },
   {
    "bbox": [
@@ -199,7 +203,7 @@
     24.7265625
    ],
    "text": "2.4 MB 6 6 pages",
-   "confidence": 0.8988065123558044
+   "confidence": 0.9126964807510376
   },
   {
    "bbox": [
@@ -225,11 +229,11 @@
    "bbox": [
     39.052734375,
     862.95703125,
-    107.560546875,
+    108.796875,
     22.25390625
    ],
    "text": "confirmed.",
-   "confidence": 0.8144548535346985
+   "confidence": 0.9758883118629456
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:51:09.568915+00:00"
+ "completed_at": "2026-09-25T08:21:01.919223+00:00"
 }

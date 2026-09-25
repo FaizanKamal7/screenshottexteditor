@@ -51,7 +51,7 @@
     16,
     7
    ],
-   "ink_pixels_half": 79
+   "ink_pixels_half": 80
   },
   {
    "text": "87%",
@@ -624,11 +624,11 @@
    "element_idx": 13,
    "ink_box": [
     273,
-    410,
+    411,
     87,
-    17
+    16
    ],
-   "ink_pixels": 734,
+   "ink_pixels": 733,
    "line_id": "L0014",
    "ink_box_half": [
     136,
@@ -636,7 +636,7 @@
     44,
     9
    ],
-   "ink_pixels_half": 212
+   "ink_pixels_half": 214
   },
   {
    "text": "Screen Time",

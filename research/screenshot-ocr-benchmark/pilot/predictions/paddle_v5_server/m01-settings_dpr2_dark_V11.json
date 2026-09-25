@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr2_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 20.665960328999063,
+ "total_s": 21.669574569999895,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 20.698211099981563,
+ "orchestrator_wall_s": 21.70460549998097,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7718a4cc34f9190f58c4df49698dfe3be36a728442a1eed7cd321f3b5f4fcf60",
- "peak_rss_mb": 8034.0,
+ "input_pixel_sha256": "e222080a5a22f1127f4e4d155b9c41e7c8e73a5b865e92d88349dfb2881a8cb6",
+ "peak_rss_mb": 7545.1,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -30,10 +30,10 @@
     42.0,
     28.0,
     75.0,
-    37.0
+    36.0
    ],
    "text": "9:41",
-   "confidence": 0.9903343915939331
+   "confidence": 0.9907868504524231
   },
   {
    "bbox": [
@@ -43,37 +43,37 @@
     37.0
    ],
    "text": "87%",
-   "confidence": 0.9988505244255066
+   "confidence": 0.9988446831703186
   },
   {
    "bbox": [
     30.0,
-    103.0,
+    96.0,
     278.0,
-    81.0
+    89.0
    ],
    "text": "Settings",
-   "confidence": 0.9992994070053101
+   "confidence": 0.9994790554046631
   },
   {
    "bbox": [
     51.0,
     220.0,
-    37.0,
+    36.0,
     29.0
    ],
    "text": "Q",
-   "confidence": 0.9945963025093079
+   "confidence": 0.9954322576522827
   },
   {
    "bbox": [
     92.0,
-    217.0,
+    216.0,
     241.0,
-    40.0
+    42.0
    ],
    "text": "Search settings",
-   "confidence": 0.9669873118400574
+   "confidence": 0.9965301752090454
   },
   {
    "bbox": [
@@ -83,7 +83,7 @@
     45.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9972060918807983
+   "confidence": 0.9981698989868164
   },
   {
    "bbox": [
@@ -93,17 +93,17 @@
     24.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9930624961853027
+   "confidence": 0.9938627481460571
   },
   {
    "bbox": [
-    61.0,
+    60.0,
     485.0,
     132.0,
     27.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9944761395454407
+   "confidence": 0.995049774646759
   },
   {
    "bbox": [
@@ -168,12 +168,12 @@
   {
    "bbox": [
     542.0,
-    813.0,
+    814.0,
     184.0,
     42.0
    ],
    "text": "English (US)",
-   "confidence": 0.995769202709198
+   "confidence": 0.9956794381141663
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:15:32.031711+00:00"
+ "completed_at": "2026-09-25T08:54:26.273368+00:00"
 }

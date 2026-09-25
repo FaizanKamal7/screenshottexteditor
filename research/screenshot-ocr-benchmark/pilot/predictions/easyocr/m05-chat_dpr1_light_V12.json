@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_light_V12",
  "status": "ok",
  "error": null,
- "total_s": 1.8044044470007066,
+ "total_s": 1.8045658999999432,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.824714500020491,
+ "orchestrator_wall_s": 1.8163911000010557,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "f1dda27c2a7c59f731195e0afc6d6d2541f32a7b871a9d3f411db0c6cd47cec1",
+ "input_pixel_sha256": "0db24cec3c662e4f7dc358b0dce78aedfd835aa15ee2827e1fffd50449157315",
+ "peak_rss_mb": 1035.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -127,22 +131,22 @@
   {
    "bbox": [
     12.0,
-    155.0,
-    109.0,
+    156.0,
+    110.0,
     8.0
    ],
-   "text": "Keifleteizi6al61748 En a",
-   "confidence": 0.0009698721917473165
+   "text": "(etttenlcln?Ieal 51.748 Enint",
+   "confidence": 0.002973644626924215
   },
   {
    "bbox": [
     38.0,
-    166.0,
-    40.0,
-    8.0
+    168.0,
+    52.0,
+    6.0
    ],
-   "text": "LnS174",
-   "confidence": 0.0054647796653924
+   "text": "AEA S",
+   "confidence": 0.001050517843386064
   },
   {
    "bbox": [
@@ -168,11 +172,11 @@
    "bbox": [
     98.0,
     234.0,
-    64.0,
+    66.0,
     8.0
    ],
-   "text": "03-Irnoler-(mal Adi",
-   "confidence": 0.027639508527253335
+   "text": "03-nuleliruleal",
+   "confidence": 0.028144423827417015
   },
   {
    "bbox": [
@@ -198,11 +202,11 @@
    "bbox": [
     12.0,
     278.0,
-    40.0,
+    42.0,
     8.0
    ],
-   "text": "Hhanks,oot",
-   "confidence": 0.08555426264510402
+   "text": "Thantz,oot",
+   "confidence": 0.08332062366703609
   },
   {
    "bbox": [
@@ -221,8 +225,8 @@
     36.0,
     6.0
    ],
-   "text": "connmco",
-   "confidence": 0.35605090594631994
+   "text": "conhrmahd",
+   "confidence": 0.04864485717382816
   },
   {
    "bbox": [
@@ -257,5 +261,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:00:08.848423+00:00"
+ "completed_at": "2026-09-25T08:41:43.880740+00:00"
 }

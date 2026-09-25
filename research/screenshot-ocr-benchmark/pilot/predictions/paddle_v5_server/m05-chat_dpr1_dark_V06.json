@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr1_dark_V06",
  "status": "ok",
  "error": null,
- "total_s": 8.268770458998915,
+ "total_s": 7.7546131720009726,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.286132799985353,
+ "orchestrator_wall_s": 7.771698199969251,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "247f6d66d4705091841ecf76f938c414c532f2f5f71dfa1719ef739a72e291b0",
- "peak_rss_mb": 3096.8,
+ "input_pixel_sha256": "13f34f4cbe4182162171e3e185964d6ea24646f5be327ee733f77f074bb42eac",
+ "peak_rss_mb": 2696.0,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -58,12 +58,12 @@
   {
    "bbox": [
     95.0,
-    70.0,
+    71.0,
     98.0,
-    16.0
+    15.0
    ],
    "text": "Active 5 min ago",
-   "confidence": 0.9616106152534485
+   "confidence": 0.9488953351974487
   },
   {
    "bbox": [
@@ -88,32 +88,32 @@
   {
    "bbox": [
     23.0,
-    166.0,
-    182.0,
+    165.0,
+    180.0,
     15.0
    ],
    "text": "review tomorrow morning?",
-   "confidence": 0.9798585772514343
+   "confidence": 0.9447820782661438
   },
   {
    "bbox": [
-    113.0,
-    207.0,
-    37.0,
-    18.0
+    111.0,
+    206.0,
+    40.0,
+    21.0
    ],
    "text": "Yes,",
-   "confidence": 0.9846513271331787
+   "confidence": 0.9862101078033447
   },
   {
    "bbox": [
-    142.0,
+    143.0,
     208.0,
     205.0,
     17.0
    ],
-   "text": "10:30 inroom4B.Illbring the",
-   "confidence": 0.8892743587493896
+   "text": "10:30inroom4B.Illbring the",
+   "confidence": 0.9312508702278137
   },
   {
    "bbox": [
@@ -123,7 +123,7 @@
     17.0
    ],
    "text": "updated mockups and the",
-   "confidence": 0.9919528961181641
+   "confidence": 0.991797924041748
   },
   {
    "bbox": [
@@ -143,27 +143,27 @@
     17.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9757355451583862
+   "confidence": 0.9730409979820251
   },
   {
    "bbox": [
-    22.0,
+    23.0,
     312.0,
-    222.0,
+    221.0,
     18.0
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.9398030638694763
+   "confidence": 0.9634656310081482
   },
   {
    "bbox": [
-    21.0,
-    330.0,
-    159.0,
-    21.0
+    23.0,
+    332.0,
+    158.0,
+    17.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9858266711235046
+   "confidence": 0.9653142690658569
   },
   {
    "bbox": [
@@ -193,17 +193,17 @@
     19.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9669991731643677
+   "confidence": 0.9648987650871277
   },
   {
    "bbox": [
     195.0,
     467.0,
-    130.0,
+    132.0,
     17.0
    ],
-   "text": "Q3-invoice-finall.pdf",
-   "confidence": 0.9519677758216858
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.9552062153816223
   },
   {
    "bbox": [
@@ -213,7 +213,7 @@
     19.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9329562783241272
+   "confidence": 0.9332395792007446
   },
   {
    "bbox": [
@@ -227,23 +227,23 @@
   },
   {
    "bbox": [
-    23.0,
-    553.0,
-    222.0,
-    17.0
+    21.0,
+    551.0,
+    226.0,
+    21.0
    ],
-   "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.9310252666473389
+   "text": "Thanks, got it. Order #A-2031 is",
+   "confidence": 0.9307944178581238
   },
   {
    "bbox": [
     22.0,
-    572.0,
-    73.0,
+    573.0,
+    76.0,
     17.0
    ],
-   "text": "confirmed",
-   "confidence": 0.9891703724861145
+   "text": "confirmed.",
+   "confidence": 0.9945953488349915
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:42:50.306654+00:00"
+ "completed_at": "2026-09-25T09:19:07.966052+00:00"
 }

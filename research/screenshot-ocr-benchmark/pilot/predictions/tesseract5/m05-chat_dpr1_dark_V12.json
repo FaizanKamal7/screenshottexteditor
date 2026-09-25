@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr1_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 0.21707829600018158,
+ "total_s": 0.24586120800086064,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.23211329997866414,
+ "orchestrator_wall_s": 0.25898589997086674,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ace3f2ffd4b62052ca60ff026ed014fa7b8c03a40c6e9bb9ed798e624740a0a5",
+ "input_pixel_sha256": "58c41db6dad81157b643edb18ae70ba000b29042616713176b5ed48171121a6a",
+ "peak_rss_mb": 54.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -50,6 +54,26 @@
   },
   {
    "bbox": [
+    98.0,
+    235.0,
+    65.0,
+    14.0
+   ],
+   "text": "igre",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    9.0,
+    266.0,
+    113.0,
+    28.0
+   ],
+   "text": "Tork gt. Orr A 2010",
+   "confidence": 0.39
+  },
+  {
+   "bbox": [
     14.0,
     379.0,
     181.0,
@@ -61,5 +85,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:17.156920+00:00"
+ "completed_at": "2026-09-25T08:15:14.038629+00:00"
 }

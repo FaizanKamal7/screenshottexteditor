@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_light_V02",
  "status": "ok",
  "error": null,
- "total_s": 2.0073176189998776,
+ "total_s": 1.8933853419994193,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.026544400025159,
+ "orchestrator_wall_s": 1.9121930999681354,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "baa1054eee5c26439e05a7c97cf96f58f1eb9fef564a64820ec7486ac414fe32",
+ "input_pixel_sha256": "a904a2ddad1345ac79384559676be986a4e9c7cf1c77730ecb924359226fa9c3",
+ "peak_rss_mb": 1438.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -139,17 +143,17 @@
     18.1328125
    ],
    "text": "invoice total? - got $1,248.50 but",
-   "confidence": 0.8303674459457397
+   "confidence": 0.8161864876747131
   },
   {
    "bbox": [
     25.210937500000004,
     333.80859375,
-    154.953125,
+    155.77734375,
     18.1328125
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.5648956894874573
+   "confidence": 0.7682481408119202
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     12.36328125
    ],
    "text": "4:19 PM",
-   "confidence": 0.9768897294998169
+   "confidence": 0.9675437211990356
   },
   {
    "bbox": [
@@ -185,11 +189,11 @@
    "bbox": [
     196.6484375,
     469.8046875,
-    127.75390625000001,
+    129.40234375,
     14.8359375
    ],
-   "text": "Q3-invoice-final.pdr",
-   "confidence": 0.6896942853927612
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.5854885280132294
   },
   {
    "bbox": [
@@ -224,12 +228,12 @@
   {
    "bbox": [
     26.035156250000004,
-    574.48046875,
-    71.70703125,
-    14.8359375
+    575.3046875,
+    72.53125,
+    14.01171875
    ],
    "text": "confirmed.",
-   "confidence": 0.68204265832901
+   "confidence": 0.802363932132721
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:48:56.677412+00:00"
+ "completed_at": "2026-09-25T08:18:57.337080+00:00"
 }

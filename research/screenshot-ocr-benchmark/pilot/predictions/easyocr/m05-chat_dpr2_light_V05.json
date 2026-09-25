@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_light_V05",
  "status": "ok",
  "error": null,
- "total_s": 4.949435750000703,
+ "total_s": 4.534917049999422,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.974805399979232,
+ "orchestrator_wall_s": 4.55865470005665,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "5b2bfda5bfe6ae42aa8f9897e76c4126f286e6126ed4cba388ad14f56c9e8ba6",
+ "input_pixel_sha256": "482c6ca14772f7dcbd3bd144b64be11982dd159ff09048caa6ea625230dfa397",
+ "peak_rss_mb": 1996.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -156,33 +160,23 @@
   },
   {
    "bbox": [
-    48.0,
-    628.0,
-    188.0,
-    32.0
-   ],
-   "text": "invoice total?",
-   "confidence": 0.9994366370225952
-  },
-  {
-   "bbox": [
-    249.0,
+    47.0,
     623.0,
-    242.0,
+    444.0,
     45.0
    ],
-   "text": "got S1,248.50 but",
-   "confidence": 0.68923748689891
+   "text": "invoice total? | got $1,248.50 but",
+   "confidence": 0.6910720319198411
   },
   {
    "bbox": [
     47.0,
-    665.0,
-    314.0,
-    40.0
+    663.0,
+    316.0,
+    42.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.8582276390662352
+   "confidence": 0.7883027543044607
   },
   {
    "bbox": [
@@ -218,11 +212,11 @@
    "bbox": [
     389.0,
     935.0,
-    266.0,
+    268.0,
     38.0
    ],
-   "text": "Q3-invoice-final pdf",
-   "confidence": 0.6446340895375886
+   "text": "Q3-invoice-final:pdf",
+   "confidence": 0.6764020226970291
   },
   {
    "bbox": [
@@ -242,7 +236,7 @@
     28.0
    ],
    "text": "6 pages",
-   "confidence": 0.9027264178638724
+   "confidence": 0.9167198202640877
   },
   {
    "bbox": [
@@ -282,7 +276,7 @@
     32.0
    ],
    "text": "confirmed:",
-   "confidence": 0.9666059171706424
+   "confidence": 0.9337318545914477
   },
   {
    "bbox": [
@@ -377,5 +371,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:01:33.499867+00:00"
+ "completed_at": "2026-09-25T08:43:01.709621+00:00"
 }

@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr2_dark_V05",
  "status": "ok",
  "error": null,
- "total_s": 5.365272289000131,
+ "total_s": 5.806226425999739,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 5.394559600012144,
+ "orchestrator_wall_s": 5.838434299977962,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "d45c41c9a22fc536445448b316b21580c39efe9cc147a72146d8e47669cd85b3",
+ "input_pixel_sha256": "ce26e3f3f5c72ebadb22d7d1129b170d66ab13ea4b09c2ab145adf09f1869dd3",
+ "peak_rss_mb": 1378.6,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -45,11 +49,11 @@
    "bbox": [
     194.0,
     97.0,
-    177.0,
+    178.0,
     43.0
    ],
    "text": "Jordan Lee",
-   "confidence": 0.9956040382385254
+   "confidence": 0.9957669377326965
   },
   {
    "bbox": [
@@ -123,13 +127,13 @@
   },
   {
    "bbox": [
-    48.0,
-    585.0,
-    409.0,
-    36.0
+    49.0,
+    586.0,
+    408.0,
+    34.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9751601815223694
+   "confidence": 0.9882897734642029
   },
   {
    "bbox": [
@@ -143,13 +147,13 @@
   },
   {
    "bbox": [
-    48.0,
-    664.0,
-    314.0,
-    37.0
+    47.0,
+    663.0,
+    318.0,
+    39.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9856480360031128
+   "confidence": 0.9650084376335144
   },
   {
    "bbox": [
@@ -183,13 +187,13 @@
   },
   {
    "bbox": [
-    389.0,
-    933.0,
-    263.0,
-    36.0
+    388.0,
+    931.0,
+    266.0,
+    39.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9948018789291382
+   "confidence": 0.9995667338371277
   },
   {
    "bbox": [
@@ -199,7 +203,7 @@
     35.0
    ],
    "text": "2.4MB ·6 pages",
-   "confidence": 0.93687504529953
+   "confidence": 0.9370691180229187
   },
   {
    "bbox": [
@@ -224,12 +228,12 @@
   {
    "bbox": [
     47.0,
-    1147.0,
+    1146.0,
     149.0,
     34.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9985039830207825
+   "confidence": 0.9981487989425659
   },
   {
    "bbox": [
@@ -244,12 +248,12 @@
   {
    "bbox": [
     285.0,
-    1507.0,
+    1506.0,
     147.0,
-    45.0
+    46.0
    ],
    "text": "On my way",
-   "confidence": 0.9488644003868103
+   "confidence": 0.9741405844688416
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:25:55.767467+00:00"
+ "completed_at": "2026-09-25T08:29:54.353222+00:00"
 }

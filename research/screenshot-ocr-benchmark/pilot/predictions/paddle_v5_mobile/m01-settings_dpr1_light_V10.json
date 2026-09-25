@@ -12,14 +12,18 @@
  "image_id": "m01-settings_dpr1_light_V10",
  "status": "ok",
  "error": null,
- "total_s": 3.8592218940002567,
+ "total_s": 3.924949684999774,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.8780689999985043,
+ "orchestrator_wall_s": 3.9462061999947764,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "98f3222d61c9ec84929870290840045054260539e040e49e6eaf79f2c972ab13",
+ "input_pixel_sha256": "fba3e8bbf9e298de03dd8b2cb78d387f45988b6a56a5dccbb978f965540e5888",
+ "peak_rss_mb": 820.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -29,7 +33,7 @@
     32.0
    ],
    "text": "9:41",
-   "confidence": 0.9832490682601929
+   "confidence": 0.9815230965614319
   },
   {
    "bbox": [
@@ -39,7 +43,7 @@
     28.0
    ],
    "text": "87%",
-   "confidence": 0.977101743221283
+   "confidence": 0.9769327640533447
   },
   {
    "bbox": [
@@ -49,7 +53,7 @@
     45.0
    ],
    "text": "Settings",
-   "confidence": 0.999674379825592
+   "confidence": 0.9996642470359802
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     34.0
    ],
    "text": "Q Search setings",
-   "confidence": 0.9351977705955505
+   "confidence": 0.9340164065361023
   },
   {
    "bbox": [
@@ -69,17 +73,17 @@
     29.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9340850114822388
+   "confidence": 0.9426859617233276
   },
   {
    "bbox": [
     88.0,
     190.0,
     181.0,
-    20.0
+    21.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9979997277259827
+   "confidence": 0.9988685846328735
   },
   {
    "bbox": [
@@ -89,7 +93,7 @@
     26.0
    ],
    "text": "AcCOUNT",
-   "confidence": 0.816875159740448
+   "confidence": 0.8163533806800842
   },
   {
    "bbox": [
@@ -99,7 +103,7 @@
     34.0
    ],
    "text": "Notifications",
-   "confidence": 0.9813748002052307
+   "confidence": 0.9801220297813416
   },
   {
    "bbox": [
@@ -109,7 +113,7 @@
     21.0
    ],
    "text": "on",
-   "confidence": 0.8361477851867676
+   "confidence": 0.824796736240387
   },
   {
    "bbox": [
@@ -119,7 +123,7 @@
     31.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9735651016235352
+   "confidence": 0.973591148853302
   },
   {
    "bbox": [
@@ -129,17 +133,17 @@
     34.0
    ],
    "text": "Storage",
-   "confidence": 0.9965500235557556
+   "confidence": 0.9966267943382263
   },
   {
    "bbox": [
-    236.0,
-    361.0,
-    128.0,
-    21.0
+    235.0,
+    360.0,
+    130.0,
+    24.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9460496306419373
+   "confidence": 0.9092632532119751
   },
   {
    "bbox": [
@@ -149,17 +153,17 @@
     31.0
    ],
    "text": "Language",
-   "confidence": 0.9987227320671082
+   "confidence": 0.9987367391586304
   },
   {
    "bbox": [
-    266.0,
-    400.0,
-    100.0,
-    31.0
+    268.0,
+    404.0,
+    97.0,
+    25.0
    ],
-   "text": "English (Us)",
-   "confidence": 0.9282321333885193
+   "text": "English (US)",
+   "confidence": 0.938330888748169
   },
   {
    "bbox": [
@@ -314,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:18:42.487533+00:00"
+ "completed_at": "2026-09-25T08:22:35.855289+00:00"
 }

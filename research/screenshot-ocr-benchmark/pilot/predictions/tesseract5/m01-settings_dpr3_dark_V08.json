@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr3_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 1.6867350350003107,
+ "total_s": 0.9159834749998481,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.8082905000192113,
+ "orchestrator_wall_s": 0.9608487000223249,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "2dc9be9ca26a15b1c5d1ca78c571fe53297b5a985781371f1f7b7a40665628af",
+ "input_pixel_sha256": "7474079ec264013fe46605b5ba6f79d0fcb109a5b4d43ac551e472736c7b0e4f",
+ "peak_rss_mb": 101.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -66,7 +70,7 @@
     37.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.88
+   "confidence": 0.89
   },
   {
    "bbox": [
@@ -81,12 +85,12 @@
   {
    "bbox": [
     94.0,
-    831.0,
+    832.0,
     982.0,
-    52.0
+    51.0
    ],
    "text": "Notifications On",
-   "confidence": 0.96
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -111,12 +115,12 @@
   {
    "bbox": [
     94.0,
-    1232.0,
+    1234.0,
     983.0,
-    48.0
+    46.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.96
+   "confidence": 0.9533333333333333
   },
   {
    "bbox": [
@@ -126,7 +130,7 @@
     37.0
    ],
    "text": "Screen Time 3h 12m",
-   "confidence": 0.855
+   "confidence": 0.84
   },
   {
    "bbox": [
@@ -176,7 +180,7 @@
     32.0
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.95
+   "confidence": 0.951
   },
   {
    "bbox": [
@@ -200,6 +204,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:45.159135+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:53.165385+00:00"
 }

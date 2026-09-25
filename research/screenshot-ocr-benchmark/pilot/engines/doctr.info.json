@@ -14,7 +14,7 @@
   "fast_base-688a8b34.pt": "688a8b3489e9f5d0290c476c6272ec3b18de3ee646c8a0dc158203b1a9c62ace"
  },
  "torch_num_threads": 10,
- "init_s": 6.573313225000675,
+ "init_s": 8.59278635300143,
  "docker_image": "ocrbench-ocr-torch:pilot",
  "docker_image_id": "sha256:5bd46a2297ef2a98f26a220a6a31179f5090a001ad5b04731734556559600cfb"
 }

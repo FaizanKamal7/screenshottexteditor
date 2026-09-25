@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr1_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 0.03819160000421107,
+ "total_s": 0.022729499964043498,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.05440310001722537,
+ "orchestrator_wall_s": 0.034770900034345686,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "67a8c6eb78f2a8dc7128fe7e49624828a26791d4423ce63547529e1e136899f6",
+ "input_pixel_sha256": "b13e23e959beebe1ab381f3ca4ff67f2540710a203134b32355160f9da20ab53",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -57,36 +61,6 @@
     19.0
    ],
    "text": "Avery Collins",
-   "confidence": null
-  },
-  {
-   "bbox": [
-    94.0,
-    195.0,
-    171.0,
-    13.0
-   ],
-   "text": "avery_collins@example.com",
-   "confidence": null
-  },
-  {
-   "bbox": [
-    332.0,
-    18.0,
-    33.0,
-    12.0
-   ],
-   "text": "87%",
-   "confidence": null
-  },
-  {
-   "bbox": [
-    341.0,
-    279.0,
-    18.0,
-    11.0
-   ],
-   "text": "On",
    "confidence": null
   },
   {
@@ -201,6 +175,26 @@
   },
   {
    "bbox": [
+    332.0,
+    18.0,
+    33.0,
+    12.0
+   ],
+   "text": "87%",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    341.0,
+    279.0,
+    18.0,
+    11.0
+   ],
+   "text": "On",
+   "confidence": null
+  },
+  {
+   "bbox": [
     240.0,
     367.0,
     119.0,
@@ -212,11 +206,11 @@
   {
    "bbox": [
     274.0,
-    410.0,
+    411.0,
     85.0,
-    17.0
+    16.0
    ],
-   "text": "English (US)",
+   "text": "EngliSh (US)",
    "confidence": null
   },
   {
@@ -246,11 +240,11 @@
     255.0,
     11.0
    ],
-   "text": "Last synced 2 minutes ago • Backup size 318 MB",
+   "text": "Last synced 2 minutes ago Backup size 318 MB",
    "confidence": null
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:10:05.746188+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:16:11.511668+00:00"
 }

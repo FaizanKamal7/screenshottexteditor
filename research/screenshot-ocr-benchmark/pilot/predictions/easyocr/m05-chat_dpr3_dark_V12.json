@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr3_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 3.477711008999904,
+ "total_s": 3.0707512199996927,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.5049717999936547,
+ "orchestrator_wall_s": 3.097106300003361,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "0cf303a7f6801739f42a82b5038f47077a7b9b676b68d2f310c6a26a95be3d68",
+ "input_pixel_sha256": "14de6b1f4a50b4b985f0423418ddb552fb3ace7b3c9fc9d634ca1230a08dd022",
+ "peak_rss_mb": 1589.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -137,32 +141,22 @@
   {
    "bbox": [
     34.0,
-    470.0,
-    144.0,
-    26.0
-   ],
-   "text": "invoice total?",
-   "confidence": 0.4828128803623018
-  },
-  {
-   "bbox": [
-    228.0,
     468.0,
-    140.0,
-    30.0
+    334.0,
+    31.0
    ],
-   "text": "S1,248.50 but",
-   "confidence": 0.9431679629761608
+   "text": "invoice total? | got S1,248.50 but",
+   "confidence": 0.7116917463101115
   },
   {
    "bbox": [
     33.0,
     498.0,
-    237.0,
+    239.0,
     30.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.7919081810405973
+   "confidence": 0.847012557089489
   },
   {
    "bbox": [
@@ -201,8 +195,8 @@
     163.0,
     25.0
    ],
-   "text": "Q3-invoice-final:",
-   "confidence": 0.864031467405544
+   "text": "Q3-invoice-final_",
+   "confidence": 0.954952956920954
   },
   {
    "bbox": [
@@ -238,11 +232,11 @@
    "bbox": [
     35.0,
     829.0,
-    87.0,
+    85.0,
     29.0
    ],
    "text": "Thanks,",
-   "confidence": 0.9737389699539213
+   "confidence": 0.9026891802495749
   },
   {
    "bbox": [
@@ -261,8 +255,8 @@
     110.0,
     26.0
    ],
-   "text": "confirmed:",
-   "confidence": 0.662304011139275
+   "text": "confirmed.",
+   "confidence": 0.846037542336717
   },
   {
    "bbox": [
@@ -326,23 +320,13 @@
   },
   {
    "bbox": [
-    186.60276070150212,
-    469.2110279959872,
-    41.79447859699576,
-    29.57794400802561
+    449.3358994113243,
+    698.1259148573367,
+    44.32820117735139,
+    31.748170285326523
    ],
-   "text": "got",
-   "confidence": 0.9999732957477904
-  },
-  {
-   "bbox": [
-    447.4789396203098,
-    698.085946405749,
-    45.042120759380396,
-    32.82810718850192
-   ],
-   "text": "'pdf",
-   "confidence": 0.8919678330421448
+   "text": "pdf",
+   "confidence": 0.9999491381174054
   },
   {
    "bbox": [
@@ -357,5 +341,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:03:58.223784+00:00"
+ "completed_at": "2026-09-25T08:45:15.069251+00:00"
 }

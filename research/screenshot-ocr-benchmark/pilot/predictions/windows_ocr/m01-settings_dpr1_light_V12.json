@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr1_light_V12",
  "status": "ok",
  "error": null,
- "total_s": 0.016655899991746992,
+ "total_s": 0.017231700010597706,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.0206105999823194,
+ "orchestrator_wall_s": 0.02285229996778071,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "65163ad172e8461e74784506ae138af35e8eeb14beb5037053fa2a117e51e2c3",
+ "input_pixel_sha256": "59d5308db2b99a879bd227da196944b989e7714334c34970e84ccadde60ea7ba",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -38,9 +42,19 @@
    ],
    "text": "Avery C o n ins",
    "confidence": null
+  },
+  {
+   "bbox": [
+    165.0,
+    206.0,
+    15.0,
+    7.0
+   ],
+   "text": "CUS»",
+   "confidence": null
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:10:06.620683+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:16:12.117496+00:00"
 }

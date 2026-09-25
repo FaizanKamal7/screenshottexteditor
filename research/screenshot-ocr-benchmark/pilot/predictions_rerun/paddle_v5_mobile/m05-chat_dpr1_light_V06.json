@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr1_light_V06",
  "status": "ok",
  "error": null,
- "total_s": 4.519841430999804,
+ "total_s": 4.232540184000754,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.5357549999898765,
+ "orchestrator_wall_s": 4.2549119999748655,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "f88f7f4b6c2d2586545082bdd798a0aff3035cac453c6f9072114a5ed4605418",
+ "input_pixel_sha256": "6cbbeb0825ea6d7c8af9e6ba6a0271e721b9b2287728e0822b777233171bc432",
+ "peak_rss_mb": 901.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -65,11 +69,11 @@
    "bbox": [
     93.0,
     66.0,
-    102.0,
+    103.0,
     23.0
    ],
    "text": "Active 5 min ago",
-   "confidence": 0.9922574758529663
+   "confidence": 0.9915221929550171
   },
   {
    "bbox": [
@@ -79,17 +83,17 @@
     17.0
    ],
    "text": "Tue, Sep 22 ·4:12 PM",
-   "confidence": 0.9275954365730286
+   "confidence": 0.9236850738525391
   },
   {
    "bbox": [
     22.0,
-    141.0,
-    234.0,
+    140.0,
+    233.0,
     20.0
    ],
    "text": "Hey! Are we still on for the design",
-   "confidence": 0.9632589221000671
+   "confidence": 0.9526688456535339
   },
   {
    "bbox": [
@@ -129,7 +133,7 @@
     24.0
    ],
    "text": "component list.",
-   "confidence": 0.9950551986694336
+   "confidence": 0.995012104511261
   },
   {
    "bbox": [
@@ -149,17 +153,17 @@
     21.0
    ],
    "text": "invoice total? I got S1,248.50 but",
-   "confidence": 0.964841365814209
+   "confidence": 0.9636778235435486
   },
   {
    "bbox": [
-    21.0,
+    22.0,
     331.0,
     162.0,
     20.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9917212128639221
+   "confidence": 0.9741119146347046
   },
   {
    "bbox": [
@@ -195,21 +199,21 @@
    "bbox": [
     193.0,
     465.0,
-    134.0,
+    135.0,
     20.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9922587275505066
+   "confidence": 0.9982436299324036
   },
   {
    "bbox": [
     192.0,
-    482.0,
+    481.0,
     100.0,
-    21.0
+    22.0
    ],
-   "text": "2.4MB· 6 pages",
-   "confidence": 0.9547738432884216
+   "text": "2.4MB ·6 pages",
+   "confidence": 0.9256188273429871
   },
   {
    "bbox": [
@@ -235,11 +239,11 @@
    "bbox": [
     22.0,
     573.0,
-    77.0,
+    79.0,
     18.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9920889139175415
+   "confidence": 0.9991035461425781
   },
   {
    "bbox": [
@@ -269,17 +273,17 @@
     18.0
    ],
    "text": "10 min late",
-   "confidence": 0.9451819062232971
+   "confidence": 0.9495664238929749
   },
   {
    "bbox": [
-    350.0,
-    749.0,
-    40.0,
-    25.0
+    351.0,
+    751.0,
+    39.0,
+    23.0
    ],
-   "text": "callr",
-   "confidence": 0.9263580441474915
+   "text": "Callr",
+   "confidence": 0.8804763555526733
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:59:12.219921+00:00"
+ "completed_at": "2026-09-25T09:50:50.655825+00:00"
 }

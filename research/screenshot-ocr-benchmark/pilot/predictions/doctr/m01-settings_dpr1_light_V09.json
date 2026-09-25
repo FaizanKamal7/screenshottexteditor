@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr1_light_V09",
  "status": "ok",
  "error": null,
- "total_s": 1.430379284999617,
+ "total_s": 1.409993305000171,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.4480978999927174,
+ "orchestrator_wall_s": 1.427159600018058,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "223cf6652aa65aa066da896734dcec1a24516e29c834737d10beb5afd5120bdb",
+ "input_pixel_sha256": "868e170d078b1871ba343bf4d7d52cac013385ec3beb029ee0605b457d637f0f",
+ "peak_rss_mb": 1096.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
-    22.738281250000004,
-    15.66015625,
-    34.61718749999999,
-    15.66015625
+    23.562500000000004,
+    16.484375,
+    33.79296874999999,
+    14.8359375
    ],
    "text": "9:41",
-   "confidence": 0.9891325831413269
+   "confidence": 0.9670861959457397
   },
   {
    "bbox": [
@@ -49,7 +53,7 @@
     29.671875
    ],
    "text": "Settings",
-   "confidence": 0.8535953164100647
+   "confidence": 0.841519832611084
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     18.95703125
    ],
    "text": "Search settings",
-   "confidence": 0.8715589046478271
+   "confidence": 0.8979524374008179
   },
   {
    "bbox": [
@@ -69,17 +73,17 @@
     21.4296875
    ],
    "text": "Avery Collins",
-   "confidence": 0.9581170678138733
+   "confidence": 0.9593137502670288
   },
   {
    "bbox": [
     93.62109375,
     194.515625,
-    171.43750000000003,
+    172.26171874999997,
     14.01171875
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.6099282701810201
+   "confidence": 0.6657293637593588
   },
   {
    "bbox": [
@@ -89,7 +93,7 @@
     11.5390625
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9994763731956482
+   "confidence": 0.9996047616004944
   },
   {
    "bbox": [
@@ -99,7 +103,7 @@
     11.5390625
    ],
    "text": "Notifications",
-   "confidence": 0.9192975163459778
+   "confidence": 0.9263274073600769
   },
   {
    "bbox": [
@@ -109,7 +113,7 @@
     14.01171875
    ],
    "text": "On",
-   "confidence": 0.9950591325759888
+   "confidence": 0.995210587978363
   },
   {
    "bbox": [
@@ -119,7 +123,7 @@
     18.95703125
    ],
    "text": "Privacy & Security",
-   "confidence": 0.989707350730896
+   "confidence": 0.9847619533538818
   },
   {
    "bbox": [
@@ -129,7 +133,7 @@
     15.66015625
    ],
    "text": "Storage",
-   "confidence": 0.998054027557373
+   "confidence": 0.9979708790779114
   },
   {
    "bbox": [
@@ -139,7 +143,7 @@
     14.8359375
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.7296206951141357
+   "confidence": 0.9241784811019897
   },
   {
    "bbox": [
@@ -149,17 +153,17 @@
     15.66015625
    ],
    "text": "Language",
-   "confidence": 0.959984302520752
+   "confidence": 0.9671080112457275
   },
   {
    "bbox": [
-    273.30078125,
-    408.8125,
-    87.36718749999997,
-    18.95703125
+    274.125,
+    409.63671875,
+    86.54296875000001,
+    17.30859375
    ],
    "text": "English (US)",
-   "confidence": 0.9944648146629333
+   "confidence": 0.6545248627662659
   },
   {
    "bbox": [
@@ -169,17 +173,17 @@
     15.66015625
    ],
    "text": "Screen Time",
-   "confidence": 0.9589742422103882
+   "confidence": 0.9825195074081421
   },
   {
    "bbox": [
     309.56640625,
     454.14453125,
-    51.101562499999986,
-    14.8359375
+    51.925781249999986,
+    15.66015625
    ],
    "text": "3h 12m",
-   "confidence": 0.9149385094642639
+   "confidence": 0.7876898646354675
   },
   {
    "bbox": [
@@ -189,7 +193,7 @@
     11.5390625
    ],
    "text": "SUPPORT",
-   "confidence": 0.9917297959327698
+   "confidence": 0.9936854243278503
   },
   {
    "bbox": [
@@ -199,7 +203,7 @@
     17.30859375
    ],
    "text": "Help Center",
-   "confidence": 0.6459904909133911
+   "confidence": 0.6165145039558411
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     14.8359375
    ],
    "text": "Send Feedback",
-   "confidence": 0.9870842099189758
+   "confidence": 0.9870190620422363
   },
   {
    "bbox": [
@@ -219,7 +223,7 @@
     14.8359375
    ],
    "text": "About",
-   "confidence": 0.9998745918273926
+   "confidence": 0.9998776912689209
   },
   {
    "bbox": [
@@ -229,7 +233,7 @@
     14.8359375
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.9608080983161926
+   "confidence": 0.9966185092926025
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     14.8359375
    ],
    "text": "Delete Account",
-   "confidence": 0.9906921982765198
+   "confidence": 0.9918013215065002
   },
   {
    "bbox": [
@@ -248,8 +252,8 @@
     257.98046875,
     14.8359375
    ],
-   "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.6789107918739319
+   "text": "Last synced 2 minutes ago - Backup size. 318 MB",
+   "confidence": 0.5471993684768677
   },
   {
    "bbox": [
@@ -259,7 +263,7 @@
     11.5390625
    ],
    "text": "Home",
-   "confidence": 0.9991752505302429
+   "confidence": 0.9990750551223755
   },
   {
    "bbox": [
@@ -269,7 +273,7 @@
     11.5390625
    ],
    "text": "Search",
-   "confidence": 0.9989476799964905
+   "confidence": 0.9989498257637024
   },
   {
    "bbox": [
@@ -279,7 +283,7 @@
     11.5390625
    ],
    "text": "Inbox",
-   "confidence": 0.9946914315223694
+   "confidence": 0.9946388602256775
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     12.36328125
    ],
    "text": "Settings",
-   "confidence": 0.9977536797523499
+   "confidence": 0.9972586631774902
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:47:03.790117+00:00"
+ "completed_at": "2026-09-25T08:17:05.946763+00:00"
 }

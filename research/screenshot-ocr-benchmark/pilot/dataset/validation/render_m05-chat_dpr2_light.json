@@ -21,6 +21,484 @@
  "clipped_elements": [
   17
  ],
+ "canonical_render_diff_pixels": 0,
+ "glyph_count_mismatches": [],
+ "forbidden_sources": {
+  "tags": [],
+  "background_images": [],
+  "generated_content": []
+ },
+ "elements": [
+  {
+   "idx": 0,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "9:41"
+   ],
+   "gt_line_rects_css": [
+    [
+     22,
+     12,
+     28,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "9:41",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 1,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "5G 72%"
+   ],
+   "gt_line_rects_css": [
+    [
+     321,
+     12,
+     47,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "5G 72%",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 2,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Jordan Lee"
+   ],
+   "gt_line_rects_css": [
+    [
+     100,
+     49.546875,
+     84,
+     20
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Jordan Lee",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 3,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Active 5 min ago"
+   ],
+   "gt_line_rects_css": [
+    [
+     100,
+     69.640625,
+     92,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Active 5 min ago",
+   "occluded_chars": 0,
+   "hit_tested_chars": 13,
+   "order_violations": 0
+  },
+  {
+   "idx": 4,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Tue, Sep 22 · 4:12 PM"
+   ],
+   "gt_line_rects_css": [
+    [
+     141,
+     111,
+     108,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Tue, Sep 22 · 4:12 PM",
+   "occluded_chars": 0,
+   "hit_tested_chars": 16,
+   "order_violations": 0
+  },
+  {
+   "idx": 5,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Hey! Are we still on for the design",
+    "review tomorrow morning?"
+   ],
+   "gt_line_rects_css": [
+    [
+     26,
+     143.390625,
+     226,
+     18
+    ],
+    [
+     26,
+     163.640625,
+     179,
+     18
+    ]
+   ],
+   "range_line_count": 2,
+   "inner_text": "Hey! Are we still on for the design review tomorrow morning?",
+   "occluded_chars": 0,
+   "hit_tested_chars": 50,
+   "order_violations": 0
+  },
+  {
+   "idx": 6,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Yes, 10:30 in room 4B. I'll bring the",
+    "updated mockups and the",
+    "component list."
+   ],
+   "gt_line_rects_css": [
+    [
+     116,
+     207.890625,
+     230,
+     18
+    ],
+    [
+     116,
+     228.140625,
+     172,
+     18
+    ],
+    [
+     116,
+     248.390625,
+     105,
+     18
+    ]
+   ],
+   "range_line_count": 3,
+   "inner_text": "Yes, 10:30 in room 4B. I'll bring the updated mockups and the component list.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 64,
+   "order_violations": 0
+  },
+  {
+   "idx": 7,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Great. Can you also check the",
+    "invoice total? I got $1,248.50 but",
+    "finance says $1,284.50."
+   ],
+   "gt_line_rects_css": [
+    [
+     26,
+     292.640625,
+     200,
+     18
+    ],
+    [
+     26,
+     312.890625,
+     216,
+     18
+    ],
+    [
+     26,
+     333.140625,
+     155,
+     18
+    ]
+   ],
+   "range_line_count": 3,
+   "inner_text": "Great. Can you also check the invoice total? I got $1,248.50 but finance says $1,284.50.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 74,
+   "order_violations": 0
+  },
+  {
+   "idx": 8,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "4:19 PM"
+   ],
+   "gt_line_rects_css": [
+    [
+     174.5,
+     368.390625,
+     41,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "4:19 PM",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 9,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Good catch, the second one is right.",
+    "Sending the PDF now."
+   ],
+   "gt_line_rects_css": [
+    [
+     116,
+     400.78125,
+     241,
+     18
+    ],
+    [
+     116,
+     421.03125,
+     144,
+     18
+    ]
+   ],
+   "range_line_count": 2,
+   "inner_text": "Good catch, the second one is right. Sending the PDF now.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 47,
+   "order_violations": 0
+  },
+  {
+   "idx": 10,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Q3-invoice-final.pdf"
+   ],
+   "gt_line_rects_css": [
+    [
+     197,
+     468.28125,
+     128,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Q3-invoice-final.pdf",
+   "occluded_chars": 0,
+   "hit_tested_chars": 20,
+   "order_violations": 0
+  },
+  {
+   "idx": 11,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2.4 MB · 6 pages"
+   ],
+   "gt_line_rects_css": [
+    [
+     197,
+     484.46875,
+     92,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2.4 MB · 6 pages",
+   "occluded_chars": 0,
+   "hit_tested_chars": 12,
+   "order_violations": 0
+  },
+  {
+   "idx": 12,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Read 4:21 PM"
+   ],
+   "gt_line_rects_css": [
+    [
+     306,
+     521.265625,
+     70,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Read 4:21 PM",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 13,
+   "category": "paragraph",
+   "clipped": false,
+   "gt_lines": [
+    "Thanks, got it. Order #A-20931 is",
+    "confirmed."
+   ],
+   "gt_line_rects_css": [
+    [
+     26,
+     553.65625,
+     218,
+     18
+    ],
+    [
+     26,
+     573.90625,
+     72,
+     18
+    ]
+   ],
+   "range_line_count": 2,
+   "inner_text": "Thanks, got it. Order #A-20931 is confirmed.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 38,
+   "order_violations": 0
+  },
+  {
+   "idx": 14,
+   "category": "button",
+   "clipped": false,
+   "gt_lines": [
+    "Sounds good"
+   ],
+   "gt_line_rects_css": [
+    [
+     28,
+     755.8125,
+     82,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Sounds good",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 15,
+   "category": "button",
+   "clipped": false,
+   "gt_lines": [
+    "On my way"
+   ],
+   "gt_line_rects_css": [
+    [
+     146,
+     755.8125,
+     68,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "On my way",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 16,
+   "category": "button",
+   "clipped": false,
+   "gt_lines": [
+    "10 min late"
+   ],
+   "gt_line_rects_css": [
+    [
+     250,
+     755.8125,
+     71,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "10 min late",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 17,
+   "category": "button",
+   "clipped": true,
+   "gt_lines": [
+    "Call me after lunch"
+   ],
+   "gt_line_rects_css": [
+    [
+     357,
+     755.8125,
+     120,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Call me after lunch",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 18,
+   "category": "input",
+   "clipped": false,
+   "gt_lines": [
+    "Message"
+   ],
+   "gt_line_rects_css": [
+    [
+     27,
+     806.5,
+     61,
+     18
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Message",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 19,
+   "category": "button",
+   "clipped": false,
+   "gt_lines": [
+    "Send"
+   ],
+   "gt_line_rects_css": [
+    [
+     330,
+     807.40625,
+     32,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Send",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  }
+ ],
  "viewport_css": [
   390,
   844

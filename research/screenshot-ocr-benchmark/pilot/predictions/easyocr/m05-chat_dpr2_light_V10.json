@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr2_light_V10",
  "status": "ok",
  "error": null,
- "total_s": 4.7706485239996255,
+ "total_s": 4.673772380000628,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.805009100004099,
+ "orchestrator_wall_s": 4.705361099971924,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "2851c5cf03531a6ba0b841d495cca9633935e6e57e3408edb29c37af4bf9b009",
+ "input_pixel_sha256": "7c4f397e1a53b949de8a91ad894c0e456464e0b1396cc5cba17a266a8b045b13",
+ "peak_rss_mb": 1996.6,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -152,7 +156,7 @@
     36.0
    ],
    "text": "invoice total?",
-   "confidence": 0.9999584856399142
+   "confidence": 0.9999574023594663
   },
   {
    "bbox": [
@@ -162,17 +166,17 @@
     42.0
    ],
    "text": "got S1,248.50 but",
-   "confidence": 0.9258485096920545
+   "confidence": 0.9136356414265613
   },
   {
    "bbox": [
     47.0,
     665.0,
-    314.0,
+    316.0,
     40.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.8278725641353225
+   "confidence": 0.7356016542258604
   },
   {
    "bbox": [
@@ -192,7 +196,7 @@
     38.0
    ],
    "text": "Good catch; the second one is right:",
-   "confidence": 0.5815115523732699
+   "confidence": 0.6907144267344627
   },
   {
    "bbox": [
@@ -202,17 +206,17 @@
     42.0
    ],
    "text": "Sending the PDF now:",
-   "confidence": 0.9462576856925825
+   "confidence": 0.9541391357771516
   },
   {
    "bbox": [
     390.0,
     934.0,
-    265.0,
+    267.0,
     40.0
    ],
-   "text": "Q3-invoice-final.pdf",
-   "confidence": 0.48420975042514625
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.6349838622325821
   },
   {
    "bbox": [
@@ -232,7 +236,7 @@
     32.0
    ],
    "text": "6 pages",
-   "confidence": 0.6892608358983563
+   "confidence": 0.7263033023146518
   },
   {
    "bbox": [
@@ -242,7 +246,7 @@
     26.0
    ],
    "text": "Read 4.21 PM",
-   "confidence": 0.9601281959546686
+   "confidence": 0.9653822564568859
   },
   {
    "bbox": [
@@ -258,11 +262,11 @@
    "bbox": [
     50.0,
     1150.0,
-    146.0,
+    148.0,
     32.0
    ],
    "text": "confirmed:",
-   "confidence": 0.9636261301950363
+   "confidence": 0.9573239940266659
   },
   {
    "bbox": [
@@ -327,5 +331,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:01:58.819843+00:00"
+ "completed_at": "2026-09-25T08:43:24.620158+00:00"
 }

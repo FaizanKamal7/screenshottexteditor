@@ -12,28 +12,28 @@
  "image_id": "m01-settings_dpr1_dark_V06",
  "status": "ok",
  "error": null,
- "total_s": 8.209956307000539,
+ "total_s": 8.236594568999863,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.22481779998634,
+ "orchestrator_wall_s": 8.25101619999623,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "03d13adcbd84100b552c2c55646471c45efba1ac6c3221a1a015b6cf18142b1b",
- "peak_rss_mb": 3092.5,
+ "input_pixel_sha256": "4d3d91bd4c6f1d6ae2fedf98487818a33bfe975f5b17e84b01882ae429cb3db6",
+ "peak_rss_mb": 2501.3,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
-    21.0,
-    15.0,
-    36.0,
-    15.0
+    20.0,
+    13.0,
+    38.0,
+    19.0
    ],
    "text": "9:41",
-   "confidence": 0.975548267364502
+   "confidence": 0.9892590045928955
   },
   {
    "bbox": [
@@ -158,12 +158,12 @@
   {
    "bbox": [
     23.0,
-    405.0,
+    404.0,
     84.0,
-    24.0
+    26.0
    ],
    "text": "Language",
-   "confidence": 0.999183177947998
+   "confidence": 0.999312162399292
   },
   {
    "bbox": [
@@ -173,7 +173,7 @@
     21.0
    ],
    "text": "English (US)",
-   "confidence": 0.9752296805381775
+   "confidence": 0.9699528217315674
   },
   {
    "bbox": [
@@ -267,13 +267,13 @@
   },
   {
    "bbox": [
-    131.0,
-    772.0,
-    29.0,
-    26.0
+    134.0,
+    775.0,
+    24.0,
+    22.0
    ],
-   "text": "α",
-   "confidence": 0.47069549560546875
+   "text": "Q",
+   "confidence": 0.924570620059967
   },
   {
    "bbox": [
@@ -297,13 +297,13 @@
   },
   {
    "bbox": [
-    225.0,
-    798.0,
-    34.0,
-    19.0
+    226.0,
+    800.0,
+    33.0,
+    16.0
    ],
    "text": "Inbox",
-   "confidence": 0.9713331460952759
+   "confidence": 0.951987624168396
   },
   {
    "bbox": [
@@ -318,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:09:20.767872+00:00"
+ "completed_at": "2026-09-25T08:47:57.002889+00:00"
 }

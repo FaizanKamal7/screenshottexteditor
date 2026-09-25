@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr3_light_V04",
  "status": "ok",
  "error": null,
- "total_s": 57.79325066899946,
+ "total_s": 46.85443871900043,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 57.87434939999366,
+ "orchestrator_wall_s": 46.92332649999298,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "59e715472cbdacfd3b666707b55725ce9e8d03d71d4ec7a0cc6f3a5f87b5e018",
- "peak_rss_mb": 16497.2,
+ "input_pixel_sha256": "05783714feaae47cb36686acbdd5ec45dea06616b48ba8c369e4dcdf8314b988",
+ "peak_rss_mb": 16196.4,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     56.0
    ],
    "text": "9:41",
-   "confidence": 0.9632707834243774
+   "confidence": 0.955933690071106
   },
   {
    "bbox": [
@@ -57,13 +57,13 @@
   },
   {
    "bbox": [
-    70.0,
+    69.0,
     322.0,
-    431.0,
+    432.0,
     65.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.9759950041770935
+   "confidence": 0.962975800037384
   },
   {
    "bbox": [
@@ -137,13 +137,13 @@
   },
   {
    "bbox": [
-    714.0,
-    1097.0,
+    715.0,
+    1098.0,
     365.0,
     41.0
    ],
    "text": "12.4GBof64GB",
-   "confidence": 0.9823656678199768
+   "confidence": 0.9856155514717102
   },
   {
    "bbox": [
@@ -158,12 +158,12 @@
   {
    "bbox": [
     815.0,
-    1225.0,
+    1227.0,
     269.0,
     52.0
    ],
    "text": "English (US)",
-   "confidence": 0.9221186637878418
+   "confidence": 0.9583846926689148
   },
   {
    "bbox": [
@@ -318,5 +318,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:35:38.989753+00:00"
+ "completed_at": "2026-09-25T09:12:06.439424+00:00"
 }

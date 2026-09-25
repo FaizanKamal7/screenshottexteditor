@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_light_V03",
  "status": "ok",
  "error": null,
- "total_s": 0.6569804380001187,
+ "total_s": 0.33531566500005283,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.6709459999983665,
+ "orchestrator_wall_s": 0.3472456999588758,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "236bfce48c5eeaf2f14448e36cfa76a269324f9b6b2fe75a25d28471b570370e",
+ "input_pixel_sha256": "7924df7ee846858bbef76477c9fe665eecfbbf19079d623158a9341e85bef72d",
+ "peak_rss_mb": 46.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.915
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -106,7 +110,7 @@
     16.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.96
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -116,7 +120,7 @@
     16.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.95
+   "confidence": 0.9433333333333332
   },
   {
    "bbox": [
@@ -125,8 +129,8 @@
     328.0,
     12.0
    ],
-   "text": "Screen Time 3h12m",
-   "confidence": 0.84
+   "text": "Screen Time 3h 12m",
+   "confidence": 0.58
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     9.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.93
+   "confidence": 0.91
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.96
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -180,6 +184,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:46.443813+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:23.844951+00:00"
 }

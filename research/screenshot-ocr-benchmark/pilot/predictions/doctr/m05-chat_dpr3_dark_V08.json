@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr3_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 2.0133965750001153,
+ "total_s": 2.0376134099997216,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 2.057321900007082,
+ "orchestrator_wall_s": 2.086396099999547,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "d9ef5b5a815ca5481ce23710b9631152fc14d84c28c4069a83689ed69e822e4c",
+ "input_pixel_sha256": "471e71c4c9ef25454bef6160bb7abe94f095a37715a06d0e04bdfc75cc05e2da",
+ "peak_rss_mb": 1435.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -143,13 +147,13 @@
   },
   {
    "bbox": [
-    78.10546875,
+    75.63281250000001,
     1003.8984375,
-    462.38671875,
+    469.8046875,
     51.92578125
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.81776362657547
+   "confidence": 0.9081998467445374
   },
   {
    "bbox": [
@@ -179,17 +183,17 @@
     54.3984375
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.8870736956596375
+   "confidence": 0.8910869359970093
   },
   {
    "bbox": [
     592.41796875,
     1409.4140625,
-    380.7890625,
+    383.26171875,
     44.5078125
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.564035564661026
+   "confidence": 0.6819636523723602
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     37.08984375
    ],
    "text": "Read 4:21 PM",
-   "confidence": 0.8313289880752563
+   "confidence": 0.5817660689353943
   },
   {
    "bbox": [
@@ -219,17 +223,17 @@
     54.3984375
    ],
    "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.9753527641296387
+   "confidence": 0.9752026200294495
   },
   {
    "bbox": [
     78.10546875,
     1725.9140625,
-    215.12109375,
+    217.59375,
     44.5078125
    ],
    "text": "confirmed.",
-   "confidence": 0.5256283283233643
+   "confidence": 0.8990979194641113
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     51.92578125
    ],
    "text": "Sounds good",
-   "confidence": 0.9116086363792419
+   "confidence": 0.9113490581512451
   },
   {
    "bbox": [
@@ -249,7 +253,7 @@
     49.453125
    ],
    "text": "On my way",
-   "confidence": 0.8269582390785217
+   "confidence": 0.8139386773109436
   },
   {
    "bbox": [
@@ -274,12 +278,12 @@
   {
    "bbox": [
     83.05078125,
-    2430.62109375,
+    2428.1484375,
     182.97656250000003,
-    44.5078125
+    46.98046875
    ],
    "text": "Message",
-   "confidence": 0.9982578158378601
+   "confidence": 0.998634397983551
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     44.5078125
    ],
    "text": "Send",
-   "confidence": 0.9957505464553833
+   "confidence": 0.995755672454834
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:50:31.805493+00:00"
+ "completed_at": "2026-09-25T08:20:25.884367+00:00"
 }

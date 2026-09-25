@@ -15,24 +15,28 @@
  "image_id": "m01-settings_dpr3_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 8.852760912999656,
+ "total_s": 8.57520393699997,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.900530199985951,
+ "orchestrator_wall_s": 8.621159099973738,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "bae783ab2f9bf157298dcfb4409e67a7d4f35ba0da7da2f42dbae82ebb4c5807",
+ "input_pixel_sha256": "c05575311bdf1b701c4ef340d3888b3f718e53eaef033bce0fc14f0f38901ade",
+ "peak_rss_mb": 2924.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
-    67.0,
+    68.0,
     46.0,
     104.0,
-    48.0
+    50.0
    ],
-   "text": "9.41",
-   "confidence": 0.6544530987739563
+   "text": "9:41",
+   "confidence": 0.7533222436904907
   },
   {
    "bbox": [
@@ -52,17 +56,17 @@
     126.0
    ],
    "text": "Settings",
-   "confidence": 0.8573387784438963
+   "confidence": 0.9999896740000318
   },
   {
    "bbox": [
     76.0,
     328.0,
     52.0,
-    52.0
+    50.0
    ],
    "text": "Q",
-   "confidence": 0.9834212353035952
+   "confidence": 0.26143454462544824
   },
   {
    "bbox": [
@@ -72,7 +76,7 @@
     73.0
    ],
    "text": "Search settings",
-   "confidence": 0.9999629098098595
+   "confidence": 0.9999590929868919
   },
   {
    "bbox": [
@@ -82,7 +86,7 @@
     77.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9963703444899101
+   "confidence": 0.9956772185559389
   },
   {
    "bbox": [
@@ -92,7 +96,7 @@
     61.0
    ],
    "text": "avery collins@example.com",
-   "confidence": 0.8091918921847083
+   "confidence": 0.7703298784239642
   },
   {
    "bbox": [
@@ -172,7 +176,7 @@
     62.0
    ],
    "text": "English (US)",
-   "confidence": 0.9356987372777961
+   "confidence": 0.6217208431618029
   },
   {
    "bbox": [
@@ -186,13 +190,13 @@
   },
   {
    "bbox": [
-    926.0,
-    1360.0,
-    158.0,
-    48.0
+    927.0,
+    1363.0,
+    156.0,
+    44.0
    ],
    "text": "3h 12m",
-   "confidence": 0.696290702577114
+   "confidence": 0.9815881516791618
   },
   {
    "bbox": [
@@ -317,5 +321,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T10:02:28.830237+00:00"
+ "completed_at": "2026-09-25T09:52:11.627489+00:00"
 }

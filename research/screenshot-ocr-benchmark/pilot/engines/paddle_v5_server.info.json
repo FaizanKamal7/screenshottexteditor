@@ -57,7 +57,7 @@
    "inference.yml": "2c719dba044c4e2228aef8ff92f5f575394d75d24c16de096a33b7cfd902f66d"
   }
  },
- "init_s": 6.859021812000719,
+ "init_s": 4.019906265000827,
  "docker_image": "ocrbench-ocr-paddle:pilot",
  "docker_image_id": "sha256:ef31035bddeed0f9002808af5c42b20da0e960b447ad2c562d484a1d9be043f9"
 }

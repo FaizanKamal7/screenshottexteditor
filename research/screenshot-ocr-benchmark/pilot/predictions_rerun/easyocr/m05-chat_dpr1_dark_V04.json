@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V04",
  "status": "ok",
  "error": null,
- "total_s": 1.9058213270000124,
+ "total_s": 1.73288681700069,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.919597000000067,
+ "orchestrator_wall_s": 1.7483131000190042,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "8ad12e2416ab18de7bf8f415a2cfd89899551ac1bd6bcdbaf23eda228bfde263",
+ "input_pixel_sha256": "438b67023befe219b127c168cd69278b4e47922373091dc1bb32bbf138a5bfb5",
+ "peak_rss_mb": 1003.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -172,17 +176,17 @@
     24.0
    ],
    "text": "invoice total? I got S1,248.50 but",
-   "confidence": 0.5777653877999842
+   "confidence": 0.5812866603026269
   },
   {
    "bbox": [
-    22.0,
+    24.0,
     330.0,
     160.0,
     24.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9743386733259629
+   "confidence": 0.7339543607963084
   },
   {
    "bbox": [
@@ -216,13 +220,13 @@
   },
   {
    "bbox": [
-    195.0,
-    467.0,
-    134.0,
-    18.0
+    197.0,
+    465.0,
+    132.0,
+    20.0
    ],
    "text": "03-invoice-final pdf",
-   "confidence": 0.8608315895886902
+   "confidence": 0.7902481705299508
   },
   {
    "bbox": [
@@ -242,7 +246,7 @@
     16.0
    ],
    "text": "6 pages",
-   "confidence": 0.9887396800018914
+   "confidence": 0.9872846354945468
   },
   {
    "bbox": [
@@ -272,7 +276,7 @@
     18.0
    ],
    "text": "confirmed:",
-   "confidence": 0.915887769953536
+   "confidence": 0.7063185862553547
   },
   {
    "bbox": [
@@ -337,5 +341,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T10:02:39.260951+00:00"
+ "completed_at": "2026-09-25T09:52:22.115878+00:00"
 }

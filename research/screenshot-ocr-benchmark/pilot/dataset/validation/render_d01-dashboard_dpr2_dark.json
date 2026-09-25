@@ -19,6 +19,1338 @@
   "extra_in_tagged": {}
  },
  "clipped_elements": [],
+ "canonical_render_diff_pixels": 0,
+ "glyph_count_mismatches": [],
+ "forbidden_sources": {
+  "tags": [],
+  "background_images": [],
+  "generated_content": []
+ },
+ "elements": [
+  {
+   "idx": 0,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Tallyhouse Metrics"
+   ],
+   "gt_line_rects_css": [
+    [
+     22,
+     20,
+     162,
+     22
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Tallyhouse Metrics",
+   "occluded_chars": 0,
+   "hit_tested_chars": 17,
+   "order_violations": 0
+  },
+  {
+   "idx": 1,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Overview"
+   ],
+   "gt_line_rects_css": [
+    [
+     48,
+     72.390625,
+     59,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Overview",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 2,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Revenue"
+   ],
+   "gt_line_rects_css": [
+    [
+     48,
+     110.578125,
+     55,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Revenue",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 3,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Customers"
+   ],
+   "gt_line_rects_css": [
+    [
+     48,
+     148.765625,
+     68,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Customers",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 4,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Reports"
+   ],
+   "gt_line_rects_css": [
+    [
+     48,
+     186.953125,
+     50,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Reports",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 5,
+   "category": "nav",
+   "clipped": false,
+   "gt_lines": [
+    "Settings"
+   ],
+   "gt_line_rects_css": [
+    [
+     48,
+     225.140625,
+     53,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Settings",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 6,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Analytics Overview"
+   ],
+   "gt_line_rects_css": [
+    [
+     248,
+     23,
+     212,
+     29
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Analytics Overview",
+   "occluded_chars": 0,
+   "hit_tested_chars": 17,
+   "order_violations": 0
+  },
+  {
+   "idx": 7,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Last 30 days · Updated 08:45 UTC"
+   ],
+   "gt_line_rects_css": [
+    [
+     248,
+     56.1875,
+     199,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Last 30 days · Updated 08:45 UTC",
+   "occluded_chars": 0,
+   "hit_tested_chars": 26,
+   "order_violations": 0
+  },
+  {
+   "idx": 8,
+   "category": "button",
+   "clipped": false,
+   "gt_lines": [
+    "Export CSV"
+   ],
+   "gt_line_rects_css": [
+    [
+     1168,
+     30,
+     70,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Export CSV",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 9,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Monthly Revenue"
+   ],
+   "gt_line_rects_css": [
+    [
+     265,
+     107.375,
+     99,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Monthly Revenue",
+   "occluded_chars": 0,
+   "hit_tested_chars": 14,
+   "order_violations": 0
+  },
+  {
+   "idx": 10,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$482,910"
+   ],
+   "gt_line_rects_css": [
+    [
+     265,
+     129.5625,
+     112,
+     31
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$482,910",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 11,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "+12.4% vs last month"
+   ],
+   "gt_line_rects_css": [
+    [
+     265,
+     164.359375,
+     115,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "+12.4% vs last month",
+   "occluded_chars": 0,
+   "hit_tested_chars": 17,
+   "order_violations": 0
+  },
+  {
+   "idx": 12,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Active Users"
+   ],
+   "gt_line_rects_css": [
+    [
+     519.5,
+     107.375,
+     71,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Active Users",
+   "occluded_chars": 0,
+   "hit_tested_chars": 11,
+   "order_violations": 0
+  },
+  {
+   "idx": 13,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "12,384"
+   ],
+   "gt_line_rects_css": [
+    [
+     519.5,
+     129.5625,
+     82,
+     31
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "12,384",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 14,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "-0.8% vs last month"
+   ],
+   "gt_line_rects_css": [
+    [
+     519.5,
+     164.359375,
+     105,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "-0.8% vs last month",
+   "occluded_chars": 0,
+   "hit_tested_chars": 16,
+   "order_violations": 0
+  },
+  {
+   "idx": 15,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Churn Rate"
+   ],
+   "gt_line_rects_css": [
+    [
+     774,
+     107.375,
+     63,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Churn Rate",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 16,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2.1%"
+   ],
+   "gt_line_rects_css": [
+    [
+     774,
+     129.5625,
+     59,
+     31
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2.1%",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 17,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Down from 2.6%"
+   ],
+   "gt_line_rects_css": [
+    [
+     774,
+     164.359375,
+     87,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Down from 2.6%",
+   "occluded_chars": 0,
+   "hit_tested_chars": 12,
+   "order_violations": 0
+  },
+  {
+   "idx": 18,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Avg. Order Value"
+   ],
+   "gt_line_rects_css": [
+    [
+     1028.5,
+     107.375,
+     98,
+     16
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Avg. Order Value",
+   "occluded_chars": 0,
+   "hit_tested_chars": 14,
+   "order_violations": 0
+  },
+  {
+   "idx": 19,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$86.40"
+   ],
+   "gt_line_rects_css": [
+    [
+     1028.5,
+     129.5625,
+     82,
+     31
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$86.40",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 20,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "+$3.15 vs last month"
+   ],
+   "gt_line_rects_css": [
+    [
+     1028.5,
+     164.359375,
+     112,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "+$3.15 vs last month",
+   "occluded_chars": 0,
+   "hit_tested_chars": 17,
+   "order_violations": 0
+  },
+  {
+   "idx": 21,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Weekly revenue (USD)"
+   ],
+   "gt_line_rects_css": [
+    [
+     265,
+     227.15625,
+     144,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Weekly revenue (USD)",
+   "occluded_chars": 0,
+   "hit_tested_chars": 18,
+   "order_violations": 0
+  },
+  {
+   "idx": 22,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "150k"
+   ],
+   "gt_line_rects_css": [
+    [
+     279,
+     255.34375,
+     20,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "150k",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 23,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "100k"
+   ],
+   "gt_line_rects_css": [
+    [
+     279,
+     301.34375,
+     20,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "100k",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 24,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "50k"
+   ],
+   "gt_line_rects_css": [
+    [
+     284,
+     347.34375,
+     15,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "50k",
+   "occluded_chars": 0,
+   "hit_tested_chars": 3,
+   "order_violations": 0
+  },
+  {
+   "idx": 25,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "0"
+   ],
+   "gt_line_rects_css": [
+    [
+     294,
+     393.34375,
+     5,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "0",
+   "occluded_chars": 0,
+   "hit_tested_chars": 1,
+   "order_violations": 0
+  },
+  {
+   "idx": 26,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Aug 25"
+   ],
+   "gt_line_rects_css": [
+    [
+     320.5,
+     411.34375,
+     31,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Aug 25",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 27,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Sep 1"
+   ],
+   "gt_line_rects_css": [
+    [
+     379.5,
+     411.34375,
+     25,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Sep 1",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 28,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Sep 8"
+   ],
+   "gt_line_rects_css": [
+    [
+     435.5,
+     411.34375,
+     25,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Sep 8",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 29,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Sep 15"
+   ],
+   "gt_line_rects_css": [
+    [
+     489,
+     411.34375,
+     30,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Sep 15",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 30,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Sep 22"
+   ],
+   "gt_line_rects_css": [
+    [
+     545,
+     411.34375,
+     30,
+     12
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Sep 22",
+   "occluded_chars": 0,
+   "hit_tested_chars": 5,
+   "order_violations": 0
+  },
+  {
+   "idx": 31,
+   "category": "heading",
+   "clipped": false,
+   "gt_lines": [
+    "Recent invoices"
+   ],
+   "gt_line_rects_css": [
+    [
+     639,
+     227.15625,
+     103,
+     17
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Recent invoices",
+   "occluded_chars": 0,
+   "hit_tested_chars": 14,
+   "order_violations": 0
+  },
+  {
+   "idx": 32,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Invoice"
+   ],
+   "gt_line_rects_css": [
+    [
+     647,
+     261.34375,
+     41,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Invoice",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 33,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Customer"
+   ],
+   "gt_line_rects_css": [
+    [
+     752.578125,
+     261.34375,
+     57,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Customer",
+   "occluded_chars": 0,
+   "hit_tested_chars": 8,
+   "order_violations": 0
+  },
+  {
+   "idx": 34,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Date"
+   ],
+   "gt_line_rects_css": [
+    [
+     941.515625,
+     261.34375,
+     27,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Date",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 35,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Amount"
+   ],
+   "gt_line_rects_css": [
+    [
+     1102.796875,
+     261.34375,
+     45,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Amount",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 36,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Status"
+   ],
+   "gt_line_rects_css": [
+    [
+     1163.796875,
+     261.34375,
+     37,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Status",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 37,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "INV-10421"
+   ],
+   "gt_line_rects_css": [
+    [
+     647,
+     292.28125,
+     60,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "INV-10421",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 38,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Harper & Stone LLC"
+   ],
+   "gt_line_rects_css": [
+    [
+     752.578125,
+     292.28125,
+     116,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Harper & Stone LLC",
+   "occluded_chars": 0,
+   "hit_tested_chars": 15,
+   "order_violations": 0
+  },
+  {
+   "idx": 39,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2026-09-02"
+   ],
+   "gt_line_rects_css": [
+    [
+     941.515625,
+     292.28125,
+     64,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2026-09-02",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 40,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$3,420.00"
+   ],
+   "gt_line_rects_css": [
+    [
+     1090.796875,
+     292.28125,
+     57,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$3,420.00",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 41,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Paid"
+   ],
+   "gt_line_rects_css": [
+    [
+     1171.796875,
+     292.9375,
+     25,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Paid",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 42,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "INV-10422"
+   ],
+   "gt_line_rects_css": [
+    [
+     647,
+     326.875,
+     60,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "INV-10422",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 43,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Bluefield Dental"
+   ],
+   "gt_line_rects_css": [
+    [
+     752.578125,
+     326.875,
+     91,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Bluefield Dental",
+   "occluded_chars": 0,
+   "hit_tested_chars": 15,
+   "order_violations": 0
+  },
+  {
+   "idx": 44,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2026-09-04"
+   ],
+   "gt_line_rects_css": [
+    [
+     941.515625,
+     326.875,
+     64,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2026-09-04",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 45,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$780.50"
+   ],
+   "gt_line_rects_css": [
+    [
+     1101.796875,
+     326.875,
+     46,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$780.50",
+   "occluded_chars": 0,
+   "hit_tested_chars": 7,
+   "order_violations": 0
+  },
+  {
+   "idx": 46,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Due"
+   ],
+   "gt_line_rects_css": [
+    [
+     1171.796875,
+     327.53125,
+     23,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Due",
+   "occluded_chars": 0,
+   "hit_tested_chars": 3,
+   "order_violations": 0
+  },
+  {
+   "idx": 47,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "INV-10423"
+   ],
+   "gt_line_rects_css": [
+    [
+     647,
+     361.46875,
+     60,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "INV-10423",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 48,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Oakridge Supply Co."
+   ],
+   "gt_line_rects_css": [
+    [
+     752.578125,
+     361.46875,
+     120,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Oakridge Supply Co.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 17,
+   "order_violations": 0
+  },
+  {
+   "idx": 49,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2026-09-09"
+   ],
+   "gt_line_rects_css": [
+    [
+     941.515625,
+     361.46875,
+     64,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2026-09-09",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 50,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$12,006.75"
+   ],
+   "gt_line_rects_css": [
+    [
+     1083.796875,
+     361.46875,
+     64,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$12,006.75",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 51,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Paid"
+   ],
+   "gt_line_rects_css": [
+    [
+     1171.796875,
+     362.125,
+     25,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Paid",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 52,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "INV-10424"
+   ],
+   "gt_line_rects_css": [
+    [
+     647,
+     396.0625,
+     60,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "INV-10424",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 53,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Maple Street Books"
+   ],
+   "gt_line_rects_css": [
+    [
+     752.578125,
+     396.0625,
+     115,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Maple Street Books",
+   "occluded_chars": 0,
+   "hit_tested_chars": 16,
+   "order_violations": 0
+  },
+  {
+   "idx": 54,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2026-09-15"
+   ],
+   "gt_line_rects_css": [
+    [
+     941.515625,
+     396.0625,
+     64,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2026-09-15",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 55,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$96.00"
+   ],
+   "gt_line_rects_css": [
+    [
+     1108.796875,
+     396.0625,
+     39,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$96.00",
+   "occluded_chars": 0,
+   "hit_tested_chars": 6,
+   "order_violations": 0
+  },
+  {
+   "idx": 56,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Due"
+   ],
+   "gt_line_rects_css": [
+    [
+     1171.796875,
+     396.71875,
+     23,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Due",
+   "occluded_chars": 0,
+   "hit_tested_chars": 3,
+   "order_violations": 0
+  },
+  {
+   "idx": 57,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "INV-10425"
+   ],
+   "gt_line_rects_css": [
+    [
+     647,
+     430.65625,
+     60,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "INV-10425",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 58,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Quinn Logistics"
+   ],
+   "gt_line_rects_css": [
+    [
+     752.578125,
+     430.65625,
+     90,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Quinn Logistics",
+   "occluded_chars": 0,
+   "hit_tested_chars": 14,
+   "order_violations": 0
+  },
+  {
+   "idx": 59,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "2026-09-21"
+   ],
+   "gt_line_rects_css": [
+    [
+     941.515625,
+     430.65625,
+     64,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "2026-09-21",
+   "occluded_chars": 0,
+   "hit_tested_chars": 10,
+   "order_violations": 0
+  },
+  {
+   "idx": 60,
+   "category": "value-numeric",
+   "clipped": false,
+   "gt_lines": [
+    "$5,318.20"
+   ],
+   "gt_line_rects_css": [
+    [
+     1090.796875,
+     430.65625,
+     57,
+     15
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "$5,318.20",
+   "occluded_chars": 0,
+   "hit_tested_chars": 9,
+   "order_violations": 0
+  },
+  {
+   "idx": 61,
+   "category": "label",
+   "clipped": false,
+   "gt_lines": [
+    "Paid"
+   ],
+   "gt_line_rects_css": [
+    [
+     1171.796875,
+     431.3125,
+     25,
+     14
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Paid",
+   "occluded_chars": 0,
+   "hit_tested_chars": 4,
+   "order_violations": 0
+  },
+  {
+   "idx": 62,
+   "category": "caption",
+   "clipped": false,
+   "gt_lines": [
+    "Showing 5 of 148 invoices. Amounts include tax; refunds are excluded."
+   ],
+   "gt_line_rects_css": [
+    [
+     639,
+     467.90625,
+     352,
+     13
+    ]
+   ],
+   "range_line_count": 1,
+   "inner_text": "Showing 5 of 148 invoices. Amounts include tax; refunds are excluded.",
+   "occluded_chars": 0,
+   "hit_tested_chars": 59,
+   "order_violations": 0
+  }
+ ],
  "viewport_css": [
   1280,
   800

@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr3_dark_V10",
  "status": "ok",
  "error": null,
- "total_s": 45.71012748800058,
+ "total_s": 50.156014035000226,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 45.829248399997596,
+ "orchestrator_wall_s": 50.26133780000964,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "53514567850e25e24bdfd460e49a281b3c4c1095954ba9c17601e151c5450b2b",
- "peak_rss_mb": 16497.2,
+ "input_pixel_sha256": "33c8a7895cd774a9c903cc40c21c592a41f23e0fbe6d49b02f350bcc669faaf7",
+ "peak_rss_mb": 16203.8,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     52.0
    ],
    "text": "9:41",
-   "confidence": 0.9841554164886475
+   "confidence": 0.9904764294624329
   },
   {
    "bbox": [
@@ -47,23 +47,23 @@
   },
   {
    "bbox": [
-    46.0,
-    148.0,
-    416.0,
-    128.0
+    44.0,
+    147.0,
+    418.0,
+    130.0
    ],
    "text": "Settings",
-   "confidence": 0.9995095729827881
+   "confidence": 0.9993142485618591
   },
   {
    "bbox": [
-    76.0,
-    327.0,
-    49.0,
-    52.0
+    74.0,
+    326.0,
+    54.0,
+    55.0
    ],
    "text": "Q",
-   "confidence": 0.9976892471313477
+   "confidence": 0.9926209449768066
   },
   {
    "bbox": [
@@ -73,27 +73,27 @@
     66.0
    ],
    "text": "Search settings",
-   "confidence": 0.9867661595344543
+   "confidence": 0.9847971796989441
   },
   {
    "bbox": [
-    275.0,
-    496.0,
-    381.0,
-    77.0
+    276.0,
+    500.0,
+    378.0,
+    71.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9933426976203918
+   "confidence": 0.9772971868515015
   },
   {
    "bbox": [
-    279.0,
+    280.0,
     582.0,
-    516.0,
+    515.0,
     40.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9793521761894226
+   "confidence": 0.9807966351509094
   },
   {
    "bbox": [
@@ -147,13 +147,13 @@
   },
   {
    "bbox": [
-    711.0,
-    1093.0,
+    712.0,
+    1094.0,
     373.0,
     51.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9578968286514282
+   "confidence": 0.9916130900382996
   },
   {
    "bbox": [
@@ -168,12 +168,12 @@
   {
    "bbox": [
     814.0,
-    1219.0,
+    1222.0,
     275.0,
-    63.0
+    62.0
    ],
    "text": "English (US)",
-   "confidence": 0.9970371127128601
+   "confidence": 0.9912724494934082
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:29:52.211914+00:00"
+ "completed_at": "2026-09-25T09:07:30.851409+00:00"
 }

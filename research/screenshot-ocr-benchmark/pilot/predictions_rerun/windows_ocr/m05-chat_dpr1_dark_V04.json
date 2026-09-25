@@ -10,14 +10,18 @@
  "image_id": "m05-chat_dpr1_dark_V04",
  "status": "ok",
  "error": null,
- "total_s": 0.03428560000611469,
+ "total_s": 0.034997900016605854,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.04444950001197867,
+ "orchestrator_wall_s": 0.04228609998244792,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "8ad12e2416ab18de7bf8f415a2cfd89899551ac1bd6bcdbaf23eda228bfde263",
+ "input_pixel_sha256": "438b67023befe219b127c168cd69278b4e47922373091dc1bb32bbf138a5bfb5",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -131,12 +135,12 @@
   },
   {
    "bbox": [
-    25.0,
+    26.0,
     334.0,
     154.0,
     16.0
    ],
-   "text": "finance says Sl ,284.50.",
+   "text": "finance says $1,284.50.",
    "confidence": null
   },
   {
@@ -233,8 +237,8 @@
    "bbox": [
     26.0,
     576.0,
-    70.0,
-    13.0
+    71.0,
+    12.0
    ],
    "text": "confirmed.",
    "confidence": null
@@ -302,5 +306,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:54:01.764303+00:00"
+ "completed_at": "2026-09-25T09:49:13.127836+00:00"
 }

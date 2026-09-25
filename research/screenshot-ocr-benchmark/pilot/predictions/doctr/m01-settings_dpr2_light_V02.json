@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr2_light_V02",
  "status": "ok",
  "error": null,
- "total_s": 1.5610513669998909,
+ "total_s": 1.465894577000654,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.5904618999920785,
+ "orchestrator_wall_s": 1.4897786999936216,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "ccc2412e3c42a82bb6e8cc24222a619ea0c9c771de6c67138d0de38b65c012ba",
+ "input_pixel_sha256": "f4ce6a5434497d9efb0986650a5ae21cf1d5172e56b666d1d98025155beea279",
+ "peak_rss_mb": 1195.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     47.12500000000001,
-    31.3203125,
+    32.96875,
     67.58593749999999,
-    31.3203125
+    29.671875
    ],
    "text": "9:41",
-   "confidence": 0.9680708646774292
+   "confidence": 0.9434326887130737
   },
   {
    "bbox": [
@@ -45,11 +49,11 @@
    "bbox": [
     45.47656250000001,
     113.7421875,
-    253.85937500000003,
+    252.21093750000003,
     59.34375
    ],
    "text": "Settings",
-   "confidence": 0.871456503868103
+   "confidence": 0.8903712034225464
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     34.6171875
    ],
    "text": "English (US)",
-   "confidence": 0.9982885718345642
+   "confidence": 0.998327910900116
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:47:32.441919+00:00"
+ "completed_at": "2026-09-25T08:17:33.628499+00:00"
 }

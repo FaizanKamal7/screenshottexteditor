@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr1_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 1.4099464199989598,
+ "total_s": 1.401745371999823,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.4300133000069764,
+ "orchestrator_wall_s": 1.413126999977976,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "input_pixel_sha256": "43abcaff6b01de72bed1585957bcb1988281733451c9e8598662bed5c2c970f7",
+ "peak_rss_mb": 1035.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -48,11 +52,11 @@
    "bbox": [
     11.0,
     71.0,
-    118.0,
+    116.0,
     12.0
    ],
-   "text": "Hcraee Wttuill on lc utdin",
-   "confidence": 0.004252952825768383
+   "text": "Hcrae Wt tuill on lc utdin",
+   "confidence": 0.007777932514130769
   },
   {
    "bbox": [
@@ -108,21 +112,31 @@
    "bbox": [
     12.0,
     156.0,
-    110.0,
+    46.0,
     8.0
    ],
-   "text": "Eoter eoinizieal 51eda fohn",
-   "confidence": 4.615976889522234e-05
+   "text": "Euaeroinia",
+   "confidence": 0.0011127981695342023
+  },
+  {
+   "bbox": [
+    64.0,
+    156.0,
+    58.0,
+    8.0
+   ],
+   "text": "Galeeaa fohr",
+   "confidence": 0.0006795633749099876
   },
   {
    "bbox": [
     38.0,
     168.0,
-    40.0,
+    42.0,
     6.0
    ],
-   "text": "Snanni",
-   "confidence": 0.00015623056636038916
+   "text": "Senen",
+   "confidence": 0.0016916447616683382
   },
   {
    "bbox": [
@@ -161,8 +175,8 @@
     64.0,
     8.0
    ],
-   "text": "03-Fuler-Inal Mi",
-   "confidence": 0.013986875732406612
+   "text": "03-Fuler Ilea",
+   "confidence": 0.007151143948352316
   },
   {
    "bbox": [
@@ -171,8 +185,8 @@
     42.0,
     8.0
    ],
-   "text": "Hnana oot",
-   "confidence": 0.044945743905030665
+   "text": "Hnang oot",
+   "confidence": 0.048615108512953475
   },
   {
    "bbox": [
@@ -191,8 +205,8 @@
     36.0,
     6.0
    ],
-   "text": "Knmnntn",
-   "confidence": 0.006580007059828785
+   "text": "Kntcnrd",
+   "confidence": 0.002004527154897123
   },
   {
    "bbox": [
@@ -207,5 +221,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:59:46.733589+00:00"
+ "completed_at": "2026-09-25T08:41:22.289409+00:00"
 }

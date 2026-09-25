@@ -23,7 +23,7 @@ and how does accuracy change with:
 |---|---|
 | HTML/CSS templates we write, with our own text content | User-uploaded images from ScreenshotTextEditor |
 | Renders of those templates in headless Chromium | Analytics or telemetry of any kind |
-| Native screenshots of those templates on devices we own | Production logs or production data |
+| (no real-device screenshots: synthetic-only scope, §6) | Production logs or production data |
 | OFL-licensed fonts, pinned by file hash | Third-party screenshot datasets (Rico, WebUI); see SOURCES_AND_LICENSES.md |
 
 Text content rules:
@@ -53,6 +53,10 @@ Text content rules:
   is real text.
 - No `::placeholder`. Placeholder-looking text is a styled `<span>` so it has
   DOM geometry.
+- **No ligatures or contextual alternates** (`base.css`; amendment A4), so every
+  character is drawn as its own glyph. This is enforced by the canonical-render
+  check (AUTOMATED_VALIDATION §2). No non-DOM text: no images, canvas, SVG
+  `<text>`, form controls or CSS generated content (check A3.3).
 - No CSS transforms, rotation or vertical text on text elements (out of scope
   for v1).
 - Each text element carries `data-category`: `label`, `value-numeric`,
@@ -128,38 +132,28 @@ From each lossless base PNG:
 - Chroma subsampling matters for coloured text on coloured backgrounds,
   which is why V06 exists.
 
-## 6. Real-device set: external validity
+## 6. Scope: synthetic-only (amendment A4)
 
-Purpose: check whether the synthetic findings hold for real OS text
-rasterization (Core Text, DirectWrite/ClearType, Android Skia), not just
-headless Chromium.
+The benchmark measures OCR on **synthetic UI screenshots rendered by headless
+Chromium** from our templates. It has no real-device set: the draft's 160
+device screenshots needed human-verified geometry, which conflicts with the
+no-human-review requirement, and their ground truth could not be made
+deterministic.
 
-- **Templates:** a subset of 20 (10 mobile, 10 desktop), in light and dark,
-  opened in the native browser on each device.
-- **Platforms:** iOS Safari, Android Chrome, Windows Edge (ClearType on,
-  default scaling), macOS Safari (if a Mac is available).
-- **Capture:** the OS's native screenshot, lossless PNG, original resolution.
-- **Ground-truth text:** known, because the content is fixed by the template
-  (a device variant uses `system-ui` fonts, so layout differs from the
-  synthetic set).
-- **Ground-truth geometry:**
-  - The template's own script collects per-character rects,
-    `devicePixelRatio` and viewport size in the device browser. It posts them
-    to a local collector on the LAN; no third party is involved.
-  - Four fiducial markers, drawn at known CSS positions, are detected in the
-    screenshot to solve for the offset and scale between page coordinates and
-    screenshot pixels (browser chrome, status bar).
-  - Geometry is then verified by a human in Label Studio: 100% in the pilot, a
-    ≥ 20% random sample in the full set.
-  - If fiducial registration fails, fall back to manual box drawing by two
-    annotators, with disagreements adjudicated.
-- **Theme:** dark mode is set through the OS setting and the template's
-  `prefers-color-scheme` CSS.
-- **Size:** 20 templates × 2 themes × 3–4 platforms = **120–160 images**,
-  lossless only.
-- **What is recorded:** device model, OS version, browser version, scaling
-  setting and capture date.
+The research questions (RQ1–RQ6, RQ8–RQ10) are controlled comparisons under
+manipulated scale, compression, theme and text size. They need exact ground
+truth and controlled variation, and synthetic renders provide both.
 
+What the results do **not** show, stated on the results page:
+- OCR accuracy on real-device screenshots, which use other rasterizers
+  (DirectWrite/ClearType, Core Text, subpixel anti-aliasing), system fonts
+  and real apps.
+- OCR on photos of screens, documents or scene text.
+- That engine rankings transfer to any of those settings.
+
+A possible, still fully automated, extension for a later version: render the
+same templates in Playwright's Firefox and WebKit builds to widen rasterizer
+coverage.
 ## 7. Engines
 
 Each engine runs in one pre-registered configuration, as close to the
@@ -347,17 +341,23 @@ dataset, on Zenodo (DOI) and/or Hugging Face Datasets, with a `CITATION.cff`.
 - **Sections:**
   - Key findings, written only from computed values.
   - Main table.
-  - Charts: CER vs. x-height; CER vs. bytes per format; scale; theme;
-    synthetic vs. device.
+  - Charts: CER vs. x-height; CER vs. bytes per format; scale; theme.
   - Confusion table and sample overlays.
+  - A scope statement near the top (§6): synthetic Chromium-rendered UI
+    screenshots only, and no claim about real-device or real-world
+    screenshots.
   - Methodology link, limitations, and a conflict-of-interest note (the
     product uses PaddleOCR).
   - Changelog, downloads, citation block.
 
 ## 12. Known limitations (stated up front)
 
-- Synthetic renders come from one rasterizer (Chromium/Skia on Linux). The
-  device set exists to measure how far that generalizes, but it is small.
+- Synthetic renders come from one rasterizer (Chromium/Skia on Linux), with
+  ligatures and contextual alternates disabled. There is no real-device set
+  (§6), so how far the results generalize is **unmeasured**.
+- Automated validity checks (AUTOMATED_VALIDATION.md) prove the ground truth
+  matches what was rendered. They do not prove the templates represent real
+  interfaces.
 - English, Latin script, horizontal text only.
 - "Default configuration" is a policy choice. Engines tuned by an expert
   (for example Tesseract with upscaling) may do better. That is reported as

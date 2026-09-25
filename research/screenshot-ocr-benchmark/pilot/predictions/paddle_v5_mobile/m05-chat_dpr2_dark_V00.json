@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr2_dark_V00",
  "status": "ok",
  "error": null,
- "total_s": 6.916131802000564,
+ "total_s": 6.727628098999958,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 6.94963230000576,
+ "orchestrator_wall_s": 6.763285799999721,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "673e8584a82744b0a8c31dd3884f6ed1aa913608659f60ef8f5c07806624bc8d",
+ "input_pixel_sha256": "a99dd86c0354cd7a564071c30b37162b08436fe1b1131071ba13ece59fc1e4bf",
+ "peak_rss_mb": 1377.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -83,13 +87,13 @@
   },
   {
    "bbox": [
-    278.0,
+    277.0,
     225.0,
     223.0,
     27.0
    ],
    "text": "Tue, Sep 22· 4:12 PM",
-   "confidence": 0.9757072329521179
+   "confidence": 0.943132221698761
   },
   {
    "bbox": [
@@ -213,33 +217,33 @@
   },
   {
    "bbox": [
-    50.0,
-    629.0,
-    104.0,
-    28.0
+    49.0,
+    627.0,
+    106.0,
+    31.0
    ],
    "text": "invoice",
-   "confidence": 0.9998358488082886
+   "confidence": 0.9998394250869751
   },
   {
    "bbox": [
-    147.0,
+    148.0,
     628.0,
     96.0,
     29.0
    ],
    "text": "total?",
-   "confidence": 0.9921444058418274
+   "confidence": 0.9941450953483582
   },
   {
    "bbox": [
-    251.0,
+    250.0,
     629.0,
-    62.0,
+    63.0,
     30.0
    ],
    "text": "got",
-   "confidence": 0.9994626641273499
+   "confidence": 0.9993640780448914
   },
   {
    "bbox": [
@@ -254,32 +258,32 @@
   {
    "bbox": [
     48.0,
-    667.0,
-    112.0,
-    33.0
+    666.0,
+    110.0,
+    34.0
    ],
    "text": "finance",
-   "confidence": 0.9880020022392273
+   "confidence": 0.9949702620506287
   },
   {
    "bbox": [
-    145.0,
-    668.0,
-    79.0,
-    32.0
+    149.0,
+    669.0,
+    76.0,
+    30.0
    ],
    "text": "says",
-   "confidence": 0.9981220364570618
+   "confidence": 0.9990721344947815
   },
   {
    "bbox": [
-    218.0,
+    219.0,
     663.0,
     144.0,
     39.0
    ],
    "text": "$1,284.50.",
-   "confidence": 0.9967068433761597
+   "confidence": 0.9980559349060059
   },
   {
    "bbox": [
@@ -323,13 +327,13 @@
   },
   {
    "bbox": [
-    437.0,
+    436.0,
     804.0,
-    118.0,
+    119.0,
     31.0
    ],
-   "text": "second",
-   "confidence": 0.9939913749694824
+   "text": " second",
+   "confidence": 0.9404675364494324
   },
   {
    "bbox": [
@@ -385,21 +389,21 @@
    "bbox": [
     390.0,
     933.0,
-    262.0,
+    263.0,
     36.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9996753931045532
+   "confidence": 0.9997146725654602
   },
   {
    "bbox": [
     388.0,
-    968.0,
+    969.0,
     194.0,
-    35.0
+    33.0
    ],
-   "text": "2.4MB ·6 pages",
-   "confidence": 0.9527208209037781
+   "text": "2.4 MB·6 pages",
+   "confidence": 0.9676165580749512
   },
   {
    "bbox": [
@@ -414,12 +418,12 @@
   {
    "bbox": [
     50.0,
-    1108.0,
-    206.0,
-    35.0
+    1109.0,
+    207.0,
+    34.0
    ],
-   "text": "Thanks, got it. ",
-   "confidence": 0.97104412317276
+   "text": "Thanks, got it. (",
+   "confidence": 0.9483744502067566
   },
   {
    "bbox": [
@@ -433,13 +437,13 @@
   },
   {
    "bbox": [
-    49.0,
-    1147.0,
+    50.0,
+    1149.0,
     145.0,
-    35.0
+    30.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9650359153747559
+   "confidence": 0.9995552897453308
   },
   {
    "bbox": [
@@ -504,5 +508,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:25:33.348059+00:00"
+ "completed_at": "2026-09-25T08:29:31.551441+00:00"
 }

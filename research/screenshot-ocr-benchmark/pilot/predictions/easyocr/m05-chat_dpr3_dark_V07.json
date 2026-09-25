@@ -15,14 +15,18 @@
  "image_id": "m05-chat_dpr3_dark_V07",
  "status": "ok",
  "error": null,
- "total_s": 9.730430117000651,
+ "total_s": 9.040841383999577,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 9.831081599986646,
+ "orchestrator_wall_s": 9.095246300043073,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "289d9da7dd3c45f1fe0006931d8553cb124cde3e5849828cc0e319104f5c2835",
+ "input_pixel_sha256": "08951bb1dd8e8b7b29f82bebe17d5b2626a39545311f6c47e3cd350ca68baeab",
+ "peak_rss_mb": 3223.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -162,17 +166,17 @@
     62.0
    ],
    "text": "invoice total? | got S1,248.50 but",
-   "confidence": 0.7690021831752379
+   "confidence": 0.6944917685803323
   },
   {
    "bbox": [
-    67.0,
+    68.0,
     997.0,
-    472.0,
+    473.0,
     61.0
    ],
    "text": "finance says S1,284.50.",
-   "confidence": 0.9403174392097443
+   "confidence": 0.760036152946854
   },
   {
    "bbox": [
@@ -202,17 +206,17 @@
     66.0
    ],
    "text": "Sending the PDF now:",
-   "confidence": 0.8481862009164671
+   "confidence": 0.8389856336215183
   },
   {
    "bbox": [
     586.0,
     1404.0,
-    392.0,
+    396.0,
     54.0
    ],
-   "text": "Q3-invoice-final:pdf",
-   "confidence": 0.673058977322496
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.7063997676131721
   },
   {
    "bbox": [
@@ -232,7 +236,7 @@
     48.0
    ],
    "text": "6 pages",
-   "confidence": 0.9928883569732666
+   "confidence": 0.9940254478096695
   },
   {
    "bbox": [
@@ -242,27 +246,27 @@
     40.0
    ],
    "text": "Read 4.21 PM",
-   "confidence": 0.9757510663135087
+   "confidence": 0.9751973133423651
   },
   {
    "bbox": [
-    70.0,
-    1657.0,
-    669.0,
-    65.0
+    71.0,
+    1661.0,
+    668.0,
+    61.0
    ],
-   "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.6842013882666438
+   "text": "Thanks; got it. Order #A-20931 is",
+   "confidence": 0.6426918496537063
   },
   {
    "bbox": [
     72.0,
     1724.0,
-    220.0,
+    224.0,
     48.0
    ],
-   "text": "confirmed.",
-   "confidence": 0.5201817576592901
+   "text": "confirmed:",
+   "confidence": 0.76878380996607
   },
   {
    "bbox": [
@@ -272,7 +276,7 @@
     57.0
    ],
    "text": "Sounds good",
-   "confidence": 0.9998629433363893
+   "confidence": 0.9998812398402241
   },
   {
    "bbox": [
@@ -282,7 +286,7 @@
     52.0
    ],
    "text": "On my way",
-   "confidence": 0.8702633876859198
+   "confidence": 0.8839113807521828
   },
   {
    "bbox": [
@@ -292,7 +296,7 @@
     48.0
    ],
    "text": "10 min late",
-   "confidence": 0.9936509494847262
+   "confidence": 0.9939381910256023
   },
   {
    "bbox": [
@@ -302,7 +306,7 @@
     44.0
    ],
    "text": "Call r",
-   "confidence": 0.710988297076227
+   "confidence": 0.724519174462339
   },
   {
    "bbox": [
@@ -322,7 +326,7 @@
     48.0
    ],
    "text": "Send",
-   "confidence": 0.9999784231185913
+   "confidence": 0.9999775290489197
   },
   {
    "bbox": [
@@ -337,5 +341,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:03:16.819412+00:00"
+ "completed_at": "2026-09-25T08:44:36.135070+00:00"
 }

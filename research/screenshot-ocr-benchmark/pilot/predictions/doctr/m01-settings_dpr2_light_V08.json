@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr2_light_V08",
  "status": "ok",
  "error": null,
- "total_s": 1.5272027510000044,
+ "total_s": 1.4264258570001402,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.5563241000054404,
+ "orchestrator_wall_s": 1.4562642000382766,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "a3a1d812c638ad597d048fd21be6f581cc7ab5163427fe0632ce4ff71e27b2b2",
+ "input_pixel_sha256": "f71ca0bdab74e2b2de8c711700f721e580270abefaf52759da5ee9bf12c20fad",
+ "peak_rss_mb": 1165.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     47.12500000000001,
-    31.3203125,
+    32.96875,
     67.58593749999999,
-    31.3203125
+    29.671875
    ],
    "text": "9:41",
-   "confidence": 0.9592689871788025
+   "confidence": 0.9405834078788757
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     37.9140625
    ],
    "text": "Search settings",
-   "confidence": 0.9917206764221191
+   "confidence": 0.991990864276886
   },
   {
    "bbox": [
@@ -69,7 +73,7 @@
     42.859375
    ],
    "text": "Avery Collins",
-   "confidence": 0.8793008923530579
+   "confidence": 0.8802111148834229
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     23.078125
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.7163319289684296
+   "confidence": 0.7086886018514633
   },
   {
    "bbox": [
@@ -89,7 +93,7 @@
     23.078125
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9927625060081482
+   "confidence": 0.9931464791297913
   },
   {
    "bbox": [
@@ -99,7 +103,7 @@
     23.078125
    ],
    "text": "Notifications",
-   "confidence": 0.990185022354126
+   "confidence": 0.9900057911872864
   },
   {
    "bbox": [
@@ -109,7 +113,7 @@
     28.0234375
    ],
    "text": "On",
-   "confidence": 0.9831275939941406
+   "confidence": 0.9830050468444824
   },
   {
    "bbox": [
@@ -119,17 +123,17 @@
     37.9140625
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9775583148002625
+   "confidence": 0.9771803021430969
   },
   {
    "bbox": [
     61.9609375,
     731.90625,
-    120.33593750000001,
+    118.68750000000001,
     36.265625
    ],
    "text": "Storage",
-   "confidence": 0.9794944524765015
+   "confidence": 0.979060709476471
   },
   {
    "bbox": [
@@ -139,7 +143,7 @@
     28.0234375
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.8327165842056274
+   "confidence": 0.7961306571960449
   },
   {
    "bbox": [
@@ -149,7 +153,7 @@
     31.3203125
    ],
    "text": "Language",
-   "confidence": 0.963057816028595
+   "confidence": 0.9628526568412781
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     34.6171875
    ],
    "text": "English (US)",
-   "confidence": 0.9979550838470459
+   "confidence": 0.9986467957496643
   },
   {
    "bbox": [
@@ -169,7 +173,7 @@
     31.3203125
    ],
    "text": "Screen Time",
-   "confidence": 0.9954728484153748
+   "confidence": 0.9851245284080505
   },
   {
    "bbox": [
@@ -189,7 +193,7 @@
     23.078125
    ],
    "text": "SUPPORT",
-   "confidence": 0.9998072981834412
+   "confidence": 0.999824583530426
   },
   {
    "bbox": [
@@ -199,7 +203,7 @@
     34.6171875
    ],
    "text": "Help Center",
-   "confidence": 0.9438963532447815
+   "confidence": 0.943273663520813
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     29.671875
    ],
    "text": "Send Feedback",
-   "confidence": 0.9947872161865234
+   "confidence": 0.9947839379310608
   },
   {
    "bbox": [
@@ -219,7 +223,7 @@
     29.671875
    ],
    "text": "About",
-   "confidence": 0.5792204141616821
+   "confidence": 0.5817810893058777
   },
   {
    "bbox": [
@@ -229,7 +233,7 @@
     29.671875
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.9863660335540771
+   "confidence": 0.9861645102500916
   },
   {
    "bbox": [
@@ -249,7 +253,7 @@
     29.671875
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.6922481656074524
+   "confidence": 0.6409395337104797
   },
   {
    "bbox": [
@@ -259,7 +263,7 @@
     23.078125
    ],
    "text": "Home",
-   "confidence": 0.9999098777770996
+   "confidence": 0.9999183416366577
   },
   {
    "bbox": [
@@ -269,7 +273,7 @@
     23.078125
    ],
    "text": "Search",
-   "confidence": 0.9987012147903442
+   "confidence": 0.9988234639167786
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     24.7265625
    ],
    "text": "Settings",
-   "confidence": 0.887825071811676
+   "confidence": 0.885309100151062
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:47:41.469998+00:00"
+ "completed_at": "2026-09-25T08:17:42.427484+00:00"
 }

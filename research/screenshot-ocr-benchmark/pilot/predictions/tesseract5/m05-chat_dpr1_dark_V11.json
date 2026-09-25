@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr1_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 0.6569214000001011,
+ "total_s": 0.5079106120001597,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.6723543000116479,
+ "orchestrator_wall_s": 0.5302007999853231,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "50e4d96bf59806184299db04e188e9deec176f2e7dc763112d92533beeb3a344",
+ "input_pixel_sha256": "73434965a2b07d2135672441070f586374c8f569feb5525ee5340d19236e3853",
+ "peak_rss_mb": 54.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -102,11 +106,11 @@
    "bbox": [
     26.0,
     334.0,
-    153.0,
+    154.0,
     16.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9533333333333333
+   "confidence": 0.95
   },
   {
    "bbox": [
@@ -115,18 +119,18 @@
     40.0,
     8.0
    ],
-   "text": "419pM",
+   "text": "4198M",
    "confidence": 0.0
   },
   {
    "bbox": [
     197.0,
-    460.0,
-    131.0,
-    31.0
+    470.0,
+    128.0,
+    14.0
    ],
-   "text": "Q3-invoice-final. pdf",
-   "confidence": 0.395
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.51
   },
   {
    "bbox": [
@@ -135,18 +139,18 @@
     90.0,
     12.0
    ],
-   "text": "24MB 6 pages",
-   "confidence": 0.5033333333333334
+   "text": "2.4MB 6 pages",
+   "confidence": 0.79
   },
   {
    "bbox": [
     307.0,
-    525.0,
+    514.0,
     68.0,
-    8.0
+    28.0
    ],
-   "text": "Read 421 PM",
-   "confidence": 0.8033333333333332
+   "text": "Read 4:21 PM",
+   "confidence": 0.8
   },
   {
    "bbox": [
@@ -162,7 +166,7 @@
    "bbox": [
     26.0,
     576.0,
-    70.0,
+    71.0,
     12.0
    ],
    "text": "confirmed.",
@@ -176,20 +180,10 @@
     31.0
    ],
    "text": "Soundsgood ~~ Onmyway ~~ 10minlate Calls",
-   "confidence": 0.59
-  },
-  {
-   "bbox": [
-    28.0,
-    800.0,
-    333.0,
-    31.0
-   ],
-   "text": "Message end",
-   "confidence": 0.96
+   "confidence": 0.5966666666666667
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:16.922941+00:00"
+ "completed_at": "2026-09-25T08:15:13.778392+00:00"
 }

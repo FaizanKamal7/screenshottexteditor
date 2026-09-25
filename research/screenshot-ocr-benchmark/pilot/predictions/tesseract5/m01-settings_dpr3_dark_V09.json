@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr3_dark_V09",
  "status": "ok",
  "error": null,
- "total_s": 1.7127979659999255,
+ "total_s": 0.9507949480002935,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.7631118999852333,
+ "orchestrator_wall_s": 0.996203400020022,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "44841d5dcff8c5abb1b8cbd5a107170206c9fad6bc9b86047dbed6c0e25cae05",
+ "input_pixel_sha256": "1cd8b3ca792cc51dfff71c2fcb8ad732fd3f9519cb72f3633a3150b960e1cfb0",
+ "peak_rss_mb": 118.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -111,12 +115,12 @@
   {
    "bbox": [
     94.0,
-    1232.0,
+    1234.0,
     983.0,
-    48.0
+    46.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.96
+   "confidence": 0.9533333333333333
   },
   {
    "bbox": [
@@ -186,7 +190,7 @@
     74.0
    ],
    "text": "ft Q |] &",
-   "confidence": 0.5825
+   "confidence": 0.465
   },
   {
    "bbox": [
@@ -196,10 +200,10 @@
     30.0
    ],
    "text": "Home Search Inbox Settings",
-   "confidence": 0.9525
+   "confidence": 0.955
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:46.923915+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:54.162895+00:00"
 }

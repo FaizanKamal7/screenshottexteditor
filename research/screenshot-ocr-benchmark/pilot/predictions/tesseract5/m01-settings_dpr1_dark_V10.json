@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_dark_V10",
  "status": "ok",
  "error": null,
- "total_s": 0.8135259419996146,
+ "total_s": 0.48002083800020046,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8336435999954119,
+ "orchestrator_wall_s": 0.5272021999699064,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "e77f257fc69d749bfdf34ceed8f37acdb6a2c497277b4648aa04ef61ca8fd78f",
+ "input_pixel_sha256": "ea5852fbdbc454e265138081de3237f719a523b7c8a29140f7adc43344bb8f92",
+ "peak_rss_mb": 51.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.94
+   "confidence": 0.945
   },
   {
    "bbox": [
@@ -46,7 +50,7 @@
     17.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.9433333333333332
+   "confidence": 0.9366666666666668
   },
   {
    "bbox": [
@@ -66,7 +70,7 @@
     12.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.82
+   "confidence": 0.84
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     15.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9066666666666667
+   "confidence": 0.9033333333333333
   },
   {
    "bbox": [
@@ -111,12 +115,12 @@
   {
    "bbox": [
     31.0,
-    403.0,
+    401.0,
     328.0,
     31.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.9433333333333332
+   "confidence": 0.9466666666666668
   },
   {
    "bbox": [
@@ -177,9 +181,29 @@
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
    "confidence": 0.898
+  },
+  {
+   "bbox": [
+    37.0,
+    775.0,
+    312.0,
+    30.0
+   ],
+   "text": "LJ Q = °",
+   "confidence": 0.52
+  },
+  {
+   "bbox": [
+    36.0,
+    793.0,
+    324.0,
+    28.0
+   ],
+   "text": "Home Search Inbox settings",
+   "confidence": 0.7475
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:41.254975+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:21.693716+00:00"
 }

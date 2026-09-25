@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr2_dark_V02",
  "status": "ok",
  "error": null,
- "total_s": 24.53672371600078,
+ "total_s": 24.774770392999926,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 24.574693600006867,
+ "orchestrator_wall_s": 24.81016550003551,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "d0c8a46c45c8a9384638b5ab8b8d392fd4a71712e50f094b034a92d0a802bf21",
- "peak_rss_mb": 8036.0,
+ "input_pixel_sha256": "a407f874d4014aa1f91f5c9efa34b4d7c98b54121f04a73d6fa12a14d41140d0",
+ "peak_rss_mb": 7677.3,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -187,13 +187,13 @@
   },
   {
    "bbox": [
-    296.0,
+    298.0,
     417.0,
-    76.0,
+    74.0,
     29.0
    ],
    "text": "10:30",
-   "confidence": 0.9872439503669739
+   "confidence": 0.9786474108695984
   },
   {
    "bbox": [
@@ -209,11 +209,11 @@
    "bbox": [
     484.0,
     418.0,
-    98.0,
+    97.0,
     29.0
    ],
    "text": "4B.Il",
-   "confidence": 0.8637297749519348
+   "confidence": 0.8833144903182983
   },
   {
    "bbox": [
@@ -327,13 +327,13 @@
   },
   {
    "bbox": [
-    148.0,
+    149.0,
     627.0,
-    87.0,
+    88.0,
     28.0
    ],
    "text": "total?",
-   "confidence": 0.9934268593788147
+   "confidence": 0.9937305450439453
   },
   {
    "bbox": [
@@ -349,11 +349,11 @@
    "bbox": [
     304.0,
     625.0,
-    142.0,
+    141.0,
     35.0
    ],
    "text": "$1,248.50",
-   "confidence": 0.9453673958778381
+   "confidence": 0.9518517255783081
   },
   {
    "bbox": [
@@ -369,31 +369,31 @@
    "bbox": [
     52.0,
     670.0,
-    98.0,
+    100.0,
     25.0
    ],
    "text": "finance",
-   "confidence": 0.9991717338562012
+   "confidence": 0.999412477016449
   },
   {
    "bbox": [
-    151.0,
+    153.0,
     669.0,
     68.0,
     30.0
    ],
    "text": "says",
-   "confidence": 0.9984110593795776
+   "confidence": 0.9977223873138428
   },
   {
    "bbox": [
-    220.0,
+    223.0,
     665.0,
-    143.0,
+    141.0,
     35.0
    ],
    "text": "$1,284.50.",
-   "confidence": 0.9955521821975708
+   "confidence": 0.9910660982131958
   },
   {
    "bbox": [
@@ -449,21 +449,21 @@
    "bbox": [
     549.0,
     805.0,
-    97.0,
+    96.0,
     28.0
    ],
    "text": "one is",
-   "confidence": 0.9281225800514221
+   "confidence": 0.931818962097168
   },
   {
    "bbox": [
-    637.0,
+    638.0,
     803.0,
-    76.0,
+    75.0,
     34.0
    ],
    "text": "right.",
-   "confidence": 0.9956657886505127
+   "confidence": 0.9955251216888428
   },
   {
    "bbox": [
@@ -509,21 +509,21 @@
    "bbox": [
     391.0,
     938.0,
-    259.0,
+    261.0,
     29.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9952348470687866
+   "confidence": 0.9993129968643188
   },
   {
    "bbox": [
     388.0,
-    967.0,
+    966.0,
     193.0,
-    37.0
+    38.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9919722676277161
+   "confidence": 0.9897505640983582
   },
   {
    "bbox": [
@@ -549,11 +549,11 @@
    "bbox": [
     50.0,
     1148.0,
-    141.0,
+    144.0,
     32.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9990436434745789
+   "confidence": 0.9995275735855103
   },
   {
    "bbox": [
@@ -618,5 +618,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:46:01.642440+00:00"
+ "completed_at": "2026-09-25T09:22:20.640479+00:00"
 }

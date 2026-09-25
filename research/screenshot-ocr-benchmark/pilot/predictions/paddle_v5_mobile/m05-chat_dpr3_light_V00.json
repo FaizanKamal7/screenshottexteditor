@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr3_light_V00",
  "status": "ok",
  "error": null,
- "total_s": 8.310249764000218,
+ "total_s": 8.735300315000131,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.37336579998373,
+ "orchestrator_wall_s": 8.798187699983828,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "53dba03ce9d4fb953c30c58e6e7616d59f6ec756617afe41dcf7bddf67ed2c63",
+ "input_pixel_sha256": "ebd2501208660f9a1a68995d7d64df1f6a834df90ec8227d95493a5d7d3d2dc4",
+ "peak_rss_mb": 1894.1,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -94,12 +98,12 @@
   {
    "bbox": [
     406.0,
-    428.0,
-    219.0,
-    51.0
+    430.0,
+    218.0,
+    49.0
    ],
    "text": "on for the",
-   "confidence": 0.9500093460083008
+   "confidence": 0.9635934829711914
   },
   {
    "bbox": [
@@ -223,13 +227,13 @@
   },
   {
    "bbox": [
-    72.0,
+    73.0,
     938.0,
     156.0,
     51.0
    ],
    "text": "invoice",
-   "confidence": 0.9998441338539124
+   "confidence": 0.999883770942688
   },
   {
    "bbox": [
@@ -245,31 +249,31 @@
    "bbox": [
     71.0,
     997.0,
-    159.0,
+    163.0,
     54.0
    ],
    "text": "finance",
-   "confidence": 0.9572778940200806
+   "confidence": 0.9927029013633728
   },
   {
    "bbox": [
     226.0,
-    1004.0,
-    105.0,
-    49.0
+    1003.0,
+    110.0,
+    51.0
    ],
    "text": "says",
-   "confidence": 0.9977371096611023
+   "confidence": 0.9988195300102234
   },
   {
    "bbox": [
-    333.0,
-    996.0,
-    213.0,
-    56.0
+    334.0,
+    999.0,
+    212.0,
+    53.0
    ],
    "text": "$1,284.50.",
-   "confidence": 0.9990547895431519
+   "confidence": 0.9944833517074585
   },
   {
    "bbox": [
@@ -375,11 +379,11 @@
    "bbox": [
     587.0,
     1404.0,
-    388.0,
+    391.0,
     48.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9993871450424194
+   "confidence": 0.9968474507331848
   },
   {
    "bbox": [
@@ -403,13 +407,13 @@
   },
   {
    "bbox": [
-    76.0,
-    1659.0,
-    170.0,
-    57.0
+    77.0,
+    1660.0,
+    169.0,
+    55.0
    ],
    "text": "Thanks,",
-   "confidence": 0.9987136125564575
+   "confidence": 0.9989666938781738
   },
   {
    "bbox": [
@@ -423,13 +427,13 @@
   },
   {
    "bbox": [
-    74.0,
-    1723.0,
-    219.0,
-    48.0
+    73.0,
+    1720.0,
+    223.0,
+    53.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9641966819763184
+   "confidence": 0.9986680150032043
   },
   {
    "bbox": [
@@ -494,5 +498,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:29:35.547412+00:00"
+ "completed_at": "2026-09-25T08:33:40.484916+00:00"
 }

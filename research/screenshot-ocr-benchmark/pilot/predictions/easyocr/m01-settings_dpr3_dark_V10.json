@@ -15,24 +15,28 @@
  "image_id": "m01-settings_dpr3_dark_V10",
  "status": "ok",
  "error": null,
- "total_s": 8.763291687999299,
+ "total_s": 8.354990118999922,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 8.81115699998918,
+ "orchestrator_wall_s": 8.40203830000246,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "53514567850e25e24bdfd460e49a281b3c4c1095954ba9c17601e151c5450b2b",
+ "input_pixel_sha256": "33c8a7895cd774a9c903cc40c21c592a41f23e0fbe6d49b02f350bcc669faaf7",
+ "peak_rss_mb": 3013.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     68.0,
     46.0,
     104.0,
-    48.0
+    50.0
    ],
-   "text": "9.41",
-   "confidence": 0.6761900893327323
+   "text": "9:41",
+   "confidence": 0.778049111366272
   },
   {
    "bbox": [
@@ -52,7 +56,7 @@
     126.0
    ],
    "text": "Settings",
-   "confidence": 0.9999904747934458
+   "confidence": 0.9999889153533945
   },
   {
    "bbox": [
@@ -62,7 +66,7 @@
     52.0
    ],
    "text": "Q",
-   "confidence": 0.9853418978437425
+   "confidence": 0.9864133335910061
   },
   {
    "bbox": [
@@ -72,17 +76,17 @@
     73.0
    ],
    "text": "Search settings",
-   "confidence": 0.9999613707699818
+   "confidence": 0.9999638640134696
   },
   {
    "bbox": [
-    278.0,
-    503.0,
-    380.0,
-    75.0
+    277.0,
+    502.0,
+    381.0,
+    77.0
    ],
    "text": "Avery Collins",
-   "confidence": 0.9999010385050723
+   "confidence": 0.9936822007967789
   },
   {
    "bbox": [
@@ -92,7 +96,7 @@
     61.0
    ],
    "text": "avery collins@example.com",
-   "confidence": 0.6994233286085454
+   "confidence": 0.6286231710061916
   },
   {
    "bbox": [
@@ -172,7 +176,7 @@
     62.0
    ],
    "text": "English (US)",
-   "confidence": 0.9540436552857939
+   "confidence": 0.8625632885915384
   },
   {
    "bbox": [
@@ -317,5 +321,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:57:21.064092+00:00"
+ "completed_at": "2026-09-25T08:39:03.803944+00:00"
 }

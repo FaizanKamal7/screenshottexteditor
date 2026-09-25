@@ -12,14 +12,18 @@
  "image_id": "m01-settings_dpr2_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 3.6719193010003437,
+ "total_s": 3.6842275400003928,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.6863948999962304,
+ "orchestrator_wall_s": 3.6986955999745987,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "afc46011e18dc5fb29146c7c26245bf524f9aa022b18eb8646eefd5948c44586",
+ "input_pixel_sha256": "ddc2ac18f9a1771dc29094b19ac266271097a54e80a913a9a4ecfb36a8de399c",
+ "peak_rss_mb": 953.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -29,7 +33,7 @@
     22.0
    ],
    "text": "9:41",
-   "confidence": 0.9839915037155151
+   "confidence": 0.9834123849868774
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     26.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.9574911594390869
+   "confidence": 0.9759597778320312
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     17.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9961355328559875
+   "confidence": 0.996192216873169
   },
   {
    "bbox": [
@@ -139,7 +143,7 @@
     20.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9541640281677246
+   "confidence": 0.9520770311355591
   },
   {
    "bbox": [
@@ -156,10 +160,10 @@
     268.0,
     402.0,
     95.0,
-    28.0
+    29.0
    ],
    "text": "English (Us)",
-   "confidence": 0.9486411213874817
+   "confidence": 0.9469642043113708
   },
   {
    "bbox": [
@@ -244,12 +248,12 @@
   {
    "bbox": [
     29.0,
-    710.0,
-    260.0,
+    709.0,
+    259.0,
     17.0
    ],
    "text": "Last synced 2 minutes ago · Backup size 318 MB",
-   "confidence": 0.9637729525566101
+   "confidence": 0.9554597735404968
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:19:48.865797+00:00"
+ "completed_at": "2026-09-25T08:23:44.749032+00:00"
 }

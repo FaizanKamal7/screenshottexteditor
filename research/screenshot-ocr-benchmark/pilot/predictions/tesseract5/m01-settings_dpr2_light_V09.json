@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr2_light_V09",
  "status": "ok",
  "error": null,
- "total_s": 0.8493428120000317,
+ "total_s": 0.6037519139999858,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8874057999928482,
+ "orchestrator_wall_s": 0.6377137000090443,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "0610cc7de7186a4f526ae36e660ed60ccb4581cedab964a09aa8db36e3019f0b",
+ "input_pixel_sha256": "df12f24f4cb8fd26a3b17815f6fdcd69f4cc8e17d2f9b857f6d0fc31fa71258e",
+ "peak_rss_mb": 74.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     23.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -46,7 +50,7 @@
     33.0
    ],
    "text": "Q Search settings",
-   "confidence": 0.94
+   "confidence": 0.9433333333333332
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     31.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9333333333333332
+   "confidence": 0.9266666666666667
   },
   {
    "bbox": [
@@ -111,9 +115,9 @@
   {
    "bbox": [
     62.0,
-    822.0,
+    823.0,
     656.0,
-    31.0
+    30.0
    ],
    "text": "Language English (US)",
    "confidence": 0.96
@@ -146,7 +150,7 @@
     31.0
    ],
    "text": "Help Center",
-   "confidence": 0.955
+   "confidence": 0.96
   },
   {
    "bbox": [
@@ -176,7 +180,7 @@
     21.0
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.9279999999999999
+   "confidence": 0.927
   },
   {
    "bbox": [
@@ -196,10 +200,10 @@
     19.0
    ],
    "text": "Home Search Inbox Settings",
-   "confidence": 0.9375
+   "confidence": 0.94
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:18:26.564999+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:43.063252+00:00"
 }

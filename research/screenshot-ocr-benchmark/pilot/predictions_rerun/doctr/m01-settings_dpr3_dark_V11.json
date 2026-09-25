@@ -12,14 +12,18 @@
  "image_id": "m01-settings_dpr3_dark_V11",
  "status": "ok",
  "error": null,
- "total_s": 1.5236548749999201,
+ "total_s": 1.4961077560001286,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.5662453999975696,
+ "orchestrator_wall_s": 1.535782199993264,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "bae783ab2f9bf157298dcfb4409e67a7d4f35ba0da7da2f42dbae82ebb4c5807",
+ "input_pixel_sha256": "c05575311bdf1b701c4ef340d3888b3f718e53eaef033bce0fc14f0f38901ade",
+ "peak_rss_mb": 1120.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -29,7 +33,7 @@
     46.98046875
    ],
    "text": "9:41",
-   "confidence": 0.8948838114738464
+   "confidence": 0.927636981010437
   },
   {
    "bbox": [
@@ -49,7 +53,7 @@
     89.015625
    ],
    "text": "Settings",
-   "confidence": 0.7290136218070984
+   "confidence": 0.7263035178184509
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     51.92578125
    ],
    "text": "Search settings",
-   "confidence": 0.987434983253479
+   "confidence": 0.9865148663520813
   },
   {
    "bbox": [
@@ -69,7 +73,7 @@
     61.81640625
    ],
    "text": "Avery Collins",
-   "confidence": 0.9680569171905518
+   "confidence": 0.9676300287246704
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     42.03515625
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.5937152902285258
+   "confidence": 0.6182931264241537
   },
   {
    "bbox": [
@@ -153,13 +157,13 @@
   },
   {
    "bbox": [
-    819.9023437500001,
+    822.3749999999999,
     1228.91015625,
-    262.10156249999994,
-    54.3984375
+    262.10156250000006,
+    51.92578125
    ],
    "text": "English (US)",
-   "confidence": 0.9951664209365845
+   "confidence": 0.9991969466209412
   },
   {
    "bbox": [
@@ -294,5 +298,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:55:00.495700+00:00"
+ "completed_at": "2026-09-25T09:49:32.901183+00:00"
 }

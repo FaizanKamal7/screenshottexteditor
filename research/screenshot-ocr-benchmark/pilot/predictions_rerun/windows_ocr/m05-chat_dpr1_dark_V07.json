@@ -10,14 +10,18 @@
  "image_id": "m05-chat_dpr1_dark_V07",
  "status": "ok",
  "error": null,
- "total_s": 0.030382800003280863,
+ "total_s": 0.024025399994570762,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.04413680001744069,
+ "orchestrator_wall_s": 0.03626099997200072,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "bd25448fe3d96f86e3b3c09ae43d7aabee86407ea9c75776dc429f947ad4ad72",
+ "input_pixel_sha256": "d3e2eb6356e7b6f18765d08a78179eb98ad50b16594e833a0159f5b5be3aff3b",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -133,7 +137,7 @@
    "bbox": [
     26.0,
     334.0,
-    153.0,
+    154.0,
     16.0
    ],
    "text": "finance says $1,284.50.",
@@ -183,7 +187,7 @@
    "bbox": [
     197.0,
     470.0,
-    127.0,
+    128.0,
     14.0
    ],
    "text": "Q3-invoice-final.pdf",
@@ -223,7 +227,7 @@
    "bbox": [
     26.0,
     576.0,
-    70.0,
+    71.0,
     12.0
    ],
    "text": "confirmed.",
@@ -292,5 +296,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:54:01.809636+00:00"
+ "completed_at": "2026-09-25T09:49:13.165247+00:00"
 }

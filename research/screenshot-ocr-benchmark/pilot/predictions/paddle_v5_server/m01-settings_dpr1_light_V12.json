@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr1_light_V12",
  "status": "ok",
  "error": null,
- "total_s": 3.904800364000039,
+ "total_s": 4.134626580000258,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 3.9162055000197142,
+ "orchestrator_wall_s": 4.146161699958611,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "65163ad172e8461e74784506ae138af35e8eeb14beb5037053fa2a117e51e2c3",
- "peak_rss_mb": 1907.8,
+ "input_pixel_sha256": "59d5308db2b99a879bd227da196944b989e7714334c34970e84ccadde60ea7ba",
+ "peak_rss_mb": 1411.6,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     12.0
    ],
    "text": "9:41",
-   "confidence": 0.9856792688369751
+   "confidence": 0.9733085632324219
   },
   {
    "bbox": [
@@ -77,6 +77,16 @@
   },
   {
    "bbox": [
+    45.0,
+    94.0,
+    87.0,
+    10.0
+   ],
+   "text": "avery.coliny@examplo.com",
+   "confidence": 0.7277117371559143
+  },
+  {
+   "bbox": [
     13.0,
     119.0,
     36.0,
@@ -112,8 +122,8 @@
     71.0,
     11.0
    ],
-   "text": "Privacy & Security",
-   "confidence": 0.9393095374107361
+   "text": "Privacy &Security",
+   "confidence": 0.9666286706924438
   },
   {
    "bbox": [
@@ -133,7 +143,7 @@
     10.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9701226949691772
+   "confidence": 0.9561638832092285
   },
   {
    "bbox": [
@@ -148,12 +158,12 @@
   {
    "bbox": [
     134.0,
-    202.0,
-    48.0,
+    203.0,
+    47.0,
     11.0
    ],
    "text": "English (US)",
-   "confidence": 0.942324697971344
+   "confidence": 0.958441436290741
   },
   {
    "bbox": [
@@ -288,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:11:39.023021+00:00"
+ "completed_at": "2026-09-25T08:50:14.447102+00:00"
 }

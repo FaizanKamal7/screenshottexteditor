@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr3_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 13.311630879001314,
+ "total_s": 13.894983190999483,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 13.342060199996922,
+ "orchestrator_wall_s": 13.91762139997445,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "25bc05206a78a153a2177787224ea1596a0aa1bb381d8b3716c1cf4da3ecb974",
- "peak_rss_mb": 5163.5,
+ "input_pixel_sha256": "cd43f1c69526462d5e7cf9f0fd0f86af0e11b022556f284003866dd75cc72fbf",
+ "peak_rss_mb": 4856.3,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -47,13 +47,13 @@
   },
   {
    "bbox": [
-    147.0,
-    74.0,
+    146.0,
+    73.0,
     132.0,
     28.0
    ],
    "text": "Jordan Lee",
-   "confidence": 0.9855796694755554
+   "confidence": 0.9904046058654785
   },
   {
    "bbox": [
@@ -63,7 +63,7 @@
     26.0
    ],
    "text": "Active 5 min ago",
-   "confidence": 0.9582806825637817
+   "confidence": 0.9508554339408875
   },
   {
    "bbox": [
@@ -73,7 +73,7 @@
     21.0
    ],
    "text": "Tue, Sep 22·4:12 PM",
-   "confidence": 0.9194114208221436
+   "confidence": 0.915745198726654
   },
   {
    "bbox": [
@@ -123,7 +123,7 @@
     28.0
    ],
    "text": "component list.",
-   "confidence": 0.9803744554519653
+   "confidence": 0.9797731041908264
   },
   {
    "bbox": [
@@ -147,13 +147,13 @@
   },
   {
    "bbox": [
-    36.0,
-    498.0,
-    235.0,
-    27.0
+    38.0,
+    499.0,
+    233.0,
+    24.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9951593279838562
+   "confidence": 0.9882051944732666
   },
   {
    "bbox": [
@@ -177,33 +177,33 @@
   },
   {
    "bbox": [
-    171.0,
-    630.0,
-    222.0,
-    27.0
+    172.0,
+    632.0,
+    220.0,
+    24.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9691560864448547
+   "confidence": 0.9274722933769226
   },
   {
    "bbox": [
     295.0,
     702.0,
-    193.0,
+    194.0,
     21.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9971358180046082
+   "confidence": 0.9929054975509644
   },
   {
    "bbox": [
     290.0,
     725.0,
-    147.0,
+    146.0,
     27.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9304419755935669
+   "confidence": 0.9196798205375671
   },
   {
    "bbox": [
@@ -227,13 +227,13 @@
   },
   {
    "bbox": [
-    33.0,
+    34.0,
     856.0,
-    114.0,
+    115.0,
     30.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9996756315231323
+   "confidence": 0.9996708631515503
   },
   {
    "bbox": [
@@ -298,5 +298,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T15:13:38.993477+00:00"
+ "completed_at": "2026-09-25T09:48:50.362403+00:00"
 }

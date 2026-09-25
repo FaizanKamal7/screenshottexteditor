@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_light_V09",
  "status": "ok",
  "error": null,
- "total_s": 0.7813998420001553,
+ "total_s": 0.41507357899990893,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.8001596999820322,
+ "orchestrator_wall_s": 0.42855149996466935,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "223cf6652aa65aa066da896734dcec1a24516e29c834737d10beb5afd5120bdb",
+ "input_pixel_sha256": "868e170d078b1871ba343bf4d7d52cac013385ec3beb029ee0605b457d637f0f",
+ "peak_rss_mb": 45.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -26,7 +30,7 @@
     11.0
    ],
    "text": "9:41 87%",
-   "confidence": 0.865
+   "confidence": 0.935
   },
   {
    "bbox": [
@@ -62,11 +66,11 @@
    "bbox": [
     95.0,
     196.0,
-    169.0,
+    170.0,
     12.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.84
+   "confidence": 0.87
   },
   {
    "bbox": [
@@ -76,7 +80,7 @@
     9.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.95
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     15.0
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9366666666666668
+   "confidence": 0.94
   },
   {
    "bbox": [
@@ -106,7 +110,7 @@
     16.0
    ],
    "text": "Storage 12.4 GB of 64 GB",
-   "confidence": 0.9516666666666667
+   "confidence": 0.9283333333333332
   },
   {
    "bbox": [
@@ -116,7 +120,7 @@
     32.0
    ],
    "text": "Language English (US)",
-   "confidence": 0.96
+   "confidence": 0.9566666666666667
   },
   {
    "bbox": [
@@ -125,8 +129,8 @@
     328.0,
     12.0
    ],
-   "text": "Screen Time 3n12m",
-   "confidence": 0.8766666666666667
+   "text": "Screen Time 3h 12m",
+   "confidence": 0.565
   },
   {
    "bbox": [
@@ -136,7 +140,7 @@
     9.0
    ],
    "text": "SUPPORT",
-   "confidence": 0.91
+   "confidence": 0.89
   },
   {
    "bbox": [
@@ -146,7 +150,7 @@
     15.0
    ],
    "text": "Help Center",
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "bbox": [
@@ -166,7 +170,7 @@
     28.0
    ],
    "text": "About Version 418.2",
-   "confidence": 0.9533333333333333
+   "confidence": 0.9566666666666667
   },
   {
    "bbox": [
@@ -176,7 +180,7 @@
     28.0
    ],
    "text": "Last synced 2 minutes ago - Backup size 318 MB",
-   "confidence": 0.892
+   "confidence": 0.889
   },
   {
    "bbox": [
@@ -196,10 +200,10 @@
     28.0
    ],
    "text": "Home Search Inbox Settings",
-   "confidence": 0.78
+   "confidence": 0.775
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:51.037284+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:26.303773+00:00"
 }

@@ -12,14 +12,18 @@
  "image_id": "m05-chat_dpr2_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 4.530673943000693,
+ "total_s": 4.388140734999979,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 4.549226700008148,
+ "orchestrator_wall_s": 4.408666999952402,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "815fb2dc7f91435934a02c1edc954fb1780b3e430eb801ee08ecc09a8e0f07d0",
+ "input_pixel_sha256": "c338556675154f682a7f6309b9d18ef9ee6971eef8d051784d374a4788b1ec0e",
+ "peak_rss_mb": 1205.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -69,7 +73,7 @@
     19.0
    ],
    "text": "Active 5 min ago",
-   "confidence": 0.9602212905883789
+   "confidence": 0.9595034122467041
   },
   {
    "bbox": [
@@ -88,8 +92,8 @@
     231.0,
     17.0
    ],
-   "text": "Hey! Are We still on for the design",
-   "confidence": 0.9655230045318604
+   "text": "Hey! Are we still on for the design",
+   "confidence": 0.9795198440551758
   },
   {
    "bbox": [
@@ -109,7 +113,7 @@
     19.0
    ],
    "text": "Yes, 10:30 in room 4B. I'll bring the",
-   "confidence": 0.9480224847793579
+   "confidence": 0.9475343823432922
   },
   {
    "bbox": [
@@ -129,7 +133,7 @@
     23.0
    ],
    "text": "component list.",
-   "confidence": 0.9961678981781006
+   "confidence": 0.9959026575088501
   },
   {
    "bbox": [
@@ -155,11 +159,11 @@
    "bbox": [
     22.0,
     331.0,
-    159.0,
+    160.0,
     20.0
    ],
-   "text": "finance says S1,284.50.",
-   "confidence": 0.9689881801605225
+   "text": "finance says $1,284.50.",
+   "confidence": 0.9631527066230774
   },
   {
    "bbox": [
@@ -179,7 +183,7 @@
     17.0
    ],
    "text": "Good catch, the second one is right.",
-   "confidence": 0.9815337061882019
+   "confidence": 0.9800660014152527
   },
   {
    "bbox": [
@@ -189,17 +193,17 @@
     20.0
    ],
    "text": "Sending the PDF now.",
-   "confidence": 0.9551410675048828
+   "confidence": 0.9533535838127136
   },
   {
    "bbox": [
     194.0,
     467.0,
-    132.0,
+    133.0,
     17.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9991129040718079
+   "confidence": 0.9980460405349731
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     16.0
    ],
    "text": "2.4 MB · 6 pages",
-   "confidence": 0.9323699474334717
+   "confidence": 0.9312967658042908
   },
   {
    "bbox": [
@@ -223,23 +227,23 @@
   },
   {
    "bbox": [
-    25.0,
-    554.0,
-    221.0,
-    17.0
+    26.0,
+    555.0,
+    219.0,
+    14.0
    ],
-   "text": "Thanks, got it. Order #A-20931 is",
-   "confidence": 0.9953988790512085
+   "text": "Thanks, qot it. Order #A-20931 is",
+   "confidence": 0.9801589250564575
   },
   {
    "bbox": [
     22.0,
     573.0,
-    76.0,
+    77.0,
     17.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9883936047554016
+   "confidence": 0.9989593625068665
   },
   {
    "bbox": [
@@ -249,7 +253,7 @@
     18.0
    ],
    "text": "Sounds good",
-   "confidence": 0.9975297451019287
+   "confidence": 0.9973007440567017
   },
   {
    "bbox": [
@@ -304,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:26:37.198690+00:00"
+ "completed_at": "2026-09-25T08:30:37.016340+00:00"
 }

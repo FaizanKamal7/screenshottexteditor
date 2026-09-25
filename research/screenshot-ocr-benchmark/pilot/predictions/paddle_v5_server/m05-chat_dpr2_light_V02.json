@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr2_light_V02",
  "status": "ok",
  "error": null,
- "total_s": 21.75046830899919,
+ "total_s": 20.23311959900093,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 21.78544890001649,
+ "orchestrator_wall_s": 20.260420400009025,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "d7bb35e11a12d04f7bd856a4099e00769eb61b3d0a940d6c42c8a6754b4b2eea",
- "peak_rss_mb": 8036.7,
+ "input_pixel_sha256": "d8a4c76b601610a93c203d3f964750d7b548884d64dd31236318d3a45aa31768",
+ "peak_rss_mb": 7741.8,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -73,7 +73,7 @@
     27.0
    ],
    "text": "Tue, Sep 22.4:12 PM",
-   "confidence": 0.9256365895271301
+   "confidence": 0.9233314394950867
   },
   {
    "bbox": [
@@ -93,7 +93,7 @@
     36.0
    ],
    "text": "review tomorrow morning?",
-   "confidence": 0.9788643717765808
+   "confidence": 0.9783445000648499
   },
   {
    "bbox": [
@@ -102,8 +102,8 @@
     473.0,
     40.0
    ],
-   "text": "Yes, 10:30 in room 4B.I'Il bring the",
-   "confidence": 0.8790857791900635
+   "text": "Yes, 10:30 in room 4B.IIl bring the",
+   "confidence": 0.8884760141372681
   },
   {
    "bbox": [
@@ -113,7 +113,7 @@
     35.0
    ],
    "text": "updated mockups and the",
-   "confidence": 0.9802490472793579
+   "confidence": 0.978976845741272
   },
   {
    "bbox": [
@@ -127,13 +127,13 @@
   },
   {
    "bbox": [
-    49.0,
-    585.0,
-    406.0,
-    33.0
+    48.0,
+    584.0,
+    408.0,
+    36.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9754420518875122
+   "confidence": 0.9517152905464172
   },
   {
    "bbox": [
@@ -143,17 +143,17 @@
     36.0
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.9506619572639465
+   "confidence": 0.9513226747512817
   },
   {
    "bbox": [
-    48.0,
+    49.0,
     666.0,
-    313.0,
+    314.0,
     34.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9925904273986816
+   "confidence": 0.9865750670433044
   },
   {
    "bbox": [
@@ -199,11 +199,11 @@
    "bbox": [
     390.0,
     934.0,
-    261.0,
+    263.0,
     33.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.9702432751655579
+   "confidence": 0.9799640774726868
   },
   {
    "bbox": [
@@ -213,7 +213,7 @@
     34.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9670147895812988
+   "confidence": 0.9676494598388672
   },
   {
    "bbox": [
@@ -239,11 +239,11 @@
    "bbox": [
     48.0,
     1149.0,
-    146.0,
+    148.0,
     30.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9992319345474243
+   "confidence": 0.9996749758720398
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:50:37.497132+00:00"
+ "completed_at": "2026-09-25T09:26:40.030316+00:00"
 }

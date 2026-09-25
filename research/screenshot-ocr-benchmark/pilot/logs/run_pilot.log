@@ -1,0 +1,46 @@
+[2026-09-25T13:08:26] run_pilot start: stages ['render', 'variants', 'downscaled_gt', 'invalidate', 'ocr', 'serial_check', 'rerun', 'timing', 'lock', 'environment', 'tests', 'pseudo', 'score', 'validate']
+[2026-09-25T13:08:26] stage render: /bench ocrbench-tools:pilot python scripts/render_chromium.py
+[2026-09-25T13:09:14] stage render: exit 0 after 48 s
+[2026-09-25T13:09:14] stage variants: /bench ocrbench-tools:pilot python scripts/derive_variants.py
+[2026-09-25T13:14:08] stage variants: exit 0 after 294 s
+[2026-09-25T13:14:08] stage downscaled_gt: /bench ocrbench-tools:pilot python scripts/downscaled_gt.py
+[2026-09-25T13:14:14] stage downscaled_gt: exit 0 after 6 s
+[2026-09-25T13:14:15] stage invalidate: removed 1044 stale or unverifiable predictions
+[2026-09-25T13:14:15] stage ocr:tesseract5: scripts/run_ocr.py accuracy --engines tesseract5
+[2026-09-25T13:16:08] stage ocr:tesseract5: exit 0 after 113 s
+[2026-09-25T13:16:08] stage ocr:windows_ocr: scripts/run_ocr.py accuracy --engines windows_ocr
+[2026-09-25T13:16:25] stage ocr:windows_ocr: exit 0 after 17 s
+[2026-09-25T13:16:25] stage ocr:doctr: scripts/run_ocr.py accuracy --engines doctr
+[2026-09-25T13:21:02] stage ocr:doctr: exit 0 after 277 s
+[2026-09-25T13:21:02] stage ocr:paddle_v5_mobile: scripts/run_ocr.py accuracy --engines paddle_v5_mobile
+[2026-09-25T13:35:05] stage ocr:paddle_v5_mobile: exit 0 after 843 s
+[2026-09-25T13:35:05] stage ocr:easyocr: scripts/run_ocr.py accuracy --engines easyocr
+[2026-09-25T13:47:03] stage ocr:easyocr: exit 0 after 718 s
+[2026-09-25T13:47:03] stage ocr:paddle_v5_server: scripts/run_ocr.py accuracy --engines paddle_v5_server
+[2026-09-25T14:48:51] stage ocr:paddle_v5_server: exit 0 after 3708 s
+[2026-09-25T14:48:51] stage serial_check: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py serial-check
+[2026-09-25T14:48:52] stage serial_check: exit 0 after 1 s
+[2026-09-25T14:48:52] stage rerun:tesseract5: scripts/run_ocr.py rerun --engines tesseract5
+[2026-09-25T14:49:09] stage rerun:tesseract5: exit 0 after 18 s
+[2026-09-25T14:49:09] stage rerun:windows_ocr: scripts/run_ocr.py rerun --engines windows_ocr
+[2026-09-25T14:49:14] stage rerun:windows_ocr: exit 0 after 4 s
+[2026-09-25T14:49:14] stage rerun:doctr: scripts/run_ocr.py rerun --engines doctr
+[2026-09-25T14:49:56] stage rerun:doctr: exit 0 after 43 s
+[2026-09-25T14:49:56] stage rerun:paddle_v5_mobile: scripts/run_ocr.py rerun --engines paddle_v5_mobile
+[2026-09-25T14:51:43] stage rerun:paddle_v5_mobile: exit 0 after 106 s
+[2026-09-25T14:51:43] stage rerun:easyocr: scripts/run_ocr.py rerun --engines easyocr
+[2026-09-25T14:53:18] stage rerun:easyocr: exit 0 after 95 s
+[2026-09-25T14:53:18] stage rerun:paddle_v5_server: scripts/run_ocr.py rerun --engines paddle_v5_server
+[2026-09-25T15:01:00] stage rerun:paddle_v5_server: exit 0 after 462 s
+[2026-09-25T15:01:00] stage timing: skipped (pass --timing to re-measure runtime)
+[2026-09-25T15:01:00] stage lock: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py lock
+[2026-09-25T15:01:00] stage lock: exit 0 after 0 s
+[2026-09-25T15:01:00] stage environment: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py environment
+[2026-09-25T15:01:12] stage environment: exit 0 after 12 s
+[2026-09-25T15:01:12] stage tests: /bench ocrbench-tools:pilot python scripts/run_tests.py
+[2026-09-25T15:01:31] stage tests: exit 0 after 19 s
+[2026-09-25T15:01:31] stage pseudo: /bench ocrbench-tools:pilot python scripts/pseudo_engines.py
+[2026-09-25T15:01:43] stage pseudo: exit 0 after 12 s
+[2026-09-25T15:01:43] stage score: /bench ocrbench-tools:pilot python scripts/score.py
+[2026-09-25T15:02:49] stage score: exit 0 after 67 s
+[2026-09-25T15:02:49] stage validate: /bench ocrbench-tools:pilot python scripts/validate_pilot.py

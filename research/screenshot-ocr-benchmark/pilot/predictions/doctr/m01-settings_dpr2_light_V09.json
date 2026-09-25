@@ -12,24 +12,28 @@
  "image_id": "m01-settings_dpr2_light_V09",
  "status": "ok",
  "error": null,
- "total_s": 1.471212648000801,
+ "total_s": 1.3984567199995581,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.5014594999956898,
+ "orchestrator_wall_s": 1.4256067999522202,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "0610cc7de7186a4f526ae36e660ed60ccb4581cedab964a09aa8db36e3019f0b",
+ "input_pixel_sha256": "df12f24f4cb8fd26a3b17815f6fdcd69f4cc8e17d2f9b857f6d0fc31fa71258e",
+ "peak_rss_mb": 1164.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
     47.12500000000001,
-    31.3203125,
+    32.96875,
     67.58593749999999,
-    31.3203125
+    29.671875
    ],
    "text": "9:41",
-   "confidence": 0.9713232517242432
+   "confidence": 0.9536908864974976
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     37.9140625
    ],
    "text": "Search settings",
-   "confidence": 0.9609190225601196
+   "confidence": 0.9593177437782288
   },
   {
    "bbox": [
@@ -69,7 +73,7 @@
     42.859375
    ],
    "text": "Avery Collins",
-   "confidence": 0.5994185209274292
+   "confidence": 0.6008923053741455
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     23.078125
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.6905376315116882
+   "confidence": 0.6901274174451828
   },
   {
    "bbox": [
@@ -89,7 +93,7 @@
     23.078125
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9963334798812866
+   "confidence": 0.996514618396759
   },
   {
    "bbox": [
@@ -99,7 +103,7 @@
     23.078125
    ],
    "text": "Notifications",
-   "confidence": 0.9890673756599426
+   "confidence": 0.9891923069953918
   },
   {
    "bbox": [
@@ -109,7 +113,7 @@
     28.0234375
    ],
    "text": "On",
-   "confidence": 0.9829011559486389
+   "confidence": 0.9832649827003479
   },
   {
    "bbox": [
@@ -119,7 +123,7 @@
     37.9140625
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9791272282600403
+   "confidence": 0.9793691039085388
   },
   {
    "bbox": [
@@ -129,7 +133,7 @@
     36.265625
    ],
    "text": "Storage",
-   "confidence": 0.9698125720024109
+   "confidence": 0.9701041579246521
   },
   {
    "bbox": [
@@ -149,7 +153,7 @@
     31.3203125
    ],
    "text": "Language",
-   "confidence": 0.9690732359886169
+   "confidence": 0.9697986245155334
   },
   {
    "bbox": [
@@ -159,7 +163,7 @@
     34.6171875
    ],
    "text": "English (US)",
-   "confidence": 0.9982556700706482
+   "confidence": 0.9985539317131042
   },
   {
    "bbox": [
@@ -169,7 +173,7 @@
     31.3203125
    ],
    "text": "Screen Time",
-   "confidence": 0.8885746598243713
+   "confidence": 0.8838697671890259
   },
   {
    "bbox": [
@@ -179,7 +183,7 @@
     31.3203125
    ],
    "text": "3h 12m",
-   "confidence": 0.9971727132797241
+   "confidence": 0.9971576929092407
   },
   {
    "bbox": [
@@ -189,7 +193,7 @@
     23.078125
    ],
    "text": "SUPPORT",
-   "confidence": 0.9998194575309753
+   "confidence": 0.9998152852058411
   },
   {
    "bbox": [
@@ -209,7 +213,7 @@
     29.671875
    ],
    "text": "Send Feedback",
-   "confidence": 0.9939383268356323
+   "confidence": 0.9939426779747009
   },
   {
    "bbox": [
@@ -229,7 +233,7 @@
     29.671875
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.9815647006034851
+   "confidence": 0.9809842109680176
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     29.671875
    ],
    "text": "Delete Account",
-   "confidence": 0.9152552485466003
+   "confidence": 0.9087679386138916
   },
   {
    "bbox": [
@@ -259,7 +263,7 @@
     23.078125
    ],
    "text": "Home",
-   "confidence": 0.9999316930770874
+   "confidence": 0.9999161958694458
   },
   {
    "bbox": [
@@ -269,7 +273,7 @@
     23.078125
    ],
    "text": "Search",
-   "confidence": 0.9984349608421326
+   "confidence": 0.9984298348426819
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     29.671875
    ],
    "text": "Settings",
-   "confidence": 0.5186610817909241
+   "confidence": 0.5519880652427673
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:47:42.974237+00:00"
+ "completed_at": "2026-09-25T08:17:43.855546+00:00"
 }

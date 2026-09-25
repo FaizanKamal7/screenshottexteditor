@@ -10,14 +10,18 @@
  "image_id": "m05-chat_dpr1_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 0.04733579998719506,
+ "total_s": 0.023077099991496652,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.06192179999197833,
+ "orchestrator_wall_s": 0.03625010000541806,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "7e729466d2dc0df75120550e832462dc6aabb4a410c1a0e8c7ddab3d89f412f8",
+ "input_pixel_sha256": "a7ec22f43d9067b1a656d216249848da639297a1201c90862a42e5f8e231a0bc",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -46,7 +50,7 @@
     92.0,
     12.0
    ],
-   "text": "Active S min ago",
+   "text": "Active 5 min ago",
    "confidence": null
   },
   {
@@ -61,9 +65,9 @@
   },
   {
    "bbox": [
-    26.0,
+    27.0,
     145.0,
-    226.0,
+    225.0,
     15.0
    ],
    "text": "Hey! Are we still on for the design",
@@ -82,11 +86,11 @@
   {
    "bbox": [
     125.0,
-    208.0,
+    206.0,
     205.0,
-    17.0
+    19.0
    ],
-   "text": "es, in room 4B. I being t",
+   "text": "es, at) in room 4B. I bring t",
    "confidence": null
   },
   {
@@ -133,7 +137,7 @@
    "bbox": [
     26.0,
     334.0,
-    153.0,
+    154.0,
     16.0
    ],
    "text": "finance says $1,284.50.",
@@ -183,10 +187,10 @@
    "bbox": [
     197.0,
     470.0,
-    127.0,
+    129.0,
     14.0
    ],
-   "text": "Q3-invoice-final .pdf",
+   "text": "Q3-invoice-final.pdf",
    "confidence": null
   },
   {
@@ -223,7 +227,7 @@
    "bbox": [
     26.0,
     576.0,
-    70.0,
+    71.0,
     12.0
    ],
    "text": "confirmed.",
@@ -282,5 +286,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:44:13.480801+00:00"
+ "completed_at": "2026-09-25T08:16:18.437950+00:00"
 }

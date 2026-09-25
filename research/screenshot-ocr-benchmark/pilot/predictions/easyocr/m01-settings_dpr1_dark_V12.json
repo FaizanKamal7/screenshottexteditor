@@ -15,14 +15,18 @@
  "image_id": "m01-settings_dpr1_dark_V12",
  "status": "ok",
  "error": null,
- "total_s": 1.3607404890008183,
+ "total_s": 1.4202242890005436,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.3731918999983463,
+ "orchestrator_wall_s": 1.4324616999947466,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "2997adc72b6b3e84b00141dd3830cc5dbfe66bb580027a87ee0f385e2efd0e96",
+ "input_pixel_sha256": "a6c5c0da23ba2d9eea64828659fa97c4fb897c5e7eb5e3b1e359b19cb3e3973a",
+ "peak_rss_mb": 684.7,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -142,7 +146,7 @@
     12.0
    ],
    "text": "Engieh (USI",
-   "confidence": 0.1670357424842767
+   "confidence": 0.13395488613335685
   },
   {
    "bbox": [
@@ -237,5 +241,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T08:53:47.016508+00:00"
+ "completed_at": "2026-09-25T08:35:31.033958+00:00"
 }

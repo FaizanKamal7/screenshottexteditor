@@ -9,14 +9,18 @@
  "image_id": "m01-settings_dpr1_dark_V13",
  "status": "ok",
  "error": null,
- "total_s": 0.6977500920002058,
+ "total_s": 0.3035208359997341,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.7106406999810133,
+ "orchestrator_wall_s": 0.31393219996243715,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "024fd10b9e4028000898d5e56c237de8f5cb479af6439b96d6e39e1cdf7e21b7",
+ "input_pixel_sha256": "32bff89e4049aeb9c356d7d6f4dd38299f73e84990829aee9fd8b50c18650577",
+ "peak_rss_mb": 45.5,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -85,8 +89,8 @@
     169.0,
     28.0
    ],
-   "text": "Language Engen)",
-   "confidence": 0.46
+   "text": "Language ers)",
+   "confidence": 0.405
   },
   {
    "bbox": [
@@ -96,7 +100,7 @@
     7.0
    ],
    "text": "Screen Time nam",
-   "confidence": 0.44
+   "confidence": 0.43666666666666665
   },
   {
    "bbox": [
@@ -140,6 +144,6 @@
   }
  ],
  "pass": "accuracy",
- "conditions": "parallel",
- "completed_at": "2026-09-24T07:17:43.616797+00:00"
+ "conditions": "single-engine",
+ "completed_at": "2026-09-25T08:14:22.747872+00:00"
 }

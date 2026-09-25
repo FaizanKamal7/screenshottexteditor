@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>glyph-fidelity fixture (automated A4 mutation cases)</title>
+<script src="../../_shared/theme.js"></script>
+<link rel="stylesheet" href="../../_shared/base.css">
+<style>
+  :root { --bg: #ffffff; --text: #111111; --border: #dddddd; --icon: #777777; }
+  body { font-family: "Inter"; font-size: 16px; padding: 10px; }
+  div { margin-bottom: 8px; line-height: 1.4; }
+  .mono { font-family: "JetBrains Mono"; }
+  .nolig { font-variant-ligatures: none; }
+</style>
+</head>
+<body>
+  <!-- good: 1 glyph per visible character -->
+  <div id="plain" data-category="label">Settings 12.4 GB</div>
+  <div id="mono-nolig" class="mono nolig" data-category="code">a =&gt; b ?? c</div>
+  <div id="two-lines" data-category="paragraph" style="width: 60px">alpha beta</div>
+  <div id="nested" class="mono" data-category="code"><span style="color:#c00">const</span> x = <span style="color:#00c">"a"</span>;</div>
+  <!-- bad: programming ligatures merge "=>" and "??" into single glyphs -->
+  <div id="mono-lig" class="mono" data-category="code" style="font-variant-ligatures: normal; font-feature-settings: normal">a =&gt; b ?? c</div>
+  <!-- bad: rendered glyphs are uppercase, DOM text is not -->
+  <div id="transform" data-category="label" style="text-transform: uppercase">settings</div>
+  <!-- bad: text drawn by CSS generated content, not in the DOM text layer -->
+  <div id="pseudo" data-category="label" class="with-before">Price</div>
+  <style>.with-before::before { content: "USD "; }</style>
+  <!-- bad: glyph missing from the pinned subset (U+4E2D), rendered by a fallback font -->
+  <div id="fallback" data-category="label">Hello 中</div>
+  <!-- bad: visual order differs from DOM order (row-reverse flips "AB" to "BA") -->
+  <div id="reordered" data-category="label" style="display: flex; flex-direction: row-reverse; justify-content: flex-end"><span>A</span><span>B</span></div>
+  <!-- bad: text covered by an opaque box -->
+  <div id="occluded" data-category="label" style="position: relative">Hidden label<span style="position: absolute; left: 0; top: 0; width: 200px; height: 24px; background: #ffffff"></span></div>
+  <!-- bad: text sources outside the DOM text layer -->
+  <div id="forbidden" data-category="label">Visible
+    <canvas width="40" height="10"></canvas>
+    <svg width="60" height="16"><text x="0" y="12" fill="#111111">SVG</text></svg>
+  </div>
+  <script>
+    // ?only=<id>: keep one test element so each defect can be checked in isolation.
+    (function () {
+      var only = new URLSearchParams(location.search).get("only");
+      if (!only) return;
+      document.querySelectorAll("[data-category]").forEach(function (e) { if (e.id !== only) e.remove(); });
+    })();
+  </script>
+</body>
+</html>

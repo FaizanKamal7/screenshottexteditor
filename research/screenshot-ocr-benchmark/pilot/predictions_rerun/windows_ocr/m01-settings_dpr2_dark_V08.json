@@ -10,14 +10,18 @@
  "image_id": "m01-settings_dpr2_dark_V08",
  "status": "ok",
  "error": null,
- "total_s": 0.07180010000593029,
+ "total_s": 0.03775069996481761,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.11933280000812374,
+ "orchestrator_wall_s": 0.07204179995460436,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "8cba582aa7d5a0d2211b0c89aaad08433a55592a1cf44f197161635dd71c595c",
+ "input_pixel_sha256": "1e6a4ae8abde4e0f2e2c5383ce8d164eafe7e71969da1c59e15d0052fbdb9700",
+ "peak_rss_mb": null,
+ "peak_rss_scope": "unavailable",
+ "container_states": null,
+ "memory_limit": null,
  "lines": [
   {
    "bbox": [
@@ -202,9 +206,9 @@
   {
    "bbox": [
     548.0,
-    821.0,
+    822.0,
     170.0,
-    32.0
+    31.0
    ],
    "text": "English (US)",
    "confidence": null
@@ -213,7 +217,7 @@
    "bbox": [
     622.0,
     912.0,
-    96.0,
+    97.0,
     22.0
    ],
    "text": "31-1 12m",
@@ -233,7 +237,7 @@
    "bbox": [
     66.0,
     1429.0,
-    507.0,
+    508.0,
     22.0
    ],
    "text": "Last synced 2 minutes ago • Backup size 318 MB",
@@ -282,5 +286,5 @@
  ],
  "pass": "rerun",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T09:54:01.411190+00:00"
+ "completed_at": "2026-09-25T09:49:12.784637+00:00"
 }

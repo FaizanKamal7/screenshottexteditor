@@ -9,14 +9,18 @@
  "image_id": "m05-chat_dpr1_light_V13",
  "status": "ok",
  "error": null,
- "total_s": 0.42299709300004906,
+ "total_s": 0.25950832399939827,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 0.4320403999881819,
+ "orchestrator_wall_s": 0.2702446000184864,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "input_pixel_sha256": "88e1267a98be20a3ca854e2d7d934b866158b746a61e2f7efc64fc51dc8bdc88",
+ "peak_rss_mb": 55.0,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -65,18 +69,18 @@
     112.0,
     28.0
    ],
-   "text": "me rg 128 0k",
-   "confidence": 0.49
+   "text": "me rg 6128 0k",
+   "confidence": 0.4875
   },
   {
    "bbox": [
     13.0,
     156.0,
-    75.0,
+    77.0,
     28.0
    ],
-   "text": "fe a 120450",
-   "confidence": 0.39
+   "text": "nore sp 128450.",
+   "confidence": 0.5433333333333333
   },
   {
    "bbox": [
@@ -85,8 +89,8 @@
     64.0,
     14.0
    ],
-   "text": "rr",
-   "confidence": 0.35
+   "text": "regis",
+   "confidence": 0.3
   },
   {
    "bbox": [
@@ -95,8 +99,8 @@
     113.0,
     28.0
    ],
-   "text": "Tork got. Or 4 20310",
-   "confidence": 0.434
+   "text": "Tork got. Or 420310",
+   "confidence": 0.395
   },
   {
    "bbox": [
@@ -121,5 +125,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:43:23.684952+00:00"
+ "completed_at": "2026-09-25T08:15:20.547299+00:00"
 }

@@ -624,17 +624,17 @@
    "element_idx": 13,
    "ink_box": [
     822,
-    1232,
+    1234,
     256,
-    47
+    45
    ],
    "ink_pixels": 3920,
    "line_id": "L0014",
    "ink_box_half": [
     411,
-    616,
+    617,
     128,
-    24
+    23
    ],
    "ink_pixels_half": 1005
   },

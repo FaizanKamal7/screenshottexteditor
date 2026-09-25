@@ -64,8 +64,21 @@ MARK_TEXT_OWNERS_JS = """
   all.forEach((el, i) => {
     el.setAttribute("data-ocrb-owner", String(i));
     const cs = getComputedStyle(el);
+    // Characters with a rendered box in ALL descendant text nodes: Chrome's glyphCount
+    // for a node covers its whole subtree (verified: a syntax-highlighted code line
+    // reports every glyph of the line, not just its direct text). Check A3.5.
+    let rendered = 0;
+    const r = document.createRange();
+    const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let t = tw.nextNode(); t; t = tw.nextNode()) {
+      for (let k = 0; k < t.data.length; k++) {
+        r.setStart(t, k); r.setEnd(t, k + 1);
+        if (Array.from(r.getClientRects()).some((x) => x.width > 0 && x.height > 0)) rendered++;
+      }
+    }
     owners.push({ i, family: cs.fontFamily.split(",")[0].trim().replace(/^["']|["']$/g, ""),
-                  weight: parseInt(cs.fontWeight, 10), style: cs.fontStyle, text: el.textContent.trim().slice(0, 40) });
+                  weight: parseInt(cs.fontWeight, 10), style: cs.fontStyle, text: el.textContent.trim().slice(0, 40),
+                  rendered_chars: rendered });
   });
   return owners;
 }
@@ -147,10 +160,15 @@ def font_check(context, page) -> dict:
     ]
     table = font_table()
     failures = []
+    glyph_mismatches = []
     checked = 0
     for owner, node_id in zip(owners, node_ids):
         fonts = cdp.send("CSS.getPlatformFontsForNode", {"nodeId": node_id})["fonts"]
         checked += 1
+        glyphs = sum(int(f.get("glyphCount", 0)) for f in fonts)
+        if glyphs != owner["rendered_chars"]:
+            glyph_mismatches.append({"owner": owner["text"], "glyph_count": glyphs,
+                                     "rendered_chars": owner["rendered_chars"]})
         expected = table.get((owner["family"], owner["weight"]))
         problems = []
         if expected is None:
@@ -167,7 +185,8 @@ def font_check(context, page) -> dict:
         if problems:
             failures.append({"owner": owner, "fonts": fonts, "problems": problems})
     cdp.detach()
-    return {"checked_nodes": checked, "fallback_nodes": len(failures), "failures": failures}
+    return {"checked_nodes": checked, "fallback_nodes": len(failures), "failures": failures,
+            "glyph_count_mismatches": glyph_mismatches}
 
 
 def render_once(browser, url: str, form_factor: str, dpr: float, theme: str, full: bool) -> dict:
@@ -183,6 +202,18 @@ def render_once(browser, url: str, form_factor: str, dpr: float, theme: str, ful
             out["fonts"] = font_check(context, page)
         out["browser_version"] = browser.version
         return out
+    finally:
+        context.close()
+
+
+def render_canonical(browser, url: str, form_factor: str, dpr: float, theme: str) -> bytes:
+    """Fresh first paint with every character-changing feature forced neutral
+    (?canonical=1 → base.css). Check A4.1 requires pixel identity with the normal render."""
+    context, page = _new_page(browser, form_factor, dpr, theme)
+    try:
+        page.goto(url + "&canonical=1", wait_until="load")
+        _settle(page)
+        return page.screenshot(type="png", animations="disabled", caret="hide", scale="device")
     finally:
         context.close()
 
@@ -337,6 +368,20 @@ def build_ground_truth(bid, template, form_factor, dpr, theme, a, b) -> tuple[di
     img_b = _png_array(b["png"])
     deterministic_pixels = bool(img.shape == img_b.shape and np.array_equal(img, img_b))
     deterministic_geometry = a["geometry"] == b["geometry"]
+    canon = _png_array(a["canonical_png"])
+    canon_diff = int(np.any(img != canon, axis=2).sum()) if canon.shape == img.shape else -1
+
+    # Per-element evidence for A3.6, A4.3, A5.1-A5.3 (evaluated in validate_pilot.py).
+    elements = []
+    for el in geom["elements"]:
+        texts = [ln["text"] for ln in el["lines"] if ln["text"]]
+        elements.append({
+            "idx": el["idx"], "category": el["category"], "clipped": el["clipped"],
+            "gt_lines": texts, "gt_line_rects_css": [ln["rect"] for ln in el["lines"] if ln["text"]],
+            "range_line_count": el["range_line_count"], "inner_text": el["inner_text"],
+            "occluded_chars": el["occluded_chars"], "hit_tested_chars": el["hit_tested_chars"],
+            "order_violations": sum(ln["order_violations"] for ln in el["lines"]),
+        })
 
     validation = {
         "font_fallback_nodes": a["fonts"]["fallback_nodes"],
@@ -359,6 +404,10 @@ def build_ground_truth(bid, template, form_factor, dpr, theme, a, b) -> tuple[di
             "extra_in_tagged": dict(tagged_tokens - inner_tokens),
         },
         "clipped_elements": [el["idx"] for el in geom["elements"] if el["clipped"]],
+        "canonical_render_diff_pixels": canon_diff,
+        "glyph_count_mismatches": a["fonts"]["glyph_count_mismatches"],
+        "forbidden_sources": geom["forbidden_sources"],
+        "elements": elements,
         "viewport_css": geom["viewport"],
         "reported_dpr": geom["dpr"],
     }
@@ -377,6 +426,17 @@ def build_ground_truth(bid, template, form_factor, dpr, theme, a, b) -> tuple[di
         "icon_regions": [[round(v, 3) for v in _px_box(r, dpr)] for r in geom["icons"]],
     }
     return gt, diff, validation
+
+
+def render_base(browser, url, bid, template, form_factor, dpr, theme):
+    """Everything for one base render: normal (A), text-hidden, canonical, repeat (B),
+    then ground truth + validation evidence. Shared by main() and the fixture tests."""
+    a = render_once(browser, url, form_factor, dpr, theme, full=True)
+    a["hidden_png"], a["hidden_geometry"] = render_hidden(browser, url, form_factor, dpr, theme)
+    a["canonical_png"] = render_canonical(browser, url, form_factor, dpr, theme)
+    b = render_once(browser, url, form_factor, dpr, theme, full=False)
+    gt, diff, validation = build_ground_truth(bid, template, form_factor, dpr, theme, a, b)
+    return a, gt, diff, validation
 
 
 def main() -> None:
@@ -398,10 +458,7 @@ def main() -> None:
                 for theme in THEMES:
                     bid = base_id(template, dpr, theme)
                     url = f"http://127.0.0.1:{port}/templates/{template}/index.html?theme={theme}"
-                    a = render_once(browser, url, form_factor, dpr, theme, full=True)
-                    a["hidden_png"], a["hidden_geometry"] = render_hidden(browser, url, form_factor, dpr, theme)
-                    b = render_once(browser, url, form_factor, dpr, theme, full=False)
-                    gt, diff, validation = build_ground_truth(bid, template, form_factor, dpr, theme, a, b)
+                    a, gt, diff, validation = render_base(browser, url, bid, template, form_factor, dpr, theme)
 
                     with open(os.path.join(args.out, "renders", f"{bid}.png"), "wb") as f:
                         f.write(a["png"])

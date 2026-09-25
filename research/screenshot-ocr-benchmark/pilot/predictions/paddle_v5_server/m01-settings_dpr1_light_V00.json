@@ -12,15 +12,15 @@
  "image_id": "m01-settings_dpr1_light_V00",
  "status": "ok",
  "error": null,
- "total_s": 7.6100433170013275,
+ "total_s": 8.021694329000638,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.627122000005329,
+ "orchestrator_wall_s": 8.03537990001496,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "b30573586e52122c7514a39429bf2367994ee0d3c685658b437d4925287e45c8",
- "peak_rss_mb": 3092.2,
+ "input_pixel_sha256": "ee9c9d31b13045fd108fc236ddae4ea6f7f4950a7d8a5ad85cd5e94029099c9d",
+ "peak_rss_mb": 2492.6,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -33,7 +33,7 @@
     22.0
    ],
    "text": "9:41",
-   "confidence": 0.9942563772201538
+   "confidence": 0.9945152997970581
   },
   {
    "bbox": [
@@ -83,17 +83,17 @@
     19.0
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.9878982305526733
+   "confidence": 0.9878820776939392
   },
   {
    "bbox": [
     26.0,
     239.0,
-    69.0,
+    70.0,
     19.0
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9902781844139099
+   "confidence": 0.9920879602432251
   },
   {
    "bbox": [
@@ -137,13 +137,13 @@
   },
   {
    "bbox": [
-    233.0,
+    234.0,
     361.0,
-    129.0,
+    128.0,
     23.0
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9438008069992065
+   "confidence": 0.9127649068832397
   },
   {
    "bbox": [
@@ -158,12 +158,12 @@
   {
    "bbox": [
     269.0,
-    406.0,
+    407.0,
     95.0,
     21.0
    ],
    "text": "English (US)",
-   "confidence": 0.9839943051338196
+   "confidence": 0.9921597838401794
   },
   {
    "bbox": [
@@ -233,7 +233,7 @@
     17.0
    ],
    "text": "Version 4.18.2",
-   "confidence": 0.9910818338394165
+   "confidence": 0.9906644821166992
   },
   {
    "bbox": [
@@ -247,13 +247,13 @@
   },
   {
    "bbox": [
-    29.0,
+    28.0,
     710.0,
-    257.0,
-    14.0
+    259.0,
+    15.0
    ],
    "text": "Last synced 2 minutes ago·Backup size 318MB",
-   "confidence": 0.9277271032333374
+   "confidence": 0.9539998173713684
   },
   {
    "bbox": [
@@ -308,5 +308,5 @@
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:10:17.806427+00:00"
+ "completed_at": "2026-09-25T08:48:54.281175+00:00"
 }

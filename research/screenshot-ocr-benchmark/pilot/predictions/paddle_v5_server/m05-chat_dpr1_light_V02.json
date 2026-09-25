@@ -12,15 +12,15 @@
  "image_id": "m05-chat_dpr1_light_V02",
  "status": "ok",
  "error": null,
- "total_s": 7.412059440999656,
+ "total_s": 7.675096848999601,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 7.43004629999632,
+ "orchestrator_wall_s": 7.6916663000010885,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "baa1054eee5c26439e05a7c97cf96f58f1eb9fef564a64820ec7486ac414fe32",
- "peak_rss_mb": 3096.7,
+ "input_pixel_sha256": "a904a2ddad1345ac79384559676be986a4e9c7cf1c77730ecb924359226fa9c3",
+ "peak_rss_mb": 2745.1,
  "peak_rss_scope": "per-image",
  "container_states": null,
  "memory_limit": "24g",
@@ -128,32 +128,32 @@
   {
    "bbox": [
     24.0,
-    292.0,
-    204.0,
+    291.0,
+    202.0,
     17.0
    ],
    "text": "Great. Can you also check the",
-   "confidence": 0.9649500250816345
+   "confidence": 0.9693806767463684
   },
   {
    "bbox": [
-    22.0,
-    310.0,
-    223.0,
-    21.0
+    21.0,
+    309.0,
+    224.0,
+    22.0
    ],
    "text": "invoice total? I got $1,248.50 but",
-   "confidence": 0.950731635093689
+   "confidence": 0.9330633878707886
   },
   {
    "bbox": [
     23.0,
     332.0,
-    158.0,
+    159.0,
     17.0
    ],
    "text": "finance says $1,284.50.",
-   "confidence": 0.9652148485183716
+   "confidence": 0.9662777185440063
   },
   {
    "bbox": [
@@ -189,11 +189,11 @@
    "bbox": [
     195.0,
     467.0,
-    131.0,
+    132.0,
     17.0
    ],
    "text": "Q3-invoice-final.pdf",
-   "confidence": 0.996880829334259
+   "confidence": 0.9972853660583496
   },
   {
    "bbox": [
@@ -203,7 +203,7 @@
     19.0
    ],
    "text": "2.4 MB·6 pages",
-   "confidence": 0.9204613566398621
+   "confidence": 0.9220515489578247
   },
   {
    "bbox": [
@@ -228,22 +228,22 @@
   {
    "bbox": [
     23.0,
-    572.0,
+    571.0,
     75.0,
     18.0
    ],
    "text": "confirmed.",
-   "confidence": 0.9958014488220215
+   "confidence": 0.9959915280342102
   },
   {
    "bbox": [
-    25.0,
+    24.0,
     754.0,
-    88.0,
+    89.0,
     18.0
    ],
    "text": "Sounds good",
-   "confidence": 0.9954009652137756
+   "confidence": 0.9574671387672424
   },
   {
    "bbox": [
@@ -289,14 +289,14 @@
    "bbox": [
     325.0,
     802.0,
-    43.0,
+    42.0,
     23.0
    ],
    "text": "Send",
-   "confidence": 0.999341607093811
+   "confidence": 0.9993935823440552
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T14:43:54.785790+00:00"
+ "completed_at": "2026-09-25T09:20:12.272462+00:00"
 }

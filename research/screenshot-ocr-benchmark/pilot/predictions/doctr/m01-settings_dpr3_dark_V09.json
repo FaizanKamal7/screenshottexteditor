@@ -12,14 +12,18 @@
  "image_id": "m01-settings_dpr3_dark_V09",
  "status": "ok",
  "error": null,
- "total_s": 1.5631744180000169,
+ "total_s": 1.453401168999335,
  "detect_s": null,
  "recognize_s": null,
- "orchestrator_wall_s": 1.6088603000098374,
+ "orchestrator_wall_s": 1.5008726000087336,
  "attempts": 1,
  "input_file_sha256_ok": true,
  "input_pixel_sha256_ok": true,
- "input_pixel_sha256": "44841d5dcff8c5abb1b8cbd5a107170206c9fad6bc9b86047dbed6c0e25cae05",
+ "input_pixel_sha256": "1cd8b3ca792cc51dfff71c2fcb8ad732fd3f9519cb72f3633a3150b960e1cfb0",
+ "peak_rss_mb": 1172.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
  "lines": [
   {
    "bbox": [
@@ -29,7 +33,7 @@
     46.98046875
    ],
    "text": "9:41",
-   "confidence": 0.8952069282531738
+   "confidence": 0.9271481037139893
   },
   {
    "bbox": [
@@ -59,7 +63,7 @@
     51.92578125
    ],
    "text": "Search settings",
-   "confidence": 0.9875519275665283
+   "confidence": 0.9884479641914368
   },
   {
    "bbox": [
@@ -69,7 +73,7 @@
     61.81640625
    ],
    "text": "Avery Collins",
-   "confidence": 0.963460385799408
+   "confidence": 0.964809000492096
   },
   {
    "bbox": [
@@ -79,7 +83,7 @@
     42.03515625
    ],
    "text": "avery.collins@example.com",
-   "confidence": 0.620070735613505
+   "confidence": 0.6428064902623495
   },
   {
    "bbox": [
@@ -89,7 +93,7 @@
     34.6171875
    ],
    "text": "ACCOUNT",
-   "confidence": 0.9985848665237427
+   "confidence": 0.9986522793769836
   },
   {
    "bbox": [
@@ -99,7 +103,7 @@
     34.6171875
    ],
    "text": "Notifications",
-   "confidence": 0.7156787514686584
+   "confidence": 0.7187338471412659
   },
   {
    "bbox": [
@@ -109,17 +113,17 @@
     42.03515625
    ],
    "text": "On",
-   "confidence": 0.9997902512550354
+   "confidence": 0.9997561573982239
   },
   {
    "bbox": [
     90.46875,
     961.86328125,
-    412.93359375,
+    410.4609375,
     59.34375
    ],
    "text": "Privacy & Security",
-   "confidence": 0.9488770365715027
+   "confidence": 0.8375423550605774
   },
   {
    "bbox": [
@@ -129,7 +133,7 @@
     46.98046875
    ],
    "text": "Storage",
-   "confidence": 0.9839181900024414
+   "confidence": 0.9836705923080444
   },
   {
    "bbox": [
@@ -139,7 +143,7 @@
     44.5078125
    ],
    "text": "12.4 GB of 64 GB",
-   "confidence": 0.9208613038063049
+   "confidence": 0.9198715090751648
   },
   {
    "bbox": [
@@ -149,17 +153,17 @@
     46.98046875
    ],
    "text": "Language",
-   "confidence": 0.9870451092720032
+   "confidence": 0.9867397546768188
   },
   {
    "bbox": [
-    819.9023437500001,
+    822.3749999999999,
     1228.91015625,
-    262.10156249999994,
-    54.3984375
+    259.62890625000006,
+    51.92578125
    ],
    "text": "English (US)",
-   "confidence": 0.987916886806488
+   "confidence": 0.9989446997642517
   },
   {
    "bbox": [
@@ -179,7 +183,7 @@
     44.5078125
    ],
    "text": "3h 12m",
-   "confidence": 0.9873039126396179
+   "confidence": 0.8595986366271973
   },
   {
    "bbox": [
@@ -189,7 +193,7 @@
     34.6171875
    ],
    "text": "SUPPORT",
-   "confidence": 0.9899219870567322
+   "confidence": 0.9899152517318726
   },
   {
    "bbox": [
@@ -219,7 +223,7 @@
     44.5078125
    ],
    "text": "About",
-   "confidence": 0.9990761280059814
+   "confidence": 0.9990780353546143
   },
   {
    "bbox": [
@@ -239,7 +243,7 @@
     44.5078125
    ],
    "text": "Delete Account",
-   "confidence": 0.8892016410827637
+   "confidence": 0.9187191724777222
   },
   {
    "bbox": [
@@ -259,7 +263,7 @@
     34.6171875
    ],
    "text": "Home",
-   "confidence": 0.9445639252662659
+   "confidence": 0.9484630823135376
   },
   {
    "bbox": [
@@ -269,7 +273,7 @@
     34.6171875
    ],
    "text": "Search",
-   "confidence": 0.9997645020484924
+   "confidence": 0.9997562766075134
   },
   {
    "bbox": [
@@ -289,10 +293,10 @@
     37.08984375
    ],
    "text": "Settings",
-   "confidence": 0.5539733171463013
+   "confidence": 0.5200602412223816
   }
  ],
  "pass": "accuracy",
  "conditions": "single-engine",
- "completed_at": "2026-09-24T07:48:01.894661+00:00"
+ "completed_at": "2026-09-25T08:18:03.013213+00:00"
 }
