@@ -24,6 +24,10 @@ The site and editor UI are available in English, Spanish, French, German, Portug
 - [Fix Stale Numbers in Dashboard Screenshots](https://screenshottexteditor.com/fix-stale-numbers-in-dashboard-screenshots/): Update outdated metrics in a dashboard screenshot without rebuilding the slide
 - [Redact or Replace Demo Data in Screenshots](https://screenshottexteditor.com/redact-demo-data-in-screenshots/): Replace real or stale data with placeholder text instead of a visible redaction bar
 
+## Guides
+
+- [How to Edit Text in a Screenshot Without Photoshop](https://screenshottexteditor.com/blog/edit-text-in-screenshot/): Why screenshot text edits are hard to hide, a step-by-step method that works in any tool, and when a full image editor is the better choice
+
 ## Legal
 
 - [Privacy Policy](https://screenshottexteditor.com/privacy/): How uploads are handled and deleted

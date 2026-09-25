@@ -10,7 +10,7 @@ import Button from '../Button.astro';
 import FeatureCard from '../FeatureCard.astro';
 import MeshGradient from '../MeshGradient.astro';
 import { AnimatedEditorDemo } from '../demo/AnimatedEditorDemo';
-import { getTranslations, localizedPath, getAlternateLinks } from '../../i18n';
+import { getTranslations, localizedPath, getAlternateLinks, languages } from '../../i18n';
 import { isCjk, spaceBefore, spaceAfter } from '../../i18n/format';
 
 interface Props {
@@ -33,8 +33,8 @@ const isEn = lang === 'en';
 
 // English-only supplemental FAQ entries answering common "screenshot text editor"
 // search intent not already covered by t.home.faqs. Kept out of the shared
-// Translations type since faqs there is a fixed-length tuple mirrored by every
-// locale file — these extend the English page only.
+// Translations so other locales aren't expected to mirror them — these extend
+// the English page only.
 const enExtraFaqs: { question: string; answer: string }[] = isEn
 	? [
 			{
@@ -57,12 +57,8 @@ const enExtraFaqs: { question: string; answer: string }[] = isEn
 				answer: "No. It runs entirely in your browser — there's nothing to download or install, and no design software required.",
 			},
 			{
-				question: 'Do I need an account to edit screenshots?',
-				answer: 'No account is required. Upload a screenshot and start editing right away — no signup, no login.',
-			},
-			{
 				question: 'Are my screenshots private?',
-				answer: 'Uploads are deleted automatically, one hour by default, and we never train on user images.',
+				answer: 'Yes. We never train on user images, and uploads are not kept — see the privacy section above for how long they are stored.',
 			},
 			{
 				question: 'Can I edit screenshots from iPhone and Android?',
@@ -74,11 +70,35 @@ const enExtraFaqs: { question: string; answer: string }[] = isEn
 				answer:
 					"If a font can't be matched with high confidence, the closest match found is still used, but it's flagged as low-confidence instead of presented as an exact match, so you can judge the result before downloading it.",
 			},
+			{
+				question: 'How do I make text in a screenshot editable?',
+				answer:
+					'Upload your screenshot and optical character recognition (OCR) detects each line of text, turning it into editable text you can click. Select the line you want to change, type the new wording, and download the edited image.',
+			},
+			{
+				question: 'How do I remove text from a screenshot without leaving a mark?',
+				answer:
+					"Click the line of text, delete its contents, and apply the edit. The area behind the old text is filled to match the surrounding background, so there's no visible patch or blur. This works best on flat and simple-gradient backgrounds; busy photo backgrounds aren't supported yet.",
+			},
+			{
+				question: 'Can I change the color or font of text in a screenshot?',
+				answer:
+					"Yes. The original font, weight, size, and color are matched automatically, and you can override the font family, weight, size, letter spacing, color, and alignment in the style panel if you want a different look.",
+			},
+			{
+				question: 'Can I change just one word in a line?',
+				answer:
+					'Yes. Text is detected line by line, so click the line, change only the word you need, and leave the rest as it is. The whole line is re-rendered in the matched font, so the unchanged words stay consistent with the new one.',
+			},
+			{
+				question: 'What image formats and file sizes are supported?',
+				answer:
+					"PNG and JPEG/JPG are supported. Other formats such as WEBP, HEIC, or PDF aren't supported yet, so convert them to PNG first. Standard phone and desktop screenshots, including 2x and 3x Retina captures, are handled at their original resolution.",
+			},
 		]
 	: [];
 
-const faqJsonLd = {
-	'@context': 'https://schema.org',
+const faqPage = {
 	'@type': 'FAQPage',
 	mainEntity: [...t.home.faqs, ...enExtraFaqs].map((faq) => ({
 		'@type': 'Question',
@@ -88,6 +108,36 @@ const faqJsonLd = {
 			text: faq.answer,
 		},
 	})),
+};
+
+// Site-level entities belong on the domain homepage only (Google reads site name and logo from
+// there), so the localized homepages carry just their own FAQPage.
+const siteUrl = 'https://screenshottexteditor.com';
+const siteEntities = isEn
+	? [
+			{
+				'@type': 'Organization',
+				'@id': `${siteUrl}/#organization`,
+				name: 'ScreenshotTextEditor',
+				url: `${siteUrl}/`,
+				logo: `${siteUrl}/icon.png`,
+				email: 'support@screenshottexteditor.com',
+			},
+			{
+				'@type': 'WebSite',
+				'@id': `${siteUrl}/#website`,
+				name: 'ScreenshotTextEditor',
+				alternateName: 'Screenshot Text Editor',
+				url: `${siteUrl}/`,
+				inLanguage: languages.map((l) => l.code),
+				publisher: { '@id': `${siteUrl}/#organization` },
+			},
+		]
+	: [];
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [...siteEntities, faqPage],
 };
 ---
 
@@ -116,7 +166,7 @@ const faqJsonLd = {
 					</div>
 
 					<div id="demo" class="relative z-10 mx-auto mt-12 flex justify-center -mb-16 md:mt-16 md:-mb-24 lg:mx-0 lg:mb-0 lg:mt-0">
-						<AnimatedEditorDemo client:visible />
+						<AnimatedEditorDemo client:afterload />
 					</div>
 				</div>
 			</Container>
@@ -144,14 +194,43 @@ const faqJsonLd = {
 								Type your new wording. The font, size, weight, and color are matched automatically.
 							</FeatureCard>
 							<FeatureCard title="4. Download the edited screenshot">
-								Export a pixel-accurate PNG or JPG with no watermark, ready to share.
+								Export a pixel-accurate PNG or JPG, ready to share.
 							</FeatureCard>
 						</div>
 						<p class="mt-6 text-[14px] text-mute">
 							It works the same on <a href="/edit-text-in-ios-screenshot/" class="text-link hover:underline">iPhone screenshots</a> and <a href="/edit-text-in-android-screenshot/" class="text-link hover:underline">Android screenshots</a>.
+							For the manual method, common pitfalls, and when a full image editor is the better choice, read the guide to <a href="/blog/edit-text-in-screenshot/" class="text-link hover:underline">editing text in a screenshot without Photoshop</a>.
 						</p>
 						<div class="mt-5">
 							<Button href="/app" variant="secondary">Open the screenshot editor</Button>
+						</div>
+					</Container>
+				</section>
+			)
+		}
+
+		{
+			isEn && (
+				<section class="border-b border-hairline py-20">
+					<Container class="max-w-5xl">
+						<Eyebrow>What you can do</Eyebrow>
+						<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">Edit, remove, or replace text in a screenshot</h2>
+						<p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-body">
+							Every change is made to the text region only — icons, buttons, and the rest of the layout stay exactly as they were.
+						</p>
+						<div class="mt-8 grid gap-4 md:grid-cols-3">
+							<FeatureCard title="Replace text">
+								Click any line and type new wording. The original font, size, weight, and color are matched automatically, so
+								the replacement looks like it was always there.
+							</FeatureCard>
+							<FeatureCard title="Remove text">
+								Delete a line's contents and apply the edit. The area behind it is filled to match the surrounding background,
+								with no visible patch or blur. Works best on flat and simple-gradient backgrounds.
+							</FeatureCard>
+							<FeatureCard title="Change text color">
+								Pick a new text color in the style panel, or adjust the font, weight, size, letter spacing, and alignment when
+								you want something other than the automatic match.
+							</FeatureCard>
 						</div>
 					</Container>
 				</section>
@@ -193,7 +272,21 @@ const faqJsonLd = {
 		<section class="border-b border-hairline py-20">
 			<Container class="max-w-5xl">
 				<Eyebrow>{t.home.howEyebrow}</Eyebrow>
-				<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.home.howTitle}</h2>
+				{
+					isEn ? (
+						<>
+							<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">How OCR detects the text in your screenshot</h2>
+							<p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-body">
+								ScreenshotTextEditor uses AI-powered OCR and font matching. Optical character recognition (OCR) reads the text
+								from an image line by line and turns each line into editable text, so you can select the text you want to
+								change instead of tracing a box around it. Font matching then works out exactly how that text was drawn, and
+								the line is rebuilt with your replacement.
+							</p>
+						</>
+					) : (
+						<h2 class="mt-3 text-[26px] font-semibold tracking-tight text-ink">{t.home.howTitle}</h2>
+					)
+				}
 				<div class="mt-8 grid gap-4 md:grid-cols-3">
 					{t.home.steps.map((step) => <FeatureCard title={step.title}>{step.body}</FeatureCard>)}
 				</div>
@@ -250,7 +343,7 @@ const faqJsonLd = {
 								class="rounded-xl border border-hairline bg-canvas-elevated p-6 transition-colors hover:border-ink/20"
 							>
 								<p class="font-mono text-xs uppercase tracking-wide text-faint">{useCase.data.eyebrow}</p>
-								<p class="mt-2 text-[15px] font-semibold text-ink">{useCase.data.title}</p>
+								<h3 class="mt-2 text-[15px] font-semibold text-ink">{useCase.data.title}</h3>
 								<p class="mt-2 text-[13px] leading-relaxed text-mute">{useCase.data.metaDescription}</p>
 							</a>
 						))
@@ -262,7 +355,7 @@ const faqJsonLd = {
 								class="rounded-xl border border-hairline bg-canvas-elevated p-6 transition-colors hover:border-ink/20"
 							>
 								<p class="font-mono text-xs uppercase tracking-wide text-faint">Font finder</p>
-								<p class="mt-2 text-[15px] font-semibold text-ink">Find Font from Image</p>
+								<h3 class="mt-2 text-[15px] font-semibold text-ink">Find Font from Image</h3>
 								<p class="mt-2 text-[13px] leading-relaxed text-mute">
 									Upload an image and find the closest matching font, free and without signup.
 								</p>
@@ -300,7 +393,7 @@ const faqJsonLd = {
 					{
 						[...t.home.faqs, ...enExtraFaqs].map((faq) => (
 							<details class="group rounded-xl border border-hairline bg-canvas-elevated p-5 open:pb-5">
-								<summary class="cursor-pointer list-none text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+								<summary class="-m-5 cursor-pointer list-none p-5 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
 									<span class="flex items-center justify-between gap-4">
 										{faq.question}
 										<span class="shrink-0 text-faint transition-transform group-open:rotate-45">+</span>
@@ -328,7 +421,7 @@ const faqJsonLd = {
 		</section>
 	</main>
 
-	<script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 
 	<Footer lang={lang} />
 </Layout>

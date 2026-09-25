@@ -1,0 +1,55 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.33871101900012945,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.3599913999787532,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "ba627534e0acdaad1402103c7ad1fc3e0d39eac6c9912399ce2fd185967a6740",
+ "lines": [
+  {
+   "bbox": [
+    110.0,
+    104.0,
+    136.0,
+    7.0
+   ],
+   "text": "BO ——",
+   "confidence": 0.055
+  },
+  {
+   "bbox": [
+    118.0,
+    123.0,
+    96.0,
+    7.0
+   ],
+   "text": "Cimens, ce",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    438.0,
+    62.0,
+    190.0,
+    28.0
+   ],
+   "text": "Paitons indeed Fes bose 0 ar rfc",
+   "confidence": 0.3057142857142857
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:14:07.672159+00:00"
+}

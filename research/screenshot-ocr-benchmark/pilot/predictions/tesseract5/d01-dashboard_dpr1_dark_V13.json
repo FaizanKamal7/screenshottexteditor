@@ -1,0 +1,95 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.5930104700000811,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.6054820000135805,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e53e0e3bfe6f23e03c7f7d6d6a6e339b121237ede8167ea2cf3155c1f7ae31",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    1.0,
+    85.0,
+    28.0
+   ],
+   "text": "Tallhouse Metrics",
+   "confidence": 0.57
+  },
+  {
+   "bbox": [
+    11.0,
+    37.0,
+    43.0,
+    8.0
+   ],
+   "text": "2 onion",
+   "confidence": 0.41
+  },
+  {
+   "bbox": [
+    12.0,
+    94.0,
+    37.0,
+    8.0
+   ],
+   "text": "0 srs",
+   "confidence": 0.53
+  },
+  {
+   "bbox": [
+    124.0,
+    14.0,
+    106.0,
+    20.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    129.0,
+    62.0,
+    172.0,
+    26.0
+   ],
+   "text": "$482,910 12,384",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    129.0,
+    102.0,
+    242.0,
+    29.0
+   ],
+   "text": "Lr nein",
+   "confidence": 0.09
+  },
+  {
+   "bbox": [
+    583.0,
+    132.0,
+    17.0,
+    89.0
+   ],
+   "text": "treed",
+   "confidence": 0.31
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:00.084227+00:00"
+}

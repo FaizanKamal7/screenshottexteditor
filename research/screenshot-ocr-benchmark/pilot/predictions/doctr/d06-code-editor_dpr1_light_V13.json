@@ -1,0 +1,508 @@
+{
+ "engine_id": "doctr",
+ "engine_version": "python-doctr v1.1.0 / torch 2.8.0+cpu",
+ "config": {
+  "ocr_predictor": {
+   "pretrained": true
+  },
+  "input": "RGB uint8 ndarray",
+  "det_model": "FAST",
+  "reco_model": "CRNN"
+ },
+ "image_id": "d06-code-editor_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.4836028859999715,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.5165699999779463,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "ba627534e0acdaad1402103c7ad1fc3e0d39eac6c9912399ce2fd185967a6740",
+ "lines": [
+  {
+   "bbox": [
+    5.625,
+    5.624999999999991,
+    30.625,
+    8.125000000000004
+   ],
+   "text": "EXPLOHEN",
+   "confidence": 0.45321279764175415
+  },
+  {
+   "bbox": [
+    5.625,
+    19.999999999999996,
+    13.125,
+    6.875000000000009
+   ],
+   "text": "sre",
+   "confidence": 0.9716141819953918
+  },
+  {
+   "bbox": [
+    12.5,
+    30.624999999999993,
+    35.0,
+    8.125000000000004
+   ],
+   "text": "server.ts",
+   "confidence": 0.8551676273345947
+  },
+  {
+   "bbox": [
+    11.875,
+    41.87499999999999,
+    21.25,
+    8.750000000000014
+   ],
+   "text": "db.ts",
+   "confidence": 0.8377017378807068
+  },
+  {
+   "bbox": [
+    12.5,
+    53.75000000000001,
+    34.375,
+    8.124999999999982
+   ],
+   "text": "routes.ts",
+   "confidence": 0.9594443440437317
+  },
+  {
+   "bbox": [
+    5.625,
+    64.99999999999999,
+    44.375,
+    8.750000000000014
+   ],
+   "text": "package-json",
+   "confidence": 0.7126750349998474
+  },
+  {
+   "bbox": [
+    6.25,
+    75.62500000000001,
+    46.875,
+    8.749999999999991
+   ],
+   "text": "tsconfie-json",
+   "confidence": 0.28273850679397583
+  },
+  {
+   "bbox": [
+    5.625,
+    390.625,
+    15.0,
+    6.25
+   ],
+   "text": "Ain",
+   "confidence": 0.355437308549881
+  },
+  {
+   "bbox": [
+    96.25,
+    5.000000000000004,
+    34.375,
+    8.125000000000004
+   ],
+   "text": "server.ts",
+   "confidence": 0.9341540336608887
+  },
+  {
+   "bbox": [
+    144.375,
+    5.000000000000004,
+    41.25,
+    8.749999999999991
+   ],
+   "text": "config-dson",
+   "confidence": 0.3431917726993561
+  },
+  {
+   "bbox": [
+    199.375,
+    4.374999999999996,
+    34.375,
+    8.750000000000014
+   ],
+   "text": "KEADME",
+   "confidence": 0.30313748121261597
+  },
+  {
+   "bbox": [
+    98.75,
+    22.500000000000007,
+    156.25,
+    9.375
+   ],
+   "text": "1 inport I createServer } fron \"nodechttp\":",
+   "confidence": 0.4868391156196594
+  },
+  {
+   "bbox": [
+    100.0,
+    32.49999999999999,
+    164.375,
+    9.375
+   ],
+   "text": "2 Liport ( reacfile } from \"node:fs/promises\";",
+   "confidence": 0.5240194201469421
+  },
+  {
+   "bbox": [
+    99.375,
+    52.49999999999999,
+    171.875,
+    8.750000000000014
+   ],
+   "text": "4 const PORT . Number(process.am.PORT n 20s0):",
+   "confidence": 0.4885215312242508
+  },
+  {
+   "bbox": [
+    100.0,
+    61.87499999999999,
+    137.5,
+    9.375
+   ],
+   "text": "5 const MAX_BOOY - 1.048.576; I 1 HSB",
+   "confidence": 0.2715591490268707
+  },
+  {
+   "bbox": [
+    100.0,
+    81.87500000000001,
+    181.875,
+    9.999999999999986
+   ],
+   "text": "3 type koute - (reg: Request) * Prositedenconses;",
+   "confidence": 0.47489166259765625
+  },
+  {
+   "bbox": [
+    99.375,
+    102.49999999999999,
+    148.125,
+    9.375
+   ],
+   "text": "9 const routes - nes Mapestring, Route(t",
+   "confidence": 0.4318481385707855
+  },
+  {
+   "bbox": [
+    96.25,
+    112.5,
+    9.375,
+    8.125000000000004
+   ],
+   "text": "10",
+   "confidence": 0.6957308650016785
+  },
+  {
+   "bbox": [
+    96.25,
+    122.50000000000001,
+    9.375,
+    8.124999999999982
+   ],
+   "text": "11",
+   "confidence": 0.9687572717666626
+  },
+  {
+   "bbox": [
+    95.625,
+    131.875,
+    25.625,
+    9.999999999999986
+   ],
+   "text": "12 1:",
+   "confidence": 0.8540274500846863
+  },
+  {
+   "bbox": [
+    96.25,
+    143.125,
+    8.125,
+    7.500000000000018
+   ],
+   "text": "15",
+   "confidence": 0.6392064094543457
+  },
+  {
+   "bbox": [
+    116.25,
+    111.87499999999999,
+    193.75,
+    10.000000000000009
+   ],
+   "text": "I\"/health\", asyne o a jeontt dk: true, uptine: 0 n1.",
+   "confidence": 0.42637234926223755
+  },
+  {
+   "bbox": [
+    116.25,
+    122.50000000000001,
+    98.75,
+    8.749999999999991
+   ],
+   "text": "I'/invaices\", Listinvoices).",
+   "confidence": 0.527079164981842
+  },
+  {
+   "bbox": [
+    95.625,
+    151.875,
+    191.25,
+    9.999999999999986
+   ],
+   "text": "14 export asyne funetion Listinvoices(ree: Request) (",
+   "confidence": 0.5087414979934692
+  },
+  {
+   "bbox": [
+    96.25,
+    162.5,
+    8.75,
+    8.125000000000004
+   ],
+   "text": "15",
+   "confidence": 0.9795596599578857
+  },
+  {
+   "bbox": [
+    96.25,
+    173.125,
+    9.375,
+    7.499999999999996
+   ],
+   "text": "1",
+   "confidence": 0.42468443512916565
+  },
+  {
+   "bbox": [
+    96.25,
+    183.125,
+    9.375,
+    7.499999999999996
+   ],
+   "text": "17",
+   "confidence": 0.9898865222930908
+  },
+  {
+   "bbox": [
+    96.25,
+    193.125,
+    9.375,
+    7.500000000000018
+   ],
+   "text": "18",
+   "confidence": 0.9777168035507202
+  },
+  {
+   "bbox": [
+    96.25,
+    202.5,
+    17.5,
+    8.125000000000027
+   ],
+   "text": "10 }",
+   "confidence": 0.33969223499298096
+  },
+  {
+   "bbox": [
+    95.625,
+    212.5,
+    9.375,
+    8.124999999999982
+   ],
+   "text": "20",
+   "confidence": 0.981069028377533
+  },
+  {
+   "bbox": [
+    35.625,
+    389.375,
+    65.625,
+    9.375
+   ],
+   "text": "errars, 2 mrnings",
+   "confidence": 0.385466605424881
+  },
+  {
+   "bbox": [
+    115.625,
+    162.5,
+    246.875,
+    10.000000000000009
+   ],
+   "text": "const page - Nueber(nes URL(req.urt).searchParams.get(\"page\") ? \"I):",
+   "confidence": 0.27695760130882263
+  },
+  {
+   "bbox": [
+    115.625,
+    171.875,
+    240.0,
+    10.624999999999996
+   ],
+   "text": "it (eage € 1 IE page * 580) retuen foelt enror: \"bad page\" 1 400):",
+   "confidence": 0.37487658858299255
+  },
+  {
+   "bbox": [
+    115.625,
+    182.5,
+    250.625,
+    9.375
+   ],
+   "text": "coast rous - await 63.GUBTY(-SELECT id, total FROM inveices LIMIT 25\"):",
+   "confidence": 0.2908259332180023
+  },
+  {
+   "bbox": [
+    115.0,
+    191.875,
+    100.625,
+    9.999999999999986
+   ],
+   "text": "return json(r page. ross 1:",
+   "confidence": 0.25074175000190735
+  },
+  {
+   "bbox": [
+    95.625,
+    223.12500000000003,
+    136.875,
+    8.124999999999982
+   ],
+   "text": "21 createserver(handler).Listen(PORT);",
+   "confidence": 0.5156740769743919
+  },
+  {
+   "bbox": [
+    436.25,
+    11.250000000000004,
+    91.25,
+    13.749999999999996
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.994915246963501
+  },
+  {
+   "bbox": [
+    436.25,
+    30.624999999999993,
+    187.5,
+    11.250000000000004
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": 0.5260331630706787
+  },
+  {
+   "bbox": [
+    436.25,
+    42.50000000000001,
+    180.625,
+    9.999999999999986
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": 0.9785127639770508
+  },
+  {
+   "bbox": [
+    436.875,
+    53.75000000000001,
+    81.875,
+    9.999999999999986
+   ],
+   "text": "touching the database.",
+   "confidence": 0.994167685508728
+  },
+  {
+   "bbox": [
+    435.625,
+    71.24999999999999,
+    193.125,
+    10.625000000000018
+   ],
+   "text": "Pagination is 1-indexed. Pages above.500 are rejected",
+   "confidence": 0.5981355309486389
+  },
+  {
+   "bbox": [
+    435.625,
+    83.125,
+    184.375,
+    9.999999999999986
+   ],
+   "text": "so that asingle client cannot scan the whole table;",
+   "confidence": 0.6139474511146545
+  },
+  {
+   "bbox": [
+    435.625,
+    94.37500000000001,
+    153.75,
+    9.999999999999986
+   ],
+   "text": "use the exportjob for bulk access instead.",
+   "confidence": 0.965889573097229
+  },
+  {
+   "bbox": [
+    441.875,
+    116.25000000000001,
+    175.0,
+    10.624999999999996
+   ],
+   "text": "Tipe set PORT-90901 run twoinstances side byside",
+   "confidence": 0.3193828761577606
+  },
+  {
+   "bbox": [
+    506.25,
+    117.5,
+    9.375,
+    7.499999999999996
+   ],
+   "text": "tot",
+   "confidence": 0.515802264213562
+  },
+  {
+   "bbox": [
+    442.5,
+    126.875,
+    69.375,
+    9.999999999999986
+   ],
+   "text": "during local testing.",
+   "confidence": 0.9387516975402832
+  },
+  {
+   "bbox": [
+    435.625,
+    148.125,
+    121.25,
+    11.875000000000014
+   ],
+   "text": "Glyph checke Ilaj 000 m m 558B",
+   "confidence": 0.2780302166938782
+  },
+  {
+   "bbox": [
+    473.125,
+    388.75,
+    162.5,
+    9.375
+   ],
+   "text": "LA 14 col 27 Spaces: a UTF Typescriot",
+   "confidence": 0.335429310798645
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:34:10.894549+00:00"
+}

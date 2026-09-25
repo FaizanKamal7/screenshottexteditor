@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>whitespace fixture (PILOT A6)</title>
+<script src="../../_shared/theme.js"></script>
+<link rel="stylesheet" href="../../_shared/base.css">
+<style>
+  :root { --bg: #ffffff; --text: #111111; --border: #dddddd; --icon: #777777; }
+  body { font-family: "Inter"; font-size: 16px; padding: 10px; }
+  div { margin-bottom: 8px; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <div id="double" data-category="label">double  spaced   text</div>
+  <div id="nbsp" data-category="label">non&nbsp;breaking&nbsp;&nbsp;space</div>
+  <div id="br" data-category="paragraph">first line<br>second line</div>
+  <div id="pre" data-category="code" style="white-space: pre">    indented  code</div>
+  <div id="trim" data-category="label">   leading and trailing   </div>
+  <div id="newlines" data-category="label">source
+    newline   collapses</div>
+  <div id="wrap" data-category="paragraph" style="width: 10px">alpha beta gamma delta</div>
+  <div id="spans" data-category="label"><span>split</span><span>word</span> and <span>two</span> <span>words</span></div>
+</body>
+</html>

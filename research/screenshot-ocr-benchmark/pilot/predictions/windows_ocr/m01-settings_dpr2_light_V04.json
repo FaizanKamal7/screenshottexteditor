@@ -1,0 +1,286 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m01-settings_dpr2_light_V04",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.06713459998718463,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.11045259999809787,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "13f24c7f708299ba0c68f29fe412852b59e494fa22b242b99ccc2a7162f5f192",
+ "lines": [
+  {
+   "bbox": [
+    49.0,
+    36.0,
+    60.0,
+    22.0
+   ],
+   "text": "9:41",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    43.0,
+    113.0,
+    257.0,
+    63.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    54.0,
+    222.0,
+    276.0,
+    33.0
+   ],
+   "text": "Q Search settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    189.0,
+    341.0,
+    243.0,
+    37.0
+   ],
+   "text": "Avery Collins",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    189.0,
+    390.0,
+    340.0,
+    26.0
+   ],
+   "text": "avery.collins@example.com",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    64.0,
+    490.0,
+    126.0,
+    19.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    557.0,
+    188.0,
+    26.0
+   ],
+   "text": "Notifications",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    646.0,
+    271.0,
+    31.0
+   ],
+   "text": "Privacy & Security",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    734.0,
+    116.0,
+    31.0
+   ],
+   "text": "Storage",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    822.0,
+    146.0,
+    31.0
+   ],
+   "text": "Language",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    910.0,
+    186.0,
+    25.0
+   ],
+   "text": "Screen Time",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    65.0,
+    1004.0,
+    117.0,
+    19.0
+   ],
+   "text": "SUPPORT",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    1072.0,
+    178.0,
+    31.0
+   ],
+   "text": "Help Center",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    62.0,
+    1160.0,
+    229.0,
+    25.0
+   ],
+   "text": "Send Feedback",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    61.0,
+    1248.0,
+    89.0,
+    25.0
+   ],
+   "text": "About",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    63.0,
+    1337.0,
+    227.0,
+    23.0
+   ],
+   "text": "Delete Account",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    681.0,
+    558.0,
+    37.0,
+    23.0
+   ],
+   "text": "On",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    479.0,
+    735.0,
+    239.0,
+    24.0
+   ],
+   "text": "12.4 GB of 64 GB",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    548.0,
+    821.0,
+    170.0,
+    32.0
+   ],
+   "text": "English (US)",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    622.0,
+    912.0,
+    96.0,
+    22.0
+   ],
+   "text": "3h 12m",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    525.0,
+    1249.0,
+    194.0,
+    23.0
+   ],
+   "text": "Version 4.18.2",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    66.0,
+    1429.0,
+    508.0,
+    22.0
+   ],
+   "text": "Last synced 2 minutes ago • Backup size 318 MB",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    71.0,
+    1609.0,
+    54.0,
+    15.0
+   ],
+   "text": "Home",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    260.0,
+    1609.0,
+    66.0,
+    16.0
+   ],
+   "text": "Search",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    462.0,
+    1609.0,
+    52.0,
+    15.0
+   ],
+   "text": "Inbox",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    646.0,
+    1609.0,
+    75.0,
+    20.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:08.646106+00:00"
+}

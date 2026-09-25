@@ -1,0 +1,95 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.5336562679999588,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.5501398000051267,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "6895cdb8b03fbb39710fad7c00fae13604a83d9948325017d706ed8bfe6d109c",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    12.0,
+    81.0,
+    9.0
+   ],
+   "text": "Tallhouse Metrics",
+   "confidence": 0.685
+  },
+  {
+   "bbox": [
+    124.0,
+    11.0,
+    502.0,
+    17.0
+   ],
+   "text": "Analytics Overview =x",
+   "confidence": 0.8133333333333332
+  },
+  {
+   "bbox": [
+    12.0,
+    63.0,
+    543.0,
+    21.0
+   ],
+   "text": "2 Customers $482,910 12,384 21% $86.40",
+   "confidence": 0.79
+  },
+  {
+   "bbox": [
+    12.0,
+    94.0,
+    37.0,
+    8.0
+   ],
+   "text": "Lo",
+   "confidence": 0.2
+  },
+  {
+   "bbox": [
+    12.0,
+    114.0,
+    359.0,
+    8.0
+   ],
+   "text": "oo — —",
+   "confidence": 0.12
+  },
+  {
+   "bbox": [
+    143.0,
+    131.0,
+    456.0,
+    80.0
+   ],
+   "text": "IE re I a=",
+   "confidence": 0.27
+  },
+  {
+   "bbox": [
+    324.0,
+    216.0,
+    275.0,
+    7.0
+   ],
+   "text": "ha We, wm aw",
+   "confidence": 0.2425
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:21.747020+00:00"
+}

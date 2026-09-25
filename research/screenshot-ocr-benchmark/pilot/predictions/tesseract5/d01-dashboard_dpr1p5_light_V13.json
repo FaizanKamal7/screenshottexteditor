@@ -1,0 +1,425 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1p5_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.997567287000038,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.0165932000090834,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "43037446196973ebbec1aaf43db1099ac0c4417f3cf128ed8efe2efd60ccad01",
+ "lines": [
+  {
+   "bbox": [
+    16.0,
+    18.0,
+    122.0,
+    14.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    36.0,
+    57.0,
+    44.0,
+    8.0
+   ],
+   "text": "Overview",
+   "confidence": 0.83
+  },
+  {
+   "bbox": [
+    18.0,
+    87.0,
+    59.0,
+    7.0
+   ],
+   "text": "4 Revenue",
+   "confidence": 0.42
+  },
+  {
+   "bbox": [
+    36.0,
+    115.0,
+    51.0,
+    8.0
+   ],
+   "text": "Customers",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    18.0,
+    141.0,
+    55.0,
+    13.0
+   ],
+   "text": "00 Reports",
+   "confidence": 0.605
+  },
+  {
+   "bbox": [
+    18.0,
+    171.0,
+    58.0,
+    11.0
+   ],
+   "text": "© Settings",
+   "confidence": 0.77
+  },
+  {
+   "bbox": [
+    186.0,
+    22.0,
+    159.0,
+    18.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    187.0,
+    44.0,
+    148.0,
+    10.0
+   ],
+   "text": "Last 30 doy Updated 0845 UTC",
+   "confidence": 0.8
+  },
+  {
+   "bbox": [
+    200.0,
+    82.0,
+    73.0,
+    10.0
+   ],
+   "text": "Monthly Revere",
+   "confidence": 0.52
+  },
+  {
+   "bbox": [
+    200.0,
+    101.0,
+    82.0,
+    19.0
+   ],
+   "text": "$482,910",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    200.0,
+    125.0,
+    85.0,
+    7.0
+   ],
+   "text": "Tavsiastmonts",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    199.0,
+    163.0,
+    107.0,
+    28.0
+   ],
+   "text": "Weekly revenue (USD)",
+   "confidence": 0.8066666666666668
+  },
+  {
+   "bbox": [
+    390.0,
+    83.0,
+    52.0,
+    7.0
+   ],
+   "text": "Active Users",
+   "confidence": 0.86
+  },
+  {
+   "bbox": [
+    391.0,
+    103.0,
+    60.0,
+    17.0
+   ],
+   "text": "12,384",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    390.0,
+    113.0,
+    78.0,
+    28.0
+   ],
+   "text": "0% vs last marth",
+   "confidence": 0.5675
+  },
+  {
+   "bbox": [
+    480.0,
+    173.0,
+    76.0,
+    8.0
+   ],
+   "text": "Recent invoices",
+   "confidence": 0.83
+  },
+  {
+   "bbox": [
+    486.0,
+    197.0,
+    30.0,
+    7.0
+   ],
+   "text": "moe",
+   "confidence": 0.17
+  },
+  {
+   "bbox": [
+    486.0,
+    221.0,
+    44.0,
+    7.0
+   ],
+   "text": "iwaoi21",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    486.0,
+    247.0,
+    44.0,
+    8.0
+   ],
+   "text": "10422",
+   "confidence": 0.39
+  },
+  {
+   "bbox": [
+    486.0,
+    273.0,
+    44.0,
+    7.0
+   ],
+   "text": "va0i23",
+   "confidence": 0.1
+  },
+  {
+   "bbox": [
+    486.0,
+    299.0,
+    44.0,
+    7.0
+   ],
+   "text": "iv10i2¢",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    486.0,
+    325.0,
+    44.0,
+    8.0
+   ],
+   "text": "10425",
+   "confidence": 0.39
+  },
+  {
+   "bbox": [
+    581.0,
+    83.0,
+    46.0,
+    7.0
+   ],
+   "text": "Chum fate",
+   "confidence": 0.64
+  },
+  {
+   "bbox": [
+    581.0,
+    103.0,
+    44.0,
+    15.0
+   ],
+   "text": "2.1%",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    581.0,
+    125.0,
+    65.0,
+    7.0
+   ],
+   "text": "Down fom 26%",
+   "confidence": 0.7133333333333333
+  },
+  {
+   "bbox": [
+    565.0,
+    221.0,
+    189.0,
+    9.0
+   ],
+   "text": "Harper & Stone LLC 2ws0902",
+   "confidence": 0.67
+  },
+  {
+   "bbox": [
+    565.0,
+    247.0,
+    189.0,
+    8.0
+   ],
+   "text": "Blustield Dental 20260804",
+   "confidence": 0.5266666666666666
+  },
+  {
+   "bbox": [
+    565.0,
+    272.0,
+    189.0,
+    10.0
+   ],
+   "text": "akigo Supply Co. 2060909",
+   "confidence": 0.5625
+  },
+  {
+   "bbox": [
+    565.0,
+    298.0,
+    189.0,
+    10.0
+   ],
+   "text": "Make Stoo! Books 2060915",
+   "confidence": 0.3225
+  },
+  {
+   "bbox": [
+    565.0,
+    325.0,
+    189.0,
+    10.0
+   ],
+   "text": "Qu Logistics 20260021",
+   "confidence": 0.2966666666666667
+  },
+  {
+   "bbox": [
+    573.0,
+    353.0,
+    169.0,
+    7.0
+   ],
+   "text": "SR R————",
+   "confidence": 0.025
+  },
+  {
+   "bbox": [
+    772.0,
+    71.0,
+    72.0,
+    28.0
+   ],
+   "text": "Aug Onder Vale",
+   "confidence": 0.54
+  },
+  {
+   "bbox": [
+    772.0,
+    101.0,
+    60.0,
+    18.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    773.0,
+    125.0,
+    82.0,
+    8.0
+   ],
+   "text": "“S315 month",
+   "confidence": 0.34
+  },
+  {
+   "bbox": [
+    818.0,
+    220.0,
+    43.0,
+    9.0
+   ],
+   "text": "sa",
+   "confidence": 0.09
+  },
+  {
+   "bbox": [
+    827.0,
+    247.0,
+    34.0,
+    8.0
+   ],
+   "text": "sms",
+   "confidence": 0.71
+  },
+  {
+   "bbox": [
+    813.0,
+    272.0,
+    48.0,
+    9.0
+   ],
+   "text": "s1200575",
+   "confidence": 0.14
+  },
+  {
+   "bbox": [
+    832.0,
+    298.0,
+    29.0,
+    9.0
+   ],
+   "text": "sm00",
+   "confidence": 0.15
+  },
+  {
+   "bbox": [
+    818.0,
+    325.0,
+    43.0,
+    9.0
+   ],
+   "text": "ssa820",
+   "confidence": 0.21
+  },
+  {
+   "bbox": [
+    879.0,
+    198.0,
+    21.0,
+    134.0
+   ],
+   "text": "EAE",
+   "confidence": 0.2
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:11:40.603022+00:00"
+}

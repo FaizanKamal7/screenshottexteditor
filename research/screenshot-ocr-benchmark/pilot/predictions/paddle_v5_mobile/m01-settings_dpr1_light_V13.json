@@ -1,0 +1,268 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m01-settings_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 2.346591030000127,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 2.356995399983134,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "13e7e3d033a110ee05fdcc1c5f5d23c6af0b494f1546bbe58b558a59f93f9b84",
+ "lines": [
+  {
+   "bbox": [
+    7.0,
+    2.0,
+    24.0,
+    16.0
+   ],
+   "text": "9:41",
+   "confidence": 0.9826822280883789
+  },
+  {
+   "bbox": [
+    161.0,
+    3.0,
+    25.0,
+    15.0
+   ],
+   "text": "87%",
+   "confidence": 0.9909322261810303
+  },
+  {
+   "bbox": [
+    4.0,
+    19.0,
+    77.0,
+    29.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9831066727638245
+  },
+  {
+   "bbox": [
+    7.0,
+    48.0,
+    78.0,
+    18.0
+   ],
+   "text": "Q Search settings",
+   "confidence": 0.9191148281097412
+  },
+  {
+   "bbox": [
+    44.0,
+    80.0,
+    65.0,
+    14.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.9911165237426758
+  },
+  {
+   "bbox": [
+    12.0,
+    117.0,
+    37.0,
+    14.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": 0.9740379452705383
+  },
+  {
+   "bbox": [
+    9.0,
+    132.0,
+    57.0,
+    17.0
+   ],
+   "text": "Notifications",
+   "confidence": 0.9437826871871948
+  },
+  {
+   "bbox": [
+    165.0,
+    132.0,
+    21.0,
+    18.0
+   ],
+   "text": "on",
+   "confidence": 0.8487482666969299
+  },
+  {
+   "bbox": [
+    8.0,
+    153.0,
+    80.0,
+    21.0
+   ],
+   "text": "Privacy & Security",
+   "confidence": 0.9325459599494934
+  },
+  {
+   "bbox": [
+    8.0,
+    174.0,
+    42.0,
+    22.0
+   ],
+   "text": "Storage",
+   "confidence": 0.9340720772743225
+  },
+  {
+   "bbox": [
+    115.0,
+    177.0,
+    71.0,
+    17.0
+   ],
+   "text": "12.4 GB ot 64GB",
+   "confidence": 0.8245327472686768
+  },
+  {
+   "bbox": [
+    8.0,
+    198.0,
+    49.0,
+    21.0
+   ],
+   "text": "Language",
+   "confidence": 0.9115923643112183
+  },
+  {
+   "bbox": [
+    130.0,
+    197.0,
+    56.0,
+    20.0
+   ],
+   "text": "English (us)",
+   "confidence": 0.9194473624229431
+  },
+  {
+   "bbox": [
+    8.0,
+    219.0,
+    60.0,
+    21.0
+   ],
+   "text": "Screen Time",
+   "confidence": 0.9658420085906982
+  },
+  {
+   "bbox": [
+    148.0,
+    220.0,
+    39.0,
+    19.0
+   ],
+   "text": "3h 12m",
+   "confidence": 0.8388624787330627
+  },
+  {
+   "bbox": [
+    11.0,
+    243.0,
+    38.0,
+    16.0
+   ],
+   "text": "SUPPORT",
+   "confidence": 0.954757571220398
+  },
+  {
+   "bbox": [
+    9.0,
+    261.0,
+    54.0,
+    18.0
+   ],
+   "text": "Help Center",
+   "confidence": 0.9107200503349304
+  },
+  {
+   "bbox": [
+    9.0,
+    283.0,
+    68.0,
+    17.0
+   ],
+   "text": "Send Feedback",
+   "confidence": 0.9709252119064331
+  },
+  {
+   "bbox": [
+    9.0,
+    305.0,
+    34.0,
+    18.0
+   ],
+   "text": "About",
+   "confidence": 0.9445310831069946
+  },
+  {
+   "bbox": [
+    128.0,
+    307.0,
+    56.0,
+    15.0
+   ],
+   "text": "Version 4.18.2",
+   "confidence": 0.9510689377784729
+  },
+  {
+   "bbox": [
+    16.0,
+    385.0,
+    15.0,
+    15.0
+   ],
+   "text": "合",
+   "confidence": 0.35731053352355957
+  },
+  {
+   "bbox": [
+    65.0,
+    385.0,
+    14.0,
+    15.0
+   ],
+   "text": "a",
+   "confidence": 0.7407709360122681
+  },
+  {
+   "bbox": [
+    116.0,
+    389.0,
+    11.0,
+    9.0
+   ],
+   "text": "国",
+   "confidence": 0.1092643067240715
+  },
+  {
+   "bbox": [
+    165.0,
+    388.0,
+    11.0,
+    9.0
+   ],
+   "text": "?",
+   "confidence": 0.20570909976959229
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:18:50.793951+00:00"
+}

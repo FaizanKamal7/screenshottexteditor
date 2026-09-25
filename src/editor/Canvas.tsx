@@ -33,6 +33,11 @@ const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 1.5;
 // How tall (px, on screen) a region should read as once focused for editing.
 const FOCUS_TARGET_HEIGHT_PX = 56;
+// The drag-to-nudge handle's touch target and its gap from the editing input, in screen px. The
+// handle sits outside the scaled image layer so it keeps this size at every zoom level instead of
+// shrinking with the screenshot, and beside the input rather than on it.
+const HANDLE_SIZE_PX = 44;
+const HANDLE_GAP_PX = 4;
 
 interface CanvasProps {
 	embedded?: boolean;
@@ -145,6 +150,9 @@ export function Canvas({ embedded = false }: CanvasProps) {
 		return () => document.fonts.removeEventListener('loadingdone', remeasure);
 	}, []);
 	const [fitScale, setFitScale] = useState(1);
+	// The pane's inner size and padding, for working out how much room sits around the image
+	// (see the drag handle placement below).
+	const [paneBox, setPaneBox] = useState({ width: 0, height: 0, padding: 0 });
 	const [zoom, setZoom] = useState(1);
 	const zoomRef = useRef(1);
 	const effectiveScale = fitScale * zoom;
@@ -236,6 +244,11 @@ export function Canvas({ embedded = false }: CanvasProps) {
 		if (!pane || !imageWidth || !imageHeight) return;
 
 		const computeScale = () => {
+			setPaneBox({
+				width: pane.clientWidth,
+				height: pane.clientHeight,
+				padding: parseFloat(getComputedStyle(pane).paddingLeft) || 0,
+			});
 			const availableWidth = pane.clientWidth - FIT_PADDING * 2;
 			const availableHeight = pane.clientHeight - FIT_PADDING * 2;
 			if (availableWidth <= 0 || availableHeight <= 0) return;
@@ -365,6 +378,51 @@ export function Canvas({ embedded = false }: CanvasProps) {
 		if (next) startEditingWithStyle(next.id);
 	};
 
+	// Drag handle placement, in screen px relative to the scaled image box. It goes beside the
+	// input, never on it: the first of left / above / below / right that has room before the
+	// pane's scroll edge and doesn't cover another detected line (whose canvas button would become
+	// untappable underneath). Dense small text can leave no clean side; then the first side with
+	// room wins. The pane clips anything past its padding edge, so "room" counts the image's
+	// centering margin plus the pane's padding (left always has room at fit zoom, which keeps
+	// FIT_PADDING around the image).
+	let handlePosition: { left: number; top: number } | null = null;
+	if (editingRegion) {
+		const s = effectiveScale;
+		const [x, y, w, h] = editingRegion.bbox;
+		const input = {
+			left: (x + editingRegion.offsetX) * s,
+			top: (y + editingRegion.offsetY) * s,
+			width: Math.max(w, measuredTextWidth + EDIT_WIDTH_BUFFER_PX) * s,
+			height: h * s,
+		};
+		const imageW = imageWidth * s;
+		const imageH = imageHeight * s;
+		const marginX = paneBox.padding + Math.max(0, (paneBox.width - paneBox.padding * 2 - imageW) / 2);
+		const marginY = paneBox.padding + Math.max(0, (paneBox.height - paneBox.padding * 2 - imageH) / 2);
+		const reach = HANDLE_SIZE_PX + HANDLE_GAP_PX;
+		const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
+		const centeredTop = clamp(input.top + input.height / 2 - HANDLE_SIZE_PX / 2, -marginY, imageH + marginY - HANDLE_SIZE_PX);
+		const alignedLeft = clamp(input.left, -marginX, imageW + marginX - HANDLE_SIZE_PX);
+		const candidates = [
+			{ fits: marginX + input.left >= reach, left: input.left - reach, top: centeredTop },
+			{ fits: marginY + input.top >= reach, left: alignedLeft, top: input.top - reach },
+			{ fits: marginY + imageH - input.top - input.height >= reach, left: alignedLeft, top: input.top + input.height + HANDLE_GAP_PX },
+			{ fits: marginX + imageW - input.left - input.width >= reach, left: input.left + input.width + HANDLE_GAP_PX, top: centeredTop },
+		].filter((c) => c.fits);
+		const coversOtherRegion = (c: { left: number; top: number }) =>
+			regions.some((r) => {
+				if (r.id === editingRegion.id) return false;
+				const rl = (r.bbox[0] + r.offsetX) * s;
+				const rt = (r.bbox[1] + r.offsetY) * s;
+				return c.left < rl + r.bbox[2] * s && c.left + HANDLE_SIZE_PX > rl && c.top < rt + r.bbox[3] * s && c.top + HANDLE_SIZE_PX > rt;
+			});
+		handlePosition = candidates.find((c) => !coversOtherRegion(c)) ?? candidates[0] ?? {
+			left: input.left - reach,
+			top: centeredTop,
+		};
+	}
+	const handleDrag = editingRegion && dragPreview?.regionId === editingRegion.id ? dragPreview : null;
+
 	return (
 		<div
 			ref={paneRef}
@@ -490,24 +548,6 @@ export function Canvas({ embedded = false }: CanvasProps) {
 											background: backgroundCss(region.background),
 										}}
 									/>
-									{/* Drag handle: a separate element, not the input itself, so
-									    dragging never conflicts with placing a text cursor or
-									    selecting text. */}
-									<span
-										role="button"
-										tabIndex={0}
-										title="Drag to nudge position slightly (or Alt+Arrow)"
-										onPointerDown={(e) => beginDrag(e, region)}
-										onPointerMove={updateDrag}
-										onPointerUp={(e) => endDrag(e, region)}
-										onPointerCancel={(e) => endDrag(e, region)}
-										className="absolute -left-2.5 -top-2.5 flex h-5 w-5 cursor-move items-center justify-center rounded-full border border-hairline bg-canvas-elevated text-faint shadow-sm hover:text-link"
-										style={{ transform: isDraggingThis ? `translate(${previewDx}px, ${previewDy}px)` : undefined }}
-									>
-										<svg viewBox="0 0 16 16" className="h-3 w-3" fill="currentColor">
-											{[4, 8, 12].flatMap((cy) => [5, 11].map((cx) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="1.2" />))}
-										</svg>
-									</span>
 								</div>
 							);
 						}
@@ -557,6 +597,39 @@ export function Canvas({ embedded = false }: CanvasProps) {
 						);
 					})}
 				</div>
+
+				{/* Drag handle: a separate element, not the input itself, so dragging never
+				    conflicts with placing a text cursor or selecting text. touch-none stops a
+				    touch drag from panning the pane instead. */}
+				{editingRegion && handlePosition && (
+					<span
+						role="button"
+						tabIndex={0}
+						title="Drag to nudge position slightly (or Alt+Arrow)"
+						aria-label="Drag to nudge position"
+						onPointerDown={(e) => beginDrag(e, editingRegion)}
+						onPointerMove={updateDrag}
+						onPointerUp={(e) => endDrag(e, editingRegion)}
+						onPointerCancel={(e) => endDrag(e, editingRegion)}
+						className="group absolute z-10 flex cursor-move touch-none items-center justify-center"
+						style={{
+							left: handlePosition.left,
+							top: handlePosition.top,
+							width: HANDLE_SIZE_PX,
+							height: HANDLE_SIZE_PX,
+							// dragPreview is in native image px; this layer is in screen px.
+							transform: handleDrag
+								? `translate(${handleDrag.dx * effectiveScale}px, ${handleDrag.dy * effectiveScale}px)`
+								: undefined,
+						}}
+					>
+						<span className="flex h-5 w-5 items-center justify-center rounded-full border border-hairline bg-canvas-elevated text-faint shadow-sm group-hover:text-link">
+							<svg viewBox="0 0 16 16" className="h-3 w-3" fill="currentColor">
+								{[4, 8, 12].flatMap((cy) => [5, 11].map((cx) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="1.2" />))}
+							</svg>
+						</span>
+					</span>
+				)}
 			</div>
 
 			{zoom !== 1 && !isBusy && (

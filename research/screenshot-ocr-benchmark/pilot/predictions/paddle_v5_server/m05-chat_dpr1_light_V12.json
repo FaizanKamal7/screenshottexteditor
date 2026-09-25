@@ -1,0 +1,302 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m05-chat_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 4.886434752999776,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.899483099987265,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "f1dda27c2a7c59f731195e0afc6d6d2541f32a7b871a9d3f411db0c6cd47cec1",
+ "peak_rss_mb": 1912.3,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    2.0,
+    21.0,
+    15.0
+   ],
+   "text": "9:41",
+   "confidence": 0.9592435956001282
+  },
+  {
+   "bbox": [
+    156.0,
+    2.0,
+    31.0,
+    14.0
+   ],
+   "text": "5G 72%",
+   "confidence": 0.937015950679779
+  },
+  {
+   "bbox": [
+    48.0,
+    23.0,
+    45.0,
+    11.0
+   ],
+   "text": "Jordan Lee",
+   "confidence": 0.9798656702041626
+  },
+  {
+   "bbox": [
+    48.0,
+    33.0,
+    50.0,
+    11.0
+   ],
+   "text": "Active 5 min ago",
+   "confidence": 0.940898597240448
+  },
+  {
+   "bbox": [
+    69.0,
+    54.0,
+    57.0,
+    10.0
+   ],
+   "text": "Tue, Sep 22 - 4:12 PM",
+   "confidence": 0.924497127532959
+  },
+  {
+   "bbox": [
+    10.0,
+    70.0,
+    117.0,
+    10.0
+   ],
+   "text": "Hey!Are we still on for the design",
+   "confidence": 0.8468835353851318
+  },
+  {
+   "bbox": [
+    10.0,
+    81.0,
+    93.0,
+    10.0
+   ],
+   "text": "review tomorrow morning?",
+   "confidence": 0.8944924473762512
+  },
+  {
+   "bbox": [
+    57.0,
+    104.0,
+    116.0,
+    8.0
+   ],
+   "text": "Yes, 10:30 in room 4B.Ill bring the",
+   "confidence": 0.8347664475440979
+  },
+  {
+   "bbox": [
+    55.0,
+    123.0,
+    56.0,
+    10.0
+   ],
+   "text": "component list.",
+   "confidence": 0.9636856913566589
+  },
+  {
+   "bbox": [
+    57.0,
+    115.0,
+    86.0,
+    7.0
+   ],
+   "text": "updated mockupsand the",
+   "confidence": 0.9523534774780273
+  },
+  {
+   "bbox": [
+    11.0,
+    145.0,
+    103.0,
+    10.0
+   ],
+   "text": "Great.Can you also check the",
+   "confidence": 0.9058452844619751
+  },
+  {
+   "bbox": [
+    11.0,
+    155.0,
+    111.0,
+    10.0
+   ],
+   "text": "invoice total?1got $1,248.50but",
+   "confidence": 0.8621344566345215
+  },
+  {
+   "bbox": [
+    11.0,
+    164.0,
+    78.0,
+    10.0
+   ],
+   "text": "fnance ss $1.284.50",
+   "confidence": 0.8329693078994751
+  },
+  {
+   "bbox": [
+    85.0,
+    184.0,
+    24.0,
+    7.0
+   ],
+   "text": "4:19 PM",
+   "confidence": 0.9762551188468933
+  },
+  {
+   "bbox": [
+    55.0,
+    198.0,
+    123.0,
+    11.0
+   ],
+   "text": "Good catch, the second one is right",
+   "confidence": 0.9026176929473877
+  },
+  {
+   "bbox": [
+    57.0,
+    211.0,
+    72.0,
+    7.0
+   ],
+   "text": "Sending the PDF now",
+   "confidence": 0.8572600483894348
+  },
+  {
+   "bbox": [
+    96.0,
+    232.0,
+    66.0,
+    10.0
+   ],
+   "text": "Q3-invoice-final.pdf",
+   "confidence": 0.8527091145515442
+  },
+  {
+   "bbox": [
+    95.0,
+    239.0,
+    50.0,
+    13.0
+   ],
+   "text": "24MB-6 pages",
+   "confidence": 0.8198778033256531
+  },
+  {
+   "bbox": [
+    150.0,
+    259.0,
+    39.0,
+    10.0
+   ],
+   "text": "Read 4:21 PM",
+   "confidence": 0.9406926035881042
+  },
+  {
+   "bbox": [
+    11.0,
+    276.0,
+    112.0,
+    10.0
+   ],
+   "text": "Thanks, got it. Order #A-20931 is",
+   "confidence": 0.925562858581543
+  },
+  {
+   "bbox": [
+    11.0,
+    285.0,
+    38.0,
+    10.0
+   ],
+   "text": "confirmed.",
+   "confidence": 0.9672625660896301
+  },
+  {
+   "bbox": [
+    11.0,
+    375.0,
+    46.0,
+    11.0
+   ],
+   "text": "Sounds good",
+   "confidence": 0.9336671829223633
+  },
+  {
+   "bbox": [
+    68.0,
+    373.0,
+    42.0,
+    17.0
+   ],
+   "text": "On my way",
+   "confidence": 0.9571694135665894
+  },
+  {
+   "bbox": [
+    122.0,
+    375.0,
+    40.0,
+    11.0
+   ],
+   "text": "10 min late",
+   "confidence": 0.9471337795257568
+  },
+  {
+   "bbox": [
+    177.0,
+    375.0,
+    17.0,
+    11.0
+   ],
+   "text": "Call",
+   "confidence": 0.9758108854293823
+  },
+  {
+   "bbox": [
+    10.0,
+    400.0,
+    35.0,
+    14.0
+   ],
+   "text": "Message",
+   "confidence": 0.9569340944290161
+  },
+  {
+   "bbox": [
+    165.0,
+    403.0,
+    17.0,
+    8.0
+   ],
+   "text": "Send",
+   "confidence": 0.9756991267204285
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T14:45:08.164467+00:00"
+}

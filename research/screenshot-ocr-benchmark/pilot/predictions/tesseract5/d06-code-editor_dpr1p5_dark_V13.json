@@ -1,0 +1,375 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1p5_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.6116588529998808,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.653730899997754,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "16337c672786e0a531a9c655bf1fdf08f1d04167314ab5ff752e28805664ea00",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    11.0,
+    41.0,
+    7.0
+   ],
+   "text": "Expire",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    20.0,
+    37.0,
+    52.0,
+    28.0
+   ],
+   "text": "server. ts",
+   "confidence": 0.23
+  },
+  {
+   "bbox": [
+    21.0,
+    65.0,
+    26.0,
+    7.0
+   ],
+   "text": "ants",
+   "confidence": 0.44
+  },
+  {
+   "bbox": [
+    22.0,
+    71.0,
+    50.0,
+    28.0
+   ],
+   "text": "routes. ts",
+   "confidence": 0.59
+  },
+  {
+   "bbox": [
+    7.0,
+    90.0,
+    67.0,
+    28.0
+   ],
+   "text": "package json",
+   "confidence": 0.13
+  },
+  {
+   "bbox": [
+    11.0,
+    116.0,
+    68.0,
+    9.0
+   ],
+   "text": "tscenfig. json",
+   "confidence": 0.43
+  },
+  {
+   "bbox": [
+    148.0,
+    0.0,
+    200.0,
+    27.0
+   ],
+   "text": "server.ts | config.fson | READHE.sd",
+   "confidence": 0.4
+  },
+  {
+   "bbox": [
+    166.0,
+    36.0,
+    213.0,
+    9.0
+   ],
+   "text": "ioport { createServer } fron “node:ttp\";",
+   "confidence": 0.43833333333333335
+  },
+  {
+   "bbox": [
+    152.0,
+    41.0,
+    243.0,
+    28.0
+   ],
+   "text": "2 isgort { readFile } fron “node: fs/pronises\";",
+   "confidence": 0.5525
+  },
+  {
+   "bbox": [
+    166.0,
+    71.0,
+    239.0,
+    28.0
+   ],
+   "text": "const PORT = Nusher (process. env. PORT 22 500);",
+   "confidence": 0.5966666666666667
+  },
+  {
+   "bbox": [
+    166.0,
+    85.0,
+    188.0,
+    28.0
+   ],
+   "text": "const WALBODY = 1.048.576; // 1M.",
+   "confidence": 0.5966666666666667
+  },
+  {
+   "bbox": [
+    152.0,
+    112.0,
+    4.0,
+    7.0
+   ],
+   "text": "‘",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    152.0,
+    126.0,
+    269.0,
+    9.0
+   ],
+   "text": "7 type Route = (req: Request) => Pronisecesponse>;",
+   "confidence": 0.6725
+  },
+  {
+   "bbox": [
+    165.0,
+    156.0,
+    204.0,
+    10.0
+   ],
+   "text": "const routes = new Mapestring, Routes(l",
+   "confidence": 0.6733333333333333
+  },
+  {
+   "bbox": [
+    177.0,
+    161.0,
+    249.0,
+    28.0
+   ],
+   "text": "[“/heattn®, async ©) => JsonC{ ok: true, uptime:",
+   "confidence": 0.50625
+  },
+  {
+   "bbox": [
+    153.0,
+    186.0,
+    168.0,
+    9.0
+   ],
+   "text": "1 (Vinveices, Ustinotces],",
+   "confidence": 0.15
+  },
+  {
+   "bbox": [
+    147.0,
+    201.0,
+    32.0,
+    9.0
+   ],
+   "text": "=;",
+   "confidence": 0.18
+  },
+  {
+   "bbox": [
+    147.0,
+    231.0,
+    280.0,
+    9.0
+   ],
+   "text": "14 export async function Uistinvoices(req: Request) {",
+   "confidence": 0.6257142857142857
+  },
+  {
+   "bbox": [
+    657.0,
+    19.0,
+    134.0,
+    17.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    657.0,
+    33.0,
+    276.0,
+    34.0
+   ],
+   "text": "oY ea ete tos A a ests Perea",
+   "confidence": 0.235
+  },
+  {
+   "bbox": [
+    657.0,
+    66.0,
+    266.0,
+    11.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": 0.927142857142857
+  },
+  {
+   "bbox": [
+    657.0,
+    83.0,
+    120.0,
+    12.0
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9333333333333332
+  },
+  {
+   "bbox": [
+    657.0,
+    109.0,
+    285.0,
+    12.0
+   ],
+   "text": "Pagination is indexed. Pages above 500 are rejected",
+   "confidence": 0.88
+  },
+  {
+   "bbox": [
+    657.0,
+    128.0,
+    271.0,
+    11.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": 0.912
+  },
+  {
+   "bbox": [
+    657.0,
+    144.0,
+    225.0,
+    12.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": 0.81625
+  },
+  {
+   "bbox": [
+    433.0,
+    167.0,
+    497.0,
+    28.0
+   ],
+   "text": "onl, Tip: set PORT-9090 to run two instances side by side.",
+   "confidence": 0.6354545454545455
+  },
+  {
+   "bbox": [
+    665.0,
+    192.0,
+    101.0,
+    12.0
+   ],
+   "text": "duringlocal testing.",
+   "confidence": 0.62
+  },
+  {
+   "bbox": [
+    657.0,
+    216.0,
+    176.0,
+    28.0
+   ],
+   "text": "Glyph check: 111] 000 rn m 53 88.",
+   "confidence": 0.76875
+  },
+  {
+   "bbox": [
+    147.0,
+    236.0,
+    395.0,
+    28.0
+   ],
+   "text": "15 const page = Musber (new URL(req.url).searchParans. get (\"page*) 7? \"1);",
+   "confidence": 0.5363636363636364
+  },
+  {
+   "bbox": [
+    147.0,
+    261.0,
+    270.0,
+    10.0
+   ],
+   "text": "16 if Gage <1 II page > 596) return Json{ error",
+   "confidence": 0.7109090909090909
+  },
+  {
+   "bbox": [
+    434.0,
+    261.0,
+    92.0,
+    9.0
+   ],
+   "text": "\"bad page” }, 40),",
+   "confidence": 0.685
+  },
+  {
+   "bbox": [
+    147.0,
+    265.0,
+    400.0,
+    28.0
+   ],
+   "text": "17 const rons = await db.query (‘SELECT 16, total FRON dnvotces LINIT 25%);",
+   "confidence": 0.6684615384615384
+  },
+  {
+   "bbox": [
+    147.0,
+    291.0,
+    174.0,
+    10.0
+   ],
+   "text": "1 return JsonC{ page, rows 1;",
+   "confidence": 0.5366666666666666
+  },
+  {
+   "bbox": [
+    147.0,
+    306.0,
+    23.0,
+    9.0
+   ],
+   "text": "1}",
+   "confidence": 0.34
+  },
+  {
+   "bbox": [
+    147.0,
+    325.0,
+    204.0,
+    28.0
+   ],
+   "text": "21 createserven (handler) Liston PORT);",
+   "confidence": 0.67
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:15:04.809056+00:00"
+}

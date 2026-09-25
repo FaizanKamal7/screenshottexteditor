@@ -1,6 +1,6 @@
 ---
 title: 'Edit Text in an Android Screenshot'
-metaDescription: 'Change text in a Play Store or Android UI screenshot while keeping Roboto rendering, density scale, and Material layout intact.'
+metaDescription: 'Edit text in an Android screenshot, from Play Store listings to app UI, while keeping Roboto rendering, density scale, and Material layout intact.'
 platform: android
 updated: 2026-09-01
 eyebrow: 'Android & Play Store'

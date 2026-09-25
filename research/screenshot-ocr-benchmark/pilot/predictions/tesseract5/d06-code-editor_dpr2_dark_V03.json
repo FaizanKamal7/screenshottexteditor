@@ -1,0 +1,355 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr2_dark_V03",
+ "status": "ok",
+ "error": null,
+ "total_s": 4.060156331000144,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.1037409999989904,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "9afedd3741b4e5a0d84f002e7c7854d06952df44839c83324ec1504b74099b7d",
+ "lines": [
+  {
+   "bbox": [
+    30.0,
+    30.0,
+    108.0,
+    16.0
+   ],
+   "text": "EXPLORER",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    30.0,
+    86.0,
+    39.0,
+    15.0
+   ],
+   "text": "src",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    58.0,
+    129.0,
+    123.0,
+    18.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.9
+  },
+  {
+   "bbox": [
+    58.0,
+    174.0,
+    67.0,
+    19.0
+   ],
+   "text": "db.ts",
+   "confidence": 0.9
+  },
+  {
+   "bbox": [
+    58.0,
+    221.0,
+    123.0,
+    18.0
+   ],
+   "text": "routes.ts",
+   "confidence": 0.89
+  },
+  {
+   "bbox": [
+    30.0,
+    261.0,
+    165.0,
+    32.0
+   ],
+   "text": "package. json",
+   "confidence": 0.8
+  },
+  {
+   "bbox": [
+    29.0,
+    309.0,
+    180.0,
+    24.0
+   ],
+   "text": "tsconfig. json",
+   "confidence": 0.935
+  },
+  {
+   "bbox": [
+    394.0,
+    21.0,
+    538.0,
+    31.0
+   ],
+   "text": "server.ts config. json README. md",
+   "confidence": 0.63
+  },
+  {
+   "bbox": [
+    442.0,
+    96.0,
+    568.0,
+    24.0
+   ],
+   "text": "import { createServer } from \"node:http\";",
+   "confidence": 0.91
+  },
+  {
+   "bbox": [
+    442.0,
+    136.0,
+    609.0,
+    24.0
+   ],
+   "text": "import { readFile } from \"node:fs/promises\";",
+   "confidence": 0.88
+  },
+  {
+   "bbox": [
+    442.0,
+    216.0,
+    638.0,
+    25.0
+   ],
+   "text": "const PORT = Number(process.env.PORT 2? 8080);",
+   "confidence": 0.87
+  },
+  {
+   "bbox": [
+    442.0,
+    256.0,
+    501.0,
+    24.0
+   ],
+   "text": "const MAX_BODY = 1_048_576; // 1 MiB",
+   "confidence": 0.917142857142857
+  },
+  {
+   "bbox": [
+    441.0,
+    336.0,
+    681.0,
+    25.0
+   ],
+   "text": "type Route = (req: Request) => Promise<Response>;",
+   "confidence": 0.9457142857142857
+  },
+  {
+   "bbox": [
+    442.0,
+    416.0,
+    541.0,
+    24.0
+   ],
+   "text": "const routes = new Map<string, Route>([",
+   "confidence": 0.9366666666666668
+  },
+  {
+   "bbox": [
+    473.0,
+    456.0,
+    760.0,
+    25.0
+   ],
+   "text": "[\"/health\", async () => json({ ok: true, uptime: 8 })I,",
+   "confidence": 0.816
+  },
+  {
+   "bbox": [
+    473.0,
+    496.0,
+    382.0,
+    24.0
+   ],
+   "text": "[\"/invoices\", listInvoices],",
+   "confidence": 0.77
+  },
+  {
+   "bbox": [
+    443.0,
+    536.0,
+    35.0,
+    24.0
+   ],
+   "text": "1;",
+   "confidence": 0.61
+  },
+  {
+   "bbox": [
+    442.0,
+    616.0,
+    697.0,
+    25.0
+   ],
+   "text": "export async function listInvoices(req: Request) {",
+   "confidence": 0.9316666666666668
+  },
+  {
+   "bbox": [
+    470.0,
+    656.0,
+    974.0,
+    25.0
+   ],
+   "text": "const page = Number(new URL(req.url).searchParams.get(\"page\") ?? \"1\");",
+   "confidence": 0.9142857142857143
+  },
+  {
+   "bbox": [
+    470.0,
+    696.0,
+    946.0,
+    25.0
+   ],
+   "text": "if (page < 1 || page > 560) return json({ error: \"bad page\" }, 460);",
+   "confidence": 0.9146666666666667
+  },
+  {
+   "bbox": [
+    470.0,
+    736.0,
+    988.0,
+    24.0
+   ],
+   "text": "const rows = await db.query(\"SELECT id, total FROM invoices LIMIT 25\");",
+   "confidence": 0.9390909090909091
+  },
+  {
+   "bbox": [
+    471.0,
+    776.0,
+    385.0,
+    25.0
+   ],
+   "text": "return json({ page, rows });",
+   "confidence": 0.9259999999999999
+  },
+  {
+   "bbox": [
+    442.0,
+    892.0,
+    484.0,
+    34.0
+   ],
+   "text": "createServer (handler) .listen(PORT);",
+   "confidence": 0.39666666666666667
+  },
+  {
+   "bbox": [
+    1751.0,
+    51.0,
+    357.0,
+    44.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1751.0,
+    129.0,
+    737.0,
+    31.0
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1751.0,
+    176.0,
+    712.0,
+    29.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1750.0,
+    222.0,
+    321.0,
+    29.0
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9566666666666667
+  },
+  {
+   "bbox": [
+    1751.0,
+    292.0,
+    761.0,
+    30.0
+   ],
+   "text": "Pagination is 1-indexed. Pages above 500 are rejected",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1751.0,
+    340.0,
+    722.0,
+    29.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": 0.9590000000000001
+  },
+  {
+   "bbox": [
+    1750.0,
+    385.0,
+    601.0,
+    31.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": 0.9475
+  },
+  {
+   "bbox": [
+    1774.0,
+    473.0,
+    690.0,
+    28.0
+   ],
+   "text": "Tip: set PORT=9090 to run two instances side by side",
+   "confidence": 0.946
+  },
+  {
+   "bbox": [
+    1775.0,
+    515.0,
+    268.0,
+    28.0
+   ],
+   "text": "during local testing.",
+   "confidence": 0.9333333333333332
+  },
+  {
+   "bbox": [
+    1751.0,
+    602.0,
+    469.0,
+    29.0
+   ],
+   "text": "Glyph check: I11| O0o rn m 5S 8B",
+   "confidence": 0.89
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:15:51.242237+00:00"
+}

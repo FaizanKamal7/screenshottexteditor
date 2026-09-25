@@ -1,0 +1,92 @@
+{
+ "rule": "Round 1 selected nothing. Round 2 adds candidates: ratio 'boot_t' (retained), difference 'boot_t_sym', relative effect 'log_boot_t' and 'log_boot_t_sym'. A method set passes only if every chosen interval is within [0.93, 0.97] in all 5 round-1 scenarios AND in 3 held-out scenarios (H1-H3, fresh seeds, not used for selection), at 20 templates per stratum, 2,000 simulations each. Band not relaxed. If the difference interval fails but the relative-effect interval passes, confirmatory tests move to the relative scale and absolute differences are reported descriptively, labelled with their measured coverage.",
+ "band": [
+  0.93,
+  0.97
+ ],
+ "n_per_stratum": 40,
+ "sims": 2000,
+ "b": 999,
+ "results": {
+  "S1 moderate skew (draft sim)": {
+   "ratio:boot_t": 0.9415,
+   "diff:boot_t": 0.9375,
+   "diff:boot_t_sym": 0.9375,
+   "rel:log_boot_t": 0.9405,
+   "rel:log_boot_t_sym": 0.9475,
+   "held_out": false,
+   "undefined_relative": 0
+  },
+  "S2 low error, heavy skew": {
+   "ratio:boot_t": 0.9465,
+   "diff:boot_t": 0.918,
+   "diff:boot_t_sym": 0.91,
+   "rel:log_boot_t": 0.938,
+   "rel:log_boot_t_sym": 0.944,
+   "held_out": false,
+   "undefined_relative": 0
+  },
+  "S3 high error": {
+   "ratio:boot_t": 0.9505,
+   "diff:boot_t": 0.9445,
+   "diff:boot_t_sym": 0.9435,
+   "rel:log_boot_t": 0.944,
+   "rel:log_boot_t_sym": 0.949,
+   "held_out": false,
+   "undefined_relative": 0
+  },
+  "S4 strata differ": {
+   "ratio:boot_t": 0.9405,
+   "diff:boot_t": 0.9235,
+   "diff:boot_t_sym": 0.9265,
+   "rel:log_boot_t": 0.928,
+   "rel:log_boot_t_sym": 0.9465,
+   "held_out": false,
+   "undefined_relative": 0
+  },
+  "S5 skewed lengths": {
+   "ratio:boot_t": 0.944,
+   "diff:boot_t": 0.9275,
+   "diff:boot_t_sym": 0.929,
+   "rel:log_boot_t": 0.94,
+   "rel:log_boot_t_sym": 0.9585,
+   "held_out": false,
+   "undefined_relative": 0
+  },
+  "H1 engine B better but noisier": {
+   "ratio:boot_t": 0.953,
+   "diff:boot_t": 0.926,
+   "diff:boot_t_sym": 0.9525,
+   "rel:log_boot_t": 0.9495,
+   "rel:log_boot_t_sym": 0.9575,
+   "held_out": true,
+   "undefined_relative": 0
+  },
+  "H2 very skewed lengths": {
+   "ratio:boot_t": 0.9335,
+   "diff:boot_t": 0.9135,
+   "diff:boot_t_sym": 0.911,
+   "rel:log_boot_t": 0.9155,
+   "rel:log_boot_t_sym": 0.934,
+   "held_out": true,
+   "undefined_relative": 0
+  },
+  "H3 bimodal templates": {
+   "ratio:boot_t": 0.9595,
+   "diff:boot_t": 0.9295,
+   "diff:boot_t_sym": 0.928,
+   "rel:log_boot_t": 0.9435,
+   "rel:log_boot_t_sym": 0.9565,
+   "held_out": true,
+   "undefined_relative": 0
+  }
+ },
+ "passes_all_scenarios": {
+  "ratio:boot_t": true,
+  "diff:boot_t": false,
+  "diff:boot_t_sym": false,
+  "rel:log_boot_t": false,
+  "rel:log_boot_t_sym": true
+ },
+ "elapsed_s": 490.6
+}

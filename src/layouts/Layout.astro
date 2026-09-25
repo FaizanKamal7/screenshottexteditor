@@ -5,23 +5,29 @@ interface Props {
 	title?: string;
 	description?: string;
 	ogImage?: string;
+	/** Articles pass 'article'; everything else is a 'website'. */
+	ogType?: 'website' | 'article';
 	lang?: string;
 	alternates?: { hreflang: string; href: string }[];
 	/** Loads Inter / Roboto / Noto Sans too — only the editor's canvas and font picker use them. */
 	editorFonts?: boolean;
+	/** Error pages: emits robots noindex and drops the canonical/og:url, which would otherwise point at the error URL. */
+	noindex?: boolean;
 }
 
 const {
 	title = 'Screenshot Text Editor — Free Online AI Image Text Editor',
 	description = 'Edit text in any screenshot or image online with our free AI screenshot text editor. Matches font, size, weight, and color — no watermark, no signup required.',
 	ogImage = '/og-image.png',
+	ogType = 'website',
 	lang = 'en',
 	alternates = [],
 	editorFonts = false,
+	noindex = false,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://screenshottexteditor.com');
-const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://screenshottexteditor.com');
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site);
 
 const fontFamilies = ['Geist:wght@400;500;600;700', 'Geist+Mono:wght@400;500'];
 if (editorFonts) fontFamilies.push('Inter:wght@400;500;600;700', 'Roboto:wght@400;500;700', 'Noto+Sans:wght@400;700');
@@ -49,14 +55,14 @@ const fontsHref = `https://fonts.googleapis.com/css2?${fontFamilies.map((family)
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<link rel="canonical" href={canonicalUrl} />
+		{noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
 		{alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
 
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:site_name" content="ScreenshotTextEditor" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:url" content={canonicalUrl} />
+		{!noindex && <meta property="og:url" content={canonicalUrl} />}
 		<meta property="og:image" content={ogImageUrl} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />

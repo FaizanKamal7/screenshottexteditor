@@ -1,0 +1,206 @@
+{
+ "rule": "Choose the method whose coverage for both the single-engine ratio and the paired difference is within [0.93, 0.97] in every scenario at 20 templates per stratum (2,000 simulations each, B=999). Among passing methods pick the smallest worst-case |coverage - 0.95|. If none passes, report that and do not relax the band.",
+ "band": [
+  0.93,
+  0.97
+ ],
+ "n_per_stratum": 20,
+ "sims": 2000,
+ "b": 999,
+ "results": {
+  "S1 moderate skew (draft sim)": {
+   "ratio:percentile": {
+    "coverage": 0.916,
+    "mean_half_width": 0.011579522329804061
+   },
+   "ratio:bca": {
+    "coverage": 0.9125,
+    "mean_half_width": 0.012056198885695299
+   },
+   "ratio:boot_t": {
+    "coverage": 0.9465,
+    "mean_half_width": 0.013926636626786292
+   },
+   "ratio:log_t": {
+    "coverage": 0.9375,
+    "mean_half_width": 0.012628852805886404
+   },
+   "diff:percentile": {
+    "coverage": 0.8995,
+    "mean_half_width": 0.01423274484178226
+   },
+   "diff:bca": {
+    "coverage": 0.902,
+    "mean_half_width": 0.015574163314329263
+   },
+   "diff:boot_t": {
+    "coverage": 0.929,
+    "mean_half_width": 0.020082916084988498
+   },
+   "truth_ratio": 0.038919838703399434,
+   "truth_diff": -0.022211229649053928
+  },
+  "S2 low error, heavy skew": {
+   "ratio:percentile": {
+    "coverage": 0.901,
+    "mean_half_width": 0.0055428838952109455
+   },
+   "ratio:bca": {
+    "coverage": 0.913,
+    "mean_half_width": 0.00594242237584642
+   },
+   "ratio:boot_t": {
+    "coverage": 0.9475,
+    "mean_half_width": 0.007389268441054724
+   },
+   "ratio:log_t": {
+    "coverage": 0.9315,
+    "mean_half_width": 0.006218666923478764
+   },
+   "diff:percentile": {
+    "coverage": 0.852,
+    "mean_half_width": 0.0052014338697760325
+   },
+   "diff:bca": {
+    "coverage": 0.8555,
+    "mean_half_width": 0.0059223465255984105
+   },
+   "diff:boot_t": {
+    "coverage": 0.8935,
+    "mean_half_width": 0.008502315342824581
+   },
+   "truth_ratio": 0.012414109745136319,
+   "truth_diff": -0.006226031030183198
+  },
+  "S3 high error": {
+   "ratio:percentile": {
+    "coverage": 0.933,
+    "mean_half_width": 0.029878712117420384
+   },
+   "ratio:bca": {
+    "coverage": 0.9325,
+    "mean_half_width": 0.03024147138663977
+   },
+   "ratio:boot_t": {
+    "coverage": 0.9515,
+    "mean_half_width": 0.033350336458445
+   },
+   "ratio:log_t": {
+    "coverage": 0.949,
+    "mean_half_width": 0.032107048233055095
+   },
+   "diff:percentile": {
+    "coverage": 0.9065,
+    "mean_half_width": 0.04009694549201716
+   },
+   "diff:bca": {
+    "coverage": 0.901,
+    "mean_half_width": 0.04175943965091391
+   },
+   "diff:boot_t": {
+    "coverage": 0.93,
+    "mean_half_width": 0.04809764065578267
+   },
+   "truth_ratio": 0.1440791211264674,
+   "truth_diff": -0.07432202874497076
+  },
+  "S4 strata differ": {
+   "ratio:percentile": {
+    "coverage": 0.9185,
+    "mean_half_width": 0.015617140756690654
+   },
+   "ratio:bca": {
+    "coverage": 0.923,
+    "mean_half_width": 0.016149699166296026
+   },
+   "ratio:boot_t": {
+    "coverage": 0.9465,
+    "mean_half_width": 0.0184917754470946
+   },
+   "ratio:log_t": {
+    "coverage": 0.9365,
+    "mean_half_width": 0.016923905273668858
+   },
+   "diff:percentile": {
+    "coverage": 0.8925,
+    "mean_half_width": 0.019901226074817296
+   },
+   "diff:bca": {
+    "coverage": 0.894,
+    "mean_half_width": 0.02198761515370965
+   },
+   "diff:boot_t": {
+    "coverage": 0.9255,
+    "mean_half_width": 0.028377000060178237
+   },
+   "truth_ratio": 0.05382192423706275,
+   "truth_diff": -0.028718434990654476
+  },
+  "S5 skewed lengths": {
+   "ratio:percentile": {
+    "coverage": 0.922,
+    "mean_half_width": 0.011996678482746206
+   },
+   "ratio:bca": {
+    "coverage": 0.909,
+    "mean_half_width": 0.01232301310564063
+   },
+   "ratio:boot_t": {
+    "coverage": 0.9405,
+    "mean_half_width": 0.014855798493006894
+   },
+   "ratio:log_t": {
+    "coverage": 0.931,
+    "mean_half_width": 0.013080092921781297
+   },
+   "diff:percentile": {
+    "coverage": 0.873,
+    "mean_half_width": 0.015213994235546757
+   },
+   "diff:bca": {
+    "coverage": 0.869,
+    "mean_half_width": 0.016548058193763752
+   },
+   "diff:boot_t": {
+    "coverage": 0.911,
+    "mean_half_width": 0.023249529070207508
+   },
+   "truth_ratio": 0.038427326982612545,
+   "truth_diff": -0.020211243459204817
+  }
+ },
+ "decision": {
+  "verdict": {
+   "bca": {
+    "min": 0.8555,
+    "max": 0.9325,
+    "worst_gap": 0.09449999999999992,
+    "covers_both_targets": true,
+    "passes": false
+   },
+   "boot_t": {
+    "min": 0.8935,
+    "max": 0.9515,
+    "worst_gap": 0.056499999999999995,
+    "covers_both_targets": true,
+    "passes": false
+   },
+   "log_t": {
+    "min": 0.931,
+    "max": 0.949,
+    "worst_gap": 0.018999999999999906,
+    "covers_both_targets": false,
+    "passes": false
+   },
+   "percentile": {
+    "min": 0.852,
+    "max": 0.933,
+    "worst_gap": 0.09799999999999998,
+    "covers_both_targets": true,
+    "passes": false
+   }
+  },
+  "chosen": null
+ },
+ "elapsed_s": 190.3
+}

@@ -1,0 +1,288 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m05-chat_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.422243648999938,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.433140100009041,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "lines": [
+  {
+   "bbox": [
+    8.0,
+    3.0,
+    18.0,
+    12.0
+   ],
+   "text": "9:41",
+   "confidence": 0.8979991674423218
+  },
+  {
+   "bbox": [
+    158.0,
+    3.0,
+    29.0,
+    13.0
+   ],
+   "text": "5G72%",
+   "confidence": 0.9531229138374329
+  },
+  {
+   "bbox": [
+    10.0,
+    30.0,
+    5.0,
+    7.0
+   ],
+   "text": "C",
+   "confidence": 0.9041069149971008
+  },
+  {
+   "bbox": [
+    50.0,
+    24.0,
+    42.0,
+    10.0
+   ],
+   "text": "JordanLee",
+   "confidence": 0.997040867805481
+  },
+  {
+   "bbox": [
+    104.0,
+    55.0,
+    20.0,
+    7.0
+   ],
+   "text": "4.220u",
+   "confidence": 0.5093522667884827
+  },
+  {
+   "bbox": [
+    9.0,
+    68.0,
+    117.0,
+    14.0
+   ],
+   "text": "Hey Are we still on foe the design",
+   "confidence": 0.9083822965621948
+  },
+  {
+   "bbox": [
+    9.0,
+    81.0,
+    95.0,
+    10.0
+   ],
+   "text": "review tomorrow morming?",
+   "confidence": 0.879779040813446
+  },
+  {
+   "bbox": [
+    56.0,
+    99.0,
+    121.0,
+    16.0
+   ],
+   "text": "Yea,10:30in room4B:r being the",
+   "confidence": 0.746195375919342
+  },
+  {
+   "bbox": [
+    58.0,
+    113.0,
+    87.0,
+    10.0
+   ],
+   "text": "updated mockups and the",
+   "confidence": 0.9694029688835144
+  },
+  {
+   "bbox": [
+    85.0,
+    124.0,
+    25.0,
+    7.0
+   ],
+   "text": "cntlst",
+   "confidence": 0.6647118926048279
+  },
+  {
+   "bbox": [
+    9.0,
+    143.0,
+    106.0,
+    13.0
+   ],
+   "text": "Great. Can you also check the",
+   "confidence": 0.9403180480003357
+  },
+  {
+   "bbox": [
+    9.0,
+    153.0,
+    114.0,
+    13.0
+   ],
+   "text": "invice total?1got$1,248.50 but",
+   "confidence": 0.8117428421974182
+  },
+  {
+   "bbox": [
+    9.0,
+    163.0,
+    83.0,
+    14.0
+   ],
+   "text": "fnance says $1,284.50.",
+   "confidence": 0.8283067345619202
+  },
+  {
+   "bbox": [
+    87.0,
+    183.0,
+    22.0,
+    8.0
+   ],
+   "text": "4/19 FM",
+   "confidence": 0.904854416847229
+  },
+  {
+   "bbox": [
+    54.0,
+    197.0,
+    127.0,
+    14.0
+   ],
+   "text": "Goodcatch,the secondone is righ",
+   "confidence": 0.8477099537849426
+  },
+  {
+   "bbox": [
+    53.0,
+    207.0,
+    79.0,
+    15.0
+   ],
+   "text": "Sending the PDF now",
+   "confidence": 0.9608478546142578
+  },
+  {
+   "bbox": [
+    98.0,
+    233.0,
+    17.0,
+    8.0
+   ],
+   "text": "03-ie",
+   "confidence": 0.6682178974151611
+  },
+  {
+   "bbox": [
+    100.0,
+    241.0,
+    45.0,
+    11.0
+   ],
+   "text": "4M8·6 pages",
+   "confidence": 0.8057062029838562
+  },
+  {
+   "bbox": [
+    118.0,
+    230.0,
+    46.0,
+    14.0
+   ],
+   "text": "roice-final.pdt",
+   "confidence": 0.8993832468986511
+  },
+  {
+   "bbox": [
+    150.0,
+    259.0,
+    40.0,
+    10.0
+   ],
+   "text": "Wad 421 PM",
+   "confidence": 0.6541411280632019
+  },
+  {
+   "bbox": [
+    9.0,
+    274.0,
+    116.0,
+    13.0
+   ],
+   "text": "Thanks, got it. Order #A-20931is",
+   "confidence": 0.9184026718139648
+  },
+  {
+   "bbox": [
+    10.0,
+    285.0,
+    39.0,
+    11.0
+   ],
+   "text": "confrmed.",
+   "confidence": 0.9552556276321411
+  },
+  {
+   "bbox": [
+    13.0,
+    376.0,
+    44.0,
+    10.0
+   ],
+   "text": "Sounds good",
+   "confidence": 0.9241526126861572
+  },
+  {
+   "bbox": [
+    123.0,
+    375.0,
+    39.0,
+    10.0
+   ],
+   "text": "10min late",
+   "confidence": 0.9534263610839844
+  },
+  {
+   "bbox": [
+    175.0,
+    374.0,
+    17.0,
+    12.0
+   ],
+   "text": "cal",
+   "confidence": 0.6937377452850342
+  },
+  {
+   "bbox": [
+    11.0,
+    400.0,
+    34.0,
+    13.0
+   ],
+   "text": "Measagt",
+   "confidence": 0.6436203122138977
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:25:26.396182+00:00"
+}

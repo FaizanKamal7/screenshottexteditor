@@ -1,0 +1,205 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m01-settings_dpr2_light_V07",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.9805543540001054,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.0115120999980718,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "b31a9a10a82f18e93b45935474d0d90bb91e93df83abe807225ec6599cf17227",
+ "lines": [
+  {
+   "bbox": [
+    49.0,
+    36.0,
+    681.0,
+    23.0
+   ],
+   "text": "9:41 87%",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    43.0,
+    113.0,
+    257.0,
+    63.0
+   ],
+   "text": "Settings",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    54.0,
+    222.0,
+    275.0,
+    33.0
+   ],
+   "text": "Q Search settings",
+   "confidence": 0.9433333333333332
+  },
+  {
+   "bbox": [
+    189.0,
+    341.0,
+    243.0,
+    37.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    189.0,
+    391.0,
+    340.0,
+    24.0
+   ],
+   "text": "avery.collins@example.com",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    65.0,
+    490.0,
+    125.0,
+    18.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    63.0,
+    554.0,
+    654.0,
+    38.0
+   ],
+   "text": "Notifications On",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    63.0,
+    646.0,
+    270.0,
+    31.0
+   ],
+   "text": "Privacy & Security",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    62.0,
+    734.0,
+    656.0,
+    31.0
+   ],
+   "text": "Storage 12.4 GB of 64 GB",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    63.0,
+    822.0,
+    655.0,
+    31.0
+   ],
+   "text": "Language English (US)",
+   "confidence": 0.9566666666666667
+  },
+  {
+   "bbox": [
+    62.0,
+    910.0,
+    656.0,
+    25.0
+   ],
+   "text": "Screen Time 3h 12m",
+   "confidence": 0.6875
+  },
+  {
+   "bbox": [
+    65.0,
+    1004.0,
+    117.0,
+    18.0
+   ],
+   "text": "SUPPORT",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    63.0,
+    1072.0,
+    177.0,
+    31.0
+   ],
+   "text": "Help Center",
+   "confidence": 0.955
+  },
+  {
+   "bbox": [
+    62.0,
+    1160.0,
+    229.0,
+    25.0
+   ],
+   "text": "Send Feedback",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    61.0,
+    1249.0,
+    657.0,
+    24.0
+   ],
+   "text": "About Version 4.18.2",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    66.0,
+    1430.0,
+    507.0,
+    21.0
+   ],
+   "text": "Last synced 2 minutes ago - Backup size 318 MB",
+   "confidence": 0.9420000000000001
+  },
+  {
+   "bbox": [
+    77.0,
+    1553.0,
+    621.0,
+    52.0
+   ],
+   "text": "LL Q - o",
+   "confidence": 0.565
+  },
+  {
+   "bbox": [
+    72.0,
+    1609.0,
+    649.0,
+    19.0
+   ],
+   "text": "Home Search Inbox Settings",
+   "confidence": 0.9425
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:18:24.629735+00:00"
+}

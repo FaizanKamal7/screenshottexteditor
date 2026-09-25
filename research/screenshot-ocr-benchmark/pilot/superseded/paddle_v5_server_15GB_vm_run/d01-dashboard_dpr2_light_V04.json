@@ -1,0 +1,27 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d01-dashboard_dpr2_light_V04",
+ "status": "error",
+ "error": "worker process died (twice)",
+ "total_s": null,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 44.30842260000645,
+ "attempts": 2,
+ "input_file_sha256_ok": null,
+ "input_pixel_sha256_ok": null,
+ "input_pixel_sha256": null,
+ "lines": [],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T09:50:31.007027+00:00"
+}

@@ -1,0 +1,515 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V05",
+ "status": "ok",
+ "error": null,
+ "total_s": 2.926565465999829,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 2.9477171000035014,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "887cfc4cb595d21de7165b7777b9fe687402059a0f9fee0cf76e4f089422cc41",
+ "lines": [
+  {
+   "bbox": [
+    22.0,
+    24.0,
+    162.0,
+    18.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.915
+  },
+  {
+   "bbox": [
+    248.0,
+    29.0,
+    211.0,
+    24.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    249.0,
+    46.0,
+    197.0,
+    34.0
+   ],
+   "text": "Last 30 days - Updated 08:45 UTC",
+   "confidence": 0.7785714285714286
+  },
+  {
+   "bbox": [
+    266.0,
+    111.0,
+    324.0,
+    12.0
+   ],
+   "text": "Monthly Revenue Active Users",
+   "confidence": 0.635
+  },
+  {
+   "bbox": [
+    266.0,
+    135.0,
+    336.0,
+    25.0
+   ],
+   "text": "$482,910 12,384",
+   "confidence": 0.955
+  },
+  {
+   "bbox": [
+    266.0,
+    167.0,
+    358.0,
+    9.0
+   ],
+   "text": "12.4% vs ast month Q%vs ss month",
+   "confidence": 0.34285714285714286
+  },
+  {
+   "bbox": [
+    265.0,
+    230.0,
+    143.0,
+    14.0
+   ],
+   "text": "Weekly revenue (USD)",
+   "confidence": 0.9566666666666667
+  },
+  {
+   "bbox": [
+    280.0,
+    257.0,
+    17.0,
+    8.0
+   ],
+   "text": "150K",
+   "confidence": 0.77
+  },
+  {
+   "bbox": [
+    281.0,
+    304.0,
+    17.0,
+    7.0
+   ],
+   "text": "Took",
+   "confidence": 0.61
+  },
+  {
+   "bbox": [
+    285.0,
+    308.0,
+    131.0,
+    105.0
+   ],
+   "text": ") I I]",
+   "confidence": 0.26
+  },
+  {
+   "bbox": [
+    295.0,
+    396.0,
+    4.0,
+    7.0
+   ],
+   "text": "0",
+   "confidence": 0.75
+  },
+  {
+   "bbox": [
+    321.0,
+    414.0,
+    198.0,
+    9.0
+   ],
+   "text": "ag Sep] Sep sens",
+   "confidence": 0.2725
+  },
+  {
+   "bbox": [
+    546.0,
+    414.0,
+    9.0,
+    7.0
+   ],
+   "text": "”",
+   "confidence": 0.23
+  },
+  {
+   "bbox": [
+    640.0,
+    230.0,
+    102.0,
+    11.0
+   ],
+   "text": "Recent invoices",
+   "confidence": 0.925
+  },
+  {
+   "bbox": [
+    648.0,
+    263.0,
+    39.0,
+    9.0
+   ],
+   "text": "Invoice",
+   "confidence": 0.83
+  },
+  {
+   "bbox": [
+    648.0,
+    294.0,
+    59.0,
+    10.0
+   ],
+   "text": "INV-10421",
+   "confidence": 0.9
+  },
+  {
+   "bbox": [
+    648.0,
+    329.0,
+    59.0,
+    10.0
+   ],
+   "text": "INV-10422",
+   "confidence": 0.86
+  },
+  {
+   "bbox": [
+    648.0,
+    363.0,
+    59.0,
+    10.0
+   ],
+   "text": "INV-10423",
+   "confidence": 0.89
+  },
+  {
+   "bbox": [
+    648.0,
+    398.0,
+    59.0,
+    10.0
+   ],
+   "text": "INV-10424",
+   "confidence": 0.9
+  },
+  {
+   "bbox": [
+    648.0,
+    433.0,
+    59.0,
+    10.0
+   ],
+   "text": "INV-10425",
+   "confidence": 0.87
+  },
+  {
+   "bbox": [
+    775.0,
+    111.0,
+    61.0,
+    9.0
+   ],
+   "text": "Chum Rate",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    775.0,
+    137.0,
+    32.0,
+    19.0
+   ],
+   "text": "2.1",
+   "confidence": 0.84
+  },
+  {
+   "bbox": [
+    771.0,
+    157.0,
+    89.0,
+    28.0
+   ],
+   "text": "Down from 26%",
+   "confidence": 0.9266666666666667
+  },
+  {
+   "bbox": [
+    753.0,
+    263.0,
+    56.0,
+    9.0
+   ],
+   "text": "Customer",
+   "confidence": 0.91
+  },
+  {
+   "bbox": [
+    754.0,
+    285.0,
+    115.0,
+    29.0
+   ],
+   "text": "Harper & Stone LLC",
+   "confidence": 0.885
+  },
+  {
+   "bbox": [
+    754.0,
+    329.0,
+    89.0,
+    10.0
+   ],
+   "text": "Bluefield Dental",
+   "confidence": 0.905
+  },
+  {
+   "bbox": [
+    753.0,
+    363.0,
+    116.0,
+    13.0
+   ],
+   "text": "Oakridge Supply Co.",
+   "confidence": 0.87
+  },
+  {
+   "bbox": [
+    754.0,
+    398.0,
+    113.0,
+    13.0
+   ],
+   "text": "Maple Street Books",
+   "confidence": 0.87
+  },
+  {
+   "bbox": [
+    753.0,
+    433.0,
+    89.0,
+    13.0
+   ],
+   "text": "Quinn Logistics",
+   "confidence": 0.735
+  },
+  {
+   "bbox": [
+    943.0,
+    263.0,
+    25.0,
+    9.0
+   ],
+   "text": "Date",
+   "confidence": 0.86
+  },
+  {
+   "bbox": [
+    942.0,
+    294.0,
+    64.0,
+    10.0
+   ],
+   "text": "20260002",
+   "confidence": 0.78
+  },
+  {
+   "bbox": [
+    942.0,
+    329.0,
+    64.0,
+    10.0
+   ],
+   "text": "20260004",
+   "confidence": 0.7
+  },
+  {
+   "bbox": [
+    943.0,
+    363.0,
+    63.0,
+    10.0
+   ],
+   "text": "2026.09.00",
+   "confidence": 0.82
+  },
+  {
+   "bbox": [
+    943.0,
+    398.0,
+    63.0,
+    10.0
+   ],
+   "text": "2026.00.15",
+   "confidence": 0.28
+  },
+  {
+   "bbox": [
+    942.0,
+    433.0,
+    64.0,
+    10.0
+   ],
+   "text": "20260021",
+   "confidence": 0.78
+  },
+  {
+   "bbox": [
+    640.0,
+    461.0,
+    349.0,
+    28.0
+   ],
+   "text": "Showing 5 of 148 invoices. Amounts include ta refunds are excluded",
+   "confidence": 0.8781818181818182
+  },
+  {
+   "bbox": [
+    1029.0,
+    111.0,
+    97.0,
+    12.0
+   ],
+   "text": "Avg. Order Value",
+   "confidence": 0.83
+  },
+  {
+   "bbox": [
+    1030.0,
+    135.0,
+    80.0,
+    24.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1030.0,
+    167.0,
+    110.0,
+    9.0
+   ],
+   "text": "+5315 vs last month",
+   "confidence": 0.785
+  },
+  {
+   "bbox": [
+    1104.0,
+    263.0,
+    44.0,
+    9.0
+   ],
+   "text": "Amount",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1091.0,
+    293.0,
+    57.0,
+    13.0
+   ],
+   "text": "$3,420.00",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    1102.0,
+    328.0,
+    46.0,
+    12.0
+   ],
+   "text": "$780.50",
+   "confidence": 0.08
+  },
+  {
+   "bbox": [
+    1084.0,
+    362.0,
+    64.0,
+    13.0
+   ],
+   "text": "$12,006.75",
+   "confidence": 0.69
+  },
+  {
+   "bbox": [
+    1109.0,
+    397.0,
+    39.0,
+    12.0
+   ],
+   "text": "$96.00",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1091.0,
+    432.0,
+    57.0,
+    13.0
+   ],
+   "text": "$531820",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    1169.0,
+    34.0,
+    69.0,
+    12.0
+   ],
+   "text": "Export CSV.",
+   "confidence": 0.82
+  },
+  {
+   "bbox": [
+    1165.0,
+    263.0,
+    35.0,
+    9.0
+   ],
+   "text": "Status",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1172.0,
+    295.0,
+    25.0,
+    9.0
+   ],
+   "text": "He",
+   "confidence": 0.18
+  },
+  {
+   "bbox": [
+    1172.0,
+    330.0,
+    25.0,
+    112.0
+   ],
+   "text": "Fee",
+   "confidence": 0.05
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:40.008723+00:00"
+}

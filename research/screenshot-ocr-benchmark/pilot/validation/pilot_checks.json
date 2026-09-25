@@ -1,0 +1,709 @@
+{
+ "note": "PILOT validation — engineering checks only; no benchmark results.",
+ "checks": {
+  "A1": {
+   "status": "PASS",
+   "detail": {
+    "bases": 24,
+    "bases_with_fallback": [],
+    "nodes_checked_total": 1326,
+    "font_load_errors": {}
+   }
+  },
+  "A2": {
+   "status": "PASS",
+   "detail": {
+    "bases_deterministic": 24,
+    "bases": 24
+   }
+  },
+  "A3": {
+   "status": "AUTO-PASS, HUMAN REVIEW PENDING",
+   "detail": {
+    "automated_reconciliation_ok": 24,
+    "bases": 24,
+    "human_review": "overlays in pilot/review/gt_overlays/ (24 bases) — not yet reviewed by a human",
+    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+   }
+  },
+  "A4": {
+   "status": "HUMAN REVIEW PENDING",
+   "detail": {
+    "review_sheets": "pilot/review/line_sheets/ (4 bases at largest scale, 100% of lines) and pilot/review/line_sample.csv (>=10% random sample of other lines)",
+    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+   }
+  },
+  "A5": {
+   "status": "AUTO-PASS, HUMAN REVIEW PENDING",
+   "detail": {
+    "multi_line_elements_total": 48,
+    "note": "line splits come from rendered character positions; visual confirmation is in the overlays (paragraph elements in m05-chat and d06-code-editor)",
+    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+   }
+  },
+  "A6": {
+   "status": "PASS",
+   "detail": {
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "failures": []
+   }
+  },
+  "A7": {
+   "status": "PASS",
+   "detail": {
+    "bases_with_clipped_elements": [
+     "m05-chat_dpr1_dark",
+     "m05-chat_dpr1_light",
+     "m05-chat_dpr2_dark",
+     "m05-chat_dpr2_light",
+     "m05-chat_dpr3_dark",
+     "m05-chat_dpr3_light"
+    ],
+    "m05_ignore_regions": {
+     "m05-chat_dpr1_dark": [
+      [
+       357,
+       755.812,
+       33,
+       16
+      ]
+     ],
+     "m05-chat_dpr1_light": [
+      [
+       357,
+       755.812,
+       33,
+       16
+      ]
+     ],
+     "m05-chat_dpr2_dark": [
+      [
+       714,
+       1511.625,
+       66,
+       32
+      ]
+     ],
+     "m05-chat_dpr2_light": [
+      [
+       714,
+       1511.625,
+       66,
+       32
+      ]
+     ],
+     "m05-chat_dpr3_dark": [
+      [
+       1071,
+       2267.438,
+       99,
+       48
+      ]
+     ],
+     "m05-chat_dpr3_light": [
+      [
+       1071,
+       2267.438,
+       99,
+       48
+      ]
+     ]
+    }
+   }
+  },
+  "B1": {
+   "status": "PASS",
+   "detail": {
+    "worst_layout_dev_per_k_px": 0.001,
+    "worst_ink_dev_per_k_px": 2.0,
+    "failures": [],
+    "n_failures": 0
+   }
+  },
+  "B2": {
+   "status": "PASS",
+   "detail": {
+    "ink_inside_padded_layout": "1074/1074 (holds by construction of ink ownership)",
+    "ink_pixels_outside_every_padded_layout_box": 0,
+    "note": "the substantive test is that no text ink falls outside every line's padded box"
+   }
+  },
+  "B3": {
+   "status": "PASS",
+   "detail": {
+    "lines_total": 1074,
+    "lines_without_ink": {}
+   }
+  },
+  "B4": {
+   "status": "OVERLAYS GENERATED, HUMAN REVIEW PENDING",
+   "detail": {
+    "gt_overlays": "pilot/review/gt_overlays/ (24 bases)",
+    "variant_overlays": "pilot/review/variant_overlays/ (13 variants × 2 bases)",
+    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+   }
+  },
+  "B5": {
+   "status": "PASS",
+   "detail": {
+    "v12_pixels_identical_to_measured_downscale": "24/24",
+    "bases_with_unowned_half_ink": 0,
+    "lines_without_half_ink": 0,
+    "lines": 1074,
+    "old_method_error": {
+     "worst_edge_dev_px": 5.0,
+     "lines_over_1px": 115,
+     "note": "0.5 × full-res box vs measured half-res box; the error B5 originally caught"
+    }
+   }
+  },
+  "B6": {
+   "status": "NOT RUN",
+   "detail": {
+    "reason": "No device captures were taken: iOS/Android/macOS devices are not available to this session, and a Windows Edge capture would take over the user's desktop. device_collector.py / register_device.py are not implemented yet."
+   }
+  },
+  "C1": {
+   "status": "PASS",
+   "detail": {
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0,
+    "failures": []
+   }
+  },
+  "C2": {
+   "status": "PASS",
+   "detail": {
+    "images": 312,
+    "failures": []
+   }
+  },
+  "C3": {
+   "status": "PASS",
+   "detail": {
+    "images": 312,
+    "injected_total": 18748,
+    "scored_edits_total": 18748,
+    "ref_chars_total": 207324,
+    "expected_cer": 0.0904285080357315,
+    "computed_cer": 0.0904285080357315,
+    "failures": []
+   }
+  },
+  "C4": {
+   "status": "PASS",
+   "detail": {
+    "images": 312,
+    "failures": []
+   }
+  },
+  "C5": {
+   "status": "PASS",
+   "detail": {
+    "images": 312,
+    "failures": []
+   }
+  },
+  "C6": {
+   "status": "PASS",
+   "detail": {
+    "design_templates_per_stratum": 40,
+    "confirmatory_intervals_required": [
+     "ratio:boot_t",
+     "rel:log_boot_t_sym"
+    ],
+    "note": "absolute-difference intervals are descriptive only (A1); their coverage is reported in the studies, not required to pass",
+    "studies": {
+     "c6_study_n20.json": {
+      "verdict": {
+       "bca": {
+        "min": 0.8555,
+        "max": 0.9325,
+        "worst_gap": 0.09449999999999992,
+        "covers_both_targets": true,
+        "passes": false
+       },
+       "boot_t": {
+        "min": 0.8935,
+        "max": 0.9515,
+        "worst_gap": 0.056499999999999995,
+        "covers_both_targets": true,
+        "passes": false
+       },
+       "log_t": {
+        "min": 0.931,
+        "max": 0.949,
+        "worst_gap": 0.018999999999999906,
+        "covers_both_targets": false,
+        "passes": false
+       },
+       "percentile": {
+        "min": 0.852,
+        "max": 0.933,
+        "worst_gap": 0.09799999999999998,
+        "covers_both_targets": true,
+        "passes": false
+       }
+      },
+      "chosen": null
+     },
+     "c6_study_round2_n20.json": {
+      "passes_all_scenarios": {
+       "ratio:boot_t": false,
+       "diff:boot_t": false,
+       "diff:boot_t_sym": false,
+       "rel:log_boot_t": false,
+       "rel:log_boot_t_sym": false
+      }
+     },
+     "c6_study_round2_n40.json": {
+      "passes_all_scenarios": {
+       "ratio:boot_t": true,
+       "diff:boot_t": false,
+       "diff:boot_t_sym": false,
+       "rel:log_boot_t": false,
+       "rel:log_boot_t_sym": true
+      }
+     }
+    }
+   }
+  },
+  "C7": {
+   "status": "PASS",
+   "detail": {
+    "pseudo/confusions.csv": true,
+    "pseudo/excluded_resource_oom.csv": true,
+    "pseudo/image_scores.csv": true,
+    "pseudo/line_scores.csv": true,
+    "pseudo/line_scores.parquet": true,
+    "pseudo/summary.csv": true,
+    "pseudo/summary.json": true,
+    "pseudo/units.csv": true,
+    "pseudo/units.parquet": true,
+    "predictions/confusions.csv": true,
+    "predictions/excluded_resource_oom.csv": true,
+    "predictions/image_scores.csv": true,
+    "predictions/line_scores.csv": true,
+    "predictions/line_scores.parquet": true,
+    "predictions/summary.csv": true,
+    "predictions/summary.json": true,
+    "predictions/units.csv": true,
+    "predictions/units.parquet": true
+   }
+  },
+  "D1": {
+   "status": "PASS",
+   "detail": {
+    "ok": 336,
+    "total": 336,
+    "failed": []
+   }
+  },
+  "D2": {
+   "status": "PASS",
+   "detail": {
+    "ok": 24,
+    "total": 24,
+    "failed": [],
+    "v00_equals_render": true
+   }
+  },
+  "D3": {
+   "status": "PASS",
+   "detail": {
+    "ok": 72,
+    "total": 72,
+    "failed": []
+   }
+  },
+  "D4": {
+   "status": "PASS",
+   "detail": {
+    "ok": 72,
+    "total": 72,
+    "failed": []
+   }
+  },
+  "D5": {
+   "status": "PASS",
+   "detail": {
+    "ok": 336,
+    "total": 336,
+    "failed": []
+   }
+  },
+  "D6": {
+   "status": "PASS",
+   "detail": {
+    "ok": 144,
+    "total": 144,
+    "failed": []
+   }
+  },
+  "E1": {
+   "status": "PASS",
+   "detail": {
+    "tesseract5": {
+     "attempted": 312,
+     "expected": 312,
+     "statuses": {
+      "ok": 312
+     }
+    },
+    "paddle_v5_mobile": {
+     "attempted": 312,
+     "expected": 312,
+     "statuses": {
+      "ok": 312
+     }
+    },
+    "paddle_v5_server": {
+     "attempted": 312,
+     "expected": 312,
+     "statuses": {
+      "ok": 312
+     }
+    },
+    "easyocr": {
+     "attempted": 312,
+     "expected": 312,
+     "statuses": {
+      "ok": 312
+     }
+    },
+    "doctr": {
+     "attempted": 312,
+     "expected": 312,
+     "statuses": {
+      "ok": 312
+     }
+    },
+    "windows_ocr": {
+     "attempted": 312,
+     "expected": 312,
+     "statuses": {
+      "ok": 312
+     }
+    }
+   }
+  },
+  "E2": {
+   "status": "PASS (overlays pending human review), HUMAN REVIEW PENDING",
+   "detail": {
+    "median_iou_V00": {
+     "tesseract5": 0.9033,
+     "paddle_v5_mobile": 0.6004,
+     "paddle_v5_server": 0.6792,
+     "easyocr": 0.6372,
+     "doctr": 0.6294,
+     "windows_ocr": 0.9808
+    },
+    "threshold": 0.3,
+    "overlays": "pilot/review/engine_overlays/",
+    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+   }
+  },
+  "E3": {
+   "status": "PASS",
+   "detail": {
+    "tesseract5": {
+     "rerun_images": 31,
+     "differing": []
+    },
+    "paddle_v5_mobile": {
+     "rerun_images": 31,
+     "differing": []
+    },
+    "paddle_v5_server": {
+     "rerun_images": 31,
+     "differing": []
+    },
+    "easyocr": {
+     "rerun_images": 31,
+     "differing": []
+    },
+    "doctr": {
+     "rerun_images": 31,
+     "differing": []
+    },
+    "windows_ocr": {
+     "rerun_images": 31,
+     "differing": []
+    }
+   }
+  },
+  "E4": {
+   "status": "PASS",
+   "detail": {
+    "missing": [],
+    "lock": "pilot/engines.lock.json"
+   }
+  },
+  "E5": {
+   "status": "PASS",
+   "detail": {
+    "tesseract5": {
+     "ok_predictions": 312,
+     "file_hash_ok": 312,
+     "pixel_hash_ok": 312
+    },
+    "paddle_v5_mobile": {
+     "ok_predictions": 312,
+     "file_hash_ok": 312,
+     "pixel_hash_ok": 312
+    },
+    "paddle_v5_server": {
+     "ok_predictions": 312,
+     "file_hash_ok": 312,
+     "pixel_hash_ok": 312
+    },
+    "easyocr": {
+     "ok_predictions": 312,
+     "file_hash_ok": 312,
+     "pixel_hash_ok": 312
+    },
+    "doctr": {
+     "ok_predictions": 312,
+     "file_hash_ok": 312,
+     "pixel_hash_ok": 312
+    },
+    "isolation": "tesseract / paddle / torch engines in separate images; each engine in its own container process"
+   }
+  },
+  "E6": {
+   "status": "PASS",
+   "detail": {
+    "ok_predictions": 312,
+    "file_hash_ok": 312,
+    "pixel_hash_ok": 312
+   }
+  },
+  "F1": {
+   "status": "MEASURED",
+   "detail": {
+    "tesseract5": {
+     "intercept_s": 0.4811,
+     "s_per_megapixel": 0.2892,
+     "median_s_v00": 0.8959,
+     "p90_s_v00": 1.7023,
+     "projected_serial_pilot_accuracy_pass_h": 0.086,
+     "projected_serial_full_accuracy_pass_h": 0.862
+    },
+    "windows_ocr": {
+     "intercept_s": 0.0303,
+     "s_per_megapixel": 0.0204,
+     "median_s_v00": 0.0729,
+     "p90_s_v00": 0.1153,
+     "projected_serial_pilot_accuracy_pass_h": 0.006,
+     "projected_serial_full_accuracy_pass_h": 0.058
+    },
+    "doctr": {
+     "intercept_s": 2.0289,
+     "s_per_megapixel": 0.1926,
+     "median_s_v00": 2.2008,
+     "p90_s_v00": 3.6127,
+     "projected_serial_pilot_accuracy_pass_h": 0.205,
+     "projected_serial_full_accuracy_pass_h": 2.054
+    },
+    "paddle_v5_mobile": {
+     "intercept_s": 4.525,
+     "s_per_megapixel": 2.7578,
+     "median_s_v00": 8.822,
+     "p90_s_v00": 15.5084,
+     "projected_serial_pilot_accuracy_pass_h": 0.816,
+     "projected_serial_full_accuracy_pass_h": 8.162
+    },
+    "easyocr": {
+     "intercept_s": 0.9504,
+     "s_per_megapixel": 3.1198,
+     "median_s_v00": 6.6237,
+     "p90_s_v00": 12.8732,
+     "projected_serial_pilot_accuracy_pass_h": 0.562,
+     "projected_serial_full_accuracy_pass_h": 5.62
+    },
+    "paddle_v5_server": {
+     "intercept_s": 1.5322,
+     "s_per_megapixel": 17.9616,
+     "median_s_v00": 32.7988,
+     "p90_s_v00": 71.2931,
+     "projected_serial_pilot_accuracy_pass_h": 2.894,
+     "projected_serial_full_accuracy_pass_h": 28.943
+    }
+   }
+  },
+  "F2": {
+   "status": "INVESTIGATE",
+   "detail": {
+    "tesseract5": {
+     "max_cv": 0.1424,
+     "images_cv_over_20pct": []
+    },
+    "windows_ocr": {
+     "max_cv": 0.5074,
+     "images_cv_over_20pct": [
+      "d01-dashboard_dpr2_dark_V00",
+      "d01-dashboard_dpr2_light_V00",
+      "d06-code-editor_dpr1p5_light_V00",
+      "m01-settings_dpr1_light_V00",
+      "m01-settings_dpr2_dark_V00",
+      "m01-settings_dpr3_dark_V00",
+      "m01-settings_dpr3_light_V00",
+      "m05-chat_dpr1_dark_V00",
+      "m05-chat_dpr1_light_V00",
+      "m05-chat_dpr3_light_V00"
+     ]
+    },
+    "doctr": {
+     "max_cv": 0.1267,
+     "images_cv_over_20pct": []
+    },
+    "paddle_v5_mobile": {
+     "max_cv": 0.0837,
+     "images_cv_over_20pct": []
+    },
+    "easyocr": {
+     "max_cv": 0.0945,
+     "images_cv_over_20pct": []
+    },
+    "paddle_v5_server": {
+     "max_cv": 0.3239,
+     "images_cv_over_20pct": [
+      "d06-code-editor_dpr2_dark_V00",
+      "d06-code-editor_dpr2_light_V00"
+     ]
+    }
+   }
+  },
+  "G1": {
+   "status": "MEASURED",
+   "detail": {
+    "bytes_by_class": {
+     "images_all_variants": 34191287,
+     "renders_source_png": 3191558,
+     "text_hidden_renders_internal": 417657,
+     "masks": 281240,
+     "ground_truth_json": 678351,
+     "predictions": 13074234,
+     "predictions_rerun": 1251790,
+     "pseudo_predictions": 3886555,
+     "scores": 47923577,
+     "timing": 238690
+    },
+    "bytes_by_variant": {
+     "V00": 3227345,
+     "V01": 1227496,
+     "V02": 5367437,
+     "V03": 3496574,
+     "V04": 2824512,
+     "V05": 2344222,
+     "V06": 4959741,
+     "V07": 2114534,
+     "V08": 1352652,
+     "V09": 1106668,
+     "V10": 1478548,
+     "V11": 1014480,
+     "V12": 2667490,
+     "V13": 1009588
+    },
+    "pilot_total_bytes": 123822244,
+    "publishable_pilot_bytes": 96148689,
+    "projected_full_publishable_bytes_excl_device_set": 961486890
+   }
+  },
+  "G2": {
+   "status": "SEE REPORT",
+   "detail": {
+    "note": "host limits are checked against published documentation in the pilot report"
+   }
+  }
+ },
+ "sample_size_rule": {
+  "tesseract5": {
+   "templates": [
+    "d01-dashboard",
+    "d06-code-editor",
+    "m01-settings",
+    "m05-chat"
+   ],
+   "pilot_m1": 0.13519539233294112,
+   "pilot_half_width": 0.08779710101127658,
+   "projected_half_width_full": 0.019632028608862994,
+   "threshold": 0.03379884808323528,
+   "increase_templates": false,
+   "method": "boot_t"
+  },
+  "paddle_v5_mobile": {
+   "templates": [
+    "d01-dashboard",
+    "d06-code-editor",
+    "m01-settings",
+    "m05-chat"
+   ],
+   "pilot_m1": 0.021620605376950555,
+   "pilot_half_width": 0.01925272376694772,
+   "projected_half_width_full": 0.004305039909492092,
+   "threshold": 0.005405151344237639,
+   "increase_templates": false,
+   "method": "boot_t"
+  },
+  "paddle_v5_server": {
+   "templates": [
+    "d01-dashboard",
+    "d06-code-editor",
+    "m01-settings",
+    "m05-chat"
+   ],
+   "pilot_m1": 0.09346204475647214,
+   "pilot_half_width": 7.134258988827243,
+   "projected_half_width_full": 1.5952688068106629,
+   "threshold": 0.023365511189118036,
+   "increase_templates": true,
+   "method": "boot_t"
+  },
+  "easyocr": {
+   "templates": [
+    "d01-dashboard",
+    "d06-code-editor",
+    "m01-settings",
+    "m05-chat"
+   ],
+   "pilot_m1": 0.060999310388063444,
+   "pilot_half_width": 0.05907121400273166,
+   "projected_half_width_full": 0.013208725002354543,
+   "threshold": 0.015249827597015861,
+   "increase_templates": false,
+   "method": "boot_t"
+  },
+  "doctr": {
+   "templates": [
+    "d01-dashboard",
+    "d06-code-editor",
+    "m01-settings",
+    "m05-chat"
+   ],
+   "pilot_m1": 0.017622238768925293,
+   "pilot_half_width": 0.0191134540972686,
+   "projected_half_width_full": 0.004273898264631447,
+   "threshold": 0.004405559692231323,
+   "increase_templates": false,
+   "method": "boot_t"
+  },
+  "windows_ocr": {
+   "templates": [
+    "d01-dashboard",
+    "d06-code-editor",
+    "m01-settings",
+    "m05-chat"
+   ],
+   "pilot_m1": 0.08087774294670846,
+   "pilot_half_width": 0.17818790255249414,
+   "projected_half_width_full": 0.03984402628754852,
+   "threshold": 0.020219435736677116,
+   "increase_templates": true,
+   "method": "boot_t"
+  }
+ }
+}

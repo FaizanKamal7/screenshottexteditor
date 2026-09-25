@@ -6,8 +6,10 @@ import FeatureCard from '../components/FeatureCard.astro';
 import Footer from '../components/Footer.astro';
 import { EditorIsland } from '../editor/EditorIsland';
 
-// The editor itself is a client-only island, so none of it exists in the served HTML. This
-// guide is rendered on the server, below the editor, so the page carries real crawlable text.
+// The editor is server-rendered in its empty state (header + dropzone) and hydrated on load, so
+// its full-viewport box is in the served HTML and the guide below never gets pushed down when
+// React mounts (a client:only island rendered nothing until JS ran, which caused CLS ≈ 1.0).
+// This guide is rendered on the server, below the editor, so the page carries real crawlable text.
 const steps = [
 	{
 		title: '1. Upload an image',
@@ -22,6 +24,10 @@ const steps = [
 		body: 'Everything outside the edited lines stays pixel-for-pixel the same. Export the finished image when you are happy with it. There is no visible watermark on the file.',
 	},
 ];
+
+// No WebApplication/SoftwareApplication JSON-LD here on purpose: Google (and Semrush) treat
+// aggregateRating or review as required for that type, and there are no real ones to cite.
+// Without them the markup earns no rich result and only shows up as an "invalid item" error.
 ---
 
 <Layout
@@ -29,7 +35,7 @@ const steps = [
 	description="Upload a screenshot, click any text and rewrite it in the editor. Font, size, weight and color are matched automatically, then download the result as a PNG."
 	editorFonts
 >
-	<EditorIsland client:only="react" />
+	<EditorIsland client:load />
 
 	<section class="border-t border-hairline py-16">
 		<Container class="max-w-4xl">

@@ -1,0 +1,241 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "m01-settings_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.3607404890008183,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.3731918999983463,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "2997adc72b6b3e84b00141dd3830cc5dbfe66bb580027a87ee0f385e2efd0e96",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    24.0,
+    74.0,
+    24.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9999828461717138
+  },
+  {
+   "bbox": [
+    24.0,
+    56.0,
+    60.0,
+    8.0
+   ],
+   "text": "Fcuich Cq?",
+   "confidence": 0.004171695360212705
+  },
+  {
+   "bbox": [
+    45.0,
+    83.0,
+    66.0,
+    14.0
+   ],
+   "text": "Avery Colling",
+   "confidence": 0.7118279968253768
+  },
+  {
+   "bbox": [
+    74.0,
+    98.0,
+    60.0,
+    6.0
+   ],
+   "text": "AnienaMenc",
+   "confidence": 0.0021929749969595066
+  },
+  {
+   "bbox": [
+    16.0,
+    120.0,
+    32.0,
+    8.0
+   ],
+   "text": "EccGl",
+   "confidence": 0.09907734371088549
+  },
+  {
+   "bbox": [
+    14.0,
+    138.0,
+    48.0,
+    8.0
+   ],
+   "text": "Waltcatan:",
+   "confidence": 0.020741183300841248
+  },
+  {
+   "bbox": [
+    14.0,
+    160.0,
+    28.0,
+    8.0
+   ],
+   "text": "Pinat",
+   "confidence": 0.008093346441535204
+  },
+  {
+   "bbox": [
+    52.0,
+    160.0,
+    32.0,
+    8.0
+   ],
+   "text": "Sccrty",
+   "confidence": 0.06690868604584634
+  },
+  {
+   "bbox": [
+    12.0,
+    180.0,
+    35.0,
+    13.0
+   ],
+   "text": "Storaa0",
+   "confidence": 0.5363239863412184
+  },
+  {
+   "bbox": [
+    148.0,
+    182.0,
+    32.0,
+    8.0
+   ],
+   "text": "Gaaca",
+   "confidence": 0.023931044350016164
+  },
+  {
+   "bbox": [
+    14.0,
+    204.0,
+    38.0,
+    8.0
+   ],
+   "text": "landladc",
+   "confidence": 0.01661060253740647
+  },
+  {
+   "bbox": [
+    135.0,
+    203.0,
+    48.0,
+    12.0
+   ],
+   "text": "Engieh (USI",
+   "confidence": 0.1670357424842767
+  },
+  {
+   "bbox": [
+    14.0,
+    226.0,
+    48.0,
+    8.0
+   ],
+   "text": "Scrccnmmc",
+   "confidence": 0.03459144498629506
+  },
+  {
+   "bbox": [
+    154.0,
+    226.0,
+    26.0,
+    8.0
+   ],
+   "text": "hiin",
+   "confidence": 0.03990490734577179
+  },
+  {
+   "bbox": [
+    13.0,
+    265.0,
+    22.0,
+    14.0
+   ],
+   "text": "Hclp",
+   "confidence": 0.5751862525939941
+  },
+  {
+   "bbox": [
+    34.0,
+    268.0,
+    26.0,
+    6.0
+   ],
+   "text": "IeLt",
+   "confidence": 0.0001595057110534981
+  },
+  {
+   "bbox": [
+    14.0,
+    288.0,
+    60.0,
+    8.0
+   ],
+   "text": "Rn Eiidbit",
+   "confidence": 0.00283900259566079
+  },
+  {
+   "bbox": [
+    14.0,
+    312.0,
+    24.0,
+    6.0
+   ],
+   "text": "aadi",
+   "confidence": 0.03924752026796341
+  },
+  {
+   "bbox": [
+    130.0,
+    312.0,
+    50.0,
+    6.0
+   ],
+   "text": "Jiconfa",
+   "confidence": 0.0006838567935823282
+  },
+  {
+   "bbox": [
+    14.0,
+    332.0,
+    60.0,
+    8.0
+   ],
+   "text": "n aftati]",
+   "confidence": 0.0005576687357078979
+  },
+  {
+   "bbox": [
+    14.0,
+    356.0,
+    130.0,
+    8.0
+   ],
+   "text": "en Alinructlo Beaudalctan",
+   "confidence": 3.295323092758206e-05
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:53:47.016508+00:00"
+}

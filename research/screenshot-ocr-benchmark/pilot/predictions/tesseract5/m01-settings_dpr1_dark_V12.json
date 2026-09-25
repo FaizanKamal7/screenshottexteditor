@@ -1,0 +1,135 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m01-settings_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.6133294040000692,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.6253312000189908,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "2997adc72b6b3e84b00141dd3830cc5dbfe66bb580027a87ee0f385e2efd0e96",
+ "lines": [
+  {
+   "bbox": [
+    10.0,
+    29.0,
+    65.0,
+    15.0
+   ],
+   "text": "Settings",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    13.0,
+    55.0,
+    70.0,
+    9.0
+   ],
+   "text": "Soh wns",
+   "confidence": 0.205
+  },
+  {
+   "bbox": [
+    47.0,
+    85.0,
+    61.0,
+    10.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.815
+  },
+  {
+   "bbox": [
+    11.0,
+    127.0,
+    169.0,
+    28.0
+   ],
+   "text": "Nottestons on",
+   "confidence": 0.355
+  },
+  {
+   "bbox": [
+    15.0,
+    150.0,
+    69.0,
+    28.0
+   ],
+   "text": "Privacy 8 Soc.",
+   "confidence": 0.41333333333333333
+  },
+  {
+   "bbox": [
+    11.0,
+    173.0,
+    169.0,
+    28.0
+   ],
+   "text": "Sorage nacaotesce",
+   "confidence": 0.145
+  },
+  {
+   "bbox": [
+    11.0,
+    195.0,
+    169.0,
+    28.0
+   ],
+   "text": "Language ern)",
+   "confidence": 0.38
+  },
+  {
+   "bbox": [
+    15.0,
+    227.0,
+    165.0,
+    7.0
+   ],
+   "text": "Screen Time FS",
+   "confidence": 0.29333333333333333
+  },
+  {
+   "bbox": [
+    11.0,
+    257.0,
+    52.0,
+    28.0
+   ],
+   "text": "Help Gorter",
+   "confidence": 0.525
+  },
+  {
+   "bbox": [
+    15.0,
+    290.0,
+    58.0,
+    7.0
+   ],
+   "text": "Sons esdback",
+   "confidence": 0.345
+  },
+  {
+   "bbox": [
+    11.0,
+    300.0,
+    169.0,
+    28.0
+   ],
+   "text": "Aon erin 4382",
+   "confidence": 0.27666666666666667
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:17:42.904558+00:00"
+}

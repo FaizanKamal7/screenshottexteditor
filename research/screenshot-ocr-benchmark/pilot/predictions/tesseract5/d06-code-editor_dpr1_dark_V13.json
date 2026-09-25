@@ -1,0 +1,75 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.38319570700014083,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.4031838999944739,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "c03904f2c9e3f635d40e4ab156645b8cf8f3304ff6488d3eda2c999e72e6fc2d",
+ "lines": [
+  {
+   "bbox": [
+    110.0,
+    104.0,
+    136.0,
+    7.0
+   ],
+   "text": "Bp",
+   "confidence": 0.02
+  },
+  {
+   "bbox": [
+    438.0,
+    3.0,
+    92.0,
+    28.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.75
+  },
+  {
+   "bbox": [
+    438.0,
+    21.0,
+    188.0,
+    28.0
+   ],
+   "text": "Every ret pases rough the rote ere ny",
+   "confidence": 0.4775
+  },
+  {
+   "bbox": [
+    434.0,
+    32.0,
+    182.0,
+    28.0
+   ],
+   "text": "Bale run Unknow, hs en 04 wnt",
+   "confidence": 0.5242857142857144
+  },
+  {
+   "bbox": [
+    438.0,
+    150.0,
+    117.0,
+    8.0
+   ],
+   "text": "RE S———",
+   "confidence": 0.05
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:13:47.452082+00:00"
+}

@@ -1,0 +1,241 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "m01-settings_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.1758653650013002,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.1884736999927554,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "65163ad172e8461e74784506ae138af35e8eeb14beb5037053fa2a117e51e2c3",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    24.0,
+    74.0,
+    24.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9999726214124356
+  },
+  {
+   "bbox": [
+    24.0,
+    56.0,
+    58.0,
+    8.0
+   ],
+   "text": "sich -Cibnqs",
+   "confidence": 0.02586593079690647
+  },
+  {
+   "bbox": [
+    46.0,
+    86.0,
+    28.0,
+    8.0
+   ],
+   "text": "AvCry",
+   "confidence": 0.2946181736585962
+  },
+  {
+   "bbox": [
+    75.0,
+    83.0,
+    36.0,
+    14.0
+   ],
+   "text": "Collins",
+   "confidence": 0.9894604226895978
+  },
+  {
+   "bbox": [
+    90.0,
+    96.0,
+    28.0,
+    8.0
+   ],
+   "text": "{024780",
+   "confidence": 0.04255951014934045
+  },
+  {
+   "bbox": [
+    16.0,
+    120.0,
+    32.0,
+    8.0
+   ],
+   "text": "4cCOL",
+   "confidence": 0.2060773890732349
+  },
+  {
+   "bbox": [
+    14.0,
+    138.0,
+    48.0,
+    8.0
+   ],
+   "text": "Naticatan:",
+   "confidence": 0.07807886144548976
+  },
+  {
+   "bbox": [
+    14.0,
+    160.0,
+    30.0,
+    8.0
+   ],
+   "text": "pnvacy",
+   "confidence": 0.3533345768265551
+  },
+  {
+   "bbox": [
+    52.0,
+    160.0,
+    32.0,
+    8.0
+   ],
+   "text": "Secirini",
+   "confidence": 0.11228032492737684
+  },
+  {
+   "bbox": [
+    119.0,
+    181.0,
+    62.0,
+    12.0
+   ],
+   "text": "17 4 GB 0t 6+ 08",
+   "confidence": 0.18421450461699831
+  },
+  {
+   "bbox": [
+    14.0,
+    206.0,
+    38.0,
+    6.0
+   ],
+   "text": "nainoi",
+   "confidence": 0.4709646317908595
+  },
+  {
+   "bbox": [
+    135.0,
+    203.0,
+    48.0,
+    12.0
+   ],
+   "text": "Engesn (US)",
+   "confidence": 0.27180361026289324
+  },
+  {
+   "bbox": [
+    14.0,
+    226.0,
+    48.0,
+    8.0
+   ],
+   "text": "Scrcn Timc",
+   "confidence": 0.20735322337461418
+  },
+  {
+   "bbox": [
+    154.0,
+    226.0,
+    26.0,
+    8.0
+   ],
+   "text": "3h120",
+   "confidence": 0.15296898516261903
+  },
+  {
+   "bbox": [
+    14.0,
+    266.0,
+    46.0,
+    8.0
+   ],
+   "text": "Uclo Cenc",
+   "confidence": 0.12902140599042455
+  },
+  {
+   "bbox": [
+    14.0,
+    288.0,
+    60.0,
+    8.0
+   ],
+   "text": "c4 Fecdbit",
+   "confidence": 0.00849988014604311
+  },
+  {
+   "bbox": [
+    14.0,
+    312.0,
+    24.0,
+    6.0
+   ],
+   "text": "bol",
+   "confidence": 0.13727502159799146
+  },
+  {
+   "bbox": [
+    130.0,
+    312.0,
+    50.0,
+    6.0
+   ],
+   "text": "Udrar fay",
+   "confidence": 0.001204534804144003
+  },
+  {
+   "bbox": [
+    14.0,
+    334.0,
+    60.0,
+    6.0
+   ],
+   "text": "COee fcuni",
+   "confidence": 0.01320300039618722
+  },
+  {
+   "bbox": [
+    16.0,
+    356.0,
+    128.0,
+    6.0
+   ],
+   "text": "a]dFaaa",
+   "confidence": 0.00019253180331641118
+  },
+  {
+   "bbox": [
+    12.018220149409718,
+    180.26005992660404,
+    32.96355970118056,
+    12.479880146791913
+   ],
+   "text": "5o158",
+   "confidence": 0.19383288601335266
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:54:07.831274+00:00"
+}

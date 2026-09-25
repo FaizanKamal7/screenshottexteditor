@@ -1,0 +1,96 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.01623559999279678,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.024325399979716167,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "9a3a96912c3b45cfb2bc345f731c47a6d625a06f9f3edba4a92dcacfa3d12787",
+ "lines": [
+  {
+   "bbox": [
+    60.0,
+    12.0,
+    17.0,
+    7.0
+   ],
+   "text": "Met",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    124.0,
+    14.0,
+    106.0,
+    13.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    133.0,
+    67.0,
+    55.0,
+    13.0
+   ],
+   "text": "$482,910",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    261.0,
+    68.0,
+    40.0,
+    12.0
+   ],
+   "text": "12,384",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    387.0,
+    68.0,
+    30.0,
+    11.0
+   ],
+   "text": "2.1%",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    515.0,
+    67.0,
+    40.0,
+    13.0
+   ],
+   "text": "$86.40",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    542.0,
+    181.0,
+    32.0,
+    7.0
+   ],
+   "text": "\"Zans",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:33.030369+00:00"
+}

@@ -1,0 +1,195 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m05-chat_dpr1_dark_V07",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.5848242640004173,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.6010559000133071,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "bd25448fe3d96f86e3b3c09ae43d7aabee86407ea9c75776dc429f947ad4ad72",
+ "lines": [
+  {
+   "bbox": [
+    22.0,
+    15.0,
+    346.0,
+    10.0
+   ],
+   "text": "9:41 56.72%",
+   "confidence": 0.475
+  },
+  {
+   "bbox": [
+    21.0,
+    53.0,
+    163.0,
+    23.0
+   ],
+   "text": "% Jordan Lee",
+   "confidence": 0.6766666666666667
+  },
+  {
+   "bbox": [
+    100.0,
+    74.0,
+    92.0,
+    12.0
+   ],
+   "text": "Active 5 min ago",
+   "confidence": 0.755
+  },
+  {
+   "bbox": [
+    141.0,
+    104.0,
+    107.0,
+    28.0
+   ],
+   "text": "Tue, Sep 22- 4:12PM",
+   "confidence": 0.6425
+  },
+  {
+   "bbox": [
+    27.0,
+    145.0,
+    225.0,
+    15.0
+   ],
+   "text": "Hey! Are we still on for the design",
+   "confidence": 0.94375
+  },
+  {
+   "bbox": [
+    27.0,
+    167.0,
+    178.0,
+    14.0
+   ],
+   "text": "review tomorrow morning?",
+   "confidence": 0.89
+  },
+  {
+   "bbox": [
+    26.0,
+    295.0,
+    200.0,
+    15.0
+   ],
+   "text": "Great. Can you also check the",
+   "confidence": 0.9283333333333332
+  },
+  {
+   "bbox": [
+    27.0,
+    314.0,
+    215.0,
+    16.0
+   ],
+   "text": "invoice total? | got $1,248.50 but",
+   "confidence": 0.935
+  },
+  {
+   "bbox": [
+    26.0,
+    334.0,
+    153.0,
+    16.0
+   ],
+   "text": "finance says $1,284.50.",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    175.0,
+    372.0,
+    40.0,
+    8.0
+   ],
+   "text": "4198M",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    197.0,
+    460.0,
+    131.0,
+    31.0
+   ],
+   "text": "Q3-invoice-final. pdf",
+   "confidence": 0.46
+  },
+  {
+   "bbox": [
+    197.0,
+    488.0,
+    91.0,
+    12.0
+   ],
+   "text": "2.4M8 6 pages",
+   "confidence": 0.6066666666666667
+  },
+  {
+   "bbox": [
+    307.0,
+    525.0,
+    68.0,
+    8.0
+   ],
+   "text": "Read 4:21 PM",
+   "confidence": 0.84
+  },
+  {
+   "bbox": [
+    26.0,
+    556.0,
+    217.0,
+    15.0
+   ],
+   "text": "Thanks, got it. Order #A-20931 is",
+   "confidence": 0.8733333333333333
+  },
+  {
+   "bbox": [
+    26.0,
+    576.0,
+    70.0,
+    12.0
+   ],
+   "text": "confirmed.",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    28.0,
+    748.0,
+    362.0,
+    31.0
+   ],
+   "text": "Soundsgood ~~ Onmyway ~~ 10minlate Calls",
+   "confidence": 0.585
+  },
+  {
+   "bbox": [
+    28.0,
+    800.0,
+    333.0,
+    31.0
+   ],
+   "text": "Message end",
+   "confidence": 0.96
+  }
+ ],
+ "pass": "rerun",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T09:53:47.119437+00:00"
+}

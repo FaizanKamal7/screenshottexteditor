@@ -1,0 +1,145 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.6418649910001477,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.660869699990144,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "9a3a96912c3b45cfb2bc345f731c47a6d625a06f9f3edba4a92dcacfa3d12787",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    1.0,
+    85.0,
+    28.0
+   ],
+   "text": "Tallhouse Metrics",
+   "confidence": 0.69
+  },
+  {
+   "bbox": [
+    12.0,
+    94.0,
+    37.0,
+    8.0
+   ],
+   "text": "0 sors",
+   "confidence": 0.505
+  },
+  {
+   "bbox": [
+    124.0,
+    14.0,
+    106.0,
+    12.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.925
+  },
+  {
+   "bbox": [
+    129.0,
+    63.0,
+    172.0,
+    26.0
+   ],
+   "text": "$482,910 12,384",
+   "confidence": 0.925
+  },
+  {
+   "bbox": [
+    132.0,
+    115.0,
+    24.0,
+    7.0
+   ],
+   "text": "wes",
+   "confidence": 0.54
+  },
+  {
+   "bbox": [
+    158.0,
+    115.0,
+    46.0,
+    7.0
+   ],
+   "text": "p—",
+   "confidence": 0.29
+  },
+  {
+   "bbox": [
+    387.0,
+    68.0,
+    30.0,
+    11.0
+   ],
+   "text": "21%",
+   "confidence": 0.58
+  },
+  {
+   "bbox": [
+    324.0,
+    169.0,
+    111.0,
+    28.0
+   ],
+   "text": "10m Cun sama",
+   "confidence": 0.31
+  },
+  {
+   "bbox": [
+    324.0,
+    216.0,
+    97.0,
+    7.0
+   ],
+   "text": "ows untae",
+   "confidence": 0.09
+  },
+  {
+   "bbox": [
+    515.0,
+    67.0,
+    40.0,
+    13.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    471.0,
+    131.0,
+    32.0,
+    91.0
+   ],
+   "text": "PHY",
+   "confidence": 0.05
+  },
+  {
+   "bbox": [
+    582.0,
+    131.0,
+    18.0,
+    90.0
+   ],
+   "text": "green",
+   "confidence": 0.0
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:59.477339+00:00"
+}

@@ -1,0 +1,455 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1p5_light_V08",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.3908582959998057,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.4564374999899883,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "c754d8e7a9c98a42e0738c0a7f02fad8b45a8be89e26c1635e03e2826df63753",
+ "lines": [
+  {
+   "bbox": [
+    33.0,
+    37.0,
+    243.0,
+    26.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.935
+  },
+  {
+   "bbox": [
+    34.0,
+    111.0,
+    126.0,
+    21.0
+   ],
+   "text": "28 Overview",
+   "confidence": 0.855
+  },
+  {
+   "bbox": [
+    35.0,
+    174.0,
+    118.0,
+    14.0
+   ],
+   "text": "+ Revenue",
+   "confidence": 0.62
+  },
+  {
+   "bbox": [
+    73.0,
+    231.0,
+    100.0,
+    14.0
+   ],
+   "text": "Customers",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    74.0,
+    288.0,
+    72.0,
+    19.0
+   ],
+   "text": "Reports",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    36.0,
+    342.0,
+    115.0,
+    22.0
+   ],
+   "text": "O Settings",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    372.0,
+    44.0,
+    318.0,
+    35.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    374.0,
+    89.0,
+    296.0,
+    20.0
+   ],
+   "text": "Last 30 days - Updated 08:45 UTC",
+   "confidence": 0.942857142857143
+  },
+  {
+   "bbox": [
+    1162.0,
+    165.0,
+    93.0,
+    15.0
+   ],
+   "text": "Churn Rate",
+   "confidence": 0.935
+  },
+  {
+   "bbox": [
+    1163.0,
+    206.0,
+    86.0,
+    30.0
+   ],
+   "text": "2.1%",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1163.0,
+    250.0,
+    128.0,
+    14.0
+   ],
+   "text": "Down from 2.6%",
+   "confidence": 0.9566666666666667
+  },
+  {
+   "bbox": [
+    779.0,
+    165.0,
+    106.0,
+    15.0
+   ],
+   "text": "Active Users",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    782.0,
+    206.0,
+    120.0,
+    33.0
+   ],
+   "text": "12,384",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    780.0,
+    250.0,
+    155.0,
+    14.0
+   ],
+   "text": "-0.8% vs last month",
+   "confidence": 0.9125
+  },
+  {
+   "bbox": [
+    400.0,
+    165.0,
+    145.0,
+    19.0
+   ],
+   "text": "Monthly Revenue",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    400.0,
+    203.0,
+    164.0,
+    36.0
+   ],
+   "text": "$482,910",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    400.0,
+    250.0,
+    169.0,
+    14.0
+   ],
+   "text": "+12.4% vs last month",
+   "confidence": 0.89
+  },
+  {
+   "bbox": [
+    398.0,
+    347.0,
+    715.0,
+    19.0
+   ],
+   "text": "Weekly revenue (USD) Recent invoices",
+   "confidence": 0.956
+  },
+  {
+   "bbox": [
+    417.0,
+    383.0,
+    797.0,
+    34.0
+   ],
+   "text": "bi Invoice Customer",
+   "confidence": 0.8133333333333332
+  },
+  {
+   "bbox": [
+    421.0,
+    438.0,
+    882.0,
+    29.0
+   ],
+   "text": "1006 INV-10421 Harper & Stone LLC",
+   "confidence": 0.8216666666666668
+  },
+  {
+   "bbox": [
+    973.0,
+    491.0,
+    291.0,
+    27.0
+   ],
+   "text": "INV-10422 Bluefield Dental",
+   "confidence": 0.9433333333333332
+  },
+  {
+   "bbox": [
+    427.0,
+    525.0,
+    21.0,
+    11.0
+   ],
+   "text": "50k",
+   "confidence": 0.72
+  },
+  {
+   "bbox": [
+    973.0,
+    541.0,
+    334.0,
+    27.0
+   ],
+   "text": "INV-10423 Oakridge Supply Co.",
+   "confidence": 0.9375
+  },
+  {
+   "bbox": [
+    442.0,
+    591.0,
+    859.0,
+    29.0
+   ],
+   "text": "9 INV-10424 Maple Street Books",
+   "confidence": 0.8740000000000001
+  },
+  {
+   "bbox": [
+    481.0,
+    614.0,
+    384.0,
+    25.0
+   ],
+   "text": "Aug 25 Sep 1 Sep 8 Sep 15 Sep 22",
+   "confidence": 0.648
+  },
+  {
+   "bbox": [
+    973.0,
+    646.0,
+    290.0,
+    27.0
+   ],
+   "text": "INV-10425 Quinn Logistics",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    1413.0,
+    396.0,
+    39.0,
+    12.0
+   ],
+   "text": "Date",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1413.0,
+    442.0,
+    95.0,
+    14.0
+   ],
+   "text": "2026-09-02",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1413.0,
+    495.0,
+    96.0,
+    14.0
+   ],
+   "text": "2026-09-04",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1413.0,
+    546.0,
+    96.0,
+    14.0
+   ],
+   "text": "2026-09-09",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1413.0,
+    598.0,
+    96.0,
+    14.0
+   ],
+   "text": "2026-09-15",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1413.0,
+    651.0,
+    95.0,
+    14.0
+   ],
+   "text": "2026-09-21",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    960.0,
+    703.0,
+    527.0,
+    24.0
+   ],
+   "text": "Showing 5 of 148 invoices. Amounts include tax; refunds are excluded.",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    1754.0,
+    51.0,
+    103.0,
+    19.0
+   ],
+   "text": "Export CSV",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    1543.0,
+    165.0,
+    145.0,
+    20.0
+   ],
+   "text": "Avg. Order Value",
+   "confidence": 0.9566666666666667
+  },
+  {
+   "bbox": [
+    1545.0,
+    203.0,
+    119.0,
+    35.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    1545.0,
+    246.0,
+    164.0,
+    27.0
+   ],
+   "text": "+$3.15 vs last month",
+   "confidence": 0.925
+  },
+  {
+   "bbox": [
+    1655.0,
+    396.0,
+    145.0,
+    12.0
+   ],
+   "text": "Amount Status",
+   "confidence": 0.87
+  },
+  {
+   "bbox": [
+    1636.0,
+    440.0,
+    160.0,
+    19.0
+   ],
+   "text": "$3420.00 Paid",
+   "confidence": 0.765
+  },
+  {
+   "bbox": [
+    1653.0,
+    493.0,
+    139.0,
+    18.0
+   ],
+   "text": "$780.50 Due",
+   "confidence": 0.73
+  },
+  {
+   "bbox": [
+    1626.0,
+    544.0,
+    170.0,
+    19.0
+   ],
+   "text": "$12,006.75 Paid",
+   "confidence": 0.7
+  },
+  {
+   "bbox": [
+    1663.0,
+    596.0,
+    129.0,
+    18.0
+   ],
+   "text": "$96.00 Due",
+   "confidence": 0.86
+  },
+  {
+   "bbox": [
+    1636.0,
+    649.0,
+    160.0,
+    19.0
+   ],
+   "text": "$5,318.20 Paid",
+   "confidence": 0.755
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:11:30.719650+00:00"
+}

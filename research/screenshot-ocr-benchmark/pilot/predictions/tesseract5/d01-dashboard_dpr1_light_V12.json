@@ -1,0 +1,95 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.7600304480001796,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.7835347999935038,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "9ece3003f5fc133600f65ddcdbd9a0ad1b6843d6c50acfa0b3baf6eeb6f7a072",
+ "lines": [
+  {
+   "bbox": [
+    120.0,
+    5.0,
+    114.0,
+    29.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.915
+  },
+  {
+   "bbox": [
+    129.0,
+    62.0,
+    288.0,
+    27.0
+   ],
+   "text": "$482,910 12,384 21%",
+   "confidence": 0.89
+  },
+  {
+   "bbox": [
+    132.0,
+    115.0,
+    239.0,
+    18.0
+   ],
+   "text": "en [—",
+   "confidence": 0.275
+  },
+  {
+   "bbox": [
+    142.0,
+    132.0,
+    212.0,
+    90.0
+   ],
+   "text": "anil =",
+   "confidence": 0.475
+  },
+  {
+   "bbox": [
+    245.0,
+    207.0,
+    176.0,
+    16.0
+   ],
+   "text": "era po",
+   "confidence": 0.245
+  },
+  {
+   "bbox": [
+    515.0,
+    67.0,
+    40.0,
+    13.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    577.0,
+    131.0,
+    31.0,
+    90.0
+   ],
+   "text": "HER RN",
+   "confidence": 0.28
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:21.195314+00:00"
+}

@@ -1,0 +1,39 @@
+﻿S1 moderate skew (draft sim): ratio:percentile=0.916  ratio:bca=0.912  ratio:boot_t=0.947  ratio:log_t=0.938  diff:percentile=0.899  diff:bca=0.902  diff:boot_t=0.929
+S2 low error, heavy skew: ratio:percentile=0.901  ratio:bca=0.913  ratio:boot_t=0.948  ratio:log_t=0.931  diff:percentile=0.852  diff:bca=0.856  diff:boot_t=0.893
+S3 high error: ratio:percentile=0.933  ratio:bca=0.932  ratio:boot_t=0.952  ratio:log_t=0.949  diff:percentile=0.906  diff:bca=0.901  diff:boot_t=0.930
+S4 strata differ: ratio:percentile=0.918  ratio:bca=0.923  ratio:boot_t=0.947  ratio:log_t=0.936  diff:percentile=0.892  diff:bca=0.894  diff:boot_t=0.925
+S5 skewed lengths: ratio:percentile=0.922  ratio:bca=0.909  ratio:boot_t=0.941  ratio:log_t=0.931  diff:percentile=0.873  diff:bca=0.869  diff:boot_t=0.911
+decision: {
+ "verdict": {
+  "bca": {
+   "min": 0.8555,
+   "max": 0.9325,
+   "worst_gap": 0.09449999999999992,
+   "covers_both_targets": true,
+   "passes": false
+  },
+  "boot_t": {
+   "min": 0.8935,
+   "max": 0.9515,
+   "worst_gap": 0.056499999999999995,
+   "covers_both_targets": true,
+   "passes": false
+  },
+  "log_t": {
+   "min": 0.931,
+   "max": 0.949,
+   "worst_gap": 0.018999999999999906,
+   "covers_both_targets": false,
+   "passes": false
+  },
+  "percentile": {
+   "min": 0.852,
+   "max": 0.933,
+   "worst_gap": 0.09799999999999998,
+   "covers_both_targets": true,
+   "passes": false
+  }
+ },
+ "chosen": null
+}
+elapsed 190.3 s -> /bench/pilot/validation/c6_study_n20.json

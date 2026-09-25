@@ -1,0 +1,296 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m01-settings_dpr3_dark_V02",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.11367099999915808,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.20664839999517426,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "3ea6963fe5e7b5bc321d6e6b083b852e0ad3af3574bdef8ed2709729435e0633",
+ "lines": [
+  {
+   "bbox": [
+    74.0,
+    54.0,
+    89.0,
+    34.0
+   ],
+   "text": "9:41",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    64.0,
+    169.0,
+    385.0,
+    95.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    81.0,
+    333.0,
+    413.0,
+    50.0
+   ],
+   "text": "Q Search settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    283.0,
+    511.0,
+    364.0,
+    56.0
+   ],
+   "text": "Avery Collins",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    283.0,
+    586.0,
+    511.0,
+    37.0
+   ],
+   "text": "avery.collins@example.com",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    97.0,
+    735.0,
+    187.0,
+    28.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    94.0,
+    836.0,
+    280.0,
+    38.0
+   ],
+   "text": "Notifications",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    94.0,
+    969.0,
+    406.0,
+    46.0
+   ],
+   "text": "Privacy & Security",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    92.0,
+    1101.0,
+    174.0,
+    47.0
+   ],
+   "text": "Storage",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    94.0,
+    1234.0,
+    217.0,
+    46.0
+   ],
+   "text": "Language",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    92.0,
+    1365.0,
+    279.0,
+    37.0
+   ],
+   "text": "Screen Time",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    98.0,
+    1506.0,
+    174.0,
+    28.0
+   ],
+   "text": "SUPPORT",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    94.0,
+    1608.0,
+    266.0,
+    46.0
+   ],
+   "text": "Help Center",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    92.0,
+    1740.0,
+    345.0,
+    37.0
+   ],
+   "text": "Send Feedback",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    91.0,
+    1873.0,
+    134.0,
+    36.0
+   ],
+   "text": "About",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    94.0,
+    2005.0,
+    341.0,
+    36.0
+   ],
+   "text": "Delete Account",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    1022.0,
+    837.0,
+    55.0,
+    34.0
+   ],
+   "text": "On",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    719.0,
+    1103.0,
+    358.0,
+    35.0
+   ],
+   "text": "12.4 GB of 64 GB",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    823.0,
+    1232.0,
+    254.0,
+    47.0
+   ],
+   "text": "English (US)",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    932.0,
+    1368.0,
+    145.0,
+    34.0
+   ],
+   "text": "3h 12m",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    787.0,
+    1874.0,
+    291.0,
+    35.0
+   ],
+   "text": "Version 4.18.2",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    98.0,
+    2144.0,
+    762.0,
+    32.0
+   ],
+   "text": "Last synced 2 minutes ago • Backup size 318 MB",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    106.0,
+    2414.0,
+    81.0,
+    23.0
+   ],
+   "text": "Home",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    389.0,
+    2414.0,
+    99.0,
+    23.0
+   ],
+   "text": "Search",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    693.0,
+    2414.0,
+    77.0,
+    22.0
+   ],
+   "text": "Inbox",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    999.0,
+    2337.0,
+    48.0,
+    48.0
+   ],
+   "text": "O",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    968.0,
+    2413.0,
+    113.0,
+    30.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:10.096180+00:00"
+}

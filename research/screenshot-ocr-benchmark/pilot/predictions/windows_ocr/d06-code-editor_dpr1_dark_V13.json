@@ -1,0 +1,36 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.04681989998789504,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.05386059999000281,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "c03904f2c9e3f635d40e4ab156645b8cf8f3304ff6488d3eda2c999e72e6fc2d",
+ "lines": [
+  {
+   "bbox": [
+    437.0,
+    12.0,
+    91.0,
+    12.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:47.629251+00:00"
+}

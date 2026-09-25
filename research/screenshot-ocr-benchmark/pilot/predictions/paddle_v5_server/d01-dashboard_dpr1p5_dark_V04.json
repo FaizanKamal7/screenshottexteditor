@@ -1,0 +1,652 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d01-dashboard_dpr1p5_dark_V04",
+ "status": "ok",
+ "error": null,
+ "total_s": 46.41750189300001,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 46.46246909999172,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "58c717ae79dc261dea393ae8067776ad858221f70cd24625fd7056dfc630d4f5",
+ "peak_rss_mb": 12766.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
+ "lines": [
+  {
+   "bbox": [
+    32.0,
+    34.0,
+    245.0,
+    26.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.9802097678184509
+  },
+  {
+   "bbox": [
+    370.0,
+    40.0,
+    323.0,
+    37.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.9995155334472656
+  },
+  {
+   "bbox": [
+    1741.0,
+    37.0,
+    125.0,
+    38.0
+   ],
+   "text": "Export csv",
+   "confidence": 0.89094078540802
+  },
+  {
+   "bbox": [
+    368.0,
+    83.0,
+    304.0,
+    26.0
+   ],
+   "text": "Last 30days ·Updated08:45UTC",
+   "confidence": 0.9594780206680298
+  },
+  {
+   "bbox": [
+    69.0,
+    111.0,
+    92.0,
+    20.0
+   ],
+   "text": "Overview",
+   "confidence": 0.9959137439727783
+  },
+  {
+   "bbox": [
+    396.0,
+    161.0,
+    153.0,
+    24.0
+   ],
+   "text": "Monthly Revenue",
+   "confidence": 0.9659498929977417
+  },
+  {
+   "bbox": [
+    776.0,
+    158.0,
+    113.0,
+    25.0
+   ],
+   "text": "Active Users",
+   "confidence": 0.9950742721557617
+  },
+  {
+   "bbox": [
+    1156.0,
+    156.0,
+    104.0,
+    29.0
+   ],
+   "text": "Churn Rate",
+   "confidence": 0.959682822227478
+  },
+  {
+   "bbox": [
+    1539.0,
+    157.0,
+    154.0,
+    28.0
+   ],
+   "text": "Avg. Order Value",
+   "confidence": 0.9893093109130859
+  },
+  {
+   "bbox": [
+    67.0,
+    169.0,
+    89.0,
+    23.0
+   ],
+   "text": "Revenue",
+   "confidence": 0.9976208806037903
+  },
+  {
+   "bbox": [
+    397.0,
+    200.0,
+    170.0,
+    39.0
+   ],
+   "text": "$482,910",
+   "confidence": 0.9978201389312744
+  },
+  {
+   "bbox": [
+    775.0,
+    199.0,
+    133.0,
+    42.0
+   ],
+   "text": "12,384",
+   "confidence": 0.9994600415229797
+  },
+  {
+   "bbox": [
+    1155.0,
+    198.0,
+    101.0,
+    41.0
+   ],
+   "text": "2.1%",
+   "confidence": 0.9972438812255859
+  },
+  {
+   "bbox": [
+    1537.0,
+    194.0,
+    134.0,
+    48.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.9983172416687012
+  },
+  {
+   "bbox": [
+    67.0,
+    225.0,
+    110.0,
+    24.0
+   ],
+   "text": "Customers",
+   "confidence": 0.9996216893196106
+  },
+  {
+   "bbox": [
+    398.0,
+    247.0,
+    174.0,
+    19.0
+   ],
+   "text": "+12.4%vslastmonth",
+   "confidence": 0.9916990995407104
+  },
+  {
+   "bbox": [
+    777.0,
+    245.0,
+    162.0,
+    23.0
+   ],
+   "text": "-0.8% vs la st month",
+   "confidence": 0.9483821988105774
+  },
+  {
+   "bbox": [
+    1156.0,
+    244.0,
+    139.0,
+    23.0
+   ],
+   "text": "Down from 2.6%",
+   "confidence": 0.9646145105361938
+  },
+  {
+   "bbox": [
+    1542.0,
+    246.0,
+    170.0,
+    20.0
+   ],
+   "text": "+$3.15 vs last month",
+   "confidence": 0.9250949621200562
+  },
+  {
+   "bbox": [
+    65.0,
+    280.0,
+    85.0,
+    30.0
+   ],
+   "text": "Reports",
+   "confidence": 0.9986624717712402
+  },
+  {
+   "bbox": [
+    64.0,
+    336.0,
+    91.0,
+    30.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9998241662979126
+  },
+  {
+   "bbox": [
+    397.0,
+    344.0,
+    217.0,
+    21.0
+   ],
+   "text": "Weekly revenue (USD)",
+   "confidence": 0.95612633228302
+  },
+  {
+   "bbox": [
+    957.0,
+    343.0,
+    157.0,
+    21.0
+   ],
+   "text": "Recent invoices",
+   "confidence": 0.9892614483833313
+  },
+  {
+   "bbox": [
+    413.0,
+    379.0,
+    40.0,
+    25.0
+   ],
+   "text": "150k",
+   "confidence": 0.9989485144615173
+  },
+  {
+   "bbox": [
+    967.0,
+    390.0,
+    68.0,
+    22.0
+   ],
+   "text": "Invoice",
+   "confidence": 0.9894251227378845
+  },
+  {
+   "bbox": [
+    1126.0,
+    390.0,
+    91.0,
+    21.0
+   ],
+   "text": "Customer",
+   "confidence": 0.9939875602722168
+  },
+  {
+   "bbox": [
+    1408.0,
+    391.0,
+    47.0,
+    19.0
+   ],
+   "text": "Date",
+   "confidence": 0.9965218901634216
+  },
+  {
+   "bbox": [
+    1650.0,
+    390.0,
+    79.0,
+    21.0
+   ],
+   "text": "Amount",
+   "confidence": 0.9989375472068787
+  },
+  {
+   "bbox": [
+    1742.0,
+    390.0,
+    63.0,
+    21.0
+   ],
+   "text": "Status",
+   "confidence": 0.9958061575889587
+  },
+  {
+   "bbox": [
+    967.0,
+    437.0,
+    95.0,
+    21.0
+   ],
+   "text": "INV-10421",
+   "confidence": 0.9996647238731384
+  },
+  {
+   "bbox": [
+    1125.0,
+    437.0,
+    178.0,
+    21.0
+   ],
+   "text": "Harper& Stone LLC",
+   "confidence": 0.9691654443740845
+  },
+  {
+   "bbox": [
+    1408.0,
+    437.0,
+    104.0,
+    21.0
+   ],
+   "text": "2026-09-02",
+   "confidence": 0.9996767044067383
+  },
+  {
+   "bbox": [
+    1633.0,
+    435.0,
+    94.0,
+    25.0
+   ],
+   "text": "$3,420.00",
+   "confidence": 0.9948769807815552
+  },
+  {
+   "bbox": [
+    1753.0,
+    436.0,
+    48.0,
+    23.0
+   ],
+   "text": "Paid",
+   "confidence": 0.9926996231079102
+  },
+  {
+   "bbox": [
+    414.0,
+    450.0,
+    38.0,
+    22.0
+   ],
+   "text": "100k",
+   "confidence": 0.9978070855140686
+  },
+  {
+   "bbox": [
+    967.0,
+    490.0,
+    96.0,
+    21.0
+   ],
+   "text": "INV-10422",
+   "confidence": 0.9985522031784058
+  },
+  {
+   "bbox": [
+    1126.0,
+    490.0,
+    141.0,
+    21.0
+   ],
+   "text": "BluefieldDental",
+   "confidence": 0.9981372356414795
+  },
+  {
+   "bbox": [
+    1408.0,
+    488.0,
+    106.0,
+    24.0
+   ],
+   "text": "2026-09-04",
+   "confidence": 0.9996813535690308
+  },
+  {
+   "bbox": [
+    1648.0,
+    487.0,
+    79.0,
+    27.0
+   ],
+   "text": "$780.50",
+   "confidence": 0.9964929819107056
+  },
+  {
+   "bbox": [
+    1752.0,
+    489.0,
+    45.0,
+    26.0
+   ],
+   "text": "Due",
+   "confidence": 0.9954672455787659
+  },
+  {
+   "bbox": [
+    422.0,
+    520.0,
+    31.0,
+    20.0
+   ],
+   "text": "50k",
+   "confidence": 0.9983919262886047
+  },
+  {
+   "bbox": [
+    967.0,
+    540.0,
+    96.0,
+    21.0
+   ],
+   "text": "INV-10423",
+   "confidence": 0.9994775056838989
+  },
+  {
+   "bbox": [
+    1125.0,
+    539.0,
+    184.0,
+    26.0
+   ],
+   "text": "Oakridge Supply Co.",
+   "confidence": 0.9900861978530884
+  },
+  {
+   "bbox": [
+    1408.0,
+    541.0,
+    104.0,
+    21.0
+   ],
+   "text": "2026-09-09",
+   "confidence": 0.9996927976608276
+  },
+  {
+   "bbox": [
+    1622.0,
+    540.0,
+    107.0,
+    23.0
+   ],
+   "text": "$12,006.75",
+   "confidence": 0.9948263168334961
+  },
+  {
+   "bbox": [
+    1752.0,
+    541.0,
+    49.0,
+    22.0
+   ],
+   "text": "Paid",
+   "confidence": 0.9926775693893433
+  },
+  {
+   "bbox": [
+    967.0,
+    590.0,
+    98.0,
+    24.0
+   ],
+   "text": "INV-10424",
+   "confidence": 0.9995383024215698
+  },
+  {
+   "bbox": [
+    1127.0,
+    593.0,
+    175.0,
+    21.0
+   ],
+   "text": "Maple Street Books",
+   "confidence": 0.9881446361541748
+  },
+  {
+   "bbox": [
+    1408.0,
+    591.0,
+    105.0,
+    24.0
+   ],
+   "text": "2026-09-15",
+   "confidence": 0.9996545910835266
+  },
+  {
+   "bbox": [
+    1659.0,
+    590.0,
+    69.0,
+    26.0
+   ],
+   "text": "$96.00",
+   "confidence": 0.9959649443626404
+  },
+  {
+   "bbox": [
+    1752.0,
+    592.0,
+    46.0,
+    26.0
+   ],
+   "text": "Due",
+   "confidence": 0.9977231025695801
+  },
+  {
+   "bbox": [
+    476.0,
+    615.0,
+    55.0,
+    24.0
+   ],
+   "text": "Aug 25",
+   "confidence": 0.9659095406532288
+  },
+  {
+   "bbox": [
+    564.0,
+    616.0,
+    46.0,
+    22.0
+   ],
+   "text": "Sep 1",
+   "confidence": 0.9488447308540344
+  },
+  {
+   "bbox": [
+    648.0,
+    617.0,
+    47.0,
+    19.0
+   ],
+   "text": "Sep 8",
+   "confidence": 0.9026791453361511
+  },
+  {
+   "bbox": [
+    728.0,
+    615.0,
+    55.0,
+    21.0
+   ],
+   "text": "Sep 15",
+   "confidence": 0.9621000289916992
+  },
+  {
+   "bbox": [
+    813.0,
+    616.0,
+    54.0,
+    21.0
+   ],
+   "text": "Sep 22",
+   "confidence": 0.9632868766784668
+  },
+  {
+   "bbox": [
+    967.0,
+    644.0,
+    97.0,
+    24.0
+   ],
+   "text": "INV-10425",
+   "confidence": 0.9996621012687683
+  },
+  {
+   "bbox": [
+    1126.0,
+    644.0,
+    140.0,
+    27.0
+   ],
+   "text": "Quinn Logistics",
+   "confidence": 0.9937350749969482
+  },
+  {
+   "bbox": [
+    1408.0,
+    644.0,
+    104.0,
+    24.0
+   ],
+   "text": "2026-09-21",
+   "confidence": 0.9997522234916687
+  },
+  {
+   "bbox": [
+    1632.0,
+    642.0,
+    95.0,
+    28.0
+   ],
+   "text": "$5,318.20",
+   "confidence": 0.9945036768913269
+  },
+  {
+   "bbox": [
+    1751.0,
+    642.0,
+    52.0,
+    26.0
+   ],
+   "text": "Paid",
+   "confidence": 0.991496205329895
+  },
+  {
+   "bbox": [
+    956.0,
+    701.0,
+    533.0,
+    21.0
+   ],
+   "text": "Showing5 of 148 invoices.Amounts include tax;refunds are excluded.",
+   "confidence": 0.9409171342849731
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T11:25:22.072044+00:00"
+}

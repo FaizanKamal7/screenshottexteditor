@@ -1,0 +1,23 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "weights_sha256": {
+  "craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+  "english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8"
+ },
+ "torch_num_threads": 10,
+ "init_s": 4.659347580000031,
+ "docker_image": "ocrbench-ocr-torch:pilot",
+ "docker_image_id": "sha256:5bd46a2297ef2a98f26a220a6a31179f5090a001ad5b04731734556559600cfb"
+}

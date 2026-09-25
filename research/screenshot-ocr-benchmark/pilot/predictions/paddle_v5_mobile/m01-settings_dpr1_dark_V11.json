@@ -1,0 +1,318 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m01-settings_dpr1_dark_V11",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.986226328000157,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.005913799977861,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "883d7bc1644769ed49c3e6117d0ff646bfef2ea4a8f6b23efd07a4e27fc7457a",
+ "lines": [
+  {
+   "bbox": [
+    18.0,
+    11.0,
+    42.0,
+    22.0
+   ],
+   "text": "9:41",
+   "confidence": 0.985965371131897
+  },
+  {
+   "bbox": [
+    327.0,
+    10.0,
+    42.0,
+    25.0
+   ],
+   "text": "87%",
+   "confidence": 0.998394787311554
+  },
+  {
+   "bbox": [
+    15.0,
+    50.0,
+    140.0,
+    40.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9996615648269653
+  },
+  {
+   "bbox": [
+    22.0,
+    104.0,
+    146.0,
+    25.0
+   ],
+   "text": "Q Search settings",
+   "confidence": 0.967999279499054
+  },
+  {
+   "bbox": [
+    90.0,
+    164.0,
+    130.0,
+    28.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.9873842597007751
+  },
+  {
+   "bbox": [
+    91.0,
+    193.0,
+    176.0,
+    14.0
+   ],
+   "text": "avery.collins@example.com",
+   "confidence": 0.979534387588501
+  },
+  {
+   "bbox": [
+    28.0,
+    239.0,
+    70.0,
+    19.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": 0.9869586825370789
+  },
+  {
+   "bbox": [
+    24.0,
+    271.0,
+    105.0,
+    26.0
+   ],
+   "text": "Notifications",
+   "confidence": 0.9994556903839111
+  },
+  {
+   "bbox": [
+    337.0,
+    275.0,
+    25.0,
+    17.0
+   ],
+   "text": "On",
+   "confidence": 0.9781985282897949
+  },
+  {
+   "bbox": [
+    24.0,
+    314.0,
+    146.0,
+    28.0
+   ],
+   "text": "Privacy & Security",
+   "confidence": 0.9652733206748962
+  },
+  {
+   "bbox": [
+    25.0,
+    360.0,
+    69.0,
+    26.0
+   ],
+   "text": "Storage",
+   "confidence": 0.9979081749916077
+  },
+  {
+   "bbox": [
+    237.0,
+    362.0,
+    126.0,
+    20.0
+   ],
+   "text": "12.4 GB of 64 GB",
+   "confidence": 0.9811350703239441
+  },
+  {
+   "bbox": [
+    24.0,
+    404.0,
+    85.0,
+    27.0
+   ],
+   "text": "Language",
+   "confidence": 0.9995686411857605
+  },
+  {
+   "bbox": [
+    269.0,
+    403.0,
+    93.0,
+    26.0
+   ],
+   "text": "English (Us)",
+   "confidence": 0.9640445113182068
+  },
+  {
+   "bbox": [
+    25.0,
+    448.0,
+    103.0,
+    25.0
+   ],
+   "text": "Screen Time",
+   "confidence": 0.9544122219085693
+  },
+  {
+   "bbox": [
+    306.0,
+    450.0,
+    58.0,
+    22.0
+   ],
+   "text": "3h 12m",
+   "confidence": 0.9797704219818115
+  },
+  {
+   "bbox": [
+    28.0,
+    496.0,
+    64.0,
+    18.0
+   ],
+   "text": "SUPPORT",
+   "confidence": 0.9967001676559448
+  },
+  {
+   "bbox": [
+    24.0,
+    530.0,
+    99.0,
+    24.0
+   ],
+   "text": "Help Center",
+   "confidence": 0.9927705526351929
+  },
+  {
+   "bbox": [
+    24.0,
+    572.0,
+    125.0,
+    27.0
+   ],
+   "text": "Send Feedback",
+   "confidence": 0.9981235861778259
+  },
+  {
+   "bbox": [
+    24.0,
+    617.0,
+    57.0,
+    25.0
+   ],
+   "text": "About",
+   "confidence": 0.9994012713432312
+  },
+  {
+   "bbox": [
+    258.0,
+    620.0,
+    105.0,
+    20.0
+   ],
+   "text": "Version 4.18.2",
+   "confidence": 0.9954119920730591
+  },
+  {
+   "bbox": [
+    25.0,
+    661.0,
+    123.0,
+    24.0
+   ],
+   "text": "Delete Account",
+   "confidence": 0.9683531522750854
+  },
+  {
+   "bbox": [
+    28.0,
+    709.0,
+    261.0,
+    18.0
+   ],
+   "text": "Last synced 2 minutes ago · Backup size 318 MB",
+   "confidence": 0.9675388336181641
+  },
+  {
+   "bbox": [
+    40.0,
+    777.0,
+    18.0,
+    20.0
+   ],
+   "text": "↑",
+   "confidence": 0.9238040447235107
+  },
+  {
+   "bbox": [
+    138.0,
+    780.0,
+    9.0,
+    10.0
+   ],
+   "text": "C",
+   "confidence": 0.6904586553573608
+  },
+  {
+   "bbox": [
+    30.0,
+    799.0,
+    35.0,
+    18.0
+   ],
+   "text": "Home",
+   "confidence": 0.9984206557273865
+  },
+  {
+   "bbox": [
+    126.0,
+    800.0,
+    40.0,
+    16.0
+   ],
+   "text": "Search",
+   "confidence": 0.9977569580078125
+  },
+  {
+   "bbox": [
+    225.0,
+    798.0,
+    34.0,
+    18.0
+   ],
+   "text": "Inbox",
+   "confidence": 0.97523432970047
+  },
+  {
+   "bbox": [
+    317.0,
+    799.0,
+    45.0,
+    17.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9896432161331177
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:17:59.854263+00:00"
+}

@@ -1,0 +1,331 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "m01-settings_dpr2_light_V08",
+ "status": "ok",
+ "error": null,
+ "total_s": 4.479056205998859,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.516703500004951,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "a3a1d812c638ad597d048fd21be6f581cc7ab5163427fe0632ce4ff71e27b2b2",
+ "lines": [
+  {
+   "bbox": [
+    46.0,
+    32.0,
+    70.0,
+    32.0
+   ],
+   "text": "9:41",
+   "confidence": 0.9337947964668274
+  },
+  {
+   "bbox": [
+    662.0,
+    32.0,
+    72.0,
+    32.0
+   ],
+   "text": "87%",
+   "confidence": 0.9537964463233948
+  },
+  {
+   "bbox": [
+    31.0,
+    98.0,
+    281.0,
+    90.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9999952795483519
+  },
+  {
+   "bbox": [
+    52.0,
+    222.0,
+    32.0,
+    28.0
+   ],
+   "text": "0",
+   "confidence": 0.9266173357790564
+  },
+  {
+   "bbox": [
+    96.0,
+    214.0,
+    243.0,
+    49.0
+   ],
+   "text": "Search settings",
+   "confidence": 0.9491889092861905
+  },
+  {
+   "bbox": [
+    183.0,
+    331.0,
+    256.0,
+    54.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.999806688970636
+  },
+  {
+   "bbox": [
+    183.0,
+    384.0,
+    350.0,
+    37.0
+   ],
+   "text": "avery collins@example.com",
+   "confidence": 0.7229592709284274
+  },
+  {
+   "bbox": [
+    62.0,
+    484.0,
+    132.0,
+    30.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": 0.9986387578181994
+  },
+  {
+   "bbox": [
+    59.0,
+    553.0,
+    196.0,
+    38.0
+   ],
+   "text": "Notifications",
+   "confidence": 0.9998647462379957
+  },
+  {
+   "bbox": [
+    678.0,
+    556.0,
+    46.0,
+    30.0
+   ],
+   "text": "On",
+   "confidence": 0.9998174247342464
+  },
+  {
+   "bbox": [
+    55.0,
+    638.0,
+    123.0,
+    45.0
+   ],
+   "text": "Privacy",
+   "confidence": 0.9543192986817944
+  },
+  {
+   "bbox": [
+    206.0,
+    634.0,
+    135.0,
+    50.0
+   ],
+   "text": "Security",
+   "confidence": 0.9999823825530416
+  },
+  {
+   "bbox": [
+    55.0,
+    728.0,
+    128.0,
+    44.0
+   ],
+   "text": "Storage",
+   "confidence": 0.9999655763552013
+  },
+  {
+   "bbox": [
+    475.0,
+    729.0,
+    250.0,
+    36.0
+   ],
+   "text": "12.4 GB of 64 GB",
+   "confidence": 0.6738814740894727
+  },
+  {
+   "bbox": [
+    56.0,
+    818.0,
+    157.0,
+    44.0
+   ],
+   "text": "Language",
+   "confidence": 0.8634404533510327
+  },
+  {
+   "bbox": [
+    543.0,
+    817.0,
+    182.0,
+    42.0
+   ],
+   "text": "English (US)",
+   "confidence": 0.9999911558926396
+  },
+  {
+   "bbox": [
+    57.0,
+    905.0,
+    196.0,
+    36.0
+   ],
+   "text": "Screen Time",
+   "confidence": 0.8132752582537683
+  },
+  {
+   "bbox": [
+    618.0,
+    908.0,
+    104.0,
+    32.0
+   ],
+   "text": "3h 12m",
+   "confidence": 0.9883511086133854
+  },
+  {
+   "bbox": [
+    62.0,
+    1000.0,
+    124.0,
+    30.0
+   ],
+   "text": "SUPPORT",
+   "confidence": 0.9994302033786806
+  },
+  {
+   "bbox": [
+    57.0,
+    1065.0,
+    187.0,
+    42.0
+   ],
+   "text": "Help Center",
+   "confidence": 0.9997919934554109
+  },
+  {
+   "bbox": [
+    57.0,
+    1155.0,
+    240.0,
+    36.0
+   ],
+   "text": "Send Feedback",
+   "confidence": 0.5366222877940395
+  },
+  {
+   "bbox": [
+    59.0,
+    1242.0,
+    97.0,
+    36.0
+   ],
+   "text": "About",
+   "confidence": 0.9999497799330265
+  },
+  {
+   "bbox": [
+    522.0,
+    1246.0,
+    202.0,
+    32.0
+   ],
+   "text": "Version 4.18.2",
+   "confidence": 0.956119616975716
+  },
+  {
+   "bbox": [
+    59.0,
+    1331.0,
+    238.0,
+    36.0
+   ],
+   "text": "Delete Account",
+   "confidence": 0.782596914791847
+  },
+  {
+   "bbox": [
+    60.0,
+    1424.0,
+    290.0,
+    30.0
+   ],
+   "text": "Last synced 2 minutes ago",
+   "confidence": 0.7964788789711433
+  },
+  {
+   "bbox": [
+    364.0,
+    1424.0,
+    212.0,
+    28.0
+   ],
+   "text": "Backup size 318 MB",
+   "confidence": 0.7539319776927199
+  },
+  {
+   "bbox": [
+    68.0,
+    1604.0,
+    60.0,
+    24.0
+   ],
+   "text": "Home",
+   "confidence": 0.9999903440475464
+  },
+  {
+   "bbox": [
+    256.0,
+    1604.0,
+    74.0,
+    24.0
+   ],
+   "text": "Search",
+   "confidence": 0.873354678361562
+  },
+  {
+   "bbox": [
+    456.0,
+    1604.0,
+    62.0,
+    24.0
+   ],
+   "text": "Inbox",
+   "confidence": 0.9998449672418414
+  },
+  {
+   "bbox": [
+    640.0,
+    1600.0,
+    87.0,
+    33.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9999933407887511
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:55:35.760319+00:00"
+}

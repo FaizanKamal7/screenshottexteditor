@@ -1,0 +1,27 @@
+{
+ "font_fallback_nodes": 0,
+ "font_checked_nodes": 111,
+ "font_failures": [],
+ "font_load_errors": [],
+ "render_deterministic_pixels": true,
+ "render_deterministic_geometry": true,
+ "hidden_render_same_layout": true,
+ "unowned_ink_pixels": 0,
+ "unowned_ink_bbox": null,
+ "lines_without_ink": [],
+ "untagged_visible_text": [],
+ "nested_tagged_elements": 0,
+ "invisible_non_space_chars": 0,
+ "style_violations": [],
+ "token_reconciliation": {
+  "ok": true,
+  "missing_from_tagged": {},
+  "extra_in_tagged": {}
+ },
+ "clipped_elements": [],
+ "viewport_css": [
+  1280,
+  800
+ ],
+ "reported_dpr": 1
+}

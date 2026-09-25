@@ -1,0 +1,16 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "tessdata_best_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+ "weights_sha256": {
+  "eng.traineddata": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba"
+ },
+ "init_s": 0.5196062579998397,
+ "docker_image": "ocrbench-ocr-tesseract:pilot",
+ "docker_image_id": "sha256:8ff502602ddb44a420a61b9a24bb7013dbb1167227fdc43c58b179dec84f252c"
+}

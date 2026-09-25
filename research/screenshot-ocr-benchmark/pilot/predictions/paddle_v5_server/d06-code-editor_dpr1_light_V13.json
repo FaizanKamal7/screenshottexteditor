@@ -1,0 +1,492 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d06-code-editor_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 13.979892742999255,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 13.99281150000752,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "ba627534e0acdaad1402103c7ad1fc3e0d39eac6c9912399ce2fd185967a6740",
+ "peak_rss_mb": 2391.4,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
+ "lines": [
+  {
+   "bbox": [
+    4.0,
+    3.0,
+    33.0,
+    11.0
+   ],
+   "text": "EXPLOREN",
+   "confidence": 0.7930869460105896
+  },
+  {
+   "bbox": [
+    96.0,
+    2.0,
+    35.0,
+    12.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.9262973070144653
+  },
+  {
+   "bbox": [
+    144.0,
+    2.0,
+    42.0,
+    12.0
+   ],
+   "text": "config.json",
+   "confidence": 0.7586047649383545
+  },
+  {
+   "bbox": [
+    199.0,
+    2.0,
+    36.0,
+    12.0
+   ],
+   "text": "README ",
+   "confidence": 0.7237094640731812
+  },
+  {
+   "bbox": [
+    4.0,
+    17.0,
+    17.0,
+    11.0
+   ],
+   "text": "src",
+   "confidence": 0.7001904845237732
+  },
+  {
+   "bbox": [
+    435.0,
+    9.0,
+    93.0,
+    15.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.9832210540771484
+  },
+  {
+   "bbox": [
+    11.0,
+    29.0,
+    36.0,
+    11.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.967041015625
+  },
+  {
+   "bbox": [
+    98.0,
+    21.0,
+    157.0,
+    10.0
+   ],
+   "text": "1 inpert {createServer} fron “nodechtp;",
+   "confidence": 0.6674404144287109
+  },
+  {
+   "bbox": [
+    435.0,
+    30.0,
+    187.0,
+    11.0
+   ],
+   "text": "Everyrequestpassesthroughtherouterbeforeany",
+   "confidence": 0.9705434441566467
+  },
+  {
+   "bbox": [
+    11.0,
+    40.0,
+    22.0,
+    11.0
+   ],
+   "text": "db.ts",
+   "confidence": 0.8499599695205688
+  },
+  {
+   "bbox": [
+    434.0,
+    41.0,
+    182.0,
+    10.0
+   ],
+   "text": "handlerruns.Unknownpathsreturn 404without",
+   "confidence": 0.944117546081543
+  },
+  {
+   "bbox": [
+    10.0,
+    51.0,
+    37.0,
+    12.0
+   ],
+   "text": "routes.ts",
+   "confidence": 0.9172938466072083
+  },
+  {
+   "bbox": [
+    105.0,
+    60.0,
+    132.0,
+    11.0
+   ],
+   "text": "C00St MAX_800Y1048_576://1 H58",
+   "confidence": 0.7438830137252808
+  },
+  {
+   "bbox": [
+    435.0,
+    53.0,
+    83.0,
+    11.0
+   ],
+   "text": "touchingthedatabase.",
+   "confidence": 0.9766252636909485
+  },
+  {
+   "bbox": [
+    4.0,
+    63.0,
+    46.0,
+    10.0
+   ],
+   "text": "package.json",
+   "confidence": 0.9027009010314941
+  },
+  {
+   "bbox": [
+    5.0,
+    73.0,
+    48.0,
+    10.0
+   ],
+   "text": "tsconfig.json",
+   "confidence": 0.780080258846283
+  },
+  {
+   "bbox": [
+    435.0,
+    70.0,
+    194.0,
+    10.0
+   ],
+   "text": "Paginationis1-indexed.Pagesabove500arerejected",
+   "confidence": 0.8913267254829407
+  },
+  {
+   "bbox": [
+    107.0,
+    82.0,
+    174.0,
+    8.0
+   ],
+   "text": "type Route(reg:Reuest）vProsieeRsoonse>",
+   "confidence": 0.5816183686256409
+  },
+  {
+   "bbox": [
+    435.0,
+    82.0,
+    184.0,
+    11.0
+   ],
+   "text": "sothatasingleclientcannotsanthewholetable;",
+   "confidence": 0.8168842792510986
+  },
+  {
+   "bbox": [
+    97.0,
+    101.0,
+    150.0,
+    10.0
+   ],
+   "text": " const routes  h Mapestring. RouteI",
+   "confidence": 0.6428448557853699
+  },
+  {
+   "bbox": [
+    436.0,
+    94.0,
+    153.0,
+    10.0
+   ],
+   "text": "use the exportjobfor bulk accessinstead.",
+   "confidence": 0.9327943921089172
+  },
+  {
+   "bbox": [
+    96.0,
+    111.0,
+    10.0,
+    9.0
+   ],
+   "text": "20",
+   "confidence": 0.7515878677368164
+  },
+  {
+   "bbox": [
+    109.0,
+    110.0,
+    200.0,
+    11.0
+   ],
+   "text": "[/health\"，ae（）ojn{k；u，uie:0）]",
+   "confidence": 0.49151909351348877
+  },
+  {
+   "bbox": [
+    95.0,
+    122.0,
+    11.0,
+    8.0
+   ],
+   "text": "11",
+   "confidence": 0.8499051332473755
+  },
+  {
+   "bbox": [
+    106.0,
+    121.0,
+    109.0,
+    10.0
+   ],
+   "text": "[/invoices,Listinvotcen].",
+   "confidence": 0.6521483659744263
+  },
+  {
+   "bbox": [
+    441.0,
+    126.0,
+    70.0,
+    10.0
+   ],
+   "text": "during local testing",
+   "confidence": 0.9640442728996277
+  },
+  {
+   "bbox": [
+    442.0,
+    117.0,
+    173.0,
+    7.0
+   ],
+   "text": "Tip:setPorT-909otoruntwninstanoessidebvside",
+   "confidence": 0.7254772782325745
+  },
+  {
+   "bbox": [
+    95.0,
+    131.0,
+    12.0,
+    10.0
+   ],
+   "text": "22",
+   "confidence": 0.9617372751235962
+  },
+  {
+   "bbox": [
+    104.0,
+    130.0,
+    18.0,
+    13.0
+   ],
+   "text": "3);",
+   "confidence": 0.4632144272327423
+  },
+  {
+   "bbox": [
+    95.0,
+    142.0,
+    10.0,
+    9.0
+   ],
+   "text": "15",
+   "confidence": 0.9010335206985474
+  },
+  {
+   "bbox": [
+    95.0,
+    152.0,
+    10.0,
+    8.0
+   ],
+   "text": "34",
+   "confidence": 0.4932703971862793
+  },
+  {
+   "bbox": [
+    108.0,
+    151.0,
+    179.0,
+    10.0
+   ],
+   "text": "export atye funetin tistinvoce(reg: Request）{",
+   "confidence": 0.5797882676124573
+  },
+  {
+   "bbox": [
+    435.0,
+    148.0,
+    122.0,
+    10.0
+   ],
+   "text": "Glyph checkI11|O0o rn m SS 8B",
+   "confidence": 0.7388828992843628
+  },
+  {
+   "bbox": [
+    95.0,
+    161.0,
+    10.0,
+    10.0
+   ],
+   "text": "15",
+   "confidence": 0.905418336391449
+  },
+  {
+   "bbox": [
+    114.0,
+    162.0,
+    246.0,
+    8.0
+   ],
+   "text": "const page ler(nu(reg.urL).tearear.getpage）)))",
+   "confidence": 0.5554659962654114
+  },
+  {
+   "bbox": [
+    95.0,
+    172.0,
+    10.0,
+    9.0
+   ],
+   "text": "26",
+   "confidence": 0.6872110366821289
+  },
+  {
+   "bbox": [
+    114.0,
+    171.0,
+    242.0,
+    10.0
+   ],
+   "text": "if（page<11l page>580）retunje({errer:bad page)，400）:",
+   "confidence": 0.6303051710128784
+  },
+  {
+   "bbox": [
+    95.0,
+    181.0,
+    10.0,
+    10.0
+   ],
+   "text": "17",
+   "confidence": 0.643145740032196
+  },
+  {
+   "bbox": [
+    94.0,
+    200.0,
+    22.0,
+    11.0
+   ],
+   "text": "1",
+   "confidence": 0.40337759256362915
+  },
+  {
+   "bbox": [
+    95.0,
+    192.0,
+    10.0,
+    9.0
+   ],
+   "text": "18",
+   "confidence": 0.6033526062965393
+  },
+  {
+   "bbox": [
+    95.0,
+    211.0,
+    10.0,
+    10.0
+   ],
+   "text": "20",
+   "confidence": 0.9542606472969055
+  },
+  {
+   "bbox": [
+    96.0,
+    223.0,
+    136.0,
+    7.0
+   ],
+   "text": "21ereateServer(handLer).Lieten(PoRT);",
+   "confidence": 0.6753315329551697
+  },
+  {
+   "bbox": [
+    26.0,
+    388.0,
+    75.0,
+    10.0
+   ],
+   "text": "B errars, 2 warnings",
+   "confidence": 0.8072101473808289
+  },
+  {
+   "bbox": [
+    473.0,
+    388.0,
+    98.0,
+    10.0
+   ],
+   "text": "LA 34,Cel 27 Spac4s: 2",
+   "confidence": 0.7038384079933167
+  },
+  {
+   "bbox": [
+    568.0,
+    389.0,
+    22.0,
+    8.0
+   ],
+   "text": "UTF-8",
+   "confidence": 0.7656652331352234
+  },
+  {
+   "bbox": [
+    595.0,
+    388.0,
+    40.0,
+    10.0
+   ],
+   "text": "TypeSerior",
+   "confidence": 0.7321954965591431
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T12:49:56.997222+00:00"
+}

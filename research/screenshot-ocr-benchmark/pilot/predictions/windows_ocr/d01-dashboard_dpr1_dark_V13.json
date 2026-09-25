@@ -1,0 +1,86 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.018642399983946234,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.025218900002073497,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e53e0e3bfe6f23e03c7f7d6d6a6e339b121237ede8167ea2cf3155c1f7ae31",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    11.0,
+    81.0,
+    10.0
+   ],
+   "text": "Tally'. Met ties",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    124.0,
+    14.0,
+    106.0,
+    10.0
+   ],
+   "text": "An Overview",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    133.0,
+    67.0,
+    55.0,
+    13.0
+   ],
+   "text": "$482,910",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    261.0,
+    68.0,
+    40.0,
+    12.0
+   ],
+   "text": "12,384",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    387.0,
+    68.0,
+    30.0,
+    11.0
+   ],
+   "text": "2.1%",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    515.0,
+    67.0,
+    40.0,
+    13.0
+   ],
+   "text": "$86.40",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:33.056503+00:00"
+}

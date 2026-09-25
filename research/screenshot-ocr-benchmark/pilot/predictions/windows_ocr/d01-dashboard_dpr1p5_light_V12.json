@@ -1,0 +1,346 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d01-dashboard_dpr1p5_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.07874050000100397,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.09662560001015663,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "2cf72382e56458f965d35dc6e45bf35b107580134f76dfa6115603d49d2ca209",
+ "lines": [
+  {
+   "bbox": [
+    16.0,
+    18.0,
+    122.0,
+    14.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    186.0,
+    22.0,
+    159.0,
+    18.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    186.0,
+    45.0,
+    149.0,
+    7.0
+   ],
+   "text": "Last 30 • Odds urc",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    36.0,
+    57.0,
+    44.0,
+    8.0
+   ],
+   "text": "O verview•",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    200.0,
+    101.0,
+    82.0,
+    19.0
+   ],
+   "text": "$482,910",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    36.0,
+    115.0,
+    51.0,
+    8.0
+   ],
+   "text": "Customers",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    242.0,
+    125.0,
+    43.0,
+    7.0
+   ],
+   "text": "lastmmth",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    37.0,
+    144.0,
+    36.0,
+    10.0
+   ],
+   "text": "Re ports",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    18.0,
+    171.0,
+    58.0,
+    11.0
+   ],
+   "text": "O Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    199.0,
+    173.0,
+    36.0,
+    10.0
+   ],
+   "text": "wækly",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    391.0,
+    103.0,
+    60.0,
+    17.0
+   ],
+   "text": "12,384",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    390.0,
+    125.0,
+    49.0,
+    7.0
+   ],
+   "text": ".08* Last",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    221.0,
+    44.0,
+    7.0
+   ],
+   "text": "I w-10421",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    247.0,
+    44.0,
+    8.0
+   ],
+   "text": "IW.10422",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    273.0,
+    45.0,
+    7.0
+   ],
+   "text": "I w-10423",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    299.0,
+    45.0,
+    7.0
+   ],
+   "text": "I w-10424",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    325.0,
+    45.0,
+    8.0
+   ],
+   "text": "INV.10425",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    581.0,
+    103.0,
+    44.0,
+    15.0
+   ],
+   "text": "2.1%",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    565.0,
+    221.0,
+    87.0,
+    9.0
+   ],
+   "text": "HaW & LLC",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    565.0,
+    247.0,
+    68.0,
+    8.0
+   ],
+   "text": "Blefield CHIaI",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    565.0,
+    272.0,
+    89.0,
+    10.0
+   ],
+   "text": "o*ridw sux*' co.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    565.0,
+    298.0,
+    86.0,
+    10.0
+   ],
+   "text": "Maße Stræt BONS",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    565.0,
+    325.0,
+    67.0,
+    10.0
+   ],
+   "text": "Qum Loøstics",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    562.0,
+    353.0,
+    182.0,
+    7.0
+   ],
+   "text": "• exdu&d",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    771.0,
+    82.0,
+    74.0,
+    11.0
+   ],
+   "text": "Avg. Valæ",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    772.0,
+    101.0,
+    60.0,
+    18.0
+   ],
+   "text": "$86.40",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    818.0,
+    220.0,
+    43.0,
+    10.0
+   ],
+   "text": "S44zo_m",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    851.0,
+    273.0,
+    10.0,
+    7.0
+   ],
+   "text": "75",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    818.0,
+    324.0,
+    43.0,
+    10.0
+   ],
+   "text": "$5318.20",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    877.0,
+    25.0,
+    52.0,
+    10.0
+   ],
+   "text": "Export CSV",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    873.0,
+    198.0,
+    27.0,
+    6.0
+   ],
+   "text": "Statu s",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    879.0,
+    325.0,
+    19.0,
+    7.0
+   ],
+   "text": "Paid",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:37.798860+00:00"
+}

@@ -19,8 +19,9 @@ openvino>=2024.0
 # Engine 4: Tesseract 5 (apt package, installed in Dockerfile) via pytesseract.
 pytesseract>=0.3.13
 
-# Accuracy comparison (CER / edit distance).
-python-Levenshtein>=0.26
+# Accuracy comparison (CER / edit distance). rapidfuzz (MIT) replaces the
+# GPL-2.0-or-later python-Levenshtein; same unit-cost Levenshtein distance.
+rapidfuzz>=3.14
 
 # Downstream validation phase only: reuses services/pipeline's stages
 # (separate/match/render_stage/fonts.registry) against a promising engine's

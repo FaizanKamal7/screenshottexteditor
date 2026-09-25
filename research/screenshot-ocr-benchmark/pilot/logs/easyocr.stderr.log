@@ -1,0 +1,30 @@
+
+==== start 2026-09-24T07:21:24.822512+00:00 ====
+Using CPU. Note: This module is much faster with a GPU.
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+==== start 2026-09-24T07:27:52.353467+00:00 ====
+Using CPU. Note: This module is much faster with a GPU.
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+==== start 2026-09-24T08:31:02.312522+00:00 ====
+Using CPU. Note: This module is much faster with a GPU.
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+==== start 2026-09-24T09:53:02.382642+00:00 ====
+Using CPU. Note: This module is much faster with a GPU.
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+==== start 2026-09-24T10:00:06.573798+00:00 ====
+Using CPU. Note: This module is much faster with a GPU.
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+==== start 2026-09-24T10:03:46.523805+00:00 ====
+Using CPU. Note: This module is much faster with a GPU.
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)

@@ -6,9 +6,23 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://screenshottexteditor.com',
 	output: 'server',
 	adapter: cloudflare(),
-	integrations: [react()],
+	integrations: [
+		react(),
+		{
+			name: 'client-afterload-directive',
+			hooks: {
+				'astro:config:setup': ({ addClientDirective }) => {
+					addClientDirective({
+						name: 'afterload',
+						entrypoint: './src/directives/afterload.ts',
+					});
+				},
+			},
+		},
+	],
 	vite: {
 		plugins: [tailwindcss()],
 	},

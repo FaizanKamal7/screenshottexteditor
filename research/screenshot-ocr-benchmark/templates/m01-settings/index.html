@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>m01-settings</title>
+<script src="../_shared/theme.js"></script>
+<link rel="stylesheet" href="../_shared/base.css">
+<style>
+  :root, html[data-theme="light"] {
+    --bg: #f2f2f7; --card: #ffffff; --text: #111114; --muted: #6e6e76; --faint: #b4b4bb;
+    --border: #e3e3e8; --accent: #0a66d8; --icon: #8a8a92; --danger-dim: #c9c9cf; --tabbar: #f8f8fa;
+  }
+  html[data-theme="dark"] {
+    --bg: #000000; --card: #1c1c1f; --text: #f2f2f5; --muted: #9a9aa2; --faint: #5c5c63;
+    --border: #2c2c30; --accent: #4c9bff; --icon: #7d7d85; --danger-dim: #4a4a50; --tabbar: #121214;
+  }
+  body { font-family: "Inter"; font-weight: 400; }
+  .status { display: flex; justify-content: space-between; padding: 14px 24px 0; height: 44px; font-size: 15px; font-weight: 600; }
+  .title { padding: 6px 20px 10px; font-size: 32px; font-weight: 700; line-height: 1.25; }
+  .search { margin: 0 16px 14px; height: 36px; border-radius: 10px; background: var(--card); display: flex; align-items: center; gap: 8px; padding: 0 10px; }
+  .search .ph { font-size: 16px; color: var(--muted); }
+  .card { margin: 0 16px 16px; background: var(--card); border-radius: 12px; overflow: hidden; }
+  .profile { display: flex; gap: 12px; align-items: center; padding: 12px 14px; }
+  .avatar { width: 52px; height: 52px; border-radius: 26px; background: var(--accent); flex: none; }
+  .pname { font-size: 19px; font-weight: 600; line-height: 1.3; }
+  .pmail { font-size: 13px; color: var(--muted); line-height: 1.4; }
+  .section { margin: 0 32px 6px; font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; }
+  .row { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 14px; border-top: 1px solid var(--border); }
+  .row:first-child { border-top: none; }
+  .row .label { font-size: 16px; flex: 1; line-height: 1.3; }
+  .row .value { font-size: 15px; color: var(--muted); line-height: 1.3; }
+  .row .disabled { font-size: 16px; color: var(--danger-dim); flex: 1; line-height: 1.3; }
+  .synced { margin: 0 32px 12px; font-size: 11px; color: var(--muted); line-height: 1.4; }
+  .tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 78px; background: var(--tabbar); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding-top: 8px; }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; width: 70px; }
+  .tab span { font-size: 10px; font-weight: 500; color: var(--muted); line-height: 1.3; }
+  .tab.active span { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="fid" style="left:0;top:0"></div><div class="fid" style="right:0;top:0"></div>
+  <div class="fid" style="left:0;bottom:0"></div><div class="fid" style="right:0;bottom:0"></div>
+
+  <div class="status"><span data-category="value-numeric">9:41</span><span data-category="value-numeric">87%</span></div>
+  <div class="title" data-category="heading">Settings</div>
+
+  <div class="search">
+    <svg width="16" height="16" viewBox="0 0 16 16"><circle class="s" cx="7" cy="7" r="5" stroke-width="2"/><path class="s" d="M11 11l4 4" stroke-width="2"/></svg>
+    <span class="ph" data-category="input">Search settings</span>
+  </div>
+
+  <div class="card">
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="pname" data-category="heading">Avery Collins</div>
+        <div class="pmail" data-category="caption">avery.collins@example.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-category="caption">ACCOUNT</div>
+  <div class="card">
+    <div class="row"><span class="label" data-category="label">Notifications</span><span class="value" data-category="label">On</span></div>
+    <div class="row"><span class="label" data-category="label">Privacy &amp; Security</span></div>
+    <div class="row"><span class="label" data-category="label">Storage</span><span class="value" data-category="value-numeric">12.4 GB of 64 GB</span></div>
+    <div class="row"><span class="label" data-category="label">Language</span><span class="value" data-category="label">English (US)</span></div>
+    <div class="row"><span class="label" data-category="label">Screen Time</span><span class="value" data-category="value-numeric">3h 12m</span></div>
+  </div>
+
+  <div class="section" data-category="caption">SUPPORT</div>
+  <div class="card">
+    <div class="row"><span class="label" data-category="label">Help Center</span></div>
+    <div class="row"><span class="label" data-category="label">Send Feedback</span></div>
+    <div class="row"><span class="label" data-category="label">About</span><span class="value" data-category="value-numeric">Version 4.18.2</span></div>
+    <div class="row"><span class="disabled" data-category="disabled">Delete Account</span></div>
+  </div>
+
+  <div class="synced" data-category="caption">Last synced 2 minutes ago &middot; Backup size 318 MB</div>
+
+  <div class="tabbar">
+    <div class="tab"><svg width="24" height="24" viewBox="0 0 24 24"><path class="i" d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3z"/></svg><span data-category="nav">Home</span></div>
+    <div class="tab"><svg width="24" height="24" viewBox="0 0 24 24"><circle class="s" cx="11" cy="11" r="6" stroke-width="2"/><path class="s" d="M16 16l5 5" stroke-width="2"/></svg><span data-category="nav">Search</span></div>
+    <div class="tab"><svg width="24" height="24" viewBox="0 0 24 24"><rect class="i" x="3" y="6" width="18" height="13" rx="2"/></svg><span data-category="nav">Inbox</span></div>
+    <div class="tab active"><svg width="24" height="24" viewBox="0 0 24 24"><circle class="i" cx="12" cy="12" r="8"/></svg><span data-category="nav">Settings</span></div>
+  </div>
+</body>
+</html>

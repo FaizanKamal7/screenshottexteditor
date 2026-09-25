@@ -1,0 +1,1299 @@
+{
+ "base_id": "m01-settings_dpr1_light",
+ "template_id": "m01-settings",
+ "form_factor": "mobile",
+ "dpr": 1,
+ "theme": "light",
+ "width": 390,
+ "height": 844,
+ "browser": "chromium 153.0.8010.12",
+ "lines": [
+  {
+   "text": "9:41",
+   "layout_box": [
+    24,
+    14,
+    31,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 600,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    242,
+    242,
+    247,
+    1
+   ],
+   "contrast_ratio": 16.892,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 0,
+   "ink_box": [
+    24,
+    18,
+    31,
+    12
+   ],
+   "ink_pixels": 248,
+   "line_id": "L0001",
+   "ink_box_half": [
+    12,
+    8,
+    16,
+    7
+   ],
+   "ink_pixels_half": 79
+  },
+  {
+   "text": "87%",
+   "layout_box": [
+    332,
+    14,
+    34,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 600,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    242,
+    242,
+    247,
+    1
+   ],
+   "contrast_ratio": 16.892,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 1,
+   "ink_box": [
+    332,
+    18,
+    34,
+    12
+   ],
+   "ink_pixels": 268,
+   "line_id": "L0002",
+   "ink_box_half": [
+    166,
+    8,
+    17,
+    7
+   ],
+   "ink_pixels_half": 79
+  },
+  {
+   "text": "Settings",
+   "layout_box": [
+    20,
+    50,
+    131,
+    39
+   ],
+   "font_family": "Inter",
+   "font_weight": 700,
+   "css_px": 32,
+   "xheight_px": 17.469,
+   "capheight_px": 23.281,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    242,
+    242,
+    247,
+    1
+   ],
+   "contrast_ratio": 16.892,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 2,
+   "ink_box": [
+    20,
+    56,
+    131,
+    32
+   ],
+   "ink_pixels": 2019,
+   "line_id": "L0003",
+   "ink_box_half": [
+    10,
+    28,
+    66,
+    16
+   ],
+   "ink_pixels_half": 559
+  },
+  {
+   "text": "Search settings",
+   "layout_box": [
+    50,
+    108,
+    115,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "input",
+   "stress": false,
+   "element_idx": 3,
+   "ink_box": [
+    50,
+    112,
+    116,
+    16
+   ],
+   "ink_pixels": 917,
+   "line_id": "L0004",
+   "ink_box_half": [
+    25,
+    56,
+    58,
+    8
+   ],
+   "ink_pixels_half": 274
+  },
+  {
+   "text": "Avery Collins",
+   "layout_box": [
+    94,
+    166.562,
+    122,
+    23
+   ],
+   "font_family": "Inter",
+   "font_weight": 600,
+   "css_px": 19,
+   "xheight_px": 10.372,
+   "capheight_px": 13.823,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 4,
+   "ink_box": [
+    94,
+    170,
+    123,
+    19
+   ],
+   "ink_pixels": 1145,
+   "line_id": "L0005",
+   "ink_box_half": [
+    47,
+    85,
+    61,
+    10
+   ],
+   "ink_pixels_half": 315
+  },
+  {
+   "text": "avery.collins@example.com",
+   "layout_box": [
+    94,
+    192.25,
+    171,
+    16
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 7.097,
+   "capheight_px": 9.458,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 5,
+   "ink_box": [
+    93,
+    195,
+    173,
+    13
+   ],
+   "ink_pixels": 1172,
+   "line_id": "L0006",
+   "ink_box_half": [
+    47,
+    97,
+    86,
+    7
+   ],
+   "ink_pixels_half": 358
+  },
+  {
+   "text": "ACCOUNT",
+   "layout_box": [
+    32,
+    242,
+    63.688,
+    15
+   ],
+   "font_family": "Inter",
+   "font_weight": 500,
+   "css_px": 12,
+   "xheight_px": 6.551,
+   "capheight_px": 8.73,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    242,
+    242,
+    247,
+    1
+   ],
+   "contrast_ratio": 4.529,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 6,
+   "ink_box": [
+    31,
+    245,
+    64,
+    10
+   ],
+   "ink_pixels": 427,
+   "line_id": "L0007",
+   "ink_box_half": [
+    16,
+    122,
+    32,
+    6
+   ],
+   "ink_pixels_half": 129
+  },
+  {
+   "text": "Notifications",
+   "layout_box": [
+    30,
+    274.594,
+    95,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 7,
+   "ink_box": [
+    30,
+    278,
+    96,
+    14
+   ],
+   "ink_pixels": 815,
+   "line_id": "L0008",
+   "ink_box_half": [
+    15,
+    139,
+    48,
+    7
+   ],
+   "ink_pixels_half": 247
+  },
+  {
+   "text": "On",
+   "layout_box": [
+    340,
+    275.25,
+    20,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "label",
+   "stress": false,
+   "element_idx": 8,
+   "ink_box": [
+    340,
+    279,
+    20,
+    12
+   ],
+   "ink_pixels": 157,
+   "line_id": "L0009",
+   "ink_box_half": [
+    170,
+    139,
+    10,
+    7
+   ],
+   "ink_pixels_half": 43
+  },
+  {
+   "text": "Privacy & Security",
+   "layout_box": [
+    30,
+    319.094,
+    137,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 9,
+   "ink_box": [
+    30,
+    323,
+    137,
+    16
+   ],
+   "ink_pixels": 1016,
+   "line_id": "L0010",
+   "ink_box_half": [
+    15,
+    161,
+    69,
+    9
+   ],
+   "ink_pixels_half": 317
+  },
+  {
+   "text": "Storage",
+   "layout_box": [
+    30,
+    363.094,
+    59,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 10,
+   "ink_box": [
+    30,
+    367,
+    60,
+    16
+   ],
+   "ink_pixels": 497,
+   "line_id": "L0011",
+   "ink_box_half": [
+    15,
+    183,
+    30,
+    9
+   ],
+   "ink_pixels_half": 155
+  },
+  {
+   "text": "12.4 GB of 64 GB",
+   "layout_box": [
+    239,
+    363.75,
+    121,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 11,
+   "ink_box": [
+    239,
+    367,
+    121,
+    13
+   ],
+   "ink_pixels": 844,
+   "line_id": "L0012",
+   "ink_box_half": [
+    119,
+    183,
+    61,
+    7
+   ],
+   "ink_pixels_half": 251
+  },
+  {
+   "text": "Language",
+   "layout_box": [
+    30,
+    407.094,
+    74,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 12,
+   "ink_box": [
+    30,
+    411,
+    75,
+    16
+   ],
+   "ink_pixels": 614,
+   "line_id": "L0013",
+   "ink_box_half": [
+    15,
+    205,
+    37,
+    9
+   ],
+   "ink_pixels_half": 185
+  },
+  {
+   "text": "English (US)",
+   "layout_box": [
+    273,
+    407.75,
+    87,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "label",
+   "stress": false,
+   "element_idx": 13,
+   "ink_box": [
+    273,
+    410,
+    87,
+    17
+   ],
+   "ink_pixels": 734,
+   "line_id": "L0014",
+   "ink_box_half": [
+    136,
+    205,
+    44,
+    9
+   ],
+   "ink_pixels_half": 212
+  },
+  {
+   "text": "Screen Time",
+   "layout_box": [
+    30,
+    451.094,
+    94,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 14,
+   "ink_box": [
+    30,
+    455,
+    95,
+    13
+   ],
+   "ink_pixels": 674,
+   "line_id": "L0015",
+   "ink_box_half": [
+    15,
+    227,
+    47,
+    7
+   ],
+   "ink_pixels_half": 216
+  },
+  {
+   "text": "3h 12m",
+   "layout_box": [
+    310,
+    451.75,
+    50,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 15,
+   "ink_box": [
+    310,
+    456,
+    50,
+    12
+   ],
+   "ink_pixels": 371,
+   "line_id": "L0016",
+   "ink_box_half": [
+    155,
+    227,
+    25,
+    7
+   ],
+   "ink_pixels_half": 110
+  },
+  {
+   "text": "SUPPORT",
+   "layout_box": [
+    32,
+    499,
+    59.688,
+    15
+   ],
+   "font_family": "Inter",
+   "font_weight": 500,
+   "css_px": 12,
+   "xheight_px": 6.551,
+   "capheight_px": 8.73,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    242,
+    242,
+    247,
+    1
+   ],
+   "contrast_ratio": 4.529,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 16,
+   "ink_box": [
+    32,
+    502,
+    59,
+    10
+   ],
+   "ink_pixels": 411,
+   "line_id": "L0017",
+   "ink_box_half": [
+    16,
+    251,
+    30,
+    5
+   ],
+   "ink_pixels_half": 118
+  },
+  {
+   "text": "Help Center",
+   "layout_box": [
+    30,
+    531.594,
+    90,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 17,
+   "ink_box": [
+    30,
+    536,
+    91,
+    16
+   ],
+   "ink_pixels": 695,
+   "line_id": "L0018",
+   "ink_box_half": [
+    15,
+    268,
+    45,
+    8
+   ],
+   "ink_pixels_half": 218
+  },
+  {
+   "text": "Send Feedback",
+   "layout_box": [
+    30,
+    576.094,
+    116,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 18,
+   "ink_box": [
+    30,
+    580,
+    116,
+    13
+   ],
+   "ink_pixels": 911,
+   "line_id": "L0019",
+   "ink_box_half": [
+    15,
+    290,
+    58,
+    7
+   ],
+   "ink_pixels_half": 291
+  },
+  {
+   "text": "About",
+   "layout_box": [
+    30,
+    620.094,
+    45,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    17,
+    17,
+    20,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 18.849,
+   "category": "label",
+   "stress": false,
+   "element_idx": 19,
+   "ink_box": [
+    29,
+    624,
+    47,
+    13
+   ],
+   "ink_pixels": 366,
+   "line_id": "L0020",
+   "ink_box_half": [
+    15,
+    312,
+    23,
+    7
+   ],
+   "ink_pixels_half": 115
+  },
+  {
+   "text": "Version 4.18.2",
+   "layout_box": [
+    262,
+    620.75,
+    98,
+    19
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 8.188,
+   "capheight_px": 10.913,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.054,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 20,
+   "ink_box": [
+    261,
+    624,
+    99,
+    13
+   ],
+   "ink_pixels": 731,
+   "line_id": "L0021",
+   "ink_box_half": [
+    131,
+    312,
+    49,
+    7
+   ],
+   "ink_pixels_half": 204
+  },
+  {
+   "text": "Delete Account",
+   "layout_box": [
+    30,
+    664.094,
+    115,
+    20
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 16,
+   "xheight_px": 8.734,
+   "capheight_px": 11.641,
+   "fg_rgba": [
+    201,
+    201,
+    207,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 1.648,
+   "category": "disabled",
+   "stress": false,
+   "element_idx": 21,
+   "ink_box": [
+    30,
+    668,
+    116,
+    13
+   ],
+   "ink_pixels": 879,
+   "line_id": "L0022",
+   "ink_box_half": [
+    15,
+    334,
+    58,
+    6
+   ],
+   "ink_pixels_half": 189
+  },
+  {
+   "text": "Last synced 2 minutes ago · Backup size 318 MB",
+   "layout_box": [
+    32,
+    712,
+    255,
+    14
+   ],
+   "font_family": "Inter",
+   "font_weight": 400,
+   "css_px": 11,
+   "xheight_px": 6.005,
+   "capheight_px": 8.003,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    242,
+    242,
+    247,
+    1
+   ],
+   "contrast_ratio": 4.529,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 22,
+   "ink_box": [
+    32,
+    714,
+    256,
+    12
+   ],
+   "ink_pixels": 1446,
+   "line_id": "L0023",
+   "ink_box_half": [
+    16,
+    357,
+    128,
+    6
+   ],
+   "ink_pixels_half": 459
+  },
+  {
+   "text": "Home",
+   "layout_box": [
+    34.75,
+    802,
+    28,
+    12
+   ],
+   "font_family": "Inter",
+   "font_weight": 500,
+   "css_px": 10,
+   "xheight_px": 5.459,
+   "capheight_px": 7.275,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    248,
+    248,
+    250,
+    1
+   ],
+   "contrast_ratio": 4.765,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 23,
+   "ink_box": [
+    35,
+    804,
+    28,
+    8
+   ],
+   "ink_pixels": 173,
+   "line_id": "L0024",
+   "ink_box_half": [
+    17,
+    402,
+    15,
+    4
+   ],
+   "ink_pixels_half": 47
+  },
+  {
+   "text": "Search",
+   "layout_box": [
+    129.25,
+    802,
+    34,
+    12
+   ],
+   "font_family": "Inter",
+   "font_weight": 500,
+   "css_px": 10,
+   "xheight_px": 5.459,
+   "capheight_px": 7.275,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    248,
+    248,
+    250,
+    1
+   ],
+   "contrast_ratio": 4.765,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 24,
+   "ink_box": [
+    128,
+    804,
+    35,
+    9
+   ],
+   "ink_pixels": 213,
+   "line_id": "L0025",
+   "ink_box_half": [
+    64,
+    402,
+    18,
+    5
+   ],
+   "ink_pixels_half": 60
+  },
+  {
+   "text": "Inbox",
+   "layout_box": [
+    230.25,
+    802,
+    27,
+    12
+   ],
+   "font_family": "Inter",
+   "font_weight": 500,
+   "css_px": 10,
+   "xheight_px": 5.459,
+   "capheight_px": 7.275,
+   "fg_rgba": [
+    110,
+    110,
+    118,
+    1
+   ],
+   "bg_rgba": [
+    248,
+    248,
+    250,
+    1
+   ],
+   "contrast_ratio": 4.765,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 25,
+   "ink_box": [
+    230,
+    804,
+    27,
+    8
+   ],
+   "ink_pixels": 169,
+   "line_id": "L0026",
+   "ink_box_half": [
+    115,
+    402,
+    14,
+    4
+   ],
+   "ink_pixels_half": 44
+  },
+  {
+   "text": "Settings",
+   "layout_box": [
+    322.25,
+    802,
+    38,
+    12
+   ],
+   "font_family": "Inter",
+   "font_weight": 500,
+   "css_px": 10,
+   "xheight_px": 5.459,
+   "capheight_px": 7.275,
+   "fg_rgba": [
+    10,
+    102,
+    216,
+    1
+   ],
+   "bg_rgba": [
+    248,
+    248,
+    250,
+    1
+   ],
+   "contrast_ratio": 5.07,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 26,
+   "ink_box": [
+    321,
+    804,
+    40,
+    11
+   ],
+   "ink_pixels": 267,
+   "line_id": "L0027",
+   "ink_box_half": [
+    161,
+    402,
+    20,
+    6
+   ],
+   "ink_pixels_half": 74
+  }
+ ],
+ "ignore_regions": [],
+ "icon_regions": [
+  [
+   26,
+   110,
+   16,
+   16
+  ],
+  [
+   36.75,
+   775,
+   24,
+   24
+  ],
+  [
+   134.25,
+   775,
+   24,
+   24
+  ],
+  [
+   231.75,
+   775,
+   24,
+   24
+  ],
+  [
+   329.25,
+   775,
+   24,
+   24
+  ]
+ ],
+ "downscaled_0p5": {
+  "filter": "Pillow LANCZOS",
+  "pad_px": 4,
+  "ink_threshold": 16,
+  "unowned_ink_pixels": 0,
+  "ignore_regions": [],
+  "icon_regions": [
+   [
+    13.0,
+    55.0,
+    8.0,
+    8.0
+   ],
+   [
+    18.375,
+    387.5,
+    12.0,
+    12.0
+   ],
+   [
+    67.125,
+    387.5,
+    12.0,
+    12.0
+   ],
+   [
+    115.875,
+    387.5,
+    12.0,
+    12.0
+   ],
+   [
+    164.625,
+    387.5,
+    12.0,
+    12.0
+   ]
+  ]
+ }
+}

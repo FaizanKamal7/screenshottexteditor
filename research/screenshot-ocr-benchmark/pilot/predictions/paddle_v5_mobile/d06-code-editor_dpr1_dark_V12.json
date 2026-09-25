@@ -1,0 +1,508 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 8.789425197000128,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 8.803866699978244,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "0aa51bf268b02f3889fc7ba105a784b8b1a3d7d0e128e40433105bc591402f04",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    5.0,
+    29.0,
+    7.0
+   ],
+   "text": "EXPLORER",
+   "confidence": 0.9360828399658203
+  },
+  {
+   "bbox": [
+    97.0,
+    5.0,
+    33.0,
+    7.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.9789600372314453
+  },
+  {
+   "bbox": [
+    145.0,
+    3.0,
+    41.0,
+    11.0
+   ],
+   "text": "config-Json",
+   "confidence": 0.8980470299720764
+  },
+  {
+   "bbox": [
+    199.0,
+    3.0,
+    35.0,
+    11.0
+   ],
+   "text": "READHE.nd",
+   "confidence": 0.87650465965271
+  },
+  {
+   "bbox": [
+    6.0,
+    19.0,
+    12.0,
+    7.0
+   ],
+   "text": "sre",
+   "confidence": 0.8921328186988831
+  },
+  {
+   "bbox": [
+    435.0,
+    10.0,
+    94.0,
+    14.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.975409984588623
+  },
+  {
+   "bbox": [
+    11.0,
+    27.0,
+    36.0,
+    14.0
+   ],
+   "text": "server,ts",
+   "confidence": 0.934208869934082
+  },
+  {
+   "bbox": [
+    108.0,
+    21.0,
+    25.0,
+    9.0
+   ],
+   "text": "inoore",
+   "confidence": 0.4858296811580658
+  },
+  {
+   "bbox": [
+    133.0,
+    21.0,
+    120.0,
+    10.0
+   ],
+   "text": "(ereateServer}fron\"node:http\":",
+   "confidence": 0.8521434664726257
+  },
+  {
+   "bbox": [
+    110.0,
+    32.0,
+    21.0,
+    9.0
+   ],
+   "text": "Inport",
+   "confidence": 0.7744625210762024
+  },
+  {
+   "bbox": [
+    133.0,
+    31.0,
+    131.0,
+    11.0
+   ],
+   "text": "(readFste } fron \"nede:fs/pronises\":",
+   "confidence": 0.8204589486122131
+  },
+  {
+   "bbox": [
+    434.0,
+    28.0,
+    189.0,
+    15.0
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": 0.9572040438652039
+  },
+  {
+   "bbox": [
+    12.0,
+    42.0,
+    21.0,
+    8.0
+   ],
+   "text": "db.ts",
+   "confidence": 0.9750748872756958
+  },
+  {
+   "bbox": [
+    108.0,
+    51.0,
+    163.0,
+    10.0
+   ],
+   "text": "const PORT =Number(process.env,PORT ?? 8680):",
+   "confidence": 0.7350893616676331
+  },
+  {
+   "bbox": [
+    436.0,
+    42.0,
+    181.0,
+    10.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": 0.9837098121643066
+  },
+  {
+   "bbox": [
+    11.0,
+    52.0,
+    36.0,
+    11.0
+   ],
+   "text": "routes,ts",
+   "confidence": 0.954081118106842
+  },
+  {
+   "bbox": [
+    108.0,
+    61.0,
+    129.0,
+    11.0
+   ],
+   "text": "const MAX_800Y = 1_048_576: // 1 MEB",
+   "confidence": 0.8807392716407776
+  },
+  {
+   "bbox": [
+    436.0,
+    53.0,
+    82.0,
+    11.0
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9960822463035583
+  },
+  {
+   "bbox": [
+    4.0,
+    64.0,
+    46.0,
+    10.0
+   ],
+   "text": "package-json",
+   "confidence": 0.8941141963005066
+  },
+  {
+   "bbox": [
+    434.0,
+    69.0,
+    195.0,
+    12.0
+   ],
+   "text": "Pagination is I-indexed. Pages above Soo are rejected",
+   "confidence": 0.9462144374847412
+  },
+  {
+   "bbox": [
+    109.0,
+    80.0,
+    171.0,
+    11.0
+   ],
+   "text": "type Route =(req: Request)> ProniseeResponse>",
+   "confidence": 0.8370166420936584
+  },
+  {
+   "bbox": [
+    436.0,
+    83.0,
+    184.0,
+    11.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": 0.9870144724845886
+  },
+  {
+   "bbox": [
+    109.0,
+    101.0,
+    138.0,
+    10.0
+   ],
+   "text": "const routes =new Map<string, Route>(E",
+   "confidence": 0.8464576601982117
+  },
+  {
+   "bbox": [
+    435.0,
+    93.0,
+    153.0,
+    12.0
+   ],
+   "text": "use the export job for bullk access instead.",
+   "confidence": 0.97491455078125
+  },
+  {
+   "bbox": [
+    115.0,
+    120.0,
+    99.0,
+    11.0
+   ],
+   "text": "[-/invoices\",tistImvolces】.",
+   "confidence": 0.7188751697540283
+  },
+  {
+   "bbox": [
+    117.0,
+    111.0,
+    192.0,
+    11.0
+   ],
+   "text": "[\"/heaten\", asyne () > json(( ok:true, ugtime:0 )],",
+   "confidence": 0.7550548315048218
+  },
+  {
+   "bbox": [
+    97.0,
+    123.0,
+    7.0,
+    7.0
+   ],
+   "text": "11",
+   "confidence": 0.99580317735672
+  },
+  {
+   "bbox": [
+    440.0,
+    125.0,
+    72.0,
+    13.0
+   ],
+   "text": "during local testing-",
+   "confidence": 0.9256495237350464
+  },
+  {
+   "bbox": [
+    441.0,
+    116.0,
+    176.0,
+    10.0
+   ],
+   "text": "Tipx set PORT-9090 to run two instances side by side",
+   "confidence": 0.9526395201683044
+  },
+  {
+   "bbox": [
+    93.0,
+    129.0,
+    13.0,
+    12.0
+   ],
+   "text": "12",
+   "confidence": 0.900863766670227
+  },
+  {
+   "bbox": [
+    108.0,
+    132.0,
+    13.0,
+    10.0
+   ],
+   "text": "1):",
+   "confidence": 0.7837793231010437
+  },
+  {
+   "bbox": [
+    95.0,
+    142.0,
+    10.0,
+    9.0
+   ],
+   "text": "13",
+   "confidence": 0.976199746131897
+  },
+  {
+   "bbox": [
+    108.0,
+    151.0,
+    178.0,
+    10.0
+   ],
+   "text": "export asyne funetion tistIrvolces(req: Request)(",
+   "confidence": 0.8881687521934509
+  },
+  {
+   "bbox": [
+    436.0,
+    148.0,
+    120.0,
+    10.0
+   ],
+   "text": "Glyph check: Il1| o0o rn m SS 8B",
+   "confidence": 0.8600347638130188
+  },
+  {
+   "bbox": [
+    95.0,
+    162.0,
+    10.0,
+    9.0
+   ],
+   "text": "15",
+   "confidence": 0.9974915385246277
+  },
+  {
+   "bbox": [
+    116.0,
+    160.0,
+    245.0,
+    11.0
+   ],
+   "text": "const poge=Mumber(ner u.(req.urt).searesParams.get(\"page\")\"1*)",
+   "confidence": 0.746199369430542
+  },
+  {
+   "bbox": [
+    95.0,
+    172.0,
+    9.0,
+    8.0
+   ],
+   "text": "16",
+   "confidence": 0.9924030303955078
+  },
+  {
+   "bbox": [
+    95.0,
+    181.0,
+    9.0,
+    10.0
+   ],
+   "text": "17",
+   "confidence": 0.9949382543563843
+  },
+  {
+   "bbox": [
+    114.0,
+    179.0,
+    252.0,
+    15.0
+   ],
+   "text": "const rows = amait do.qvery(*sELEcT 1d, totaL FRoN Involces LInIT 25*):",
+   "confidence": 0.8233104944229126
+  },
+  {
+   "bbox": [
+    94.0,
+    190.0,
+    12.0,
+    12.0
+   ],
+   "text": "?",
+   "confidence": 0.17532676458358765
+  },
+  {
+   "bbox": [
+    117.0,
+    192.0,
+    98.0,
+    10.0
+   ],
+   "text": "return json(( page, rous )):",
+   "confidence": 0.9014800190925598
+  },
+  {
+   "bbox": [
+    95.0,
+    200.0,
+    11.0,
+    11.0
+   ],
+   "text": "29",
+   "confidence": 0.7634449005126953
+  },
+  {
+   "bbox": [
+    94.0,
+    211.0,
+    10.0,
+    10.0
+   ],
+   "text": "2",
+   "confidence": 0.24925267696380615
+  },
+  {
+   "bbox": [
+    95.0,
+    222.0,
+    10.0,
+    8.0
+   ],
+   "text": "21",
+   "confidence": 0.9946463108062744
+  },
+  {
+   "bbox": [
+    107.0,
+    221.0,
+    126.0,
+    10.0
+   ],
+   "text": "createServer(handLer).tisten(PoRT):",
+   "confidence": 0.8974993228912354
+  },
+  {
+   "bbox": [
+    1.0,
+    385.0,
+    100.0,
+    13.0
+   ],
+   "text": "maln0 errers, 2 warnirgs",
+   "confidence": 0.6779878735542297
+  },
+  {
+   "bbox": [
+    472.0,
+    387.0,
+    121.0,
+    11.0
+   ],
+   "text": "Ln 14, Cot 27 Spaces:2UFF-8",
+   "confidence": 0.7575572729110718
+  },
+  {
+   "bbox": [
+    593.0,
+    388.0,
+    42.0,
+    10.0
+   ],
+   "text": "Tyoescrlot",
+   "confidence": 0.7999140024185181
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:01:20.892742+00:00"
+}

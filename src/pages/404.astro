@@ -1,5 +1,7 @@
 ---
-export const prerender = true;
+// Server-rendered on purpose: a prerendered 404.html is served by Workers Assets as a plain
+// file, so /404 itself answered 200 (a soft 404). Rendered by Astro, the route always gets 404.
+export const prerender = false;
 
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
@@ -12,6 +14,7 @@ import Button from '../components/Button.astro';
 <Layout
 	title="404 — Page not found | ScreenshotTextEditor"
 	description="The page you're looking for doesn't exist, moved, or the link is broken."
+	noindex
 >
 	<Nav />
 

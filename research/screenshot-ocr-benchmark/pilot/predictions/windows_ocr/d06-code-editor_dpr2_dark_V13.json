@@ -1,0 +1,436 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d06-code-editor_dpr2_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.14629689999856055,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.18065379999461584,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "474c7d4ddb1c76a86f8fc1572f1640433a0d6520555c300010b357957b580c9e",
+ "lines": [
+  {
+   "bbox": [
+    14.0,
+    15.0,
+    55.0,
+    8.0
+   ],
+   "text": "EXPLORER",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    15.0,
+    43.0,
+    20.0,
+    8.0
+   ],
+   "text": "src",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    28.0,
+    64.0,
+    64.0,
+    10.0
+   ],
+   "text": "Server. ts",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    29.0,
+    110.0,
+    62.0,
+    10.0
+   ],
+   "text": "routes. ts",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    14.0,
+    132.0,
+    84.0,
+    13.0
+   ],
+   "text": "package. json",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    14.0,
+    154.0,
+    91.0,
+    13.0
+   ],
+   "text": "tsconfig.json",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    197.0,
+    13.0,
+    62.0,
+    10.0
+   ],
+   "text": "server. ts",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    293.0,
+    12.0,
+    76.0,
+    12.0
+   ],
+   "text": "config.json",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    403.0,
+    13.0,
+    62.0,
+    9.0
+   ],
+   "text": "README. md",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    202.0,
+    49.0,
+    6.0,
+    9.0
+   ],
+   "text": "1",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    202.0,
+    109.0,
+    5.0,
+    9.0
+   ],
+   "text": "4",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    195.0,
+    309.0,
+    12.0,
+    9.0
+   ],
+   "text": "14",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    195.0,
+    389.0,
+    12.0,
+    9.0
+   ],
+   "text": "18",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    195.0,
+    429.0,
+    13.0,
+    10.0
+   ],
+   "text": "28",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    195.0,
+    449.0,
+    13.0,
+    9.0
+   ],
+   "text": "21",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    48.0,
+    284.0,
+    13.0
+   ],
+   "text": "import { createSerwer from \"node:http\";",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    68.0,
+    305.0,
+    12.0
+   ],
+   "text": "import { readFiIe } from \"node:fs/promises\";",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    108.0,
+    319.0,
+    12.0
+   ],
+   "text": "const PORT = Number(process.env.PORT ?? 8888);",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    128.0,
+    251.0,
+    12.0
+   ],
+   "text": "const MAX_BODY = // 1 MiB",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    220.0,
+    168.0,
+    341.0,
+    13.0
+   ],
+   "text": "type Route = (req: Request) promise<Response»;",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    326.0,
+    211.0,
+    20.0,
+    8.0
+   ],
+   "text": "new",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    209.0,
+    97.0,
+    10.0
+   ],
+   "text": "const routes -",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    249.0,
+    228.0,
+    60.0,
+    12.0
+   ],
+   "text": "[health\" ,",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    319.0,
+    228.0,
+    249.0,
+    12.0
+   ],
+   "text": "async ( ) 0k: true, uptime.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    236.0,
+    248.0,
+    192.0,
+    12.0
+   ],
+   "text": "[ \" / invoices\", listlnvoices] ,",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    307.0,
+    349.0,
+    13.0
+   ],
+   "text": "export async function listlnvoices(req: Request) {",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    312.0,
+    328.0,
+    410.0,
+    13.0
+   ],
+   "text": "- Number(new URL (req. urt). searchParams. ?? \"1\");",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    235.0,
+    329.0,
+    69.0,
+    12.0
+   ],
+   "text": "const page",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    235.0,
+    347.0,
+    473.0,
+    14.0
+   ],
+   "text": "if (page 1 II page > 588) return error: \"bad page\" } , 408);",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    235.0,
+    368.0,
+    494.0,
+    12.0
+   ],
+   "text": "const rows = await db. ld, total FROM invoices LIMIT 25\");",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    235.0,
+    388.0,
+    193.0,
+    13.0
+   ],
+   "text": "return json({ page, rows Y);",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    221.0,
+    448.0,
+    242.0,
+    12.0
+   ],
+   "text": "createserver(handler). Listen (PORT) ;",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    25.0,
+    179.0,
+    23.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    64.0,
+    369.0,
+    16.0
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    88.0,
+    357.0,
+    15.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    111.0,
+    161.0,
+    15.0
+   ],
+   "text": "touching the database.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    146.0,
+    381.0,
+    15.0
+   ],
+   "text": "pagination is I-indexed. Pages above 500 are rejected",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    170.0,
+    362.0,
+    15.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    875.0,
+    192.0,
+    301.0,
+    16.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    887.0,
+    236.0,
+    345.0,
+    15.0
+   ],
+   "text": "Tip: set PORT=9090 to run two instances side by side",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    887.0,
+    257.0,
+    134.0,
+    15.0
+   ],
+   "text": "during local testing.",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:00.771619+00:00"
+}

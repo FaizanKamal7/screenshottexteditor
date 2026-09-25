@@ -1,0 +1,548 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 9.348767124000005,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 9.361301600001752,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "c03904f2c9e3f635d40e4ab156645b8cf8f3304ff6488d3eda2c999e72e6fc2d",
+ "lines": [
+  {
+   "bbox": [
+    5.0,
+    3.0,
+    31.0,
+    11.0
+   ],
+   "text": "EXPLORER",
+   "confidence": 0.6272827386856079
+  },
+  {
+   "bbox": [
+    97.0,
+    5.0,
+    34.0,
+    7.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.8623056411743164
+  },
+  {
+   "bbox": [
+    144.0,
+    3.0,
+    46.0,
+    11.0
+   ],
+   "text": "cout1g-3s00",
+   "confidence": 0.6443756222724915
+  },
+  {
+   "bbox": [
+    197.0,
+    3.0,
+    37.0,
+    11.0
+   ],
+   "text": "WEADME.NE",
+   "confidence": 0.64728844165802
+  },
+  {
+   "bbox": [
+    6.0,
+    18.0,
+    15.0,
+    10.0
+   ],
+   "text": "src",
+   "confidence": 0.8578815460205078
+  },
+  {
+   "bbox": [
+    435.0,
+    9.0,
+    94.0,
+    15.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.9943196773529053
+  },
+  {
+   "bbox": [
+    9.0,
+    27.0,
+    38.0,
+    13.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.8928818106651306
+  },
+  {
+   "bbox": [
+    109.0,
+    22.0,
+    25.0,
+    9.0
+   ],
+   "text": "isport",
+   "confidence": 0.7432351112365723
+  },
+  {
+   "bbox": [
+    132.0,
+    20.0,
+    123.0,
+    13.0
+   ],
+   "text": "createServer  fron\"nose:http:",
+   "confidence": 0.7709795832633972
+  },
+  {
+   "bbox": [
+    111.0,
+    32.0,
+    20.0,
+    9.0
+   ],
+   "text": "port",
+   "confidence": 0.8321093916893005
+  },
+  {
+   "bbox": [
+    133.0,
+    31.0,
+    131.0,
+    11.0
+   ],
+   "text": "(reosFslefrom\"node:fs/promises\"",
+   "confidence": 0.7700873017311096
+  },
+  {
+   "bbox": [
+    433.0,
+    28.0,
+    190.0,
+    15.0
+   ],
+   "text": "Rvery request passes through the router before any",
+   "confidence": 0.9673848748207092
+  },
+  {
+   "bbox": [
+    11.0,
+    42.0,
+    22.0,
+    8.0
+   ],
+   "text": "db.ts",
+   "confidence": 0.7415430545806885
+  },
+  {
+   "bbox": [
+    434.0,
+    39.0,
+    183.0,
+    14.0
+   ],
+   "text": "handler runs, Unknown paths return 404 without",
+   "confidence": 0.9804592728614807
+  },
+  {
+   "bbox": [
+    9.0,
+    50.0,
+    38.0,
+    14.0
+   ],
+   "text": "routes.ts",
+   "confidence": 0.8513759970664978
+  },
+  {
+   "bbox": [
+    108.0,
+    52.0,
+    21.0,
+    8.0
+   ],
+   "text": "const",
+   "confidence": 0.6447044014930725
+  },
+  {
+   "bbox": [
+    126.0,
+    49.0,
+    145.0,
+    14.0
+   ],
+   "text": "PoRT  bomoer [process.env.P0RT 7 888):",
+   "confidence": 0.6594923138618469
+  },
+  {
+   "bbox": [
+    435.0,
+    51.0,
+    85.0,
+    14.0
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9895632266998291
+  },
+  {
+   "bbox": [
+    4.0,
+    63.0,
+    47.0,
+    11.0
+   ],
+   "text": "packxgt-Json",
+   "confidence": 0.6471921801567078
+  },
+  {
+   "bbox": [
+    109.0,
+    63.0,
+    22.0,
+    8.0
+   ],
+   "text": "coost",
+   "confidence": 0.8244491815567017
+  },
+  {
+   "bbox": [
+    128.0,
+    61.0,
+    110.0,
+    11.0
+   ],
+   "text": "MAX_800Y1.048.576://1HEB",
+   "confidence": 0.8207118511199951
+  },
+  {
+   "bbox": [
+    5.0,
+    74.0,
+    49.0,
+    10.0
+   ],
+   "text": "tsconf1g-fson",
+   "confidence": 0.8566348552703857
+  },
+  {
+   "bbox": [
+    434.0,
+    69.0,
+    196.0,
+    13.0
+   ],
+   "text": "Pagination is 1-indexed. Pages above S00 are rejected",
+   "confidence": 0.9460839033126831
+  },
+  {
+   "bbox": [
+    108.0,
+    80.0,
+    173.0,
+    11.0
+   ],
+   "text": "type Route (req:Reguest)  PronitoeResooose>;",
+   "confidence": 0.6503319144248962
+  },
+  {
+   "bbox": [
+    433.0,
+    80.0,
+    189.0,
+    15.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": 0.9685431122779846
+  },
+  {
+   "bbox": [
+    108.0,
+    101.0,
+    140.0,
+    10.0
+   ],
+   "text": "const routes new Mapestrsng. RauteoE",
+   "confidence": 0.7396730184555054
+  },
+  {
+   "bbox": [
+    435.0,
+    94.0,
+    154.0,
+    10.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": 0.974332869052887
+  },
+  {
+   "bbox": [
+    97.0,
+    114.0,
+    7.0,
+    5.0
+   ],
+   "text": "1D",
+   "confidence": 0.4675300717353821
+  },
+  {
+   "bbox": [
+    114.0,
+    109.0,
+    197.0,
+    14.0
+   ],
+   "text": "[\"/healtn\",asyme ()=→ jont{ ok:trvt, vgtime:0 )]",
+   "confidence": 0.5634667277336121
+  },
+  {
+   "bbox": [
+    96.0,
+    121.0,
+    9.0,
+    9.0
+   ],
+   "text": "11",
+   "confidence": 0.8248823285102844
+  },
+  {
+   "bbox": [
+    113.0,
+    121.0,
+    101.0,
+    10.0
+   ],
+   "text": "[/invoices\",tistimvosces]",
+   "confidence": 0.6530489921569824
+  },
+  {
+   "bbox": [
+    440.0,
+    125.0,
+    72.0,
+    13.0
+   ],
+   "text": "during local testing.",
+   "confidence": 0.9366850852966309
+  },
+  {
+   "bbox": [
+    441.0,
+    116.0,
+    176.0,
+    10.0
+   ],
+   "text": "Tipc set POnT-909o to run two instances side by side",
+   "confidence": 0.8580894470214844
+  },
+  {
+   "bbox": [
+    95.0,
+    131.0,
+    10.0,
+    10.0
+   ],
+   "text": "22",
+   "confidence": 0.7663765549659729
+  },
+  {
+   "bbox": [
+    107.0,
+    130.0,
+    15.0,
+    13.0
+   ],
+   "text": "1):",
+   "confidence": 0.6026883125305176
+  },
+  {
+   "bbox": [
+    95.0,
+    141.0,
+    9.0,
+    10.0
+   ],
+   "text": "11",
+   "confidence": 0.616939902305603
+  },
+  {
+   "bbox": [
+    95.0,
+    150.0,
+    9.0,
+    10.0
+   ],
+   "text": "14",
+   "confidence": 0.5396044254302979
+  },
+  {
+   "bbox": [
+    108.0,
+    151.0,
+    180.0,
+    10.0
+   ],
+   "text": "exgort asye fonction ListInvolces(reg:Request)",
+   "confidence": 0.6842314004898071
+  },
+  {
+   "bbox": [
+    434.0,
+    145.0,
+    123.0,
+    13.0
+   ],
+   "text": "Glyph check: tla| o0o n m 5s 88",
+   "confidence": 0.7752124667167664
+  },
+  {
+   "bbox": [
+    94.0,
+    159.0,
+    12.0,
+    13.0
+   ],
+   "text": "2",
+   "confidence": 0.21970130503177643
+  },
+  {
+   "bbox": [
+    111.0,
+    158.0,
+    252.0,
+    14.0
+   ],
+   "text": "const poge =Munber (new UR.(req.urt].searchParans.got(page) \"2):",
+   "confidence": 0.6947330236434937
+  },
+  {
+   "bbox": [
+    95.0,
+    172.0,
+    10.0,
+    9.0
+   ],
+   "text": "16",
+   "confidence": 0.3170248866081238
+  },
+  {
+   "bbox": [
+    112.0,
+    170.0,
+    246.0,
+    13.0
+   ],
+   "text": "1r (page <1 11 poge > sos) return Sson({error:\"bad page), 4o0):",
+   "confidence": 0.6654849052429199
+  },
+  {
+   "bbox": [
+    94.0,
+    180.0,
+    12.0,
+    13.0
+   ],
+   "text": "2",
+   "confidence": 0.0920356884598732
+  },
+  {
+   "bbox": [
+    114.0,
+    180.0,
+    252.0,
+    11.0
+   ],
+   "text": "const rOs ait .query[\"SELECT sd, totat FRom Snvoices LImIT 25):",
+   "confidence": 0.6203770041465759
+  },
+  {
+   "bbox": [
+    94.0,
+    199.0,
+    22.0,
+    12.0
+   ],
+   "text": "11",
+   "confidence": 0.45713308453559875
+  },
+  {
+   "bbox": [
+    95.0,
+    191.0,
+    9.0,
+    9.0
+   ],
+   "text": "18",
+   "confidence": 0.8657193779945374
+  },
+  {
+   "bbox": [
+    116.0,
+    193.0,
+    98.0,
+    7.0
+   ],
+   "text": "return jon(poge, roas ))",
+   "confidence": 0.750485897064209
+  },
+  {
+   "bbox": [
+    94.0,
+    210.0,
+    11.0,
+    12.0
+   ],
+   "text": "2",
+   "confidence": 0.08847583830356598
+  },
+  {
+   "bbox": [
+    94.0,
+    221.0,
+    139.0,
+    10.0
+   ],
+   "text": "21createServer(handLer).1isten(PoRT)：",
+   "confidence": 0.7852630019187927
+  },
+  {
+   "bbox": [
+    1.0,
+    387.0,
+    100.0,
+    11.0
+   ],
+   "text": "inas in",
+   "confidence": 0.41971373558044434
+  },
+  {
+   "bbox": [
+    472.0,
+    387.0,
+    165.0,
+    11.0
+   ],
+   "text": "Ln14 Ct 27 Sces:2UTF-8 TY0eSEPr",
+   "confidence": 0.5006813406944275
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:01:30.256947+00:00"
+}

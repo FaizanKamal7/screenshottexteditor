@@ -1,0 +1,366 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d06-code-editor_dpr1p5_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.15362279998953454,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.1790986999985762,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "6b8b1dcd0e8b9664cb44dde684f656560b34b9d9dbce9e7c533919cff9f29403",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    11.0,
+    41.0,
+    7.0
+   ],
+   "text": "EXPLORER",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    21.0,
+    49.0,
+    35.0,
+    7.0
+   ],
+   "text": "Server.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    22.0,
+    83.0,
+    46.0,
+    7.0
+   ],
+   "text": "routes. ts",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    11.0,
+    100.0,
+    63.0,
+    9.0
+   ],
+   "text": "package. son",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    11.0,
+    116.0,
+    68.0,
+    9.0
+   ],
+   "text": "tscmfig. j son",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    148.0,
+    10.0,
+    46.0,
+    7.0
+   ],
+   "text": "serouer. ts",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    219.0,
+    9.0,
+    130.0,
+    10.0
+   ],
+   "text": "canfig. j san REAOHE.rd",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    166.0,
+    36.0,
+    213.0,
+    9.0
+   ],
+   "text": "import { createServer frqan \"node:httø\";",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    203.0,
+    51.0,
+    192.0,
+    9.0
+   ],
+   "text": "{ \"node: fs/øromises\";",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    165.0,
+    81.0,
+    240.0,
+    9.0
+   ],
+   "text": "canst PORT = Nunber(Drocess.env.PoRT Eese);",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    152.0,
+    96.0,
+    181.0,
+    9.0
+   ],
+   "text": "S canst NAX_a00Y = // 1",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    165.0,
+    126.0,
+    141.0,
+    9.0
+   ],
+   "text": "type Raute = (req: Request)",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    151.0,
+    156.0,
+    170.0,
+    10.0
+   ],
+   "text": "9 canst routes = nen Hazxstr•ing,",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    177.0,
+    171.0,
+    245.0,
+    9.0
+   ],
+   "text": "[\"/health\", asyrr 0k: true, uptine",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    177.0,
+    186.0,
+    144.0,
+    9.0
+   ],
+   "text": "[\"/invoices\", listtnvoicesl,",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    166.0,
+    201.0,
+    13.0,
+    9.0
+   ],
+   "text": "n;",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    19.0,
+    134.0,
+    17.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    48.0,
+    276.0,
+    12.0
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    66.0,
+    267.0,
+    12.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    83.0,
+    120.0,
+    12.0
+   ],
+   "text": "touching the database.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    109.0,
+    285.0,
+    12.0
+   ],
+   "text": "Pagination is I•indexed. Pages above 500 are rejected",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    127.0,
+    271.0,
+    12.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    657.0,
+    144.0,
+    225.0,
+    12.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    665.0,
+    177.0,
+    260.0,
+    11.0
+   ],
+   "text": "Tip: set to run two instances side by side",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    666.0,
+    193.0,
+    100.0,
+    11.0
+   ],
+   "text": "during tßting.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    146.0,
+    202.0,
+    10.0,
+    7.0
+   ],
+   "text": "12",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    146.0,
+    307.0,
+    10.0,
+    7.0
+   ],
+   "text": "19",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    146.0,
+    337.0,
+    10.0,
+    7.0
+   ],
+   "text": "21",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    165.0,
+    231.0,
+    262.0,
+    9.0
+   ],
+   "text": "export async function Ustlnvaices(rea: Request) {",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    176.0,
+    246.0,
+    192.0,
+    10.0
+   ],
+   "text": "const page = Number(nea uRL(req.urI).",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    176.0,
+    261.0,
+    355.0,
+    10.0
+   ],
+   "text": "if (øage < 1 II gage > See) return \"bad page\" } , 4ae);",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    176.0,
+    276.0,
+    371.0,
+    9.0
+   ],
+   "text": "const = ld, totat FRO\" invoices 25\");",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    176.0,
+    291.0,
+    145.0,
+    10.0
+   ],
+   "text": "return page, h);",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    277.0,
+    336.0,
+    70.0,
+    9.0
+   ],
+   "text": ". Usten(PORT);",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:55.879901+00:00"
+}

@@ -1,0 +1,41 @@
+{
+ "10": {
+  "truth": 0.040089248701803616,
+  "n_sims": 2000,
+  "b": 1000,
+  "n_per_stratum": 10,
+  "coverage": 0.903,
+  "band": [
+   0.91,
+   0.99
+  ],
+  "pass": false,
+  "mean_half_width": 0.015235059071502537
+ },
+ "20": {
+  "truth": 0.040089248701803616,
+  "n_sims": 2000,
+  "b": 1000,
+  "n_per_stratum": 20,
+  "coverage": 0.908,
+  "band": [
+   0.91,
+   0.99
+  ],
+  "pass": false,
+  "mean_half_width": 0.011362341656811097
+ },
+ "40": {
+  "truth": 0.040089248701803616,
+  "n_sims": 2000,
+  "b": 1000,
+  "n_per_stratum": 40,
+  "coverage": 0.9275,
+  "band": [
+   0.91,
+   0.99
+  ],
+  "pass": true,
+  "mean_half_width": 0.008205850826714703
+ }
+}

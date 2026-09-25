@@ -7,6 +7,10 @@ interface Props {
 
 const { href, variant = 'primary', class: className = '' } = Astro.props;
 
+// The pill renders 36–38px tall; the invisible ::before stretches the tappable area 4px above
+// and below (to ~44–46px) without changing how the button looks. Every Button group is spaced
+// with gap-3, so the extended areas never meet a neighbour's.
+
 const variantClasses: Record<NonNullable<Props['variant']>, string> = {
 	primary: 'bg-ink text-on-primary hover:bg-ink/90',
 	secondary: 'bg-canvas-elevated text-ink border border-hairline hover:border-ink/30',
@@ -17,7 +21,7 @@ const variantClasses: Record<NonNullable<Props['variant']>, string> = {
 <a
 	href={href}
 	class:list={[
-		'inline-flex items-center justify-center gap-1.5 rounded-full px-3.5 py-2 text-[15px] font-medium leading-5 transition-colors',
+		'relative inline-flex items-center justify-center gap-1.5 rounded-full px-3.5 py-2 text-[15px] font-medium leading-5 transition-colors before:absolute before:inset-x-0 before:-inset-y-1',
 		variantClasses[variant],
 		className,
 	]}

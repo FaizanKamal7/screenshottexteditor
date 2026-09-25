@@ -1,0 +1,1022 @@
+{
+ "base_id": "m05-chat_dpr2_light",
+ "template_id": "m05-chat",
+ "form_factor": "mobile",
+ "dpr": 2,
+ "theme": "light",
+ "width": 780,
+ "height": 1688,
+ "browser": "chromium 153.0.8010.12",
+ "lines": [
+  {
+   "text": "9:41",
+   "layout_box": [
+    44,
+    24,
+    56,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    250,
+    251,
+    252,
+    1
+   ],
+   "contrast_ratio": 17.155,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 0,
+   "ink_pixels": 578,
+   "ink_box": [
+    44,
+    30,
+    52,
+    20
+   ],
+   "line_id": "L0001"
+  },
+  {
+   "text": "5G 72%",
+   "layout_box": [
+    642,
+    24,
+    94,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    250,
+    251,
+    252,
+    1
+   ],
+   "contrast_ratio": 17.155,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 1,
+   "ink_pixels": 989,
+   "ink_box": [
+    643,
+    30,
+    94,
+    20
+   ],
+   "line_id": "L0002"
+  },
+  {
+   "text": "Jordan Lee",
+   "layout_box": [
+    200,
+    99.094,
+    168,
+    40
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 17,
+   "xheight_px": 17.963,
+   "capheight_px": 24.172,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    250,
+    251,
+    252,
+    1
+   ],
+   "contrast_ratio": 17.155,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 2,
+   "ink_pixels": 2032,
+   "ink_box": [
+    200,
+    106,
+    168,
+    26
+   ],
+   "line_id": "L0003"
+  },
+  {
+   "text": "Active 5 min ago",
+   "layout_box": [
+    200,
+    139.281,
+    184,
+    34
+   ],
+   "font_family": "Noto Sans",
+   "font_weight": 400,
+   "css_px": 12,
+   "xheight_px": 12.864,
+   "capheight_px": 17.136,
+   "fg_rgba": [
+    107,
+    112,
+    121,
+    1
+   ],
+   "bg_rgba": [
+    250,
+    251,
+    252,
+    1
+   ],
+   "contrast_ratio": 4.804,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 3,
+   "ink_pixels": 1569,
+   "ink_box": [
+    199,
+    148,
+    185,
+    24
+   ],
+   "line_id": "L0004"
+  },
+  {
+   "text": "Tue, Sep 22 · 4:12 PM",
+   "layout_box": [
+    282,
+    222,
+    216,
+    30
+   ],
+   "font_family": "Noto Sans",
+   "font_weight": 400,
+   "css_px": 11,
+   "xheight_px": 11.792,
+   "capheight_px": 15.708,
+   "fg_rgba": [
+    107,
+    112,
+    121,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 4.978,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 4,
+   "ink_pixels": 1608,
+   "ink_box": [
+    281,
+    230,
+    216,
+    22
+   ],
+   "line_id": "L0005"
+  },
+  {
+   "text": "Hey! Are we still on for the design",
+   "layout_box": [
+    52,
+    286.781,
+    452,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 5,
+   "ink_pixels": 4504,
+   "ink_box": [
+    53,
+    291,
+    451,
+    29
+   ],
+   "line_id": "L0006"
+  },
+  {
+   "text": "review tomorrow morning?",
+   "layout_box": [
+    52,
+    327.281,
+    358,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 5,
+   "ink_pixels": 3584,
+   "ink_box": [
+    53,
+    334,
+    357,
+    28
+   ],
+   "line_id": "L0007"
+  },
+  {
+   "text": "Yes, 10:30 in room 4B. I'll bring the",
+   "layout_box": [
+    232,
+    415.781,
+    460,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    26,
+    115,
+    232,
+    1
+   ],
+   "contrast_ratio": 4.505,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 6,
+   "ink_pixels": 4543,
+   "ink_box": [
+    231,
+    421,
+    461,
+    29
+   ],
+   "line_id": "L0008"
+  },
+  {
+   "text": "updated mockups and the",
+   "layout_box": [
+    232,
+    456.281,
+    344,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    26,
+    115,
+    232,
+    1
+   ],
+   "contrast_ratio": 4.505,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 6,
+   "ink_pixels": 3691,
+   "ink_box": [
+    233,
+    461,
+    343,
+    29
+   ],
+   "line_id": "L0009"
+  },
+  {
+   "text": "component list.",
+   "layout_box": [
+    232,
+    496.781,
+    210,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    26,
+    115,
+    232,
+    1
+   ],
+   "contrast_ratio": 4.505,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 6,
+   "ink_pixels": 2112,
+   "ink_box": [
+    232,
+    501,
+    209,
+    29
+   ],
+   "line_id": "L0010"
+  },
+  {
+   "text": "Great. Can you also check the",
+   "layout_box": [
+    52,
+    585.281,
+    400,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 7,
+   "ink_pixels": 3883,
+   "ink_box": [
+    53,
+    591,
+    399,
+    29
+   ],
+   "line_id": "L0011"
+  },
+  {
+   "text": "invoice total? I got $1,248.50 but",
+   "layout_box": [
+    52,
+    625.781,
+    432,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 7,
+   "ink_pixels": 4413,
+   "ink_box": [
+    53,
+    629,
+    431,
+    31
+   ],
+   "line_id": "L0012"
+  },
+  {
+   "text": "finance says $1,284.50.",
+   "layout_box": [
+    52,
+    666.281,
+    308,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 7,
+   "ink_pixels": 3212,
+   "ink_box": [
+    51,
+    669,
+    308,
+    31
+   ],
+   "line_id": "L0013"
+  },
+  {
+   "text": "4:19 PM",
+   "layout_box": [
+    349.0,
+    736.781,
+    82,
+    30
+   ],
+   "font_family": "Noto Sans",
+   "font_weight": 400,
+   "css_px": 11,
+   "xheight_px": 11.792,
+   "capheight_px": 15.708,
+   "fg_rgba": [
+    107,
+    112,
+    121,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 4.978,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 8,
+   "ink_pixels": 714,
+   "ink_box": [
+    348,
+    744,
+    82,
+    17
+   ],
+   "line_id": "L0014"
+  },
+  {
+   "text": "Good catch, the second one is right.",
+   "layout_box": [
+    232,
+    801.562,
+    482,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    26,
+    115,
+    232,
+    1
+   ],
+   "contrast_ratio": 4.505,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 9,
+   "ink_pixels": 4724,
+   "ink_box": [
+    233,
+    807,
+    480,
+    29
+   ],
+   "line_id": "L0015"
+  },
+  {
+   "text": "Sending the PDF now.",
+   "layout_box": [
+    232,
+    842.062,
+    288,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    26,
+    115,
+    232,
+    1
+   ],
+   "contrast_ratio": 4.505,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 9,
+   "ink_pixels": 3081,
+   "ink_box": [
+    232,
+    847,
+    287,
+    29
+   ],
+   "line_id": "L0016"
+  },
+  {
+   "text": "Q3-invoice-final.pdf",
+   "layout_box": [
+    394,
+    936.562,
+    254,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    246,
+    247,
+    249,
+    1
+   ],
+   "contrast_ratio": 16.581,
+   "category": "label",
+   "stress": false,
+   "element_idx": 10,
+   "ink_pixels": 2767,
+   "ink_box": [
+    394,
+    941,
+    255,
+    27
+   ],
+   "line_id": "L0017"
+  },
+  {
+   "text": "2.4 MB · 6 pages",
+   "layout_box": [
+    394,
+    968.938,
+    184,
+    34
+   ],
+   "font_family": "Noto Sans",
+   "font_weight": 400,
+   "css_px": 12,
+   "xheight_px": 12.864,
+   "capheight_px": 17.136,
+   "fg_rgba": [
+    107,
+    112,
+    121,
+    1
+   ],
+   "bg_rgba": [
+    246,
+    247,
+    249,
+    1
+   ],
+   "contrast_ratio": 4.644,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 11,
+   "ink_pixels": 1606,
+   "ink_box": [
+    394,
+    976,
+    184,
+    24
+   ],
+   "line_id": "L0018"
+  },
+  {
+   "text": "Read 4:21 PM",
+   "layout_box": [
+    612,
+    1042.531,
+    140,
+    30
+   ],
+   "font_family": "Noto Sans",
+   "font_weight": 400,
+   "css_px": 11,
+   "xheight_px": 11.792,
+   "capheight_px": 15.708,
+   "fg_rgba": [
+    107,
+    112,
+    121,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 4.978,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 12,
+   "ink_pixels": 1197,
+   "ink_box": [
+    613,
+    1049,
+    138,
+    18
+   ],
+   "line_id": "L0019"
+  },
+  {
+   "text": "Thanks, got it. Order #A-20931 is",
+   "layout_box": [
+    52,
+    1107.312,
+    436,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 13,
+   "ink_pixels": 4371,
+   "ink_box": [
+    52,
+    1113,
+    435,
+    29
+   ],
+   "line_id": "L0020"
+  },
+  {
+   "text": "confirmed.",
+   "layout_box": [
+    52,
+    1147.812,
+    142,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    22,
+    24,
+    28,
+    1
+   ],
+   "bg_rgba": [
+    236,
+    238,
+    241,
+    1
+   ],
+   "contrast_ratio": 15.291,
+   "category": "paragraph",
+   "stress": false,
+   "element_idx": 13,
+   "ink_pixels": 1480,
+   "ink_box": [
+    52,
+    1153,
+    141,
+    23
+   ],
+   "line_id": "L0021"
+  },
+  {
+   "text": "Sounds good",
+   "layout_box": [
+    56,
+    1511.625,
+    164,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    23,
+    78,
+    166,
+    1
+   ],
+   "bg_rgba": [
+    232,
+    240,
+    254,
+    1
+   ],
+   "contrast_ratio": 6.846,
+   "category": "button",
+   "stress": false,
+   "element_idx": 14,
+   "ink_pixels": 1905,
+   "ink_box": [
+    56,
+    1517,
+    163,
+    27
+   ],
+   "line_id": "L0022"
+  },
+  {
+   "text": "On my way",
+   "layout_box": [
+    292,
+    1511.625,
+    136,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    23,
+    78,
+    166,
+    1
+   ],
+   "bg_rgba": [
+    232,
+    240,
+    254,
+    1
+   ],
+   "contrast_ratio": 6.846,
+   "category": "button",
+   "stress": false,
+   "element_idx": 15,
+   "ink_pixels": 1459,
+   "ink_box": [
+    292,
+    1518,
+    137,
+    26
+   ],
+   "line_id": "L0023"
+  },
+  {
+   "text": "10 min late",
+   "layout_box": [
+    500,
+    1511.625,
+    142,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    23,
+    78,
+    166,
+    1
+   ],
+   "bg_rgba": [
+    232,
+    240,
+    254,
+    1
+   ],
+   "contrast_ratio": 6.846,
+   "category": "button",
+   "stress": false,
+   "element_idx": 16,
+   "ink_pixels": 1467,
+   "ink_box": [
+    501,
+    1517,
+    140,
+    21
+   ],
+   "line_id": "L0024"
+  },
+  {
+   "text": "Message",
+   "layout_box": [
+    54,
+    1613.0,
+    122,
+    36
+   ],
+   "font_family": "Roboto",
+   "font_weight": 400,
+   "css_px": 15,
+   "xheight_px": 15.85,
+   "capheight_px": 21.328,
+   "fg_rgba": [
+    107,
+    112,
+    121,
+    1
+   ],
+   "bg_rgba": [
+    246,
+    247,
+    249,
+    1
+   ],
+   "contrast_ratio": 4.644,
+   "category": "input",
+   "stress": false,
+   "element_idx": 18,
+   "ink_pixels": 1481,
+   "ink_box": [
+    55,
+    1620,
+    121,
+    28
+   ],
+   "line_id": "L0025"
+  },
+  {
+   "text": "Send",
+   "layout_box": [
+    660,
+    1614.812,
+    64,
+    32
+   ],
+   "font_family": "Roboto",
+   "font_weight": 500,
+   "css_px": 14,
+   "xheight_px": 14.793,
+   "capheight_px": 19.906,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    26,
+    115,
+    232,
+    1
+   ],
+   "contrast_ratio": 4.505,
+   "category": "button",
+   "stress": false,
+   "element_idx": 19,
+   "ink_pixels": 755,
+   "ink_box": [
+    660,
+    1619,
+    63,
+    21
+   ],
+   "line_id": "L0026"
+  }
+ ],
+ "ignore_regions": [
+  [
+   714,
+   1511.625,
+   66,
+   32
+  ]
+ ],
+ "icon_regions": [
+  [
+   32,
+   116,
+   40,
+   40
+  ],
+  [
+   318,
+   935.531,
+   56,
+   68
+  ]
+ ]
+}

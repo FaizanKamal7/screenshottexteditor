@@ -1,0 +1,56 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m01-settings_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.01428259999374859,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.017800300003727898,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "13e7e3d033a110ee05fdcc1c5f5d23c6af0b494f1546bbe58b558a59f93f9b84",
+ "lines": [
+  {
+   "bbox": [
+    10.0,
+    28.0,
+    65.0,
+    16.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    47.0,
+    85.0,
+    61.0,
+    10.0
+   ],
+   "text": "Avery Co n ins",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    170.0,
+    184.0,
+    10.0,
+    6.0
+   ],
+   "text": "08",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:06.640515+00:00"
+}

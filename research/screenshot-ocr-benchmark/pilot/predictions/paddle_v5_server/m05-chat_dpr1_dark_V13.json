@@ -1,0 +1,262 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m05-chat_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 4.596889929998724,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.611112999991747,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "peak_rss_mb": 1912.2,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
+ "lines": [
+  {
+   "bbox": [
+    9.0,
+    5.0,
+    15.0,
+    8.0
+   ],
+   "text": "9:41",
+   "confidence": 0.8564920425415039
+  },
+  {
+   "bbox": [
+    158.0,
+    4.0,
+    27.0,
+    11.0
+   ],
+   "text": "5G 72%",
+   "confidence": 0.946857213973999
+  },
+  {
+   "bbox": [
+    48.0,
+    24.0,
+    44.0,
+    12.0
+   ],
+   "text": "Jordan Lee",
+   "confidence": 0.9420757293701172
+  },
+  {
+   "bbox": [
+    48.0,
+    34.0,
+    50.0,
+    11.0
+   ],
+   "text": "Active 5 min ago",
+   "confidence": 0.9674220085144043
+  },
+  {
+   "bbox": [
+    69.0,
+    56.0,
+    56.0,
+    7.0
+   ],
+   "text": "Te.Sep 22/A12PM",
+   "confidence": 0.7006304264068604
+  },
+  {
+   "bbox": [
+    10.0,
+    71.0,
+    117.0,
+    10.0
+   ],
+   "text": "Hey! Are we still on for the design",
+   "confidence": 0.905268669128418
+  },
+  {
+   "bbox": [
+    55.0,
+    123.0,
+    56.0,
+    10.0
+   ],
+   "text": "component list.",
+   "confidence": 0.9339773058891296
+  },
+  {
+   "bbox": [
+    57.0,
+    115.0,
+    86.0,
+    7.0
+   ],
+   "text": "updatedmockups and the",
+   "confidence": 0.9229611754417419
+  },
+  {
+   "bbox": [
+    10.0,
+    145.0,
+    105.0,
+    10.0
+   ],
+   "text": "Great. Can you also check the",
+   "confidence": 0.8798297643661499
+  },
+  {
+   "bbox": [
+    10.0,
+    155.0,
+    112.0,
+    10.0
+   ],
+   "text": "invoice total?1got $1,248.50 but",
+   "confidence": 0.8569302558898926
+  },
+  {
+   "bbox": [
+    10.0,
+    165.0,
+    79.0,
+    10.0
+   ],
+   "text": "finance says $1,284.50",
+   "confidence": 0.8288341164588928
+  },
+  {
+   "bbox": [
+    86.0,
+    184.0,
+    23.0,
+    8.0
+   ],
+   "text": "A19PM",
+   "confidence": 0.8881419897079468
+  },
+  {
+   "bbox": [
+    56.0,
+    210.0,
+    74.0,
+    10.0
+   ],
+   "text": "Sending the PDF now",
+   "confidence": 0.9514177441596985
+  },
+  {
+   "bbox": [
+    57.0,
+    201.0,
+    120.0,
+    7.0
+   ],
+   "text": "Good catch the second one is ricd",
+   "confidence": 0.7365642786026001
+  },
+  {
+   "bbox": [
+    96.0,
+    232.0,
+    68.0,
+    10.0
+   ],
+   "text": "Q3-invoice-final pdf",
+   "confidence": 0.8020616769790649
+  },
+  {
+   "bbox": [
+    96.0,
+    241.0,
+    49.0,
+    11.0
+   ],
+   "text": "24MB-6pages",
+   "confidence": 0.7947202324867249
+  },
+  {
+   "bbox": [
+    11.0,
+    276.0,
+    113.0,
+    10.0
+   ],
+   "text": "Thanks, got it. Order #A-20931 is",
+   "confidence": 0.9065452814102173
+  },
+  {
+   "bbox": [
+    11.0,
+    286.0,
+    38.0,
+    10.0
+   ],
+   "text": "confirmed.",
+   "confidence": 0.9247919917106628
+  },
+  {
+   "bbox": [
+    11.0,
+    376.0,
+    45.0,
+    10.0
+   ],
+   "text": "Sounds good",
+   "confidence": 0.9219338893890381
+  },
+  {
+   "bbox": [
+    69.0,
+    375.0,
+    40.0,
+    14.0
+   ],
+   "text": "On my way",
+   "confidence": 0.9425246119499207
+  },
+  {
+   "bbox": [
+    123.0,
+    376.0,
+    38.0,
+    12.0
+   ],
+   "text": "10min late",
+   "confidence": 0.9258981943130493
+  },
+  {
+   "bbox": [
+    174.0,
+    373.0,
+    21.0,
+    14.0
+   ],
+   "text": "Call",
+   "confidence": 0.939309298992157
+  },
+  {
+   "bbox": [
+    10.0,
+    400.0,
+    35.0,
+    14.0
+   ],
+   "text": "Mestagt",
+   "confidence": 0.8314632773399353
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T14:43:39.524977+00:00"
+}

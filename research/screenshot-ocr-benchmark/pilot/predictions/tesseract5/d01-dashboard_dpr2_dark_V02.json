@@ -1,0 +1,255 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr2_dark_V02",
+ "status": "ok",
+ "error": null,
+ "total_s": 7.0445718630003284,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 7.117494399979478,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "791a6c33f20bb7b33ffc15136a62a47ba0a763b5f3aba990362e282ea9ff4da8",
+ "lines": [
+  {
+   "bbox": [
+    44.0,
+    49.0,
+    323.0,
+    35.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    46.0,
+    151.0,
+    168.0,
+    25.0
+   ],
+   "text": "as Overview",
+   "confidence": 0.775
+  },
+  {
+   "bbox": [
+    47.0,
+    230.0,
+    157.0,
+    20.0
+   ],
+   "text": "~ Revenue",
+   "confidence": 0.84
+  },
+  {
+   "bbox": [
+    48.0,
+    304.0,
+    183.0,
+    26.0
+   ],
+   "text": "2 Customers",
+   "confidence": 0.62
+  },
+  {
+   "bbox": [
+    98.0,
+    382.0,
+    97.0,
+    27.0
+   ],
+   "text": "Reports",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    49.0,
+    378.0,
+    23.0,
+    101.0
+   ],
+   "text": "co O",
+   "confidence": 0.555
+  },
+  {
+   "bbox": [
+    97.0,
+    457.0,
+    104.0,
+    28.0
+   ],
+   "text": "Settings",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    496.0,
+    58.0,
+    423.0,
+    48.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    498.0,
+    118.0,
+    395.0,
+    26.0
+   ],
+   "text": "Last 30 days - Updated 08:45 UTC",
+   "confidence": 0.9457142857142857
+  },
+  {
+   "bbox": [
+    532.0,
+    220.0,
+    1720.0,
+    26.0
+   ],
+   "text": "Monthly Revenue Active Users Churn Rate Avg. Order Value",
+   "confidence": 0.9588888888888889
+  },
+  {
+   "bbox": [
+    1624.0,
+    276.0,
+    18.0,
+    18.0
+   ],
+   "text": "[)",
+   "confidence": 0.04
+  },
+  {
+   "bbox": [
+    532.0,
+    271.0,
+    1686.0,
+    48.0
+   ],
+   "text": "$482,910 12,384 2.1% $86.40",
+   "confidence": 0.9525
+  },
+  {
+   "bbox": [
+    533.0,
+    333.0,
+    1746.0,
+    21.0
+   ],
+   "text": "+12.4% vs last month -0.8% vs last month Down from 2.6% +$3.15 vs last month",
+   "confidence": 0.9420000000000001
+  },
+  {
+   "bbox": [
+    530.0,
+    461.0,
+    954.0,
+    27.0
+   ],
+   "text": "Weekly revenue (USD) Recent invoices",
+   "confidence": 0.956
+  },
+  {
+   "bbox": [
+    560.0,
+    515.0,
+    1840.0,
+    39.0
+   ],
+   "text": "Tw: Invoice Customer Date Amount Status",
+   "confidence": 0.7983333333333333
+  },
+  {
+   "bbox": [
+    560.0,
+    586.0,
+    1833.0,
+    36.0
+   ],
+   "text": "oo INV-10421 Harper & Stone LLC 2026-09-02 $3,420.00 Paid",
+   "confidence": 0.8933333333333333
+  },
+  {
+   "bbox": [
+    1296.0,
+    656.0,
+    1093.0,
+    32.0
+   ],
+   "text": "INV-10422 Bluefield Dental 2026-09-04 $780.50 Due",
+   "confidence": 0.9483333333333333
+  },
+  {
+   "bbox": [
+    569.0,
+    699.0,
+    28.0,
+    15.0
+   ],
+   "text": "50k",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1296.0,
+    715.0,
+    1097.0,
+    40.0
+   ],
+   "text": "INV-10423 Oakridge Supply Co. 2026-09-09 $12,006.75 Paid",
+   "confidence": 0.9057142857142857
+  },
+  {
+   "bbox": [
+    589.0,
+    792.0,
+    1800.0,
+    34.0
+   ],
+   "text": "2 INV-10424 Maple Street Books 2026-09-15 $96.00 Due",
+   "confidence": 0.85
+  },
+  {
+   "bbox": [
+    641.0,
+    828.0,
+    509.0,
+    19.0
+   ],
+   "text": "Aug 25 Sep 1 Sep 8 Sep 15 Sep 22",
+   "confidence": 0.932
+  },
+  {
+   "bbox": [
+    1296.0,
+    864.0,
+    1097.0,
+    32.0
+   ],
+   "text": "INV-10425 Quinn Logistics 2026-09-21 $5,318.20 Paid",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    1279.0,
+    937.0,
+    703.0,
+    30.0
+   ],
+   "text": "Showing 5 of 148 invoices. Amounts include tax; refunds are excluded.",
+   "confidence": 0.9509090909090909
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:11:51.387983+00:00"
+}

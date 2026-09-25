@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>d01-dashboard</title>
+<script src="../_shared/theme.js"></script>
+<link rel="stylesheet" href="../_shared/base.css">
+<style>
+  :root, html[data-theme="light"] {
+    --bg: #f4f5f7; --panel: #ffffff; --text: #1b1d21; --muted: #5d636e; --border: #e1e4e8; --icon: #6a7280;
+    --side: #ffffff; --active-bg: #eef3ff; --active: #2451c7; --up: #18794e; --down: #b42318; --bar: #9db4f0; --bar2: #2451c7;
+    --pill-paid-bg: #e3f5ea; --pill-paid: #18794e; --pill-due-bg: #fff4e0; --pill-due: #9a5b00; --btn: #1b1d21; --btn-text: #ffffff;
+  }
+  html[data-theme="dark"] {
+    --bg: #111315; --panel: #1a1d20; --text: #e6e8eb; --muted: #9ba1ab; --border: #2b2f34; --icon: #8b929c;
+    --side: #15181b; --active-bg: #1e2a44; --active: #9db8ff; --up: #4ccf8e; --down: #ff8a80; --bar: #34497c; --bar2: #7d9cff;
+    --pill-paid-bg: #143624; --pill-paid: #6fdca3; --pill-due-bg: #3a2a0f; --pill-due: #f5c26b; --btn: #e6e8eb; --btn-text: #111315;
+  }
+  body { font-family: "Selawik"; font-weight: 400; display: flex; }
+  .side { width: 220px; height: 100%; background: var(--side); border-right: 1px solid var(--border); padding: 20px 12px; flex: none; }
+  .brand { font-size: 18px; font-weight: 700; padding: 0 10px 20px; line-height: 1.3; }
+  .nav { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; margin-bottom: 2px; }
+  .nav span { font-size: 14px; line-height: 1.3; }
+  .nav.active { background: var(--active-bg); }
+  .nav.active span { color: var(--active); font-weight: 600; }
+  .main { flex: 1; padding: 22px 28px; min-width: 0; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+  h1 { font-size: 24px; font-weight: 600; line-height: 1.3; }
+  .sub { font-size: 13px; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+  .btn { padding: 8px 14px; border-radius: 8px; background: var(--btn); color: var(--btn-text); font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .kpi .k { font-size: 13px; color: var(--muted); line-height: 1.4; }
+  .kpi .v { font-size: 26px; font-weight: 700; line-height: 1.3; margin: 4px 0 2px; }
+  .kpi .d { font-size: 12px; line-height: 1.4; }
+  .up { color: var(--up); } .down { color: var(--down); }
+  .row2 { display: grid; grid-template-columns: 360px 1fr; gap: 14px; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .ptitle { font-size: 14px; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
+  .chart { display: grid; grid-template-columns: 34px 1fr; gap: 6px; }
+  .yaxis { display: flex; flex-direction: column; justify-content: space-between; height: 150px; text-align: right; }
+  .yaxis span, .xaxis span { font-size: 10px; color: var(--muted); line-height: 1.2; }
+  .bars { height: 150px; display: flex; align-items: flex-end; gap: 10px; border-left: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0 8px; }
+  .bars div { flex: 1; background: var(--bar); border-radius: 3px 3px 0 0; }
+  .bars div.hi { background: var(--bar2); }
+  .xaxis { grid-column: 2; display: flex; gap: 10px; padding: 0 8px; }
+  .xaxis span { flex: 1; text-align: center; }
+  table { width: 100%; border-collapse: collapse; font-family: "Liberation Sans"; }
+  th { font-size: 12px; font-weight: 700; color: var(--muted); text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); line-height: 1.3; }
+  td { font-size: 13px; padding: 7px 8px; border-bottom: 1px solid var(--border); line-height: 1.3; }
+  td.num, th.num { text-align: right; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 700; line-height: 1.3; }
+  .paid { background: var(--pill-paid-bg); color: var(--pill-paid); }
+  .due { background: var(--pill-due-bg); color: var(--pill-due); }
+  .foot { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <div class="fid" style="left:0;top:0"></div><div class="fid" style="right:0;top:0"></div>
+  <div class="fid" style="left:0;bottom:0"></div><div class="fid" style="right:0;bottom:0"></div>
+
+  <aside class="side">
+    <div class="brand" data-category="heading">Tallyhouse Metrics</div>
+    <div class="nav active"><svg width="16" height="16" viewBox="0 0 16 16"><rect class="i" x="1" y="1" width="6" height="6" rx="1"/><rect class="i" x="9" y="1" width="6" height="6" rx="1"/><rect class="i" x="1" y="9" width="6" height="6" rx="1"/><rect class="i" x="9" y="9" width="6" height="6" rx="1"/></svg><span data-category="nav">Overview</span></div>
+    <div class="nav"><svg width="16" height="16" viewBox="0 0 16 16"><path class="s" d="M2 13l4-5 3 3 5-7" stroke-width="1.6"/></svg><span data-category="nav">Revenue</span></div>
+    <div class="nav"><svg width="16" height="16" viewBox="0 0 16 16"><circle class="i" cx="8" cy="5" r="3"/><path class="i" d="M2 15c0-3.3 2.7-5 6-5s6 1.7 6 5z"/></svg><span data-category="nav">Customers</span></div>
+    <div class="nav"><svg width="16" height="16" viewBox="0 0 16 16"><rect class="s" x="2.5" y="1.5" width="11" height="13" rx="1" stroke-width="1.4"/></svg><span data-category="nav">Reports</span></div>
+    <div class="nav"><svg width="16" height="16" viewBox="0 0 16 16"><circle class="s" cx="8" cy="8" r="5" stroke-width="1.6"/></svg><span data-category="nav">Settings</span></div>
+  </aside>
+
+  <main class="main">
+    <div class="top">
+      <div>
+        <h1 data-category="heading">Analytics Overview</h1>
+        <div class="sub" data-category="caption">Last 30 days &middot; Updated 08:45 UTC</div>
+      </div>
+      <div class="btn" data-category="button">Export CSV</div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="k" data-category="label">Monthly Revenue</div><div class="v" data-category="value-numeric">$482,910</div><div class="d up" data-category="caption">+12.4% vs last month</div></div>
+      <div class="kpi"><div class="k" data-category="label">Active Users</div><div class="v" data-category="value-numeric">12,384</div><div class="d down" data-category="caption">-0.8% vs last month</div></div>
+      <div class="kpi"><div class="k" data-category="label">Churn Rate</div><div class="v" data-category="value-numeric">2.1%</div><div class="d up" data-category="caption">Down from 2.6%</div></div>
+      <div class="kpi"><div class="k" data-category="label">Avg. Order Value</div><div class="v" data-category="value-numeric">$86.40</div><div class="d up" data-category="caption">+$3.15 vs last month</div></div>
+    </div>
+
+    <div class="row2">
+      <div class="panel">
+        <div class="ptitle" data-category="heading">Weekly revenue (USD)</div>
+        <div class="chart">
+          <div class="yaxis"><span data-category="value-numeric">150k</span><span data-category="value-numeric">100k</span><span data-category="value-numeric">50k</span><span data-category="value-numeric">0</span></div>
+          <div class="bars"><div style="height:48%"></div><div style="height:62%"></div><div style="height:55%"></div><div style="height:71%"></div><div class="hi" style="height:84%"></div></div>
+          <div class="xaxis"><span data-category="caption">Aug 25</span><span data-category="caption">Sep 1</span><span data-category="caption">Sep 8</span><span data-category="caption">Sep 15</span><span data-category="caption">Sep 22</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="ptitle" data-category="heading">Recent invoices</div>
+        <table>
+          <thead><tr><th data-category="label">Invoice</th><th data-category="label">Customer</th><th data-category="label">Date</th><th class="num" data-category="label">Amount</th><th data-category="label">Status</th></tr></thead>
+          <tbody>
+            <tr><td data-category="value-numeric">INV-10421</td><td data-category="label">Harper &amp; Stone LLC</td><td data-category="value-numeric">2026-09-02</td><td class="num" data-category="value-numeric">$3,420.00</td><td><span class="pill paid" data-category="label">Paid</span></td></tr>
+            <tr><td data-category="value-numeric">INV-10422</td><td data-category="label">Bluefield Dental</td><td data-category="value-numeric">2026-09-04</td><td class="num" data-category="value-numeric">$780.50</td><td><span class="pill due" data-category="label">Due</span></td></tr>
+            <tr><td data-category="value-numeric">INV-10423</td><td data-category="label">Oakridge Supply Co.</td><td data-category="value-numeric">2026-09-09</td><td class="num" data-category="value-numeric">$12,006.75</td><td><span class="pill paid" data-category="label">Paid</span></td></tr>
+            <tr><td data-category="value-numeric">INV-10424</td><td data-category="label">Maple Street Books</td><td data-category="value-numeric">2026-09-15</td><td class="num" data-category="value-numeric">$96.00</td><td><span class="pill due" data-category="label">Due</span></td></tr>
+            <tr><td data-category="value-numeric">INV-10425</td><td data-category="label">Quinn Logistics</td><td data-category="value-numeric">2026-09-21</td><td class="num" data-category="value-numeric">$5,318.20</td><td><span class="pill paid" data-category="label">Paid</span></td></tr>
+          </tbody>
+        </table>
+        <div class="foot" data-category="caption">Showing 5 of 148 invoices. Amounts include tax; refunds are excluded.</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

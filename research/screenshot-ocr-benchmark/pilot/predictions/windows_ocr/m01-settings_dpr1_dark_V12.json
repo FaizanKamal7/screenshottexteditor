@@ -1,0 +1,66 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m01-settings_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.015893399977358058,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.020565700018778443,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "2997adc72b6b3e84b00141dd3830cc5dbfe66bb580027a87ee0f385e2efd0e96",
+ "lines": [
+  {
+   "bbox": [
+    10.0,
+    28.0,
+    65.0,
+    16.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    13.0,
+    55.0,
+    70.0,
+    9.0
+   ],
+   "text": "Q se.gs",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    47.0,
+    85.0,
+    61.0,
+    10.0
+   ],
+   "text": "Avery Conins",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    120.0,
+    184.0,
+    13.0,
+    6.0
+   ],
+   "text": "12.4",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:05.950565+00:00"
+}

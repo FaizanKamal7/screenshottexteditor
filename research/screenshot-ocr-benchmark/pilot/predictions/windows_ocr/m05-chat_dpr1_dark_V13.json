@@ -1,0 +1,25 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m05-chat_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.010596600011922419,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.012956299993675202,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "lines": [],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T07:44:13.686908+00:00"
+}

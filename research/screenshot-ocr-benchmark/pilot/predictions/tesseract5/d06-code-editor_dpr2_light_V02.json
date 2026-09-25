@@ -1,0 +1,285 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr2_light_V02",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.9006034710000677,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.9722781000018585,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "2feb5298bc175cba5ffff0f5e8109bfcea060dd5fd44de8606acab596067c9df",
+ "lines": [
+  {
+   "bbox": [
+    30.0,
+    25.0,
+    1925.0,
+    33.0
+   ],
+   "text": "EXPLORER server.ts config. json README . md .",
+   "confidence": 0.70625
+  },
+  {
+   "bbox": [
+    30.0,
+    51.0,
+    2078.0,
+    49.0
+   ],
+   "text": "sre Request lifecycle",
+   "confidence": 0.8333333333333333
+  },
+  {
+   "bbox": [
+    404.0,
+    96.0,
+    605.0,
+    24.0
+   ],
+   "text": "1 import { createServer } from \"node:http\";",
+   "confidence": 0.8628571428571429
+  },
+  {
+   "bbox": [
+    58.0,
+    129.0,
+    2429.0,
+    31.0
+   ],
+   "text": "server. ts 2 import { readFile } from \"node:fs/promises\"; Every request passes through the router before any",
+   "confidence": 0.8129411764705883
+  },
+  {
+   "bbox": [
+    58.0,
+    174.0,
+    2404.0,
+    31.0
+   ],
+   "text": "db.ts 3 handler runs. Unknown paths return 404 without",
+   "confidence": 0.9311111111111111
+  },
+  {
+   "bbox": [
+    58.0,
+    214.0,
+    2013.0,
+    37.0
+   ],
+   "text": "routes. ts 4 const PORT = Number (process.env.PORT ?? 8080); touching the database.",
+   "confidence": 0.6807692307692308
+  },
+  {
+   "bbox": [
+    30.0,
+    256.0,
+    913.0,
+    32.0
+   ],
+   "text": "package: json 5 const MAX_BODY = 1_048_576; // 1 MiB",
+   "confidence": 0.833
+  },
+  {
+   "bbox": [
+    29.0,
+    292.0,
+    2483.0,
+    40.0
+   ],
+   "text": "tsconfig. json 6 Pagination is 1-indexed. Pages above 500 are rejected",
+   "confidence": 0.869090909090909
+  },
+  {
+   "bbox": [
+    404.0,
+    336.0,
+    2069.0,
+    38.0
+   ],
+   "text": "7 type Route = (req: Request) => Promise<Response>; so that a single client cannot scan the whole table;",
+   "confidence": 0.9438888888888889
+  },
+  {
+   "bbox": [
+    404.0,
+    378.0,
+    1947.0,
+    37.0
+   ],
+   "text": "2 use the export job for bulk access instead.",
+   "confidence": 0.9166666666666667
+  },
+  {
+   "bbox": [
+    404.0,
+    416.0,
+    579.0,
+    24.0
+   ],
+   "text": "9 const routes = new Map<string, Route>([",
+   "confidence": 0.93
+  },
+  {
+   "bbox": [
+    404.0,
+    456.0,
+    2060.0,
+    49.0
+   ],
+   "text": "5 Le/neciset, asyen: (3 se faunid ohn toue, wpidae: 6 BI, Tip: set PORT=9090 to run two instances side by side",
+   "confidence": 0.5504761904761906
+  },
+  {
+   "bbox": [
+    404.0,
+    496.0,
+    1595.0,
+    24.0
+   ],
+   "text": "1 [\"/invoices\", listInvoices], I R",
+   "confidence": 0.72
+  },
+  {
+   "bbox": [
+    404.0,
+    515.0,
+    1639.0,
+    45.0
+   ],
+   "text": "2 1; during local testing.",
+   "confidence": 0.8340000000000001
+  },
+  {
+   "bbox": [
+    404.0,
+    579.0,
+    10.0,
+    17.0
+   ],
+   "text": "3",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    404.0,
+    602.0,
+    1816.0,
+    38.0
+   ],
+   "text": "4 export async function listInvoices(req: Request) { Glyph check: 111] O0o rn m 5S 8B",
+   "confidence": 0.8766666666666667
+  },
+  {
+   "bbox": [
+    405.0,
+    656.0,
+    1038.0,
+    24.0
+   ],
+   "text": "5 const page = Number(new URL(req.url).searchParams.get(\"page\") 2? \"1\");",
+   "confidence": 0.90875
+  },
+  {
+   "bbox": [
+    404.0,
+    696.0,
+    1011.0,
+    24.0
+   ],
+   "text": "6 if (page < 1 || page > 500) return json({ error: \"bad page\" }, 400);",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    404.0,
+    736.0,
+    1053.0,
+    24.0
+   ],
+   "text": "7 const rows = await db.query (\"SELECT id, total FROM invoices LIMIT 25\");",
+   "confidence": 0.8084615384615383
+  },
+  {
+   "bbox": [
+    404.0,
+    776.0,
+    451.0,
+    24.0
+   ],
+   "text": "8 return json({ page, rows });",
+   "confidence": 0.9216666666666667
+  },
+  {
+   "bbox": [
+    404.0,
+    816.0,
+    49.0,
+    23.0
+   ],
+   "text": "2 3",
+   "confidence": 0.65
+  },
+  {
+   "bbox": [
+    390.0,
+    858.0,
+    24.0,
+    18.0
+   ],
+   "text": "20",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    390.0,
+    896.0,
+    535.0,
+    24.0
+   ],
+   "text": "21 createServer(handler).listen(PORT);",
+   "confidence": 0.88
+  },
+  {
+   "bbox": [
+    26.0,
+    1565.0,
+    214.0,
+    20.0
+   ],
+   "text": "main 0 errors,",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    262.0,
+    1565.0,
+    136.0,
+    21.0
+   ],
+   "text": "2 warnings",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    2288.0,
+    1565.0,
+    246.0,
+    21.0
+   ],
+   "text": "UTF-8 TypeScript",
+   "confidence": 0.895
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:16:44.941791+00:00"
+}

@@ -73,8 +73,9 @@ body {
 		@apply rounded-full px-3 py-1.5 text-[14px] text-body transition-colors hover:bg-hairline-soft hover:text-ink;
 	}
 
+	/* Below md these (and the theme toggle) grow to a 44px touch target; desktop keeps its 34px. */
 	.nav-icon-btn {
-		@apply flex list-none cursor-pointer items-center justify-center rounded-full p-2 text-body transition-colors hover:bg-hairline-soft hover:text-ink [&::-webkit-details-marker]:hidden;
+		@apply flex list-none cursor-pointer items-center justify-center rounded-full p-2 text-body transition-colors hover:bg-hairline-soft hover:text-ink max-md:h-11 max-md:w-11 [&::-webkit-details-marker]:hidden;
 	}
 
 	.nav-popover {
@@ -82,7 +83,7 @@ body {
 	}
 
 	.lang-item {
-		@apply flex items-center gap-2 rounded-md px-2.5 py-1.5 text-[13px] text-body transition-colors hover:bg-hairline-soft;
+		@apply flex items-center gap-2 rounded-md px-2.5 py-1.5 text-[13px] text-body transition-colors hover:bg-hairline-soft max-md:min-h-11;
 	}
 
 	.lang-item[aria-current='true'] {

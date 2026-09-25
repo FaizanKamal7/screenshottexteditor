@@ -1,0 +1,221 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "m01-settings_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.9611341950003407,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.9814186000148766,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "024fd10b9e4028000898d5e56c237de8f5cb479af6439b96d6e39e1cdf7e21b7",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    24.0,
+    74.0,
+    24.0
+   ],
+   "text": "Settings",
+   "confidence": 0.999981961081444
+  },
+  {
+   "bbox": [
+    24.0,
+    56.0,
+    60.0,
+    8.0
+   ],
+   "text": "SCichGClidr",
+   "confidence": 0.001627667923358122
+  },
+  {
+   "bbox": [
+    45.0,
+    83.0,
+    66.0,
+    14.0
+   ],
+   "text": "Avecry Collins",
+   "confidence": 0.44749906523866034
+  },
+  {
+   "bbox": [
+    90.0,
+    96.0,
+    44.0,
+    8.0
+   ],
+   "text": "orinetEol",
+   "confidence": 0.0008170401809867821
+  },
+  {
+   "bbox": [
+    16.0,
+    120.0,
+    32.0,
+    8.0
+   ],
+   "text": "Eccola",
+   "confidence": 0.010876448720457276
+  },
+  {
+   "bbox": [
+    13.0,
+    137.0,
+    54.0,
+    12.0
+   ],
+   "text": "Hcilficabans",
+   "confidence": 0.11645780149240947
+  },
+  {
+   "bbox": [
+    13.0,
+    159.0,
+    32.0,
+    12.0
+   ],
+   "text": "pinvacy",
+   "confidence": 0.20038630848009054
+  },
+  {
+   "bbox": [
+    52.0,
+    160.0,
+    32.0,
+    8.0
+   ],
+   "text": "Secrt",
+   "confidence": 0.03982473029753376
+  },
+  {
+   "bbox": [
+    12.0,
+    180.0,
+    35.0,
+    13.0
+   ],
+   "text": "Storaa0",
+   "confidence": 0.3402421347828671
+  },
+  {
+   "bbox": [
+    119.0,
+    181.0,
+    62.0,
+    12.0
+   ],
+   "text": "12 4OB 0l64Gu",
+   "confidence": 0.013554965694081081
+  },
+  {
+   "bbox": [
+    12.0,
+    202.0,
+    41.0,
+    14.0
+   ],
+   "text": "Languago",
+   "confidence": 0.5339711648379067
+  },
+  {
+   "bbox": [
+    135.0,
+    203.0,
+    48.0,
+    14.0
+   ],
+   "text": "Engeeh FUS}",
+   "confidence": 0.01687227888910356
+  },
+  {
+   "bbox": [
+    13.0,
+    225.0,
+    52.0,
+    12.0
+   ],
+   "text": "scrcon Timc",
+   "confidence": 0.1218848077617498
+  },
+  {
+   "bbox": [
+    154.0,
+    226.0,
+    24.0,
+    8.0
+   ],
+   "text": "Rhazn",
+   "confidence": 0.01143004206546161
+  },
+  {
+   "bbox": [
+    13.0,
+    265.0,
+    48.0,
+    14.0
+   ],
+   "text": "Hclp Ceriet",
+   "confidence": 0.3840359058451953
+  },
+  {
+   "bbox": [
+    13.0,
+    287.0,
+    64.0,
+    12.0
+   ],
+   "text": "scnd Fecdback",
+   "confidence": 0.10049562404724861
+  },
+  {
+   "bbox": [
+    14.0,
+    312.0,
+    24.0,
+    8.0
+   ],
+   "text": "Abou",
+   "confidence": 0.557049036026001
+  },
+  {
+   "bbox": [
+    130.0,
+    310.0,
+    50.0,
+    8.0
+   ],
+   "text": "Snefonaa ?",
+   "confidence": 0.00025529474630085666
+  },
+  {
+   "bbox": [
+    13.0,
+    331.0,
+    60.0,
+    12.0
+   ],
+   "text": "Dti AccGun",
+   "confidence": 0.009283666522143219
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:53:48.001523+00:00"
+}

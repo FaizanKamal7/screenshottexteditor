@@ -1,0 +1,521 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "d06-code-editor_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 4.6340855970011035,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.649018900003284,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "fa3364e13cef31c0b6091c63627fb57fe1ec80e2eb2f122754be122590b90ff2",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    6.0,
+    28.0,
+    6.0
+   ],
+   "text": "Meion",
+   "confidence": 0.04023246753179063
+  },
+  {
+   "bbox": [
+    436.0,
+    14.0,
+    44.0,
+    8.0
+   ],
+   "text": "Requesl",
+   "confidence": 0.28323138902822037
+  },
+  {
+   "bbox": [
+    481.0,
+    11.0,
+    50.0,
+    14.0
+   ],
+   "text": "lifecycle",
+   "confidence": 0.9452227686255555
+  },
+  {
+   "bbox": [
+    140.0,
+    22.0,
+    44.0,
+    8.0
+   ],
+   "text": "[Gojrrrig-",
+   "confidence": 0.0010277566546621135
+  },
+  {
+   "bbox": [
+    110.0,
+    34.0,
+    22.0,
+    6.0
+   ],
+   "text": "LECE#",
+   "confidence": 0.00574852046441755
+  },
+  {
+   "bbox": [
+    140.0,
+    34.0,
+    30.0,
+    6.0
+   ],
+   "text": "Geeana",
+   "confidence": 0.005177405252771808
+  },
+  {
+   "bbox": [
+    198.0,
+    34.0,
+    66.0,
+    6.0
+   ],
+   "text": "-coxoetaerca 1817:",
+   "confidence": 0.0012892058976907692
+  },
+  {
+   "bbox": [
+    438.0,
+    32.0,
+    184.0,
+    8.0
+   ],
+   "text": "Evry {CQue pLN> Lhrouch Lhe [cule brlone Lny",
+   "confidence": 0.0047428206163856275
+  },
+  {
+   "bbox": [
+    436.0,
+    44.0,
+    48.0,
+    6.0
+   ],
+   "text": "amngiit Tutna",
+   "confidence": 0.022689005441495637
+  },
+  {
+   "bbox": [
+    488.0,
+    44.0,
+    84.0,
+    6.0
+   ],
+   "text": "WnenatIntatnen",
+   "confidence": 0.0005005703392111822
+  },
+  {
+   "bbox": [
+    586.0,
+    44.0,
+    30.0,
+    6.0
+   ],
+   "text": "ENean",
+   "confidence": 0.02281393963467095
+  },
+  {
+   "bbox": [
+    14.0,
+    54.0,
+    32.0,
+    6.0
+   ],
+   "text": "Soiee",
+   "confidence": 0.0005182094228971874
+  },
+  {
+   "bbox": [
+    206.0,
+    52.0,
+    30.0,
+    8.0
+   ],
+   "text": "-Gn-#D4T",
+   "confidence": 0.0015349779391189994
+  },
+  {
+   "bbox": [
+    436.0,
+    54.0,
+    82.0,
+    8.0
+   ],
+   "text": "talching Lhe dnubu",
+   "confidence": 0.1308094258933702
+  },
+  {
+   "bbox": [
+    6.0,
+    66.0,
+    44.0,
+    6.0
+   ],
+   "text": "pecaicn",
+   "confidence": 0.004785151789652858
+  },
+  {
+   "bbox": [
+    110.0,
+    64.0,
+    50.0,
+    6.0
+   ],
+   "text": "conil RUBot",
+   "confidence": 0.0327772375246209
+  },
+  {
+   "bbox": [
+    168.0,
+    64.0,
+    68.0,
+    6.0
+   ],
+   "text": "FlLte9D 1 A=E",
+   "confidence": 0.004423145499513769
+  },
+  {
+   "bbox": [
+    436.0,
+    72.0,
+    40.0,
+    8.0
+   ],
+   "text": "Panition",
+   "confidence": 0.20169195795623848
+  },
+  {
+   "bbox": [
+    486.0,
+    72.0,
+    60.0,
+    8.0
+   ],
+   "text": "r-indexed Peus",
+   "confidence": 0.03910072661601073
+  },
+  {
+   "bbox": [
+    598.0,
+    72.0,
+    30.0,
+    8.0
+   ],
+   "text": "tejecled",
+   "confidence": 0.082654571318674
+  },
+  {
+   "bbox": [
+    6.0,
+    76.0,
+    46.0,
+    8.0
+   ],
+   "text": "[126n4-0-/46",
+   "confidence": 0.050985002729748354
+  },
+  {
+   "bbox": [
+    176.0,
+    84.0,
+    28.0,
+    6.0
+   ],
+   "text": "48d-5at",
+   "confidence": 0.0011126784584582952
+  },
+  {
+   "bbox": [
+    218.0,
+    84.0,
+    64.0,
+    6.0
+   ],
+   "text": "15D14act a1con18h7",
+   "confidence": 0.00022487830126090936
+  },
+  {
+   "bbox": [
+    436.0,
+    84.0,
+    124.0,
+    8.0
+   ],
+   "text": "mthatacindla clicni cnnulkan",
+   "confidence": 0.03177988433962704
+  },
+  {
+   "bbox": [
+    574.0,
+    84.0,
+    46.0,
+    8.0
+   ],
+   "text": "whola uble;",
+   "confidence": 0.1433192724529631
+  },
+  {
+   "bbox": [
+    450.0,
+    96.0,
+    52.0,
+    8.0
+   ],
+   "text": "Lheaponab",
+   "confidence": 0.2190441446363561
+  },
+  {
+   "bbox": [
+    558.0,
+    96.0,
+    30.0,
+    6.0
+   ],
+   "text": "UnScd",
+   "confidence": 0.003537467208396636
+  },
+  {
+   "bbox": [
+    218.0,
+    102.0,
+    30.0,
+    8.0
+   ],
+   "text": "Raulor[",
+   "confidence": 0.057023610446026225
+  },
+  {
+   "bbox": [
+    116.0,
+    112.0,
+    36.0,
+    8.0
+   ],
+   "text": "[-/haalin-",
+   "confidence": 0.10592160381877276
+  },
+  {
+   "bbox": [
+    200.0,
+    114.0,
+    56.0,
+    6.0
+   ],
+   "text": "Gieni64 : 51",
+   "confidence": 0.03217590479177759
+  },
+  {
+   "bbox": [
+    442.0,
+    118.0,
+    174.0,
+    8.0
+   ],
+   "text": "Tip  Kt FOKT-atomniroimuinori Hd2 b7sIde",
+   "confidence": 0.007734388056567275
+  },
+  {
+   "bbox": [
+    116.0,
+    124.0,
+    44.0,
+    6.0
+   ],
+   "text": "U= Intiedie",
+   "confidence": 0.0018128761581870803
+  },
+  {
+   "bbox": [
+    164.0,
+    124.0,
+    50.0,
+    6.0
+   ],
+   "text": "CLilinadilai",
+   "confidence": 0.0028298791126540363
+  },
+  {
+   "bbox": [
+    442.0,
+    128.0,
+    68.0,
+    8.0
+   ],
+   "text": "durtnglocluti",
+   "confidence": 0.028712895025616147
+  },
+  {
+   "bbox": [
+    436.0,
+    150.0,
+    120.0,
+    8.0
+   ],
+   "text": "Glyph check I  Olomm 55 83",
+   "confidence": 0.10783474987317448
+  },
+  {
+   "bbox": [
+    156.0,
+    154.0,
+    90.0,
+    6.0
+   ],
+   "text": "Junaion LAtmd Erinren:",
+   "confidence": 0.000598007313649214
+  },
+  {
+   "bbox": [
+    250.0,
+    154.0,
+    28.0,
+    6.0
+   ],
+   "text": "Arelrili",
+   "confidence": 0.01738865933036578
+  },
+  {
+   "bbox": [
+    162.0,
+    164.0,
+    168.0,
+    6.0
+   ],
+   "text": "Lectiunga Wigte Urli latthearjai.ecl -04e8-",
+   "confidence": 4.089661672856557e-05
+  },
+  {
+   "bbox": [
+    238.0,
+    174.0,
+    86.0,
+    6.0
+   ],
+   "text": "E CCD. F6i4 6aig=",
+   "confidence": 0.000360550063244104
+  },
+  {
+   "bbox": [
+    335.0,
+    171.0,
+    22.0,
+    12.0
+   ],
+   "text": "Su) :",
+   "confidence": 0.0849564492752842
+  },
+  {
+   "bbox": [
+    192.0,
+    184.0,
+    48.0,
+    6.0
+   ],
+   "text": "GlgieLcI",
+   "confidence": 0.009130997231655037
+  },
+  {
+   "bbox": [
+    256.0,
+    184.0,
+    110.0,
+    6.0
+   ],
+   "text": "LoLal A4 1741edi -iaiAek",
+   "confidence": 0.0021850921103691084
+  },
+  {
+   "bbox": [
+    140.0,
+    194.0,
+    42.0,
+    6.0
+   ],
+   "text": "E Eid",
+   "confidence": 0.004270926146549794
+  },
+  {
+   "bbox": [
+    186.0,
+    194.0,
+    30.0,
+    6.0
+   ],
+   "text": "5001Fa",
+   "confidence": 0.022857541781136533
+  },
+  {
+   "bbox": [
+    110.0,
+    224.0,
+    122.0,
+    6.0
+   ],
+   "text": "=[L[a (hinaier =#nte",
+   "confidence": 0.00030731619226806873
+  },
+  {
+   "bbox": [
+    530.0,
+    390.0,
+    24.0,
+    6.0
+   ],
+   "text": "encnt",
+   "confidence": 0.003045895004383409
+  },
+  {
+   "bbox": [
+    598.0,
+    390.0,
+    36.0,
+    6.0
+   ],
+   "text": "Teareroe",
+   "confidence": 0.0019285959420364909
+  },
+  {
+   "bbox": [
+    544.007123161513,
+    69.26005992660406,
+    26.9857536769739,
+    12.479880146791885
+   ],
+   "text": "Leba",
+   "confidence": 0.014085889793932438
+  },
+  {
+   "bbox": [
+    568.0093788707566,
+    69.29289321881345,
+    30.981242258486873,
+    11.414213562373106
+   ],
+   "text": "rlun",
+   "confidence": 0.01061316393315792
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:43:15.966250+00:00"
+}

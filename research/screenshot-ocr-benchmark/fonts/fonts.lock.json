@@ -1,0 +1,168 @@
+{
+  "fontsource_version": "5.3.0",
+  "fonts": [
+    {
+      "family": "Inter",
+      "weight": 400,
+      "file": "inter/inter-latin-400-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.3.0/files/inter-latin-400-normal.woff2",
+      "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    {
+      "family": "Inter",
+      "weight": 500,
+      "file": "inter/inter-latin-500-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.3.0/files/inter-latin-500-normal.woff2",
+      "sha256": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f"
+    },
+    {
+      "family": "Inter",
+      "weight": 600,
+      "file": "inter/inter-latin-600-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.3.0/files/inter-latin-600-normal.woff2",
+      "sha256": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+    },
+    {
+      "family": "Inter",
+      "weight": 700,
+      "file": "inter/inter-latin-700-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.3.0/files/inter-latin-700-normal.woff2",
+      "sha256": "6f56409fd3d64bb85f7d070bce20749db2d66b6d63cec586cc22d1c761be2491"
+    },
+    {
+      "family": "JetBrains Mono",
+      "weight": 400,
+      "file": "jetbrains-mono/jetbrains-mono-latin-400-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-latin-400-normal.woff2",
+      "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+    },
+    {
+      "family": "JetBrains Mono",
+      "weight": 700,
+      "file": "jetbrains-mono/jetbrains-mono-latin-700-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-latin-700-normal.woff2",
+      "sha256": "d0d4e818808f2a0ba39b2b09d1989366f63494e295f003c7ef436697378507e8"
+    },
+    {
+      "family": "Liberation Sans",
+      "weight": 400,
+      "file": "liberation-sans/LiberationSans-Regular.ttf",
+      "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz#liberation-fonts-ttf-2.1.5/LiberationSans-Regular.ttf",
+      "sha256": "76d04c18ea243f426b7de1f3ad208e927008f961dc5945e5aad352d0dfde8ee8"
+    },
+    {
+      "family": "Liberation Sans",
+      "weight": 700,
+      "file": "liberation-sans/LiberationSans-Bold.ttf",
+      "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz#liberation-fonts-ttf-2.1.5/LiberationSans-Bold.ttf",
+      "sha256": "788abee4c806d660e8aee46689dd8540cd4bb98da03dcc9d171ce3efd99a9173"
+    },
+    {
+      "family": "Noto Sans",
+      "weight": 400,
+      "file": "noto-sans/noto-sans-latin-400-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/noto-sans@5.3.0/files/noto-sans-latin-400-normal.woff2",
+      "sha256": "09aee8065d25508f23a4c3d92cd777ac869c52d93fd868a88f025d888a7937d6"
+    },
+    {
+      "family": "Noto Sans",
+      "weight": 600,
+      "file": "noto-sans/noto-sans-latin-600-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/noto-sans@5.3.0/files/noto-sans-latin-600-normal.woff2",
+      "sha256": "79e274470d1c5a0118eb325e2ea6f2eb2a449336d7fde1a4f20a2f32fe1119ed"
+    },
+    {
+      "family": "Roboto",
+      "weight": 400,
+      "file": "roboto/roboto-latin-400-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/files/roboto-latin-400-normal.woff2",
+      "sha256": "425c0713a8176f92273d378599c7eac57de7fafabd4bd0ed457b70eb8f80d371"
+    },
+    {
+      "family": "Roboto",
+      "weight": 500,
+      "file": "roboto/roboto-latin-500-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/files/roboto-latin-500-normal.woff2",
+      "sha256": "5bcc3aa180e7f26f643cd5b2621cd7c2de193d0661d913a94afd3d4881a7a34b"
+    },
+    {
+      "family": "Roboto",
+      "weight": 700,
+      "file": "roboto/roboto-latin-700-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/files/roboto-latin-700-normal.woff2",
+      "sha256": "b9d66d1708156f765ada51939bc24ed259dafa69eb631b36e443680fe9e15879"
+    },
+    {
+      "family": "Selawik",
+      "weight": 400,
+      "file": "selawik/selawk.ttf",
+      "url": "https://github.com/microsoft/Selawik/releases/download/1.01/Selawik_Release.zip#selawk.ttf",
+      "sha256": "e9d98518d8ac2817782a9a382430463a2e0793ea68350b695bb727d9a830ee1c"
+    },
+    {
+      "family": "Selawik",
+      "weight": 600,
+      "file": "selawik/selawksb.ttf",
+      "url": "https://github.com/microsoft/Selawik/releases/download/1.01/Selawik_Release.zip#selawksb.ttf",
+      "sha256": "0a9e9d0549a10f24bef9b3a29e06fe6e0b5c21e7a784c503b048a307841a7783"
+    },
+    {
+      "family": "Selawik",
+      "weight": 700,
+      "file": "selawik/selawkb.ttf",
+      "url": "https://github.com/microsoft/Selawik/releases/download/1.01/Selawik_Release.zip#selawkb.ttf",
+      "sha256": "f0db5e174a90e0956ad7d2844bdca1d5e6da92ec65b2c04e57ba9b180668c904"
+    },
+    {
+      "family": "Source Serif 4",
+      "weight": 400,
+      "file": "source-serif-4/source-serif-4-latin-400-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-400-normal.woff2",
+      "sha256": "02194deb92d3975dd30e11a3824a1f1db32b48c93654e60560cb81ce8e7b5f95"
+    },
+    {
+      "family": "Source Serif 4",
+      "weight": 600,
+      "file": "source-serif-4/source-serif-4-latin-600-normal.woff2",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-600-normal.woff2",
+      "sha256": "f2b7e1cf1d277b7608231868135648f8ad8e2b58d8e97ca088bee15dc357bee7"
+    }
+  ],
+  "licenses": [
+    {
+      "file": "inter/LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.3.0/LICENSE",
+      "sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345"
+    },
+    {
+      "file": "jetbrains-mono/LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/LICENSE",
+      "sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b"
+    },
+    {
+      "file": "noto-sans/LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/noto-sans@5.3.0/LICENSE",
+      "sha256": "54ec7b5a35310ad66f9f3091426f7028484cbf9ae1ab5da30122ee412a3009e1"
+    },
+    {
+      "file": "roboto/LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/LICENSE",
+      "sha256": "84044c09058803d87a241bd28abb4ce30a433d7db9c27a04da3efad6a0ca539c"
+    },
+    {
+      "file": "source-serif-4/LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.3.0/LICENSE",
+      "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+    },
+    {
+      "file": "liberation-sans/LICENSE",
+      "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz",
+      "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+    },
+    {
+      "file": "selawik/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/Selawik/89362e84731d1f5777fa078fd4d5ebbd339e4378/LICENSE.txt",
+      "sha256": "77b7c2506d4efb22e09c8ccf10159f4956eab3ef7c007fef95de136bcf45300c"
+    }
+  ]
+}

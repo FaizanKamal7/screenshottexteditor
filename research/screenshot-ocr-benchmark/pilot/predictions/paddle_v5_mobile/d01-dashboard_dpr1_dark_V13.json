@@ -1,0 +1,568 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 11.529581217999748,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 11.54869600001257,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e53e0e3bfe6f23e03c7f7d6d6a6e339b121237ede8167ea2cf3155c1f7ae31",
+ "lines": [
+  {
+   "bbox": [
+    9.0,
+    7.0,
+    84.0,
+    15.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.9828518629074097
+  },
+  {
+   "bbox": [
+    123.0,
+    11.0,
+    108.0,
+    15.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.9938530325889587
+  },
+  {
+   "bbox": [
+    579.0,
+    11.0,
+    45.0,
+    15.0
+   ],
+   "text": "Export csv",
+   "confidence": 0.7620017528533936
+  },
+  {
+   "bbox": [
+    8.0,
+    32.0,
+    47.0,
+    15.0
+   ],
+   "text": " Overview",
+   "confidence": 0.6749423146247864
+  },
+  {
+   "bbox": [
+    170.0,
+    27.0,
+    52.0,
+    7.0
+   ],
+   "text": "deCe45T",
+   "confidence": 0.43634966015815735
+  },
+  {
+   "bbox": [
+    7.0,
+    52.0,
+    46.0,
+    14.0
+   ],
+   "text": "Revenue",
+   "confidence": 0.9610649943351746
+  },
+  {
+   "bbox": [
+    258.0,
+    52.0,
+    39.0,
+    11.0
+   ],
+   "text": "Acshe Uher",
+   "confidence": 0.5905646085739136
+  },
+  {
+   "bbox": [
+    384.0,
+    52.0,
+    36.0,
+    11.0
+   ],
+   "text": "Chum Rate",
+   "confidence": 0.9102551341056824
+  },
+  {
+   "bbox": [
+    512.0,
+    52.0,
+    53.0,
+    11.0
+   ],
+   "text": "Jog Ooder Valu",
+   "confidence": 0.6907974481582642
+  },
+  {
+   "bbox": [
+    9.0,
+    73.0,
+    51.0,
+    11.0
+   ],
+   "text": ":Customers",
+   "confidence": 0.9141122102737427
+  },
+  {
+   "bbox": [
+    130.0,
+    64.0,
+    60.0,
+    17.0
+   ],
+   "text": "$482,910",
+   "confidence": 0.9775878190994263
+  },
+  {
+   "bbox": [
+    258.0,
+    66.0,
+    45.0,
+    15.0
+   ],
+   "text": "12,384",
+   "confidence": 0.9820933938026428
+  },
+  {
+   "bbox": [
+    383.0,
+    64.0,
+    37.0,
+    18.0
+   ],
+   "text": "2.1%",
+   "confidence": 0.9970909357070923
+  },
+  {
+   "bbox": [
+    512.0,
+    65.0,
+    45.0,
+    15.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.9965819716453552
+  },
+  {
+   "bbox": [
+    8.0,
+    89.0,
+    44.0,
+    15.0
+   ],
+   "text": "□Reports",
+   "confidence": 0.924866795539856
+  },
+  {
+   "bbox": [
+    259.0,
+    80.0,
+    53.0,
+    11.0
+   ],
+   "text": "-08% v at mon",
+   "confidence": 0.6382260918617249
+  },
+  {
+   "bbox": [
+    384.0,
+    78.0,
+    47.0,
+    14.0
+   ],
+   "text": "Dewn them 2e%",
+   "confidence": 0.8021143674850464
+  },
+  {
+   "bbox": [
+    514.0,
+    81.0,
+    42.0,
+    8.0
+   ],
+   "text": "-$315t",
+   "confidence": 0.6664242148399353
+  },
+  {
+   "bbox": [
+    8.0,
+    108.0,
+    45.0,
+    15.0
+   ],
+   "text": "O Settings",
+   "confidence": 0.8872702717781067
+  },
+  {
+   "bbox": [
+    130.0,
+    111.0,
+    75.0,
+    12.0
+   ],
+   "text": "Weekly revenue (UsD)",
+   "confidence": 0.943757176399231
+  },
+  {
+   "bbox": [
+    318.0,
+    113.0,
+    54.0,
+    10.0
+   ],
+   "text": "Recent invoices",
+   "confidence": 0.9736847281455994
+  },
+  {
+   "bbox": [
+    139.0,
+    127.0,
+    11.0,
+    7.0
+   ],
+   "text": "To",
+   "confidence": 0.3523319959640503
+  },
+  {
+   "bbox": [
+    321.0,
+    129.0,
+    23.0,
+    9.0
+   ],
+   "text": "tmvoice",
+   "confidence": 0.7728338837623596
+  },
+  {
+   "bbox": [
+    374.0,
+    128.0,
+    32.0,
+    11.0
+   ],
+   "text": "Cutamer",
+   "confidence": 0.8616451025009155
+  },
+  {
+   "bbox": [
+    467.0,
+    127.0,
+    20.0,
+    12.0
+   ],
+   "text": "Date",
+   "confidence": 0.6825385093688965
+  },
+  {
+   "bbox": [
+    549.0,
+    128.0,
+    53.0,
+    11.0
+   ],
+   "text": "Amourt Suats",
+   "confidence": 0.8345198035240173
+  },
+  {
+   "bbox": [
+    321.0,
+    144.0,
+    35.0,
+    10.0
+   ],
+   "text": "INV-10421",
+   "confidence": 0.9287111759185791
+  },
+  {
+   "bbox": [
+    374.0,
+    143.0,
+    62.0,
+    11.0
+   ],
+   "text": "Harper & Stono LLC",
+   "confidence": 0.855747640132904
+  },
+  {
+   "bbox": [
+    467.0,
+    143.0,
+    37.0,
+    11.0
+   ],
+   "text": "2026-09-02",
+   "confidence": 0.9830244779586792
+  },
+  {
+   "bbox": [
+    543.0,
+    144.0,
+    34.0,
+    11.0
+   ],
+   "text": "$3,420.00",
+   "confidence": 0.9380049109458923
+  },
+  {
+   "bbox": [
+    582.0,
+    145.0,
+    18.0,
+    8.0
+   ],
+   "text": "Paid",
+   "confidence": 0.9197893142700195
+  },
+  {
+   "bbox": [
+    322.0,
+    160.0,
+    34.0,
+    12.0
+   ],
+   "text": "INV-10422",
+   "confidence": 0.889979898929596
+  },
+  {
+   "bbox": [
+    374.0,
+    160.0,
+    49.0,
+    12.0
+   ],
+   "text": "Bluefield Dental",
+   "confidence": 0.8827542066574097
+  },
+  {
+   "bbox": [
+    467.0,
+    159.0,
+    39.0,
+    15.0
+   ],
+   "text": "2026-09-04",
+   "confidence": 0.9349809885025024
+  },
+  {
+   "bbox": [
+    548.0,
+    160.0,
+    29.0,
+    12.0
+   ],
+   "text": "$780.50",
+   "confidence": 0.9716529250144958
+  },
+  {
+   "bbox": [
+    584.0,
+    162.0,
+    15.0,
+    9.0
+   ],
+   "text": "Due",
+   "confidence": 0.9789180755615234
+  },
+  {
+   "bbox": [
+    141.0,
+    174.0,
+    9.0,
+    6.0
+   ],
+   "text": "30",
+   "confidence": 0.47986483573913574
+  },
+  {
+   "bbox": [
+    321.0,
+    178.0,
+    35.0,
+    11.0
+   ],
+   "text": "INW-10423",
+   "confidence": 0.8981289267539978
+  },
+  {
+   "bbox": [
+    375.0,
+    178.0,
+    61.0,
+    12.0
+   ],
+   "text": "Oakridge Supply Co",
+   "confidence": 0.9260212779045105
+  },
+  {
+   "bbox": [
+    467.0,
+    178.0,
+    37.0,
+    11.0
+   ],
+   "text": "2026-09-09",
+   "confidence": 0.9686851501464844
+  },
+  {
+   "bbox": [
+    538.0,
+    176.0,
+    38.0,
+    14.0
+   ],
+   "text": "$12.006.75",
+   "confidence": 0.8320661783218384
+  },
+  {
+   "bbox": [
+    583.0,
+    179.0,
+    17.0,
+    9.0
+   ],
+   "text": "Paid",
+   "confidence": 0.9447411298751831
+  },
+  {
+   "bbox": [
+    321.0,
+    195.0,
+    34.0,
+    11.0
+   ],
+   "text": "IN-10424",
+   "confidence": 0.9674420952796936
+  },
+  {
+   "bbox": [
+    375.0,
+    196.0,
+    61.0,
+    11.0
+   ],
+   "text": "Maple Street Books",
+   "confidence": 0.9413681030273438
+  },
+  {
+   "bbox": [
+    466.0,
+    191.0,
+    38.0,
+    18.0
+   ],
+   "text": "2026-09-15",
+   "confidence": 0.816334068775177
+  },
+  {
+   "bbox": [
+    551.0,
+    195.0,
+    26.0,
+    12.0
+   ],
+   "text": "$96.00",
+   "confidence": 0.9747264981269836
+  },
+  {
+   "bbox": [
+    161.0,
+    205.0,
+    15.0,
+    8.0
+   ],
+   "text": "A20",
+   "confidence": 0.46818116307258606
+  },
+  {
+   "bbox": [
+    584.0,
+    198.0,
+    14.0,
+    7.0
+   ],
+   "text": "Out",
+   "confidence": 0.6306639313697815
+  },
+  {
+   "bbox": [
+    321.0,
+    213.0,
+    34.0,
+    11.0
+   ],
+   "text": "INV-10425",
+   "confidence": 0.9141029715538025
+  },
+  {
+   "bbox": [
+    374.0,
+    214.0,
+    49.0,
+    11.0
+   ],
+   "text": "Quinn Logitics",
+   "confidence": 0.9610245823860168
+  },
+  {
+   "bbox": [
+    467.0,
+    214.0,
+    38.0,
+    11.0
+   ],
+   "text": "2026-09-21",
+   "confidence": 0.9539576768875122
+  },
+  {
+   "bbox": [
+    543.0,
+    213.0,
+    34.0,
+    11.0
+   ],
+   "text": "$5,318.20",
+   "confidence": 0.8973477482795715
+  },
+  {
+   "bbox": [
+    581.0,
+    213.0,
+    21.0,
+    11.0
+   ],
+   "text": "Pakd",
+   "confidence": 0.8423725366592407
+  },
+  {
+   "bbox": [
+    317.0,
+    231.0,
+    178.0,
+    11.0
+   ],
+   "text": "Showng5of 4inve.Amont inu tacends a ed",
+   "confidence": 0.5606170296669006
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:14:08.093101+00:00"
+}

@@ -1,0 +1,498 @@
+{
+ "engine_id": "doctr",
+ "engine_version": "python-doctr v1.1.0 / torch 2.8.0+cpu",
+ "config": {
+  "ocr_predictor": {
+   "pretrained": true
+  },
+  "input": "RGB uint8 ndarray",
+  "det_model": "FAST",
+  "reco_model": "CRNN"
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.274356773999898,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.2964027999842074,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "c03904f2c9e3f635d40e4ab156645b8cf8f3304ff6488d3eda2c999e72e6fc2d",
+ "lines": [
+  {
+   "bbox": [
+    6.25,
+    6.25,
+    29.375,
+    6.25
+   ],
+   "text": "EPLEIEE",
+   "confidence": 0.2975192666053772
+  },
+  {
+   "bbox": [
+    96.25,
+    5.000000000000004,
+    35.0,
+    8.125000000000004
+   ],
+   "text": "server.ts",
+   "confidence": 0.5070523619651794
+  },
+  {
+   "bbox": [
+    143.75,
+    5.000000000000004,
+    41.875,
+    8.749999999999991
+   ],
+   "text": "confie-1400",
+   "confidence": 0.47982028126716614
+  },
+  {
+   "bbox": [
+    199.375,
+    4.374999999999996,
+    34.375,
+    8.750000000000014
+   ],
+   "text": "READMEIRS",
+   "confidence": 0.29534420371055603
+  },
+  {
+   "bbox": [
+    5.625,
+    19.999999999999996,
+    13.125,
+    6.875000000000009
+   ],
+   "text": "sre",
+   "confidence": 0.9211723208427429
+  },
+  {
+   "bbox": [
+    436.875,
+    12.5,
+    90.625,
+    11.874999999999991
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.8019371032714844
+  },
+  {
+   "bbox": [
+    100.0,
+    21.875,
+    154.375,
+    10.000000000000009
+   ],
+   "text": "1 import * createserver } from \"nodechttpt:",
+   "confidence": 0.2545265555381775
+  },
+  {
+   "bbox": [
+    12.5,
+    30.624999999999993,
+    34.375,
+    8.125000000000004
+   ],
+   "text": "server,ts",
+   "confidence": 0.3108033835887909
+  },
+  {
+   "bbox": [
+    100.0,
+    32.49999999999999,
+    164.375,
+    9.375
+   ],
+   "text": "a Irport ( reedfile H from \"node:fs/promises\";",
+   "confidence": 0.3860906958580017
+  },
+  {
+   "bbox": [
+    436.25,
+    30.624999999999993,
+    186.875,
+    10.625000000000018
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": 0.5101283192634583
+  },
+  {
+   "bbox": [
+    12.5,
+    42.50000000000001,
+    20.0,
+    6.874999999999987
+   ],
+   "text": "cb.",
+   "confidence": 0.40032902359962463
+  },
+  {
+   "bbox": [
+    436.25,
+    42.50000000000001,
+    180.625,
+    9.999999999999986
+   ],
+   "text": "handler rums. Unknown paths return 404 without",
+   "confidence": 0.5508687496185303
+  },
+  {
+   "bbox": [
+    13.125,
+    54.37499999999999,
+    33.75,
+    6.25
+   ],
+   "text": "routes.ts",
+   "confidence": 0.7394236922264099
+  },
+  {
+   "bbox": [
+    108.125,
+    52.49999999999999,
+    163.125,
+    8.750000000000014
+   ],
+   "text": "sonSt PORT - Moncer(precess.env.PORT n 8010)B",
+   "confidence": 0.3246600925922394
+  },
+  {
+   "bbox": [
+    436.875,
+    53.75000000000001,
+    82.5,
+    9.999999999999986
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9760720133781433
+  },
+  {
+   "bbox": [
+    5.625,
+    64.99999999999999,
+    44.375,
+    8.750000000000014
+   ],
+   "text": "package.json",
+   "confidence": 0.4709263741970062
+  },
+  {
+   "bbox": [
+    108.125,
+    62.5,
+    129.375,
+    8.749999999999991
+   ],
+   "text": "copst MAXBOOY 1.048.576; 1 1 MEBL",
+   "confidence": 0.32712802290916443
+  },
+  {
+   "bbox": [
+    6.25,
+    75.62500000000001,
+    46.875,
+    8.749999999999991
+   ],
+   "text": "tsconfig-json",
+   "confidence": 0.788594126701355
+  },
+  {
+   "bbox": [
+    436.875,
+    71.24999999999999,
+    191.875,
+    10.625000000000018
+   ],
+   "text": "Pagination is 1-indexed. Pages above 500 are rejected",
+   "confidence": 0.6300535798072815
+  },
+  {
+   "bbox": [
+    108.75,
+    81.87500000000001,
+    172.5,
+    9.999999999999986
+   ],
+   "text": "type Reute a (ree: Requent) 4 Prosisediesponses;",
+   "confidence": 0.36010271310806274
+  },
+  {
+   "bbox": [
+    435.625,
+    83.125,
+    184.375,
+    9.999999999999986
+   ],
+   "text": "so that a single client cannot sean the whole table;",
+   "confidence": 0.5115875601768494
+  },
+  {
+   "bbox": [
+    435.625,
+    94.37500000000001,
+    153.75,
+    10.624999999999996
+   ],
+   "text": "use the export. job for bulk access instead,",
+   "confidence": 0.41648539900779724
+  },
+  {
+   "bbox": [
+    100.0,
+    102.49999999999999,
+    147.5,
+    9.375
+   ],
+   "text": "9 copst routes  nte Mapestring, Raute(E",
+   "confidence": 0.2429731786251068
+  },
+  {
+   "bbox": [
+    96.25,
+    113.12500000000001,
+    9.375,
+    7.499999999999996
+   ],
+   "text": "10",
+   "confidence": 0.8279495239257812
+  },
+  {
+   "bbox": [
+    116.25,
+    111.87499999999999,
+    193.75,
+    10.000000000000009
+   ],
+   "text": "I/health?, asyng o a ison(t oke; true, votines 0 )1.",
+   "confidence": 0.35887664556503296
+  },
+  {
+   "bbox": [
+    96.25,
+    122.50000000000001,
+    8.75,
+    8.124999999999982
+   ],
+   "text": "11",
+   "confidence": 0.8318430185317993
+  },
+  {
+   "bbox": [
+    441.875,
+    116.25000000000001,
+    175.625,
+    10.624999999999996
+   ],
+   "text": "Tipa set PORT-90901 tor run twoi instances sidel by side",
+   "confidence": 0.2638739049434662
+  },
+  {
+   "bbox": [
+    116.25,
+    122.50000000000001,
+    98.75,
+    8.749999999999991
+   ],
+   "text": "I/inveices\", Listinvoices),",
+   "confidence": 0.24486897885799408
+  },
+  {
+   "bbox": [
+    442.5,
+    126.875,
+    69.375,
+    9.999999999999986
+   ],
+   "text": "during Jocal testing.",
+   "confidence": 0.4703074097633362
+  },
+  {
+   "bbox": [
+    95.625,
+    131.875,
+    26.25,
+    9.999999999999986
+   ],
+   "text": "47 D:",
+   "confidence": 0.6835014820098877
+  },
+  {
+   "bbox": [
+    96.25,
+    143.125,
+    8.125,
+    7.500000000000018
+   ],
+   "text": "a",
+   "confidence": 0.47998619079589844
+  },
+  {
+   "bbox": [
+    95.625,
+    151.875,
+    191.25,
+    9.999999999999986
+   ],
+   "text": "14 export async. fonctina Listinvoices(reg: Request) {",
+   "confidence": 0.3892161250114441
+  },
+  {
+   "bbox": [
+    435.625,
+    148.125,
+    120.625,
+    11.250000000000004
+   ],
+   "text": "Glyph checke 1lj 000: I m SS 8E",
+   "confidence": 0.2959959805011749
+  },
+  {
+   "bbox": [
+    96.25,
+    162.5,
+    8.75,
+    8.125000000000004
+   ],
+   "text": "15",
+   "confidence": 0.8603547215461731
+  },
+  {
+   "bbox": [
+    115.625,
+    162.5,
+    246.875,
+    10.000000000000009
+   ],
+   "text": "coast. page Nusber(nes URL(req.urt).searchParans.get(\"page\") 2 7:",
+   "confidence": 0.21842876076698303
+  },
+  {
+   "bbox": [
+    96.25,
+    173.125,
+    8.75,
+    7.499999999999996
+   ],
+   "text": "t",
+   "confidence": 0.4449792802333832
+  },
+  {
+   "bbox": [
+    115.625,
+    171.875,
+    240.0,
+    10.624999999999996
+   ],
+   "text": "if (cage S 1 IL pass > 500) return isonk ecror: \"ead page\" . 400)",
+   "confidence": 0.3098103404045105
+  },
+  {
+   "bbox": [
+    96.875,
+    182.5,
+    8.125,
+    8.125000000000004
+   ],
+   "text": "17",
+   "confidence": 0.8964930176734924
+  },
+  {
+   "bbox": [
+    116.25,
+    182.5,
+    250.0,
+    9.375
+   ],
+   "text": "const rous - mait 6e.9uery(SELECT i0, total FROM invoices LINIT 25\"):",
+   "confidence": 0.24619832634925842
+  },
+  {
+   "bbox": [
+    96.25,
+    192.5,
+    8.75,
+    8.125000000000004
+   ],
+   "text": "1",
+   "confidence": 0.46734166145324707
+  },
+  {
+   "bbox": [
+    115.0,
+    191.875,
+    101.25,
+    9.999999999999986
+   ],
+   "text": "return json( page. roas ):",
+   "confidence": 0.5217456817626953
+  },
+  {
+   "bbox": [
+    96.875,
+    203.125,
+    8.75,
+    6.875000000000009
+   ],
+   "text": "L",
+   "confidence": 0.15230810642242432
+  },
+  {
+   "bbox": [
+    96.25,
+    213.125,
+    8.75,
+    6.875000000000009
+   ],
+   "text": "2",
+   "confidence": 0.5806251764297485
+  },
+  {
+   "bbox": [
+    95.625,
+    222.5,
+    136.875,
+    8.749999999999991
+   ],
+   "text": "21 createserver(handter).listen(PORT);",
+   "confidence": 0.4898492246866226
+  },
+  {
+   "bbox": [
+    5.625,
+    391.25,
+    14.375,
+    5.624999999999991
+   ],
+   "text": "sAin",
+   "confidence": 0.42199259996414185
+  },
+  {
+   "bbox": [
+    36.25,
+    390.0,
+    65.0,
+    8.749999999999991
+   ],
+   "text": "errers 3 SrALN",
+   "confidence": 0.27023813128471375
+  },
+  {
+   "bbox": [
+    473.125,
+    389.375,
+    162.5,
+    8.750000000000036
+   ],
+   "text": "1A 14 cel 27 Spacest a UTF Typescriot",
+   "confidence": 0.26564520597457886
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:33:23.538804+00:00"
+}

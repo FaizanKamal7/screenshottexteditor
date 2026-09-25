@@ -1,0 +1,10 @@
+﻿S1 moderate skew (draft sim): ratio:boot_t=0.948  diff:boot_t=0.921  diff:boot_t_sym=0.914  rel:log_boot_t=0.934  rel:log_boot_t_sym=0.942  undefined_rel=0
+S2 low error, heavy skew: ratio:boot_t=0.950  diff:boot_t=0.895  diff:boot_t_sym=0.887  rel:log_boot_t=0.928  rel:log_boot_t_sym=0.945  undefined_rel=0
+S3 high error: ratio:boot_t=0.940  diff:boot_t=0.935  diff:boot_t_sym=0.932  rel:log_boot_t=0.941  rel:log_boot_t_sym=0.947  undefined_rel=0
+S4 strata differ: ratio:boot_t=0.948  diff:boot_t=0.907  diff:boot_t_sym=0.898  rel:log_boot_t=0.918  rel:log_boot_t_sym=0.934  undefined_rel=0
+S5 skewed lengths: ratio:boot_t=0.947  diff:boot_t=0.929  diff:boot_t_sym=0.928  rel:log_boot_t=0.927  rel:log_boot_t_sym=0.946  undefined_rel=0
+[held-out] H1 engine B better but noisier: ratio:boot_t=0.941  diff:boot_t=0.912  diff:boot_t_sym=0.949  rel:log_boot_t=0.938  rel:log_boot_t_sym=0.951  undefined_rel=0
+[held-out] H2 very skewed lengths: ratio:boot_t=0.913  diff:boot_t=0.902  diff:boot_t_sym=0.893  rel:log_boot_t=0.895  rel:log_boot_t_sym=0.915  undefined_rel=0
+[held-out] H3 bimodal templates: ratio:boot_t=0.971  diff:boot_t=0.893  diff:boot_t_sym=0.898  rel:log_boot_t=0.927  rel:log_boot_t_sym=0.950  undefined_rel=0
+passes all 8 scenarios: {"ratio:boot_t": false, "diff:boot_t": false, "diff:boot_t_sym": false, "rel:log_boot_t": false, "rel:log_boot_t_sym": false}
+elapsed 196.7 s -> /bench/pilot/validation/c6_study_round2_n20.json

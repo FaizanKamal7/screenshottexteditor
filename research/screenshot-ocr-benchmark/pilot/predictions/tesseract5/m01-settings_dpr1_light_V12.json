@@ -1,0 +1,135 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m01-settings_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.3194724350000797,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.330461200006539,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "65163ad172e8461e74784506ae138af35e8eeb14beb5037053fa2a117e51e2c3",
+ "lines": [
+  {
+   "bbox": [
+    10.0,
+    28.0,
+    65.0,
+    16.0
+   ],
+   "text": "Settings",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    47.0,
+    85.0,
+    70.0,
+    18.0
+   ],
+   "text": "ames",
+   "confidence": 0.1
+  },
+  {
+   "bbox": [
+    11.0,
+    115.0,
+    169.0,
+    46.0
+   ],
+   "text": "pe .",
+   "confidence": 0.085
+  },
+  {
+   "bbox": [
+    15.0,
+    161.0,
+    68.0,
+    8.0
+   ],
+   "text": "J",
+   "confidence": 0.19
+  },
+  {
+   "bbox": [
+    15.0,
+    183.0,
+    164.0,
+    9.0
+   ],
+   "text": "J",
+   "confidence": 0.12
+  },
+  {
+   "bbox": [
+    15.0,
+    227.0,
+    47.0,
+    7.0
+   ],
+   "text": "pa",
+   "confidence": 0.26
+  },
+  {
+   "bbox": [
+    15.0,
+    268.0,
+    45.0,
+    8.0
+   ],
+   "text": "pe",
+   "confidence": 0.31
+  },
+  {
+   "bbox": [
+    20.0,
+    389.0,
+    11.0,
+    17.0
+   ],
+   "text": "i»",
+   "confidence": 0.67
+  },
+  {
+   "bbox": [
+    69.0,
+    389.0,
+    9.0,
+    9.0
+   ],
+   "text": "o",
+   "confidence": 0.2
+  },
+  {
+   "bbox": [
+    115.0,
+    391.0,
+    11.0,
+    15.0
+   ],
+   "text": "in",
+   "confidence": 0.85
+  },
+  {
+   "bbox": [
+    167.0,
+    390.0,
+    7.0,
+    7.0
+   ],
+   "text": ".",
+   "confidence": 0.6
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:17:52.718574+00:00"
+}

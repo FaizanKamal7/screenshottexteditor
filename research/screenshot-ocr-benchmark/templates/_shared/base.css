@@ -1,0 +1,66 @@
+/*
+ * Shared template rules. These exist so ground-truth extraction is exact:
+ * - Every font is a pinned local file (fonts/fonts.lock.json); no CDN, no system fonts.
+ * - No text-transform / font-variant / text-overflow: ellipsis — rendered glyphs must equal DOM text.
+ * - No list markers, underlines or currentColor on non-text paint, so the text-hidden
+ *   render (color: transparent) changes text pixels only.
+ * - Icons are inline SVG with explicit fills (var(--icon)), never currentColor.
+ */
+
+@font-face { font-family: "Inter"; font-weight: 400; src: url("../../fonts/inter/inter-latin-400-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("../../fonts/inter/inter-latin-500-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("../../fonts/inter/inter-latin-600-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("../../fonts/inter/inter-latin-700-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Roboto"; font-weight: 400; src: url("../../fonts/roboto/roboto-latin-400-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Roboto"; font-weight: 500; src: url("../../fonts/roboto/roboto-latin-500-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Roboto"; font-weight: 700; src: url("../../fonts/roboto/roboto-latin-700-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Noto Sans"; font-weight: 400; src: url("../../fonts/noto-sans/noto-sans-latin-400-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Noto Sans"; font-weight: 600; src: url("../../fonts/noto-sans/noto-sans-latin-600-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Source Serif 4"; font-weight: 400; src: url("../../fonts/source-serif-4/source-serif-4-latin-400-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Source Serif 4"; font-weight: 600; src: url("../../fonts/source-serif-4/source-serif-4-latin-600-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; src: url("../../fonts/jetbrains-mono/jetbrains-mono-latin-400-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "JetBrains Mono"; font-weight: 700; src: url("../../fonts/jetbrains-mono/jetbrains-mono-latin-700-normal.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Liberation Sans"; font-weight: 400; src: url("../../fonts/liberation-sans/LiberationSans-Regular.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Liberation Sans"; font-weight: 700; src: url("../../fonts/liberation-sans/LiberationSans-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Selawik"; font-weight: 400; src: url("../../fonts/selawik/selawk.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Selawik"; font-weight: 600; src: url("../../fonts/selawik/selawksb.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Selawik"; font-weight: 700; src: url("../../fonts/selawik/selawkb.ttf") format("truetype"); font-display: block; }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  font-variant-caps: normal; /* not the font-variant shorthand: it would reset font-variant-ligatures */
+  font-synthesis: none;
+  text-overflow: clip;
+  list-style: none;
+  text-decoration: none;
+  border-color: var(--border);
+  outline-color: var(--border);
+  caret-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: auto;
+}
+
+svg { display: block; flex: none; }
+svg .i { fill: var(--icon); }
+svg .s { stroke: var(--icon); fill: none; }
+
+/* Text-hidden render for ink masks (ground-truth renderer only). */
+html[data-hidetext="1"] *, html[data-hidetext="1"] *::before, html[data-hidetext="1"] *::after {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* Device-capture fiducials (only shown when ?device=1). */
+.fid { display: none; position: fixed; width: 16px; height: 16px; background: #ff00ff; z-index: 9999; }
+html[data-device="1"] .fid { display: block; }

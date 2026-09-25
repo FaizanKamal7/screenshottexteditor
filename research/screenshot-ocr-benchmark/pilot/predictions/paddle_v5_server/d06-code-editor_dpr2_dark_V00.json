@@ -1,0 +1,102 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d06-code-editor_dpr2_dark_V00",
+ "status": "ok",
+ "error": null,
+ "total_s": 141.44896565499948,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 141.5760274999775,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "0a5c74abb42a3ed078bf84593124e5f368d80c0b4300124a39e7bf364218fbee",
+ "peak_rss_mb": 22081.8,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
+ "lines": [
+  {
+   "bbox": [
+    21.0,
+    1563.0,
+    61.0,
+    22.0
+   ],
+   "text": "main",
+   "confidence": 0.9987925291061401
+  },
+  {
+   "bbox": [
+    119.0,
+    1563.0,
+    17.0,
+    20.0
+   ],
+   "text": "0",
+   "confidence": 0.874727725982666
+  },
+  {
+   "bbox": [
+    143.0,
+    1561.0,
+    258.0,
+    27.0
+   ],
+   "text": "errors, 2 warnings",
+   "confidence": 0.9624561667442322
+  },
+  {
+   "bbox": [
+    1898.0,
+    1561.0,
+    184.0,
+    24.0
+   ],
+   "text": "Ln 14, Col 27",
+   "confidence": 0.9385108351707458
+  },
+  {
+   "bbox": [
+    2115.0,
+    1558.0,
+    136.0,
+    29.0
+   ],
+   "text": "Spaces: 2",
+   "confidence": 0.9413405656814575
+  },
+  {
+   "bbox": [
+    2283.0,
+    1560.0,
+    76.0,
+    25.0
+   ],
+   "text": "UTF-8",
+   "confidence": 0.9956266283988953
+  },
+  {
+   "bbox": [
+    2392.0,
+    1560.0,
+    144.0,
+    28.0
+   ],
+   "text": "TypeScript",
+   "confidence": 0.9982144236564636
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T13:11:15.725064+00:00"
+}

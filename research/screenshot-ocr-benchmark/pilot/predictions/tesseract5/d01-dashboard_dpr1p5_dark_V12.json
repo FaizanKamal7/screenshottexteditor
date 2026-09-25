@@ -1,0 +1,195 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1p5_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.6000700399999914,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.787197700003162,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "36ff2d8307ec7615270db1867a0ace349f1e00ff95dd532b197e5bca9676203e",
+ "lines": [
+  {
+   "bbox": [
+    16.0,
+    18.0,
+    122.0,
+    14.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.915
+  },
+  {
+   "bbox": [
+    36.0,
+    57.0,
+    44.0,
+    8.0
+   ],
+   "text": "Overview",
+   "confidence": 0.81
+  },
+  {
+   "bbox": [
+    18.0,
+    87.0,
+    59.0,
+    7.0
+   ],
+   "text": "+ Revenue",
+   "confidence": 0.545
+  },
+  {
+   "bbox": [
+    36.0,
+    115.0,
+    51.0,
+    8.0
+   ],
+   "text": "Customers",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    18.0,
+    142.0,
+    55.0,
+    12.0
+   ],
+   "text": "0 Reports",
+   "confidence": 0.555
+  },
+  {
+   "bbox": [
+    18.0,
+    171.0,
+    58.0,
+    11.0
+   ],
+   "text": "© Settings",
+   "confidence": 0.575
+  },
+  {
+   "bbox": [
+    186.0,
+    22.0,
+    159.0,
+    18.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    187.0,
+    34.0,
+    148.0,
+    28.0
+   ],
+   "text": "Last 30 days - Updated 08:45 UTC",
+   "confidence": 0.8142857142857143
+  },
+  {
+   "bbox": [
+    200.0,
+    83.0,
+    644.0,
+    10.0
+   ],
+   "text": "Monthly Revere Active Users Chum Rate Avg. Order Value:",
+   "confidence": 0.7144444444444444
+  },
+  {
+   "bbox": [
+    200.0,
+    101.0,
+    632.0,
+    19.0
+   ],
+   "text": "$482,910 12,384 2.1% $86.40",
+   "confidence": 0.9475
+  },
+  {
+   "bbox": [
+    200.0,
+    113.0,
+    655.0,
+    29.0
+   ],
+   "text": "Damevsiastmonts “08 va lst month Down from 26% “S315 ast month",
+   "confidence": 0.4254545454545455
+  },
+  {
+   "bbox": [
+    195.0,
+    163.0,
+    111.0,
+    28.0
+   ],
+   "text": "Weekly revenue (USD)",
+   "confidence": 0.8033333333333332
+  },
+  {
+   "bbox": [
+    211.0,
+    220.0,
+    650.0,
+    14.0
+   ],
+   "text": "I $3420.00",
+   "confidence": 0.13
+  },
+  {
+   "bbox": [
+    826.0,
+    247.0,
+    35.0,
+    8.0
+   ],
+   "text": "S050",
+   "confidence": 0.22
+  },
+  {
+   "bbox": [
+    236.0,
+    250.0,
+    625.0,
+    53.0
+   ],
+   "text": "B mn",
+   "confidence": 0.35
+  },
+  {
+   "bbox": [
+    221.0,
+    297.0,
+    640.0,
+    10.0
+   ],
+   "text": "k $9500",
+   "confidence": 0.195
+  },
+  {
+   "bbox": [
+    818.0,
+    325.0,
+    43.0,
+    9.0
+   ],
+   "text": "ssa820",
+   "confidence": 0.15
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:11:13.326999+00:00"
+}

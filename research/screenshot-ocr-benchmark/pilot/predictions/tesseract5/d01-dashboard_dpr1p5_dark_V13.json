@@ -1,0 +1,295 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1p5_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.6497899529999813,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.6742832000018097,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "db65e86135a8c50ac4b5208b7d7b534cbb8980d483ad75df0beb19f7ec188185",
+ "lines": [
+  {
+   "bbox": [
+    16.0,
+    18.0,
+    122.0,
+    14.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.935
+  },
+  {
+   "bbox": [
+    36.0,
+    57.0,
+    44.0,
+    8.0
+   ],
+   "text": "Overview",
+   "confidence": 0.83
+  },
+  {
+   "bbox": [
+    18.0,
+    87.0,
+    59.0,
+    7.0
+   ],
+   "text": "+ Revenue",
+   "confidence": 0.54
+  },
+  {
+   "bbox": [
+    36.0,
+    115.0,
+    51.0,
+    8.0
+   ],
+   "text": "Customers",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    18.0,
+    142.0,
+    55.0,
+    12.0
+   ],
+   "text": "0 Reports",
+   "confidence": 0.72
+  },
+  {
+   "bbox": [
+    18.0,
+    171.0,
+    58.0,
+    11.0
+   ],
+   "text": "© Settings",
+   "confidence": 0.745
+  },
+  {
+   "bbox": [
+    186.0,
+    22.0,
+    159.0,
+    18.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    187.0,
+    35.0,
+    148.0,
+    28.0
+   ],
+   "text": "Lost 30 days - Updated 08:45 UTC",
+   "confidence": 0.702857142857143
+  },
+  {
+   "bbox": [
+    200.0,
+    83.0,
+    427.0,
+    9.0
+   ],
+   "text": "Monthly Revere Active Users Chum Rate",
+   "confidence": 0.6866666666666668
+  },
+  {
+   "bbox": [
+    196.0,
+    97.0,
+    429.0,
+    29.0
+   ],
+   "text": "$482,910 12,384 2.1%",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    201.0,
+    113.0,
+    445.0,
+    28.0
+   ],
+   "text": "Tats astmonth 08% vs last month Down from 26%",
+   "confidence": 0.5066666666666666
+  },
+  {
+   "bbox": [
+    199.0,
+    163.0,
+    357.0,
+    28.0
+   ],
+   "text": "Weekly revenue (USD) Recent invoices",
+   "confidence": 0.862
+  },
+  {
+   "bbox": [
+    211.0,
+    221.0,
+    440.0,
+    13.0
+   ],
+   "text": "o IWA021 Harper & Stone LLC",
+   "confidence": 0.27666666666666667
+  },
+  {
+   "bbox": [
+    486.0,
+    247.0,
+    146.0,
+    8.0
+   ],
+   "text": "INA0Z2 Bluefield Dental",
+   "confidence": 0.46
+  },
+  {
+   "bbox": [
+    236.0,
+    250.0,
+    415.0,
+    53.0
+   ],
+   "text": "B TE",
+   "confidence": 0.42
+  },
+  {
+   "bbox": [
+    221.0,
+    298.0,
+    429.0,
+    10.0
+   ],
+   "text": "o IN1028 Maple Steet Books",
+   "confidence": 0.436
+  },
+  {
+   "bbox": [
+    486.0,
+    325.0,
+    145.0,
+    10.0
+   ],
+   "text": "IW10425 Qu Logsiics",
+   "confidence": 0.43
+  },
+  {
+   "bbox": [
+    772.0,
+    71.0,
+    72.0,
+    28.0
+   ],
+   "text": "Avg. Onder Vale",
+   "confidence": 0.6033333333333334
+  },
+  {
+   "bbox": [
+    772.0,
+    101.0,
+    60.0,
+    18.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    773.0,
+    125.0,
+    82.0,
+    7.0
+   ],
+   "text": "Sasa monts",
+   "confidence": 0.055
+  },
+  {
+   "bbox": [
+    818.0,
+    220.0,
+    43.0,
+    10.0
+   ],
+   "text": "ssanm",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    827.0,
+    247.0,
+    34.0,
+    8.0
+   ],
+   "text": "sms",
+   "confidence": 0.29
+  },
+  {
+   "bbox": [
+    813.0,
+    272.0,
+    48.0,
+    9.0
+   ],
+   "text": "s1200875",
+   "confidence": 0.39
+  },
+  {
+   "bbox": [
+    832.0,
+    298.0,
+    29.0,
+    9.0
+   ],
+   "text": "500",
+   "confidence": 0.08
+  },
+  {
+   "bbox": [
+    818.0,
+    325.0,
+    43.0,
+    9.0
+   ],
+   "text": "ss3820",
+   "confidence": 0.48
+  },
+  {
+   "bbox": [
+    879.0,
+    221.0,
+    19.0,
+    7.0
+   ],
+   "text": "H",
+   "confidence": 0.9
+  },
+  {
+   "bbox": [
+    879.0,
+    248.0,
+    19.0,
+    84.0
+   ],
+   "text": "gre",
+   "confidence": 0.25
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:11:15.002986+00:00"
+}

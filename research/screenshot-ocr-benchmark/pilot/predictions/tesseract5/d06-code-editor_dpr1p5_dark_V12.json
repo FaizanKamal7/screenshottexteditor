@@ -1,0 +1,305 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1p5_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.6391528140002265,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.668888300016988,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "b0716eb28754ccc39fac5dd51f6f9f49812e7c60c6c8bed6054867751dbff4e5",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    11.0,
+    41.0,
+    7.0
+   ],
+   "text": "expLoner",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    148.0,
+    0.0,
+    200.0,
+    27.0
+   ],
+   "text": "server.ts | config.jsn | READHE.md",
+   "confidence": 0.524
+  },
+  {
+   "bbox": [
+    166.0,
+    36.0,
+    213.0,
+    9.0
+   ],
+   "text": "sport { createServer } fron “node:ttp\";",
+   "confidence": 0.4033333333333334
+  },
+  {
+   "bbox": [
+    166.0,
+    51.0,
+    229.0,
+    9.0
+   ],
+   "text": "ioport { readFile } fron “node: fs/pronises\";",
+   "confidence": 0.6171428571428571
+  },
+  {
+   "bbox": [
+    166.0,
+    70.0,
+    230.0,
+    28.0
+   ],
+   "text": "const PORT = Nusber (process env. PORT 22 5030)",
+   "confidence": 0.5388888888888889
+  },
+  {
+   "bbox": [
+    166.0,
+    86.0,
+    188.0,
+    28.0
+   ],
+   "text": "const WAK_BODY = 1.048.576; // 1 M8",
+   "confidence": 0.6385714285714286
+  },
+  {
+   "bbox": [
+    166.0,
+    126.0,
+    255.0,
+    9.0
+   ],
+   "text": "type Route = (req: Request) => Pronisechesponse>;",
+   "confidence": 0.7614285714285713
+  },
+  {
+   "bbox": [
+    166.0,
+    156.0,
+    203.0,
+    10.0
+   ],
+   "text": "const routes = new Hapestrdng, Raute>(",
+   "confidence": 0.52
+  },
+  {
+   "bbox": [
+    177.0,
+    161.0,
+    286.0,
+    28.0
+   ],
+   "text": "[“/heatth®, async O => Json({ ok: true, uptine: © D1,",
+   "confidence": 0.506
+  },
+  {
+   "bbox": [
+    177.0,
+    186.0,
+    144.0,
+    9.0
+   ],
+   "text": "[“/invotces*, Ustimotces],",
+   "confidence": 0.205
+  },
+  {
+   "bbox": [
+    166.0,
+    201.0,
+    13.0,
+    9.0
+   ],
+   "text": "»;",
+   "confidence": 0.51
+  },
+  {
+   "bbox": [
+    166.0,
+    231.0,
+    261.0,
+    9.0
+   ],
+   "text": "export async function Uistinvoices(req: Request) {",
+   "confidence": 0.7633333333333333
+  },
+  {
+   "bbox": [
+    176.0,
+    236.0,
+    366.0,
+    28.0
+   ],
+   "text": "const page = Nusben (ew URL (req.urL). searchParas. get (‘page™) 77 \"1°);",
+   "confidence": 0.545
+  },
+  {
+   "bbox": [
+    176.0,
+    261.0,
+    350.0,
+    10.0
+   ],
+   "text": "4 (page < 1 11 page > 509) return Json({ error: \"bad page\" }, 460)",
+   "confidence": 0.7559999999999999
+  },
+  {
+   "bbox": [
+    176.0,
+    266.0,
+    371.0,
+    28.0
+   ],
+   "text": "Const rows = avait db.query (\"SELECT 10, total. FRON invoices LINIT 25°);",
+   "confidence": 0.73
+  },
+  {
+   "bbox": [
+    176.0,
+    291.0,
+    145.0,
+    9.0
+   ],
+   "text": "return 3son({ page, rons 1);",
+   "confidence": 0.61
+  },
+  {
+   "bbox": [
+    166.0,
+    306.0,
+    4.0,
+    9.0
+   ],
+   "text": "3",
+   "confidence": 0.46
+  },
+  {
+   "bbox": [
+    165.0,
+    326.0,
+    182.0,
+    28.0
+   ],
+   "text": "createserver (hander) Listen (POR);",
+   "confidence": 0.18
+  },
+  {
+   "bbox": [
+    657.0,
+    19.0,
+    134.0,
+    17.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.92
+  },
+  {
+   "bbox": [
+    657.0,
+    48.0,
+    276.0,
+    12.0
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": 0.94125
+  },
+  {
+   "bbox": [
+    657.0,
+    66.0,
+    266.0,
+    11.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": 0.9485714285714286
+  },
+  {
+   "bbox": [
+    657.0,
+    83.0,
+    120.0,
+    12.0
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9366666666666668
+  },
+  {
+   "bbox": [
+    657.0,
+    109.0,
+    285.0,
+    12.0
+   ],
+   "text": "Pagination is indexed. Pages above 500 are rejected",
+   "confidence": 0.82625
+  },
+  {
+   "bbox": [
+    657.0,
+    128.0,
+    271.0,
+    11.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": 0.9159999999999999
+  },
+  {
+   "bbox": [
+    657.0,
+    144.0,
+    225.0,
+    12.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": 0.85375
+  },
+  {
+   "bbox": [
+    665.0,
+    167.0,
+    260.0,
+    28.0
+   ],
+   "text": "Tip: set PORT-9090 to run two instances side by side.",
+   "confidence": 0.726
+  },
+  {
+   "bbox": [
+    666.0,
+    183.0,
+    100.0,
+    28.0
+   ],
+   "text": "during local testing.",
+   "confidence": 0.72
+  },
+  {
+   "bbox": [
+    657.0,
+    216.0,
+    181.0,
+    28.0
+   ],
+   "text": "Glyph check: 111] 000 rn m 5S 8B.",
+   "confidence": 0.78625
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:15:03.153522+00:00"
+}

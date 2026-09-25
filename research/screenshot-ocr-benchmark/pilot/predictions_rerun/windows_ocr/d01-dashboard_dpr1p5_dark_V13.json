@@ -1,0 +1,286 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "d01-dashboard_dpr1p5_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.05044859999907203,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.06139940000139177,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "db65e86135a8c50ac4b5208b7d7b534cbb8980d483ad75df0beb19f7ec188185",
+ "lines": [
+  {
+   "bbox": [
+    16.0,
+    18.0,
+    122.0,
+    14.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    20.0,
+    114.0,
+    67.0,
+    9.0
+   ],
+   "text": "• Custorners",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    36.0,
+    144.0,
+    38.0,
+    10.0
+   ],
+   "text": "Re port S",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    18.0,
+    171.0,
+    58.0,
+    11.0
+   ],
+   "text": "O Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    186.0,
+    22.0,
+    159.0,
+    18.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    186.0,
+    44.0,
+    149.0,
+    11.0
+   ],
+   "text": "Last 30 days • u,HiatE-d OuS UTC",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    200.0,
+    101.0,
+    82.0,
+    19.0
+   ],
+   "text": "$482,910",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    391.0,
+    103.0,
+    60.0,
+    17.0
+   ],
+   "text": "12,384",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    425.0,
+    125.0,
+    43.0,
+    7.0
+   ],
+   "text": "last month",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    220.0,
+    45.0,
+    9.0
+   ],
+   "text": "IW-10421",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    247.0,
+    44.0,
+    8.0
+   ],
+   "text": "INV.10422",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    273.0,
+    45.0,
+    7.0
+   ],
+   "text": "I w-10423",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    486.0,
+    298.0,
+    44.0,
+    9.0
+   ],
+   "text": "iw-10424",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    581.0,
+    103.0,
+    44.0,
+    15.0
+   ],
+   "text": "2.1%",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    596.0,
+    220.0,
+    56.0,
+    9.0
+   ],
+   "text": "& stme LLC",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    594.0,
+    298.0,
+    57.0,
+    9.0
+   ],
+   "text": "Stræt Bcx*s",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    593.0,
+    324.0,
+    39.0,
+    11.0
+   ],
+   "text": "LOOStiCS",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    793.0,
+    82.0,
+    52.0,
+    8.0
+   ],
+   "text": "Order Valæ",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    772.0,
+    101.0,
+    60.0,
+    18.0
+   ],
+   "text": "$86.40",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    817.0,
+    220.0,
+    44.0,
+    10.0
+   ],
+   "text": "Saazo_m",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    851.0,
+    272.0,
+    10.0,
+    8.0
+   ],
+   "text": "75",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    818.0,
+    324.0,
+    43.0,
+    10.0
+   ],
+   "text": "*31820",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    877.0,
+    25.0,
+    52.0,
+    10.0
+   ],
+   "text": "Export CSV",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    873.0,
+    198.0,
+    28.0,
+    7.0
+   ],
+   "text": "status",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    879.0,
+    299.0,
+    17.0,
+    8.0
+   ],
+   "text": "Due",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    879.0,
+    324.0,
+    19.0,
+    8.0
+   ],
+   "text": "Paid",
+   "confidence": null
+  }
+ ],
+ "pass": "rerun",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T09:53:59.434143+00:00"
+}

@@ -1,0 +1,105 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.4533029310000529,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.4782046999898739,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "fa3364e13cef31c0b6091c63627fb57fe1ec80e2eb2f122754be122590b90ff2",
+ "lines": [
+  {
+   "bbox": [
+    7.0,
+    77.0,
+    45.0,
+    7.0
+   ],
+   "text": "i on",
+   "confidence": 0.27
+  },
+  {
+   "bbox": [
+    162.0,
+    104.0,
+    84.0,
+    7.0
+   ],
+   "text": "om sri, nt",
+   "confidence": 0.36666666666666664
+  },
+  {
+   "bbox": [
+    438.0,
+    13.0,
+    89.0,
+    11.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.61
+  },
+  {
+   "bbox": [
+    434.0,
+    20.0,
+    192.0,
+    28.0
+   ],
+   "text": "Every soot uses hgh the ssi bere sy",
+   "confidence": 0.37375
+  },
+  {
+   "bbox": [
+    434.0,
+    32.0,
+    181.0,
+    28.0
+   ],
+   "text": "Mamie rn. Unknow, ps re bt witht",
+   "confidence": 0.36142857142857143
+  },
+  {
+   "bbox": [
+    438.0,
+    62.0,
+    190.0,
+    28.0
+   ],
+   "text": "Paton’ indeed aes bose 40 re rfc",
+   "confidence": 0.4357142857142857
+  },
+  {
+   "bbox": [
+    433.0,
+    73.0,
+    189.0,
+    28.0
+   ],
+   "text": "so htsinle hen caot ca he whe ler",
+   "confidence": 0.40875
+  },
+  {
+   "bbox": [
+    437.0,
+    96.0,
+    151.0,
+    8.0
+   ],
+   "text": "[eter —",
+   "confidence": 0.245
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:14:07.310464+00:00"
+}

@@ -97,7 +97,7 @@ export interface Translations {
 
 		faqEyebrow: string;
 		faqTitle: string;
-		faqs: [FaqItem, FaqItem, FaqItem, FaqItem, FaqItem, FaqItem, FaqItem];
+		faqs: FaqItem[];
 		faqFooterPre: string;
 		faqFooterLinkText: string;
 		faqFooterPost: string;

@@ -1,0 +1,50 @@
+﻿[2026-09-24T07:31:32.663128+00:00] doctr: 25 new predictions
+[2026-09-24T07:32:28.214876+00:00] doctr: 50 new predictions
+[2026-09-24T07:33:48.883181+00:00] doctr: 75 new predictions
+[2026-09-24T07:43:23.252822+00:00] tesseract5: 25 new predictions
+[2026-09-24T07:43:43.370032+00:00] tesseract5: 50 new predictions
+[2026-09-24T07:44:08.574539+00:00] tesseract5: 75 new predictions
+[2026-09-24T07:44:11.328419+00:00] tesseract5: finished (78 new)
+accuracy elapsed_s=62.3
+[2026-09-24T07:44:14.122930+00:00] windows_ocr: 25 new predictions
+[2026-09-24T07:44:16.011130+00:00] windows_ocr: 50 new predictions
+[2026-09-24T07:44:19.855116+00:00] windows_ocr: 75 new predictions
+[2026-09-24T07:44:20.268586+00:00] windows_ocr: finished (78 new)
+accuracy elapsed_s=8.8
+[2026-09-24T07:45:56.583857+00:00] doctr: 25 new predictions
+[2026-09-24T07:46:53.437008+00:00] doctr: 50 new predictions
+[2026-09-24T07:47:30.851344+00:00] doctr: 75 new predictions
+[2026-09-24T07:48:07.941787+00:00] doctr: 100 new predictions
+[2026-09-24T07:48:50.532538+00:00] doctr: 125 new predictions
+[2026-09-24T07:49:44.902017+00:00] doctr: 150 new predictions
+[2026-09-24T07:50:35.750706+00:00] doctr: 175 new predictions
+[2026-09-24T07:51:09.801887+00:00] doctr: finished (191 new)
+accuracy elapsed_s=409.4
+[2026-09-24T07:55:53.935549+00:00] paddle_v5_mobile: 25 new predictions
+[2026-09-24T08:01:20.895515+00:00] paddle_v5_mobile: 50 new predictions
+[2026-09-24T08:06:44.138794+00:00] paddle_v5_mobile: 75 new predictions
+[2026-09-24T08:13:05.738038+00:00] paddle_v5_mobile: 100 new predictions
+[2026-09-24T08:17:51.886508+00:00] paddle_v5_mobile: 125 new predictions
+[2026-09-24T08:19:26.995952+00:00] paddle_v5_mobile: 150 new predictions
+[2026-09-24T08:21:41.167562+00:00] paddle_v5_mobile: 175 new predictions
+[2026-09-24T08:24:06.838397+00:00] paddle_v5_mobile: 200 new predictions
+[2026-09-24T08:25:55.768758+00:00] paddle_v5_mobile: 225 new predictions
+[2026-09-24T08:28:19.978250+00:00] paddle_v5_mobile: 250 new predictions
+[2026-09-24T08:31:02.073064+00:00] paddle_v5_mobile: finished (272 new)
+accuracy elapsed_s=2394.1
+[2026-09-24T08:32:48.338862+00:00] easyocr: 25 new predictions
+[2026-09-24T08:35:54.777572+00:00] easyocr: 50 new predictions
+[2026-09-24T08:40:56.213922+00:00] easyocr: 75 new predictions
+[2026-09-24T08:43:05.962276+00:00] easyocr: 100 new predictions
+[2026-09-24T08:46:39.462105+00:00] easyocr: 125 new predictions
+[2026-09-24T08:52:29.386216+00:00] easyocr: 150 new predictions
+[2026-09-24T08:53:59.813201+00:00] easyocr: 175 new predictions
+[2026-09-24T08:55:26.834338+00:00] easyocr: 200 new predictions
+[2026-09-24T08:58:21.368886+00:00] easyocr: 225 new predictions
+[2026-09-24T08:59:54.134898+00:00] easyocr: 250 new predictions
+[2026-09-24T09:01:23.542825+00:00] easyocr: 275 new predictions
+[2026-09-24T09:04:22.099857+00:00] easyocr: 300 new predictions
+[2026-09-24T09:05:51.436127+00:00] easyocr: finished (311 new)
+accuracy elapsed_s=2089.1
+[2026-09-24T09:20:46.475608+00:00] paddle_v5_server: 25 new predictions
+[2026-09-24T09:47:00.096899+00:00] paddle_v5_server: 50 new predictions

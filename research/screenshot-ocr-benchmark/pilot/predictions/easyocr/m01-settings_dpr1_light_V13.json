@@ -1,0 +1,261 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "m01-settings_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.123535130998789,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.1352132000029087,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "13e7e3d033a110ee05fdcc1c5f5d23c6af0b494f1546bbe58b558a59f93f9b84",
+ "lines": [
+  {
+   "bbox": [
+    6.0,
+    24.0,
+    74.0,
+    24.0
+   ],
+   "text": "Settings",
+   "confidence": 0.8632154174585952
+  },
+  {
+   "bbox": [
+    24.0,
+    56.0,
+    60.0,
+    8.0
+   ],
+   "text": "satch Lilild>",
+   "confidence": 0.021146992672703778
+  },
+  {
+   "bbox": [
+    46.0,
+    86.0,
+    28.0,
+    8.0
+   ],
+   "text": "AvCry",
+   "confidence": 0.269973763517261
+  },
+  {
+   "bbox": [
+    75.0,
+    83.0,
+    36.0,
+    14.0
+   ],
+   "text": "Collins",
+   "confidence": 0.9959678550603964
+  },
+  {
+   "bbox": [
+    90.0,
+    98.0,
+    42.0,
+    6.0
+   ],
+   "text": "nnircOr",
+   "confidence": 0.010058035147156098
+  },
+  {
+   "bbox": [
+    16.0,
+    120.0,
+    32.0,
+    8.0
+   ],
+   "text": "Lccolat",
+   "confidence": 0.13889311331196297
+  },
+  {
+   "bbox": [
+    14.0,
+    138.0,
+    48.0,
+    8.0
+   ],
+   "text": "Acltlcalcns",
+   "confidence": 0.02637807522791068
+  },
+  {
+   "bbox": [
+    14.0,
+    160.0,
+    30.0,
+    8.0
+   ],
+   "text": "pivacy",
+   "confidence": 0.2692271383318427
+  },
+  {
+   "bbox": [
+    52.0,
+    160.0,
+    32.0,
+    8.0
+   ],
+   "text": "Seciriny",
+   "confidence": 0.12639841365977253
+  },
+  {
+   "bbox": [
+    119.0,
+    181.0,
+    30.0,
+    12.0
+   ],
+   "text": "12 4 OB",
+   "confidence": 0.240460707314167
+  },
+  {
+   "bbox": [
+    158.0,
+    182.0,
+    22.0,
+    8.0
+   ],
+   "text": "64Cr",
+   "confidence": 0.04561504592054626
+  },
+  {
+   "bbox": [
+    14.0,
+    206.0,
+    38.0,
+    8.0
+   ],
+   "text": "Languagc",
+   "confidence": 0.32738346010229863
+  },
+  {
+   "bbox": [
+    135.0,
+    203.0,
+    48.0,
+    12.0
+   ],
+   "text": "Engrrn QUS}",
+   "confidence": 0.1255432912775918
+  },
+  {
+   "bbox": [
+    14.0,
+    226.0,
+    48.0,
+    8.0
+   ],
+   "text": "Scrccn Timc",
+   "confidence": 0.13399992849966522
+  },
+  {
+   "bbox": [
+    153.0,
+    225.0,
+    28.0,
+    12.0
+   ],
+   "text": "an IZ0",
+   "confidence": 0.057150983563515376
+  },
+  {
+   "bbox": [
+    16.0,
+    250.0,
+    30.0,
+    6.0
+   ],
+   "text": "TiaecrT",
+   "confidence": 0.027298785659145074
+  },
+  {
+   "bbox": [
+    34.0,
+    268.0,
+    26.0,
+    6.0
+   ],
+   "text": "Clst",
+   "confidence": 0.00843863096088171
+  },
+  {
+   "bbox": [
+    14.0,
+    288.0,
+    60.0,
+    8.0
+   ],
+   "text": "84Fedbe-k",
+   "confidence": 0.011798491211728438
+  },
+  {
+   "bbox": [
+    14.0,
+    312.0,
+    24.0,
+    6.0
+   ],
+   "text": "bold",
+   "confidence": 0.09738609194755554
+  },
+  {
+   "bbox": [
+    130.0,
+    312.0,
+    50.0,
+    6.0
+   ],
+   "text": "Ucan4a",
+   "confidence": 0.008545871578887672
+  },
+  {
+   "bbox": [
+    42.0,
+    334.0,
+    30.0,
+    6.0
+   ],
+   "text": "nccCMT",
+   "confidence": 0.03752348418096126
+  },
+  {
+   "bbox": [
+    12.018220149409718,
+    180.26005992660404,
+    32.96355970118056,
+    12.479880146791913
+   ],
+   "text": "501250",
+   "confidence": 0.117807909433088
+  },
+  {
+   "bbox": [
+    11.05550320329384,
+    263.1862665287933,
+    24.888993593412323,
+    15.627466942413434
+   ],
+   "text": "#tep \"",
+   "confidence": 0.08209237310641167
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:54:08.970196+00:00"
+}

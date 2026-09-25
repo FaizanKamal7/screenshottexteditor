@@ -1,0 +1,95 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m05-chat_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.24564614999962942,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.2572130000044126,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "f1dda27c2a7c59f731195e0afc6d6d2541f32a7b871a9d3f411db0c6cd47cec1",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    24.0,
+    85.0,
+    20.0
+   ],
+   "text": "on",
+   "confidence": 0.05
+  },
+  {
+   "bbox": [
+    9.0,
+    61.0,
+    122.0,
+    28.0
+   ],
+   "text": "Hert we sl nfo he dein",
+   "confidence": 0.5783333333333334
+  },
+  {
+   "bbox": [
+    9.0,
+    70.0,
+    94.0,
+    28.0
+   ],
+   "text": "rer mer—",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    13.0,
+    136.0,
+    104.0,
+    28.0
+   ],
+   "text": "on Conus chock pe",
+   "confidence": 0.5075
+  },
+  {
+   "bbox": [
+    13.0,
+    146.0,
+    111.0,
+    28.0
+   ],
+   "text": "erg 128 0k",
+   "confidence": 0.4633333333333334
+  },
+  {
+   "bbox": [
+    9.0,
+    156.0,
+    80.0,
+    28.0
+   ],
+   "text": "fo a 120450.",
+   "confidence": 0.2733333333333333
+  },
+  {
+   "bbox": [
+    14.0,
+    379.0,
+    181.0,
+    7.0
+   ],
+   "text": "mind comer tomaine co",
+   "confidence": 0.335
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T07:43:23.251703+00:00"
+}

@@ -1,0 +1,2919 @@
+{
+ "base_id": "d01-dashboard_dpr2_light",
+ "template_id": "d01-dashboard",
+ "form_factor": "desktop",
+ "dpr": 2,
+ "theme": "light",
+ "width": 2560,
+ "height": 1600,
+ "browser": "chromium 153.0.8010.12",
+ "lines": [
+  {
+   "text": "Tallyhouse Metrics",
+   "layout_box": [
+    44,
+    40,
+    324,
+    44
+   ],
+   "font_family": "Selawik",
+   "font_weight": 700,
+   "css_px": 18,
+   "xheight_px": 18.0,
+   "capheight_px": 25.207,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 0,
+   "ink_box": [
+    43,
+    49,
+    325,
+    36
+   ],
+   "ink_pixels": 4782,
+   "line_id": "L0001",
+   "ink_box_half": [
+    22,
+    24,
+    162,
+    19
+   ],
+   "ink_pixels_half": 1345
+  },
+  {
+   "text": "Overview",
+   "layout_box": [
+    96,
+    144.781,
+    118,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 600,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    36,
+    81,
+    199,
+    1
+   ],
+   "bg_rgba": [
+    238,
+    243,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.143,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 1,
+   "ink_box": [
+    96,
+    151,
+    118,
+    21
+   ],
+   "ink_pixels": 1346,
+   "line_id": "L0002",
+   "ink_box_half": [
+    48,
+    75,
+    59,
+    11
+   ],
+   "ink_pixels_half": 334
+  },
+  {
+   "text": "Revenue",
+   "layout_box": [
+    96,
+    221.156,
+    110,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 2,
+   "ink_box": [
+    97,
+    230,
+    108,
+    21
+   ],
+   "ink_pixels": 1031,
+   "line_id": "L0003",
+   "ink_box_half": [
+    49,
+    115,
+    53,
+    10
+   ],
+   "ink_pixels_half": 291
+  },
+  {
+   "text": "Customers",
+   "layout_box": [
+    96,
+    297.531,
+    136,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 3,
+   "ink_box": [
+    96,
+    306,
+    136,
+    21
+   ],
+   "ink_pixels": 1177,
+   "line_id": "L0004",
+   "ink_box_half": [
+    48,
+    153,
+    68,
+    10
+   ],
+   "ink_pixels_half": 354
+  },
+  {
+   "text": "Reports",
+   "layout_box": [
+    96,
+    373.906,
+    100,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 4,
+   "ink_box": [
+    97,
+    382,
+    99,
+    27
+   ],
+   "ink_pixels": 981,
+   "line_id": "L0005",
+   "ink_box_half": [
+    49,
+    191,
+    49,
+    14
+   ],
+   "ink_pixels_half": 282
+  },
+  {
+   "text": "Settings",
+   "layout_box": [
+    96,
+    450.281,
+    106,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "nav",
+   "stress": false,
+   "element_idx": 5,
+   "ink_box": [
+    96,
+    457,
+    106,
+    28
+   ],
+   "ink_pixels": 1018,
+   "line_id": "L0006",
+   "ink_box_half": [
+    48,
+    228,
+    53,
+    15
+   ],
+   "ink_pixels_half": 308
+  },
+  {
+   "text": "Analytics Overview",
+   "layout_box": [
+    496,
+    46,
+    424,
+    58
+   ],
+   "font_family": "Selawik",
+   "font_weight": 600,
+   "css_px": 24,
+   "xheight_px": 24.0,
+   "capheight_px": 33.609,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    244,
+    245,
+    247,
+    1
+   ],
+   "contrast_ratio": 15.471,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 6,
+   "ink_box": [
+    495,
+    58,
+    425,
+    48
+   ],
+   "ink_pixels": 6989,
+   "line_id": "L0007",
+   "ink_box_half": [
+    248,
+    29,
+    212,
+    24
+   ],
+   "ink_pixels_half": 1894
+  },
+  {
+   "text": "Last 30 days · Updated 08:45 UTC",
+   "layout_box": [
+    496,
+    112.375,
+    398,
+    32
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.0,
+   "capheight_px": 18.205,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    244,
+    245,
+    247,
+    1
+   ],
+   "contrast_ratio": 5.539,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 7,
+   "ink_box": [
+    497,
+    118,
+    397,
+    26
+   ],
+   "ink_pixels": 3415,
+   "line_id": "L0008",
+   "ink_box_half": [
+    249,
+    59,
+    198,
+    13
+   ],
+   "ink_pixels_half": 948
+  },
+  {
+   "text": "Export CSV",
+   "layout_box": [
+    2336,
+    60,
+    140,
+    32
+   ],
+   "font_family": "Selawik",
+   "font_weight": 600,
+   "css_px": 13,
+   "xheight_px": 13.0,
+   "capheight_px": 18.205,
+   "fg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "bg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "button",
+   "stress": false,
+   "element_idx": 8,
+   "ink_box": [
+    2337,
+    67,
+    141,
+    25
+   ],
+   "ink_pixels": 1438,
+   "line_id": "L0009",
+   "ink_box_half": [
+    1168,
+    32,
+    71,
+    14
+   ],
+   "ink_pixels_half": 465
+  },
+  {
+   "text": "Monthly Revenue",
+   "layout_box": [
+    530,
+    214.75,
+    198,
+    32
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.0,
+   "capheight_px": 18.205,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 9,
+   "ink_box": [
+    531,
+    220,
+    197,
+    26
+   ],
+   "ink_pixels": 1917,
+   "line_id": "L0010",
+   "ink_box_half": [
+    266,
+    110,
+    98,
+    13
+   ],
+   "ink_pixels_half": 551
+  },
+  {
+   "text": "$482,910",
+   "layout_box": [
+    530,
+    259.125,
+    224,
+    62
+   ],
+   "font_family": "Selawik",
+   "font_weight": 700,
+   "css_px": 26,
+   "xheight_px": 26.0,
+   "capheight_px": 36.41,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 10,
+   "ink_box": [
+    532,
+    271,
+    219,
+    49
+   ],
+   "ink_pixels": 4278,
+   "line_id": "L0011",
+   "ink_box_half": [
+    266,
+    135,
+    110,
+    25
+   ],
+   "ink_pixels_half": 1183
+  },
+  {
+   "text": "+12.4% vs last month",
+   "layout_box": [
+    530,
+    328.719,
+    230,
+    30
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 12,
+   "xheight_px": 12.0,
+   "capheight_px": 16.805,
+   "fg_rgba": [
+    24,
+    121,
+    78,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.407,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 11,
+   "ink_box": [
+    532,
+    334,
+    227,
+    19
+   ],
+   "ink_pixels": 1765,
+   "line_id": "L0012",
+   "ink_box_half": [
+    266,
+    167,
+    114,
+    10
+   ],
+   "ink_pixels_half": 527
+  },
+  {
+   "text": "Active Users",
+   "layout_box": [
+    1039.0,
+    214.75,
+    142,
+    32
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.0,
+   "capheight_px": 18.205,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 12,
+   "ink_box": [
+    1038,
+    220,
+    142,
+    20
+   ],
+   "ink_pixels": 1217,
+   "line_id": "L0013",
+   "ink_box_half": [
+    519,
+    110,
+    71,
+    10
+   ],
+   "ink_pixels_half": 341
+  },
+  {
+   "text": "12,384",
+   "layout_box": [
+    1039.0,
+    259.125,
+    164,
+    62
+   ],
+   "font_family": "Selawik",
+   "font_weight": 700,
+   "css_px": 26,
+   "xheight_px": 26.0,
+   "capheight_px": 36.41,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 13,
+   "ink_box": [
+    1043,
+    275,
+    159,
+    45
+   ],
+   "ink_pixels": 2815,
+   "line_id": "L0014",
+   "ink_box_half": [
+    521,
+    137,
+    80,
+    23
+   ],
+   "ink_pixels_half": 783
+  },
+  {
+   "text": "-0.8% vs last month",
+   "layout_box": [
+    1039.0,
+    328.719,
+    210,
+    30
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 12,
+   "xheight_px": 12.0,
+   "capheight_px": 16.805,
+   "fg_rgba": [
+    180,
+    35,
+    24,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.574,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 14,
+   "ink_box": [
+    1040,
+    334,
+    208,
+    19
+   ],
+   "ink_pixels": 1688,
+   "line_id": "L0015",
+   "ink_box_half": [
+    520,
+    167,
+    104,
+    10
+   ],
+   "ink_pixels_half": 461
+  },
+  {
+   "text": "Churn Rate",
+   "layout_box": [
+    1548,
+    214.75,
+    126,
+    32
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.0,
+   "capheight_px": 18.205,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 15,
+   "ink_box": [
+    1548,
+    220,
+    126,
+    21
+   ],
+   "ink_pixels": 1139,
+   "line_id": "L0016",
+   "ink_box_half": [
+    774,
+    110,
+    63,
+    10
+   ],
+   "ink_pixels_half": 330
+  },
+  {
+   "text": "2.1%",
+   "layout_box": [
+    1548,
+    259.125,
+    118,
+    62
+   ],
+   "font_family": "Selawik",
+   "font_weight": 700,
+   "css_px": 26,
+   "xheight_px": 26.0,
+   "capheight_px": 36.41,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 16,
+   "ink_box": [
+    1551,
+    275,
+    114,
+    40
+   ],
+   "ink_pixels": 1877,
+   "line_id": "L0017",
+   "ink_box_half": [
+    775,
+    137,
+    58,
+    21
+   ],
+   "ink_pixels_half": 519
+  },
+  {
+   "text": "Down from 2.6%",
+   "layout_box": [
+    1548,
+    328.719,
+    174,
+    30
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 12,
+   "xheight_px": 12.0,
+   "capheight_px": 16.805,
+   "fg_rgba": [
+    24,
+    121,
+    78,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.407,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 17,
+   "ink_box": [
+    1549,
+    334,
+    173,
+    19
+   ],
+   "ink_pixels": 1454,
+   "line_id": "L0018",
+   "ink_box_half": [
+    774,
+    167,
+    87,
+    10
+   ],
+   "ink_pixels_half": 430
+  },
+  {
+   "text": "Avg. Order Value",
+   "layout_box": [
+    2057.0,
+    214.75,
+    196,
+    32
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.0,
+   "capheight_px": 18.205,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 18,
+   "ink_box": [
+    2056,
+    220,
+    197,
+    26
+   ],
+   "ink_pixels": 1712,
+   "line_id": "L0019",
+   "ink_box_half": [
+    1028,
+    110,
+    98,
+    13
+   ],
+   "ink_pixels_half": 478
+  },
+  {
+   "text": "$86.40",
+   "layout_box": [
+    2057.0,
+    259.125,
+    164,
+    62
+   ],
+   "font_family": "Selawik",
+   "font_weight": 700,
+   "css_px": 26,
+   "xheight_px": 26.0,
+   "capheight_px": 36.41,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 19,
+   "ink_box": [
+    2059,
+    271,
+    159,
+    46
+   ],
+   "ink_pixels": 3307,
+   "line_id": "L0020",
+   "ink_box_half": [
+    1029,
+    135,
+    80,
+    24
+   ],
+   "ink_pixels_half": 911
+  },
+  {
+   "text": "+$3.15 vs last month",
+   "layout_box": [
+    2057.0,
+    328.719,
+    224,
+    30
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 12,
+   "xheight_px": 12.0,
+   "capheight_px": 16.805,
+   "fg_rgba": [
+    24,
+    121,
+    78,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 5.407,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 20,
+   "ink_box": [
+    2059,
+    332,
+    221,
+    23
+   ],
+   "ink_pixels": 1715,
+   "line_id": "L0021",
+   "ink_box_half": [
+    1029,
+    166,
+    111,
+    12
+   ],
+   "ink_pixels_half": 492
+  },
+  {
+   "text": "Weekly revenue (USD)",
+   "layout_box": [
+    530,
+    454.312,
+    288,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 600,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 21,
+   "ink_box": [
+    529,
+    461,
+    288,
+    28
+   ],
+   "ink_pixels": 3324,
+   "line_id": "L0022",
+   "ink_box_half": [
+    265,
+    230,
+    144,
+    15
+   ],
+   "ink_pixels_half": 914
+  },
+  {
+   "text": "150k",
+   "layout_box": [
+    558,
+    510.688,
+    40,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 22,
+   "ink_box": [
+    559,
+    515,
+    40,
+    15
+   ],
+   "ink_pixels": 358,
+   "line_id": "L0023",
+   "ink_box_half": [
+    280,
+    257,
+    19,
+    8
+   ],
+   "ink_pixels_half": 96
+  },
+  {
+   "text": "100k",
+   "layout_box": [
+    558,
+    602.688,
+    40,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 23,
+   "ink_box": [
+    559,
+    607,
+    40,
+    15
+   ],
+   "ink_pixels": 376,
+   "line_id": "L0024",
+   "ink_box_half": [
+    280,
+    303,
+    19,
+    8
+   ],
+   "ink_pixels_half": 99
+  },
+  {
+   "text": "50k",
+   "layout_box": [
+    568,
+    694.688,
+    30,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 24,
+   "ink_box": [
+    568,
+    699,
+    31,
+    15
+   ],
+   "ink_pixels": 295,
+   "line_id": "L0025",
+   "ink_box_half": [
+    284,
+    349,
+    15,
+    8
+   ],
+   "ink_pixels_half": 80
+  },
+  {
+   "text": "0",
+   "layout_box": [
+    588,
+    786.688,
+    10,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 25,
+   "ink_box": [
+    588,
+    792,
+    11,
+    14
+   ],
+   "ink_pixels": 113,
+   "line_id": "L0026",
+   "ink_box_half": [
+    294,
+    396,
+    6,
+    7
+   ],
+   "ink_pixels_half": 31
+  },
+  {
+   "text": "Aug 25",
+   "layout_box": [
+    641.0,
+    822.688,
+    62,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 26,
+   "ink_box": [
+    640,
+    828,
+    64,
+    19
+   ],
+   "ink_pixels": 483,
+   "line_id": "L0027",
+   "ink_box_half": [
+    320,
+    414,
+    32,
+    10
+   ],
+   "ink_pixels_half": 132
+  },
+  {
+   "text": "Sep 1",
+   "layout_box": [
+    759.0,
+    822.688,
+    50,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 27,
+   "ink_box": [
+    759,
+    828,
+    48,
+    19
+   ],
+   "ink_pixels": 346,
+   "line_id": "L0028",
+   "ink_box_half": [
+    379,
+    414,
+    25,
+    10
+   ],
+   "ink_pixels_half": 99
+  },
+  {
+   "text": "Sep 8",
+   "layout_box": [
+    871.0,
+    822.688,
+    50,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 28,
+   "ink_box": [
+    871,
+    828,
+    51,
+    19
+   ],
+   "ink_pixels": 400,
+   "line_id": "L0029",
+   "ink_box_half": [
+    435,
+    414,
+    26,
+    10
+   ],
+   "ink_pixels_half": 111
+  },
+  {
+   "text": "Sep 15",
+   "layout_box": [
+    978,
+    822.688,
+    60,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 29,
+   "ink_box": [
+    978,
+    828,
+    61,
+    19
+   ],
+   "ink_pixels": 434,
+   "line_id": "L0030",
+   "ink_box_half": [
+    489,
+    414,
+    30,
+    10
+   ],
+   "ink_pixels_half": 118
+  },
+  {
+   "text": "Sep 22",
+   "layout_box": [
+    1090,
+    822.688,
+    60,
+    24
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 10,
+   "xheight_px": 10.0,
+   "capheight_px": 14.004,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 30,
+   "ink_box": [
+    1090,
+    828,
+    61,
+    19
+   ],
+   "ink_pixels": 455,
+   "line_id": "L0031",
+   "ink_box_half": [
+    545,
+    414,
+    30,
+    10
+   ],
+   "ink_pixels_half": 123
+  },
+  {
+   "text": "Recent invoices",
+   "layout_box": [
+    1278,
+    454.312,
+    206,
+    34
+   ],
+   "font_family": "Selawik",
+   "font_weight": 600,
+   "css_px": 14,
+   "xheight_px": 14.0,
+   "capheight_px": 19.605,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "heading",
+   "stress": false,
+   "element_idx": 31,
+   "ink_box": [
+    1279,
+    461,
+    205,
+    21
+   ],
+   "ink_pixels": 2184,
+   "line_id": "L0032",
+   "ink_box_half": [
+    639,
+    230,
+    103,
+    11
+   ],
+   "ink_pixels_half": 594
+  },
+  {
+   "text": "Invoice",
+   "layout_box": [
+    1294,
+    522.688,
+    82,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 32,
+   "ink_box": [
+    1294,
+    527,
+    82,
+    17
+   ],
+   "ink_pixels": 857,
+   "line_id": "L0033",
+   "ink_box_half": [
+    647,
+    263,
+    41,
+    9
+   ],
+   "ink_pixels_half": 244
+  },
+  {
+   "text": "Customer",
+   "layout_box": [
+    1505.156,
+    522.688,
+    114,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 33,
+   "ink_box": [
+    1505,
+    527,
+    114,
+    17
+   ],
+   "ink_pixels": 1149,
+   "line_id": "L0034",
+   "ink_box_half": [
+    752,
+    263,
+    58,
+    9
+   ],
+   "ink_pixels_half": 322
+  },
+  {
+   "text": "Date",
+   "layout_box": [
+    1883.031,
+    522.688,
+    54,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 34,
+   "ink_box": [
+    1883,
+    527,
+    54,
+    17
+   ],
+   "ink_pixels": 605,
+   "line_id": "L0035",
+   "ink_box_half": [
+    942,
+    263,
+    26,
+    9
+   ],
+   "ink_pixels_half": 165
+  },
+  {
+   "text": "Amount",
+   "layout_box": [
+    2205.594,
+    522.688,
+    90,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 35,
+   "ink_box": [
+    2206,
+    527,
+    91,
+    17
+   ],
+   "ink_pixels": 949,
+   "line_id": "L0036",
+   "ink_box_half": [
+    1103,
+    263,
+    45,
+    9
+   ],
+   "ink_pixels_half": 259
+  },
+  {
+   "text": "Status",
+   "layout_box": [
+    2327.594,
+    522.688,
+    74,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "label",
+   "stress": false,
+   "element_idx": 36,
+   "ink_box": [
+    2328,
+    527,
+    73,
+    17
+   ],
+   "ink_pixels": 821,
+   "line_id": "L0037",
+   "ink_box_half": [
+    1164,
+    263,
+    37,
+    9
+   ],
+   "ink_pixels_half": 226
+  },
+  {
+   "text": "INV-10421",
+   "layout_box": [
+    1294,
+    584.562,
+    120,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 37,
+   "ink_box": [
+    1295,
+    590,
+    119,
+    18
+   ],
+   "ink_pixels": 1171,
+   "line_id": "L0038",
+   "ink_box_half": [
+    647,
+    294,
+    60,
+    11
+   ],
+   "ink_pixels_half": 325
+  },
+  {
+   "text": "Harper & Stone LLC",
+   "layout_box": [
+    1505.156,
+    584.562,
+    232,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "label",
+   "stress": false,
+   "element_idx": 38,
+   "ink_box": [
+    1506,
+    590,
+    232,
+    23
+   ],
+   "ink_pixels": 1996,
+   "line_id": "L0039",
+   "ink_box_half": [
+    753,
+    294,
+    116,
+    13
+   ],
+   "ink_pixels_half": 571
+  },
+  {
+   "text": "2026-09-02",
+   "layout_box": [
+    1883.031,
+    584.562,
+    128,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 39,
+   "ink_box": [
+    1883,
+    590,
+    128,
+    18
+   ],
+   "ink_pixels": 1296,
+   "line_id": "L0040",
+   "ink_box_half": [
+    941,
+    294,
+    65,
+    11
+   ],
+   "ink_pixels_half": 406
+  },
+  {
+   "text": "$3,420.00",
+   "layout_box": [
+    2181.594,
+    584.562,
+    114,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 40,
+   "ink_box": [
+    2181,
+    588,
+    116,
+    23
+   ],
+   "ink_pixels": 1194,
+   "line_id": "L0041",
+   "ink_box_half": [
+    1091,
+    294,
+    57,
+    12
+   ],
+   "ink_pixels_half": 337
+  },
+  {
+   "text": "Paid",
+   "layout_box": [
+    2343.594,
+    585.875,
+    50,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    24,
+    121,
+    78,
+    1
+   ],
+   "bg_rgba": [
+    227,
+    245,
+    234,
+    1
+   ],
+   "contrast_ratio": 4.767,
+   "category": "label",
+   "stress": false,
+   "element_idx": 41,
+   "ink_box": [
+    2344,
+    591,
+    50,
+    17
+   ],
+   "ink_pixels": 593,
+   "line_id": "L0042",
+   "ink_box_half": [
+    1172,
+    294,
+    25,
+    10
+   ],
+   "ink_pixels_half": 182
+  },
+  {
+   "text": "INV-10422",
+   "layout_box": [
+    1294,
+    653.75,
+    120,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 42,
+   "ink_box": [
+    1295,
+    660,
+    119,
+    18
+   ],
+   "ink_pixels": 1191,
+   "line_id": "L0043",
+   "ink_box_half": [
+    647,
+    329,
+    60,
+    11
+   ],
+   "ink_pixels_half": 337
+  },
+  {
+   "text": "Bluefield Dental",
+   "layout_box": [
+    1505.156,
+    653.75,
+    182,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "label",
+   "stress": false,
+   "element_idx": 43,
+   "ink_box": [
+    1506,
+    659,
+    180,
+    19
+   ],
+   "ink_pixels": 1874,
+   "line_id": "L0044",
+   "ink_box_half": [
+    753,
+    329,
+    90,
+    11
+   ],
+   "ink_pixels_half": 532
+  },
+  {
+   "text": "2026-09-04",
+   "layout_box": [
+    1883.031,
+    653.75,
+    128,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 44,
+   "ink_box": [
+    1883,
+    660,
+    129,
+    18
+   ],
+   "ink_pixels": 1293,
+   "line_id": "L0045",
+   "ink_box_half": [
+    941,
+    329,
+    65,
+    11
+   ],
+   "ink_pixels_half": 403
+  },
+  {
+   "text": "$780.50",
+   "layout_box": [
+    2203.594,
+    653.75,
+    92,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 45,
+   "ink_box": [
+    2203,
+    658,
+    94,
+    22
+   ],
+   "ink_pixels": 1001,
+   "line_id": "L0046",
+   "ink_box_half": [
+    1102,
+    329,
+    46,
+    11
+   ],
+   "ink_pixels_half": 286
+  },
+  {
+   "text": "Due",
+   "layout_box": [
+    2343.594,
+    655.062,
+    46,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    154,
+    91,
+    0,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    244,
+    224,
+    1
+   ],
+   "contrast_ratio": 4.978,
+   "category": "label",
+   "stress": false,
+   "element_idx": 46,
+   "ink_box": [
+    2344,
+    661,
+    46,
+    17
+   ],
+   "ink_pixels": 505,
+   "line_id": "L0047",
+   "ink_box_half": [
+    1172,
+    329,
+    23,
+    10
+   ],
+   "ink_pixels_half": 156
+  },
+  {
+   "text": "INV-10423",
+   "layout_box": [
+    1294,
+    722.938,
+    120,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 47,
+   "ink_box": [
+    1295,
+    728,
+    119,
+    18
+   ],
+   "ink_pixels": 1206,
+   "line_id": "L0048",
+   "ink_box_half": [
+    647,
+    363,
+    60,
+    11
+   ],
+   "ink_pixels_half": 340
+  },
+  {
+   "text": "Oakridge Supply Co.",
+   "layout_box": [
+    1505.156,
+    722.938,
+    240,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "label",
+   "stress": false,
+   "element_idx": 48,
+   "ink_box": [
+    1505,
+    727,
+    238,
+    24
+   ],
+   "ink_pixels": 2279,
+   "line_id": "L0049",
+   "ink_box_half": [
+    752,
+    363,
+    120,
+    13
+   ],
+   "ink_pixels_half": 651
+  },
+  {
+   "text": "2026-09-09",
+   "layout_box": [
+    1883.031,
+    722.938,
+    128,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 49,
+   "ink_box": [
+    1883,
+    728,
+    128,
+    18
+   ],
+   "ink_pixels": 1324,
+   "line_id": "L0050",
+   "ink_box_half": [
+    941,
+    363,
+    65,
+    11
+   ],
+   "ink_pixels_half": 412
+  },
+  {
+   "text": "$12,006.75",
+   "layout_box": [
+    2167.594,
+    722.938,
+    128,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 50,
+   "ink_box": [
+    2167,
+    726,
+    129,
+    23
+   ],
+   "ink_pixels": 1269,
+   "line_id": "L0051",
+   "ink_box_half": [
+    1084,
+    363,
+    64,
+    12
+   ],
+   "ink_pixels_half": 363
+  },
+  {
+   "text": "Paid",
+   "layout_box": [
+    2343.594,
+    724.25,
+    50,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    24,
+    121,
+    78,
+    1
+   ],
+   "bg_rgba": [
+    227,
+    245,
+    234,
+    1
+   ],
+   "contrast_ratio": 4.767,
+   "category": "label",
+   "stress": false,
+   "element_idx": 51,
+   "ink_box": [
+    2344,
+    729,
+    50,
+    17
+   ],
+   "ink_pixels": 593,
+   "line_id": "L0052",
+   "ink_box_half": [
+    1172,
+    363,
+    25,
+    10
+   ],
+   "ink_pixels_half": 182
+  },
+  {
+   "text": "INV-10424",
+   "layout_box": [
+    1294,
+    792.125,
+    120,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 52,
+   "ink_box": [
+    1295,
+    798,
+    120,
+    18
+   ],
+   "ink_pixels": 1189,
+   "line_id": "L0053",
+   "ink_box_half": [
+    647,
+    398,
+    61,
+    11
+   ],
+   "ink_pixels_half": 332
+  },
+  {
+   "text": "Maple Street Books",
+   "layout_box": [
+    1505.156,
+    792.125,
+    230,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "label",
+   "stress": false,
+   "element_idx": 53,
+   "ink_box": [
+    1506,
+    797,
+    228,
+    24
+   ],
+   "ink_pixels": 2196,
+   "line_id": "L0054",
+   "ink_box_half": [
+    753,
+    398,
+    114,
+    13
+   ],
+   "ink_pixels_half": 642
+  },
+  {
+   "text": "2026-09-15",
+   "layout_box": [
+    1883.031,
+    792.125,
+    128,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 54,
+   "ink_box": [
+    1883,
+    798,
+    128,
+    18
+   ],
+   "ink_pixels": 1256,
+   "line_id": "L0055",
+   "ink_box_half": [
+    941,
+    398,
+    65,
+    11
+   ],
+   "ink_pixels_half": 392
+  },
+  {
+   "text": "$96.00",
+   "layout_box": [
+    2217.594,
+    792.125,
+    78,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 55,
+   "ink_box": [
+    2217,
+    796,
+    80,
+    22
+   ],
+   "ink_pixels": 908,
+   "line_id": "L0056",
+   "ink_box_half": [
+    1109,
+    398,
+    39,
+    11
+   ],
+   "ink_pixels_half": 253
+  },
+  {
+   "text": "Due",
+   "layout_box": [
+    2343.594,
+    793.438,
+    46,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    154,
+    91,
+    0,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    244,
+    224,
+    1
+   ],
+   "contrast_ratio": 4.978,
+   "category": "label",
+   "stress": false,
+   "element_idx": 56,
+   "ink_box": [
+    2344,
+    799,
+    46,
+    17
+   ],
+   "ink_pixels": 505,
+   "line_id": "L0057",
+   "ink_box_half": [
+    1172,
+    398,
+    23,
+    10
+   ],
+   "ink_pixels_half": 156
+  },
+  {
+   "text": "INV-10425",
+   "layout_box": [
+    1294,
+    861.312,
+    120,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 57,
+   "ink_box": [
+    1295,
+    868,
+    119,
+    18
+   ],
+   "ink_pixels": 1200,
+   "line_id": "L0058",
+   "ink_box_half": [
+    647,
+    433,
+    60,
+    11
+   ],
+   "ink_pixels_half": 338
+  },
+  {
+   "text": "Quinn Logistics",
+   "layout_box": [
+    1505.156,
+    861.312,
+    180,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "label",
+   "stress": false,
+   "element_idx": 58,
+   "ink_box": [
+    1505,
+    867,
+    179,
+    24
+   ],
+   "ink_pixels": 1703,
+   "line_id": "L0059",
+   "ink_box_half": [
+    752,
+    433,
+    90,
+    13
+   ],
+   "ink_pixels_half": 474
+  },
+  {
+   "text": "2026-09-21",
+   "layout_box": [
+    1883.031,
+    861.312,
+    128,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 59,
+   "ink_box": [
+    1883,
+    868,
+    128,
+    18
+   ],
+   "ink_pixels": 1247,
+   "line_id": "L0060",
+   "ink_box_half": [
+    941,
+    433,
+    65,
+    11
+   ],
+   "ink_pixels_half": 391
+  },
+  {
+   "text": "$5,318.20",
+   "layout_box": [
+    2181.594,
+    861.312,
+    114,
+    30
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 400,
+   "css_px": 13,
+   "xheight_px": 13.736,
+   "capheight_px": 17.888,
+   "fg_rgba": [
+    27,
+    29,
+    33,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 16.877,
+   "category": "value-numeric",
+   "stress": false,
+   "element_idx": 60,
+   "ink_box": [
+    2181,
+    866,
+    116,
+    23
+   ],
+   "ink_pixels": 1169,
+   "line_id": "L0061",
+   "ink_box_half": [
+    1091,
+    433,
+    57,
+    12
+   ],
+   "ink_pixels_half": 337
+  },
+  {
+   "text": "Paid",
+   "layout_box": [
+    2343.594,
+    862.625,
+    50,
+    28
+   ],
+   "font_family": "Liberation Sans",
+   "font_weight": 700,
+   "css_px": 12,
+   "xheight_px": 12.68,
+   "capheight_px": 16.512,
+   "fg_rgba": [
+    24,
+    121,
+    78,
+    1
+   ],
+   "bg_rgba": [
+    227,
+    245,
+    234,
+    1
+   ],
+   "contrast_ratio": 4.767,
+   "category": "label",
+   "stress": false,
+   "element_idx": 61,
+   "ink_box": [
+    2344,
+    867,
+    50,
+    17
+   ],
+   "ink_pixels": 593,
+   "line_id": "L0062",
+   "ink_box_half": [
+    1172,
+    432,
+    25,
+    10
+   ],
+   "ink_pixels_half": 182
+  },
+  {
+   "text": "Showing 5 of 148 invoices. Amounts include tax; refunds are excluded.",
+   "layout_box": [
+    1278,
+    935.812,
+    704,
+    26
+   ],
+   "font_family": "Selawik",
+   "font_weight": 400,
+   "css_px": 11,
+   "xheight_px": 11.0,
+   "capheight_px": 15.404,
+   "fg_rgba": [
+    93,
+    99,
+    110,
+    1
+   ],
+   "bg_rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "contrast_ratio": 6.043,
+   "category": "caption",
+   "stress": false,
+   "element_idx": 62,
+   "ink_box": [
+    1278,
+    941,
+    705,
+    22
+   ],
+   "ink_pixels": 5288,
+   "line_id": "L0063",
+   "ink_box_half": [
+    639,
+    470,
+    352,
+    12
+   ],
+   "ink_pixels_half": 1522
+  }
+ ],
+ "ignore_regions": [],
+ "icon_regions": [
+  [
+   44,
+   146.969,
+   32,
+   32
+  ],
+  [
+   44,
+   223.344,
+   32,
+   32
+  ],
+  [
+   44,
+   299.719,
+   32,
+   32
+  ],
+  [
+   44,
+   376.094,
+   32,
+   32
+  ],
+  [
+   44,
+   452.469,
+   32,
+   32
+  ]
+ ],
+ "downscaled_0p5": {
+  "filter": "Pillow LANCZOS",
+  "pad_px": 4,
+  "ink_threshold": 16,
+  "unowned_ink_pixels": 0,
+  "ignore_regions": [],
+  "icon_regions": [
+   [
+    22.0,
+    73.484,
+    16.0,
+    16.0
+   ],
+   [
+    22.0,
+    111.672,
+    16.0,
+    16.0
+   ],
+   [
+    22.0,
+    149.859,
+    16.0,
+    16.0
+   ],
+   [
+    22.0,
+    188.047,
+    16.0,
+    16.0
+   ],
+   [
+    22.0,
+    226.234,
+    16.0,
+    16.0
+   ]
+  ]
+ }
+}

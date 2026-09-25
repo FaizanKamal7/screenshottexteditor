@@ -1,0 +1,335 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1p5_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.1398136590000831,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.1581903000187594,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "bcb9dd5c72b4e67b155992ab0fa5b6967151590a7b645e8cba4148a5c04f8ba1",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    11.0,
+    41.0,
+    7.0
+   ],
+   "text": "expuoner",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    20.0,
+    37.0,
+    52.0,
+    28.0
+   ],
+   "text": "server. ts",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    21.0,
+    65.0,
+    26.0,
+    7.0
+   ],
+   "text": "ants",
+   "confidence": 0.48
+  },
+  {
+   "bbox": [
+    21.0,
+    71.0,
+    50.0,
+    28.0
+   ],
+   "text": "routes. ts",
+   "confidence": 0.7
+  },
+  {
+   "bbox": [
+    7.0,
+    88.0,
+    67.0,
+    28.0
+   ],
+   "text": "package. son",
+   "confidence": 0.345
+  },
+  {
+   "bbox": [
+    11.0,
+    116.0,
+    68.0,
+    9.0
+   ],
+   "text": "tscanfig. json",
+   "confidence": 0.645
+  },
+  {
+   "bbox": [
+    148.0,
+    0.0,
+    200.0,
+    26.0
+   ],
+   "text": "server.ts | config.json | READNE.nd",
+   "confidence": 0.46799999999999997
+  },
+  {
+   "bbox": [
+    166.0,
+    36.0,
+    213.0,
+    9.0
+   ],
+   "text": "soport { createServer } fron “node:nttp\";",
+   "confidence": 0.475
+  },
+  {
+   "bbox": [
+    166.0,
+    51.0,
+    229.0,
+    9.0
+   ],
+   "text": "iogort { reatFile } fron “node: fs/pronises”;",
+   "confidence": 0.5085714285714286
+  },
+  {
+   "bbox": [
+    165.0,
+    70.0,
+    240.0,
+    28.0
+   ],
+   "text": "Const PORT = Kusber (pracess. env. PORT 72 8060);",
+   "confidence": 0.6055555555555556
+  },
+  {
+   "bbox": [
+    165.0,
+    96.0,
+    189.0,
+    9.0
+   ],
+   "text": "Const NX_SODY = 1.048.576; // 1 115",
+   "confidence": 0.6242857142857143
+  },
+  {
+   "bbox": [
+    165.0,
+    126.0,
+    256.0,
+    9.0
+   ],
+   "text": "type Route = (rea: Request) => Prosisechesponse;",
+   "confidence": 0.7242857142857143
+  },
+  {
+   "bbox": [
+    165.0,
+    156.0,
+    203.0,
+    10.0
+   ],
+   "text": "const routes = ne Napestring, Routes(l",
+   "confidence": 0.6383333333333333
+  },
+  {
+   "bbox": [
+    177.0,
+    161.0,
+    249.0,
+    28.0
+   ],
+   "text": "[/heaten®, async O => Json({ ok: true, uptine:",
+   "confidence": 0.56625
+  },
+  {
+   "bbox": [
+    177.0,
+    186.0,
+    144.0,
+    9.0
+   ],
+   "text": "[“/invotces”, Ustinoices],",
+   "confidence": 0.04
+  },
+  {
+   "bbox": [
+    166.0,
+    201.0,
+    13.0,
+    9.0
+   ],
+   "text": "»",
+   "confidence": 0.42
+  },
+  {
+   "bbox": [
+    165.0,
+    231.0,
+    262.0,
+    9.0
+   ],
+   "text": "export async function Listinvoices(rea: Request) {",
+   "confidence": 0.595
+  },
+  {
+   "bbox": [
+    176.0,
+    236.0,
+    287.0,
+    28.0
+   ],
+   "text": "const page = Huser (new URL(req.ur). searchParass. get C'",
+   "confidence": 0.5522222222222222
+  },
+  {
+   "bbox": [
+    176.0,
+    261.0,
+    350.0,
+    10.0
+   ],
+   "text": "4 (page < 1 11 page > 598) return Sson({ error: \"bad page\" }, 409)",
+   "confidence": 0.6966666666666668
+  },
+  {
+   "bbox": [
+    176.0,
+    265.0,
+    371.0,
+    28.0
+   ],
+   "text": "Const rows = ait db. query (\"SELECT 40, total FRON invoices LINIT 26°);",
+   "confidence": 0.5792307692307692
+  },
+  {
+   "bbox": [
+    176.0,
+    291.0,
+    145.0,
+    10.0
+   ],
+   "text": "return Saon({ page, rons 1);",
+   "confidence": 0.628
+  },
+  {
+   "bbox": [
+    166.0,
+    306.0,
+    4.0,
+    9.0
+   ],
+   "text": "»",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    166.0,
+    326.0,
+    181.0,
+    28.0
+   ],
+   "text": "createserver (hander) Listen PORT);",
+   "confidence": 0.125
+  },
+  {
+   "bbox": [
+    657.0,
+    19.0,
+    134.0,
+    17.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.88
+  },
+  {
+   "bbox": [
+    657.0,
+    48.0,
+    276.0,
+    12.0
+   ],
+   "text": "Svory ruin pases tough he optes Before nny",
+   "confidence": 0.36375
+  },
+  {
+   "bbox": [
+    657.0,
+    51.0,
+    266.0,
+    34.0
+   ],
+   "text": "andlor rar, Gnkmowr ato eter 408 wines",
+   "confidence": 0.26285714285714284
+  },
+  {
+   "bbox": [
+    657.0,
+    83.0,
+    120.0,
+    12.0
+   ],
+   "text": "Coseing the database.",
+   "confidence": 0.41
+  },
+  {
+   "bbox": [
+    657.0,
+    95.0,
+    285.0,
+    33.0
+   ],
+   "text": "Pagination is indexed. Pages above 500 are rejected",
+   "confidence": 0.71625
+  },
+  {
+   "bbox": [
+    657.0,
+    128.0,
+    271.0,
+    11.0
+   ],
+   "text": "wo tse wsingle fenteaat sco the whale tater",
+   "confidence": 0.3225
+  },
+  {
+   "bbox": [
+    657.0,
+    144.0,
+    225.0,
+    12.0
+   ],
+   "text": "Sete or ik coma ant,",
+   "confidence": 0.33799999999999997
+  },
+  {
+   "bbox": [
+    657.0,
+    216.0,
+    176.0,
+    28.0
+   ],
+   "text": "Glyph check: 111] 000 rn m 53 88.",
+   "confidence": 0.77375
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:15:39.487549+00:00"
+}

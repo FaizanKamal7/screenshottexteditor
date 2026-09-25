@@ -1,0 +1,46 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m01-settings_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.012594699976034462,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.015909999987343326,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "024fd10b9e4028000898d5e56c237de8f5cb479af6439b96d6e39e1cdf7e21b7",
+ "lines": [
+  {
+   "bbox": [
+    10.0,
+    28.0,
+    65.0,
+    16.0
+   ],
+   "text": "Settings",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    47.0,
+    85.0,
+    61.0,
+    10.0
+   ],
+   "text": "Avery Collins",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:10:05.968474+00:00"
+}

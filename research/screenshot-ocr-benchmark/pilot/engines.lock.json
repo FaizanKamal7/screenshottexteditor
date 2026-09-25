@@ -1,0 +1,210 @@
+{
+ "status": "PILOT lock — provisional (PREREGISTRATION D1 unresolved for Paddle)",
+ "recorded_at": "2026-09-24T16:51:32.298638+00:00",
+ "engines": {
+  "tesseract5": {
+   "engine_id": "tesseract5",
+   "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+   "config": {
+    "lang": "eng",
+    "config": "--oem 1 --psm 3",
+    "tessdata": "/opt/tessdata_best"
+   },
+   "tessdata_best_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+   "weights_sha256": {
+    "eng.traineddata": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba"
+   },
+   "init_s": 0.5196062579998397,
+   "docker_image": "ocrbench-ocr-tesseract:pilot",
+   "docker_image_id": "sha256:8ff502602ddb44a420a61b9a24bb7013dbb1167227fdc43c58b179dec84f252c"
+  },
+  "paddle_v5_mobile": {
+   "engine_id": "paddle_v5_mobile",
+   "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+   "config": {
+    "text_detection_model_name": "PP-OCRv5_mobile_det",
+    "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+    "use_doc_orientation_classify": false,
+    "use_doc_unwarping": false,
+    "use_textline_orientation": false,
+    "enable_mkldnn": false
+   },
+   "weights_sha256": {
+    "PP-OCRv5_mobile_det": {
+     ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+     ".cache/huggingface/CACHEDIR.TAG": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d",
+     ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/.gitattributes.metadata": "a632e038ddc6f29cfcbacd0cd55b2c9d4505aea023206dfe1578b8a491bf2764",
+     ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/README.md.metadata": "a349be28c93d3fae5ab2677fd58e2818435c9c5571794ab3fb05068610c8760c",
+     ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/config.json.metadata": "f563d9570ef51e162cb416cd94d7f7fe6455e6049bf016d7fddf5eafb1998f33",
+     ".cache/huggingface/download/inference.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.json.metadata": "ceda8a797af449130da94201952163a40ee2bb07d62bbb4670ef4a39ae7867c0",
+     ".cache/huggingface/download/inference.pdiparams.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.pdiparams.metadata": "f113d64819ddccc2d67da7a9ee7997f4c9d0a9d29c8c490f526756c53010125d",
+     ".cache/huggingface/download/inference.yml.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.yml.metadata": "480091598f8469957d9854b6487215b561bd151e15909089314147815ba54cb4",
+     ".cache/huggingface/trees/0d63e78e2b680928f6b1747d76a08db6e645efb7.json": "06d662d7ab252c2b91c0401e38068322a530ca90677788b7f0d70f885988af1f",
+     ".gitattributes": "a3a43406012ee8c7b9b38dfab1b11610f33e8245cd864a9a9302d042616a859e",
+     "README.md": "4cc20ad6d41af86b3ce9885ffb0956e152574a2eb14179aeb07fd2d3956161ca",
+     "config.json": "7ac1c33f377ba58561f4b89d3180b6add2b7c5c60a4edac90fa4e0ceccdc6665",
+     "inference.json": "05feef1acb00aa4cd7362b15f7f501fc4f99d7b1fa73c1c871e0c7b1504b0f5c",
+     "inference.pdiparams": "afa1820cb16c1fd0dad589d0f8b389139061c1ef6d68019685fd07be997dda5b",
+     "inference.yml": "98069072e1b6b37d727fd9d9f11725faa46d6ea0de012f2ed26caea011c37699"
+    },
+    "PP-OCRv5_mobile_rec": {
+     ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+     ".cache/huggingface/CACHEDIR.TAG": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d",
+     ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/.gitattributes.metadata": "e112dd2736cdc8b999f759f1adeabd95c4223b13d668eb66ebe5526290686481",
+     ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/README.md.metadata": "d33db046392cae100b5ad1443a31ef861c78ade90e9c0b50e6ea8cdf5d1cb088",
+     ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/config.json.metadata": "c403ed3f6d678e480fedf4a326ae2db28a19652d985d160239ae333a492352fc",
+     ".cache/huggingface/download/inference.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.json.metadata": "c767440cfd8edb723a166f7accf72ef74622eee246b2a10c558f2542128d3831",
+     ".cache/huggingface/download/inference.pdiparams.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.pdiparams.metadata": "2c8f288f567b2b97955c19a8efa4e66f48613e3bd243c5190b67c7158eba5751",
+     ".cache/huggingface/download/inference.yml.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.yml.metadata": "3421774b863300267371444ebbc1f45cafc4a45ae8577fbb6ed0f7ad26ec1133",
+     ".cache/huggingface/trees/682f20538d8c086cb2128e5cfac775e6c4904e85.json": "6c4d8f0ba4e1a3784f3e9332c93b74ee6c29eeb7b4d83f4d8b89519076d59059",
+     ".gitattributes": "a3a43406012ee8c7b9b38dfab1b11610f33e8245cd864a9a9302d042616a859e",
+     "README.md": "b02727443cef4904a9ee12accdfaf66fcbada7b93a1a05c40dde7582291ba28c",
+     "config.json": "6df1587ae056f0b987125fc894b17f62ae3a12644fa2488d108f19377da9c1a8",
+     "inference.json": "24587345250c7332d0fc6f9a44e794d078cdaeb64c302fef906f325619de2569",
+     "inference.pdiparams": "2460da90875937c94db97eba74ae3d9e5d4c4c57c42f1f41531c09a26bcc771a",
+     "inference.yml": "5dfeb2777f6d0db8177d8128a8acfcf6e6276dc4ac73ea3bf0dc06d6a5e85d8e"
+    }
+   },
+   "init_s": 3.471634929999709,
+   "docker_image": "ocrbench-ocr-paddle:pilot",
+   "docker_image_id": "sha256:ef31035bddeed0f9002808af5c42b20da0e960b447ad2c562d484a1d9be043f9"
+  },
+  "paddle_v5_server": {
+   "engine_id": "paddle_v5_server",
+   "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+   "config": {
+    "text_detection_model_name": "PP-OCRv5_server_det",
+    "text_recognition_model_name": "PP-OCRv5_server_rec",
+    "use_doc_orientation_classify": false,
+    "use_doc_unwarping": false,
+    "use_textline_orientation": false,
+    "enable_mkldnn": false
+   },
+   "weights_sha256": {
+    "PP-OCRv5_server_det": {
+     ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+     ".cache/huggingface/CACHEDIR.TAG": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d",
+     ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/.gitattributes.metadata": "a932a8e9772aad87f985e4ba9cd4ae20892db9dbb7315296907786628b1bb691",
+     ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/README.md.metadata": "2b0ccf6d229bdc3c49a273dcaea9e729a257f77341d83dfdd10cebdd3a8ecd74",
+     ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/config.json.metadata": "8d592b296897cdee6cde858301c15325363f745eb4d61c0c5c68623c79e45b99",
+     ".cache/huggingface/download/inference.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.json.metadata": "e751b2572204a725007e7d31373ab41d67ca2cbebf0e67bd5a3271fefade9e81",
+     ".cache/huggingface/download/inference.pdiparams.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.pdiparams.metadata": "48e08b138487298a2c64e062c468a2295a4c09a9613f786ed3630a9055db587c",
+     ".cache/huggingface/download/inference.yml.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.yml.metadata": "16b2292ea64020b2d2a1c21df84a5f6af0201ab756623e586c8e3d955121e122",
+     ".cache/huggingface/trees/ca867c897ecbca8873081573a802ad70d499cb94.json": "8156d6fa45403316f5f390b105cee5075ad2c1a6b73868ee2411c2c9b92c5714",
+     ".gitattributes": "a3a43406012ee8c7b9b38dfab1b11610f33e8245cd864a9a9302d042616a859e",
+     "README.md": "4fd4cf7c6fc3239ede7274c3877e7a0c4424ffa7f56b2775e4e7961c24b1f107",
+     "config.json": "436bf19010fe3879477e8599a870a0ec8ccd14ca39056805ec4ed20ab318ec04",
+     "inference.json": "af5876933d8806a1b50d895867e0781e135cd92ff37381992828fc8d1b842d28",
+     "inference.pdiparams": "183146fe9d9910352f68482f623bcbbb9fa7b9e8fa1463b9ad288cef00524d2d",
+     "inference.yml": "28fb721efc3634fc8aa677e474b9602cb815a91cf569ef357a7a553d7b3ce685"
+    },
+    "PP-OCRv5_server_rec": {
+     ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+     ".cache/huggingface/CACHEDIR.TAG": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d",
+     ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/.gitattributes.metadata": "e24b50c5c38105c5821d706ab960fb08dad5160814da03a591c47edddb323246",
+     ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/README.md.metadata": "e8f0c716a15d79ae625c9bce789768b5d050eabb6299ab004b581d759b909945",
+     ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/config.json.metadata": "4f234d6ef3e268f90afe92a765ac2129873662a39dbf24d1d024394e5150dfef",
+     ".cache/huggingface/download/inference.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.json.metadata": "3ec69051279de62c8acedbecc7c1db78123cb2b3ee3d64a5c6aff62c1b15c630",
+     ".cache/huggingface/download/inference.pdiparams.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.pdiparams.metadata": "84d11c79fba0de00e3165e071eb669059eaceeacd94f182b6c2d7d08037d139b",
+     ".cache/huggingface/download/inference.yml.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     ".cache/huggingface/download/inference.yml.metadata": "d804c6c40d91da3fd779b96adf12e09feac10a50358ae2b9dc2d3a31623007ef",
+     ".cache/huggingface/trees/b26c3587fda8da3c8ec0ce357214b4d661ff1558.json": "0d2e348c3edc223b21e27a6badb7770f43f4d8643677ce96dc37033fc05f0e10",
+     ".gitattributes": "a3a43406012ee8c7b9b38dfab1b11610f33e8245cd864a9a9302d042616a859e",
+     "README.md": "519eba1704ddeb8d3e68c4f54221dde11074be0644197cdc4d5581b6d74bd62c",
+     "config.json": "6a780e213d7a830058ae1b6899c62cc13ca9c1f0f04ae39a27ebb2610fae7c51",
+     "inference.json": "8e6e12e5d42531840310977fffb58165bf889fc5061408c5a8afdb6985f47fcb",
+     "inference.pdiparams": "63853f062a5f4089befc16f565a68277618e0da5cb45468b49d11079de0ada77",
+     "inference.yml": "2c719dba044c4e2228aef8ff92f5f575394d75d24c16de096a33b7cfd902f66d"
+    }
+   },
+   "init_s": 6.859021812000719,
+   "docker_image": "ocrbench-ocr-paddle:pilot",
+   "docker_image_id": "sha256:ef31035bddeed0f9002808af5c42b20da0e960b447ad2c562d484a1d9be043f9"
+  },
+  "easyocr": {
+   "engine_id": "easyocr",
+   "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+   "config": {
+    "lang_list": [
+     "en"
+    ],
+    "gpu": false,
+    "readtext": {
+     "detail": 1,
+     "paragraph": false
+    },
+    "input": "BGR uint8 ndarray"
+   },
+   "weights_sha256": {
+    "craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+    "english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8"
+   },
+   "torch_num_threads": 10,
+   "init_s": 4.659347580000031,
+   "docker_image": "ocrbench-ocr-torch:pilot",
+   "docker_image_id": "sha256:5bd46a2297ef2a98f26a220a6a31179f5090a001ad5b04731734556559600cfb"
+  },
+  "doctr": {
+   "engine_id": "doctr",
+   "engine_version": "python-doctr v1.1.0 / torch 2.8.0+cpu",
+   "config": {
+    "ocr_predictor": {
+     "pretrained": true
+    },
+    "input": "RGB uint8 ndarray",
+    "det_model": "FAST",
+    "reco_model": "CRNN"
+   },
+   "weights_sha256": {
+    "crnn_vgg16_bn-0417f351.pt": "0417f3511f5c75369bdcbe06539853b9c2d170aa3baceb2acc454c775ddac087",
+    "fast_base-688a8b34.pt": "688a8b3489e9f5d0290c476c6272ec3b18de3ee646c8a0dc158203b1a9c62ace"
+   },
+   "torch_num_threads": 10,
+   "init_s": 6.573313225000675,
+   "docker_image": "ocrbench-ocr-torch:pilot",
+   "docker_image_id": "sha256:5bd46a2297ef2a98f26a220a6a31179f5090a001ad5b04731734556559600cfb"
+  },
+  "windows_ocr": {
+   "engine_id": "windows_ocr",
+   "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+   "config": {
+    "language": "en-US",
+    "pixel_format": "BGRA8",
+    "alpha_mode": "PREMULTIPLIED",
+    "recognizer_language": "en-US"
+   },
+   "max_image_dimension": 10000,
+   "python_packages": {
+    "winrt-runtime": "3.2.1",
+    "winrt-Windows.Media.Ocr": "3.2.1",
+    "winrt-Windows.Graphics.Imaging": "3.2.1"
+   },
+   "weights_sha256": null,
+   "init_s": 0.24393810000037774,
+   "host_python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
+  }
+ }
+}

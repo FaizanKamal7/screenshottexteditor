@@ -1,0 +1,36 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m05-chat_dpr1_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.011731700011296198,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.014638799999374896,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "f1dda27c2a7c59f731195e0afc6d6d2541f32a7b871a9d3f411db0c6cd47cec1",
+ "lines": [
+  {
+   "bbox": [
+    13.0,
+    73.0,
+    15.0,
+    7.0
+   ],
+   "text": "Her",
+   "confidence": null
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T07:44:14.122021+00:00"
+}

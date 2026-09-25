@@ -1,0 +1,501 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.807458031000351,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.8195109000080265,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "c03904f2c9e3f635d40e4ab156645b8cf8f3304ff6488d3eda2c999e72e6fc2d",
+ "lines": [
+  {
+   "bbox": [
+    200.0,
+    4.0,
+    32.0,
+    8.0
+   ],
+   "text": "EAEAE",
+   "confidence": 0.13100503985589437
+  },
+  {
+   "bbox": [
+    435.0,
+    11.0,
+    96.0,
+    14.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.8865485803872913
+  },
+  {
+   "bbox": [
+    140.0,
+    24.0,
+    42.0,
+    6.0
+   ],
+   "text": "Earaieetur",
+   "confidence": 0.00020776414686679185
+  },
+  {
+   "bbox": [
+    14.0,
+    32.0,
+    32.0,
+    6.0
+   ],
+   "text": "Eeanat",
+   "confidence": 0.0009056927440089171
+  },
+  {
+   "bbox": [
+    140.0,
+    34.0,
+    30.0,
+    6.0
+   ],
+   "text": "eeae",
+   "confidence": 0.015614072792232037
+  },
+  {
+   "bbox": [
+    214.0,
+    34.0,
+    44.0,
+    6.0
+   ],
+   "text": "edarereaiid",
+   "confidence": 0.00038259072822489226
+  },
+  {
+   "bbox": [
+    436.0,
+    32.0,
+    186.0,
+    8.0
+   ],
+   "text": "EnTCQuen> ttcuch tetcule{ Bclolen",
+   "confidence": 0.0009030345853911636
+  },
+  {
+   "bbox": [
+    436.0,
+    44.0,
+    44.0,
+    6.0
+   ],
+   "text": "Jannmcet",
+   "confidence": 0.00496496012849404
+  },
+  {
+   "bbox": [
+    488.0,
+    44.0,
+    54.0,
+    6.0
+   ],
+   "text": "Hictgtnat",
+   "confidence": 0.0003593271510717001
+  },
+  {
+   "bbox": [
+    572.0,
+    44.0,
+    44.0,
+    6.0
+   ],
+   "text": "kental",
+   "confidence": 0.006916021006736365
+  },
+  {
+   "bbox": [
+    12.0,
+    54.0,
+    24.0,
+    6.0
+   ],
+   "text": "Anien",
+   "confidence": 0.0007911160356663209
+  },
+  {
+   "bbox": [
+    154.0,
+    52.0,
+    50.0,
+    8.0
+   ],
+   "text": "ottuerolei",
+   "confidence": 0.00378175610532809
+  },
+  {
+   "bbox": [
+    436.0,
+    54.0,
+    82.0,
+    8.0
+   ],
+   "text": "TOLchios thedlbar",
+   "confidence": 0.012902957581835562
+  },
+  {
+   "bbox": [
+    6.0,
+    66.0,
+    42.0,
+    6.0
+   ],
+   "text": "eeeliandicn",
+   "confidence": 0.0007824580425336249
+  },
+  {
+   "bbox": [
+    130.0,
+    62.0,
+    28.0,
+    8.0
+   ],
+   "text": "Merd",
+   "confidence": 0.02212807908654213
+  },
+  {
+   "bbox": [
+    168.0,
+    64.0,
+    68.0,
+    8.0
+   ],
+   "text": "Jeaelaron aia",
+   "confidence": 0.0001559633031093125
+  },
+  {
+   "bbox": [
+    436.0,
+    72.0,
+    40.0,
+    8.0
+   ],
+   "text": "Raniton",
+   "confidence": 0.09809286629781316
+  },
+  {
+   "bbox": [
+    483.0,
+    71.0,
+    66.0,
+    12.0
+   ],
+   "text": "-indextd Pare",
+   "confidence": 0.06897321703196865
+  },
+  {
+   "bbox": [
+    570.0,
+    72.0,
+    58.0,
+    8.0
+   ],
+   "text": "SuIr Tcecicd",
+   "confidence": 0.007550832936140361
+  },
+  {
+   "bbox": [
+    176.0,
+    82.0,
+    28.0,
+    8.0
+   ],
+   "text": "Uroacin",
+   "confidence": 0.0005835290684979022
+  },
+  {
+   "bbox": [
+    435.0,
+    83.0,
+    186.0,
+    12.0
+   ],
+   "text": "NJ that u cnplaclicni cannotec'nthe #hole table;",
+   "confidence": 0.014262765524549316
+  },
+  {
+   "bbox": [
+    436.0,
+    96.0,
+    152.0,
+    8.0
+   ],
+   "text": "Lc teepon obor bulkeeeunncad",
+   "confidence": 0.005316058664192779
+  },
+  {
+   "bbox": [
+    218.0,
+    102.0,
+    30.0,
+    8.0
+   ],
+   "text": "Reulolet",
+   "confidence": 0.004158247373302597
+  },
+  {
+   "bbox": [
+    116.0,
+    112.0,
+    32.0,
+    8.0
+   ],
+   "text": "erhaler",
+   "confidence": 0.08914514144771808
+  },
+  {
+   "bbox": [
+    200.0,
+    114.0,
+    24.0,
+    6.0
+   ],
+   "text": "eal",
+   "confidence": 0.14251218623627487
+  },
+  {
+   "bbox": [
+    287.0,
+    111.0,
+    26.0,
+    12.0
+   ],
+   "text": "0 DI,",
+   "confidence": 0.11071502176766002
+  },
+  {
+   "bbox": [
+    468.0,
+    116.0,
+    106.0,
+    8.0
+   ],
+   "text": "pontrmonineenntthno",
+   "confidence": 0.004247726784033029
+  },
+  {
+   "bbox": [
+    442.0,
+    118.0,
+    26.0,
+    8.0
+   ],
+   "text": "Tnpotet",
+   "confidence": 0.01489295506475301
+  },
+  {
+   "bbox": [
+    576.0,
+    118.0,
+    40.0,
+    8.0
+   ],
+   "text": "Hdebyelde",
+   "confidence": 0.027851383753843165
+  },
+  {
+   "bbox": [
+    116.0,
+    124.0,
+    40.0,
+    6.0
+   ],
+   "text": "Aninteiesi",
+   "confidence": 0.003693195387322396
+  },
+  {
+   "bbox": [
+    442.0,
+    128.0,
+    68.0,
+    8.0
+   ],
+   "text": "utueloclonunt",
+   "confidence": 0.004761428274356278
+  },
+  {
+   "bbox": [
+    185.0,
+    151.0,
+    96.0,
+    12.0
+   ],
+   "text": "Listineolee  (rea: Areuril}",
+   "confidence": 0.0015654538144920255
+  },
+  {
+   "bbox": [
+    435.0,
+    147.0,
+    52.0,
+    14.0
+   ],
+   "text": "Glyph checke",
+   "confidence": 0.2138771722267703
+  },
+  {
+   "bbox": [
+    500.0,
+    150.0,
+    56.0,
+    8.0
+   ],
+   "text": "Olo In m539n",
+   "confidence": 0.01487330515435056
+  },
+  {
+   "bbox": [
+    162.0,
+    162.0,
+    34.0,
+    8.0
+   ],
+   "text": "Leeins",
+   "confidence": 0.0005137579505999809
+  },
+  {
+   "bbox": [
+    200.0,
+    162.0,
+    130.0,
+    8.0
+   ],
+   "text": "LEctelrti ettrhinini_aolieoioi\"",
+   "confidence": 2.0549796800217734e-05
+  },
+  {
+   "bbox": [
+    343.0,
+    161.0,
+    22.0,
+    14.0
+   ],
+   "text": "77;",
+   "confidence": 0.2536840981444509
+  },
+  {
+   "bbox": [
+    162.0,
+    174.0,
+    26.0,
+    6.0
+   ],
+   "text": "Heeied",
+   "confidence": 0.00010706382659279093
+  },
+  {
+   "bbox": [
+    238.0,
+    174.0,
+    46.0,
+    6.0
+   ],
+   "text": "HientnEnn",
+   "confidence": 0.0002863837442676171
+  },
+  {
+   "bbox": [
+    288.0,
+    174.0,
+    36.0,
+    6.0
+   ],
+   "text": "Feii Baad",
+   "confidence": 0.0004230328850502481
+  },
+  {
+   "bbox": [
+    335.0,
+    171.0,
+    24.0,
+    12.0
+   ],
+   "text": "Soda",
+   "confidence": 0.005836687982082367
+  },
+  {
+   "bbox": [
+    116.0,
+    184.0,
+    36.0,
+    6.0
+   ],
+   "text": "CEib#Da1",
+   "confidence": 0.0008322678191414867
+  },
+  {
+   "bbox": [
+    190.0,
+    184.0,
+    50.0,
+    6.0
+   ],
+   "text": "LeteLEEI",
+   "confidence": 0.0003753995372148958
+  },
+  {
+   "bbox": [
+    326.0,
+    182.0,
+    40.0,
+    8.0
+   ],
+   "text": "Untesea",
+   "confidence": 0.0023726018035967124
+  },
+  {
+   "bbox": [
+    140.0,
+    194.0,
+    44.0,
+    6.0
+   ],
+   "text": "UaeneBaadt",
+   "confidence": 0.000133465320922719
+  },
+  {
+   "bbox": [
+    110.0,
+    222.0,
+    122.0,
+    8.0
+   ],
+   "text": "Entaloetinihind er - Lialenleckn;",
+   "confidence": 0.0001966370922601296
+  },
+  {
+   "bbox": [
+    547.0,
+    71.0,
+    23.0,
+    9.0
+   ],
+   "text": "Aen",
+   "confidence": 0.0017245193886981757
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:42:13.456878+00:00"
+}

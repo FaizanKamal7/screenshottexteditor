@@ -38,13 +38,13 @@ export function localizedPath(locale: string, routeKey: TranslatableRouteKey): s
 	return `${base}/${routeKey}/`;
 }
 
-const siteOrigin = 'https://screenshottexteditor.com';
+const absoluteUrl = (path: string) => new URL(path, import.meta.env.SITE).href;
 
 export function getAlternateLinks(routeKey: TranslatableRouteKey): { hreflang: string; href: string }[] {
 	const links = languages.map((l) => ({
 		hreflang: l.code,
-		href: `${siteOrigin}${localizedPath(l.code, routeKey)}`,
+		href: absoluteUrl(localizedPath(l.code, routeKey)),
 	}));
-	links.push({ hreflang: 'x-default', href: `${siteOrigin}${localizedPath(defaultLocale, routeKey)}` });
+	links.push({ hreflang: 'x-default', href: absoluteUrl(localizedPath(defaultLocale, routeKey)) });
 	return links;
 }

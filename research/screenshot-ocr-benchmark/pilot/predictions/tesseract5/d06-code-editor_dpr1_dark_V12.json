@@ -1,0 +1,125 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.7389179080000758,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.7656829000043217,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "0aa51bf268b02f3889fc7ba105a784b8b1a3d7d0e128e40433105bc591402f04",
+ "lines": [
+  {
+   "bbox": [
+    438.0,
+    13.0,
+    89.0,
+    11.0
+   ],
+   "text": "Requestlifecycle",
+   "confidence": 0.54
+  },
+  {
+   "bbox": [
+    438.0,
+    20.0,
+    188.0,
+    28.0
+   ],
+   "text": "Every soot uses thr thers before sy",
+   "confidence": 0.31714285714285717
+  },
+  {
+   "bbox": [
+    438.0,
+    32.0,
+    178.0,
+    28.0
+   ],
+   "text": "Mamie rn. Unknow, hs en 04 wont",
+   "confidence": 0.55
+  },
+  {
+   "bbox": [
+    438.0,
+    44.0,
+    80.0,
+    28.0
+   ],
+   "text": "bing he dase.",
+   "confidence": 0.36333333333333334
+  },
+  {
+   "bbox": [
+    438.0,
+    62.0,
+    190.0,
+    28.0
+   ],
+   "text": "Puiaton's indeed aes bose 0 re rfc",
+   "confidence": 0.3985714285714285
+  },
+  {
+   "bbox": [
+    438.0,
+    73.0,
+    181.0,
+    28.0
+   ],
+   "text": "5 ht ge clet cannot scan te whol abi",
+   "confidence": 0.4955555555555556
+  },
+  {
+   "bbox": [
+    434.0,
+    84.0,
+    154.0,
+    28.0
+   ],
+   "text": "[er ——",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    443.0,
+    118.0,
+    174.0,
+    8.0
+   ],
+   "text": "Fp ———",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    443.0,
+    128.0,
+    68.0,
+    8.0
+   ],
+   "text": "pees",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    438.0,
+    150.0,
+    117.0,
+    8.0
+   ],
+   "text": "[EE —",
+   "confidence": 0.29
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:13:47.047482+00:00"
+}

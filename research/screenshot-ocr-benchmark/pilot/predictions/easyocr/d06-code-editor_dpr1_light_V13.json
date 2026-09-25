@@ -1,0 +1,501 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "d06-code-editor_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 4.027347543998985,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 4.041834700008621,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "ba627534e0acdaad1402103c7ad1fc3e0d39eac6c9912399ce2fd185967a6740",
+ "lines": [
+  {
+   "bbox": [
+    435.0,
+    11.0,
+    96.0,
+    14.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.7543291508382217
+  },
+  {
+   "bbox": [
+    140.0,
+    24.0,
+    44.0,
+    6.0
+   ],
+   "text": "Erralelrron",
+   "confidence": 0.0009099120305189988
+  },
+  {
+   "bbox": [
+    140.0,
+    32.0,
+    30.0,
+    8.0
+   ],
+   "text": "nacerale",
+   "confidence": 0.036443271026711535
+  },
+  {
+   "bbox": [
+    196.0,
+    32.0,
+    68.0,
+    8.0
+   ],
+   "text": "F0b4o  : Etealigij]",
+   "confidence": 0.0012237036007823633
+  },
+  {
+   "bbox": [
+    438.0,
+    32.0,
+    106.0,
+    8.0
+   ],
+   "text": "Ien TcquCTpLNZ Lhtouch",
+   "confidence": 0.014940361211901369
+  },
+  {
+   "bbox": [
+    558.0,
+    32.0,
+    24.0,
+    6.0
+   ],
+   "text": "Tonlle",
+   "confidence": 0.0719034828972961
+  },
+  {
+   "bbox": [
+    580.0,
+    29.0,
+    43.0,
+    12.0
+   ],
+   "text": "belore 1n}",
+   "confidence": 0.25049656928825537
+  },
+  {
+   "bbox": [
+    436.0,
+    44.0,
+    30.0,
+    6.0
+   ],
+   "text": "amnmiet",
+   "confidence": 0.07889246327702937
+  },
+  {
+   "bbox": [
+    488.0,
+    44.0,
+    54.0,
+    8.0
+   ],
+   "text": "Unknown pth",
+   "confidence": 0.30685595790678405
+  },
+  {
+   "bbox": [
+    548.0,
+    44.0,
+    24.0,
+    6.0
+   ],
+   "text": "FetIN",
+   "confidence": 0.04057307472056082
+  },
+  {
+   "bbox": [
+    586.0,
+    44.0,
+    30.0,
+    6.0
+   ],
+   "text": "nehet",
+   "confidence": 0.03070274558746745
+  },
+  {
+   "bbox": [
+    436.0,
+    56.0,
+    34.0,
+    6.0
+   ],
+   "text": "[OLADF",
+   "confidence": 0.12210441097906181
+  },
+  {
+   "bbox": [
+    484.0,
+    54.0,
+    28.0,
+    8.0
+   ],
+   "text": "daub",
+   "confidence": 0.26026418805122375
+  },
+  {
+   "bbox": [
+    110.0,
+    64.0,
+    50.0,
+    6.0
+   ],
+   "text": "Lnil Rlcd",
+   "confidence": 0.0023857141072358627
+  },
+  {
+   "bbox": [
+    168.0,
+    62.0,
+    68.0,
+    8.0
+   ],
+   "text": "1 0 S1or^ 1 Aa",
+   "confidence": 0.029914249841123862
+  },
+  {
+   "bbox": [
+    436.0,
+    72.0,
+    40.0,
+    8.0
+   ],
+   "text": "Panution",
+   "confidence": 0.17669139369378553
+  },
+  {
+   "bbox": [
+    484.0,
+    72.0,
+    38.0,
+    8.0
+   ],
+   "text": "a-indered",
+   "confidence": 0.09367930962648476
+  },
+  {
+   "bbox": [
+    526.0,
+    72.0,
+    102.0,
+    8.0
+   ],
+   "text": "paruabore #uunr rejecied",
+   "confidence": 0.030182810224147445
+  },
+  {
+   "bbox": [
+    446.0,
+    84.0,
+    174.0,
+    8.0
+   ],
+   "text": "thitiiinnkaclirni cnnely4n Ihe #halt table;",
+   "confidence": 0.009248249787724875
+  },
+  {
+   "bbox": [
+    450.0,
+    96.0,
+    52.0,
+    8.0
+   ],
+   "text": "Lhc rponob",
+   "confidence": 0.12452482885160597
+  },
+  {
+   "bbox": [
+    516.0,
+    96.0,
+    72.0,
+    6.0
+   ],
+   "text": "helcrnnsen",
+   "confidence": 0.00034109197985320434
+  },
+  {
+   "bbox": [
+    218.0,
+    102.0,
+    30.0,
+    8.0
+   ],
+   "text": "AsulAR[",
+   "confidence": 0.004385662837148601
+  },
+  {
+   "bbox": [
+    116.0,
+    112.0,
+    36.0,
+    8.0
+   ],
+   "text": "[-/haalen-",
+   "confidence": 0.08788162149202977
+  },
+  {
+   "bbox": [
+    200.0,
+    112.0,
+    36.0,
+    8.0
+   ],
+   "text": "Jinl 6 :",
+   "confidence": 0.10269594081863125
+  },
+  {
+   "bbox": [
+    260.0,
+    114.0,
+    24.0,
+    6.0
+   ],
+   "text": "Leeen ",
+   "confidence": 0.003153915563559721
+  },
+  {
+   "bbox": [
+    287.0,
+    111.0,
+    26.0,
+    12.0
+   ],
+   "text": "0 ))I;",
+   "confidence": 0.20134537035726863
+  },
+  {
+   "bbox": [
+    442.0,
+    118.0,
+    64.0,
+    8.0
+   ],
+   "text": "Tp Jet PonT-Un",
+   "confidence": 0.04422174688463075
+  },
+  {
+   "bbox": [
+    542.0,
+    118.0,
+    32.0,
+    6.0
+   ],
+   "text": "Anuno",
+   "confidence": 0.004860080832024829
+  },
+  {
+   "bbox": [
+    592.0,
+    118.0,
+    24.0,
+    8.0
+   ],
+   "text": "byslde",
+   "confidence": 0.5526721982565398
+  },
+  {
+   "bbox": [
+    116.0,
+    124.0,
+    40.0,
+    6.0
+   ],
+   "text": "Aaintaice",
+   "confidence": 0.005928288021735798
+  },
+  {
+   "bbox": [
+    166.0,
+    124.0,
+    48.0,
+    6.0
+   ],
+   "text": "Lillnadirer",
+   "confidence": 0.005576964627113866
+  },
+  {
+   "bbox": [
+    442.0,
+    128.0,
+    42.0,
+    8.0
+   ],
+   "text": "4uELag lor4)",
+   "confidence": 0.04666359818766784
+  },
+  {
+   "bbox": [
+    110.0,
+    152.0,
+    22.0,
+    8.0
+   ],
+   "text": "{1884",
+   "confidence": 0.08366531081618045
+  },
+  {
+   "bbox": [
+    156.0,
+    152.0,
+    90.0,
+    8.0
+   ],
+   "text": "10d Llbteoltei(rea",
+   "confidence": 0.010677166579929953
+  },
+  {
+   "bbox": [
+    250.0,
+    152.0,
+    28.0,
+    8.0
+   ],
+   "text": "Arertil]",
+   "confidence": 0.057635632554571097
+  },
+  {
+   "bbox": [
+    435.0,
+    149.0,
+    50.0,
+    12.0
+   ],
+   "text": "Gypa check",
+   "confidence": 0.5252149881393275
+  },
+  {
+   "bbox": [
+    500.0,
+    150.0,
+    56.0,
+    8.0
+   ],
+   "text": "Olo In m 55 83",
+   "confidence": 0.34555627106758247
+  },
+  {
+   "bbox": [
+    162.0,
+    164.0,
+    168.0,
+    6.0
+   ],
+   "text": "=nseeEoLfl -ijatEAnicioja L -pioae.",
+   "confidence": 4.230013775024527e-05
+  },
+  {
+   "bbox": [
+    238.0,
+    172.0,
+    46.0,
+    8.0
+   ],
+   "text": "Uidlette _",
+   "confidence": 0.0010281290563165944
+  },
+  {
+   "bbox": [
+    288.0,
+    174.0,
+    36.0,
+    6.0
+   ],
+   "text": "6eS: 693d \"",
+   "confidence": 0.003268048740363228
+  },
+  {
+   "bbox": [
+    335.0,
+    171.0,
+    22.0,
+    12.0
+   ],
+   "text": "S0):",
+   "confidence": 0.05886654555797577
+  },
+  {
+   "bbox": [
+    116.0,
+    184.0,
+    36.0,
+    6.0
+   ],
+   "text": "EboiL 5541",
+   "confidence": 0.020542315017387323
+  },
+  {
+   "bbox": [
+    192.0,
+    184.0,
+    48.0,
+    6.0
+   ],
+   "text": "Jcrr-eLECI",
+   "confidence": 0.0012661816549874444
+  },
+  {
+   "bbox": [
+    256.0,
+    184.0,
+    110.0,
+    6.0
+   ],
+   "text": "LoLalAAE 14ieqi € JA] _",
+   "confidence": 0.0011803041470229505
+  },
+  {
+   "bbox": [
+    116.0,
+    194.0,
+    68.0,
+    6.0
+   ],
+   "text": "ELT 4` EAidF",
+   "confidence": 0.0038190987343190122
+  },
+  {
+   "bbox": [
+    110.0,
+    224.0,
+    122.0,
+    6.0
+   ],
+   "text": "Erale eorihKr ).Ldenlvrcni;",
+   "confidence": 0.00045727081724115194
+  },
+  {
+   "bbox": [
+    482.0107965376461,
+    125.29289321881345,
+    28.97840692470777,
+    11.414213562373106
+   ],
+   "text": "Arle +",
+   "confidence": 0.016010015176918958
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:43:20.010906+00:00"
+}

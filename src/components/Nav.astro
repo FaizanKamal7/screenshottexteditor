@@ -35,7 +35,9 @@ const links = [
 
 			<!-- One copy of the theme/language controls for every breakpoint; only the editor
 			     button (desktop) and the menu (mobile) swap. -->
-			<div class="flex shrink-0 items-center gap-1 md:gap-2">
+			<!-- No gap below md: the controls are 44px touch targets there, so their own padding already
+			     spaces the icons. -->
+			<div class="flex shrink-0 items-center md:gap-2">
 				<ThemeToggle />
 				<LanguageSwitcher lang={lang} routeKey={routeKey} />
 				<div class="hidden md:block">
@@ -49,8 +51,8 @@ const links = [
 					</summary>
 					<div class="nav-popover inset-x-0 top-[calc(100%+0.5rem)] rounded-xl px-6 py-4">
 						<nav class="flex flex-col gap-1">
-							{links.map((link) => <a href={link.href} class="nav-link rounded-md px-2 py-2 text-[15px]">{link.label}</a>)}
-							<a href="/app" class="mt-2 rounded-full bg-ink px-3.5 py-2 text-center text-[15px] font-medium text-on-primary">
+							{links.map((link) => <a href={link.href} class="nav-link flex min-h-11 items-center rounded-md px-2 py-2 text-[15px]">{link.label}</a>)}
+							<a href="/app" class="mt-2 flex min-h-11 items-center justify-center rounded-full bg-ink px-3.5 py-2 text-[15px] font-medium text-on-primary">
 								{t.nav.openEditor}
 							</a>
 						</nav>

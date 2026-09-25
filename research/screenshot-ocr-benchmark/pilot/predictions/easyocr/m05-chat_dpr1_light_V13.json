@@ -1,0 +1,231 @@
+{
+ "engine_id": "easyocr",
+ "engine_version": "easyocr 1.7.2 / torch 2.8.0+cpu",
+ "config": {
+  "lang_list": [
+   "en"
+  ],
+  "gpu": false,
+  "readtext": {
+   "detail": 1,
+   "paragraph": false
+  },
+  "input": "BGR uint8 ndarray"
+ },
+ "image_id": "m05-chat_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 1.490801374999137,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 1.5016371000092477,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "1f723735e340f1c237dbe3a1c69e3745f1d67edfedf6db7aeac4f59aa7329352",
+ "lines": [
+  {
+   "bbox": [
+    160.0,
+    6.0,
+    24.0,
+    8.0
+   ],
+   "text": "3TIt",
+   "confidence": 0.033217158168554306
+  },
+  {
+   "bbox": [
+    50.0,
+    26.0,
+    42.0,
+    8.0
+   ],
+   "text": "JordmnLec",
+   "confidence": 0.6699482050341441
+  },
+  {
+   "bbox": [
+    12.0,
+    72.0,
+    114.0,
+    8.0
+   ],
+   "text": "Hox Arc Wt Hll 09 4ur *r",
+   "confidence": 0.0041515823213697225
+  },
+  {
+   "bbox": [
+    12.0,
+    82.0,
+    90.0,
+    8.0
+   ],
+   "text": "rCMst tomamon Toma",
+   "confidence": 0.04715714190203224
+  },
+  {
+   "bbox": [
+    58.0,
+    104.0,
+    116.0,
+    8.0
+   ],
+   "text": "YCA10_ jintcomdmeimabhe",
+   "confidence": 0.0023610346790285935
+  },
+  {
+   "bbox": [
+    58.0,
+    114.0,
+    86.0,
+    8.0
+   ],
+   "text": "Udeicomockuts Onjor",
+   "confidence": 0.015140379259908385
+  },
+  {
+   "bbox": [
+    72.0,
+    124.0,
+    36.0,
+    8.0
+   ],
+   "text": "Doncntus",
+   "confidence": 0.1144635023990681
+  },
+  {
+   "bbox": [
+    11.0,
+    145.0,
+    106.0,
+    12.0
+   ],
+   "text": "Gcat Caycuaho check Inc",
+   "confidence": 0.030234959022535358
+  },
+  {
+   "bbox": [
+    12.0,
+    158.0,
+    24.0,
+    6.0
+   ],
+   "text": "Mtee",
+   "confidence": 0.027695937717478553
+  },
+  {
+   "bbox": [
+    37.0,
+    155.0,
+    86.0,
+    12.0
+   ],
+   "text": "Ictol? | G9t 51,248 50tut",
+   "confidence": 0.06280666130493824
+  },
+  {
+   "bbox": [
+    12.0,
+    166.0,
+    66.0,
+    8.0
+   ],
+   "text": "JalerirnSlZR",
+   "confidence": 0.0029972576294932727
+  },
+  {
+   "bbox": [
+    58.0,
+    200.0,
+    120.0,
+    8.0
+   ],
+   "text": "Cocdenchkaeedontnn",
+   "confidence": 0.00011365401138081864
+  },
+  {
+   "bbox": [
+    58.0,
+    212.0,
+    54.0,
+    8.0
+   ],
+   "text": "Tonnaetd",
+   "confidence": 0.0010898438996489285
+  },
+  {
+   "bbox": [
+    98.0,
+    234.0,
+    64.0,
+    8.0
+   ],
+   "text": "03 -mnulot-(mlal ei",
+   "confidence": 0.014548913402506004
+  },
+  {
+   "bbox": [
+    152.0,
+    260.0,
+    36.0,
+    8.0
+   ],
+   "text": "Oe",
+   "confidence": 0.013269331463663431
+  },
+  {
+   "bbox": [
+    12.0,
+    278.0,
+    40.0,
+    8.0
+   ],
+   "text": "Thant? Qol",
+   "confidence": 0.032758614778490056
+  },
+  {
+   "bbox": [
+    61.0,
+    275.0,
+    56.0,
+    12.0
+   ],
+   "text": "Ordet #4-20931 =",
+   "confidence": 0.09267640793679911
+  },
+  {
+   "bbox": [
+    12.0,
+    288.0,
+    36.0,
+    6.0
+   ],
+   "text": "cannmt0",
+   "confidence": 0.160806214861766
+  },
+  {
+   "bbox": [
+    72.0,
+    378.0,
+    32.0,
+    8.0
+   ],
+   "text": "07mea",
+   "confidence": 0.01058772001762649
+  },
+  {
+   "bbox": [
+    124.0,
+    378.0,
+    36.0,
+    8.0
+   ],
+   "text": "10unM",
+   "confidence": 0.13030521437608067
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T09:00:10.353825+00:00"
+}

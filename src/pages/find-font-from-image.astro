@@ -80,7 +80,7 @@ const faqJsonLd = {
 
 <Layout
 	title="Find Font from Image — Free Font Finder | ScreenshotTextEditor"
-	description="Upload an image and find the font used in it — free, no signup. Our font finder matches your text against known typefaces and shows the closest result."
+	description="Find the font from an image for free, no signup. Upload a picture and our font finder matches its text against known typefaces to show the closest result."
 	editorFonts
 >
 	<Nav />
@@ -115,7 +115,7 @@ const faqJsonLd = {
 					This is the real detection pipeline, running live — not a mockup or a pre-baked demo result.
 				</p>
 				<div class="mt-6">
-					<EditorIsland client:only="react" embedded />
+					<EditorIsland client:load embedded />
 				</div>
 			</Container>
 		</section>
@@ -194,7 +194,7 @@ const faqJsonLd = {
 					{
 						faqs.map((faq) => (
 							<details class="group rounded-xl border border-hairline bg-canvas-elevated p-5 open:pb-5">
-								<summary class="cursor-pointer list-none text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+								<summary class="-m-5 cursor-pointer list-none p-5 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
 									<span class="flex items-center justify-between gap-4">
 										{faq.question}
 										<span class="shrink-0 text-faint transition-transform group-open:rotate-45">+</span>

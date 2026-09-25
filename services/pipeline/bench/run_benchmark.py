@@ -20,8 +20,8 @@ import os
 import statistics
 import time
 
-import Levenshtein
 import numpy as np
+from rapidfuzz.distance import Levenshtein
 from PIL import Image
 
 from engines import BenchLine, make_engines

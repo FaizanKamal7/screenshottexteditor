@@ -1,6 +1,6 @@
 ---
 title: 'Redact or Replace Demo Data in Screenshots'
-metaDescription: 'Swap real customer data or stale demo content in support docs and UI mockups for placeholder text that matches the original exactly.'
+metaDescription: 'Redact or replace real customer data and stale demo content in screenshots with placeholder text that matches the original exactly.'
 platform: web
 updated: 2026-09-19
 eyebrow: 'Support docs & mockups'

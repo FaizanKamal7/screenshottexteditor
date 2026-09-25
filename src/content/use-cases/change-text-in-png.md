@@ -1,6 +1,6 @@
 ---
 title: 'Edit Text in a PNG File'
-metaDescription: 'Change text in any PNG screenshot and get a pixel-accurate result — same font, size, color, and background, no visible edit.'
+metaDescription: 'Edit text in a PNG file and get a pixel-accurate result — same font, size, color, and background, no visible edit.'
 platform: general
 updated: 2026-09-22
 eyebrow: 'PNG files & PNG screenshots'

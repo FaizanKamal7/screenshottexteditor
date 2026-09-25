@@ -1,0 +1,296 @@
+{
+ "engine_id": "windows_ocr",
+ "engine_version": "Windows.Media.Ocr on Windows 10.0.26200",
+ "config": {
+  "language": "en-US",
+  "pixel_format": "BGRA8",
+  "alpha_mode": "PREMULTIPLIED",
+  "recognizer_language": "en-US"
+ },
+ "image_id": "m05-chat_dpr3_dark_V00",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.06981590000214055,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.11748899999656714,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "67fca882a6cebe89c2d4ce39ac139dbd10a45bb3c59f79ec3599e9d463f747ad",
+ "lines": [
+  {
+   "bbox": [
+    68.0,
+    45.0,
+    74.0,
+    30.0
+   ],
+   "text": "9:41",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    301.0,
+    160.0,
+    250.0,
+    38.0
+   ],
+   "text": "Jordan Lee",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    300.0,
+    222.0,
+    275.0,
+    36.0
+   ],
+   "text": "Active 5 min ago",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    423.0,
+    345.0,
+    321.0,
+    32.0
+   ],
+   "text": "Tue, sep 22 4:12 PM",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    81.0,
+    437.0,
+    673.0,
+    43.0
+   ],
+   "text": "Hey! Are we still on for the design",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    81.0,
+    501.0,
+    533.0,
+    42.0
+   ],
+   "text": "review tomorrow morning?",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    965.0,
+    45.0,
+    139.0,
+    30.0
+   ],
+   "text": "5G 720/0",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    348.0,
+    632.0,
+    689.0,
+    43.0
+   ],
+   "text": "Yes, 10:30 in room 4B. I'll bring the",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    351.0,
+    692.0,
+    512.0,
+    43.0
+   ],
+   "text": "updated mockups and the",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    350.0,
+    752.0,
+    310.0,
+    43.0
+   ],
+   "text": "component list.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    80.0,
+    887.0,
+    597.0,
+    43.0
+   ],
+   "text": "Great. Can you also check the",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    81.0,
+    944.0,
+    644.0,
+    46.0
+   ],
+   "text": "invoice total? I got $1,248.50 but",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    78.0,
+    1004.0,
+    459.0,
+    46.0
+   ],
+   "text": "finance says $1,284.50.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    524.0,
+    1116.0,
+    120.0,
+    25.0
+   ],
+   "text": "4:19 PM",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    350.0,
+    1211.0,
+    718.0,
+    43.0
+   ],
+   "text": "Good catch, the second one is right.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    349.0,
+    1271.0,
+    428.0,
+    43.0
+   ],
+   "text": "Sending the PDF now.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    593.0,
+    1411.0,
+    379.0,
+    41.0
+   ],
+   "text": "Q3-invoice-finaI.pdf",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    592.0,
+    1465.0,
+    273.0,
+    35.0
+   ],
+   "text": "2.4 MB 6 pages",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    921.0,
+    1574.0,
+    204.0,
+    26.0
+   ],
+   "text": "Read 4:21 PM",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    79.0,
+    1670.0,
+    650.0,
+    43.0
+   ],
+   "text": "Thanks, got it. Order #A-20931 is",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    80.0,
+    1730.0,
+    208.0,
+    34.0
+   ],
+   "text": "confirmed.",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    85.0,
+    2275.0,
+    242.0,
+    41.0
+   ],
+   "text": "Sounds good",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    84.0,
+    2431.0,
+    179.0,
+    41.0
+   ],
+   "text": "Message",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    440.0,
+    2277.0,
+    202.0,
+    39.0
+   ],
+   "text": "On my way",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    753.0,
+    2275.0,
+    208.0,
+    32.0
+   ],
+   "text": "10 min late",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    1073.0,
+    2275.0,
+    97.0,
+    32.0
+   ],
+   "text": "Call r",
+   "confidence": null
+  },
+  {
+   "bbox": [
+    991.0,
+    2428.0,
+    92.0,
+    32.0
+   ],
+   "text": "Send",
+   "confidence": null
+  }
+ ],
+ "pass": "rerun",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T09:54:02.274336+00:00"
+}

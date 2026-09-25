@@ -1,0 +1,345 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1p5_light_V12",
+ "status": "ok",
+ "error": null,
+ "total_s": 2.5869543569997404,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 2.614069200004451,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "2cf72382e56458f965d35dc6e45bf35b107580134f76dfa6115603d49d2ca209",
+ "lines": [
+  {
+   "bbox": [
+    16.0,
+    18.0,
+    122.0,
+    14.0
+   ],
+   "text": "Tallyhouse Metrics",
+   "confidence": 0.925
+  },
+  {
+   "bbox": [
+    36.0,
+    57.0,
+    44.0,
+    8.0
+   ],
+   "text": "Overview",
+   "confidence": 0.89
+  },
+  {
+   "bbox": [
+    18.0,
+    87.0,
+    59.0,
+    7.0
+   ],
+   "text": "~ Revenue",
+   "confidence": 0.625
+  },
+  {
+   "bbox": [
+    36.0,
+    115.0,
+    51.0,
+    8.0
+   ],
+   "text": "Customers",
+   "confidence": 0.86
+  },
+  {
+   "bbox": [
+    18.0,
+    142.0,
+    55.0,
+    12.0
+   ],
+   "text": "0 Reports",
+   "confidence": 0.69
+  },
+  {
+   "bbox": [
+    18.0,
+    171.0,
+    58.0,
+    11.0
+   ],
+   "text": "© settings",
+   "confidence": 0.555
+  },
+  {
+   "bbox": [
+    186.0,
+    22.0,
+    159.0,
+    18.0
+   ],
+   "text": "Analytics Overview",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    187.0,
+    34.0,
+    148.0,
+    29.0
+   ],
+   "text": "Last 30 days - Updated 0845 UTC",
+   "confidence": 0.8385714285714286
+  },
+  {
+   "bbox": [
+    200.0,
+    83.0,
+    73.0,
+    9.0
+   ],
+   "text": "Monthly Revere",
+   "confidence": 0.635
+  },
+  {
+   "bbox": [
+    200.0,
+    101.0,
+    82.0,
+    19.0
+   ],
+   "text": "$482,910",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    200.0,
+    125.0,
+    85.0,
+    7.0
+   ],
+   "text": "Daasevsiistmonts",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    390.0,
+    83.0,
+    52.0,
+    7.0
+   ],
+   "text": "Active Users",
+   "confidence": 0.82
+  },
+  {
+   "bbox": [
+    391.0,
+    103.0,
+    60.0,
+    17.0
+   ],
+   "text": "12,384",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    389.0,
+    113.0,
+    82.0,
+    28.0
+   ],
+   "text": "08% alas month",
+   "confidence": 0.43666666666666665
+  },
+  {
+   "bbox": [
+    581.0,
+    83.0,
+    46.0,
+    7.0
+   ],
+   "text": "Chum fate",
+   "confidence": 0.665
+  },
+  {
+   "bbox": [
+    581.0,
+    125.0,
+    65.0,
+    7.0
+   ],
+   "text": "Down from 26%",
+   "confidence": 0.73
+  },
+  {
+   "bbox": [
+    480.0,
+    173.0,
+    77.0,
+    8.0
+   ],
+   "text": "Recent invoices",
+   "confidence": 0.875
+  },
+  {
+   "bbox": [
+    486.0,
+    185.0,
+    240.0,
+    28.0
+   ],
+   "text": "voice customer oats",
+   "confidence": 0.49666666666666665
+  },
+  {
+   "bbox": [
+    486.0,
+    221.0,
+    268.0,
+    9.0
+   ],
+   "text": "IWA0ZL Harper & Stone LLC 2050902",
+   "confidence": 0.515
+  },
+  {
+   "bbox": [
+    486.0,
+    247.0,
+    268.0,
+    8.0
+   ],
+   "text": "IWA0Z2 Bluefield Dental 206004",
+   "confidence": 0.56
+  },
+  {
+   "bbox": [
+    486.0,
+    272.0,
+    268.0,
+    10.0
+   ],
+   "text": "IWA0Z3 Osidge Supply Co. 2060909",
+   "confidence": 0.544
+  },
+  {
+   "bbox": [
+    486.0,
+    298.0,
+    269.0,
+    10.0
+   ],
+   "text": "IN1028 Maple Sucet Books. 2050815",
+   "confidence": 0.29
+  },
+  {
+   "bbox": [
+    486.0,
+    325.0,
+    268.0,
+    10.0
+   ],
+   "text": "W105 Qu Logics 2060021",
+   "confidence": 0.43
+  },
+  {
+   "bbox": [
+    480.0,
+    341.0,
+    262.0,
+    28.0
+   ],
+   "text": "Showings of 1 invoces. Amounts nce trends we exuded",
+   "confidence": 0.45888888888888885
+  },
+  {
+   "bbox": [
+    772.0,
+    71.0,
+    72.0,
+    28.0
+   ],
+   "text": "Aug. Onder Value",
+   "confidence": 0.63
+  },
+  {
+   "bbox": [
+    772.0,
+    101.0,
+    60.0,
+    18.0
+   ],
+   "text": "$86.40",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    773.0,
+    125.0,
+    82.0,
+    8.0
+   ],
+   "text": "S35 ast month",
+   "confidence": 0.36666666666666664
+  },
+  {
+   "bbox": [
+    818.0,
+    220.0,
+    43.0,
+    9.0
+   ],
+   "text": "S000",
+   "confidence": 0.22
+  },
+  {
+   "bbox": [
+    827.0,
+    247.0,
+    34.0,
+    8.0
+   ],
+   "text": "sms",
+   "confidence": 0.64
+  },
+  {
+   "bbox": [
+    813.0,
+    272.0,
+    48.0,
+    9.0
+   ],
+   "text": "s1200875",
+   "confidence": 0.15
+  },
+  {
+   "bbox": [
+    831.0,
+    298.0,
+    30.0,
+    9.0
+   ],
+   "text": "$9500",
+   "confidence": 0.38
+  },
+  {
+   "bbox": [
+    818.0,
+    325.0,
+    43.0,
+    9.0
+   ],
+   "text": "ssa820",
+   "confidence": 0.49
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:11:39.584715+00:00"
+}

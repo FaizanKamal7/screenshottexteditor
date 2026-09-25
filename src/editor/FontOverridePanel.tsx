@@ -114,7 +114,9 @@ export function FontOverridePanel() {
 				<button
 					type="button"
 					onClick={closeOverridePanel}
-					className="rounded-full px-2 py-0.5 text-[11px] text-faint transition-colors hover:bg-canvas-elevated hover:text-ink"
+					// The ::before stretches the tap area to ~44px tall without changing the pill; there is
+					// 12–14px of empty space above and below it in this panel.
+					className="relative rounded-full px-2 py-0.5 text-[11px] before:absolute before:inset-x-0 before:-inset-y-3 text-faint transition-colors hover:bg-canvas-elevated hover:text-ink"
 				>
 					Collapse
 				</button>

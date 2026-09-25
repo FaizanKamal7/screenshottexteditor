@@ -1,0 +1,33 @@
+﻿== serial-check 2026-09-24T14:53:01.2447889+05:00
+serial-check: 1 re-runs
+serial-check elapsed_s=14.4
+== rerun tesseract5 2026-09-24T14:53:15.9338532+05:00
+[2026-09-24T09:53:49.239747+00:00] tesseract5: 25 new predictions
+[2026-09-24T09:53:55.650358+00:00] tesseract5: finished (31 new)
+rerun elapsed_s=39.6
+== rerun windows_ocr 2026-09-24T14:53:55.6764805+05:00
+[2026-09-24T09:54:01.965130+00:00] windows_ocr: 25 new predictions
+[2026-09-24T09:54:02.742497+00:00] windows_ocr: finished (31 new)
+rerun elapsed_s=6.9
+== rerun doctr 2026-09-24T14:54:02.7546320+05:00
+[2026-09-24T09:55:12.023441+00:00] doctr: 25 new predictions
+[2026-09-24T09:55:24.205921+00:00] doctr: finished (31 new)
+rerun elapsed_s=81.4
+== rerun paddle_v5_mobile 2026-09-24T14:55:24.2212693+05:00
+[2026-09-24T09:59:22.219641+00:00] paddle_v5_mobile: 25 new predictions
+[2026-09-24T10:00:06.420359+00:00] paddle_v5_mobile: finished (31 new)
+rerun elapsed_s=282.1
+== rerun easyocr 2026-09-24T15:00:06.4520878+05:00
+[2026-09-24T10:02:49.561047+00:00] easyocr: 25 new predictions
+[2026-09-24T10:03:34.944913+00:00] easyocr: finished (31 new)
+rerun elapsed_s=208.4
+== timing 2026-09-24T15:03:34.9778369+05:00
+[2026-09-24T10:12:15.283613+00:00] timing rep 0 done
+[2026-09-24T10:20:41.875752+00:00] timing rep 1 done
+[2026-09-24T10:29:28.277950+00:00] timing rep 2 done
+timing elapsed_s=1554.7
+lock written for ['doctr', 'easyocr', 'paddle_v5_mobile', 'paddle_v5_server', 'tesseract5', 'windows_ocr']
+lock elapsed_s=0.0
+environment recorded
+environment elapsed_s=9.9
+== DONE 2026-09-24T15:29:40.0597674+05:00

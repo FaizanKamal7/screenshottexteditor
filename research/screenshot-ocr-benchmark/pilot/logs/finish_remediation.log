@@ -1,0 +1,43 @@
+﻿== serial-check paddle_v5_server 2026-09-24T20:14:07.9455953+05:00
+serial-check: 0 re-runs
+serial-check elapsed_s=0.1
+== rerun paddle_v5_server 2026-09-24T20:14:08.4235741+05:00
+[2026-09-24T15:30:41.587093+00:00] paddle_v5_server: 25 new predictions
+[2026-09-24T15:34:27.286850+00:00] paddle_v5_server: finished (31 new)
+rerun elapsed_s=1218.8
+== timing paddle_v5_server 2026-09-24T20:34:27.3981115+05:00
+[2026-09-24T16:21:29.904207+00:00] timing rep 0 done
+[2026-09-24T16:36:05.001937+00:00] timing rep 1 done
+[2026-09-24T16:51:30.519236+00:00] timing rep 2 done
+timing elapsed_s=4624.0
+== lock + environment 2026-09-24T21:51:32.1262558+05:00
+lock written for ['doctr', 'easyocr', 'paddle_v5_mobile', 'paddle_v5_server', 'tesseract5', 'windows_ocr']
+lock elapsed_s=0.0
+environment recorded
+environment elapsed_s=13.0
+== tests, pseudo, score, validate, review 2026-09-24T21:51:45.4700076+05:00
+.......................................                                  [100%]
+39 passed in 4.57s
+pseudo predictions written for 312 images
+scored 1872 predictions -> pilot/scores
+docker : Traceback (most recent call last):
+At E:\MediaSoftwares\Side Hustles\Side 
+Projects\screenshottexteditor\screenshottexteditor\research\screenshot-ocr-benchmark\scripts\finish_remediation.ps1:28 
+char:1
++ docker run --rm --ipc=host -v "${root}:/bench" -w /bench ocrbench-too ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "/bench/scripts/validate_pilot.py", line 628, in <module>
+    main()
+  File "/bench/scripts/validate_pilot.py", line 610, in main
+    checks.update(checks_f(rows))
+                  ^^^^^^^^^^^^^^
+  File "/bench/scripts/validate_pilot.py", line 414, in checks_f
+    t = [json.loads(line) for line in f]
+         ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 335, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+== DONE 2026-09-24T21:58:18.0535651+05:00

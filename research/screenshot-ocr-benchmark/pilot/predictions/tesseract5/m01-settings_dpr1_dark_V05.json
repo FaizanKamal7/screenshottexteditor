@@ -1,0 +1,185 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m01-settings_dpr1_dark_V05",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.9534907869997369,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.966890899988357,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "b3a1a4603fcf74f862406288307fcd5b51fc4d7e013f4b012b42668c3ca0fe63",
+ "lines": [
+  {
+   "bbox": [
+    25.0,
+    18.0,
+    340.0,
+    11.0
+   ],
+   "text": "9:41 87%",
+   "confidence": 0.945
+  },
+  {
+   "bbox": [
+    21.0,
+    56.0,
+    129.0,
+    32.0
+   ],
+   "text": "Settings",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    27.0,
+    111.0,
+    138.0,
+    17.0
+   ],
+   "text": "Q Search settings",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    94.0,
+    170.0,
+    122.0,
+    19.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.96
+  },
+  {
+   "bbox": [
+    95.0,
+    196.0,
+    170.0,
+    12.0
+   ],
+   "text": "avery.collins@example.com",
+   "confidence": 0.58
+  },
+  {
+   "bbox": [
+    33.0,
+    245.0,
+    61.0,
+    9.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    31.0,
+    269.0,
+    328.0,
+    32.0
+   ],
+   "text": "Notifications on",
+   "confidence": 0.955
+  },
+  {
+   "bbox": [
+    31.0,
+    323.0,
+    136.0,
+    16.0
+   ],
+   "text": "Privacy & Security",
+   "confidence": 0.9366666666666668
+  },
+  {
+   "bbox": [
+    27.0,
+    358.0,
+    332.0,
+    32.0
+   ],
+   "text": "Storage 12.4 GB of 64 GB",
+   "confidence": 0.9566666666666667
+  },
+  {
+   "bbox": [
+    31.0,
+    401.0,
+    328.0,
+    32.0
+   ],
+   "text": "Language English (US)",
+   "confidence": 0.9466666666666668
+  },
+  {
+   "bbox": [
+    31.0,
+    455.0,
+    328.0,
+    13.0
+   ],
+   "text": "Screen Time 3h 12m",
+   "confidence": 0.7
+  },
+  {
+   "bbox": [
+    33.0,
+    502.0,
+    57.0,
+    9.0
+   ],
+   "text": "SUPPORT",
+   "confidence": 0.86
+  },
+  {
+   "bbox": [
+    31.0,
+    536.0,
+    89.0,
+    15.0
+   ],
+   "text": "Help Center",
+   "confidence": 0.95
+  },
+  {
+   "bbox": [
+    31.0,
+    580.0,
+    115.0,
+    12.0
+   ],
+   "text": "Send Feedback",
+   "confidence": 0.94
+  },
+  {
+   "bbox": [
+    30.0,
+    614.0,
+    329.0,
+    32.0
+   ],
+   "text": "About Version 418.2",
+   "confidence": 0.9
+  },
+  {
+   "bbox": [
+    33.0,
+    704.0,
+    254.0,
+    28.0
+   ],
+   "text": "Last synced 2 minutes aga - Backup size 318 MB",
+   "confidence": 0.884
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:17:36.853326+00:00"
+}

@@ -1,0 +1,135 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "m05-chat_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 0.30974496899943915,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 0.3202449000091292,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    26.0,
+    85.0,
+    17.0
+   ],
+   "text": "«@ i",
+   "confidence": 0.435
+  },
+  {
+   "bbox": [
+    13.0,
+    60.0,
+    118.0,
+    28.0
+   ],
+   "text": "ot re ello he ein",
+   "confidence": 0.5660000000000001
+  },
+  {
+   "bbox": [
+    13.0,
+    71.0,
+    90.0,
+    28.0
+   ],
+   "text": "toa ai",
+   "confidence": 0.385
+  },
+  {
+   "bbox": [
+    9.0,
+    136.0,
+    108.0,
+    28.0
+   ],
+   "text": "Grn Conus chock pe",
+   "confidence": 0.5475
+  },
+  {
+   "bbox": [
+    9.0,
+    146.0,
+    112.0,
+    28.0
+   ],
+   "text": "me rg 612m Sk",
+   "confidence": 0.4625
+  },
+  {
+   "bbox": [
+    9.0,
+    156.0,
+    80.0,
+    28.0
+   ],
+   "text": "fo an 120450",
+   "confidence": 0.35333333333333333
+  },
+  {
+   "bbox": [
+    98.0,
+    235.0,
+    64.0,
+    14.0
+   ],
+   "text": "bimroiosial",
+   "confidence": 0.0
+  },
+  {
+   "bbox": [
+    9.0,
+    266.0,
+    105.0,
+    28.0
+   ],
+   "text": "Tork got. Oe 4 2031",
+   "confidence": 0.34
+  },
+  {
+   "bbox": [
+    13.0,
+    288.0,
+    35.0,
+    7.0
+   ],
+   "text": "Ctr",
+   "confidence": 0.36
+  },
+  {
+   "bbox": [
+    14.0,
+    378.0,
+    181.0,
+    9.0
+   ],
+   "text": "Sige omy tomate ca",
+   "confidence": 0.3075
+  },
+  {
+   "bbox": [
+    10.0,
+    396.0,
+    179.0,
+    24.0
+   ],
+   "text": "Message D",
+   "confidence": 0.685
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T07:43:17.479099+00:00"
+}

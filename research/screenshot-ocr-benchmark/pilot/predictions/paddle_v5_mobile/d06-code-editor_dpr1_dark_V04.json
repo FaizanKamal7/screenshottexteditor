@@ -1,0 +1,628 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "d06-code-editor_dpr1_dark_V04",
+ "status": "ok",
+ "error": null,
+ "total_s": 12.972115712999766,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 12.995103699999163,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "e0991bbe0b4c2a5a9e536fdaa160af5fabf9efdabc49b2dc6ba65e9bd8a2365c",
+ "lines": [
+  {
+   "bbox": [
+    11.0,
+    11.0,
+    61.0,
+    14.0
+   ],
+   "text": "EXPLORER",
+   "confidence": 0.9926198720932007
+  },
+  {
+   "bbox": [
+    190.0,
+    7.0,
+    73.0,
+    19.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.9975244998931885
+  },
+  {
+   "bbox": [
+    288.0,
+    9.0,
+    85.0,
+    17.0
+   ],
+   "text": "config.json",
+   "confidence": 0.9941389560699463
+  },
+  {
+   "bbox": [
+    398.0,
+    8.0,
+    70.0,
+    17.0
+   ],
+   "text": "README.md",
+   "confidence": 0.9828341007232666
+  },
+  {
+   "bbox": [
+    871.0,
+    21.0,
+    186.0,
+    27.0
+   ],
+   "text": "Request lifecycle",
+   "confidence": 0.9639415740966797
+  },
+  {
+   "bbox": [
+    10.0,
+    38.0,
+    29.0,
+    16.0
+   ],
+   "text": "src",
+   "confidence": 0.9814490675926208
+  },
+  {
+   "bbox": [
+    198.0,
+    47.0,
+    13.0,
+    13.0
+   ],
+   "text": "1",
+   "confidence": 0.9648932218551636
+  },
+  {
+   "bbox": [
+    213.0,
+    44.0,
+    295.0,
+    18.0
+   ],
+   "text": "import{createServer} from\"node:http\";",
+   "confidence": 0.9641634821891785
+  },
+  {
+   "bbox": [
+    23.0,
+    60.0,
+    71.0,
+    17.0
+   ],
+   "text": "server.ts",
+   "confidence": 0.9967023134231567
+  },
+  {
+   "bbox": [
+    198.0,
+    65.0,
+    12.0,
+    15.0
+   ],
+   "text": "2",
+   "confidence": 0.9946146607398987
+  },
+  {
+   "bbox": [
+    215.0,
+    64.0,
+    313.0,
+    17.0
+   ],
+   "text": "import{readFile}from\"node:fs/promises\";",
+   "confidence": 0.9633296132087708
+  },
+  {
+   "bbox": [
+    871.0,
+    59.0,
+    374.0,
+    22.0
+   ],
+   "text": "Every request passes through the router before any",
+   "confidence": 0.9868724346160889
+  },
+  {
+   "bbox": [
+    23.0,
+    79.0,
+    44.0,
+    21.0
+   ],
+   "text": "db.ts",
+   "confidence": 0.9947511553764343
+  },
+  {
+   "bbox": [
+    199.0,
+    88.0,
+    9.0,
+    12.0
+   ],
+   "text": "3",
+   "confidence": 0.9939828515052795
+  },
+  {
+   "bbox": [
+    870.0,
+    82.0,
+    364.0,
+    21.0
+   ],
+   "text": "handler runs. Unknown paths return 404 without",
+   "confidence": 0.9771688580513
+  },
+  {
+   "bbox": [
+    22.0,
+    104.0,
+    73.0,
+    19.0
+   ],
+   "text": "routes.ts",
+   "confidence": 0.9971005320549011
+  },
+  {
+   "bbox": [
+    202.0,
+    111.0,
+    5.0,
+    5.0
+   ],
+   "text": "2",
+   "confidence": 0.217017263174057
+  },
+  {
+   "bbox": [
+    214.0,
+    104.0,
+    328.0,
+    18.0
+   ],
+   "text": "const PORT=Number(process.env.PORT?? 8080);",
+   "confidence": 0.8952894806861877
+  },
+  {
+   "bbox": [
+    871.0,
+    107.0,
+    167.0,
+    20.0
+   ],
+   "text": "touching the database.",
+   "confidence": 0.9740520715713501
+  },
+  {
+   "bbox": [
+    11.0,
+    129.0,
+    90.0,
+    17.0
+   ],
+   "text": "package.json",
+   "confidence": 0.9979175925254822
+  },
+  {
+   "bbox": [
+    200.0,
+    128.0,
+    9.0,
+    10.0
+   ],
+   "text": "5",
+   "confidence": 0.9963233470916748
+  },
+  {
+   "bbox": [
+    214.0,
+    125.0,
+    260.0,
+    17.0
+   ],
+   "text": "constMAX_B0DY=1_048_576;//1MiB",
+   "confidence": 0.9511507153511047
+  },
+  {
+   "bbox": [
+    200.0,
+    149.0,
+    8.0,
+    9.0
+   ],
+   "text": "6",
+   "confidence": 0.945174515247345
+  },
+  {
+   "bbox": [
+    871.0,
+    141.0,
+    388.0,
+    20.0
+   ],
+   "text": "Pagination is 1-indexed. Pages above 500 are rejected",
+   "confidence": 0.9763408899307251
+  },
+  {
+   "bbox": [
+    12.0,
+    151.0,
+    97.0,
+    17.0
+   ],
+   "text": "tsconfig.json",
+   "confidence": 0.9972253441810608
+  },
+  {
+   "bbox": [
+    216.0,
+    165.0,
+    346.0,
+    17.0
+   ],
+   "text": "type Route=(req:Request) => Promise<Response>;",
+   "confidence": 0.9452816247940063
+  },
+  {
+   "bbox": [
+    872.0,
+    167.0,
+    368.0,
+    17.0
+   ],
+   "text": "so that a single client cannot scan the whole table;",
+   "confidence": 0.9662230610847473
+  },
+  {
+   "bbox": [
+    199.0,
+    187.0,
+    9.0,
+    11.0
+   ],
+   "text": "8",
+   "confidence": 0.9972360730171204
+  },
+  {
+   "bbox": [
+    871.0,
+    188.0,
+    306.0,
+    21.0
+   ],
+   "text": "use the export job for bulk access instead.",
+   "confidence": 0.9691728353500366
+  },
+  {
+   "bbox": [
+    197.0,
+    206.0,
+    14.0,
+    13.0
+   ],
+   "text": "9",
+   "confidence": 0.9845351576805115
+  },
+  {
+   "bbox": [
+    210.0,
+    204.0,
+    286.0,
+    18.0
+   ],
+   "text": "const routes = new Map<string, Route>([",
+   "confidence": 0.9072679281234741
+  },
+  {
+   "bbox": [
+    191.0,
+    224.0,
+    19.0,
+    17.0
+   ],
+   "text": "10",
+   "confidence": 0.9037078022956848
+  },
+  {
+   "bbox": [
+    230.0,
+    223.0,
+    389.0,
+    20.0
+   ],
+   "text": "[\"/health\",async()=>json({ok:true,uptime:θ})],",
+   "confidence": 0.9351518750190735
+  },
+  {
+   "bbox": [
+    883.0,
+    231.0,
+    352.0,
+    21.0
+   ],
+   "text": "Tip: set PORT=9090 to run two instances side by side",
+   "confidence": 0.9471499919891357
+  },
+  {
+   "bbox": [
+    191.0,
+    244.0,
+    19.0,
+    17.0
+   ],
+   "text": "11",
+   "confidence": 0.994064211845398
+  },
+  {
+   "bbox": [
+    230.0,
+    242.0,
+    199.0,
+    21.0
+   ],
+   "text": "[\"/invoices\",ListInvoices],",
+   "confidence": 0.9715178608894348
+  },
+  {
+   "bbox": [
+    191.0,
+    263.0,
+    21.0,
+    17.0
+   ],
+   "text": "12",
+   "confidence": 0.9935426712036133
+  },
+  {
+   "bbox": [
+    884.0,
+    254.0,
+    139.0,
+    18.0
+   ],
+   "text": "during local testing.",
+   "confidence": 0.9895309209823608
+  },
+  {
+   "bbox": [
+    207.0,
+    264.0,
+    36.0,
+    19.0
+   ],
+   "text": "]);",
+   "confidence": 0.8110819458961487
+  },
+  {
+   "bbox": [
+    190.0,
+    284.0,
+    20.0,
+    18.0
+   ],
+   "text": "13",
+   "confidence": 0.9970206022262573
+  },
+  {
+   "bbox": [
+    191.0,
+    304.0,
+    21.0,
+    16.0
+   ],
+   "text": "14",
+   "confidence": 0.9980891346931458
+  },
+  {
+   "bbox": [
+    210.0,
+    303.0,
+    363.0,
+    17.0
+   ],
+   "text": "export async function ListInvoices(req:Request){",
+   "confidence": 0.9609778523445129
+  },
+  {
+   "bbox": [
+    872.0,
+    296.0,
+    241.0,
+    21.0
+   ],
+   "text": "Glyph check: Il1| O0o rn m 5S 8B",
+   "confidence": 0.8819481134414673
+  },
+  {
+   "bbox": [
+    190.0,
+    325.0,
+    20.0,
+    16.0
+   ],
+   "text": "15",
+   "confidence": 0.9978870153427124
+  },
+  {
+   "bbox": [
+    231.0,
+    325.0,
+    493.0,
+    17.0
+   ],
+   "text": "const page=Number(new URL(req.urL).searchParams.get(\"page\")?? \"1\");",
+   "confidence": 0.9406870603561401
+  },
+  {
+   "bbox": [
+    191.0,
+    344.0,
+    19.0,
+    17.0
+   ],
+   "text": "16",
+   "confidence": 0.9944862723350525
+  },
+  {
+   "bbox": [
+    231.0,
+    344.0,
+    480.0,
+    17.0
+   ],
+   "text": "if(page<1ll page>50o)return json({ error:\"bad page\"},400);",
+   "confidence": 0.8785809874534607
+  },
+  {
+   "bbox": [
+    191.0,
+    365.0,
+    19.0,
+    17.0
+   ],
+   "text": "17",
+   "confidence": 0.9975860714912415
+  },
+  {
+   "bbox": [
+    231.0,
+    365.0,
+    501.0,
+    17.0
+   ],
+   "text": "const rows= await db.query(\"SELECT id, total FROM invoices LIMIT 25\");",
+   "confidence": 0.9276655912399292
+  },
+  {
+   "bbox": [
+    191.0,
+    384.0,
+    19.0,
+    18.0
+   ],
+   "text": "18",
+   "confidence": 0.9984596967697144
+  },
+  {
+   "bbox": [
+    230.0,
+    385.0,
+    201.0,
+    17.0
+   ],
+   "text": "return json({ page, rows });",
+   "confidence": 0.9189732670783997
+  },
+  {
+   "bbox": [
+    192.0,
+    406.0,
+    17.0,
+    14.0
+   ],
+   "text": "19",
+   "confidence": 0.9965364336967468
+  },
+  {
+   "bbox": [
+    190.0,
+    423.0,
+    20.0,
+    18.0
+   ],
+   "text": "20",
+   "confidence": 0.8821375370025635
+  },
+  {
+   "bbox": [
+    188.0,
+    442.0,
+    277.0,
+    21.0
+   ],
+   "text": "21 createServer(handler).Listen(PoRT);",
+   "confidence": 0.9509761929512024
+  },
+  {
+   "bbox": [
+    11.0,
+    781.0,
+    31.0,
+    11.0
+   ],
+   "text": "main",
+   "confidence": 0.99327552318573
+  },
+  {
+   "bbox": [
+    54.0,
+    778.0,
+    147.0,
+    16.0
+   ],
+   "text": "θ errors, 2 warnings",
+   "confidence": 0.9178482294082642
+  },
+  {
+   "bbox": [
+    945.0,
+    778.0,
+    97.0,
+    15.0
+   ],
+   "text": "Ln 14, CoL 27",
+   "confidence": 0.8538080453872681
+  },
+  {
+   "bbox": [
+    1056.0,
+    780.0,
+    85.0,
+    13.0
+   ],
+   "text": "Spaces:2",
+   "confidence": 0.9700765609741211
+  },
+  {
+   "bbox": [
+    1135.0,
+    779.0,
+    56.0,
+    14.0
+   ],
+   "text": "UTF-8",
+   "confidence": 0.9761927723884583
+  },
+  {
+   "bbox": [
+    1195.0,
+    781.0,
+    72.0,
+    11.0
+   ],
+   "text": "TypeScript",
+   "confidence": 0.989651083946228
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T07:59:36.761951+00:00"
+}

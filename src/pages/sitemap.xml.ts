@@ -4,7 +4,6 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { getAlternateLinks, languages, localizedPath, translatableRouteKeys } from '../i18n';
 
-const SITE_URL = 'https://screenshottexteditor.com';
 
 // Bump a page's lastmod (YYYY-MM-DD) when its content meaningfully changes. Google only trusts
 // lastmod if it is accurate, so don't set it to the build date.
@@ -16,6 +15,7 @@ const SITE_URL = 'https://screenshottexteditor.com';
 const staticPages = [
 	{ path: '/app', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-19' },
 	{ path: '/find-font-from-image/', changefreq: 'monthly', priority: '0.8', lastmod: '2026-09-22' },
+	{ path: '/blog/edit-text-in-screenshot/', changefreq: 'monthly', priority: '0.7', lastmod: '2026-09-24' },
 	{ path: '/privacy/', changefreq: 'yearly', priority: '0.2', lastmod: '2026-09-19' },
 	{ path: '/terms/', changefreq: 'yearly', priority: '0.2', lastmod: '2026-09-19' },
 ];
@@ -42,7 +42,7 @@ type Entry = {
 
 const renderEntry = ({ path, lastmod, changefreq, priority, alternates = [] }: Entry) => `
 	<url>
-		<loc>${SITE_URL}${path}</loc>
+		<loc>${new URL(path, import.meta.env.SITE).href}</loc>
 		<lastmod>${lastmod}</lastmod>
 		<changefreq>${changefreq}</changefreq>
 		<priority>${priority}</priority>${alternates

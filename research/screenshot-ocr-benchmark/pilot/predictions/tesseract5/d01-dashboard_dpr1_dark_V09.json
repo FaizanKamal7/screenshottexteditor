@@ -1,0 +1,165 @@
+{
+ "engine_id": "tesseract5",
+ "engine_version": "tesseract 5.3.0 / pytesseract 5.3.0",
+ "config": {
+  "lang": "eng",
+  "config": "--oem 1 --psm 3",
+  "tessdata": "/opt/tessdata_best"
+ },
+ "image_id": "d01-dashboard_dpr1_dark_V09",
+ "status": "ok",
+ "error": null,
+ "total_s": 2.7211677229997804,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 2.7641120000043884,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "e5e786a98ef8ed0d9966cef288fb687cd48cb3173a8e32a35ca9d9481a11e23c",
+ "lines": [
+  {
+   "bbox": [
+    22.0,
+    24.0,
+    438.0,
+    29.0
+   ],
+   "text": "Tallyhouse Metrics Analytics Overview",
+   "confidence": 0.9325
+  },
+  {
+   "bbox": [
+    249.0,
+    50.0,
+    197.0,
+    28.0
+   ],
+   "text": "Last 30 days - Updated 08:45 UTC",
+   "confidence": 0.9442857142857143
+  },
+  {
+   "bbox": [
+    24.0,
+    111.0,
+    1102.0,
+    14.0
+   ],
+   "text": "JL Morttiy Revarnes active ree Chum Rate vg. Ori Vales",
+   "confidence": 0.42200000000000004
+  },
+  {
+   "bbox": [
+    27.0,
+    135.0,
+    1083.0,
+    28.0
+   ],
+   "text": "ry $482,910 12,384 2.1 $86.40",
+   "confidence": 0.8759999999999999
+  },
+  {
+   "bbox": [
+    266.0,
+    162.0,
+    874.0,
+    21.0
+   ],
+   "text": "+12.4% vs last month -0.8% vs last month Down from 2.6% +$3.15 vs last month",
+   "confidence": 0.9193333333333333
+  },
+  {
+   "bbox": [
+    261.0,
+    226.0,
+    481.0,
+    22.0
+   ],
+   "text": "‘Weekly revenue (USD) Recent invoices",
+   "confidence": 0.852
+  },
+  {
+   "bbox": [
+    281.0,
+    257.0,
+    919.0,
+    22.0
+   ],
+   "text": "Lo Invoice Customer Date Amount Status",
+   "confidence": 0.7133333333333333
+  },
+  {
+   "bbox": [
+    280.0,
+    290.0,
+    917.0,
+    21.0
+   ],
+   "text": "ae INV-10421 Harper & Stone LLC 2026-09-02 $3420.00 Paid",
+   "confidence": 0.8255555555555556
+  },
+  {
+   "bbox": [
+    648.0,
+    325.0,
+    547.0,
+    21.0
+   ],
+   "text": "INV-10422 Bluefield Dental 2026-09-04 $780.50 Due",
+   "confidence": 0.9183333333333333
+  },
+  {
+   "bbox": [
+    285.0,
+    349.0,
+    14.0,
+    8.0
+   ],
+   "text": "-",
+   "confidence": 0.55
+  },
+  {
+   "bbox": [
+    314.0,
+    333.0,
+    883.0,
+    71.0
+   ],
+   "text": "0 INV-10423 Oakridge Supply Co. 2026-09-00 $12,006.75 Paid",
+   "confidence": 0.76125
+  },
+  {
+   "bbox": [
+    294.0,
+    394.0,
+    901.0,
+    21.0
+   ],
+   "text": "& INV-10424 Maple Street Books 2026-09-15 $96.00 Due",
+   "confidence": 0.7725
+  },
+  {
+   "bbox": [
+    648.0,
+    429.0,
+    549.0,
+    21.0
+   ],
+   "text": "INV-10425 ‘Quinn Logistics 2026-09-21 $5318.20 Paid",
+   "confidence": 0.745
+  },
+  {
+   "bbox": [
+    640.0,
+    461.0,
+    349.0,
+    28.0
+   ],
+   "text": "Showing 5 of 148 invoices. Amounts include tac refunds are excluded",
+   "confidence": 0.870909090909091
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "parallel",
+ "completed_at": "2026-09-24T07:09:53.607014+00:00"
+}

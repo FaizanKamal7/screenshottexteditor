@@ -1,0 +1,272 @@
+{
+ "engine_id": "paddle_v5_server",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_server_det",
+  "text_recognition_model_name": "PP-OCRv5_server_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m01-settings_dpr1_light_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 3.7289392790007696,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 3.74039449999691,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "13e7e3d033a110ee05fdcc1c5f5d23c6af0b494f1546bbe58b558a59f93f9b84",
+ "peak_rss_mb": 1907.9,
+ "peak_rss_scope": "per-image",
+ "container_states": null,
+ "memory_limit": "24g",
+ "lines": [
+  {
+   "bbox": [
+    8.0,
+    5.0,
+    22.0,
+    12.0
+   ],
+   "text": "9:41",
+   "confidence": 0.9749147295951843
+  },
+  {
+   "bbox": [
+    161.0,
+    5.0,
+    24.0,
+    12.0
+   ],
+   "text": "87%",
+   "confidence": 0.999367892742157
+  },
+  {
+   "bbox": [
+    5.0,
+    22.0,
+    73.0,
+    25.0
+   ],
+   "text": "Settings",
+   "confidence": 0.9990411996841431
+  },
+  {
+   "bbox": [
+    7.0,
+    48.0,
+    78.0,
+    19.0
+   ],
+   "text": " Search settings",
+   "confidence": 0.9707803130149841
+  },
+  {
+   "bbox": [
+    45.0,
+    81.0,
+    65.0,
+    14.0
+   ],
+   "text": "Avery Collins",
+   "confidence": 0.9435476064682007
+  },
+  {
+   "bbox": [
+    13.0,
+    118.0,
+    36.0,
+    11.0
+   ],
+   "text": "ACCOUNT",
+   "confidence": 0.9853993058204651
+  },
+  {
+   "bbox": [
+    11.0,
+    136.0,
+    52.0,
+    11.0
+   ],
+   "text": "Notifications",
+   "confidence": 0.9556569457054138
+  },
+  {
+   "bbox": [
+    167.0,
+    135.0,
+    16.0,
+    12.0
+   ],
+   "text": "On",
+   "confidence": 0.8664082288742065
+  },
+  {
+   "bbox": [
+    12.0,
+    158.0,
+    71.0,
+    11.0
+   ],
+   "text": "Privacy &Security",
+   "confidence": 0.9352937340736389
+  },
+  {
+   "bbox": [
+    11.0,
+    179.0,
+    36.0,
+    14.0
+   ],
+   "text": "Storage",
+   "confidence": 0.9948645234107971
+  },
+  {
+   "bbox": [
+    118.0,
+    181.0,
+    64.0,
+    10.0
+   ],
+   "text": "12.4 GB of 64 GB",
+   "confidence": 0.8709520101547241
+  },
+  {
+   "bbox": [
+    12.0,
+    203.0,
+    42.0,
+    11.0
+   ],
+   "text": "Language",
+   "confidence": 0.9938255548477173
+  },
+  {
+   "bbox": [
+    135.0,
+    202.0,
+    47.0,
+    11.0
+   ],
+   "text": "English (Us)",
+   "confidence": 0.8624348640441895
+  },
+  {
+   "bbox": [
+    12.0,
+    224.0,
+    51.0,
+    11.0
+   ],
+   "text": "Screen Time",
+   "confidence": 0.9563007950782776
+  },
+  {
+   "bbox": [
+    150.0,
+    223.0,
+    34.0,
+    14.0
+   ],
+   "text": "3h 12m",
+   "confidence": 0.9696028828620911
+  },
+  {
+   "bbox": [
+    12.0,
+    245.0,
+    35.0,
+    14.0
+   ],
+   "text": "SUPPORT",
+   "confidence": 0.9762580990791321
+  },
+  {
+   "bbox": [
+    11.0,
+    265.0,
+    50.0,
+    11.0
+   ],
+   "text": "Help Center",
+   "confidence": 0.967162549495697
+  },
+  {
+   "bbox": [
+    12.0,
+    287.0,
+    62.0,
+    10.0
+   ],
+   "text": "Send Feedback",
+   "confidence": 0.9307695031166077
+  },
+  {
+   "bbox": [
+    10.0,
+    307.0,
+    31.0,
+    15.0
+   ],
+   "text": "About",
+   "confidence": 0.9940160512924194
+  },
+  {
+   "bbox": [
+    127.0,
+    307.0,
+    55.0,
+    13.0
+   ],
+   "text": "Version 4.18.2",
+   "confidence": 0.9325493574142456
+  },
+  {
+   "bbox": [
+    13.0,
+    331.0,
+    60.0,
+    11.0
+   ],
+   "text": "Delete Accour",
+   "confidence": 0.8618398904800415
+  },
+  {
+   "bbox": [
+    17.0,
+    386.0,
+    13.0,
+    14.0
+   ],
+   "text": "合",
+   "confidence": 0.698744535446167
+  },
+  {
+   "bbox": [
+    16.0,
+    400.0,
+    15.0,
+    7.0
+   ],
+   "text": "Home",
+   "confidence": 0.4882715344429016
+  },
+  {
+   "bbox": [
+    62.0,
+    398.0,
+    22.0,
+    11.0
+   ],
+   "text": "Search",
+   "confidence": 0.7818174362182617
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T14:11:42.764771+00:00"
+}

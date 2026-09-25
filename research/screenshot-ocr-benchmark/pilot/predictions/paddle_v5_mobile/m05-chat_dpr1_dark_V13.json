@@ -1,0 +1,268 @@
+{
+ "engine_id": "paddle_v5_mobile",
+ "engine_version": "paddleocr 3.7.0 / paddlepaddle 3.3.1",
+ "config": {
+  "text_detection_model_name": "PP-OCRv5_mobile_det",
+  "text_recognition_model_name": "PP-OCRv5_mobile_rec",
+  "use_doc_orientation_classify": false,
+  "use_doc_unwarping": false,
+  "use_textline_orientation": false,
+  "enable_mkldnn": false
+ },
+ "image_id": "m05-chat_dpr1_dark_V13",
+ "status": "ok",
+ "error": null,
+ "total_s": 2.7470172379998985,
+ "detect_s": null,
+ "recognize_s": null,
+ "orchestrator_wall_s": 2.7566324999788776,
+ "attempts": 1,
+ "input_file_sha256_ok": true,
+ "input_pixel_sha256_ok": true,
+ "input_pixel_sha256": "05e14c5c89b1a24c24dab8f67636f225f21cf32da0aa37258ae093a703ff7227",
+ "lines": [
+  {
+   "bbox": [
+    7.0,
+    4.0,
+    18.0,
+    11.0
+   ],
+   "text": "9:41",
+   "confidence": 0.915428102016449
+  },
+  {
+   "bbox": [
+    158.0,
+    4.0,
+    27.0,
+    11.0
+   ],
+   "text": "5G72%",
+   "confidence": 0.9599078893661499
+  },
+  {
+   "bbox": [
+    50.0,
+    24.0,
+    40.0,
+    10.0
+   ],
+   "text": "JordanLee",
+   "confidence": 0.9889249801635742
+  },
+  {
+   "bbox": [
+    108.0,
+    55.0,
+    16.0,
+    7.0
+   ],
+   "text": "12PM",
+   "confidence": 0.7457952499389648
+  },
+  {
+   "bbox": [
+    8.0,
+    68.0,
+    118.0,
+    14.0
+   ],
+   "text": "Hey! Are we sti on foe the design",
+   "confidence": 0.8598681688308716
+  },
+  {
+   "bbox": [
+    10.0,
+    81.0,
+    81.0,
+    10.0
+   ],
+   "text": "teview tomorow mom",
+   "confidence": 0.886182427406311
+  },
+  {
+   "bbox": [
+    88.0,
+    82.0,
+    15.0,
+    7.0
+   ],
+   "text": "na?",
+   "confidence": 0.502265989780426
+  },
+  {
+   "bbox": [
+    58.0,
+    102.0,
+    41.0,
+    11.0
+   ],
+   "text": "Yes,10:30",
+   "confidence": 0.8826920986175537
+  },
+  {
+   "bbox": [
+    103.0,
+    102.0,
+    72.0,
+    11.0
+   ],
+   "text": "room4B. rl bring the",
+   "confidence": 0.815804123878479
+  },
+  {
+   "bbox": [
+    99.0,
+    113.0,
+    46.0,
+    10.0
+   ],
+   "text": "ckups and the",
+   "confidence": 0.9400135278701782
+  },
+  {
+   "bbox": [
+    10.0,
+    145.0,
+    37.0,
+    10.0
+   ],
+   "text": "Geeat.Ca",
+   "confidence": 0.7884056568145752
+  },
+  {
+   "bbox": [
+    10.0,
+    163.0,
+    41.0,
+    15.0
+   ],
+   "text": "fnance say",
+   "confidence": 0.7869304418563843
+  },
+  {
+   "bbox": [
+    12.0,
+    157.0,
+    17.0,
+    7.0
+   ],
+   "text": "ievoi",
+   "confidence": 0.6603877544403076
+  },
+  {
+   "bbox": [
+    54.0,
+    197.0,
+    126.0,
+    13.0
+   ],
+   "text": "Good catch the second one isnigha",
+   "confidence": 0.8484460115432739
+  },
+  {
+   "bbox": [
+    56.0,
+    210.0,
+    74.0,
+    10.0
+   ],
+   "text": "Sending the PDF now",
+   "confidence": 0.9394233822822571
+  },
+  {
+   "bbox": [
+    127.0,
+    232.0,
+    35.0,
+    10.0
+   ],
+   "text": "e-fnal.pdf",
+   "confidence": 0.9443119764328003
+  },
+  {
+   "bbox": [
+    150.0,
+    256.0,
+    39.0,
+    14.0
+   ],
+   "text": "Rr2042 P4",
+   "confidence": 0.4507322311401367
+  },
+  {
+   "bbox": [
+    9.0,
+    273.0,
+    115.0,
+    13.0
+   ],
+   "text": "Thanks, got it.Order#A-20931 is",
+   "confidence": 0.9011729955673218
+  },
+  {
+   "bbox": [
+    11.0,
+    286.0,
+    38.0,
+    10.0
+   ],
+   "text": "confirmed.",
+   "confidence": 0.9702546000480652
+  },
+  {
+   "bbox": [
+    10.0,
+    375.0,
+    47.0,
+    11.0
+   ],
+   "text": "Soundsgood",
+   "confidence": 0.9432913064956665
+  },
+  {
+   "bbox": [
+    71.0,
+    378.0,
+    34.0,
+    7.0
+   ],
+   "text": "On my wa",
+   "confidence": 0.7100597620010376
+  },
+  {
+   "bbox": [
+    123.0,
+    375.0,
+    39.0,
+    10.0
+   ],
+   "text": "10min late",
+   "confidence": 0.8562566041946411
+  },
+  {
+   "bbox": [
+    176.0,
+    375.0,
+    17.0,
+    11.0
+   ],
+   "text": "Calli",
+   "confidence": 0.8347803354263306
+  },
+  {
+   "bbox": [
+    9.0,
+    400.0,
+    37.0,
+    14.0
+   ],
+   "text": "Mestage",
+   "confidence": 0.5694119334220886
+  }
+ ],
+ "pass": "accuracy",
+ "conditions": "single-engine",
+ "completed_at": "2026-09-24T08:24:34.637930+00:00"
+}

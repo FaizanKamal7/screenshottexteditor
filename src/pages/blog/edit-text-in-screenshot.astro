@@ -1,0 +1,412 @@
+---
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Container from '../../components/Container.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import Button from '../../components/Button.astro';
+
+const title = 'How to Edit Text in a Screenshot Without Photoshop';
+const description =
+	'Change text in a screenshot without Photoshop: match the font, size and color, rebuild the background, and export a clean PNG. Steps, tips and limits.';
+
+// Bump `modified` (and the sitemap lastmod) when the article meaningfully changes.
+const published = '2026-09-24';
+const modified = '2026-09-24';
+const publishedLabel = new Date(`${published}T00:00:00Z`).toLocaleDateString('en-US', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+	timeZone: 'UTC',
+});
+
+const faqs = [
+	{
+		question: 'Can I change text without rebuilding the whole image?',
+		answer:
+			'Yes. Only the pixels under the line you edit need to change. In ScreenshotTextEditor, the old text is erased, the background behind it is filled in, and the new line is drawn in its place. Everything outside that line stays exactly as it was, including icons, buttons and the rest of the layout.',
+	},
+	{
+		question: 'Should I save the edited screenshot as a PNG or a JPEG?',
+		answer:
+			'Use PNG whenever you can. JPEG compression adds faint blocky noise around sharp edges, and text is almost all sharp edges. Re-saving a JPEG after an edit adds another round of that noise, which makes the edited line easier to spot. ScreenshotTextEditor accepts PNG and JPEG uploads and downloads the result as a PNG.',
+	},
+	{
+		question: 'How do I keep the original font if I do not know what it is?',
+		answer:
+			'Start by identifying it with a font finder, which compares the text against known typefaces and shows you the closest match. Many interface fonts, such as SF Pro and Segoe UI, are proprietary system fonts, so the practical goal is usually a close open-source match rather than the exact file. At screenshot sizes, a well-matched substitute at the right size and weight is usually impossible to tell apart.',
+	},
+	{
+		question: 'Why does my replacement text look bolder or blurrier than the original?',
+		answer:
+			'Usually it is drawn at the wrong scale, or rendered differently. On a 2x or 3x screenshot, text set at 16 points in the app is 32 or 48 pixels tall in the image. Operating systems also smooth text differently. macOS, for example, tends to draw text slightly heavier than Windows at the same nominal weight. Match the pixel size first, then try one weight lighter or heavier and compare at high zoom.',
+	},
+	{
+		question: 'Can I edit an iPhone or Android screenshot on the phone itself?',
+		answer:
+			'Yes. ScreenshotTextEditor runs in the browser, so you can upload a screenshot straight from your phone’s photo library, edit it, and download the result back to the device. For the details of each platform, see the guides to iOS screenshots and Android screenshots.',
+	},
+	{
+		question: 'Can people tell a screenshot has been edited?',
+		answer:
+			'A careful edit on a flat background is hard to spot by eye. That is why honest use matters: edited screenshots are fine for docs, mockups, demos and localized store listings, but not for passing off as evidence of something that did not happen. Images exported from ScreenshotTextEditor carry embedded content credentials marking them as edited. It is invisible metadata, not a watermark.',
+	},
+];
+
+const siteUrl = 'https://screenshottexteditor.com';
+const pageUrl = `${siteUrl}/blog/edit-text-in-screenshot/`;
+
+// No personal author exists for the site, so the Organization (the same @id as on the homepage)
+// is both author and publisher. No ratings, reviews or invented citations.
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'BlogPosting',
+			'@id': `${pageUrl}#article`,
+			headline: title,
+			description,
+			url: pageUrl,
+			mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+			image: `${siteUrl}/og-image.png`,
+			datePublished: published,
+			dateModified: modified,
+			inLanguage: 'en',
+			author: { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'ScreenshotTextEditor', url: `${siteUrl}/` },
+			publisher: {
+				'@type': 'Organization',
+				'@id': `${siteUrl}/#organization`,
+				name: 'ScreenshotTextEditor',
+				url: `${siteUrl}/`,
+				logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.png` },
+			},
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': `${pageUrl}#faq`,
+			mainEntity: faqs.map((faq) => ({
+				'@type': 'Question',
+				name: faq.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: faq.answer,
+				},
+			})),
+		},
+	],
+};
+---
+
+<Layout title={title} description={description} ogType="article">
+	<Nav />
+
+	<main>
+		<article>
+			<header class="border-b border-hairline py-20">
+				<Container class="max-w-3xl">
+					<Eyebrow>Guide</Eyebrow>
+					<h1 class="mt-4 text-[36px] font-semibold leading-[1.1] tracking-tight text-ink md:text-[44px] md:leading-[1.05] md:tracking-[-0.02em]">
+						{title}
+					</h1>
+					<p class="mt-5 text-[17px] leading-relaxed text-body">
+						To edit text in a screenshot, you have to do four things well: erase the old words, rebuild the background
+						behind them, draw the new words in the same font, size and color, and put them in exactly the same place. You
+						don’t need Photoshop for any of that. This guide explains what makes each step hard, how to do it by hand, how
+						a dedicated screenshot text editor handles it, and when a full image editor is still the right tool.
+					</p>
+					<p class="mt-4 text-[13px] text-mute">
+						By ScreenshotTextEditor · Published <time datetime={published}>{publishedLabel}</time>
+					</p>
+				</Container>
+			</header>
+
+			<div class="py-16">
+				<Container class="article-body max-w-3xl text-[16px] leading-relaxed text-body">
+					<h2 id="why-its-hard">Why editing text in a screenshot is harder than it looks</h2>
+					<p>
+						A screenshot has no text layers. The words you see are just colored pixels mixed in with the background. So
+						“editing” the text really means painting over one set of pixels and drawing new ones that look like they
+						were always there. Five things usually give an edit away.
+					</p>
+
+					<h3>Matching the original font</h3>
+					<p>
+						Apps and websites often use system fonts like SF Pro on iOS, Roboto on Android, and Segoe UI on Windows, or a
+						brand typeface you may not have installed. Using a font that is merely similar shows up quickly in letters
+						with distinctive shapes: the tail of a lowercase “t”, the width of an “a”, or whether a “1” has a flag.
+					</p>
+
+					<h3>Matching size, weight and spacing</h3>
+					<p>
+						Screenshots from phones and high-resolution laptops are taken at 2x or 3x scale. Text set at 15 points in the
+						app might be 30 or 45 pixels tall in the image, so the font size in your editor has to match the pixels, not the
+						design spec. Weight and letter spacing matter just as much. Text one weight too heavy, or spaced slightly too
+						loosely, looks off even when readers can’t say why.
+					</p>
+
+					<h3>Reconstructing the background</h3>
+					<p>
+						Once the old text is gone, something has to fill the space it leaves. On a flat white card that is easy. On a
+						gradient, a colored button, or a chip with rounded corners, a flat rectangle of sampled color leaves an obvious
+						patch. The fill has to continue whatever was behind the text.
+					</p>
+
+					<h3>Anti-aliasing and rendering</h3>
+					<p>
+						To look smooth, text edges are drawn with a soft fringe of in-between colors (anti-aliasing), and each
+						operating system draws that fringe differently. macOS tends to make text slightly heavier; Windows snaps it
+						more tightly to the pixel grid. Text typed in an image editor gets that editor’s smoothing, not the
+						original app’s, so it can look too crisp, too soft, or too bold next to text that wasn’t edited.
+					</p>
+
+					<h3>Positioning the replacement text</h3>
+					<p>
+						The new line has to sit on the same baseline as the old one and line up with the text around it. Being off
+						by a single pixel is easy to see when the edited line sits next to one that wasn’t touched, as in a list or a
+						table column.
+					</p>
+
+					<h2 id="how-to">How to edit text in a screenshot, step by step</h2>
+					<p>
+						These steps work in any tool, whether that’s a free image editor, a design app, or a dedicated screenshot
+						text editor. Only the amount of manual work changes.
+					</p>
+
+					<h3>1. Start from the best copy of the screenshot</h3>
+					<p>
+						Use the original file at full resolution. A copy that has been through a chat app or a slide deck has
+						often been resized and recompressed, which blurs exactly the edges you are trying to match. A PNG is better
+						than a JPEG, and a JPEG that has been saved several times is the hardest to work with.
+					</p>
+
+					<h3>2. Select the text you want to change</h3>
+					<p>
+						Work one line at a time. Even if you only need to change one word, treat the whole line as the unit: it keeps
+						the spacing consistent and lets you check the new line against the old one.
+					</p>
+
+					<h3>3. Identify the font and measure the text</h3>
+					<p>
+						If you don’t recognize the typeface, run it through a <a href="/find-font-from-image/">font finder</a>{' '}
+						before you start. Then zoom in and measure the height of a capital letter in pixels, and try font sizes until
+						your text matches it. Pick the text color with an eyedropper from the solid middle of a thick letter, never from
+						its edge, because edge pixels are blended with the background.
+					</p>
+
+					<h3>4. Erase the old text and replace it</h3>
+					<p>
+						Cover the old words with a fill that continues the background: a sampled flat color on a plain surface, a
+						matching gradient on a gradient. Then type the new text on the same baseline as the original. Compare it
+						against an untouched line nearby at 200 to 400% zoom. Look at weight, letter spacing and edge softness, and
+						adjust one at a time.
+					</p>
+
+					<h3>5. Export as PNG</h3>
+					<p>
+						Save the result as a PNG so no compression noise gathers around the new letters. If the image is going into a
+						deck or document, place the full-resolution PNG and let that app scale it, rather than resizing it first.
+					</p>
+
+					<h2 id="screenshottexteditor">How ScreenshotTextEditor approaches the problem</h2>
+					<p>
+						<a href="/app">ScreenshotTextEditor</a> automates the steps above in the browser, with nothing to install.
+						Upload a PNG or JPEG and it works through the same stages you would by hand:
+					</p>
+					<ul>
+						<li>
+							<strong>Text detection.</strong> Optical character recognition (OCR) finds each line of text and the boxes
+							around its letters, and works out the screenshot’s scale factor. Every detected line becomes something you
+							can click and retype.
+						</li>
+						<li>
+							<strong>Font matching.</strong> Instead of guessing from the letter shapes, it draws the original text in
+							a shortlist of likely fonts and compares each attempt with the real pixels, adjusting size and letter spacing
+							until the match stops improving. Each match comes with a confidence score, and a weak match is flagged rather
+							than presented as exact. Proprietary fonts like SF Pro are replaced with a close open-source match, and the
+							editor tells you which one it used.
+						</li>
+						<li>
+							<strong>Background reconstruction.</strong> Buttons, pills and chips are recognized as separate interface
+							elements, so the erased area is filled with the button’s own color rather than blended across its edge.
+							Flat colors and simple gradients are filled directly; generated fill is a last resort.
+						</li>
+						<li>
+							<strong>Positioning.</strong> The replacement is drawn on the original baseline. If you want it shifted
+							slightly, drag it or use Alt plus the arrow keys to nudge it a couple of pixels at a time.
+						</li>
+						<li>
+							<strong>Manual overrides.</strong> If the automatic match isn’t what you want, you can set the font family,
+							weight, size, letter spacing, color and alignment yourself. Undo and redo work as you would expect.
+						</li>
+					</ul>
+					<p>
+						Only the lines you edit are redrawn. Everything else in the downloaded PNG stays pixel-for-pixel the same as
+						your upload. Uploads are deleted automatically after one hour by default and are never used to train models.
+					</p>
+					<p>
+						It isn’t magic, though. Results are best with Latin-script text on flat or simple-gradient backgrounds, which
+						covers most app and web screenshots. The next sections cover where that fits well and where it doesn’t.
+					</p>
+
+					<h2 id="where-it-works">Where editing text in screenshots works well</h2>
+					<p>
+						Interface screenshots are a good fit because they are mostly flat surfaces, crisp system fonts and text
+						arranged in lines. Common situations include:
+					</p>
+					<ul>
+						<li>
+							<strong>Fixing a typo or outdated copy in a PNG.</strong> If the screenshot is the only copy you have, you can{' '}
+							<a href="/change-text-in-png/">edit the text in the PNG file itself</a> instead of rebuilding the layout
+							from scratch.
+						</li>
+						<li>
+							<strong>App screenshots.</strong> iPhone captures are small and dense at 3x scale, so a slightly wrong
+							weight shows. See the guide to <a href="/edit-text-in-ios-screenshot/">editing text in an iOS screenshot</a>.
+							Android captures come in more densities, and Material buttons put text on colored fills. See{' '}
+							<a href="/edit-text-in-android-screenshot/">editing text in an Android screenshot</a>.
+						</li>
+						<li>
+							<strong>Dashboard and report screenshots.</strong> A metric in last quarter’s deck doesn’t have to mean
+							re-taking the shot. You can{' '}
+							<a href="/fix-stale-numbers-in-dashboard-screenshots/">fix stale numbers in dashboard screenshots</a> where
+							they are.
+						</li>
+						<li>
+							<strong>Documentation, product demos and support articles.</strong> When a screenshot shows a real
+							customer’s name or email, a black bar draws attention to what you are hiding. Replacing it with believable
+							placeholder text reads better. See{' '}
+							<a href="/redact-demo-data-in-screenshots/">replacing demo or customer data in screenshots</a>.
+						</li>
+						<li>
+							<strong>Localized screenshots.</strong> Store listings often need the same set of screenshots in many
+							languages. The workflow for{' '}
+							<a href="/localize-app-store-screenshots/">localizing App Store and Play Store screenshots</a> handles that
+							in bulk.
+						</li>
+						<li>
+							<strong>Website screenshots.</strong> Headlines, buttons and navigation labels on a screenshot of a
+							website are usually web fonts on flat backgrounds, which are among the easiest cases.
+						</li>
+					</ul>
+
+					<h2 id="when-photoshop-is-better">When Photoshop or another advanced editor is the better choice</h2>
+					<p>
+						A tool built for screenshot text does one job. There are cases where it isn’t the right tool, and it’s
+						better to know that before you spend time on it:
+					</p>
+					<ul>
+						<li>
+							<strong>Text over photos or textures.</strong> Rebuilding a face, a landscape or fabric behind removed text
+							takes real retouching tools and some skill. ScreenshotTextEditor doesn’t support busy photo backgrounds
+							yet.
+						</li>
+						<li>
+							<strong>Curved, rotated or perspective text.</strong> Text on a product photo, a sign, or a mockup tilted in
+							3D needs warp and perspective tools.
+						</li>
+						<li>
+							<strong>Stylized type.</strong> Logos, hand lettering, and text with outlines, shadows or gradient fills
+							aren’t plain lines of text, and it’s usually better to recreate them than to edit them.
+						</li>
+						<li>
+							<strong>Scripts beyond Latin.</strong> Chinese, Japanese, Korean and right-to-left scripts such as Arabic
+							and Hebrew aren’t supported yet in ScreenshotTextEditor.
+						</li>
+						<li>
+							<strong>Bigger changes.</strong> If you are rearranging the layout, adding new elements, or rewriting
+							whole paragraphs so they wrap differently, you are redesigning the image, not editing its text. A design
+							tool is the better place for that.
+						</li>
+					</ul>
+					<p>
+						One more option is worth considering before any of this. If you still have the source design file, or can
+						simply retake the screenshot with the right content, do that. Editing the source always beats editing the
+						pixels.
+					</p>
+
+					<h2 id="faq">Frequently asked questions</h2>
+					<div class="mt-6 space-y-3">
+						{
+							faqs.map((faq) => (
+								<details class="group rounded-xl border border-hairline bg-canvas-elevated p-5 open:pb-5">
+									<summary class="-m-5 cursor-pointer list-none p-5 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+										<span class="flex items-center justify-between gap-4">
+											{faq.question}
+											<span class="shrink-0 text-faint transition-transform group-open:rotate-45">+</span>
+										</span>
+									</summary>
+									<p class="mt-3 text-[14px] leading-relaxed text-body">{faq.answer}</p>
+								</details>
+							))
+						}
+					</div>
+				</Container>
+			</div>
+		</article>
+
+		<section class="border-t border-hairline py-16">
+			<Container class="max-w-3xl text-center">
+				<h2 class="text-[26px] font-semibold tracking-tight text-ink">Have a screenshot to fix?</h2>
+				<p class="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-body">
+					Upload it, click the line you want to change, and download the edited PNG. It’s free, with no signup and no
+					watermark.
+				</p>
+				<div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+					<Button href="/app" variant="primary">Open the editor</Button>
+					<Button href="/find-font-from-image/" variant="secondary">Find a font from an image</Button>
+				</div>
+			</Container>
+		</section>
+	</main>
+
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
+	<Footer />
+</Layout>
+
+<style>
+	.article-body > :global(h2) {
+		margin-top: 3rem;
+		font-size: 26px;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		color: var(--color-ink);
+		scroll-margin-top: 5rem;
+	}
+	.article-body > :global(h2:first-child) {
+		margin-top: 0;
+	}
+	.article-body > :global(h3) {
+		margin-top: 1.75rem;
+		font-size: 18px;
+		font-weight: 600;
+		letter-spacing: -0.005em;
+		color: var(--color-ink);
+	}
+	.article-body > :global(p) {
+		margin-top: 0.875rem;
+	}
+	.article-body > :global(ul) {
+		margin-top: 0.875rem;
+		list-style: disc;
+		padding-left: 1.25rem;
+	}
+	.article-body > :global(ul > li) {
+		margin-top: 0.625rem;
+	}
+	.article-body :global(strong) {
+		font-weight: 600;
+		color: var(--color-ink);
+	}
+	.article-body > :global(p a),
+	.article-body > :global(ul a) {
+		color: var(--color-link);
+	}
+	.article-body > :global(p a:hover),
+	.article-body > :global(ul a:hover) {
+		text-decoration: underline;
+	}
+</style>
