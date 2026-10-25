@@ -44,3 +44,62 @@
 [2026-09-25T15:01:43] stage score: /bench ocrbench-tools:pilot python scripts/score.py
 [2026-09-25T15:02:49] stage score: exit 0 after 67 s
 [2026-09-25T15:02:49] stage validate: /bench ocrbench-tools:pilot python scripts/validate_pilot.py
+[2026-09-25T15:10:19] stage validate: exit 1 after 449 s
+[2026-09-25T15:14:36] run_pilot start: stages ['tests', 'pseudo', 'score', 'validate']
+[2026-09-25T15:14:36] stage tests: /bench ocrbench-tools:pilot python scripts/run_tests.py
+[2026-09-25T15:14:53] stage tests: exit 0 after 17 s
+[2026-09-25T15:14:53] stage pseudo: /bench ocrbench-tools:pilot python scripts/pseudo_engines.py
+[2026-09-25T15:15:04] stage pseudo: exit 0 after 11 s
+[2026-09-25T15:15:04] stage score: /bench ocrbench-tools:pilot python scripts/score.py
+[2026-09-25T15:16:09] stage score: exit 0 after 65 s
+[2026-09-25T15:16:09] stage validate: /bench ocrbench-tools:pilot python scripts/validate_pilot.py
+[2026-09-25T15:23:37] stage validate: exit 1 after 448 s
+[2026-09-25T17:18:28] run_pilot start: stages ['fonts', 'render', 'variants', 'downscaled_gt', 'invalidate', 'ocr', 'serial_check', 'rerun', 'timing', 'lock', 'environment', 'tests', 'pseudo', 'score', 'validate']
+[2026-09-25T17:18:28] stage fonts: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/fetch_fonts.py --verify
+[2026-09-25T17:18:28] stage fonts: exit 0 after 0 s
+[2026-09-25T17:18:28] stage render: /bench ocrbench-tools:pilot python scripts/render_chromium.py
+[2026-09-25T17:19:17] stage render: exit 0 after 49 s
+[2026-09-25T17:19:17] stage variants: /bench ocrbench-tools:pilot python scripts/derive_variants.py
+[2026-09-25T17:24:26] stage variants: exit 0 after 310 s
+[2026-09-25T17:24:26] stage downscaled_gt: /bench ocrbench-tools:pilot python scripts/downscaled_gt.py
+[2026-09-25T17:24:33] stage downscaled_gt: exit 0 after 6 s
+[2026-09-25T17:24:34] stage invalidate: removed 0 stale or unverifiable predictions
+[2026-09-25T17:24:34] stage ocr:tesseract5: scripts/run_ocr.py accuracy --engines tesseract5
+[2026-09-25T17:24:35] stage ocr:tesseract5: exit 0 after 2 s
+[2026-09-25T17:24:35] stage ocr:windows_ocr: scripts/run_ocr.py accuracy --engines windows_ocr
+[2026-09-25T17:24:37] stage ocr:windows_ocr: exit 0 after 1 s
+[2026-09-25T17:24:37] stage ocr:doctr: scripts/run_ocr.py accuracy --engines doctr
+[2026-09-25T17:24:45] stage ocr:doctr: exit 0 after 9 s
+[2026-09-25T17:24:45] stage ocr:paddle_v5_mobile: scripts/run_ocr.py accuracy --engines paddle_v5_mobile
+[2026-09-25T17:24:51] stage ocr:paddle_v5_mobile: exit 0 after 6 s
+[2026-09-25T17:24:51] stage ocr:easyocr: scripts/run_ocr.py accuracy --engines easyocr
+[2026-09-25T17:24:57] stage ocr:easyocr: exit 0 after 6 s
+[2026-09-25T17:24:57] stage ocr:paddle_v5_server: scripts/run_ocr.py accuracy --engines paddle_v5_server
+[2026-09-25T17:25:02] stage ocr:paddle_v5_server: exit 0 after 5 s
+[2026-09-25T17:25:02] stage serial_check: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py serial-check
+[2026-09-25T17:25:02] stage serial_check: exit 0 after 0 s
+[2026-09-25T17:25:02] stage rerun:tesseract5: scripts/run_ocr.py rerun --engines tesseract5
+[2026-09-25T17:25:04] stage rerun:tesseract5: exit 0 after 1 s
+[2026-09-25T17:25:04] stage rerun:windows_ocr: scripts/run_ocr.py rerun --engines windows_ocr
+[2026-09-25T17:25:04] stage rerun:windows_ocr: exit 0 after 0 s
+[2026-09-25T17:25:04] stage rerun:doctr: scripts/run_ocr.py rerun --engines doctr
+[2026-09-25T17:25:12] stage rerun:doctr: exit 0 after 8 s
+[2026-09-25T17:25:12] stage rerun:paddle_v5_mobile: scripts/run_ocr.py rerun --engines paddle_v5_mobile
+[2026-09-25T17:25:16] stage rerun:paddle_v5_mobile: exit 0 after 4 s
+[2026-09-25T17:25:16] stage rerun:easyocr: scripts/run_ocr.py rerun --engines easyocr
+[2026-09-25T17:25:22] stage rerun:easyocr: exit 0 after 6 s
+[2026-09-25T17:25:22] stage rerun:paddle_v5_server: scripts/run_ocr.py rerun --engines paddle_v5_server
+[2026-09-25T17:25:26] stage rerun:paddle_v5_server: exit 0 after 5 s
+[2026-09-25T17:25:26] stage timing: skipped (pass --timing to re-measure runtime)
+[2026-09-25T17:25:26] stage lock: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py lock
+[2026-09-25T17:25:26] stage lock: exit 0 after 0 s
+[2026-09-25T17:25:26] stage environment: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py environment
+[2026-09-25T17:25:34] stage environment: exit 0 after 8 s
+[2026-09-25T17:25:34] stage tests: /bench ocrbench-tools:pilot python scripts/run_tests.py
+[2026-09-25T17:25:51] stage tests: exit 0 after 17 s
+[2026-09-25T17:25:51] stage pseudo: /bench ocrbench-tools:pilot python scripts/pseudo_engines.py
+[2026-09-25T17:26:03] stage pseudo: exit 0 after 12 s
+[2026-09-25T17:26:03] stage score: /bench ocrbench-tools:pilot python scripts/score.py
+[2026-09-25T17:27:12] stage score: exit 0 after 69 s
+[2026-09-25T17:27:12] stage validate: /bench ocrbench-tools:pilot python scripts/validate_pilot.py
+[2026-09-25T17:35:07] stage validate: exit 1 after 475 s

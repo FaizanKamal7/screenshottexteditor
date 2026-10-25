@@ -1,232 +1,200 @@
 # Pilot report: Screenshot OCR Benchmark
 
-Status (2026-09-25): **pilot complete, remediation of C6, B5 and the Paddle-server
-issue complete.** All automated checks pass. Still open before any full run: a
-human review, the device set, and your approval of the amended design (§8).
-Accuracy numbers here come from 4 templates, are **not benchmark results**, and
-must not be published or quoted.
+Status (2026-09-25): **pilot runs fully unattended with no human review.** The
+last unattended run passed every check **except E2**, which fails under its
+current criterion. That criterion is not valid for heavily mis-segmented images
+(§4), and a replacement is proposed for your decision, not applied. Accuracy
+numbers here come from 4 templates, are **not benchmark results**, and must not
+be published.
 
-Machine-readable outputs: `pilot/validation/pilot_checks.json`,
-`pilot/validation/c6_study_*.json`, `pilot/scores/`, `pilot/timing/timing.jsonl`,
-`pilot/engines.lock.json`, `pilot/environment/environment.json`.
+Scope: **synthetic-only.** Results describe OCR on headless-Chromium renders of
+our own templates, scored against ground truth generated with each render.
+**Nothing here validates OCR on real-device or real-world screenshots**
+(METHODOLOGY §6).
 
-## 1. What was run
+Key documents: [AUTOMATED_VALIDATION.md](AUTOMATED_VALIDATION.md) (checks,
+criteria, mutation tests), [PREREGISTRATION.md](PREREGISTRATION.md) (amendments
+A1–A4), [METHODOLOGY.md](METHODOLOGY.md). Outputs: `pilot/validation/pilot_checks.json`,
+`pilot/scores/`, `pilot/logs/run_pilot.log`.
+
+## 1. What ran (unattended: `python scripts/run_pilot.py`)
 
 | Item | Count |
 |---|---|
-| Templates | 4 (`m01-settings`, `m05-chat`, `d01-dashboard`, `d06-code-editor`) |
-| Base renders / ground-truth lines | 24 / 1,074 |
+| Templates / base renders / ground-truth lines | 4 / 24 / 1,074 |
 | OCR'd images (V00, V02–V13) | 312 (+24 size-only V01) |
-| Engines completed on all 312 images | **6**: `tesseract5`, `windows_ocr`, `doctr`, `paddle_v5_mobile`, `easyocr`, `paddle_v5_server` |
-| Scored predictions | 1,872 (6 × 312), 0 failures, 0 exclusions |
-| Determinism re-runs | 31 images × 6 engines = 186, 0 differences |
-| Timing measurements | 24 V00 images × 3 reps × 6 engines = 432 |
-| Device captures | 0 (§6) |
+| Engines on all 312 images | 6: `tesseract5`, `windows_ocr`, `doctr`, `paddle_v5_mobile`, `easyocr`, `paddle_v5_server` |
+| Scored predictions | 1,872, 0 engine failures, 0 memory exclusions |
+| Determinism re-runs | 186, 0 differences |
+| Automated tests | 65 passed, 0 failed (26 are mutation tests of the automated checks) |
 
-Host: Intel i9-13900H (14 cores / 20 threads), 31.8 GB RAM, Windows 11. Linux
-engines ran one at a time in Docker Desktop: WSL2 VM raised to 26 GB (with your
-approval; `C:\Users\faiza\.wslconfig`), each engine container capped at 24 GB
-with no swap, `--network none`. Windows OCR ran natively.
+The redesign changed template typography (§3), so the runner re-rendered all 24
+bases. It detected by pixel hash that only the 12 `m01`/`m05` bases had changed.
+It deleted exactly those images' 1,044 predictions (936 accuracy + 108
+determinism) and re-ran them. The 12 `d01`/`d06` renders were byte-identical and
+kept their predictions.
 
-## 2. Remediation
+## 2. Manual-review dependencies removed
 
-### C6: interval coverage (amendment A1)
-
-Selection rules were written into `scripts/bootstrap.py` **before** each study
-ran. Coverage was measured on synthetic populations with known truth, 2,000
-simulations each, target band [0.93, 0.97].
-
-| Round | Setting | Outcome |
-|---|---|---|
-| 1 | 4 methods × 5 scenarios, 20 templates/stratum | Nothing passed. Percentile (the draft method) 0.85–0.93. Bootstrap-t good for single rates (0.941–0.952) but not for paired differences (0.89–0.93) |
-| 2 | New candidates + **3 held-out scenarios**, 20/stratum | Nothing passed all 8 scenarios. Best two methods failed only the held-out scenario with extreme template-length spread (H2) |
-| At 40/stratum | Same methods, all 8 scenarios | **Single-engine bootstrap-t: 0.933–0.960. Log rate-ratio symmetric bootstrap-t: 0.934–0.959. Both pass.** Absolute differences still 0.910–0.953 |
-
-Adopted:
-- **Intervals:** bootstrap-t for single-engine rates.
-- **Engine comparisons:** confirmatory tests on the relative effect
-  (rate A ÷ rate B, log scale), with Holm applied to those p-values.
-- **Absolute differences:** reported descriptively, labelled with their
-  simulated coverage.
-- **Templates:** **80 (40 per stratum)**, the maximum the preregistered
-  template rule already allowed. **This needs your approval:** it doubles
-  template authoring and full-run time.
-- **Context:** real pilot templates hold 302–1,202 reference characters each,
-  much closer to the uniform scenarios than to H2's 30–40,000.
-
-### B5: 50%-variant boxes (amendment A2)
-
-- **Before:** boxes for V12/V13 were 0.5 × the full-resolution boxes. The
-  pilot showed these missed the downscaled ink by up to 6.0 px.
-- **Now:** boxes are measured on the downscaled pixels themselves
-  (`scripts/downscaled_gt.py`), with the same ownership logic as at full
-  resolution.
-- **Follow-up:** the first version counted any changed pixel as ink. That
-  merged adjacent lines' boxes at the smallest text and made C5 (box-jitter
-  robustness) fail on 4 of 312 images. Ink is now a change above 16/255, the
-  threshold fixed for the original B5 check before its results were seen.
-- **Result:** all 24 V12 files are pixel-identical to the downscale the boxes
-  were measured on; zero unowned ink; every line has ink; C5 passes on 312/312.
-- **Scope:** full-resolution ground truth is unchanged (verified semantically
-  identical after a refactor). No OCR re-run was needed.
-
-### Paddle server (amendments A3, A3b)
-
-- **Failure classes:** out-of-memory kills are now identified from Docker's own
-  `OOMKilled` record, not inferred. A kill at the declared 24 GB budget is a
-  `resource_oom`: excluded from accuracy and reported, not scored as empty
-  output. Genuine engine errors are still scored empty. Peak memory is recorded
-  per image.
-- **Hang guard (your decision):** the 120 s timeout-as-failure became a 900 s
-  hang guard. Paddle server's 2560×1600 images take ~140–240 s on this CPU, and
-  the old rule would have scored that slowness as wrong answers.
-- **Result:** 312/312 images completed with 0 errors and 0 exclusions.
-
-Peak memory and time grow with image size:
-
-| Image size | Mean time | Peak memory |
-|---|---|---|
-| 0.33 MP (mobile 1x) | 7.9 s | 3.1 GB |
-| 1.02 MP (desktop 1x) | 27.7 s | 6.6 GB |
-| 2.96 MP (mobile 3x) | 53.5 s | 16.5 GB |
-| **4.1 MP (desktop 2x)** | **154 s (max 238 s)** | **22.1 GB of the 24 GB budget** |
-
-- **Memory headroom:** only about 2 GB at the largest size. Anything larger
-  would be excluded under A3.
-- **One reproducible failure:** on `d06-code-editor_dpr2_dark_V00`
-  (lossless), Paddle server returns only the 7 status-bar lines. Two fresh
-  re-runs on identical pixels gave the same 7 lines, while its JPEG/WebP
-  variants return 65. That is engine behaviour, not a pipeline fault, so it
-  stays in the scores. It alone accounts for most of Paddle server's pilot V00
-  CER (§4).
-
-### Human-review preparation
-
-- **Review page:** `pilot/review/index.html` has 381 items: A3 24, A4 269,
-  A5 12, B4 52, E2 24. You answer Agree/Disagree with a note; answers stay in
-  your browser until you export a CSV.
-- **Guide:** `pilot/review/REVIEW_GUIDE.md` covers the colour key, per-check
-  questions, pass criteria (unchanged) and time (~1.5 h).
-- **Ingest:** `scripts/ingest_review.py` turns exported CSVs into check results;
-  `validate_pilot.py` then uses them.
-
-## 3. Check results (from `pilot/validation/pilot_checks.json`)
-
-| Check | Result |
+| Removed | Replaced by |
 |---|---|
-| A1, A2, A6, A7 | PASS |
-| A3, A5 | Automated PASS; **human review pending** |
-| A4 | **Human review pending** |
-| B1, B2, B3 | PASS |
-| B4 | **Human review pending** |
-| B5 | **PASS** (was FAIL) |
-| B6 | **NOT RUN** (§6) |
-| C1–C5, C7 | PASS (39/39 tests) |
-| C6 | **PASS at the amended 40 templates/stratum** (was FAIL) |
-| D1–D6 | PASS |
-| E1 | **PASS** (was FAIL): 6 × 312 attempted, 0 failures |
-| E2 | PASS automated (median IoU 0.60–0.98); **human review pending** |
-| E3 | **PASS** (was FAIL): 186 re-runs, 0 differences |
-| E4, E5, E6 | PASS |
-| F1 | Measured (§5) |
-| F2 | Unexplained host variance, recorded (§5) |
-| G1, G2 | Measured (§5) |
-| Sample-size rule | Not informative from this pilot; moot (see below) |
+| 381-item review page (`pilot/review/index.html`, `items.json`), line crops, line sheets, 10% sample CSV, `REVIEW_GUIDE.md` | Automated criteria below |
+| CSV export and ingest (`scripts/build_review.py`, `scripts/ingest_review.py`, `human_review.json`, validator `apply_human_review`) | `validate_pilot.py` computes every status; exits 1 on any FAIL |
+| Device set: RQ7, 160 device screenshots, fiducials, Label Studio verification, D4 | Synthetic-only scope (A4); B6 = N/A |
+| One-off pass scripts (`finish_pilot.ps1`, `finish_remediation.ps1`) | `scripts/run_pilot.py`, which also removes stale predictions by pixel hash |
 
-On the sample-size rule: bootstrap-t is ill-posed with 2 templates per stratum,
-because resamples that pick the same template twice have zero SE. It produced
-meaningless half-widths (e.g. 7.1). The rule can only increase the template
-count, and A1 already sets the maximum, so it can't change the design.
+Overlay images still exist only as optional debugging output
+(`validate_pilot.py --overlays`, `pilot/diagnostics/`). No criterion uses them.
 
-## 4. Pilot scores (engineering only, not for publication)
+## 3. Replacement criteria and results
 
-M1 (character error rate, N1) by variant:
+All criteria are zero-tolerance unless a threshold is stated. Details and the
+reasoning for each are in AUTOMATED_VALIDATION.md.
 
-| Engine | V00 | V05 (JPEG q60) | V09 (WebP q50) | V11 (AVIF q60) | V12 (50%) | V13 (50% + JPEG) | M7 numeric @V00 |
-|---|---|---|---|---|---|---|---|
-| doctr | .018 | .019 | .017 | .018 | .040 | .071 | .977 |
-| paddle_v5_mobile | .022 | .031 | .029 | .020 | .081 | .124 | .899 |
-| paddle_v5_server | .093 | .033 | .035 | .031 | .087 | .117 | .810 |
-| easyocr | .061 | .062 | .061 | .061 | .358 | .360 | .562 |
-| windows_ocr | .081 | .090 | .087 | .082 | .466 | .482 | .740 |
-| tesseract5 | .135 | .129 | .124 | .125 | .433 | .446 | .678 |
-
-Paddle server's V00 is inflated by the single reproducible failure in §2. It is
-a clear example of why intervals are clustered by template: one template-image
-can dominate a 4-template pilot.
-
-## 5. Runtime and storage
-
-Uncontended, per V00 image (timing pass, 3 reps):
-
-| Engine | Median | p90 | Fitted s/MP |
+| Check | Former human step | Automated acceptance criterion | Result |
 |---|---|---|---|
-| windows_ocr | 0.07 s | 0.12 s | 0.02 |
-| tesseract5 | 0.90 s | 1.70 s | 0.29 |
-| doctr | 2.20 s | 3.61 s | 0.19 |
-| easyocr | 6.62 s | 12.87 s | 3.12 |
-| paddle_v5_mobile | 8.82 s | 15.51 s | 2.76 |
-| paddle_v5_server | 32.8 s | 71.3 s | 17.96 |
+| **A3** completeness | Review 24 overlays | Token reconciliation vs `innerText`; no untagged/nested text; **0 non-DOM text sources** (canvas, img, SVG `<text>`, form controls, background images, generated content); **0 unowned ink and 0 ink in icon regions**; **Chrome glyph count = rendered characters**; **0 occluded characters** (hit-test lands on the character's own element) | **PASS** 24/24 bases |
+| **A4** line text | Read ~270 lines | **Pixel-identical to a canonical render** (ligatures, contextual alternates, `text-transform`, small caps and generated content forced neutral); 0 fallback glyphs; **visual order = DOM order**; line texts identical across scales; whitespace + mutation tests pass | **PASS** 24/24 bases |
+| **A5** wrapping | Check paragraph splits | **Independent range line count = ground-truth line count**; **lines joined = normalized `innerText`**; strictly increasing, non-overlapping lines | **PASS** 24/24 (48 multi-line elements) |
+| **B4** box placement | Review 52 overlays | **Boxes reproducible from the saved mask**; tight edges; **every variant exactly sized and registered ≤ 0.5 px** (phase correlation); ignore regions contain ink and touch no box; B1–B3 pass | **PASS**: 24/24 bases; 336 files, worst shift 0.0044 px |
+| **E2** engine boxes | Review 24 overlays | Median best IoU ≥ 0.30; median centre offset ≤ ±0.25 line heights per axis; median slope ∈ [0.98, 1.02] and **every image's slope ∈ [0.95, 1.05]** (Theil–Sen) | **FAIL** (§4) |
+| **B6** device registration | Human-verified device captures | None: removed by scope | **N/A (synthetic-only)**, not a pass |
 
-**F2:** repeated timings of the same image varied up to CV 0.32 for Paddle
-server at 4.1 MP (56–121 s) and CV 0.51 for Windows OCR (±59 ms on ~0.1 s
-calls). There was no trend with rep order. The likely causes are laptop thermal
-throttling under sustained load and memory pressure (22 GB peak in a 26 GB VM),
-but neither is confirmed. Runtime numbers from this laptop should be treated as
-indicative.
+Every criterion has a mutation test that must catch a planted defect:
+- ligature, `text-transform`, generated content, fallback font, reordered text,
+  occluded text and canvas/SVG text;
+- a line-count mismatch, a lost character and misordered lines (A5);
+- a 1 px box change, a wrong-size variant, a 1 px image shift and an ink-free
+  ignore region (B4);
+- ×1.1 scale, a 0.4-line offset, and a 4% scale bug hidden among 25% outliers (E2).
 
-**Full-run projection at the amended 80 templates (6,240 images, 20× pilot):**
+It must also pass the clean controls, including syntax-highlighted code. All
+26 mutation tests pass.
 
-| Pass | Estimate |
-|---|---|
-| Accuracy, five engines | ~34 h |
-| Accuracy, Paddle server | ~58–81 h (timing fit vs. the observed 4.03 h pilot pass × 20) |
-| Determinism and timing passes | +~10% |
-| **Total** | **roughly 4–5 days of continuous machine time** on this laptop |
+Two bugs in my first implementation were caught along the way:
+- The occlusion check accepted a child element covering the text; fixed to
+  require an exact hit on the text's own element.
+- The glyph-count check compared Chrome's whole-subtree count against direct
+  text only, so it wrongly failed syntax-highlighted code; fixed and covered by
+  a new true-negative fixture.
 
-A desktop or cloud machine with more cores and RAM would shorten this
-substantially.
+**Template change needed for A4 (documented, not a relaxation).** The canonical
+render showed Inter's contextual alternates re-shape "9:41" and Roboto's
+standard ligatures join "fi". A person reads the same characters either way,
+but only a strict one-glyph-per-character rule can be proven without looking.
+The same feature family turns JetBrains Mono's `=>` into an arrow. Templates now
+render with ligatures and contextual alternates off. This is a small, stated
+realism cost (METHODOLOGY §3, §12).
 
-**Storage:** 124 MB for the whole pilot (96 MB publishable), so the full run
-projects to about 1.9 GB publishable. Ship it as archives or Parquet/JSONL:
-Zenodo allows 100 files per record, Hugging Face 10k files per folder.
+## 4. E2: why it fails, and the proposed alternative
 
-## 6. Still open
+- **Evidence of no coordinate bug:** every engine's median slope is
+  1.000 ± 0.0003 on both axes, and median centre offsets are within 0.11 line
+  heights. Four engines pass outright.
+- **Where it fails:** one image each for two engines.
+  - `tesseract5`: `d06-code-editor_dpr2_light_V00`, x-slope 0.928.
+  - `easyocr`: `d06-code-editor_dpr1_light_V13`, x-slope 0.946.
+- **Why:** on those images, 33% and 41% of matched boxes are merged or split
+  lines (width more than 50% off the ground-truth line). Tesseract joins the
+  file tree, code and docs pane into one box; EasyOCR fragments tiny
+  half-resolution code. That exceeds what any robust per-image slope estimator
+  tolerates (Theil–Sen: ~29%).
+- **Conclusion:** the per-image criterion cannot validly separate coordinate
+  errors from heavy segmentation on such images. Segmentation itself is already
+  measured by the accuracy metrics.
+- **History (disclosed):** the criterion first used least-squares slopes, which
+  failed 4 of 6 engines for the same reason. It was changed to Theil–Sen after
+  seeing that result (AUTOMATED_VALIDATION §5), with new mutation tests proving
+  it still catches real scale bugs. I have not changed it a second time.
 
-1. **Human review** (A3, A4, A5, B4, E2): ~1.5 h with the prepared page.
-2. **B6 / RQ7 device set:** not built. There is no evidence yet that the
-   synthetic results transfer to real devices.
-3. **Approval of the 80-template design** (A1) and of amendments A2, A3 and A3b
-   as written in PREREGISTRATION §11.
-4. **Decisions D1–D4.** D5 is moot unless cloud engines are added.
-5. **Items from the first pilot report outside this round's scope:**
-   reading-order sensitivity for multi-column predictions (§4.5 of the
-   previous report), the unreachable U+2033 normalization rule, the stress-line
-   wording, the middle-dot separator, and the pinned names list.
-6. **Commit and tag `prereg-v1.0`.** Nothing is committed.
+**Proposed replacement (not applied, needs your approval): pool by image
+size.**
+- A coordinate-mapping bug comes from engine code that depends on image
+  dimensions (e.g. an internal resize above some size). So pool matched pairs
+  per (engine, exact image size) instead of per image, and require each pooled
+  Theil–Sen slope to fall in [0.95, 1.05].
+- A size-dependent bug moves every image of that size, so pooling keeps full
+  detection power, while no single mis-segmented image can dominate. The pilot
+  has 10 image sizes per engine.
+- Adoption would need a mutation test proving a bug confined to one image size
+  is still caught.
 
-## 7. Change log
+### Update 2026-09-25: pooling approved and implemented; E2 still fails, on E2.4 only
 
-| # | Change |
-|---|---|
-| P1–P7 | First pilot round: fresh-paint hidden render, ligature guard, `font-variant-caps`, m05 chip fix, serial engines, `rapidfuzz` in `services/pipeline/bench`, BOM-tolerant worker |
-| P8 | `.wslconfig` created: `memory=26GB` (approved; delete the file to restore defaults) |
-| P9 | Worker records per-image peak RSS; orchestrator caps containers at 24 GB, reads `OOMKilled`, classifies `resource_oom` |
-| P10 | Old Paddle server predictions (15.5 GB VM run) moved to `pilot/superseded/`; full re-run |
-| P11 | Scorer uses measured half-resolution boxes and excludes `resource_oom` images |
-| P12 | Timeout → 900 s hang guard (your decision) |
-| P13 | `timing.jsonl` merge wrote a UTF-8 BOM that crashed validation; stripped, and the reader made BOM-tolerant |
+**E2.3 pooling (approved):**
+- Implemented, with regression tests: a ×1.08 bug confined to one image size is
+  caught; a half-scale bug at one size is caught; one 42%-mis-segmented image
+  among clean same-size images passes.
+- On the full unattended run (`python scripts/run_pilot.py`, 2026-09-25 17:35),
+  **E2.3 passes for all 6 engines**, with pooled slopes 0.999–1.014 at every
+  image size.
 
-## 8. Is the pilot ready for the full benchmark?
+**E2.4 (my addition, not part of the approved proposal) fails for
+`tesseract5`:**
+- It required a median best IoU ≥ 0.30 at every image size. Tesseract falls
+  below that at three sizes: 0.048 at 640×400, 0.169 at 2560×1600 and 0.20 at
+  195×422.
+- Its pooled slopes at those same sizes are exactly 1.000, so its coordinates
+  are correct. The low IoU comes from segmentation: giant merged boxes and
+  fragments.
+- E2.4 as written has the same flaw the original per-image slope had. The
+  pipeline therefore still exits 1, and the failure is recorded, not hidden.
 
-**Not yet.** The three fixes are done and every automated check passes, but the
-plan's own go/no-go criteria still require:
-- a completed human review;
-- a decision on the device set (B6), either building it or formally scoping the
-  benchmark as synthetic-only;
-- your approval of the amended design;
-- committing and tagging the preregistration.
+**Proposed replacement for E2.4 (not applied, needs your decision):** "every
+image size where the engine returned ≥ 8 boxes yields ≥ 8 one-to-one matches at
+IoU ≥ 0.3".
+- It targets the actual gap directly (no matches, so no slope), with no IoU
+  magnitude involved.
+- Measured as a diagnostic on the pilot data: every engine meets it at all 10
+  sizes, with a minimum of 12 (Windows OCR) to 207 (docTR) matches.
+- A half-scale bug gives 0 matches, so it is still caught.
+- **The alternative is to drop E2.4**, which leaves exactly the design you
+  approved.
 
-The biggest practical consequence of the fixes is cost. At 80 templates, the
-full run is about 4–5 days of machine time on this laptop, and the full
-template set doubles to 80.
+**Implementation correction:** pools were first keyed by (base size,
+downscale), giving 12 keys where there are only 10 real pixel sizes. They are
+now keyed by exact pixel size, as approved. Every slope is ~1.000, so pass/fail
+does not change.
+
+## 5. Pilot scores (engineering only, not for publication)
+
+M1 (character error rate, N1):
+
+| Engine | V00 | V05 JPEG q60 | V09 WebP q50 | V11 AVIF q60 | V12 50% | V13 50% + JPEG |
+|---|---|---|---|---|---|---|
+| doctr | .017 | .019 | .017 | .018 | .040 | .070 |
+| paddle_v5_mobile | .022 | .031 | .029 | .020 | .081 | .125 |
+| paddle_v5_server | .093 | .033 | .036 | .031 | .086 | .116 |
+| easyocr | .061 | .062 | .060 | .062 | .358 | .359 |
+| windows_ocr | .081 | .089 | .087 | .082 | .465 | .481 |
+| tesseract5 | .135 | .129 | .123 | .125 | .432 | .446 |
+
+Paddle server's V00 value is dominated by one reproducible failure on one
+image: it returns 7 of ~65 lines on a lossless dark code-editor render. Only 4
+templates, so these numbers don't support any comparison.
+
+## 6. Runtime and storage (unchanged from the previous round)
+
+- **Timing:** the timing pass was not re-run in this round (`run_pilot.py`
+  skips it unless `--timing`). The earlier measurements (Paddle server median
+  32.8 s per V00 image, others 0.07–8.8 s) came from `m01`/`m05` renders that
+  used font features since disabled. They are glyph-level changes only, but
+  their effect on runtime is **unmeasured**.
+- **Full-run projection** (80 templates): ~4–5 days of machine time on this
+  laptop.
+- **Storage:** ~1.9 GB publishable.
+
+## 7. Still open
+
+1. **E2:** approve the pooled-by-image-size criterion (§4), or propose another.
+   Until then, the pilot does not pass.
+2. **Approval of amendments:** A1 (80 templates; bootstrap-t / log rate-ratio),
+   A2, A3/A3b, A4 (no human review, synthetic-only, no ligatures).
+3. **Decisions:** D1 (Paddle model / MKL-DNN), D2 (cloud / LLM engines),
+   D3 (Mac for Apple Vision), D5.
+4. **Earlier out-of-scope items:** reading-order sensitivity for multi-column
+   predictions, the unreachable U+2033 rule, stress-line wording, middle-dot
+   separator, pinned names list.
+5. **Commit and tag `prereg-v1.0`.** Nothing is committed.
+
+No step requires a person to inspect images or OCR output.

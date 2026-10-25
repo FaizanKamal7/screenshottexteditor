@@ -2,17 +2,17 @@
 |---|---|
 | A1 | PASS |
 | A2 | PASS |
-| A3 | AUTO-PASS, HUMAN REVIEW PENDING |
-| A4 | HUMAN REVIEW PENDING |
-| A5 | AUTO-PASS, HUMAN REVIEW PENDING |
+| A3 | PASS |
+| A4 | PASS |
+| A5 | PASS |
 | A6 | PASS |
 | A7 | PASS |
 | B1 | PASS |
 | B2 | PASS |
 | B3 | PASS |
-| B4 | OVERLAYS GENERATED, HUMAN REVIEW PENDING |
+| B4 | PASS |
 | B5 | PASS |
-| B6 | NOT RUN |
+| B6 | N/A (SYNTHETIC-ONLY SCOPE) |
 | C1 | PASS |
 | C2 | PASS |
 | C3 | PASS |
@@ -27,7 +27,7 @@
 | D5 | PASS |
 | D6 | PASS |
 | E1 | PASS |
-| E2 | PASS (overlays pending human review), HUMAN REVIEW PENDING |
+| E2 | FAIL |
 | E3 | PASS |
 | E4 | PASS |
 | E5 | PASS |

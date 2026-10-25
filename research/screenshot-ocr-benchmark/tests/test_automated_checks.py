@@ -192,13 +192,13 @@ def test_b4_registration_detects_wrong_size(tmp_path):
 
 # --- E2: engine coordinate defects ------------------------------------------------------
 
-def _gt_grid():
+def _gt_grid(width=1000, height=400, row_step=60):
     lines = []
     for i in range(12):
-        x, y = 20 + (i % 3) * 300, 30 + (i // 3) * 60
+        x, y = 20 + (i % 3) * 300, 30 + (i // 3) * row_step
         lines.append({"line_id": f"L{i:04d}", "text": f"line {i}", "ink_box": [x, y, 150 + 10 * (i % 4), 20],
                       "stress": False})
-    return {"lines": lines, "ignore_regions": [], "icon_regions": []}
+    return {"lines": lines, "ignore_regions": [], "icon_regions": [], "width": width, "height": height}
 
 
 def _preds(gt, scale=1.0, dy=0.0):
@@ -217,6 +217,65 @@ def test_e2_scale_error_caught():
     gt = _gt_grid()
     r = AC.e2_coordinates([(gt, _preds(gt, scale=1.1), 1.0)])
     assert not r["parts"]["E2.3_no_scale_error"]
+
+
+def _with_merged_outliers(gt, preds, k):
+    """Replace k predictions with a wide merged box sharing the line's left edge
+    (as when an engine joins a label and its value on one row). Still matched at IoU >= 0.3."""
+    out = [dict(p) for p in preds]
+    for i in range(k):
+        x, y, w, h = out[i]["bbox"]
+        out[i]["bbox"] = [x, y, w * 3.0, h]
+    return out
+
+
+def test_e2_segmentation_outliers_are_not_a_coordinate_error():
+    gt = _gt_grid()
+    preds = _with_merged_outliers(gt, _preds(gt), 3)          # 3 of 12 = 25% merged boxes
+    r = AC.e2_coordinates([(gt, preds, 1.0)])
+    assert r["pass"], r["parts"]
+
+
+def test_e2_scale_error_caught_despite_outliers():
+    gt = _gt_grid()
+    preds = _with_merged_outliers(gt, _preds(gt, scale=1.04), 3)   # real 4% resize bug + 25% outliers
+    r = AC.e2_coordinates([(gt, preds, 1.0)])
+    assert not r["parts"]["E2.3_no_scale_error"]
+
+
+# --- E2.3 pooled per image size (approved 2026-09-25) + E2.4 --------------------------
+
+def test_e2_bug_confined_to_one_image_size_caught():
+    """Regression test for the pooling amendment: a resize bug that affects only one image
+    size (e.g. an engine that downsamples inputs above some width) must still fail E2.3,
+    even though every other size is correct and the engine-wide median slope stays ~1."""
+    small = [(_gt_grid(1000, 400, 25), None) for _ in range(3)]
+    big = [(_gt_grid(2000, 800, 25), None) for _ in range(2)]
+    images = [(g, _preds(g), 1.0) for g, _ in small] + [(g, _preds(g, scale=1.08), 1.0) for g, _ in big]
+    r = AC.e2_coordinates(images)
+    assert r["pooled_slopes"]["2000x800"][0] == pytest.approx(1.08, abs=0.005)
+    assert r["pooled_slopes"]["1000x400"][0] == pytest.approx(1.0, abs=0.005)
+    assert not r["parts"]["E2.3_no_scale_error"]
+
+
+def test_e2_severe_size_bug_caught_by_overlap_check():
+    """Coordinates left at half scale for one size: no matches there, so no slope. E2.4 must fail."""
+    small = _gt_grid(1000, 400, 25)
+    big = _gt_grid(2000, 800, 25)
+    images = [(small, _preds(small), 1.0), (big, _preds(big, scale=0.5), 1.0)]
+    r = AC.e2_coordinates(images)
+    assert "2000x800" not in r["pooled_slopes"]
+    assert not r["parts"]["E2.4_every_size_overlaps"]
+
+
+def test_e2_one_missegmented_image_among_clean_same_size_passes():
+    """The pilot's failure mode: one image with ~40% merged boxes, among correct images of
+    the same size. Correct coordinates, so E2 must pass."""
+    gts = [_gt_grid(1000, 400) for _ in range(4)]
+    images = [(g, _preds(g), 1.0) for g in gts[:3]]
+    images.append((gts[3], _with_merged_outliers(gts[3], _preds(gts[3]), 5), 1.0))   # 5 of 12 = 42%
+    r = AC.e2_coordinates(images)
+    assert r["pass"], r["parts"]
 
 
 def test_e2_systematic_offset_caught():

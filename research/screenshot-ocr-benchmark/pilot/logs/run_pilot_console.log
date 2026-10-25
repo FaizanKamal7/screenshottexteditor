@@ -1,0 +1,240 @@
+﻿[2026-09-25T13:08:26] run_pilot start: stages ['render', 'variants', 'downscaled_gt', 'invalidate', 'ocr', 'serial_check', 'rerun', 'timing', 'lock', 'environment', 'tests', 'pseudo', 'score', 'validate']
+[2026-09-25T13:08:26] stage render: /bench ocrbench-tools:pilot python scripts/render_chromium.py
+m01-settings_dpr1_light: 390x844 lines=27 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+m01-settings_dpr1_dark: 390x844 lines=27 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+m01-settings_dpr2_light: 780x1688 lines=27 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+m01-settings_dpr2_dark: 780x1688 lines=27 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+m01-settings_dpr3_light: 1170x2532 lines=27 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+m01-settings_dpr3_dark: 1170x2532 lines=27 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+m05-chat_dpr1_light: 390x844 lines=26 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[17]
+m05-chat_dpr1_dark: 390x844 lines=26 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[17]
+m05-chat_dpr2_light: 780x1688 lines=26 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[17]
+m05-chat_dpr2_dark: 780x1688 lines=26 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[17]
+m05-chat_dpr3_light: 1170x2532 lines=26 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[17]
+m05-chat_dpr3_dark: 1170x2532 lines=26 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[17]
+d01-dashboard_dpr1_light: 1280x800 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d01-dashboard_dpr1_dark: 1280x800 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d01-dashboard_dpr1p5_light: 1920x1200 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d01-dashboard_dpr1p5_dark: 1920x1200 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d01-dashboard_dpr2_light: 2560x1600 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d01-dashboard_dpr2_dark: 2560x1600 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d06-code-editor_dpr1_light: 1280x800 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d06-code-editor_dpr1_dark: 1280x800 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d06-code-editor_dpr1p5_light: 1920x1200 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d06-code-editor_dpr1p5_dark: 1920x1200 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d06-code-editor_dpr2_light: 2560x1600 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+d06-code-editor_dpr2_dark: 2560x1600 lines=63 fallback=0 det=True hidden_layout=True unowned_ink=0 no_ink=0 tokens_ok=True untagged=0 clipped=[]
+[2026-09-25T13:09:14] stage render: exit 0 after 48 s
+[2026-09-25T13:09:14] stage variants: /bench ocrbench-tools:pilot python scripts/derive_variants.py
+d01-dashboard_dpr1_dark: V00=73416 V01=34976 V02=120706 V03=79053 V04=64255 V05=53000 V06=111149 V07=46776 V08=30498 V09=25222 V10=31095 V11=22099 V12=66396 V13=21378
+d01-dashboard_dpr1_light: V00=72672 V01=33434 V02=124624 V03=81700 V04=66482 V05=55460 V06=116916 V07=48016 V08=31934 V09=26486 V10=32413 V11=22808 V12=59482 V13=21672
+d01-dashboard_dpr1p5_dark: V00=124895 V01=53396 V02=217858 V03=143655 V04=116697 V05=97432 V06=202450 V07=81192 V08=51534 V09=42338 V10=56788 V11=40260 V12=112413 V13=41052
+d01-dashboard_dpr1p5_light: V00=123904 V01=52076 V02=226374 V03=150234 V04=122072 V05=101932 V06=213071 V07=83020 V08=54068 V09=44676 V10=59819 V11=41647 V12=102671 V13=42869
+d01-dashboard_dpr2_dark: V00=171364 V01=64052 V02=313661 V03=213709 V04=176690 V05=149578 V06=301545 V07=110500 V08=70512 V09=58154 V10=69922 V11=49545 V12=153870 V13=63365
+d01-dashboard_dpr2_light: V00=171825 V01=62114 V02=326771 V03=222866 V04=182759 V05=157029 V06=318647 V07=115548 V08=74508 V09=61836 V10=73339 V11=51723 V12=140721 V13=65282
+d06-code-editor_dpr1_dark: V00=115563 V01=45720 V02=167078 V03=106846 V04=84379 V05=68179 V06=156807 V07=76046 V08=48572 V09=39682 V10=45802 V11=31619 V12=96707 V13=26025
+d06-code-editor_dpr1_light: V00=113625 V01=43192 V02=167255 V03=106546 V04=84396 V05=68337 V06=157132 V07=76380 V08=48802 V09=39824 V10=45800 V11=31820 V12=86228 V13=25320
+d06-code-editor_dpr1p5_dark: V00=192228 V01=66974 V02=303347 V03=193508 V04=154854 V05=126848 V06=280676 V07=131710 V08=85822 V09=70284 V10=118369 V11=78215 V12=171260 V13=54085
+d06-code-editor_dpr1p5_light: V00=191593 V01=66962 V02=305897 V03=195629 V04=156030 V05=128284 V06=285179 V07=133164 V08=86962 V09=71132 V10=79024 V11=53767 V12=153224 V13=52798
+d06-code-editor_dpr2_dark: V00=267340 V01=85280 V02=454623 V03=292896 V04=236073 V05=195753 V06=423694 V07=186992 V08=120144 V09=98196 V10=169442 V11=110428 V12=219115 V13=84964
+d06-code-editor_dpr2_light: V00=266402 V01=84528 V02=458672 V03=295735 V04=237552 V05=197444 V06=429903 V07=188544 V08=121978 V09=99612 V10=167988 V11=110442 V12=199725 V13=84773
+m01-settings_dpr1_dark: V00=44933 V01=22808 V02=59902 V03=38077 V04=30455 V05=24257 V06=51350 V07=24582 V08=15544 V09=12634 V10=19919 V11=14086 V12=32889 V13=10771
+m01-settings_dpr1_light: V00=45204 V01=22936 V02=60261 V03=37989 V04=30013 V05=24658 V06=51944 V07=24980 V08=15988 V09=13048 V10=20031 V11=14265 V12=31346 V13=10318
+m01-settings_dpr2_dark: V00=101728 V01=42772 V02=148333 V03=96051 V04=77659 V05=64195 V06=131225 V07=56082 V08=35134 V09=28356 V10=38797 V11=27309 V12=77665 V13=29494
+m01-settings_dpr2_light: V00=103144 V01=42932 V02=150575 V03=97641 V04=77675 V05=64649 V06=133980 V07=57856 V08=36216 V09=29596 V10=38673 V11=27575 V12=75348 V13=29923
+m01-settings_dpr3_dark: V00=158258 V01=60386 V02=259931 V03=173589 V04=143354 V05=121982 V06=238035 V07=88344 V08=54258 V09=44070 V10=53603 V11=37511 V12=138608 V13=52796
+m01-settings_dpr3_light: V00=159695 V01=59302 V02=262612 V03=174238 V04=146034 V05=121484 V06=241210 V07=91344 V08=56674 V09=46096 V10=54311 V11=37751 V12=132638 V13=52654
+m05-chat_dpr1_dark: V00=48409 V01=25692 V02=77343 V03=48882 V04=38233 V05=30166 V06=67565 V07=33252 V08=21494 V09=17616 V10=23583 V11=16639 V12=44437 V13=12870
+m05-chat_dpr1_light: V00=47470 V01=24622 V02=79330 V03=50229 V04=39032 V05=31107 V06=70736 V07=34446 V08=22722 V09=18592 V10=23933 V11=16979 V12=42669 V13=13076
+m05-chat_dpr2_dark: V00=124765 V01=48490 V02=190795 V03=121021 V04=95649 V05=78417 V06=167702 V07=80064 V08=50838 V09=41130 V10=50657 V11=35339 V12=93291 V13=38252
+m05-chat_dpr2_light: V00=123094 V01=45888 V02=196897 V03=124872 V04=98751 V05=80945 V06=175156 V07=83430 V08=53676 V09=43970 V10=51376 V11=36025 V12=89958 V13=39582
+m05-chat_dpr3_dark: V00=193687 V01=71618 V02=342688 V03=222286 V04=180398 V05=149063 V06=310547 V07=128572 V08=80086 V09=64852 V10=76440 V11=52822 V12=175279 V13=67116
+m05-chat_dpr3_light: V00=191237 V01=67122 V02=352533 V03=228871 V04=184827 V05=153852 V06=323570 V07=134100 V08=84860 V09=69628 V10=77697 V11=53869 V12=169956 V13=69221
+D1: 336/336 ok
+D2: 24/24 ok
+D3: 72/72 ok
+D4: 72/72 ok
+D5: 336/336 ok
+D6: 144/144 ok
+[2026-09-25T13:14:08] stage variants: exit 0 after 294 s
+[2026-09-25T13:14:08] stage downscaled_gt: /bench ocrbench-tools:pilot python scripts/downscaled_gt.py
+d01-dashboard_dpr1_dark: unowned_half_ink=0 lines_without_half_ink=0
+d01-dashboard_dpr1_light: unowned_half_ink=0 lines_without_half_ink=0
+d01-dashboard_dpr1p5_dark: unowned_half_ink=0 lines_without_half_ink=0
+d01-dashboard_dpr1p5_light: unowned_half_ink=0 lines_without_half_ink=0
+d01-dashboard_dpr2_dark: unowned_half_ink=0 lines_without_half_ink=0
+d01-dashboard_dpr2_light: unowned_half_ink=0 lines_without_half_ink=0
+d06-code-editor_dpr1_dark: unowned_half_ink=0 lines_without_half_ink=0
+d06-code-editor_dpr1_light: unowned_half_ink=0 lines_without_half_ink=0
+d06-code-editor_dpr1p5_dark: unowned_half_ink=0 lines_without_half_ink=0
+d06-code-editor_dpr1p5_light: unowned_half_ink=0 lines_without_half_ink=0
+d06-code-editor_dpr2_dark: unowned_half_ink=0 lines_without_half_ink=0
+d06-code-editor_dpr2_light: unowned_half_ink=0 lines_without_half_ink=0
+m01-settings_dpr1_dark: unowned_half_ink=0 lines_without_half_ink=0
+m01-settings_dpr1_light: unowned_half_ink=0 lines_without_half_ink=0
+m01-settings_dpr2_dark: unowned_half_ink=0 lines_without_half_ink=0
+m01-settings_dpr2_light: unowned_half_ink=0 lines_without_half_ink=0
+m01-settings_dpr3_dark: unowned_half_ink=0 lines_without_half_ink=0
+m01-settings_dpr3_light: unowned_half_ink=0 lines_without_half_ink=0
+m05-chat_dpr1_dark: unowned_half_ink=0 lines_without_half_ink=0
+m05-chat_dpr1_light: unowned_half_ink=0 lines_without_half_ink=0
+m05-chat_dpr2_dark: unowned_half_ink=0 lines_without_half_ink=0
+m05-chat_dpr2_light: unowned_half_ink=0 lines_without_half_ink=0
+m05-chat_dpr3_dark: unowned_half_ink=0 lines_without_half_ink=0
+m05-chat_dpr3_light: unowned_half_ink=0 lines_without_half_ink=0
+24 bases; bases with unowned ink or ink-less lines: 0
+[2026-09-25T13:14:14] stage downscaled_gt: exit 0 after 6 s
+[2026-09-25T13:14:15] stage invalidate: removed 1044 stale or unverifiable predictions
+[2026-09-25T13:14:15] stage ocr:tesseract5: scripts/run_ocr.py accuracy --engines tesseract5
+[2026-09-25T08:14:27.330245+00:00] tesseract5: 25 new predictions
+[2026-09-25T08:14:44.158329+00:00] tesseract5: 50 new predictions
+[2026-09-25T08:15:05.444332+00:00] tesseract5: 75 new predictions
+[2026-09-25T08:15:19.012877+00:00] tesseract5: 100 new predictions
+[2026-09-25T08:15:37.822160+00:00] tesseract5: 125 new predictions
+[2026-09-25T08:16:02.256859+00:00] tesseract5: 150 new predictions
+[2026-09-25T08:16:08.394440+00:00] tesseract5: finished (156 new)
+accuracy elapsed_s=113.0
+[2026-09-25T13:16:08] stage ocr:tesseract5: exit 0 after 113 s
+[2026-09-25T13:16:08] stage ocr:windows_ocr: scripts/run_ocr.py accuracy --engines windows_ocr
+[2026-09-25T08:16:12.119865+00:00] windows_ocr: 25 new predictions
+[2026-09-25T08:16:13.919602+00:00] windows_ocr: 50 new predictions
+[2026-09-25T08:16:17.572179+00:00] windows_ocr: 75 new predictions
+[2026-09-25T08:16:19.066286+00:00] windows_ocr: 100 new predictions
+[2026-09-25T08:16:21.123609+00:00] windows_ocr: 125 new predictions
+[2026-09-25T08:16:24.236916+00:00] windows_ocr: 150 new predictions
+[2026-09-25T08:16:25.042586+00:00] windows_ocr: finished (156 new)
+accuracy elapsed_s=16.5
+[2026-09-25T13:16:25] stage ocr:windows_ocr: exit 0 after 17 s
+[2026-09-25T13:16:25] stage ocr:doctr: scripts/run_ocr.py accuracy --engines doctr
+[2026-09-25T08:17:10.408959+00:00] doctr: 25 new predictions
+[2026-09-25T08:17:46.784982+00:00] doctr: 50 new predictions
+[2026-09-25T08:18:24.060762+00:00] doctr: 75 new predictions
+[2026-09-25T08:19:10.693594+00:00] doctr: 100 new predictions
+[2026-09-25T08:19:59.724470+00:00] doctr: 125 new predictions
+[2026-09-25T08:20:49.954628+00:00] doctr: 150 new predictions
+[2026-09-25T08:21:02.199821+00:00] doctr: finished (156 new)
+accuracy elapsed_s=277.1
+[2026-09-25T13:21:02] stage ocr:doctr: exit 0 after 277 s
+[2026-09-25T13:21:02] stage ocr:paddle_v5_mobile: scripts/run_ocr.py accuracy --engines paddle_v5_mobile
+[2026-09-25T08:22:42.125677+00:00] paddle_v5_mobile: 25 new predictions
+[2026-09-25T08:24:42.728647+00:00] paddle_v5_mobile: 50 new predictions
+[2026-09-25T08:27:27.336036+00:00] paddle_v5_mobile: 75 new predictions
+[2026-09-25T08:29:10.770771+00:00] paddle_v5_mobile: 100 new predictions
+[2026-09-25T08:31:22.259779+00:00] paddle_v5_mobile: 125 new predictions
+[2026-09-25T08:34:25.401675+00:00] paddle_v5_mobile: 150 new predictions
+[2026-09-25T08:35:05.327288+00:00] paddle_v5_mobile: finished (156 new)
+accuracy elapsed_s=843.0
+[2026-09-25T13:35:05] stage ocr:paddle_v5_mobile: exit 0 after 843 s
+[2026-09-25T13:35:05] stage ocr:easyocr: scripts/run_ocr.py accuracy --engines easyocr
+[2026-09-25T08:35:51.859384+00:00] easyocr: 25 new predictions
+[2026-09-25T08:37:32.916038+00:00] easyocr: 50 new predictions
+[2026-09-25T08:40:44.671311+00:00] easyocr: 75 new predictions
+[2026-09-25T08:41:38.531742+00:00] easyocr: 100 new predictions
+[2026-09-25T08:43:15.309060+00:00] easyocr: 125 new predictions
+[2026-09-25T08:46:21.496391+00:00] easyocr: 150 new predictions
+[2026-09-25T08:47:03.584487+00:00] easyocr: finished (156 new)
+accuracy elapsed_s=718.1
+[2026-09-25T13:47:03] stage ocr:easyocr: exit 0 after 718 s
+[2026-09-25T13:47:03] stage ocr:paddle_v5_server: scripts/run_ocr.py accuracy --engines paddle_v5_server
+[2026-09-25T08:50:14.449367+00:00] paddle_v5_server: 25 new predictions
+[2026-09-25T08:58:44.887375+00:00] paddle_v5_server: 50 new predictions
+[2026-09-25T09:17:02.408929+00:00] paddle_v5_server: 75 new predictions
+[2026-09-25T09:21:06.487089+00:00] paddle_v5_server: 100 new predictions
+[2026-09-25T09:28:42.132397+00:00] paddle_v5_server: 125 new predictions
+[2026-09-25T09:45:10.622812+00:00] paddle_v5_server: 150 new predictions
+[2026-09-25T09:48:51.169921+00:00] paddle_v5_server: finished (156 new)
+accuracy elapsed_s=3707.4
+[2026-09-25T14:48:51] stage ocr:paddle_v5_server: exit 0 after 3708 s
+[2026-09-25T14:48:51] stage serial_check: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py serial-check
+serial-check: 0 re-runs
+serial-check elapsed_s=0.8
+[2026-09-25T14:48:52] stage serial_check: exit 0 after 1 s
+[2026-09-25T14:48:52] stage rerun:tesseract5: scripts/run_ocr.py rerun --engines tesseract5
+[2026-09-25T09:49:09.864287+00:00] tesseract5: finished (18 new)
+rerun elapsed_s=17.6
+[2026-09-25T14:49:09] stage rerun:tesseract5: exit 0 after 18 s
+[2026-09-25T14:49:09] stage rerun:windows_ocr: scripts/run_ocr.py rerun --engines windows_ocr
+[2026-09-25T09:49:14.039952+00:00] windows_ocr: finished (18 new)
+rerun elapsed_s=4.0
+[2026-09-25T14:49:14] stage rerun:windows_ocr: exit 0 after 4 s
+[2026-09-25T14:49:14] stage rerun:doctr: scripts/run_ocr.py rerun --engines doctr
+[2026-09-25T09:49:56.621477+00:00] doctr: finished (18 new)
+rerun elapsed_s=42.5
+[2026-09-25T14:49:56] stage rerun:doctr: exit 0 after 43 s
+[2026-09-25T14:49:56] stage rerun:paddle_v5_mobile: scripts/run_ocr.py rerun --engines paddle_v5_mobile
+[2026-09-25T09:51:43.128299+00:00] paddle_v5_mobile: finished (18 new)
+rerun elapsed_s=106.4
+[2026-09-25T14:51:43] stage rerun:paddle_v5_mobile: exit 0 after 106 s
+[2026-09-25T14:51:43] stage rerun:easyocr: scripts/run_ocr.py rerun --engines easyocr
+[2026-09-25T09:53:18.288356+00:00] easyocr: finished (18 new)
+rerun elapsed_s=95.0
+[2026-09-25T14:53:18] stage rerun:easyocr: exit 0 after 95 s
+[2026-09-25T14:53:18] stage rerun:paddle_v5_server: scripts/run_ocr.py rerun --engines paddle_v5_server
+[2026-09-25T10:01:00.324026+00:00] paddle_v5_server: finished (18 new)
+rerun elapsed_s=461.9
+[2026-09-25T15:01:00] stage rerun:paddle_v5_server: exit 0 after 462 s
+[2026-09-25T15:01:00] stage timing: skipped (pass --timing to re-measure runtime)
+[2026-09-25T15:01:00] stage lock: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py lock
+lock written for ['doctr', 'easyocr', 'paddle_v5_mobile', 'paddle_v5_server', 'tesseract5', 'windows_ocr']
+lock elapsed_s=0.0
+[2026-09-25T15:01:00] stage lock: exit 0 after 0 s
+[2026-09-25T15:01:00] stage environment: C:\Users\faiza\AppData\Local\Programs\Python\Python314\python.exe scripts/run_ocr.py environment
+environment recorded
+environment elapsed_s=11.8
+[2026-09-25T15:01:12] stage environment: exit 0 after 12 s
+[2026-09-25T15:01:12] stage tests: /bench ocrbench-tools:pilot python scripts/run_tests.py
+...............................................................          [100%]
+63 passed in 17.48s
+[2026-09-25T15:01:31] stage tests: exit 0 after 19 s
+[2026-09-25T15:01:31] stage pseudo: /bench ocrbench-tools:pilot python scripts/pseudo_engines.py
+pseudo predictions written for 312 images
+[2026-09-25T15:01:43] stage pseudo: exit 0 after 12 s
+[2026-09-25T15:01:43] stage score: /bench ocrbench-tools:pilot python scripts/score.py
+scored 1872 predictions -> pilot/scores
+[2026-09-25T15:02:49] stage score: exit 0 after 67 s
+[2026-09-25T15:02:49] stage validate: /bench ocrbench-tools:pilot python scripts/validate_pilot.py
+A1: PASS
+A2: PASS
+A3: PASS
+A4: PASS
+A5: PASS
+A6: PASS
+A7: PASS
+B1: PASS
+B2: PASS
+B3: PASS
+B4: PASS
+B5: PASS
+B6: N/A (SYNTHETIC-ONLY SCOPE)
+C1: PASS
+C2: PASS
+C3: PASS
+C4: PASS
+C5: PASS
+C6: PASS
+C7: PASS
+D1: PASS
+D2: PASS
+D3: PASS
+D4: PASS
+D5: PASS
+D6: PASS
+E1: PASS
+E2: FAIL
+E3: PASS
+E4: PASS
+E5: PASS
+E6: PASS
+F1: MEASURED
+F2: INVESTIGATE
+G1: MEASURED
+G2: SEE REPORT
+FAILED CHECKS: E2
+[2026-09-25T15:10:19] stage validate: exit 1 after 449 s
+python : stage validate failed (exit 1)
+At line:1 char:302
++ ... tch {} } }; python scripts\run_pilot.py --from render *> pilot\logs\r ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (stage validate failed (exit 1):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

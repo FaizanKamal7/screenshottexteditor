@@ -127,10 +127,39 @@ internal resize not mapped back). Automated part: median best IoU ≥ 0.3.
 |---|---|
 | E2.1 | Median best IoU of ground-truth lines that have a prediction ≥ 0.30 (existing) |
 | E2.2 | **No systematic offset**: for predictions matched one-to-one at IoU ≥ 0.3, the median centre offset, normalized by ground-truth line height, is within ±0.25 in x and in y |
-| E2.3 | **No scale error**: for each image with ≥ 8 such matches, least-squares slopes of predicted vs. ground-truth centre x and y are computed. The engine's median slope is within [0.98, 1.02], and no image's slope is outside [0.95, 1.05] |
+| E2.3 | **No scale error** (pooled per image size; approved 2026-09-25): matched centre pairs are pooled per engine and **exact image size**, and one **Theil–Sen** slope (x and y) is computed per pool with ≥ 8 pairs. The median over pools is within [0.98, 1.02], and every pool's slope is within [0.95, 1.05]. Per-image slopes are reported as diagnostics only |
+| E2.4 | **Every image size overlaps** (added with the pooling): for every size where the engine returned ≥ 8 boxes, the median best IoU of the lines its boxes touch is ≥ 0.30. This catches a size-specific bug severe enough to prevent matching, which would otherwise produce no slope at all. Lines with no overlapping prediction are detection misses, scored by the accuracy metrics, and are not counted here |
 
-A mutation test feeds oracle predictions scaled ×1.1 and shifted by one line
-height; E2.2 and E2.3 must flag both.
+Mutation tests:
+- **Caught:**
+  - oracle predictions scaled ×1.1;
+  - shifted by 0.4 line heights;
+  - scaled ×1.04 with 25% merged outliers;
+  - **a ×1.08 bug confined to one image size** while all other sizes are
+    correct (regression test for the pooling);
+  - **coordinates left at half scale for one size** (E2.4).
+- **Not flagged:**
+  - 25% merged-box outliers alone;
+  - **one image with 42% merged boxes among correct images of the same size**
+    (the pilot's failure mode).
+
+**Second change, approved.** Per-image Theil–Sen still failed on two pilot
+images whose matched boxes were 33% and 41% merged or split lines, beyond the
+~29% any robust per-image slope tolerates. Pooling per exact image size was
+proposed with that evidence and approved by the owner. E2.4 was added with it
+to close the one gap pooling cannot cover (no matches at all for a size).
+
+**Post-hoc correction, disclosed.** E2.3 originally used least-squares slopes.
+On the first unattended run, E2 failed for 4 of 6 engines, even though every
+engine's median slope was 1.000 ± 0.001 and its y-slopes were within
+0.996–1.007. The cause was segmentation, not coordinates. The worst case was
+Tesseract merging a file tree, a code line and a docs pane into one 2,429 px
+box, matched at IoU 0.30 to a 738 px line, which pulled that image's
+least-squares x-slope to 0.572. Segmentation is already measured by the accuracy
+metrics (component matching, M8). E2 exists to catch global coordinate-mapping
+bugs, so the slope estimator was changed to a robust one. The thresholds are
+unchanged, and the new tests above prove it still catches real scale errors. The
+least-squares ranges stay in the output as a diagnostic.
 
 ---
 

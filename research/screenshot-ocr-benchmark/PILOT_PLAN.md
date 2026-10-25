@@ -103,7 +103,7 @@ re-run. The pilot does not pass with known failures in these checks.
 | # | Check | Pass criterion |
 |---|---|---|
 | E1 | Coverage | Every engine attempts all 328 images; failures and timeouts are logged with the error. Failures are classified as engine failure, `resource_oom` (Docker-confirmed kill at the declared 24 GB budget) or infrastructure failure (amendment A3) |
-| E2 | Coordinate sanity (automated, A4; bug detector, not a result) | Per engine over all scored images: median best IoU ≥ 0.30; median centre offset within ±0.25 line heights on each axis; median centre-regression slope within [0.98, 1.02] and every image's within [0.95, 1.05] (images with ≥ 8 matches) (AUTOMATED_VALIDATION §5). (Formerly overlay review.) |
+| E2 | Coordinate sanity (automated, A4; bug detector, not a result) | Per engine over all scored images: median best IoU ≥ 0.30; median centre offset within ±0.25 line heights on each axis; Theil–Sen centre slopes pooled per exact image size, with the median over sizes within [0.98, 1.02] and every size within [0.95, 1.05]; every size with ≥ 8 boxes has median best IoU ≥ 0.30 (AUTOMATED_VALIDATION §5). (Formerly overlay review.) |
 | E3 | Determinism | Re-run on a 10% subset (33 images): identical text. A nondeterministic engine switches to 3 runs per image with the mean reported, recorded as a pre-registration amendment before tagging. |
 | E4 | Version lock | `engines.lock.json` complete: package versions, model files, weight SHA-256 hashes, Tesseract and tessdata versions |
 | E5 | Dependency isolation | Each engine runs in its own environment where pins conflict (for example Paddle's `numpy<2.0`). The same image bytes are confirmed across environments by hash. |

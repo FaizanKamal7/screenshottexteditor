@@ -1,0 +1,57 @@
+﻿[2026-09-25T15:14:36] run_pilot start: stages ['tests', 'pseudo', 'score', 'validate']
+[2026-09-25T15:14:36] stage tests: /bench ocrbench-tools:pilot python scripts/run_tests.py
+.................................................................        [100%]
+65 passed in 15.29s
+[2026-09-25T15:14:53] stage tests: exit 0 after 17 s
+[2026-09-25T15:14:53] stage pseudo: /bench ocrbench-tools:pilot python scripts/pseudo_engines.py
+pseudo predictions written for 312 images
+[2026-09-25T15:15:04] stage pseudo: exit 0 after 11 s
+[2026-09-25T15:15:04] stage score: /bench ocrbench-tools:pilot python scripts/score.py
+scored 1872 predictions -> pilot/scores
+[2026-09-25T15:16:09] stage score: exit 0 after 65 s
+[2026-09-25T15:16:09] stage validate: /bench ocrbench-tools:pilot python scripts/validate_pilot.py
+A1: PASS
+A2: PASS
+A3: PASS
+A4: PASS
+A5: PASS
+A6: PASS
+A7: PASS
+B1: PASS
+B2: PASS
+B3: PASS
+B4: PASS
+B5: PASS
+B6: N/A (SYNTHETIC-ONLY SCOPE)
+C1: PASS
+C2: PASS
+C3: PASS
+C4: PASS
+C5: PASS
+C6: PASS
+C7: PASS
+D1: PASS
+D2: PASS
+D3: PASS
+D4: PASS
+D5: PASS
+D6: PASS
+E1: PASS
+E2: FAIL
+E3: PASS
+E4: PASS
+E5: PASS
+E6: PASS
+F1: MEASURED
+F2: INVESTIGATE
+G1: MEASURED
+G2: SEE REPORT
+FAILED CHECKS: E2
+[2026-09-25T15:23:37] stage validate: exit 1 after 448 s
+python : stage validate failed (exit 1)
+At line:1 char:302
++ ... tch {} } }; python scripts\run_pilot.py --from tests *> pilot\logs\ru ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (stage validate failed (exit 1):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

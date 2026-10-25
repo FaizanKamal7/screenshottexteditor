@@ -258,8 +258,15 @@ export function Dropzone() {
 					setScaleFactor(finalResult.scale_factor);
 					setStatus('idle');
 				} else {
-					markPendingRegionsFailed(streamError ?? `analyze failed with status ${xhr.status}`);
-					setStatus('error', streamError ?? `analyze failed with status ${xhr.status}`);
+					// A 2xx with no final "result" line means the pipeline crashed
+					// mid-stream (the 200 header was already sent before it failed).
+					const message =
+						streamError ??
+						(xhr.status >= 200 && xhr.status < 300
+							? 'analysis stopped before finishing'
+							: `analyze failed with status ${xhr.status}`);
+					markPendingRegionsFailed(message);
+					setStatus('error', message);
 				}
 			};
 			xhr.onerror = () => {

@@ -23,7 +23,7 @@ E2_MIN_MEDIAN_IOU = 0.30
 E2_MATCH_IOU = 0.30
 E2_MAX_MEDIAN_OFFSET_H = 0.25        # median centre offset / line height, each axis
 E2_MEDIAN_SLOPE = (0.98, 1.02)
-E2_IMAGE_SLOPE = (0.95, 1.05)
+E2_IMAGE_SLOPE = (0.95, 1.05)        # applied per image-size pool (E2.3 amendment)
 E2_MIN_MATCHES_FOR_SLOPE = 8
 
 
@@ -196,6 +196,23 @@ def _center(b):
 
 
 def _slope(xs, ys):
+    """Theil–Sen slope (median of pairwise slopes; tolerates ~29% outliers).
+
+    A coordinate-mapping bug (e.g. an internal resize not mapped back) moves every
+    box, so it shifts the median of pairwise slopes. A few merged or split boxes,
+    whose centres legitimately differ from the matched line's, do not. The pilot
+    showed an ordinary least-squares slope conflated those segmentation outliers
+    with coordinate errors (a Tesseract box spanning three columns gave slope 0.572
+    on an image with correct coordinates)."""
+    from scipy.stats import theilslopes
+
+    xs, ys = np.asarray(xs, float), np.asarray(ys, float)
+    if len(xs) < 2 or np.ptp(xs) == 0:
+        return None
+    return float(theilslopes(ys, xs)[0])
+
+
+def _ols_slope(xs, ys):
     xs, ys = np.asarray(xs, float), np.asarray(ys, float)
     if len(xs) < 2 or np.ptp(xs) == 0:
         return None
@@ -204,15 +221,22 @@ def _slope(xs, ys):
 
 def e2_coordinates(images: list[tuple[dict, list[dict], float]]) -> dict:
     """images: (ground truth, prediction lines, downscale) for one engine."""
-    best_ious, dxs, dys, sx, sy = [], [], [], [], []
+    best_ious, dxs, dys, sx, sy, ols_x = [], [], [], [], [], []
+    pools = defaultdict(list)
+    size_ious = defaultdict(list)
+    size_preds = defaultdict(int)
     for gt, preds, downscale in images:
         ignore, _, box_of = score.geometry_for(gt, downscale)
         gboxes = [box_of(ln) for ln in gt["lines"] if not ln["stress"]]
         pboxes = [list(p["bbox"]) for p in preds if score.n1(p["text"])]
+        key = (round((gt.get("width") or 0) * downscale), round((gt.get("height") or 0) * downscale))  # exact pixel size
+        size_preds[key] += len(pboxes)
         for g in gboxes:
             ious = [score.iou(g, p) for p in pboxes]
-            if ious and max(ious) > 0:
-                best_ious.append(max(ious))
+            best = max(ious) if ious else 0.0
+            if best > 0:  # as E2.1: lines no prediction touches are detection misses, not geometry
+                best_ious.append(best)
+                size_ious[key].append(best)
         matches = score.greedy_iou_match(gboxes, pboxes, E2_MATCH_IOU)
         gx, gy, px, py = [], [], [], []
         for gi, pi, _ in matches:
@@ -221,18 +245,40 @@ def e2_coordinates(images: list[tuple[dict, list[dict], float]]) -> dict:
             dxs.append((cpx - cgx) / h)
             dys.append((cpy - cgy) / h)
             gx.append(cgx); gy.append(cgy); px.append(cpx); py.append(cpy)
-        if len(matches) >= E2_MIN_MATCHES_FOR_SLOPE:
+            pools[key].append((cgx, cgy, cpx, cpy))
+        if len(matches) >= E2_MIN_MATCHES_FOR_SLOPE:  # per-image slopes: diagnostic only
             a, b = _slope(gx, px), _slope(gy, py)
             if a is not None:
                 sx.append(a)
             if b is not None:
                 sy.append(b)
+            o = _ols_slope(gx, px)
+            if o is not None:
+                ols_x.append(o)
+    # E2.3 (amended, approved 2026-09-25): one Theil-Sen slope per exact image size, pooling
+    # all matched pairs of that size. A coordinate-mapping bug depends on image dimensions,
+    # so it moves every image of a size; one heavily mis-segmented image cannot dominate.
+    pooled = {}
+    for key, pairs in pools.items():
+        if len(pairs) < E2_MIN_MATCHES_FOR_SLOPE:
+            continue
+        a = np.asarray(pairs, float)
+        pooled[key] = (_slope(a[:, 0], a[:, 2]), _slope(a[:, 1], a[:, 3]))
+    psx = [v[0] for v in pooled.values() if v[0] is not None]
+    psy = [v[1] for v in pooled.values() if v[1] is not None]
     med = lambda v: statistics.median(v) if v else None  # noqa: E731
     out = {
         "median_best_iou": med(best_ious), "median_offset_x_h": med(dxs), "median_offset_y_h": med(dys),
-        "median_slope_x": med(sx), "median_slope_y": med(sy),
-        "slope_range_x": [min(sx), max(sx)] if sx else None, "slope_range_y": [min(sy), max(sy)] if sy else None,
-        "matched_lines": len(dxs), "images_with_slope": len(sx),
+        "slope_estimator": "Theil-Sen, pooled per exact image size",
+        "size_groups": len(pooled),
+        "pooled_slopes": {f"{k[0]}x{k[1]}": [round(v[0], 4), round(v[1], 4)] for k, v in sorted(pooled.items(), key=str)},
+        "median_slope_x": med(psx), "median_slope_y": med(psy),
+        "slope_range_x": [min(psx), max(psx)] if psx else None, "slope_range_y": [min(psy), max(psy)] if psy else None,
+        "matched_lines": len(dxs),
+        "median_best_iou_per_size": {f"{k[0]}x{k[1]}": round(statistics.median(v), 4)
+                                     for k, v in sorted(size_ious.items(), key=str) if v},
+        "diagnostic_per_image_theil_sen_range_x": [min(sx), max(sx)] if sx else None,
+        "diagnostic_per_image_ols_range_x": [min(ols_x), max(ols_x)] if ols_x else None,
     }
     lo, hi = E2_MEDIAN_SLOPE
     ilo, ihi = E2_IMAGE_SLOPE
@@ -240,8 +286,16 @@ def e2_coordinates(images: list[tuple[dict, list[dict], float]]) -> dict:
         "E2.1_median_iou": out["median_best_iou"] is not None and out["median_best_iou"] >= E2_MIN_MEDIAN_IOU,
         "E2.2_no_systematic_offset": out["median_offset_x_h"] is not None
         and abs(out["median_offset_x_h"]) <= E2_MAX_MEDIAN_OFFSET_H and abs(out["median_offset_y_h"]) <= E2_MAX_MEDIAN_OFFSET_H,
-        "E2.3_no_scale_error": bool(sx) and bool(sy) and lo <= out["median_slope_x"] <= hi and lo <= out["median_slope_y"] <= hi
-        and ilo <= min(sx) and max(sx) <= ihi and ilo <= min(sy) and max(sy) <= ihi,
+        "E2.3_no_scale_error": bool(psx) and bool(psy) and lo <= out["median_slope_x"] <= hi
+        and lo <= out["median_slope_y"] <= hi
+        and ilo <= min(psx) and max(psx) <= ihi and ilo <= min(psy) and max(psy) <= ihi,
+        # E2.4: a size-specific bug severe enough to break matching (e.g. coordinates left at
+        # half scale) yields no slope for that size. Every size where the engine returned at
+        # least E2_MIN_MATCHES_FOR_SLOPE boxes must show overlapping predictions with a
+        # median best IoU >= 0.30.
+        "E2.4_every_size_overlaps": bool(size_preds) and all(
+            size_ious[k] and statistics.median(size_ious[k]) >= E2_MIN_MEDIAN_IOU
+            for k, n in size_preds.items() if n >= E2_MIN_MATCHES_FOR_SLOPE),
     }
     out["parts"] = parts
     out["pass"] = all(parts.values())

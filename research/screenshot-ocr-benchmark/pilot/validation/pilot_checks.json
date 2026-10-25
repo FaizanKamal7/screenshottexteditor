@@ -18,27 +18,47 @@
    }
   },
   "A3": {
-   "status": "AUTO-PASS, HUMAN REVIEW PENDING",
+   "status": "PASS",
    "detail": {
-    "automated_reconciliation_ok": 24,
+    "bases_passing": 24,
     "bases": 24,
-    "human_review": "overlays in pilot/review/gt_overlays/ (24 bases) — not yet reviewed by a human",
-    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+    "failing": {}
    }
   },
   "A4": {
-   "status": "HUMAN REVIEW PENDING",
+   "status": "PASS",
    "detail": {
-    "review_sheets": "pilot/review/line_sheets/ (4 bases at largest scale, 100% of lines) and pilot/review/line_sample.csv (>=10% random sample of other lines)",
-    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+    "bases_passing": 24,
+    "bases": 24,
+    "A4.4_cross_scale_text": {
+     "pass": true,
+     "groups": 8,
+     "mismatched": []
+    },
+    "A4.5_A4.6_fixture_and_mutation_tests": {
+     "whitespace": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "failures": []
+     },
+     "mutation": {
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0,
+      "failures": []
+     }
+    },
+    "failing": {}
    }
   },
   "A5": {
-   "status": "AUTO-PASS, HUMAN REVIEW PENDING",
+   "status": "PASS",
    "detail": {
+    "bases_passing": 24,
+    "bases": 24,
     "multi_line_elements_total": 48,
-    "note": "line splits come from rendered character positions; visual confirmation is in the overlays (paragraph elements in m05-chat and d06-code-editor)",
-    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+    "failing": {}
    }
   },
   "A6": {
@@ -138,11 +158,18 @@
    }
   },
   "B4": {
-   "status": "OVERLAYS GENERATED, HUMAN REVIEW PENDING",
+   "status": "PASS",
    "detail": {
-    "gt_overlays": "pilot/review/gt_overlays/ (24 bases)",
-    "variant_overlays": "pilot/review/variant_overlays/ (13 variants × 2 bases)",
-    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+    "B4.1_B4.2_B4.4_bases_passing": 24,
+    "bases": 24,
+    "B4.3_registration": {
+     "pass": true,
+     "files": 336,
+     "worst_abs_shift_px": 0.0044,
+     "failures": []
+    },
+    "B4.5_B1_B2_B3_pass": true,
+    "failing": {}
    }
   },
   "B5": {
@@ -160,9 +187,9 @@
    }
   },
   "B6": {
-   "status": "NOT RUN",
+   "status": "N/A (SYNTHETIC-ONLY SCOPE)",
    "detail": {
-    "reason": "No device captures were taken: iOS/Android/macOS devices are not available to this session, and a Windows Edge capture would take over the user's desktop. device_collector.py / register_device.py are not implemented yet."
+    "reason": "The benchmark is synthetic-only (PREREGISTRATION amendment A4, AUTOMATED_VALIDATION §6). There is no device set, so there is no device registration to check. This is a scope decision, not a pass."
    }
   },
   "C1": {
@@ -391,19 +418,590 @@
    }
   },
   "E2": {
-   "status": "PASS (overlays pending human review), HUMAN REVIEW PENDING",
+   "status": "FAIL",
    "detail": {
-    "median_iou_V00": {
-     "tesseract5": 0.9033,
-     "paddle_v5_mobile": 0.6004,
-     "paddle_v5_server": 0.6792,
-     "easyocr": 0.6372,
-     "doctr": 0.6294,
-     "windows_ocr": 0.9808
+    "tesseract5": {
+     "median_best_iou": 0.7428571428571429,
+     "median_offset_x_h": 0.0,
+     "median_offset_y_h": 0.0,
+     "slope_estimator": "Theil-Sen, pooled per exact image size",
+     "size_groups": 12,
+     "pooled_slopes": {
+      "1170x2532@0.5": [
+       1.0,
+       1.0
+      ],
+      "1170x2532@1.0": [
+       1.0,
+       1.0
+      ],
+      "1280x800@0.5": [
+       1.0,
+       1.0
+      ],
+      "1280x800@1.0": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@0.5": [
+       1.0006,
+       1.0
+      ],
+      "1920x1200@1.0": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@0.5": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@1.0": [
+       1.0,
+       1.0
+      ],
+      "390x844@0.5": [
+       1.0,
+       1.0
+      ],
+      "390x844@1.0": [
+       1.0,
+       1.0
+      ],
+      "780x1688@0.5": [
+       1.0,
+       1.0
+      ],
+      "780x1688@1.0": [
+       1.0,
+       1.0
+      ]
+     },
+     "median_slope_x": 1.0,
+     "median_slope_y": 1.0,
+     "slope_range_x": [
+      1.0,
+      1.0006191950464396
+     ],
+     "slope_range_y": [
+      1.0,
+      1.0
+     ],
+     "matched_lines": 6896,
+     "median_best_iou_per_size": {
+      "1170x2532@0.5": 0.8484,
+      "1170x2532@1.0": 0.9187,
+      "1280x800@0.5": 0.0479,
+      "1280x800@1.0": 0.8088,
+      "1920x1200@0.5": 0.3914,
+      "1920x1200@1.0": 0.9186,
+      "2560x1600@0.5": 0.8045,
+      "2560x1600@1.0": 0.1694,
+      "390x844@0.5": 0.2019,
+      "390x844@1.0": 0.4432,
+      "780x1688@0.5": 0.7771,
+      "780x1688@1.0": 0.9308
+     },
+     "diagnostic_per_image_theil_sen_range_x": [
+      0.9277454737676755,
+      1.0167064439140812
+     ],
+     "diagnostic_per_image_ols_range_x": [
+      0.5722748903123924,
+      1.073934742950614
+     ],
+     "parts": {
+      "E2.1_median_iou": true,
+      "E2.2_no_systematic_offset": true,
+      "E2.3_no_scale_error": true,
+      "E2.4_every_size_overlaps": false
+     },
+     "pass": false
     },
-    "threshold": 0.3,
-    "overlays": "pilot/review/engine_overlays/",
-    "review_package": "pilot/review/index.html (see REVIEW_GUIDE.md)"
+    "paddle_v5_mobile": {
+     "median_best_iou": 0.5625,
+     "median_offset_x_h": -0.03125,
+     "median_offset_y_h": -0.1,
+     "slope_estimator": "Theil-Sen, pooled per exact image size",
+     "size_groups": 12,
+     "pooled_slopes": {
+      "1170x2532@0.5": [
+       1.0017,
+       1.0
+      ],
+      "1170x2532@1.0": [
+       1.0,
+       1.0
+      ],
+      "1280x800@0.5": [
+       1.0,
+       1.0
+      ],
+      "1280x800@1.0": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@0.5": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@1.0": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@0.5": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@1.0": [
+       1.0,
+       1.0
+      ],
+      "390x844@0.5": [
+       1.0035,
+       1.0
+      ],
+      "390x844@1.0": [
+       1.0,
+       1.0
+      ],
+      "780x1688@0.5": [
+       1.0,
+       1.0
+      ],
+      "780x1688@1.0": [
+       1.0,
+       1.0
+      ]
+     },
+     "median_slope_x": 1.0,
+     "median_slope_y": 1.0,
+     "slope_range_x": [
+      1.0,
+      1.0035211267605635
+     ],
+     "slope_range_y": [
+      1.0,
+      1.0
+     ],
+     "matched_lines": 12749,
+     "median_best_iou_per_size": {
+      "1170x2532@0.5": 0.5791,
+      "1170x2532@1.0": 0.6264,
+      "1280x800@0.5": 0.4333,
+      "1280x800@1.0": 0.5188,
+      "1920x1200@0.5": 0.4521,
+      "1920x1200@1.0": 0.5474,
+      "2560x1600@0.5": 0.5055,
+      "2560x1600@1.0": 0.6166,
+      "390x844@0.5": 0.547,
+      "390x844@1.0": 0.5455,
+      "780x1688@0.5": 0.5445,
+      "780x1688@1.0": 0.5815
+     },
+     "diagnostic_per_image_theil_sen_range_x": [
+      0.9988192788155005,
+      1.00993894993895
+     ],
+     "diagnostic_per_image_ols_range_x": [
+      0.9602647928940933,
+      1.059165263880774
+     ],
+     "parts": {
+      "E2.1_median_iou": true,
+      "E2.2_no_systematic_offset": true,
+      "E2.3_no_scale_error": true,
+      "E2.4_every_size_overlaps": true
+     },
+     "pass": true
+    },
+    "paddle_v5_server": {
+     "median_best_iou": 0.6481481481481481,
+     "median_offset_x_h": -0.038461538461538464,
+     "median_offset_y_h": -0.10526315789473684,
+     "slope_estimator": "Theil-Sen, pooled per exact image size",
+     "size_groups": 12,
+     "pooled_slopes": {
+      "1170x2532@0.5": [
+       1.0012,
+       1.0
+      ],
+      "1170x2532@1.0": [
+       1.0,
+       1.0003
+      ],
+      "1280x800@0.5": [
+       1.0,
+       1.0
+      ],
+      "1280x800@1.0": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@0.5": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@1.0": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@0.5": [
+       1.0006,
+       1.0
+      ],
+      "2560x1600@1.0": [
+       1.0,
+       1.0
+      ],
+      "390x844@0.5": [
+       1.0,
+       1.0
+      ],
+      "390x844@1.0": [
+       1.0044,
+       1.0
+      ],
+      "780x1688@0.5": [
+       1.0045,
+       1.0
+      ],
+      "780x1688@1.0": [
+       1.0,
+       1.0
+      ]
+     },
+     "median_slope_x": 1.0,
+     "median_slope_y": 1.0,
+     "slope_range_x": [
+      1.0,
+      1.0044843049327354
+     ],
+     "slope_range_y": [
+      1.0,
+      1.0003231017770597
+     ],
+     "matched_lines": 13268,
+     "median_best_iou_per_size": {
+      "1170x2532@0.5": 0.6671,
+      "1170x2532@1.0": 0.7051,
+      "1280x800@0.5": 0.5504,
+      "1280x800@1.0": 0.6096,
+      "1920x1200@0.5": 0.5943,
+      "1920x1200@1.0": 0.634,
+      "2560x1600@0.5": 0.6231,
+      "2560x1600@1.0": 0.6966,
+      "390x844@0.5": 0.6321,
+      "390x844@1.0": 0.6149,
+      "780x1688@0.5": 0.6258,
+      "780x1688@1.0": 0.6894
+     },
+     "diagnostic_per_image_theil_sen_range_x": [
+      0.9966499162479062,
+      1.0058823529411764
+     ],
+     "diagnostic_per_image_ols_range_x": [
+      0.9425144670228204,
+      1.0266291674006154
+     ],
+     "parts": {
+      "E2.1_median_iou": true,
+      "E2.2_no_systematic_offset": true,
+      "E2.3_no_scale_error": true,
+      "E2.4_every_size_overlaps": true
+     },
+     "pass": true
+    },
+    "easyocr": {
+     "median_best_iou": 0.6272401433691757,
+     "median_offset_x_h": 0.023809523809523808,
+     "median_offset_y_h": 0.0,
+     "slope_estimator": "Theil-Sen, pooled per exact image size",
+     "size_groups": 12,
+     "pooled_slopes": {
+      "1170x2532@0.5": [
+       1.0,
+       1.0
+      ],
+      "1170x2532@1.0": [
+       1.0,
+       1.0
+      ],
+      "1280x800@0.5": [
+       1.0,
+       1.0
+      ],
+      "1280x800@1.0": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@0.5": [
+       1.0006,
+       1.0
+      ],
+      "1920x1200@1.0": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@0.5": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@1.0": [
+       1.0,
+       1.0
+      ],
+      "390x844@0.5": [
+       1.0,
+       1.0
+      ],
+      "390x844@1.0": [
+       1.0,
+       1.0
+      ],
+      "780x1688@0.5": [
+       1.0,
+       1.0
+      ],
+      "780x1688@1.0": [
+       1.0,
+       1.0
+      ]
+     },
+     "median_slope_x": 1.0,
+     "median_slope_y": 1.0,
+     "slope_range_x": [
+      1.0,
+      1.0005757052389177
+     ],
+     "slope_range_y": [
+      1.0,
+      1.0
+     ],
+     "matched_lines": 12100,
+     "median_best_iou_per_size": {
+      "1170x2532@0.5": 0.66,
+      "1170x2532@1.0": 0.6585,
+      "1280x800@0.5": 0.7151,
+      "1280x800@1.0": 0.605,
+      "1920x1200@0.5": 0.643,
+      "1920x1200@1.0": 0.5923,
+      "2560x1600@0.5": 0.6337,
+      "2560x1600@1.0": 0.6189,
+      "390x844@0.5": 0.6882,
+      "390x844@1.0": 0.6242,
+      "780x1688@0.5": 0.6417,
+      "780x1688@1.0": 0.6622
+     },
+     "diagnostic_per_image_theil_sen_range_x": [
+      0.9462068965517242,
+      1.008733790999237
+     ],
+     "diagnostic_per_image_ols_range_x": [
+      0.9264032321170209,
+      1.02682073811163
+     ],
+     "parts": {
+      "E2.1_median_iou": true,
+      "E2.2_no_systematic_offset": true,
+      "E2.3_no_scale_error": true,
+      "E2.4_every_size_overlaps": true
+     },
+     "pass": true
+    },
+    "doctr": {
+     "median_best_iou": 0.6339047619047619,
+     "median_offset_x_h": 0.028537326388888888,
+     "median_offset_y_h": 0.008333333333333333,
+     "slope_estimator": "Theil-Sen, pooled per exact image size",
+     "size_groups": 12,
+     "pooled_slopes": {
+      "1170x2532@0.5": [
+       0.9998,
+       1.0001
+      ],
+      "1170x2532@1.0": [
+       0.9997,
+       1.0001
+      ],
+      "1280x800@0.5": [
+       1.0002,
+       1.0
+      ],
+      "1280x800@1.0": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@0.5": [
+       1.0002,
+       1.0005
+      ],
+      "1920x1200@1.0": [
+       1.0,
+       1.0007
+      ],
+      "2560x1600@0.5": [
+       1.0003,
+       1.0
+      ],
+      "2560x1600@1.0": [
+       1.0002,
+       1.0006
+      ],
+      "390x844@0.5": [
+       1.0,
+       0.9999
+      ],
+      "390x844@1.0": [
+       0.9996,
+       1.0002
+      ],
+      "780x1688@0.5": [
+       0.9997,
+       1.0002
+      ],
+      "780x1688@1.0": [
+       1.0,
+       1.0002
+      ]
+     },
+     "median_slope_x": 0.9999856387867647,
+     "median_slope_y": 1.0001607364751837,
+     "slope_range_x": [
+      0.9995844414893617,
+      1.0002903600464577
+     ],
+     "slope_range_y": [
+      0.9999405139593909,
+      1.0006738544474394
+     ],
+     "matched_lines": 11138,
+     "median_best_iou_per_size": {
+      "1170x2532@0.5": 0.7986,
+      "1170x2532@1.0": 0.7764,
+      "1280x800@0.5": 0.611,
+      "1280x800@1.0": 0.5333,
+      "1920x1200@0.5": 0.543,
+      "1920x1200@1.0": 0.5215,
+      "2560x1600@0.5": 0.5235,
+      "2560x1600@1.0": 0.4886,
+      "390x844@0.5": 0.8465,
+      "390x844@1.0": 0.8322,
+      "780x1688@0.5": 0.8266,
+      "780x1688@1.0": 0.7927
+     },
+     "diagnostic_per_image_theil_sen_range_x": [
+      0.997038810483871,
+      1.00225
+     ],
+     "diagnostic_per_image_ols_range_x": [
+      0.9866914647723076,
+      1.0074829713808464
+     ],
+     "parts": {
+      "E2.1_median_iou": true,
+      "E2.2_no_systematic_offset": true,
+      "E2.3_no_scale_error": true,
+      "E2.4_every_size_overlaps": true
+     },
+     "pass": true
+    },
+    "windows_ocr": {
+     "median_best_iou": 0.98,
+     "median_offset_x_h": 0.0,
+     "median_offset_y_h": 0.0,
+     "slope_estimator": "Theil-Sen, pooled per exact image size",
+     "size_groups": 12,
+     "pooled_slopes": {
+      "1170x2532@0.5": [
+       1.0,
+       1.0
+      ],
+      "1170x2532@1.0": [
+       1.0,
+       1.0
+      ],
+      "1280x800@0.5": [
+       0.9988,
+       1.0
+      ],
+      "1280x800@1.0": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@0.5": [
+       1.0,
+       1.0
+      ],
+      "1920x1200@1.0": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@0.5": [
+       1.0,
+       1.0
+      ],
+      "2560x1600@1.0": [
+       1.0,
+       1.0
+      ],
+      "390x844@0.5": [
+       1.0145,
+       1.0
+      ],
+      "390x844@1.0": [
+       1.0,
+       1.0
+      ],
+      "780x1688@0.5": [
+       1.0,
+       1.0
+      ],
+      "780x1688@1.0": [
+       1.0,
+       1.0
+      ]
+     },
+     "median_slope_x": 1.0,
+     "median_slope_y": 1.0,
+     "slope_range_x": [
+      0.9988412514484357,
+      1.0144927536231885
+     ],
+     "slope_range_y": [
+      1.0,
+      1.0
+     ],
+     "matched_lines": 11720,
+     "median_best_iou_per_size": {
+      "1170x2532@0.5": 0.9744,
+      "1170x2532@1.0": 0.9943,
+      "1280x800@0.5": 0.909,
+      "1280x800@1.0": 0.9672,
+      "1920x1200@0.5": 0.8889,
+      "1920x1200@1.0": 0.975,
+      "2560x1600@0.5": 0.9375,
+      "2560x1600@1.0": 0.978,
+      "390x844@0.5": 0.7365,
+      "390x844@1.0": 0.9787,
+      "780x1688@0.5": 0.9783,
+      "780x1688@1.0": 0.9915
+     },
+     "diagnostic_per_image_theil_sen_range_x": [
+      0.9995017438963627,
+      1.0
+     ],
+     "diagnostic_per_image_ols_range_x": [
+      0.9718389270450065,
+      1.0132147673405223
+     ],
+     "parts": {
+      "E2.1_median_iou": true,
+      "E2.2_no_systematic_offset": true,
+      "E2.3_no_scale_error": true,
+      "E2.4_every_size_overlaps": true
+     },
+     "pass": true
+    }
    }
   },
   "E3": {
@@ -581,36 +1179,36 @@
    "status": "MEASURED",
    "detail": {
     "bytes_by_class": {
-     "images_all_variants": 34191287,
-     "renders_source_png": 3191558,
+     "images_all_variants": 34190181,
+     "renders_source_png": 3190669,
      "text_hidden_renders_internal": 417657,
-     "masks": 281240,
-     "ground_truth_json": 678351,
-     "predictions": 13074234,
-     "predictions_rerun": 1251790,
-     "pseudo_predictions": 3886555,
-     "scores": 47923577,
+     "masks": 281042,
+     "ground_truth_json": 678350,
+     "predictions": 13161556,
+     "predictions_rerun": 1261367,
+     "pseudo_predictions": 3886549,
+     "scores": 47928568,
      "timing": 238690
     },
     "bytes_by_variant": {
-     "V00": 3227345,
-     "V01": 1227496,
-     "V02": 5367437,
-     "V03": 3496574,
-     "V04": 2824512,
-     "V05": 2344222,
-     "V06": 4959741,
-     "V07": 2114534,
-     "V08": 1352652,
-     "V09": 1106668,
-     "V10": 1478548,
-     "V11": 1014480,
-     "V12": 2667490,
-     "V13": 1009588
+     "V00": 3226451,
+     "V01": 1227272,
+     "V02": 5368066,
+     "V03": 3496123,
+     "V04": 2824319,
+     "V05": 2344051,
+     "V06": 4960189,
+     "V07": 2114940,
+     "V08": 1352824,
+     "V09": 1107030,
+     "V10": 1478821,
+     "V11": 1014543,
+     "V12": 2665896,
+     "V13": 1009656
     },
-    "pilot_total_bytes": 123822244,
-    "publishable_pilot_bytes": 96148689,
-    "projected_full_publishable_bytes_excl_device_set": 961486890
+    "pilot_total_bytes": 107653426,
+    "publishable_pilot_bytes": 96239697,
+    "projected_full_publishable_bytes_excl_device_set": 962396970
    }
   },
   "G2": {
@@ -642,10 +1240,10 @@
     "m01-settings",
     "m05-chat"
    ],
-   "pilot_m1": 0.021620605376950555,
-   "pilot_half_width": 0.01925272376694772,
-   "projected_half_width_full": 0.004305039909492092,
-   "threshold": 0.005405151344237639,
+   "pilot_m1": 0.02180861064109795,
+   "pilot_half_width": 0.01310986590641204,
+   "projected_half_width_full": 0.0029314551342644215,
+   "threshold": 0.005452152660274488,
    "increase_templates": false,
    "method": "boot_t"
   },
@@ -656,10 +1254,10 @@
     "m01-settings",
     "m05-chat"
    ],
-   "pilot_m1": 0.09346204475647214,
-   "pilot_half_width": 7.134258988827243,
-   "projected_half_width_full": 1.5952688068106629,
-   "threshold": 0.023365511189118036,
+   "pilot_m1": 0.0933366764871811,
+   "pilot_half_width": 5.014517354856971,
+   "projected_half_width_full": 1.1212801679812623,
+   "threshold": 0.023334169121795274,
    "increase_templates": true,
    "method": "boot_t"
   },
@@ -684,11 +1282,11 @@
     "m01-settings",
     "m05-chat"
    ],
-   "pilot_m1": 0.017622238768925293,
-   "pilot_half_width": 0.0191134540972686,
-   "projected_half_width_full": 0.004273898264631447,
-   "threshold": 0.004405559692231323,
-   "increase_templates": false,
+   "pilot_m1": 0.01737403822288409,
+   "pilot_half_width": 0.2570024750815405,
+   "projected_half_width_full": 0.05746750046680204,
+   "threshold": 0.004343509555721023,
+   "increase_templates": true,
    "method": "boot_t"
   },
   "windows_ocr": {

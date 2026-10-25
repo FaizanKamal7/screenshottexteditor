@@ -410,7 +410,15 @@ def _refine_scalar(objective, lo: float, hi: float, xatol: float = 1e-2) -> tupl
     # scipy's bounded Brent search stands in for a literal golden-section
     # search here — same bracketing, derivative-free approach, well-tested,
     # and (unlike scipy's named 'golden' method) supports hard bounds.
-    result = minimize_scalar(objective, bounds=(lo, hi), method="bounded", options={"xatol": xatol})
+    #
+    # Tiny text (e.g. a size search at max(size * 0.7, 4.0)..size * 1.3 with
+    # size < ~3px) can produce lo >= hi, which scipy rejects with
+    # "The lower bound exceeds the upper bound" and kills the whole
+    # /analyze stream. There's nothing to search in that case, so just
+    # score the lower bound.
+    if not hi > lo:
+        return float(lo), float(objective(lo))
+    result =minimize_scalar(objective, bounds=(lo, hi), method="bounded", options={"xatol": xatol})
     return float(result.x), float(result.fun)
 
 

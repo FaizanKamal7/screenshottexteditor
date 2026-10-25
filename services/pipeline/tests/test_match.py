@@ -2,8 +2,23 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 from fonts.registry import FONT_REGISTRY
-from stages.match import estimate_layout, iou, match_font, score_alpha
+from stages.match import _refine_scalar, estimate_layout, iou, match_font, score_alpha
 from stages.separate import separate
+
+
+def test_refine_scalar_handles_inverted_bounds():
+    # Regression: tiny text gave lo=4.0 > hi=size*1.3, and scipy raised
+    # "The lower bound exceeds the upper bound", killing /analyze mid-stream.
+    x, fun = _refine_scalar(lambda v: (v - 2.0) ** 2, 4.0, 3.0)
+    assert x == 4.0
+    assert fun == 4.0
+
+
+def test_match_font_does_not_crash_on_tiny_region():
+    rng = np.random.default_rng(0)
+    target = (rng.random((3, 12)) > 0.5).astype(np.float32)
+    result = match_font("a", target, target.shape, region_h=2.0)
+    assert result.family
 
 
 def _find_candidate(family: str, weight: int):
